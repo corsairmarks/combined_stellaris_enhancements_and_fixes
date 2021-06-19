@@ -1,0 +1,108 @@
+namespace = battle_thrall_military_leaders
+
+# THIS = country
+# FROM = leader
+# triggered by on_leader_spawned
+country_event = {
+	id = battle_thrall_military_leaders.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			OR = {
+				leader_class = admiral
+				leader_class = general
+			}
+		}
+		any_owned_pop_species = {
+			has_citizenship_type = {
+				country = ROOT
+				type = citizenship_slavery
+			}
+			has_slavery_type = {
+				country = ROOT
+				type = slavery_military
+			}
+			has_military_service_type = {
+				country = ROOT
+				type = military_service_full
+			}
+		}
+	}
+	immediate = {
+		log = "battle_thrall_military_leaders.1 detected a spawned military leader for a country with Full Military Service for Battle Thralls..."
+		random_owned_pop = {
+			limit = { can_be_military_leader = yes }
+			species = { save_event_target_as = leader_new_species }
+		}
+		FROM = {
+			if = {
+				limit = { species = { NOT = { is_same_species = event_target:leader_new_species } } }
+				log = "...and rerolled the leader's species from [This.Species.GetName]..."
+				change_species = event_target:leader_new_species
+				set_name = random
+				log = "...to [leader_new_species.GetName]"
+			}
+			else = {
+				log = "...but did not make changes because the rerolled species was the same as the leader's current species ([This.Species.GetName])"
+			}
+		}
+	}
+}
+
+# follows the random event for a new random admiral (leader.1); triggered by on_fleet_destroyed_perp
+country_event = {
+	id = battle_thrall_military_leaders.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_active_event = { leader.1 }
+		exists = last_created_leader
+		is_same_value = last_created_leader.owner
+		last_created_leader = { leader_class = admiral }
+		any_owned_pop_species = {
+			NOT = { is_same_species = ROOT.owner_species }
+			has_military_service_type = {
+				country = ROOT
+				type = military_service_full
+			}
+		}
+		# countries with Full Military Service for Battle Thralls already got randomized
+		# by battle_thrall_military_leaders.1 so don't re-randomize
+		NOT = {
+			any_owned_pop_species = {
+				has_citizenship_type = {
+					country = ROOT
+					type = citizenship_slavery
+				}
+				has_slavery_type = {
+					country = ROOT
+					type = slavery_military
+				}
+				has_military_service_type = {
+					country = ROOT
+					type = military_service_full
+				}
+			}
+		}
+	}
+	immediate = {
+		log = "battle_thrall_military_leaders.2 detected a spawned admiral from leader.1 for a country with Full Military Service for a non-main species..."
+		random_owned_pop = {
+			limit = { can_be_military_leader = yes }
+			species = { save_event_target_as = leader_new_species }
+		}
+		FROM = {
+			if = {
+				limit = { species = { NOT = { is_same_species = event_target:leader_new_species } } }
+				log = "...and rerolled the leader's species from [This.Species.GetName]..."
+				change_species = event_target:leader_new_species
+				# name randomization unnecessary - handled automatically by create_leader
+				log = "...to [leader_new_species.GetName]"
+			}
+			else = {
+				log = "...but did not make changes because the rerolled species was the same as the leader's current species ([This.Species.GetName])"
+			}
+		}
+	}
+}
