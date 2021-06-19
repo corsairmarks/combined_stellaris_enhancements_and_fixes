@@ -22,6 +22,8 @@ If you like species traits that add leader traits, check out my mod [Enable All 
 
 Because this mod replaces two built-in objects, it is inherently incompatible with mods that alter the same objects.  While I doubt most mods will fiddle with `can_be_military_leader` it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one.  The only species right that this mod overrides is `military_service_full`.
 
+This mod is not compatible with achievements.
+
 ## Localisation
 
 This mod is localized for every language supported by Stellaris - mainly because it uses the built-in localisation.
@@ -40,3 +42,4 @@ This mode overrides a built-in trigger `can_be_military_leader` and a species ri
 ## Change Log
 
 * 1.0.0 Initial version
+* 1.1.0 Add event to flag mod as installed
