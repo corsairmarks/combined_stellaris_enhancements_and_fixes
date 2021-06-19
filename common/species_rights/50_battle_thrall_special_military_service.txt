@@ -69,12 +69,7 @@ military_service_full = {
 			OR = {
 				is_same_species = FROM
 				has_species_flag = allow_military_leaders_for_xenophobe # surprise flag that will help us later
-				FROM = {
-					NOR = {
-						has_ethic = ethic_xenophobe
-						has_ethic = ethic_fanatic_xenophobe
-					}
-				}
+				FROM = { is_xenophobe = no }
 			}
 		}
 		custom_tooltip = {
