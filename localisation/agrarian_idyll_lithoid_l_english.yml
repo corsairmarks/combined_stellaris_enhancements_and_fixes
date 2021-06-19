@@ -1,0 +1,7 @@
+﻿l_english:
+ civic_agrarian_idyll_lithoid: "Lithorian Idyll"
+ civic_agrarian_idyll_lithoid_desc: "A simple and peaceful life can often be the most rewarding. This lithorian society has, to a large extent, managed to avoid large-scale urbanization."
+ civic_tooltip_agrarian_idyll_lithoid_effects: "§YGenerator§!, §YMining§! and §YAgriculture Districts§! provide §G1§! more £housing£ §YHousing§!\n§YCity Districts§! provide §R1§! less £housing£ §YHousing§!\n£job_miner£ §Y$job_miner_plural$§! also produce §G2§! £amenities£ §YAmenities§!"
+ tech_housing_agrarian_idyll_lithoid: "Lithorian Utopias"
+ tech_housing_agrarian_idyll_lithoid_desc: "Through the establishment of geologically-managed rural communes, we can support a larger population without disrupting our lithorian way of life."
+ district_housing_agrarian_idyll_lithoid_tech_effect: "$district_mining$ Housing: §G+1§!"
