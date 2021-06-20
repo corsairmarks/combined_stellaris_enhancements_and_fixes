@@ -16,7 +16,7 @@ Finally, because this mod was inspired by my role-play for the [Eldanær Stellar
 
 ### Post-Game Start
 
-This mod can be safely added from your save game after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-ivalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
+This mod can be safely added to your savegame after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-ivalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
 
 # Recommended Companion Mods
 
