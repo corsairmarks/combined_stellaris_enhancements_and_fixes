@@ -58,4 +58,4 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
 
 ### Development Notes
 
-It is best to clone this repository in a directory _other_ than `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a symbolic link between a folder of your choosing in that directory and the `mod` folder in this repository.  Also note that the README.md file exists in the root directory but is symbolically linked in the `mod` directory.
+It is best to clone this repository in a directory _other_ than `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder in this repository via a `*.mod` file's `path` property.  Also note that the README.md file exists in the root directory but is symbolically linked in the `mod` directory.
