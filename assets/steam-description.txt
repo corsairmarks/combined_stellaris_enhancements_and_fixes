@@ -48,6 +48,7 @@ This mode overrides a built-in trigger [i]can_be_military_leader[/i] and a speci
 [list]
 [*]1.0.0 Initial version
 [*]1.1.0 Add event to flag mod as installed
+[*]Remove extra images files to keep distribution lightweight (no script changes)
 [/list]
 
 [h2]Source Code[/h2]
