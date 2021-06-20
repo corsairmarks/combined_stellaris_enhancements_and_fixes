@@ -1,0 +1,60 @@
+[h1]Overview[/h1]
+
+Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied to farming districts.  This mod creates a swapped Agrarian Idyll just for lithoids - now your miners will generate amenities instead of farmers!  This mod also features english localisation for these effects.
+
+And yes, I totally made up "lithorian" as an alternative to "agrarian" - suggestions welcome.
+
+[h1]Changes[/h1]
+
+Creates a civic swap for Agrarian Idyll for Lithoids (it will automatically change - similar to Devouring Swarm <-> Terravore).  Miners ([i]including[/i] those for mote/gas/crystal deposits) generate the same amount of Amenities that farmers generate for the standard version, and have their job weights adjusted accordingly for traits that affect Amenities output.  A new technology "Lithorian Utopias" replaces the standard "Agrarian Utopias" and adds +1 housing to Mining Districts.  Lithorian Idyll also loses the usual Agrarian Idyll bonus housing on Ringworld Farming Districts.
+
+Because this is a tradition text swap, all the the normal restrictions for Agrarian Idyll apply to it (without further code changes).
+
+[h2]Compatibility[/h2]
+
+Requires Stellaris version 3.0.3. This mod alters the following core Stellaris files:
+
+[list]
+[*][i]governments/civics/00_civics.txt[/i] - replaces one civic [i]civic_agrarian_idyll[/i] (new file [i]government/civics/01_agrarian_idyll_override.txt[/i])
+[*][i]districts/02_rural_districts.txt[/i] - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
+[*][i]districts/04_ringworld_districts.txt[/i] entire file, excludes agrarian idyll lithoids from the farming district benefits ([b]NOT[/b] compatible with my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630]Prosperity Tradition Rebalance[/url] because they both affect ringworld districts)
+[*][i]pop_jobs/03_worker_jobs.txt[/i] - entire file, adds amenities production to miners, mote miners, gas miners, and crystal miners (but not the specialist refiners) ([b]NOT[/b] compatible with my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority[/url] but includes the same fix)
+[*][i]pop_jobs/06_event_jobs.txt[/i] - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic
+[*][i]technology/00_soc_tech.txt[/i] entire file, excludes lithoids from researching [i]tech_housing_agrarian_idyll[/i]
+[/list]
+
+Stellaris requires overriding the entire containing file to make changes to a district, job, or technology (there are technical consequences if not). That means this mod is incompatible with other mods that make changes to rural and/or ringworld districts, mods that change worker-strata jobs or special event jobs, and mods that make changes to any Society technologies.
+
+This mod is not compatible with achievements because it overwrites core Stellaris files.
+
+[h2]Known Issues[/h2]
+
+Overriding a civic generates an error log. Expect to see one line in the error.log file similar to this:
+
+[code]
+[15:49:52][game_singleobjectdatabase.h:147]: Object with key: civic_agrarian_idyll already exists
+[/code]
+
+[h2]Change Log[/h2]
+
+[list]
+[*]1.0.0 Initial version
+[*]1.1.0 Added missing compatibility notes, added Agrarian Idyll amenities to special event jobs
+    [list]
+    [*][i]titan_hunter[/i] is in the [i]planet_farmers[/i] resource category and already had code for amenities-related weighting for Agrarian Idyll, but lacked the actual amenities production for Agrarian Idyll (non-lithoid)
+    [*][i]cave_cleaner[/i] is in the [i]planet_miners[/i] resource category so it made sense to also apply amenities to it
+    [*]purposely did not add agrarian idyll code to the potentially other relevant special job [i]ratling_scavenger[/i] because it isn't for default countries
+    [/list]
+[*]1.2.0 Include technician fix from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority[/url]
+[*]1.2.1 Fix spelling errors in README (no script changes)
+[*]1.2.2 Add note about incompatibilities with mods that change Society technologies (no script changes)
+[*]Add event to flag mod as installed
+    [list]
+    [*]Added README information about adding/removing from a game
+    [*]Add Steam description as text
+    [/list]
+[/list]
+
+[h2]Source Code[/h2]
+
+[url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Hosted on Github[/url]

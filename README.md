@@ -25,6 +25,10 @@ Stellaris requires overriding the entire containing file to make changes to a di
 
 This mod is not compatible with achievements because it overwrites core Stellaris files.
 
+### Post-Game Start
+
+This mod can be safely added after the game has started, but should not be removed from a game in-progress.  Losing access to the new technology "" could 
+
 ## Known Issues
 
 Overriding a civic generates an error log. Expect to see one line in the error.log file similar to this:
@@ -43,3 +47,10 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
 * 1.2.0 Include technician fix from [Technician Job Priority](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578)
 * 1.2.1 Fix spelling errors in README (no script changes)
 * 1.2.2 Add note about incompatibilities with mods that change Society technologies (no script changes)
+* 1.3.0 Add event to flag mod as installed
+    * Added README information about adding/removing from a game
+    * Add Steam description as text
+
+## Source Code
+
+[Hosted on Github](https://github.com/corsairmarks/agrarian_idyll_lithoid)
