@@ -14,6 +14,10 @@ As a minor quality-of-life enhancement, I have also attached an event to `on_fle
 
 Finally, because this mod was inspired by my role-play for the [Eldanær Stellar Authority](https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535) it also allows bypassing the xenophobic and necrophage restrictions for allowing Full Military Service.  Simply add the flag you want to ignore (or both) to the species you want to allow Full Military Service despite the fact you are xenophobic and/or a necrophage: `allow_military_leaders_for_xenophobe`, `allow_military_leaders_for_necrophage`.
 
+### Post-Game Start
+
+This mod can be safely added from your save game after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-ivalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
+
 # Recommended Companion Mods
 
 If you like species traits that add leader traits, check out my mod [Enable All Eligible Species Traits for Leaders](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295).  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
@@ -43,3 +47,7 @@ This mode overrides a built-in trigger `can_be_military_leader` and a species ri
 
 * 1.0.0 Initial version
 * 1.1.0 Add event to flag mod as installed
+
+## Source Code
+
+[Hosted on GitHub](https://github.com/corsairmarks/battle_thrall_military_leaders)
