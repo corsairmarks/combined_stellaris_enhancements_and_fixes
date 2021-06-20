@@ -27,6 +27,10 @@ Stellaris requires overriding the entire containing file to make changes to a di
 
 This mod is not compatible with achievements because it overwrites core Stellaris files.
 
+[h3]Post-Game Start[/h3]
+
+This mod can be safely added after the game has started, but should not be removed from a game in-progress.  Losing access to the new technology "Lithorian Idyll" could cause problems for the game if any countries have researched it.
+
 [h2]Known Issues[/h2]
 
 Overriding a civic generates an error log. Expect to see one line in the error.log file similar to this:

@@ -27,7 +27,7 @@ This mod is not compatible with achievements because it overwrites core Stellari
 
 ### Post-Game Start
 
-This mod can be safely added after the game has started, but should not be removed from a game in-progress.  Losing access to the new technology "" could 
+This mod can be safely added after the game has started, but should not be removed from a game in-progress.  Losing access to the new technology "Lithorian Idyll" could cause problems for the game if any countries have researched it.
 
 ## Known Issues
 
