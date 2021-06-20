@@ -50,7 +50,12 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
 * 1.3.0 Add event to flag mod as installed
     * Added README information about adding/removing from a game
     * Add Steam description as text
+* 1.3.1 Remove extra images files to keep distribution lightweight
 
 ## Source Code
 
 [Hosted on Github](https://github.com/corsairmarks/agrarian_idyll_lithoid)
+
+### Development Notes
+
+It is best to clone this repository in a directory _other_ than `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a symbolic link between a folder of your choosing in that directory and the `mod` folder in this repository.  Also note that the README.md file exists in the root directory but is symbolically linked in the `mod` directory.
