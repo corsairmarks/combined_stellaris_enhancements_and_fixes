@@ -1,4 +1,4 @@
-name="Corsair's Combo Pack of Enhancements and Fixes"
+name="Subtle Polish: A Collection of Fixes and Enhancements"
 tags={
 	"Balance"
 	"Fixes"
