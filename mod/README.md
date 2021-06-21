@@ -53,3 +53,4 @@ This mod is not compatible with achievements because it overwrites data from cor
 * 1.1.0 Add machine/hive empire support
 * 1.2.0 Ringworld support (e.g. Sanctuary), add images and explanations
 * 1.2.1 Flagged as compatible with Stellaris 3.0.* (no script changes)
+* 1.2.2 Remove extra images files to keep distribution lightweight (no script changes)
