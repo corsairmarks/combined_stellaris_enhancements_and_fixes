@@ -22,7 +22,9 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831]Manifesti 'Personal Autonomy for Munitions' Demand Fix[/url] ([url=https://github.com/corsairmarks/manifesti_fix]Source[/url] 12ecdce87fde0ebf7c04302e1d0dd4fe4a76a004)
 [/list]
 
-Repository for this mod: https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes
+[h2]Source Code[/h2]
+
+[Hosted on Github](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes)
 
 [h1]Compatibility[/h1]
 

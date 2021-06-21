@@ -20,7 +20,13 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Space Fauna Multiple Resolutions Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2470984445) ([Source](https://github.com/corsairmarks/space_fauna_resolutions_fix) 3f22ec7b060a146fb30a8451f135fe5b742d7e8c)
 * [Manifesti 'Personal Autonomy for Munitions' Demand Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831) ([Source](https://github.com/corsairmarks/manifesti_fix) 12ecdce87fde0ebf7c04302e1d0dd4fe4a76a004)
 
-Repository for this mod: https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes
+## Source Code
+
+[Hosted on Github](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes)
+
+### Development Notes
+
+It is best to clone this repository into into `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder via a `*.mod` file's `path` property.  That will ensure the game can see the files, and also that CWTools will parse them.  Also note that the README.md file exists in the `mod` directory but is symbolically linked in the root directory.
 
 # Compatibility
 
