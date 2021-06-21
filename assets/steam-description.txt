@@ -9,8 +9,8 @@ Individual mods update first, then changes are merged here.
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] a1f17e19b635c6ef3f928cac6b4b893c20a95ecd)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978]Ringworld Origin Rebalance for 3.0.*] ([url=https://github.com/corsairmarks/ringworld_origin_rebalance]Source[/url] 222cac5bf8773b5398f820b86440d38dc4f306df)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] a1f17e19b635c6ef3f928cac6b4b893c20a95ecd)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978]Ringworld Origin Rebalance for 3.0.*[/url] ([url=https://github.com/corsairmarks/ringworld_origin_rebalance]Source[/url] 222cac5bf8773b5398f820b86440d38dc4f306df)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Enable All Eligible Species Traits for Leaders[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] 25b4d8d2ecc9c52bb3de453746cc18b49be294d6)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630]Prosperity Tradition Rebalance for 3.0.3[/url] ([url=https://github.com/corsairmarks/prosperity_tradition_rebalance]Source[/url] fc94927d067d203e9a4376ddada18ffc5e73a07b)
