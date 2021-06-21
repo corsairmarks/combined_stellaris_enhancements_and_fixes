@@ -28,6 +28,17 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 It is best to clone this repository into into `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder via a `*.mod` file's `path` property.  That will ensure the game can see the files, and also that CWTools will parse them.  Also note that the README.md file exists in the `mod` directory but is symbolically linked in the root directory.
 
+## Methodology
+
+Each of the source repositories above is added as a remote to this repository on my local machine.  I fetch all the repositories, then merge them into the `master` branch of this repository.
+
+1. `git remote add <friendly-remote-name> <repo-url>`
+2. `git fetch --all -n` to get all the commits, but not the tags
+3. `git checkout master` (stash if you need to beforehand)
+4. `git merge --no-commit --allow-unrelated-histories -m "merge version 1.2.3 from another repo" <friendly-remote-name>/<branch or commit hash>` (`--allow-unrelated-histories` is only required the first time an unrelated tree, i.e. new remote repo, is added - the first merge commit establishes history between the trees)
+5. Solve merge conflicts, if any
+6. `git merge --continue`
+
 # Compatibility
 
 Requires Stellaris 3.0.3 and disables achievements.
