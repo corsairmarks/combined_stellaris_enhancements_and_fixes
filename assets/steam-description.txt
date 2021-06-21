@@ -35,3 +35,10 @@ Check each of the contained mods for an explicit list of incompatibility notes. 
 [h2]Post-Game Start[/h2]
 
 This mod should not be removed from your save game.  Some added modifiers and technologies will not work without the changes in this mod.  You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as Ringworld preference for Driven Assimilators/Rogue Servitors with Shattered Ring, or the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
+
+[h2]Changelog[/h2]
+
+[list]
+[*]1.0.0 Initial version
+[*]1.0.1 Fix effect file location (breaking bug), enhance documentation and thumbnail image
+[/list]
