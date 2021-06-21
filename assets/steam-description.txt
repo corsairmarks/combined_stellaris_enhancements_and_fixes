@@ -24,7 +24,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 [h2]Source Code[/h2]
 
-[Hosted on Github](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes)
+[url=https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes]Hosted on Github[/url]
 
 [h1]Compatibility[/h1]
 
