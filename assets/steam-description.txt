@@ -1,4 +1,4 @@
-[h1]Overview[/h2]
+[h1]Overview[/h1]
 
 Have you ever noticed that some habitable planet classes, when they are moons, will display the parent planet in the sky in the planet view (with rings, if it has them)?  Do you wish that all habitable moons had this feature instead of just a few?  This mod is for you.
 
