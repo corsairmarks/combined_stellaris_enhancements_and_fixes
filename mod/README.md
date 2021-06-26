@@ -48,6 +48,7 @@ This mode overrides a built-in trigger `can_be_military_leader` and a species ri
 * 1.0.0 Initial version
 * 1.1.0 Add event to flag mod as installed
 * 1.1.1 Remove extra images files to keep distribution lightweight (no script changes)
+* 1.2.0 remove monthly pulse for mod flag
 
 ## Source Code
 
