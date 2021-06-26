@@ -1,0 +1,48 @@
+[h1]Overview[/h2]
+
+Have you ever noticed that some habitable planet classes, when they are moons, will display the parent planet in the sky in the planet view (with rings, if it has them)?  Do you wish that all habitable moons had this feature instead of just a few?  This mod is for you.
+
+The artwork is already present in [i]common/gfx/portraits/environments[/i], it just isn't enabled for all planet classes which have art.  These planet classes already use the fancy sky art:
+
+[list]
+[*]Arid ([i]pc_arid[/i])
+[*]Savannah ([i]pc_savannah[/i])
+[*]Arctic ([i]pc_arctic[/i])
+[*]Alpine ([i]pc_alpine[/i])
+[*]Ecumenopolis ([i]pc_city[/i])
+[/list]
+
+Note that Tomb Worlds ([i]pc_nuked[/i]) do not have fancy sky art available.
+
+[h2]Notes[/h2]
+
+There are probably lots of other mods that make this same change, but I made this one with the express purpose of merging it in to [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089]Subtle Polish[/url].
+
+[h1]Changes[/h1]
+
+No gameplay changes.
+
+[h2]Compatibility[/h2]
+
+This mod replaces several default planet classes, where the only change is to set [i]uses_alternative_skies_for_moons = yes[/i].
+
+[list]
+[*]Desert ([i]pc_desert[/i])
+[*]Tropical ([i]pc_tropical[/i])
+[*]Continental ([i]pc_continental[/i])
+[*]Ocean ([i]pc_ocean[/i])
+[*]Tundra ([i]pc_tundra[/i])
+[*]Gaia ([i]pc_gaia[/i])
+[/list]
+
+What this means to you is that this mod is incompatible with other mods that make chanegs to the above six (6) planet classes.
+
+[h2]Changelog[/h2]
+
+[list]
+[*]1.0.0 Initial version
+[/list]
+
+[h2]Source Code[/h2]
+
+[Hosted on GitHub](https://github.com/corsairmarks/yet_another_planetary_sky_fix)
