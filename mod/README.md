@@ -31,7 +31,7 @@ This mod replaces several default planet classes, where the only change is to se
 * Tundra (`pc_tundra`)
 * Gaia (`pc_gaia`)
 
-What this means to you is that this mod is incompatible with other mods that make chanegs to the above six (6) planet classes.
+What this means to you is that this mod is incompatible with other mods that make changes to the above six (6) planet classes.
 
 ## Changelog
 
