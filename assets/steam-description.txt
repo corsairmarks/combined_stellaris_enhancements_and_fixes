@@ -42,3 +42,5 @@ This mod should not be removed from your save game.  Some added modifiers and te
 [*]1.0.0 Initial version
 [*]1.0.1 Fix effect file location (breaking bug), enhance documentation and thumbnail image
 [/list]
+
+[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
