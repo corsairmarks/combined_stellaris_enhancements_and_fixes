@@ -36,6 +36,7 @@ What this means to you is that this mod is incompatible with other mods that mak
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.0.1 Better thumbnail
 
 ## Source Code
 

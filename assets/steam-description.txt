@@ -41,6 +41,7 @@ What this means to you is that this mod is incompatible with other mods that mak
 
 [list]
 [*]1.0.0 Initial version
+[*]1.0.1 Better thumbnail
 [/list]
 
 [h2]Source Code[/h2]
