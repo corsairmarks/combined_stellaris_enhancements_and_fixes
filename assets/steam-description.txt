@@ -47,3 +47,5 @@ What this means to you is that this mod is incompatible with other mods that mak
 [h2]Source Code[/h2]
 
 [url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Hosted on GitHub[/url]
+
+[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
