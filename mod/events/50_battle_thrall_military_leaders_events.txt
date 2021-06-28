@@ -22,7 +22,11 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		exists = FROM
 		FROM = {
+			# enhanced compatibility for "Gender Nonbinary Leaders" - don't reroll species for a leader that has already rerolled
+			# their gender identity because they already had a chance to change species before changing gender identity
+			NOT = { has_leader_flag = gender_reselected }
 			OR = {
 				leader_class = admiral
 				leader_class = general
