@@ -49,10 +49,11 @@ This mode overrides a built-in trigger `can_be_military_leader` and a species ri
 * 1.1.0 Add event to flag mod as installed
 * 1.1.1 Remove extra images files to keep distribution lightweight (no script changes)
 * 1.2.0 remove monthly pulse for mod flag
+* 1.3.0 Enhance compatibility with [Gender Nonbinary Leaders](https://steamcommunity.com/sharedfiles/filedetails/?id=2528614880)
 
 ## Source Code
 
-[Hosted on GitHub](https://github.com/corsairmarks/battle_thrall_military_leaders)
+Hosted on [GitHub](https://github.com/corsairmarks/battle_thrall_military_leaders)
 
 ### Development Notes
 
