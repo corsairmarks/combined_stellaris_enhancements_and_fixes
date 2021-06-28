@@ -33,7 +33,11 @@ This mod replaces several default planet classes, where the only change is to se
 
 What this means to you is that this mod is incompatible with other mods that make changes to the above six (6) planet classes.
 
-Not compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+Compatible with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) because it does not overwrite the built-in planetary classes.
+
+**Not** compatible with [Real Space](https://steamcommunity.com/sharedfiles/filedetails/?id=937289339), but it already activates the same art so you don't need this mod.
+
+**Not** compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
 
 ## Changelog
 
