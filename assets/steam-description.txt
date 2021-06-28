@@ -37,6 +37,8 @@ This mod replaces several default planet classes, where the only change is to se
 
 What this means to you is that this mod is incompatible with other mods that make changes to the above six (6) planet classes.
 
+Not compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+
 [h2]Changelog[/h2]
 
 [list]
@@ -46,6 +48,6 @@ What this means to you is that this mod is incompatible with other mods that mak
 
 [h2]Source Code[/h2]
 
-[url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Hosted on GitHub[/url]
+Hosted on [url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]GitHub[/url]
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
