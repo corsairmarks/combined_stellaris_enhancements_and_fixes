@@ -9,7 +9,7 @@ Individual mods update first, then changes are merged here.
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
 [list]
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] ffb1af5485192877cb95da1521946c126570d05e)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] 98dc4181af2acdf42669d3b9ae60f09feee6e411)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] a1f17e19b635c6ef3f928cac6b4b893c20a95ecd)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978]Ringworld Origin Rebalance for 3.0.*[/url] ([url=https://github.com/corsairmarks/ringworld_origin_rebalance]Source[/url] 222cac5bf8773b5398f820b86440d38dc4f306df)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Enable All Eligible Species Traits for Leaders[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
@@ -25,7 +25,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 [h2]Source Code[/h2]
 
-[url=https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes]Hosted on Github[/url]
+Hosted on [url=https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes]Github[/url]
 
 [h1]Compatibility[/h1]
 

@@ -8,7 +8,7 @@ Individual mods update first, then changes are merged here.
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
-* [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) ffb1af5485192877cb95da1521946c126570d05e)
+* [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 98dc4181af2acdf42669d3b9ae60f09feee6e411)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) a1f17e19b635c6ef3f928cac6b4b893c20a95ecd)
 * [Ringworld Origin Rebalance for 3.0.*](https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978) ([Source](https://github.com/corsairmarks/ringworld_origin_rebalance) 222cac5bf8773b5398f820b86440d38dc4f306df)
 * [Enable All Eligible Species Traits for Leaders](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
@@ -23,7 +23,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 ## Source Code
 
-[Hosted on Github](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes)
+Hosted on [Github](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes)
 
 ### Development Notes
 
@@ -59,5 +59,5 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 1.0.0 Initial version
 * 1.0.1 Fix effect file location (breaking bug), enhance documentation and thumbnail image
 * 1.1.0 Upstream updates
-    * Integrate "Yet Another Planetary Sky Fix"
+    * Integrate "Yet Another Planetary Sky Fix" at version 1.0.2
     * Update from "Full Military Service for Battle Thralls"
