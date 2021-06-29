@@ -15,7 +15,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Enable All Eligible Species Traits for Leaders[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] 25b4d8d2ecc9c52bb3de453746cc18b49be294d6)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630]Prosperity Tradition Rebalance for 3.0.3[/url] ([url=https://github.com/corsairmarks/prosperity_tradition_rebalance]Source[/url] fc94927d067d203e9a4376ddada18ffc5e73a07b)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Full Military Service for Battle Thralls[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] cb304752bc44810d22d1535f7af56561efb4c053)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Full Military Service for Battle Thralls[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 374445e73abef8508f61f82836bb904ce630c2d4)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] ([url=https://github.com/corsairmarks/planetary_modifier_enhancements]Source[/url] 8ed533f7eaea813f580c6f380f092ded087f9e7d)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] ([url=https://github.com/corsairmarks/primitive_conquest_enhancements]Source[/url] 6aaf42369c1e13720a3fadca89e3058b0aee9580)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority Fix for Slaves[/url] ([url=https://github.com/corsairmarks/technician_slave_fix]Source[/url]) - this mod is not actually merged via `git`, but the same 1-character change is present in this one
@@ -39,10 +39,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 
 [h2]Changelog[/h2]
 
-[list]
-[*]1.0.0 Initial version
-[*]1.0.1 Fix effect file location (breaking bug), enhance documentation and thumbnail image
-[*]1.1.0 Integrate "Yet Another Planetary Sky Fix"
-[/list]
+See the [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2522974089]Change Notes[/url].
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
