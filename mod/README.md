@@ -18,11 +18,7 @@ There are probably lots of other mods that make this same change, but I made thi
 
 # Changes
 
-No gameplay changes.
-
-## Compatibility
-
-This mod replaces several default planet classes, where the only change is to set `uses_alternative_skies_for_moons = yes`.
+No gameplay changes.  This mod updates several of the default planet classes, where the only change is to set `uses_alternative_skies_for_moons = yes`.
 
 * Desert (`pc_desert`)
 * Tropical (`pc_tropical`)
@@ -31,7 +27,9 @@ This mod replaces several default planet classes, where the only change is to se
 * Tundra (`pc_tundra`)
 * Gaia (`pc_gaia`)
 
-What this means to you is that this mod is incompatible with other mods that make changes to the above six (6) planet classes.
+## Compatibility
+
+In order to change the default planet classes without impacting habitability (i.e. breaking it), it is necessary to override the entire `common/planet_classes/00_planet_classes.txt` file.  What this means to you is that this mod is incompatible with other mods that need to override the default habitable planet classes.
 
 Fully compatible with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) because that mod does not overwrite the built-in planetary classes.
 
@@ -52,6 +50,7 @@ The standard planet view has a very small graphic representing your planet's env
 * 1.0.0 Initial version
 * 1.0.1 Better thumbnail
 * 1.0.2 Fix filename misspelling
+* 1.1.0 Switch to entire-file override for 00_planet_classes.txt
 
 ## Source Code
 

@@ -20,11 +20,7 @@ There are probably lots of other mods that make this same change, but I made thi
 
 [h1]Changes[/h1]
 
-No gameplay changes.
-
-[h2]Compatibility[/h2]
-
-This mod replaces several default planet classes, where the only change is to set [b]uses_alternative_skies_for_moons = yes[/b].
+No gameplay changes.  This mod updates several of the default planet classes, where the only change is to set [b]uses_alternative_skies_for_moons = yes[/b].
 
 [list]
 [*]Desert ([i]pc_desert[/i])
@@ -35,7 +31,9 @@ This mod replaces several default planet classes, where the only change is to se
 [*]Gaia ([i]pc_gaia[/i])
 [/list]
 
-What this means to you is that this mod is incompatible with other mods that make changes to the above six (6) planet classes.
+[h2]Compatibility[/h2]
+
+In order to change the default planet classes without impacting habitability (i.e. breaking it), it is necessary to override the entire [i]common/planet_classes/00_planet_classes.txt[/i] file.  What this means to you is that this mod is incompatible with other mods that need to override the default habitable planet classes.
 
 Fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] because that mod does not overwrite the built-in planetary classes.
 
