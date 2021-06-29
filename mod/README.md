@@ -51,6 +51,7 @@ The standard planet view has a very small graphic representing your planet's env
 
 * 1.0.0 Initial version
 * 1.0.1 Better thumbnail
+* 1.0.2 Fix filename misspelling
 
 ## Source Code
 
