@@ -33,11 +33,19 @@ This mod replaces several default planet classes, where the only change is to se
 
 What this means to you is that this mod is incompatible with other mods that make changes to the above six (6) planet classes.
 
-Compatible with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) because it does not overwrite the built-in planetary classes.
+Fully compatible with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) because that mod does not overwrite the built-in planetary classes.
 
-**Not** compatible with [Real Space](https://steamcommunity.com/sharedfiles/filedetails/?id=937289339), but it already activates the same art so you don't need this mod.
+**Not** compatible with [Real Space](https://steamcommunity.com/sharedfiles/filedetails/?id=937289339), but that mod already activates the same art so you don't need this one.
 
 **Not** compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+
+### When to Install
+
+This mod can be safely added or removed from your savegame at any time.
+
+### Recommended Companion Mods
+
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is paricularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 ## Changelog
 

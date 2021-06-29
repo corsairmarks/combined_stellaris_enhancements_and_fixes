@@ -24,7 +24,7 @@ No gameplay changes.
 
 [h2]Compatibility[/h2]
 
-This mod replaces several default planet classes, where the only change is to set [i]uses_alternative_skies_for_moons = yes[/i].
+This mod replaces several default planet classes, where the only change is to set [b]uses_alternative_skies_for_moons = yes[/b].
 
 [list]
 [*]Desert ([i]pc_desert[/i])
@@ -37,11 +37,19 @@ This mod replaces several default planet classes, where the only change is to se
 
 What this means to you is that this mod is incompatible with other mods that make changes to the above six (6) planet classes.
 
-Compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] because it does not overwrite the built-in planetary classes.
+Fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] because that mod does not overwrite the built-in planetary classes.
 
-[b]Not[/b] compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=937289339]Real Space[/url], but it already activates the same art so you don't need this mod.
+[b]Not[/b] compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=937289339]Real Space[/url], but that mod already activates the same art so you don't need this one.
 
 [b]Not[/b] compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+
+[h3]When to Install[/h3]
+
+This mod can be safely added or removed from your savegame at any time.
+
+[h3]Recommended Companion Mods[/h3]
+
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is paricularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I [i][b]highly[/b][/i] recommend you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239]Planetary Diversity - Planet View[/url] to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
 
 [h2]Changelog[/h2]
 
