@@ -31,11 +31,19 @@ No gameplay changes.  This mod updates several of the default planet classes, wh
 
 In order to change the default planet classes without impacting habitability (i.e. breaking it), it is necessary to override the entire `common/planet_classes/00_planet_classes.txt` file.  What this means to you is that this mod is incompatible with other mods that need to override the default habitable planet classes.
 
-Fully compatible with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) because that mod does not overwrite the built-in planetary classes.
+Fully compatible with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) and [Ancient Cache of Technologies](https://steamcommunity.com/sharedfiles/filedetails/?id=1419304439) because those mods do not overwrite the built-in planetary classes.
 
 **Not** compatible with [Real Space](https://steamcommunity.com/sharedfiles/filedetails/?id=937289339), but that mod already activates the same art so you don't need this one.
 
 **Not** compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+
+### Verifying Mod Compatibility
+
+You can verify mod compatibility yourself very easily.  Steam downloads mods into a directory in your Steam library (if you have more than one, mods go into the one with their corresponding game).  Inside the library (the default is at `C:/Program Files (x86)/Steam/steamapps`), browse to `steamapps/workshop/content/281990` (281990 is the Steam ID of Stellaris).
+
+Inside this folder, you will see many directories named with just numbers.  Those numbers are Steam Mod IDs - you can find a mod's ID easily from its Workshop web address.  For example, this mod's Workshop page is at https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521 so its ID is 2527918521.  What you need to do is find the ID of the mod(s) you want to check for compatibility - then open their directories.
+
+Inside each mod you want to check, browse to the `common/planet_classes` directory.  If you see a file named `00_planet_classes.txt` then that mod is _not_ compatible with this one.  Otherwise there should not be a conflict - that's the only code file contained in this mod.
 
 ### When to Install
 
