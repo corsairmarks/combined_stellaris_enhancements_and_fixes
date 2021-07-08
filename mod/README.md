@@ -50,6 +50,7 @@ This mode overrides a built-in trigger `can_be_military_leader` and a species ri
 * 1.1.1 Remove extra images files to keep distribution lightweight (no script changes)
 * 1.2.0 remove monthly pulse for mod flag
 * 1.3.0 Enhance compatibility with [Gender Nonbinary Leaders](https://steamcommunity.com/sharedfiles/filedetails/?id=2528614880)
+* 1.4.0 Enhance compatibility with my other mods that work with changing leader species - no gameplay changes in this mod
 
 ## Source Code
 
