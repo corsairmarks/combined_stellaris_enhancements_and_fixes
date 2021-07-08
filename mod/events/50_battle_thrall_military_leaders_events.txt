@@ -60,6 +60,9 @@ country_event = {
 				change_species = event_target:leader_new_species
 				set_name = random
 				log = "...to [leader_new_species.GetName]"
+				fire_on_action = {
+					on_action = on_leader_species_changed
+				}
 			}
 			else = {
 				log = "...but did not make changes because the rerolled species was the same as the leader's current species ([This.Species.GetName])"
@@ -115,6 +118,9 @@ country_event = {
 				limit = { species = { NOT = { is_same_species = event_target:leader_new_species } } }
 				log = "...and rerolled the leader's species from [This.Species.GetName]..."
 				change_species = event_target:leader_new_species
+				fire_on_action = {
+					on_action = on_leader_species_changed
+				}
 				# name randomization unnecessary - handled automatically by create_leader
 				log = "...to [leader_new_species.GetName]"
 			}
