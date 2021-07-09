@@ -17,12 +17,13 @@ To address these issues, this mod implements free districts upon conquering a pr
 
 # Technical Changes
 
-This mod replaces three events from the base game: `action.14`, `action.140`, and `necroids.6`.  Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate three error lines that look similar to this:
+This mod replaces four events from the base game: `action.14`, `action.140`, `necroids.6`, and `observation.3009`.  Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate four error lines that look similar to this:
 
 ```
-# [01:07:25][eventmanager.cpp:355]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 518
-# [01:07:25][eventmanager.cpp:355]: an event with id [action.14] already exists!  file: events/on_action_events.txt line: 5824
-# [01:07:25][eventmanager.cpp:355]: an event with id [action.140] already exists!  file: events/on_action_events.txt line: 5886
+[17:47:01][eventmanager.cpp:355]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 518
+[17:47:01][eventmanager.cpp:355]: an event with id [observation.3009] already exists!  file: events/observation_events.txt line: 4480
+[17:47:01][eventmanager.cpp:355]: an event with id [action.14] already exists!  file: events/on_action_events.txt line: 5824
+[17:47:01][eventmanager.cpp:355]: an event with id [action.140] already exists!  file: events/on_action_events.txt line: 5886
 ```
 
 ## Compatibility
@@ -33,9 +34,9 @@ This mod should be widely compatible with other mods.  Incompatibilities would o
 
 This mod is not compatible with achievements because it overwrites data from core Stellaris files.
 
-### Post-Game Start
+### When to Install
 
-This mod can be safely added or removed from your save game after the game has started.  It is implemented entirely through custom events (and custom triggers). If you remove it, your game will work normally.
+This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events, on actions, and triggers.  If you remove it, your game will work normally.
 
 ## Changelog
 
@@ -44,10 +45,13 @@ This mod can be safely added or removed from your save game after the game has s
 * 1.2.0 Ringworld support (e.g. Sanctuary), add images and explanations
 * 1.2.1 Flagged as compatible with Stellaris 3.0.* (no script changes)
 * 1.2.2 Remove extra images files to keep distribution lightweight (no script changes)
+* 1.3.0 Add handling for primitive infiltration
+    * Free buildings and districts processing is more intelligent
+    * Changed "generate districts/buildings" to a pair of custom on_actions
 
 ## Source Code
 
-[Hosted on Github](https://github.com/corsairmarks/primitive_conquest_enhancements)
+Hosted on [Github](https://github.com/corsairmarks/primitive_conquest_enhancements)
 
 ### Development Notes
 
