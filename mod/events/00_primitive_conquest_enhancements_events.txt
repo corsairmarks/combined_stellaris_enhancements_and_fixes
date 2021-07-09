@@ -1,0 +1,94 @@
+namespace = primitive_conquest_enhancements
+
+# NB NOTE: after more investigation, this event adds districts and buildings a bit more intelligently,
+# following the example in observation.3009. It also accounts for conquering lithoid primitives, which
+# logically wouldn't have needed farming.
+# fired by on_primitive_planet_transferred
+# ROOT = planet (after ownership change)
+# FROM = country, primitives
+planet_event = {
+	id = primitive_conquest_enhancements.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "primitive conquest add districts: constructing on [Root.GetName] for the [Root.Owner.GetName]"
+		FROM.owner_species = { save_event_target_as = conquered_primitive_species }
+		if = {
+			limit = { is_planet_class = pc_ringworld_habitable }
+			if = {
+				limit = { owner = { has_valid_civic = civic_machine_servitor } }
+				add_building_if_free = { BUILDING = building_organic_sanctuary }
+				if = {
+					limit = { num_pops > 10 }
+					add_building_if_free = { BUILDING = building_organic_sanctuary }
+					if = {
+						limit = { num_pops > 20 }
+						add_building_if_free = { BUILDING = building_organic_sanctuary }
+						if = {
+							limit = { num_pops > 30 }
+							add_building_if_free = { BUILDING = building_organic_sanctuary }
+						}
+					}
+				}
+			}
+			else = {
+				add_primitive_conquest_rw_urban_district = yes
+				if = {
+					limit = { num_pops > 25 }
+					if = {
+						limit = { event_target:conquered_primitive_species = { is_species_class = LITHOID } }
+						add_primitive_conquest_rw_urban_district = yes
+					}
+					else = {
+						add_district_if_free = { DISTRICT = district_rw_farming }
+					}
+				}
+			}
+		}
+		else = {
+			set_variable = {
+				which = count_machine_servitor_urban
+				value = 0
+			}
+			add_primitive_conquest_urban_district = yes
+			add_primitive_conquest_food_district = yes
+			if = {
+				limit = { num_pops > 5 }
+				add_primitive_conquest_food_district = yes
+				add_district_if_free = { DISTRICT = district_mining }
+				if = {
+					limit = { num_pops > 9 }
+					add_primitive_conquest_food_district = yes
+					if = {
+						limit = { num_pops > 11 }
+						add_district_if_free = { DISTRICT = district_mining }
+						if = {
+							limit = { num_pops > 15 }
+							add_primitive_conquest_urban_district = yes
+							add_district_if_free = { DISTRICT = district_industrial }
+							if = {
+								limit = { num_pops > 20 }
+								add_district_if_free = { DISTRICT = district_generator }
+								add_district_if_free = { DISTRICT = district_generator }
+								add_district_if_free = { DISTRICT = district_industrial }
+								if = {
+									limit = { num_pops > 22 }
+									add_building_if_free = { BUILDING = building_research_lab_1 }
+									if = {
+										limit = { num_pops > 24 }
+										add_primitive_conquest_urban_district = yes
+										if = {
+											limit = { num_pops > 26 }
+											add_primitive_conquest_unity_building_building_if_free = yes
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			clear_variable = count_machine_servitor_urban
+		}
+	}
+}

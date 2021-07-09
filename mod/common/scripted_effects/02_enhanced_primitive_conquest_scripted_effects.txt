@@ -83,3 +83,83 @@ add_primitive_conquest_food_district = {
 		add_district_if_free = { DISTRICT = district_mining }
 	}
 }
+
+# scope should be planet
+add_primitive_conquest_admin_building_if_free = {
+	if = {
+		limit = { owner = { is_machine_empire = yes } }
+		add_building_if_free = { BUILDING = building_uplink_node }
+	}
+	else_if = {
+		limit = { owner = { is_hive_empire = yes } }
+		add_building_if_free = { BUILDING = building_hive_node }
+	}
+	else = {
+		add_building_if_free = { BUILDING = building_bureaucratic_1 }
+	}
+}
+
+# scope should be planet
+add_primitive_conquest_security_building_if_free = {
+	if = {
+		limit = { owner = { is_gestalt = no } }
+		add_building_if_free = { BUILDING = building_precinct_house }
+	}
+	else = {
+		add_building_if_free = { BUILDING = building_sentinel_posts }
+	}
+}
+
+# scope should be planet
+add_primitive_conquest_unity_building_building_if_free = {
+	if = {
+		limit = { owner = { is_machine_empire = yes } }
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_memorialist } }
+			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
+		}
+		else = {
+			add_building_if_free = { BUILDING = building_simulation_1 }
+		}
+	}
+	else_if = {
+		limit = { owner = { is_hive_empire = yes } }
+		if = {
+			limit = { owner = { has_valid_civic = civic_hive_memorialist } }
+			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
+		}
+		else = {
+			add_building_if_free = { BUILDING = building_hive_node }
+		}
+	}
+	else = {
+		if = {
+			limit = { owner = { is_spiritualist = yes } }
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							has_valid_civic = civic_death_cult
+							has_valid_civic = civic_death_cult_corporate
+						}
+					}
+				}
+				add_building_if_free = { BUILDING = building_sacrificial_temple_1 }
+			}
+			else = {
+				add_building_if_free = { BUILDING = building_temple }
+			}
+		}
+		else_if = {
+			limit = { owner = { has_valid_civic = civic_memorialist } }
+			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
+		}
+		else_if = {
+			limit = { owner = { is_megacorp = yes } }
+			add_building_if_free = { BUILDING = building_corporate_monument }
+		}
+		else = {
+			add_building_if_free = { BUILDING = building_autochthon_monument }
+		}
+	}
+}
