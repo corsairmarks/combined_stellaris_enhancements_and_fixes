@@ -3,9 +3,9 @@ namespace = primitive_conquest_enhancements
 # NB NOTE: after more investigation, this event adds districts and buildings a bit more intelligently,
 # following the example in observation.3009. It also accounts for conquering lithoid primitives, which
 # logically wouldn't have needed farming.
-# fired by on_primitive_planet_transferred
+# fired by on_primitive_planet_transferring
 # ROOT = planet (after ownership change)
-# FROM = country, primitives
+# FROM = country, primitive former owner
 planet_event = {
 	id = primitive_conquest_enhancements.1
 	hide_window = yes

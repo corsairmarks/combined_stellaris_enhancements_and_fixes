@@ -1,8 +1,16 @@
-# fired after a primitive planet has changed ownership
-# THIS = planet (after ownership change)
-# FROM = country, primitives
-on_primitive_planet_transferred = {
+# fired after a primitive planet has changed ownership, but before the GUI window is displayed
+# THIS = planet (before ownership change)
+# FROM = country, primitive former owner
+on_primitive_planet_transferring = {
 	events = {
 		primitive_conquest_enhancements.1
+	}
+}
+
+# fired after a primitive planet has changed ownership
+# THIS = planet (after ownership change)
+# FROM = country, primitive former owner
+on_primitive_planet_transferred = {
+	events = {
 	}
 }

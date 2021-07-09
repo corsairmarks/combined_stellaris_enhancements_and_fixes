@@ -45,21 +45,7 @@ country_event = {
 			save_event_target_as = actually_conquered_primitive_country
 			owner_species = { save_event_target_as = conquered_primitive_species }
 		}
-		if = {
-			limit = { is_ai = no }
-			country_event = { id = action.140 }
-		}
-		else = {
-			# NB NOTE: the AI deserves free districts too - it just doesn't need the fancy window alert
-			FROMFROM = {
-				fire_on_action = {
-					on_action = on_primitive_planet_transferred
-					scopes = {
-						from = event_target:actually_conquered_primitive_country
-					}
-				}
-			}
-		}
+		country_event = { id = action.140 }
 		reset_years_of_peace = yes
 	}
 }
@@ -159,6 +145,16 @@ country_event = {
 	show_sound = event_alien_signal
 	location = event_target:conquered_primitive_country
 	is_triggered_only = yes
+	immediate = {
+		event_target:conquered_primitive_country = {
+			fire_on_action = {
+				on_action = on_primitive_planet_transferring
+				scopes = {
+					from = event_target:actually_conquered_primitive_country
+				}
+			}
+		}
+	}
 	option = {
 		name = action.14.a.phobe
 		custom_tooltip = action.14.a.tooltip
@@ -369,6 +365,12 @@ country_event = {
 			planet_event = { id = action.84 } # Imperialists are pleased
 			# Add conquest districts
 			fire_on_action = {
+				on_action = on_primitive_planet_transferring
+				scopes = {
+					from = event_target:conquered_primitive_country
+				}
+			}
+			fire_on_action = {
 				on_action = on_primitive_planet_transferred
 				scopes = {
 					from = event_target:conquered_primitive_country
@@ -405,6 +407,14 @@ country_event = {
 			observation_outpost = { dismantle = yes }
 			set_owner = ROOT
 			remove_all_armies = yes
+			FROM = {
+				fire_on_action = {
+					on_action = on_primitive_planet_transferring
+					scopes = {
+						from = event_target:primitive_civ
+					}
+				}
+			}
 		}
 	}
 	option = {
