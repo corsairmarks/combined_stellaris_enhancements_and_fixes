@@ -15,9 +15,21 @@ This mod started as a response to four very specific, small areas:
 
 To address these issues, this mod implements free districts upon conquering a primitive planet for both players and AIs.  It also generates the appropriate housing/urban districts based on the conquering empire (including some organic sanctuaries for Rogue Servitors).  Mining districts are generated instead of farming districts if the conquered primitive species is lithoid.  Finally, it triggers the aforementioned free district creation in the Necrophage AI helper event.  In combination, these small changes should help AI players be a bit more successful when conquering primitive planets.
 
-# Technical Changes
+## Primitive Infiltration Now Included
 
-This mod replaces four events from the base game: `action.14`, `action.140`, `necroids.6`, and `observation.3009`.  Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate four error lines that look similar to this:
+The "Infiltration" observation station mission was yet another place where the game did something different when transferring primitive planet control.  A fixed amount of districts and buildings (including a branch office building, which was probably intended to be Commercial Zones instead) were generated.  It didn't account for lithoids and ringworlds received nothing at all.
+
+This mod continues its trend of unification by hooking up the infiltration finisher event to the same district-generation code as primitive conquest.  Additionally, I adjusted the share district/building generation to be smarter and add more useful things like industrial districts for primitives advanced enough to have industry!
+
+# Changes
+
+This mod replaces four events from the base game: `action.14`, `action.140`, `necroids.6`, and `observation.3009`.  The action events are responsible for the standard military conquest of primitives, the necroids event is responsible for necrophage auto-conquest, and the observation event is responsible for primitive infiltration.  These events are now altered to invoke the same code for generating buildings and districts (based on the population of the conquered planet - it's a proxy for tech level).
+
+Most of the new custom logic is implemented outside of these events.  New in version 1.3.0 are two custom on_actions: `on_primitive_planet_transferring` that fires before planet ownership changes and `on_primitive_planet_transferred` that fires after planet ownership changes.  District/building generation is triggered by `on_primitive_planet_transferred`.  The most useful part of all of this is that you can make other mods tie in to these on_actions to create new effects when primitives are conquered/infiltrated.
+
+## Known Issues
+
+Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate four error lines that look similar to this:
 
 ```
 [17:47:01][eventmanager.cpp:355]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 518
@@ -36,7 +48,7 @@ This mod is not compatible with achievements because it overwrites data from cor
 
 ### When to Install
 
-This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events, on actions, and triggers.  If you remove it, your game will work normally.
+This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events, on actions, and effects.  If you remove it, your game will work normally.
 
 ## Changelog
 
