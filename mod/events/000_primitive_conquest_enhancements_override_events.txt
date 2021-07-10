@@ -16,18 +16,32 @@ country_event = {
 	}
 	immediate = {
 		log = "primitive conquest: [FromFrom.GetName] conquered by the [Root.GetName]"
-		if = {
-			limit = { is_regular_empire = yes }
-			FROMFROM = {
+		FROM = {
+			save_event_target_as = actually_conquered_primitive_country
+			owner_species = { save_event_target_as = conquered_primitive_species }
+		}
+		FROMFROM = {
+			save_event_target_as = conquered_primitive_country
+			fire_on_action = {
+				on_action = on_primitive_planet_transferring
+				scopes = {
+					from = ROOT
+				}
+			}
+			if = {
+				limit = { ROOT = { is_regular_empire = yes } }
 				add_modifier = {
 					modifier = planet_culture_shock
 					years = 10
 				}
-				set_owner = ROOT
 			}
-		}
-		else = {
-			FROMFROM = { set_owner = ROOT }
+			set_owner = ROOT
+			fire_on_action = {
+				on_action = on_primitive_planet_transferred
+				scopes = {
+					from = event_target:actually_conquered_primitive_country
+				}
+			}
 		}
 		every_country = {
 			limit = {
@@ -39,11 +53,6 @@ country_event = {
 				who = ROOT
 				modifier = opinion_primitive_violation
 			}
-		}
-		FROMFROM = { save_event_target_as = conquered_primitive_country }
-		FROM = {
-			save_event_target_as = actually_conquered_primitive_country
-			owner_species = { save_event_target_as = conquered_primitive_species }
 		}
 		country_event = { id = action.140 }
 		reset_years_of_peace = yes
@@ -145,16 +154,6 @@ country_event = {
 	show_sound = event_alien_signal
 	location = event_target:conquered_primitive_country
 	is_triggered_only = yes
-	immediate = {
-		event_target:conquered_primitive_country = {
-			fire_on_action = {
-				on_action = on_primitive_planet_transferring
-				scopes = {
-					from = event_target:actually_conquered_primitive_country
-				}
-			}
-		}
-	}
 	option = {
 		name = action.14.a.phobe
 		custom_tooltip = action.14.a.tooltip
@@ -264,18 +263,6 @@ country_event = {
 			}
 		}
 	}
-	after = {
-		hidden_effect = {
-			event_target:conquered_primitive_country = {
-				fire_on_action = {
-					on_action = on_primitive_planet_transferred
-					scopes = {
-						from = event_target:actually_conquered_primitive_country
-					}
-				}
-			}
-		}
-	}
 }
 
 # scheduled to fire 4 times, 5 years apart by game_start.33, which itself is triggered by on_game_start_country
@@ -334,6 +321,12 @@ country_event = {
 				limit = { has_observation_outpost = yes }
 				observation_outpost = { dismantle = yes }
 			}
+			fire_on_action = {
+				on_action = on_primitive_planet_transferring
+				scopes = {
+					from = owner
+				}
+			}
 			set_owner = ROOT
 			add_modifier = {
 				modifier = planet_culture_shock
@@ -356,6 +349,13 @@ country_event = {
 				}
 			}
 			# replicate some planetary conquest events
+			fire_on_action = { # Add conquest districts
+				on_action = on_primitive_planet_transferred
+				scopes = {
+					from = event_target:conquered_primitive_country
+				}
+			}
+			check_planet_employment = yes
 			planet_event = { # Crisis Menace Objective: Conquer a Colony
 				id = crisis.5010
 				scopes = {
@@ -363,20 +363,6 @@ country_event = {
 				}
 			}
 			planet_event = { id = action.84 } # Imperialists are pleased
-			# Add conquest districts
-			fire_on_action = {
-				on_action = on_primitive_planet_transferring
-				scopes = {
-					from = event_target:conquered_primitive_country
-				}
-			}
-			fire_on_action = {
-				on_action = on_primitive_planet_transferred
-				scopes = {
-					from = event_target:conquered_primitive_country
-				}
-			}
-			check_planet_employment = yes
 		}
 	}
 }
@@ -405,32 +391,24 @@ country_event = {
 			add_modifier = { modifier = infiltration_happiness days = 7300 }
 			random_owned_pop = { save_event_target_as = prim_species } # used by the localisation, don't change
 			observation_outpost = { dismantle = yes }
-			set_owner = ROOT
-			remove_all_armies = yes
-			FROM = {
-				fire_on_action = {
-					on_action = on_primitive_planet_transferring
-					scopes = {
-						from = event_target:primitive_civ
-					}
+			fire_on_action = {
+				on_action = on_primitive_planet_transferring
+				scopes = {
+					from = owner
 				}
 			}
-		}
-	}
-	option = {
-		name = "observation.3009.a"
-	}
-	after = {
-		hidden_effect = {
-			FROM = {
-				fire_on_action = {
-					on_action = on_primitive_planet_transferred
-					scopes = {
-						from = event_target:primitive_civ
-					}
+			set_owner = ROOT
+			remove_all_armies = yes
+			fire_on_action = {
+				on_action = on_primitive_planet_transferred
+				scopes = {
+					from = event_target:primitive_civ
 				}
 			}
 			event_target:primitive_civ = { destroy_country = yes }
 		}
+	}
+	option = {
+		name = "observation.3009.a"
 	}
 }
