@@ -16,6 +16,7 @@ country_event = {
 	}
 	immediate = {
 		log = "primitive conquest: [FromFrom.GetName] conquered by the [Root.GetName]"
+		save_event_target_as = conquering_country
 		FROM = {
 			save_event_target_as = actually_conquered_primitive_country
 			owner_species = { save_event_target_as = conquered_primitive_species }
@@ -25,17 +26,17 @@ country_event = {
 			fire_on_action = {
 				on_action = on_primitive_planet_transferring
 				scopes = {
-					from = ROOT
+					from = event_target:conquering_country
 				}
 			}
 			if = {
-				limit = { ROOT = { is_regular_empire = yes } }
+				limit = { event_target:conquering_country = { is_regular_empire = yes } }
 				add_modifier = {
 					modifier = planet_culture_shock
 					years = 10
 				}
 			}
-			set_owner = ROOT
+			set_owner = event_target:conquering_country
 			fire_on_action = {
 				on_action = on_primitive_planet_transferred
 				scopes = {
@@ -45,12 +46,12 @@ country_event = {
 		}
 		every_country = {
 			limit = {
-				has_communications = ROOT
+				has_communications = event_target:conquering_country
 				is_country_type = default
-				NOT = { is_same_value = ROOT }
+				NOT = { is_same_value = event_target:conquering_country }
 			}
 			add_opinion_modifier = {
-				who = ROOT
+				who = event_target:conquering_country
 				modifier = opinion_primitive_violation
 			}
 		}
@@ -276,13 +277,14 @@ country_event = {
 	}
 	immediate = {
 		log = "necroids primitive 'conquest': helping the [Root.GetName] 'conquer' all primitives within its borders"
+		save_event_target_as = necrophage_country
 		# try to have 3 necrophage pops on every planet with planet_culture_shock
 		every_owned_planet = {
 			limit = {
 				has_modifier = planet_culture_shock
 				count_owned_pop = {
 					count <= 1
-					limit = { is_same_species = ROOT }
+					limit = { is_same_species = event_target:necrophage_country }
 				}
 			}
 			while = {
@@ -290,13 +292,13 @@ country_event = {
 				limit = {
 					count_owned_pop = {
 						count < 3
-						limit = { is_same_species = ROOT }
+						limit = { is_same_species = event_target:necrophage_country }
 					}
 				}
-				ROOT = {
+				event_target:necrophage_country = {
 					capital_scope = {
 						random_owned_pop = {
-							limit = { species = { is_same_species = ROOT } }
+							limit = { species = { is_same_species = event_target:necrophage_country } }
 							resettle_pop = {
 								pop = THIS
 								planet = PREVPREVPREV
@@ -324,10 +326,10 @@ country_event = {
 			fire_on_action = {
 				on_action = on_primitive_planet_transferring
 				scopes = {
-					from = owner
+					from = event_target:necrophage_country
 				}
 			}
-			set_owner = ROOT
+			set_owner = event_target:necrophage_country
 			add_modifier = {
 				modifier = planet_culture_shock
 				years = 10
@@ -335,10 +337,10 @@ country_event = {
 			# move 3 necrophage pops to the newly "conquered" planet
 			while = {
 				count = 3
-				ROOT = {
+				event_target:necrophage_country = {
 					capital_scope = {
 						random_owned_pop = {
-							limit = { species = { is_same_species = ROOT } }
+							limit = { species = { is_same_species = event_target:necrophage_country } }
 							resettle_pop = {
 								pop = THIS
 								planet = PREVPREVPREV
@@ -359,7 +361,7 @@ country_event = {
 			planet_event = { # Crisis Menace Objective: Conquer a Colony
 				id = crisis.5010
 				scopes = {
-					from = ROOT
+					from = event_target:necrophage_country
 				}
 			}
 			planet_event = { id = action.84 } # Imperialists are pleased
@@ -377,27 +379,31 @@ country_event = {
 	location = FROM
 	is_triggered_only = yes
 	immediate = {
+		ROOT = { save_event_target_as = infiltrator_civ }
 		FROM = {
 			owner = {
+				save_event_target_as = primitive_civ
 				if = {
 					limit = {
 						is_species_class = REP
-						ROOT = { is_species_class = HUM }
+						event_target:infiltrator_civ = { is_species_class = HUM }
 					}
-					ROOT = { set_country_flag = reverse_v }
+					event_target:infiltrator_civ = { set_country_flag = reverse_v }
 				}
-				save_event_target_as = primitive_civ
 			}
 			add_modifier = { modifier = infiltration_happiness days = 7300 }
 			random_owned_pop = { save_event_target_as = prim_species } # used by the localisation, don't change
-			observation_outpost = { dismantle = yes }
+
+			# using from = ROOT ends up passing the planet,
+			# so the event_target is necessary
 			fire_on_action = {
 				on_action = on_primitive_planet_transferring
 				scopes = {
-					from = owner
+					from = event_target:infiltrator_civ
 				}
 			}
-			set_owner = ROOT
+			observation_outpost = { dismantle = yes }
+			set_owner = event_target:infiltrator_civ
 			remove_all_armies = yes
 			fire_on_action = {
 				on_action = on_primitive_planet_transferred
