@@ -11,7 +11,7 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "primitive conquest add districts: constructing on [Root.GetName] for the [Root.Owner.GetName]"
+		log = "add districts/buildings: primitive conquest of the [From.GetName] on [Root.GetName], constructing for the [Root.Owner.GetName]"
 		FROM.owner_species = { save_event_target_as = conquered_primitive_species }
 		if = {
 			limit = { is_planet_class = pc_ringworld_habitable }
