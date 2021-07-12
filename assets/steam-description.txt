@@ -56,8 +56,10 @@ This mod can be safely added or removed from your savegame after the game has st
 
 [h2]Changelog[/h2]
 
-Check the [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2488154830]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2488154830]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
 Hosted on [url=https://github.com/corsairmarks/primitive_conquest_enhancements]Github[/url]
+
+[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
