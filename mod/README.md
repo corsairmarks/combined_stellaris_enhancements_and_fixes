@@ -51,11 +51,14 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
     * Added README information about adding/removing from a game
     * Add Steam description as text
 * 1.3.1 Remove extra images files to keep distribution lightweight
+* 1.4.0 Maintenance release
+    * Remove monthly pulse event, add flag instead when single player games are loaded
+    * Use a more "rocky" icon for Lithorian Utopias (housing tech)
 
 ## Source Code
 
-[Hosted on Github](https://github.com/corsairmarks/agrarian_idyll_lithoid)
+Hosted on [Github](https://github.com/corsairmarks/agrarian_idyll_lithoid)
 
 ### Development Notes
 
-It is best to clone this repository in a directory _other_ than `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder in this repository via a `*.mod` file's `path` property.  Also note that the README.md file exists in the `mod` directory but is symbolically linked in the root directory.
+It is best to clone this repository into `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder via a `*.mod` file's `path` property.  That will ensure the game can see the files, and also that CWTools will parse them.  Also note that the README.md file exists in the `mod` directory but is symbolically linked in the root directory.
