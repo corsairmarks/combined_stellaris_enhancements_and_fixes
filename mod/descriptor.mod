@@ -1,5 +1,6 @@
 name="Primitive Conquest Enhancements"
 tags={
+	"Economy"
 	"Events"
 	"Fixes"
 	"Gameplay"
