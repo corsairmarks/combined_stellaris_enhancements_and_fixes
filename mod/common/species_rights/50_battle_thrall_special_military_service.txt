@@ -117,6 +117,19 @@ military_service_full = {
 				has_trait = trait_nerve_stapled
 			}
 		}
+		custom_tooltip = {
+			fail_text = SPECIES_MUST_NOT_BE_ASSIMILATING
+			if = {
+				limit = { has_global_flag = deassimilate_machines_installed }
+				NAND = {
+					has_trait = trait_machine_unit
+					has_living_standard = {
+						country = FROM
+						type = living_standard_deassimilation
+					}
+				}
+			}
+		}
 	}
 	triggered_pop_modifier = {
 		potential = {
