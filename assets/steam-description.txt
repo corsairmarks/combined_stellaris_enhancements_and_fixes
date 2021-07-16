@@ -20,7 +20,7 @@ This mod can be safely added to your savegame after the game has started, but no
 
 [h1]Recommended Companion Mods[/h1]
 
-If you like species traits that add leader traits, check out my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Enable All Eligible Species Traits for Leaders[/url].  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
+If you like species traits that add leader traits, check out my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url].  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
 
 [h2]Compatibility[/h2]
 
