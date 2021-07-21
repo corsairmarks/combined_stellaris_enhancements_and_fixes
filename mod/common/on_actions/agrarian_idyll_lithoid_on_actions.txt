@@ -11,3 +11,13 @@ on_single_player_save_game_load = {
 		agrarian_idyll_lithoid.13 # flag mod as installed
 	}
 }
+
+# fired during empire initialization when starting a new game
+# THIS = planet
+# FROM = founder species
+# FROMFROM = secondary species (if exists) - seems to not work
+empire_init_capital_planet = {
+	events = {
+		agrarian_idyll_lithoid.1 # alter starting districts
+	}
+}
