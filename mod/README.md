@@ -2,7 +2,7 @@
 
 Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied to farming districts.  This mod creates a swapped Agrarian Idyll just for lithoids - now your miners will generate amenities instead of farmers!  This mod also features english localisation for these effects.
 
-And yes, I totally made up "lithorian" as an alternative to "agrarian" - suggestions welcome.
+And yes, I totally made up "lithorian" as an alternative to "agrarian" - going to stick with it for now.
 
 # Changes
 
@@ -54,6 +54,7 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
 * 1.4.0 Maintenance release
     * Remove monthly pulse event, add flag instead when single player games are loaded
     * Use a more "rocky" icon for Lithorian Utopias (housing tech)
+    * Ensure any farming districts created during capitol planet setup are converted to mining districts
 
 ## Source Code
 
