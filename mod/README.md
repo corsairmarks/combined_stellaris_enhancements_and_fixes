@@ -13,8 +13,8 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) b0beff2b169f818a36f39065113f9501f8af9d67)
 * [Ringworld Origin Rebalance for 3.0.*](https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978) ([Source](https://github.com/corsairmarks/ringworld_origin_rebalance) 222cac5bf8773b5398f820b86440d38dc4f306df)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
-* [Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 25b4d8d2ecc9c52bb3de453746cc18b49be294d6)
-* [Prosperity Tradition Rebalance for 3.0.3](https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630) ([Source](https://github.com/corsairmarks/prosperity_tradition_rebalance) fc94927d067d203e9a4376ddada18ffc5e73a07b)
+* [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 25b4d8d2ecc9c52bb3de453746cc18b49be294d6)
+* [Prosperity Tradition Rebalance for 3.0.3](https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630) ([Source](https://github.com/corsairmarks/prosperity_tradition_rebalance) 5ebe0a0ba146bce8792be411276bae186fa620fe)
 * [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 9b434ab3da658e0208401ea39aaaeec2726f1157)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 7bce0431a890e1b2afb6dde533d8194577f1a6cf)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) afd75e8c4728c7e7fd5150f0705df9255631b2f7)
@@ -45,11 +45,11 @@ Each of the source repositories above is added as a remote to this repository on
 
 Requires Stellaris 3.0.3 and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incampatible with other mods that change worker jobs or built-in special event jobs, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
+Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
 
 ## Recommended Companion Mods
 
-The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is paricularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 ## When to Install
 
@@ -67,8 +67,8 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * "Agrarian" Idyll for Lithoids at 1.4.0
     * Ringworld Origin Rebalance for 3.0.* at ???
     * Leader Traits: All Eligible Species Traits at 1.3.0 (formerly Enable All Eligible Species Traits for Leaders)
-    * ai upgrader at ??? (formerly Scientist AI Assistant Upgrader)
-    * prosp at ???
+    * Leader Traits: Scientist AI Assistant Upgrader at 1.0.4 (formerly Scientist AI Assistant Upgrader)
+    * Prosperity Tradition Rebalance for 3.0.3 at 1.2.0
     * Full Military Service for Battle Thralls at 1.4.0
     * Planetary Modifier Enhancements at 2.3.0
     * Primitive Conquest Enhancements at 1.3.0
