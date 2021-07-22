@@ -1,13 +1,23 @@
-# fires when the game starts
+# fired when the game starts
 on_game_start = {
 	events = {
 		agrarian_idyll_lithoid.13 # flag mod as installed
 	}
 }
 
-# no scope, like on_game_start
-on_monthly_pulse = {
+# fired when loading a single-player game
+on_single_player_save_game_load = {
 	events = {
-		agrarian_idyll_lithoid.13 # flag mod as installed, just in case this mod was added after game start
+		agrarian_idyll_lithoid.13 # flag mod as installed
+	}
+}
+
+# fired during empire initialization when starting a new game
+# THIS = planet
+# FROM = founder species
+# FROMFROM = secondary species (if exists) - seems to not work
+empire_init_capital_planet = {
+	events = {
+		agrarian_idyll_lithoid.1 # alter starting districts
 	}
 }

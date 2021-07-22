@@ -1,6 +1,6 @@
 tech_housing_agrarian_idyll_lithoid = {
 	cost = @tier3cost1
-	icon = tech_housing_agrarian_idyll
+	icon = tech_mountain_range
 	area = society
 	tier = 3
 	category = { statecraft }
