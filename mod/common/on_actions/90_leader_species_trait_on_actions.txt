@@ -5,10 +5,10 @@ on_game_start = {
 	}
 }
 
-# no scope, like on_game_start
-on_monthly_pulse = {
+# fired when loading a single-player game
+on_single_player_save_game_load = {
 	events = {
-		leader_species_traits.13 # flag mod as installed, just in case this mod was added after game start
+		leader_species_traits.13 # flag mod as installed
 	}
 }
 
@@ -47,5 +47,16 @@ on_ruler_back_to_pre_ruler_class = {
 on_fleet_destroyed_perp = {
 	events = {
 		leader_species_traits.4
+	}
+}
+
+# Fires when my custom code changes a leader's species.  You might attach an event
+# here to handle custom traits in another mod that should be added or removed (or
+# converted) based on information about the leader (possibly taking in to account
+# things like their owner).
+# THIS = leader (post-modification)
+on_leader_species_changed = {
+	events = {
+		leader_species_traits.6
 	}
 }
