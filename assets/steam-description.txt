@@ -26,7 +26,7 @@ If you like species traits that add leader traits, check out my mod [url=https:/
 
 Because this mod replaces two built-in objects, it is inherently incompatible with mods that alter the same objects.  While I doubt most mods will fiddle with [i]can_be_military_leader[/i] it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one.  The only species right that this mod overrides is [i]military_service_full[/i].
 
-This mod is specifically engineered to be compatible with my other mod that affects military service: [url=]Deassimiliate Machines[/url].
+This mod is specifically engineered to be compatible with my other mod that affects military service: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimiliate Machines[/url].
 
 This mod is not compatible with achievements.
 
