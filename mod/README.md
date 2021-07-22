@@ -2,20 +2,17 @@
 
 This mod is a compilation of most of my other fixes and balance mods.  Please see the description of each individual mod for what the effects are.
 
-<<<<<<< HEAD
 Individual mods update first, then changes are merged here.
-=======
-And yes, I totally made up "lithorian" as an alternative to "agrarian" - going to stick with it for now.
->>>>>>> agrarian-idyll-lithoid/master
 
 # Bundled Mods
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
+* [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) a9680961b4bf4370d7b958eb9d290dba69cea4e1)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 0933af2894d3f7ec772f7de81c334e490849b340)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) b0beff2b169f818a36f39065113f9501f8af9d67)
 * [Ringworld Origin Rebalance for 3.0.*](https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978) ([Source](https://github.com/corsairmarks/ringworld_origin_rebalance) 222cac5bf8773b5398f820b86440d38dc4f306df)
-* [Enable All Eligible Species Traits for Leaders](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
+* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
 * [Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 25b4d8d2ecc9c52bb3de453746cc18b49be294d6)
 * [Prosperity Tradition Rebalance for 3.0.3](https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630) ([Source](https://github.com/corsairmarks/prosperity_tradition_rebalance) fc94927d067d203e9a4376ddada18ffc5e73a07b)
 * [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 9b434ab3da658e0208401ea39aaaeec2726f1157)
@@ -52,38 +49,14 @@ Check each of the contained mods for an explicit list of incompatibility notes. 
 
 ## Recommended Companion Mods
 
-<<<<<<< HEAD
 The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is paricularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
-=======
-* 1.0.0 Initial version
-* 1.1.0 Added missing compatibility notes, added Agrarian Idyll amenities to special event jobs
-    * `titan_hunter` is in the `planet_farmers` resource category and already had code for amenities-related weighting for Agrarian Idyll, but lacked the actual amenities production for Agrarian Idyll (non-lithoid)
-    * `cave_cleaner` is in the `planet_miners` resource category so it made sense to also apply amenities to it
-    * purposely did not add agrarian idyll code to the potentially other relevant special job `ratling_scavenger` because it isn't for default countries
-* 1.2.0 Include technician fix from [Technician Job Priority](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578)
-* 1.2.1 Fix spelling errors in README (no script changes)
-* 1.2.2 Add note about incompatibilities with mods that change Society technologies (no script changes)
-* 1.3.0 Add event to flag mod as installed
-    * Added README information about adding/removing from a game
-    * Add Steam description as text
-* 1.3.1 Remove extra images files to keep distribution lightweight
-* 1.4.0 Maintenance release
-    * Remove monthly pulse event, add flag instead when single player games are loaded
-    * Use a more "rocky" icon for Lithorian Utopias (housing tech)
-    * Ensure any farming districts created during capitol planet setup are converted to mining districts
->>>>>>> agrarian-idyll-lithoid/master
 
-## Post-Game Start
+## When to Install
 
-<<<<<<< HEAD
 This mod should not be removed from your save game.  Some added modifiers and technologies will not work without the changes in this mod.  You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as Ringworld preference for Driven Assimilators/Rogue Servitors with Shattered Ring, or the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
-=======
-Hosted on [Github](https://github.com/corsairmarks/agrarian_idyll_lithoid)
->>>>>>> agrarian-idyll-lithoid/master
 
 ## Changelog
 
-<<<<<<< HEAD
 * 1.0.0 Initial version
 * 1.0.1 Fix effect file location (breaking bug), enhance documentation and thumbnail image
 * 1.1.0 Upstream updates
@@ -91,7 +64,12 @@ Hosted on [Github](https://github.com/corsairmarks/agrarian_idyll_lithoid)
     * Update from "Full Military Service for Battle Thralls"
 * 1.2.0 Apply fix from "Yet Another Planetary Sky Fix" version 1.1.0
 * 1.3.0 Update merged mods:
-    * Primitive Conquest Enhancements 1.3.0
-=======
-It is best to clone this repository into `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder via a `*.mod` file's `path` property.  That will ensure the game can see the files, and also that CWTools will parse them.  Also note that the README.md file exists in the `mod` directory but is symbolically linked in the root directory.
->>>>>>> agrarian-idyll-lithoid/master
+    * "Agrarian" Idyll for Lithoids at 1.4.0
+    * Ringworld Origin Rebalance for 3.0.* at ???
+    * Leader Traits: All Eligible Species Traits at 1.3.0 (formerly Enable All Eligible Species Traits for Leaders)
+    * ai upgrader at ??? (formerly Scientist AI Assistant Upgrader)
+    * prosp at ???
+    * Full Military Service for Battle Thralls at 1.4.0
+    * Planetary Modifier Enhancements at 2.3.0
+    * Primitive Conquest Enhancements at 1.3.0
+    * Add Restored Content: Fungoids at 1.0.1
