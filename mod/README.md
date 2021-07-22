@@ -8,6 +8,7 @@ Individual mods update first, then changes are merged here.
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
+* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) a962fee486c6d062f9d3ea9fe7801767daa4ba67)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) a9680961b4bf4370d7b958eb9d290dba69cea4e1)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 0933af2894d3f7ec772f7de81c334e490849b340)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) b0beff2b169f818a36f39065113f9501f8af9d67)
@@ -72,4 +73,5 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Full Military Service for Battle Thralls at 1.4.0
     * Planetary Modifier Enhancements at 2.3.0
     * Primitive Conquest Enhancements at 1.3.0
-    * Add Restored Content: Fungoids at 1.0.1
+    * Add mod: Restored Content: Fungoids at 1.0.1
+    * Add mod: Leader Traits: Enhanced Randomisation at 1.0.0
