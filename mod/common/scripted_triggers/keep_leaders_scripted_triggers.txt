@@ -1,0 +1,613 @@
+# THIS = country
+is_devouring_hive_empire = {
+	is_hive_empire = yes
+	has_valid_civic = civic_hive_devouring_swarm
+}
+
+# THIS = country
+is_regular_hive_empire = {
+	is_hive_empire = yes
+	NOT = { has_valid_civic = civic_hive_devouring_swarm }
+}
+
+# THIS = country
+is_necrophage_empire = {
+	has_origin = origin_necrophage
+	has_trait = trait_necrophage
+}
+
+# THIS = country
+empire_considers_cyborgs_robotic = {
+	OR = {
+		has_valid_civic = civic_machine_assimilator
+		has_ascension_perk = ap_the_flesh_is_weak
+		has_country_flag = flesh_weakened
+		has_ascension_perk = ap_synthetic_evolution
+		has_country_flag = synthetic_empire
+	}
+}
+
+# THIS = country
+has_full_ai_rights = {
+	OR = {
+		has_authority = auth_machine_intelligence
+		has_country_flag = synthetic_empire
+		AND = {
+			has_policy_flag = robots_allowed
+			has_policy_flag = ai_full_rights
+		}
+	}
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+can_be_civilian_leaders_species = {
+	species = {
+		OR = {
+			has_citizenship_type = {
+				country = event_target:potential_owner
+				type = citizenship_full
+			}
+			has_citizenship_type = {
+				country = event_target:potential_owner
+				type = citizenship_full_machine
+			}
+		}
+	}
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+can_be_military_leaders_species = {
+	species = {
+		has_military_service_type = {
+			country = event_target:potential_owner
+			type = military_service_full
+		}
+	}
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_policy_full_citizenship_species = {
+	OR = {
+		species = { is_same_species = event_target:potential_owner }
+		if = {
+			limit = { event_target:potential_owner = { is_machine_empire = yes } }
+			is_robotic_species_lenient = yes
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
+			OR = {
+				is_hive_species = yes
+				event_target:potential_owner = { has_ascension_perk = ap_evolutionary_mastery }
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_empire = yes } }
+			event_target:potential_owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				is_xenophobe = no
+				is_necrophage_empire = no
+			}
+			is_smart_enough_for_leadership_species = yes
+			is_hive_species = no
+			OR = {
+				is_robotic_species = no
+				AND = {
+					is_mechanical_species = yes
+					event_target:potential_owner = { has_full_ai_rights = yes }
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_policy_full_military_service_species = {
+	OR = {
+		species = { is_same_species = event_target:potential_owner }
+		if = {
+			limit = { event_target:potential_owner = { is_machine_empire = yes } }
+			is_robotic_species_lenient = yes
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
+			OR = {
+				is_hive_species = yes
+				event_target:potential_owner = { has_ascension_perk = ap_evolutionary_mastery }
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_empire = yes } }
+			event_target:potential_owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				OR = {
+					is_xenophobe = no
+					species = { has_species_flag = allow_military_leaders_for_xenophobe }
+				}
+				OR = {
+					is_necrophage_empire = no
+					species = { has_species_flag = allow_military_leaders_for_necrophage }
+				}
+			}
+			is_smart_enough_for_leadership_species = yes
+			OR = {
+				is_robotic_species = no
+				AND = {
+					is_mechanical_species = yes
+					event_target:potential_owner = { has_full_ai_rights = yes }
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_machine_assimilation_species = {
+	event_target:potential_owner = { has_valid_civic = civic_machine_assimilator }
+	is_organic_species = yes
+	is_cyborg_species = no
+	is_hive_species = no
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_unmachine_assimilation_species = {
+	event_target:potential_owner = {
+		# machine pops aren't disconnected in FE/AE, so we can't use is_regular_empire
+		is_machine_empire = no
+		is_hive_empire = no
+		NOR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+		has_technology = tech_sapient_ai
+	}
+	is_machine_species = yes
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_hive_assimilation_species = {
+	event_target:potential_owner = {
+		is_hive_empire = yes
+		has_ascension_perk = ap_evolutionary_mastery
+	}
+	is_organic_species = yes
+	is_hive_species = no
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_unhive_assimilation_species = {
+	event_target:potential_owner = {
+		# hive pops aren't lonely in FE/AE, so we can't use is_regular_empire
+		is_hive_empire = no
+		has_ascension_perk = ap_evolutionary_mastery
+		NOR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+	is_hive_species = yes
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_synthetic_assimilation_species = {
+	event_target:potential_owner = {
+		has_ascension_perk = ap_synthetic_evolution
+		has_country_flag = synthetic_empire
+	}
+	is_organic_species = yes
+	is_hive_species = no
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_cybernetic_assimilation_species = {
+	event_target:potential_owner = {
+		has_ascension_perk = ap_the_flesh_is_weak
+		has_country_flag = flesh_weakened
+	}
+	is_organic_species = yes
+	is_cyborg_species = no
+	is_hive_species = no
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_psionic_assimilation_species = {
+	event_target:potential_owner = { has_ascension_perk = ap_transcendence }
+	is_organic_species = yes
+	OR = {
+		has_global_flag = deassimilate_machines_installed
+		is_cyborg_species = no
+	}
+	is_psionic_species = no
+	is_hive_species = no
+}
+
+# THIS = something with a species
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_for_assimilation_species = {
+	species = { NOT = { is_exact_same_species = event_target:potential_owner } }
+	if = {
+		limit = { event_target:potential_owner = { is_machine_empire = yes } }
+		is_eligible_for_machine_assimilation_species = yes
+	}
+	else_if = {
+		limit = { event_target:potential_owner = { is_hive_empire = yes } }
+		is_eligible_for_hive_assimilation_species = yes
+	}
+	else_if = {
+		limit = { event_target:potential_owner = { is_regular_empire = yes } }
+		OR = {
+			is_eligible_for_unhive_assimilation_species = yes
+			AND = {
+				has_global_flag = deassimilate_machines_installed
+				is_eligible_for_unmachine_assimilation_species = yes
+			}
+			is_eligible_for_synthetic_assimilation_species = yes
+			is_eligible_for_cybernetic_assimilation_species = yes
+			is_eligible_for_psionic_assimilation_species = yes
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+# THIS = something with a species
+is_psionic_species = {
+	species = { has_trait = trait_psionic }
+}
+
+# THIS = something with a species
+is_cyborg_species = {
+	species = { has_trait = trait_cybernetic }
+}
+
+# THIS = something with a species
+is_hive_species = {
+	species = { has_trait = trait_hive_mind }
+}
+
+# THIS = something with a species
+is_machine_species = {
+	species = {
+		OR = {
+			has_trait = trait_machine_unit
+			is_archetype = MACHINE
+		}
+	}
+}
+
+# THIS = something with a species
+is_mechanical_species = {
+	species = {
+		OR = {
+			has_trait = trait_mechanical
+			is_archetype = ROBOT
+		}
+	}
+}
+
+# THIS = something with a species
+is_smart_enough_for_leadership_species = {
+	species = {
+		is_sapient = yes
+		NOR = {
+			has_trait = trait_syncretic_proles
+			has_trait = trait_nerve_stapled
+		}
+	}
+}
+
+# THIS = leader
+is_civilian_leader = {
+	OR = {
+		leader_class = governor
+		leader_class = scientist
+	}
+}
+
+# THIS = leader
+is_military_leader = {
+	OR = {
+		leader_class = admiral
+		leader_class = general
+	}
+}
+
+# THIS = leader
+is_psionic_leader = {
+	OR = {
+		is_psionic_species = yes
+		if = {
+			limit = { leader_class = ruler }
+			OR = {
+				has_trait = leader_trait_ruler_psionic
+				has_trait = leader_trait_ruler_chosen
+			}
+		}
+		else_if = {
+			limit = { leader_class = governor }
+			OR = {
+				has_trait = leader_trait_governor_psionic
+				has_trait = leader_trait_governor_chosen
+			}
+		}
+		else_if = {
+			limit = { leader_class = scientist }
+			OR = {
+				has_trait = leader_trait_scientist_psionic
+				has_trait = leader_trait_scientist_chosen
+			}
+		}
+		else_if = {
+			limit = { leader_class = admiral }
+			OR = {
+				has_trait = leader_trait_admiral_psionic
+				has_trait = leader_trait_admiral_chosen
+			}
+		}
+		else_if = {
+			limit = { leader_class = general }
+			OR = {
+				has_trait = leader_trait_general_psionic
+				has_trait = leader_trait_general_chosen
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# THIS = leader
+is_cyborg_leader = {
+	OR = {
+		is_cyborg_species = yes
+		if = {
+			limit = { leader_class = ruler }
+			has_trait = leader_trait_ruler_cyborg
+		}
+		else_if = {
+			limit = { leader_class = governor }
+			has_trait = leader_trait_governor_cyborg
+		}
+		else_if = {
+			limit = { leader_class = scientist }
+			has_trait = leader_trait_scientist_cyborg
+		}
+		else_if = {
+			limit = { leader_class = admiral }
+			has_trait = leader_trait_admiral_cyborg
+		}
+		else_if = {
+			limit = { leader_class = general }
+			has_trait = leader_trait_general_cyborg
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# THIS = leader
+is_synthetic_leader = {
+	is_mechanical_species = yes
+	if = {
+		limit = { leader_class = ruler }
+		has_trait = leader_trait_ruler_synthetic
+	}
+	else_if = {
+		limit = { leader_class = governor }
+		has_trait = leader_trait_governor_synthetic
+	}
+	else_if = {
+		limit = { leader_class = scientist }
+		has_trait = leader_trait_scientist_synthetic
+	}
+	else_if = {
+		limit = { leader_class = admiral }
+		has_trait = leader_trait_admiral_synthetic
+	}
+	else_if = {
+		limit = { leader_class = general }
+		has_trait = leader_trait_general_synthetic
+	}
+	else = {
+		always = no
+	}
+}
+
+# THIS = leader
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_transfer_without_assimilation = {
+	OR = {
+		species = { is_same_species = event_target:potential_owner }
+		if = {
+			limit = { event_target:potential_owner = { is_machine_empire = yes } }
+			is_robotic_species_lenient = yes
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
+			is_hive_species = yes
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_empire = yes } }
+			is_hive_species = no
+			is_smart_enough_for_leadership_species = yes
+			OR = {
+				event_target:potential_owner = { is_necrophage_empire = no }
+				is_bypass_leader_restriction_necrophage = yes
+			}
+			OR = {
+				event_target:potential_owner = { is_xenophobe = no }
+				is_bypass_leader_restriction_xenophobe = yes
+			}
+			OR = {
+				is_robotic_species = no # intentionally allows machine leaders to join non-machines, even if their Pops can't
+				event_target:potential_owner = { has_full_ai_rights = yes }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# THIS = leader
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_transfer_with_assimilation = {
+	OR = {
+		is_same_species = event_target:potential_owner
+		if = {
+			limit = { event_target:potential_owner = { is_machine_empire = yes } }
+			OR = {
+				is_robotic_species = yes
+				AND = {
+					is_organic_species = yes
+					event_target:potential_owner = { has_valid_civic = civic_machine_assimilator }
+				}
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
+			OR = {
+				is_hive_species = yes
+				is_eligible_for_hive_assimilation_species = yes
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_empire = yes } }
+			OR = {
+				is_hive_species = no
+				is_eligible_for_unhive_assimilation_species = yes
+			}
+			is_smart_enough_for_leadership_species = yes
+			OR = {
+				event_target:potential_owner = { is_necrophage_empire = no }
+				is_bypass_leader_restriction_necrophage = yes
+			}
+			# eligible for necrophage is not assimilation so it is intentionally omitted here
+			OR = {
+				event_target:potential_owner = { is_xenophobe = no }
+				is_bypass_leader_restriction_xenophobe = yes
+			}
+			OR = {
+				is_robotic_species = no # intentionally allows machine leaders to join non-machines, even if their pops can't
+				event_target:potential_owner = { has_full_ai_rights = yes }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# THIS = leader
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_transfer_leader_from_storage = {
+	has_leader_flag = potential_owner@event_target:potential_owner
+	is_eligible_transfer_leader_class = yes
+}
+
+# THIS = leader
+is_eligible_transfer_leader_class = {
+	NOR = {
+		leader_class = ruler
+		leader_class = envoy
+	}
+}
+
+# allows cyborgs to be considered robotic if the potential owner considers them to be robotic
+# THIS = leader
+is_robotic_species_lenient = {
+	OR = {
+		is_robotic_species = yes
+		AND = {
+			is_cyborg_species = yes
+			event_target:potential_owner = { empire_considers_cyborgs_robotic = yes }
+		}
+	}
+}
+
+# THIS = leader
+is_bypass_leader_restriction_necrophage = {
+	is_military_leader = yes
+	species = { has_species_flag = allow_military_leaders_for_necrophage }
+}
+
+# THIS = leader
+is_bypass_leader_restriction_xenophobe = {
+	is_military_leader = yes
+	species = { has_species_flag = allow_military_leaders_for_xenophobe }
+}
+
+# THIS = country
+all_stored_leaders_eligible_transfer_to_necrophage = {
+	NOT = {
+		any_owned_leader = {
+			is_eligible_transfer_leader_from_storage = yes
+			NOR = {
+				is_same_species = event_target:potential_owner
+				is_bypass_leader_restriction_necrophage = yes
+			}
+		}
+	}
+}
+
+# THIS = country
+all_stored_leaders_eligible_transfer_to_xenophobe = {
+	NOT = {
+		any_owned_leader = {
+			is_eligible_transfer_leader_from_storage = yes
+			NOR = {
+				is_same_species = event_target:potential_owner
+				is_bypass_leader_restriction_xenophobe = yes
+			}
+		}
+	}
+}
+
+# THIS = country
+all_stored_leaders_same_species = {
+	NOT = {
+		any_owned_leader = {
+			is_eligible_transfer_leader_from_storage = yes
+			NOT = { is_same_species = event_target:potential_owner }
+		}
+	}
+}
+
+# THIS = country
+all_stored_leaders_robotic_lenient = {
+	NOT = {
+		any_owned_leader = {
+			is_eligible_transfer_leader_from_storage = yes
+			is_robotic_species_lenient = no
+		}
+	}
+}
+
+# THIS = country
+all_stored_leaders_hive = {
+	NOT = {
+		any_owned_leader = {
+			is_eligible_transfer_leader_from_storage = yes
+			is_hive_species = no
+		}
+	}
+}

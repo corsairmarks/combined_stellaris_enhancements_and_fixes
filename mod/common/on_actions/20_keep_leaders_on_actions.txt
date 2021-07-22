@@ -1,0 +1,103 @@
+# fired when the game starts
+on_game_start = {
+	events = {
+		keep_leaders.13 # flag mod as installed
+	}
+}
+
+# fired when loading a single-player game
+on_single_player_save_game_load = {
+	events = {
+		keep_leaders.13 # flag mod as installed
+	}
+}
+
+# fired when a country finishes being integrated
+# THIS = overlord
+# FROM = subject
+on_subject_integrated = {
+	events = {
+		keep_leaders.1
+	}
+}
+
+# fired for the attacker upon victory (before controller is switched)
+# THIS = country, leader attacker
+# FROM = country, planet owner
+# FROMFROM = planet
+on_planet_attackers_win = {
+	events = {
+		keep_leaders.2
+	}
+}
+
+# fired when a leader has died
+# THIS = country
+# FROM = leader
+on_leader_death = {
+	events = {
+		keep_leaders.100
+		keep_leaders_bonus_traits.21
+	}
+}
+
+# fired when a leader has been fired
+# THIS = country
+# FROM = leader
+on_leader_fired = {
+	events = {
+		keep_leaders_bonus_traits.21
+	}
+}
+
+# Fired when my custom code changes a leader's species.  You might attach an event
+# here to handle custom traits in another mod that should be added or removed (or
+# converted) based on information about the leader (possibly taking in to account
+# things like their current owner).
+# THIS = leader (post-modification)
+on_leader_species_changed = {
+	events = {
+	}
+}
+
+# fired when my custom code changes a leader's owner
+# THIS = leader (post-owner change)
+on_leader_owner_changed = {
+	events = {
+	}
+}
+
+# fired as new ruler has been set
+# THIS = country
+on_ruler_set = {
+	events = {
+		keep_leaders_bonus_traits.20
+	}
+}
+
+# fired when a ruler is ousted and goes back to their pre-ruler class
+# THIS = country
+# FROM = Previous ruler, already has the new class
+on_ruler_back_to_pre_ruler_class = {
+	events = {
+		keep_leaders_bonus_traits.20
+	}
+}
+
+# fired before a primitive planet changes ownership
+# THIS = planet (before ownership change)
+# FROM = country, imminent owner
+on_primitive_planet_transferring = {
+	events = {
+		keep_leaders.4
+	}
+}
+
+# fired after a primitive planet has changed ownership
+# THIS = planet (after ownership change)
+# FROM = country, primitive former owner
+on_primitive_planet_transferred = {
+	events = {
+		keep_leaders.3
+	}
+}

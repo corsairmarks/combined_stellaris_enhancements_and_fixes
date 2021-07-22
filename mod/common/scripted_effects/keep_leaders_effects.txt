@@ -1,0 +1,847 @@
+# THIS = leader
+# event_target:potential_owner = country for whom the leader is being stored
+# event_target:storage_owner = country in which to store leaders
+transfer_leader_to_storage = {
+	set_leader_flag = former_owner@owner
+	set_leader_flag = potential_owner@event_target:potential_owner
+	unassign_leader = THIS
+	set_owner = event_target:storage_owner
+}
+
+# THIS = leader
+# event_target:former_owner = country that previously owned the leader
+# event_target:potential_owner = country for whom the leader is being stored
+set_leader_storage_flags = {
+	set_leader_flag = former_owner@event_target:former_owner
+	set_leader_flag = potential_owner@event_target:potential_owner
+}
+
+# THIS = leader
+# event_target:potential_owner = country to set citizenship
+ensure_species_rights_and_take_ownership_of_leader = {
+	if = {
+		limit = {
+			is_civilian_leader = yes
+			can_be_civilian_leaders_species = no
+			is_eligible_for_policy_full_citizenship_species = yes
+		}
+		set_full_citizenship_species = yes
+	}
+	else_if = {
+		limit = {
+			is_military_leader = yes
+			can_be_military_leaders_species = no
+			is_eligible_for_policy_full_military_service_species = yes
+		}
+		set_full_military_service_species = yes
+	}
+	set_minimum_standard_of_living_species = yes
+	unassign_leader = THIS
+	set_owner = event_target:potential_owner
+	fire_on_action = { on_action = on_leader_owner_changed }
+}
+
+# THIS = something with species
+# event_target:potential_owner = country to set citizenship
+set_full_citizenship_species = {
+	species= {
+		if = {
+			limit = {
+				event_target:potential_owner = { is_machine_empire = yes }
+				NOR = {
+					has_citizenship_type = {
+						country = event_target:potential_owner
+						type = citizenship_full_machine
+					}
+					has_citizenship_type = {
+						country = event_target:potential_owner
+						type = citizenship_assimilation
+					}
+				}
+			}
+			set_citizenship_type = {
+				country = event_target:potential_owner
+				type = citizenship_full_machine
+				cooldown = no
+			}
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					has_citizenship_type = {
+						country = event_target:potential_owner
+						type = citizenship_full
+					}
+					has_citizenship_type = {
+						country = event_target:potential_owner
+						type = citizenship_assimilation
+					}
+				}
+			}
+			set_citizenship_type = {
+				country = event_target:potential_owner
+				type = citizenship_full
+				cooldown = no
+			}
+			if = {
+				limit = {
+					event_target:potential_owner = { has_valid_civic = civic_citizen_service }
+					NOT = {
+						has_military_service_type = {
+							country = event_target:potential_owner
+							type = military_service_full
+						}
+					}
+				}
+				set_military_service_type = {
+					country = event_target:potential_owner
+					type = military_service_full
+					cooldown = no
+				}
+			}
+		}
+	}
+}
+
+# THIS = something with species
+# event_target:potential_owner = country to set military service
+set_full_military_service_species = {
+	species= {
+		if = {
+			limit = {
+				NOT = {
+					has_military_service_type = {
+						country = event_target:potential_owner
+						type = military_service_full
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:potential_owner = { is_machine_empire = yes }
+					NOR = {
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_full_machine
+						}
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_assimilation
+						}
+					}
+				}
+				set_citizenship_type = {
+					country = event_target:potential_owner
+					type = citizenship_full_machine
+					cooldown = no
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:potential_owner = { is_hive_empire = yes }
+					NOR = {
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_full
+						}
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_assimilation
+						}
+					}
+				}
+				set_citizenship_type = {
+					country = event_target:potential_owner
+					type = citizenship_full
+					cooldown = no
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:potential_owner = { has_valid_civic = civic_citizen_service }
+					NOR = {
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_full
+						}
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_assimilation
+						}
+					}
+				}
+				set_citizenship_type = {
+					country = event_target:potential_owner
+					type = citizenship_full
+					cooldown = no
+				}
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_full
+						}
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_limited
+						}
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_assimilation
+						}
+						AND = {
+							has_global_flag = battle_thrall_military_leaders_installed
+							has_citizenship_type = {
+								country = event_target:potential_owner
+								type = citizenship_slavery
+							}
+							has_slavery_type = {
+								country = event_target:potential_owner
+								type = slavery_military
+							}
+						}
+					}
+				}
+				set_citizenship_type = {
+					country = event_target:potential_owner
+					type = citizenship_limited
+					cooldown = no
+				}
+			}
+			set_military_service_type = {
+				country = event_target:potential_owner
+				type = military_service_full
+				cooldown = no
+			}
+		}
+	}
+}
+
+# THIS = something with species
+# event_target:potential_owner = country to ensure minimum standard of living
+set_minimum_standard_of_living_species = {
+	species= {
+		if = {
+			limit = {
+				event_target:potential_owner = {
+					OR = {
+						is_machine_empire = yes
+						is_hive_empire = yes
+					}
+				}
+				NOR = {
+					has_living_standard = {
+						country = event_target:potential_owner
+						type = living_standard_hive_mind
+					}
+					has_living_standard = {
+						country = event_target:potential_owner
+						type = living_standard_ego_assimilation
+					}
+				}
+			}
+			set_living_standard = {
+				country = event_target:potential_owner
+				type = living_standard_hive_mind
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:potential_owner = { is_regular_empire = yes }
+				NOR = {
+					has_citizenship_type = {
+						country = event_target:potential_owner
+						type = citizenship_assimilation
+					}
+					AND = {
+						has_citizenship_type = {
+							country = event_target:potential_owner
+							type = citizenship_purge
+						}
+						has_living_standard = {
+							country = event_target:potential_owner
+							type = living_standard_none
+						}
+						has_purge_type = {
+							country = event_target:potential_owner
+							type = purge_necrophage
+						}
+					}
+					AND = {
+						is_robotic_species = yes
+						event_target:potential_owner = { has_full_ai_rights = no }
+					}
+				}
+			}
+			if = {
+				limit = { event_target:potential_owner = { has_valid_civic = civic_shared_burden } }
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_shared_burden
+					cooldown = no
+				}
+			}
+			else_if = {
+				limit = { event_target:potential_owner = { is_materialist = yes } }
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_academic_privilege
+					cooldown = no
+				}
+			}
+			else_if = {
+				limit = { event_target:potential_owner = { is_authoritarian = yes } }
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_stratified
+					cooldown = no
+				}
+			}
+			else_if = {
+				limit = {
+					has_citizenship_type = {
+						country = event_target:potential_owner
+						type = citizenship_full
+					} 
+				}
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_normal
+					cooldown = no
+				}
+			}
+			else = {
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_subsistence
+					cooldown = no
+				}
+			}
+		}
+	}
+}
+
+# THIS = something with species
+# event_target:potential_owner = country doing the assimilating
+set_assimilation_standard_of_living_species = {
+	species= {
+		if = {
+			limit = {
+				event_target:potential_owner = {
+					OR = {
+						has_valid_civic = civic_machine_assimilator
+						AND = {
+							is_regular_hive_empire = yes
+							has_ascension_perk = ap_evolutionary_mastery
+						}
+					}
+				}
+			}
+			set_living_standard = {
+				country = event_target:potential_owner
+				type = living_standard_ego_assimilation
+				cooldown = no
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { has_ascension_perk = ap_transcendence } }
+			set_living_standard = {
+				country = event_target:potential_owner
+				type = living_standard_psi_assimilation
+				cooldown = no
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { has_ascension_perk = ap_the_flesh_is_weak } }
+			set_living_standard = {
+				country = event_target:potential_owner
+				type = living_standard_tech_assimilation
+				cooldown = no
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { has_ascension_perk = ap_evolutionary_mastery } }
+			set_living_standard = {
+				country = event_target:potential_owner
+				type = living_standard_deassimilation
+				cooldown = no
+			}
+		}
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = ruler/heir that you want replaced - will be set to point to the cloned leader
+replace_leader_based_on_pre_ruler_leader_class = {
+	if = {
+		limit = { event_target:leader_to_replace = { pre_ruler_leader_class = governor } }
+		replace_leader_as_governor = yes
+	}
+	else_if = {
+		limit = { event_target:leader_to_replace = { pre_ruler_leader_class = scientist } }
+		replace_leader_as_scientist = yes
+	}
+	else_if = {
+		limit = { event_target:leader_to_replace = { pre_ruler_leader_class = admiral } }
+		replace_leader_as_admiral = yes
+	}
+	else_if = {
+		limit = { event_target:leader_to_replace = { pre_ruler_leader_class = general } }
+		replace_leader_as_general = yes
+	}
+	# else they didn't have a pre-ruler class, or it's one we don't recognize
+	else = {
+		replace_leader_based_on_government_type = yes
+	}
+}
+
+# THIS = leader
+set_former_gestalt_ruler_flag = {
+	if = {
+		limit = {
+			OR = {
+				has_trait = leader_trait_ruler_machine_intelligence
+				has_ruler_trait = leader_trait_ruler_machine_intelligence
+				has_trait = leader_trait_ruler_hive_mind
+				has_ruler_trait = leader_trait_ruler_hive_mind
+			}
+		}
+		set_leader_flag = former_gestalt_ruler
+	}
+}
+
+# THIS = leader
+remove_gestalt_ruler_traits = {
+	if = {
+		limit = { has_trait = leader_trait_ruler_machine_intelligence }
+		set_leader_flag = former_gestalt_ruler
+		remove_trait = leader_trait_ruler_machine_intelligence
+		add_random_leader_trait = yes
+	}
+	if = {
+		limit = { has_ruler_trait = leader_trait_ruler_machine_intelligence }
+		remove_ruler_trait = leader_trait_ruler_machine_intelligence
+	}
+	if = {
+		limit = { has_trait = leader_trait_ruler_hive_mind }
+		set_leader_flag = former_gestalt_ruler
+		remove_trait = leader_trait_ruler_hive_mind
+		add_random_leader_trait = yes
+	}
+	if = {
+		limit = { has_ruler_trait = leader_trait_ruler_hive_mind }
+		remove_ruler_trait = leader_trait_ruler_hive_mind
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_governor = {
+	if = {
+		limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = governor
+			traits = { trait = random_trait }
+		}
+	}
+	else = {
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = governor
+		}
+	}
+	last_created_leader = {
+		event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+		save_event_target_as = leader_to_replace
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_scientist = {
+	if = {
+		limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = scientist
+			traits = { trait = random_trait }
+		}
+	}
+	else = {
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = scientist
+		}
+	}
+	if = {
+		limit = { event_target:leader_to_replace = { leader_class = ruler } }
+		last_created_leader = {
+			if = {
+				limit = { NOT = { has_trait = leader_trait_expertise_statecraft } }
+				add_trait = leader_trait_expertise_statecraft
+			}
+			else_if = {
+				limit = {
+					has_synthethic_dawn = yes
+					is_robotic_species = yes
+					NOT = { has_trait = leader_trait_flexible_programming }
+				}
+				add_trait = leader_trait_flexible_programming
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_robotic_species = no
+						has_synthethic_dawn = no
+					}
+					NOT = { has_trait = leader_trait_adaptable }
+				}
+				add_trait = leader_trait_adaptable
+			}
+			# else they have a lot of traits already
+		}
+	}
+	last_created_leader = {
+		event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+		save_event_target_as = leader_to_replace
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_admiral = {
+	if = {
+		limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = admiral
+			traits = { trait = random_trait }
+		}
+	}
+	else = {
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = admiral
+		}
+	}
+	last_created_leader = {
+		event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+		save_event_target_as = leader_to_replace
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_general = {
+	if = {
+		limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = general
+			traits = { trait = random_trait }
+		}
+	}
+	else = {
+		clone_leader = {
+			target = event_target:leader_to_replace
+			class = general
+		}
+	}
+	last_created_leader = {
+		event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+		save_event_target_as = leader_to_replace
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_civilian = {
+	random_list = {
+		50 = { replace_leader_as_governor = yes }
+		50 = { replace_leader_as_scientist = yes }
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_military = {
+	random_list = {
+		50 = { replace_leader_as_admiral = yes }
+		50 = { replace_leader_as_general = yes }
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_non_scientist = {
+	random_list = {
+		33 = { replace_leader_as_governor = yes }
+		33 = { replace_leader_as_admiral = yes }
+		33 = { replace_leader_as_general = yes }
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_as_random = {
+	random_list = {
+		25 = { replace_leader_as_governor = yes }
+		25 = { replace_leader_as_scientist = yes }
+		25 = { replace_leader_as_admiral = yes }
+		25 = { replace_leader_as_general = yes }
+	}
+}
+
+# THIS = country
+# event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
+replace_leader_based_on_government_type = {
+	switch = {
+		trigger = has_government
+		# governor
+		gov_theocratic_dictatorship = { replace_leader_as_governor = yes }
+		gov_theocratic_oligarchy = { replace_leader_as_governor = yes }
+		gov_holy_tribunal = { replace_leader_as_governor = yes }
+		gov_megachurch = { replace_leader_as_governor = yes } # gospel
+		gov_megacorporation = { replace_leader_as_governor = yes }
+		gov_trade_league = { replace_leader_as_governor = yes }
+		gov_criminal_syndicate = { replace_leader_as_governor = yes } # criminal
+		gov_subversive_cult = { replace_leader_as_governor = yes } # criminal/gospel
+		# scientist
+		gov_technocratic_dictatorship = { replace_leader_as_scientist = yes }
+		gov_science_directorate = { replace_leader_as_scientist = yes }
+		gov_rational_consensus = { replace_leader_as_scientist = yes }
+		# governor/scientist
+		gov_irenic_dictatorship = { replace_leader_as_civilian = yes }
+		gov_irenic_bureaucracy = { replace_leader_as_civilian = yes }
+		gov_moral_democracy = { replace_leader_as_civilian = yes }
+		# admiral/general
+		gov_military_dictatorship = { replace_leader_as_military = yes }
+		gov_military_junta = { replace_leader_as_military = yes }
+		gov_martial_dictatorship = { replace_leader_as_admiral = yes } # war cult (specifies admiral, although generals can be candidates)
+		gov_war_council = { replace_leader_as_admiral = yes } # war cult (specifies admiral, although generals can be candidates)
+		gov_assembly_of_clans = { replace_leader_as_admiral = yes } # war cult (specifies admiral, although generals can be candidates)
+		gov_citizen_stratocracy = { replace_leader_as_admiral = yes } # cit serv (specifies admiral, although generals can be candidates)
+		# admiral/general/governor
+		gov_military_commissariat = { replace_leader_as_non_scientist = yes }
+		gov_citizen_republic = { replace_leader_as_non_scientist = yes } # cit serv
+		# any
+		gov_constitutional_dictatorship = { replace_leader_as_random = yes }
+		gov_plutocratic_oligarchy = { replace_leader_as_random = yes }
+		gov_representative_democracy = { replace_leader_as_random = yes }
+		gov_theocratic_republic = { replace_leader_as_random = yes }
+		gov_totalitarian_regime = { replace_leader_as_random = yes }
+		gov_executive_committee = { replace_leader_as_random = yes }
+		gov_direct_democracy = { replace_leader_as_random = yes }
+		gov_purity_order = { replace_leader_as_random = yes }
+		gov_purification_committee = { replace_leader_as_random = yes }
+		gov_purity_assembly = { replace_leader_as_random = yes }
+		gov_elective_monarchy = { replace_leader_as_random = yes }
+		gov_communal_parity = { replace_leader_as_random = yes }
+		gov_bandit_kingdom = { replace_leader_as_random = yes } # barb dict/imp
+		gov_bandit_commune = { replace_leader_as_random = yes } # barb olig/dem
+		gov_grim_council = { replace_leader_as_random = yes } # dealth cult
+		gov_band_blood = { replace_leader_as_random = yes } # barb/death cult - any auth
+		gov_sacrificial_megachurch = { replace_leader_as_random = yes } # gospel/dealth cult - differs from other megacorps as of 3.0.3
+		# imperial authorities don't normally have leaders retire - so they have assigned leader
+		# replacement classes based on similar governments that were dictatorial
+		gov_despotic_empire = { replace_leader_as_random = yes } # generic
+		gov_theocratic_monarchy = { replace_leader_as_governor = yes } # spir
+		gov_divine_empire = { replace_leader_as_governor = yes } # imp cult
+		gov_star_empire = { replace_leader_as_military = yes } # mil
+		gov_martial_empire = { replace_leader_as_military = yes } # mil/war cult
+		gov_irenic_monarchy = { replace_leader_as_civilian = yes } # paci
+		gov_celestial_empire = { replace_leader_as_civilian = yes } # paci/inward
+		gov_despotic_hegemony = { replace_leader_as_random = yes } # mater
+		gov_illuminated_autocracy = { replace_leader_as_scientist = yes } # mater/techno
+		gov_blood_court = { replace_leader_as_random = yes } # fp
+		gov_feudal_empire = { replace_leader_as_non_scientist = yes } # feudal
+		gov_enlightened_monarchy = { replace_leader_as_random = yes } # philo
+		gov_mortal_empire = { replace_leader_as_random = yes } # death cult
+		gov_imperial_domain = { replace_leader_as_random = yes } # gal emp
+		gov_imperial_domain_megacorp = { replace_leader_as_governor = yes } # gal emp megacorp
+		# immortal rulers would never need to be replaced - so they have assigned leader
+		# replacement classes based on the "theme" of the government
+		gov_hive_mind = { replace_leader_as_governor = yes }
+		gov_devouring_swarm = { replace_leader_as_admiral = yes }
+		gov_machine_empire = { replace_leader_as_governor = yes }
+		gov_machine_terminator = { replace_leader_as_admiral = yes }
+		gov_machine_servitor = { replace_leader_as_governor = yes }
+		gov_machine_assimilator = { replace_leader_as_civilian = yes }
+		gov_machine_research = { replace_leader_as_scientist = yes }
+		gov_machine_industrial = { replace_leader_as_governor = yes }
+		gov_imperial_domain_machines = { replace_leader_as_civilian = yes } # gal emp machine
+		gov_imperial_domain_hives = { replace_leader_as_governor = yes } # gal emp machine
+		# NPC
+		gov_stagnant_ascendancy = { replace_leader_as_random = yes }
+		gov_awakened_ascendancy = { replace_leader_as_random = yes }
+		gov_custodian_matrix = { replace_leader_as_governor = yes } # immortal
+		gov_galactic_defense_unit = { replace_leader_as_admiral = yes } # immortal
+		gov_berserker_machine = { replace_leader_as_admiral = yes } # immortal
+		gov_tribal_society = { replace_leader_as_non_scientist = yes } # primitive
+		gov_feudal_realms = { replace_leader_as_non_scientist = yes } # primitive
+		gov_fragmented_nation_states = { replace_leader_as_random = yes } # primitive
+		gov_curator_enclave = { replace_leader_as_scientist = yes }
+		gov_trader_enclave = { replace_leader_as_governor = yes }
+		gov_artist_enclave = { replace_leader_as_governor = yes }
+		gov_marauder_clans = { replace_leader_as_admiral = yes } # marauders
+		gov_marauder_khanate = { replace_leader_as_admiral = yes } # khan
+		gov_diadochi = { replace_leader_as_admiral = yes } # post-khan warlords
+		gov_successor_khanate = { replace_leader_as_non_scientist = yes } # post-khan unified
+		gov_military_order = { replace_leader_as_admiral = yes } # sentinels
+		gov_ancient_machine_intelligence = { replace_leader_as_admiral = yes } # immortal/contingency
+		gov_fallback = { replace_leader_as_random = yes }
+		# custom governments (defined by mods)
+		gov_bureaucratic_autocracy = { replace_leader_as_governor = yes } # Eldanær Stellar Authority uses this
+		default = {
+			log_error = "\\[This.GetRealName] has an unrecognized government (\\[This.GetGovernmentName]) - falling back to a random leader class"
+			replace_leader_as_random = yes
+		}
+	}
+}
+
+# THIS = leader
+# event_target:potential_owner = the country scope that will potentially become the owner of the leader
+# event_target:variable_storage = a scope that has these variables:
+# * leader_accumulator
+# * leader_organic_accumulator
+# * leader_organic_non_cyborg_accumulator
+# * leader_hive_accumulator
+# * leader_robotic_accumulator
+# * leader_necrophagable_accumulator
+# * leader_same_species_accumulator
+# * leader_not_same_species_accumulator
+# * leader_transferable_accumulator
+# * leader_transferable_or_assimilatable_accumulator
+accumulate_leader = {
+	if = {
+		limit = { is_organic_species = yes }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_organic_accumulator
+				value = 1
+			}
+		}
+		if = {
+			limit = { is_cyborg_species = no }
+			event_target:variable_storage = {
+				change_variable = {
+					which = leader_organic_non_cyborg_accumulator
+					value = 1
+				}
+			}
+		}
+	}
+	if = {
+		limit = { is_hive_species = yes }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_hive_accumulator
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { is_robotic_species_lenient = yes }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_robotic_accumulator
+				value = 1
+			}
+		}
+	}
+	else_if= {
+		limit = {
+			species = {
+				is_sapient = yes
+				NOR = {
+					is_same_species = event_target:potential_owner.owner_species
+					has_slavery_type = {
+						type = slavery_livestock
+						country = event_target:potential_owner
+					}
+				}
+				species_has_happiness_with_owner = event_target:potential_owner
+			}
+		}
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_necrophagable_accumulator
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { is_same_species = event_target:potential_owner.owner_species }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_same_species_accumulator
+				value = 1
+			}
+		}
+	}
+	else = {
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_not_same_species_accumulator
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { is_eligible_transfer_without_assimilation = yes }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_transferable_accumulator
+				value = 1
+			}
+			change_variable = {
+				which = leader_transferable_or_assimilatable_accumulator
+				value = 1
+			}
+		}
+	}
+	# else_if helps skip duplicate checks for leaders that don't need assimilation
+	else_if = {
+		limit = { is_eligible_transfer_with_assimilation = yes }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_transferable_or_assimilatable_accumulator
+				value = 1
+			}
+		}
+	}
+	event_target:variable_storage = {
+		change_variable = {
+			which = leader_accumulator
+			value = 1
+		}
+	}
+}
+
+# event_target:mechanical_species - used as the base species to be modified, will be overwritten with the new specis if one or more traits had to be swapped
+assimilate_species_traits_machine_to_robot = {
+	if = {
+		limit = { has_trait = trait_robot_emotion_emulators }
+		modify_species = {
+			species = event_target:machine_species
+			add_trait = trait_robot_domestic_protocols
+			remove_trait = trait_robot_emotion_emulators
+			effect = {
+				save_event_target_as = mechanical_species
+			}
+		}
+	}
+	if = {
+		limit = { has_trait = trait_robot_uncanny }
+		modify_species = {
+			species = event_target:machine_species
+			remove_trait = trait_robot_uncanny
+			effect = {
+				save_event_target_as = mechanical_species
+			}
+		}
+	}
+}
