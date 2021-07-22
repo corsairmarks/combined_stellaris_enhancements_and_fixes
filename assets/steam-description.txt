@@ -9,15 +9,18 @@ Individual mods update first, then changes are merged here.
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
 [list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] ([url=https://github.com/corsairmarks/keep_leaders_from_integrated_subjects]Source[/url] 43d494d654fc6465633cf1cb4224e078a21afd2a)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] ([url=https://github.com/corsairmarks/leader_trait_randomisation_enhancement]Source[/url] a962fee486c6d062f9d3ea9fe7801767daa4ba67)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941]Restored Content: Fungoids[/url] ([url=https://github.com/corsairmarks/portrait_unlock_fungoid]Source[/url] a9680961b4bf4370d7b958eb9d290dba69cea4e1)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] 0933af2894d3f7ec772f7de81c334e490849b340)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] a1f17e19b635c6ef3f928cac6b4b893c20a95ecd)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978]Ringworld Origin Rebalance for 3.0.*[/url] ([url=https://github.com/corsairmarks/ringworld_origin_rebalance]Source[/url] 222cac5bf8773b5398f820b86440d38dc4f306df)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Enable All Eligible Species Traits for Leaders[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 55f7bf9dc22ad04adeed60b9bd2191f953f4d766)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] 25b4d8d2ecc9c52bb3de453746cc18b49be294d6)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630]Prosperity Tradition Rebalance for 3.0.3[/url] ([url=https://github.com/corsairmarks/prosperity_tradition_rebalance]Source[/url] fc94927d067d203e9a4376ddada18ffc5e73a07b)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Full Military Service for Battle Thralls[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 374445e73abef8508f61f82836bb904ce630c2d4)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] ([url=https://github.com/corsairmarks/planetary_modifier_enhancements]Source[/url] 8ed533f7eaea813f580c6f380f092ded087f9e7d)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] ([url=https://github.com/corsairmarks/primitive_conquest_enhancements]Source[/url] 6aaf42369c1e13720a3fadca89e3058b0aee9580)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] b0beff2b169f818a36f39065113f9501f8af9d67)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978]Ringworld Origin Rebalance for 3.0.*[/url] ([url=https://github.com/corsairmarks/ringworld_origin_rebalance]Source[/url] d1f3e1fd53104dc13e261c3bb046f30cbb04523a)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 8e02c9aa1a9d985846ef6ea616264d64518a6714)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] df600ad6e737f56144aaa7ea596c9f8b763b58c7)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630]Prosperity Tradition Rebalance for 3.0.3[/url] ([url=https://github.com/corsairmarks/prosperity_tradition_rebalance]Source[/url] 5ebe0a0ba146bce8792be411276bae186fa620fe)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Full Military Service for Battle Thralls[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 9b434ab3da658e0208401ea39aaaeec2726f1157)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] ([url=https://github.com/corsairmarks/planetary_modifier_enhancements]Source[/url] 7bce0431a890e1b2afb6dde533d8194577f1a6cf)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] ([url=https://github.com/corsairmarks/primitive_conquest_enhancements]Source[/url] afd75e8c4728c7e7fd5150f0705df9255631b2f7)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority Fix for Slaves[/url] ([url=https://github.com/corsairmarks/technician_slave_fix]Source[/url]) - this mod is not actually merged via `git`, but the same 1-character change is present in this one
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2470984445]Space Fauna Multiple Resolutions Fix[/url] ([url=https://github.com/corsairmarks/space_fauna_resolutions_fix]Source[/url] 3f22ec7b060a146fb30a8451f135fe5b742d7e8c)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831]Manifesti 'Personal Autonomy for Munitions' Demand Fix[/url] ([url=https://github.com/corsairmarks/manifesti_fix]Source[/url] 12ecdce87fde0ebf7c04302e1d0dd4fe4a76a004)
@@ -31,18 +34,18 @@ Hosted on [url=https://github.com/corsairmarks/combined_stellaris_enhancements_a
 
 Requires Stellaris 3.0.3 and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incampatible with other mods that change worker jobs or built-in special event jobs, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
+Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
 
 [h2]Recommended Companion Mods[/h2]
 
-The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is paricularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I [i][b]highly[/b][/i] recommend you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239]Planetary Diversity - Planet View[/url] to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I [i][b]highly[/b][/i] recommend you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239]Planetary Diversity - Planet View[/url] to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
 
-[h2]Post-Game Start[/h2]
+[h2]When to Install[/h2]
 
 This mod should not be removed from your save game.  Some added modifiers and technologies will not work without the changes in this mod.  You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as Ringworld preference for Driven Assimilators/Rogue Servitors with Shattered Ring, or the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
 
 [h2]Changelog[/h2]
 
-See the [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2522974089]Change Notes[/url].
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2522974089]Change Notes[/url].
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]

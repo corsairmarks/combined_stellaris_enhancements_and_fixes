@@ -13,7 +13,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) a9680961b4bf4370d7b958eb9d290dba69cea4e1)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 0933af2894d3f7ec772f7de81c334e490849b340)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) b0beff2b169f818a36f39065113f9501f8af9d67)
-* [Ringworld Origin Rebalance for 3.0.*](https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978) ([Source](https://github.com/corsairmarks/ringworld_origin_rebalance) 222cac5bf8773b5398f820b86440d38dc4f306df)
+* [Ringworld Origin Rebalance for 3.0.*](https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978) ([Source](https://github.com/corsairmarks/ringworld_origin_rebalance) d1f3e1fd53104dc13e261c3bb046f30cbb04523a)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 8e02c9aa1a9d985846ef6ea616264d64518a6714)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) df600ad6e737f56144aaa7ea596c9f8b763b58c7)
 * [Prosperity Tradition Rebalance for 3.0.3](https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630) ([Source](https://github.com/corsairmarks/prosperity_tradition_rebalance) 5ebe0a0ba146bce8792be411276bae186fa620fe)
@@ -47,7 +47,7 @@ Each of the source repositories above is added as a remote to this repository on
 
 Requires Stellaris 3.0.3 and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
+Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
 
 ## Recommended Companion Mods
 
@@ -67,7 +67,7 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 1.2.0 Apply fix from "Yet Another Planetary Sky Fix" version 1.1.0
 * 1.3.0 Update merged mods:
     * "Agrarian" Idyll for Lithoids at 1.4.0
-    * Ringworld Origin Rebalance for 3.0.* at ???
+    * Ringworld Origin Rebalance for 3.0.* at 1.0.3
     * Leader Traits: All Eligible Species Traits at 1.3.0 (formerly Enable All Eligible Species Traits for Leaders)
     * Leader Traits: Scientist AI Assistant Upgrader at 1.0.4 (formerly Scientist AI Assistant Upgrader)
     * Prosperity Tradition Rebalance for 3.0.3 at 1.2.0
