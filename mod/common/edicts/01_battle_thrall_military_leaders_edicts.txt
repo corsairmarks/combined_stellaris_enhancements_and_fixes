@@ -1,0 +1,74 @@
+designate_honored_protectors = {
+	length = 0
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 0
+	resources = {
+		category = edicts
+		cost = {
+			influence = 100
+		}
+	}
+	modifier = { }
+	potential = {
+		OR = {
+			AND = {
+				has_origin = origin_necrophage
+				has_trait = trait_necrophage
+			}
+			is_xenophobe = yes
+		}
+		NOT = { has_country_flag = honored_protectors_open }
+		any_galaxy_species = {
+			NOR = {
+				is_same_species = PREV
+				has_species_flag = allow_military_leaders_honored_protectors@PREV
+			}
+			has_citizenship_type = {
+				type = citizenship_slavery
+				country = PREV
+			}
+			has_slavery_type = {
+				type = slavery_military
+				country = PREV
+			}
+		}
+	}
+	effect = {
+		country_event = {
+			id = honored_protectors_decree.2
+		}
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictMedPrio
+			has_policy_flag = slavery_allowed
+			any_enslaved_species = {
+				has_slavery_type = {
+					type = slavery_military
+					country = PREV
+				}
+			}
+			NOT = {
+				any_enslaved_species = {
+					has_species_flag = allow_military_leaders_honored_protectors@PREV
+					has_slavery_type = {
+						type = slavery_military
+						country = PREV
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = is_eldanaer_stellar_authority
+			any_enslaved_species = {
+				has_species_flag = zdremite_species@PREV
+				has_slavery_type = {
+					type = slavery_military
+					country = PREV
+				}
+			}
+		}
+	}
+}

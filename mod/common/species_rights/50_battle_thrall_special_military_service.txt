@@ -68,7 +68,7 @@ military_service_full = {
 			fail_text = too_alien
 			OR = {
 				is_same_species = FROM
-				has_species_flag = allow_military_leaders_for_xenophobe # surprise flag that will help us later
+				has_species_flag = allow_military_leaders_honored_protectors@FROM # surprise flag that will help us later
 				FROM = { is_xenophobe = no }
 			}
 		}
@@ -76,7 +76,7 @@ military_service_full = {
 			fail_text = necrophage_only_allows_necrophage_leaders
 			OR = {
 				is_same_species = FROM
-				has_species_flag = allow_military_leaders_for_necrophage # surprise flag that will help us later
+				has_species_flag = allow_military_leaders_honored_protectors@FROM # surprise flag that will help us later
 				FROM = {
 					NAND = {
 						has_origin = origin_necrophage
