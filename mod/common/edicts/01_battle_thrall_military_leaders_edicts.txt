@@ -17,6 +17,8 @@ designate_honored_protectors = {
 			}
 			is_xenophobe = yes
 		}
+	}
+	allow = {
 		NOT = { has_country_flag = honored_protectors_open }
 		any_galaxy_species = {
 			NOR = {
