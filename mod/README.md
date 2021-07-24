@@ -8,7 +8,7 @@ Individual mods update first, then changes are merged here.
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
-* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 43d494d654fc6465633cf1cb4224e078a21afd2a)
+* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 2ed59b680e1121866f9ac6ae7f34fa4d84302faf)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) a962fee486c6d062f9d3ea9fe7801767daa4ba67)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) a9680961b4bf4370d7b958eb9d290dba69cea4e1)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 0933af2894d3f7ec772f7de81c334e490849b340)
@@ -79,5 +79,5 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Add mod: Retain Leaders from Integrated Subjects at 1.0.1
 * 1.3.1 Update merged mods:
     * Full Military Service for Battle Thralls at 1.5.0
-    * 
+    * Retain Leaders from Integrated Subjects at 1.0.2
     * 
