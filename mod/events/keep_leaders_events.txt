@@ -471,14 +471,14 @@ country_event = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_necrophage = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.phobe.fail_text
 				if = {
 					limit = { is_xenophobe = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_xenophobe = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
@@ -587,14 +587,14 @@ country_event = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_necrophage = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.phobe.fail_text
 				if = {
 					limit = { is_xenophobe = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_xenophobe = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
@@ -673,14 +673,14 @@ country_event = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_necrophage = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
 				fail_text = empire_is_xenophobe_no_x
 				if = {
 					limit = { is_xenophobe = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_xenophobe = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 		}
@@ -940,14 +940,14 @@ country_event = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_necrophage = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
 				fail_text = empire_is_xenophobe_no_x
 				if = {
 					limit = { is_xenophobe = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_xenophobe = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
@@ -1079,14 +1079,14 @@ country_event = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_necrophage = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
 				fail_text = empire_is_xenophobe_no_x
 				if = {
 					limit = { is_xenophobe = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_xenophobe = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 		}
@@ -1137,14 +1137,14 @@ country_event = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_necrophage = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
 				fail_text = empire_is_xenophobe_no_x
 				if = {
 					limit = { is_xenophobe = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_xenophobe = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 		}
@@ -1194,14 +1194,14 @@ country_event = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_necrophage = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 			custom_tooltip = {
 				fail_text = empire_is_xenophobe_no_x
 				if = {
 					limit = { is_xenophobe = yes }
-					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_xenophobe = yes }
+					event_target:global_event_country = { all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
 		}
@@ -1761,12 +1761,11 @@ country_event = {
 				if = {
 					limit = {
 						OR = {
-							event_target:potential_owner = { is_necrophage_empire = no }
-							is_bypass_leader_restriction_necrophage = yes
-						}
-						OR = {
-							event_target:potential_owner = { is_xenophobe = no }
-							is_bypass_leader_restriction_xenophobe = yes
+							event_target:potential_owner = {
+								is_necrophage_empire = no
+								is_xenophobe = no
+							}
+							is_bypass_leader_restriction_honored_protectors = yes
 						}
 					}
 					ensure_species_rights_and_take_ownership_of_leader = yes
@@ -1795,12 +1794,11 @@ country_event = {
 				if = {
 					limit = {
 						OR = {
-							event_target:potential_owner = { is_necrophage_empire = no }
-							is_bypass_leader_restriction_necrophage = yes
-						}
-						OR = {
-							event_target:potential_owner = { is_xenophobe = no }
-							is_bypass_leader_restriction_xenophobe = yes
+							event_target:potential_owner = {
+								is_necrophage_empire = no
+								is_xenophobe = no
+							}
+							is_bypass_leader_restriction_honored_protectors = yes
 						}
 					}
 					ensure_species_rights_and_take_ownership_of_leader = yes
@@ -2279,11 +2277,7 @@ country_event = {
 					limit = {
 						is_robotic_species = yes
 						event_target:potential_owner = { has_full_ai_rights = yes }
-						is_bypass_leader_restriction_necrophage = yes
-						OR = {
-							event_target:potential_owner = { is_xenophobe = no }
-							is_bypass_leader_restriction_xenophobe = yes
-						}
+						is_bypass_leader_restriction_honored_protectors = yes
 					}
 					ensure_species_rights_and_take_ownership_of_leader = yes
 				}

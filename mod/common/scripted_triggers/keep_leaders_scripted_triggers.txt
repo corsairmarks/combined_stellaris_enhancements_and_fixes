@@ -127,12 +127,11 @@ is_eligible_for_policy_full_military_service_species = {
 			event_target:potential_owner = {
 				NOT = { has_valid_civic = civic_fanatic_purifiers }
 				OR = {
-					is_xenophobe = no
-					species = { has_species_flag = allow_military_leaders_for_xenophobe }
-				}
-				OR = {
-					is_necrophage_empire = no
-					species = { has_species_flag = allow_military_leaders_for_necrophage }
+					AND = {
+						is_xenophobe = no
+						is_necrophage_empire = no
+					}
+					species = { has_species_flag = allow_military_leaders_honored_protectors@event_target:potential_owner }
 				}
 			}
 			is_smart_enough_for_leadership_species = yes
@@ -450,12 +449,11 @@ is_eligible_transfer_without_assimilation = {
 			is_hive_species = no
 			is_smart_enough_for_leadership_species = yes
 			OR = {
-				event_target:potential_owner = { is_necrophage_empire = no }
-				is_bypass_leader_restriction_necrophage = yes
-			}
-			OR = {
-				event_target:potential_owner = { is_xenophobe = no }
-				is_bypass_leader_restriction_xenophobe = yes
+				event_target:potential_owner = {
+					is_necrophage_empire = no
+					is_xenophobe = no
+				}
+				is_bypass_leader_restriction_honored_protectors = yes
 			}
 			OR = {
 				is_robotic_species = no # intentionally allows machine leaders to join non-machines, even if their Pops can't
@@ -497,14 +495,10 @@ is_eligible_transfer_with_assimilation = {
 				is_eligible_for_unhive_assimilation_species = yes
 			}
 			is_smart_enough_for_leadership_species = yes
-			OR = {
-				event_target:potential_owner = { is_necrophage_empire = no }
-				is_bypass_leader_restriction_necrophage = yes
-			}
 			# eligible for necrophage is not assimilation so it is intentionally omitted here
 			OR = {
 				event_target:potential_owner = { is_xenophobe = no }
-				is_bypass_leader_restriction_xenophobe = yes
+				is_bypass_leader_restriction_honored_protectors = yes
 			}
 			OR = {
 				is_robotic_species = no # intentionally allows machine leaders to join non-machines, even if their pops can't
@@ -545,38 +539,19 @@ is_robotic_species_lenient = {
 }
 
 # THIS = leader
-is_bypass_leader_restriction_necrophage = {
+is_bypass_leader_restriction_honored_protectors = {
 	is_military_leader = yes
-	species = { has_species_flag = allow_military_leaders_for_necrophage }
-}
-
-# THIS = leader
-is_bypass_leader_restriction_xenophobe = {
-	is_military_leader = yes
-	species = { has_species_flag = allow_military_leaders_for_xenophobe }
+	species = { has_species_flag = allow_military_leaders_honored_protectors@event_target:potential_owner }
 }
 
 # THIS = country
-all_stored_leaders_eligible_transfer_to_necrophage = {
+all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
 	NOT = {
 		any_owned_leader = {
 			is_eligible_transfer_leader_from_storage = yes
 			NOR = {
 				is_same_species = event_target:potential_owner
-				is_bypass_leader_restriction_necrophage = yes
-			}
-		}
-	}
-}
-
-# THIS = country
-all_stored_leaders_eligible_transfer_to_xenophobe = {
-	NOT = {
-		any_owned_leader = {
-			is_eligible_transfer_leader_from_storage = yes
-			NOR = {
-				is_same_species = event_target:potential_owner
-				is_bypass_leader_restriction_xenophobe = yes
+				is_bypass_leader_restriction_honored_protectors = yes
 			}
 		}
 	}
