@@ -9,6 +9,7 @@ on_game_start = {
 on_single_player_save_game_load = {
 	events = {
 		battle_thrall_military_leaders.13 # flag mod as installed
+		honored_protectors_decree.1 # attempt to upgrade old single-player games
 	}
 }
 

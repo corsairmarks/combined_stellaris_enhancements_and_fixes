@@ -12,9 +12,11 @@ In addition to allowing Battle Thralls to have Full Military Service, I slightly
 
 As a minor quality-of-life enhancement, I have also attached an event to `on_fleet_destroyed_perp` that will fire after `leader.1` (captain promoted to admiral) has generated a leader of the owner's main species.  This allows the species of that leader to be rerolled if the empire in question allows Full Military Service for any non-main, non-Battle Thrall species.  If there is a species of Battle Thralls with Full Military Service, then the leader has already had a shot at having their species rerolled.
 
-Finally, because this mod was inspired by my role-play for the [Eldanær Stellar Authority](https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535) it also allows bypassing the xenophobic and necrophage restrictions for allowing Full Military Service.  Simply add the flag you want to ignore (or both) to the species you want to allow Full Military Service despite the fact you are xenophobic and/or a necrophage: `allow_military_leaders_for_xenophobe`, `allow_military_leaders_for_necrophage`.
+Finally, because this mod was inspired by my role-play for the [Eldanær Stellar Authority](https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535) it also allows bypassing the xenophobic and necrophage restrictions for allowing Full Military Service.  You can bypass these restrictions by using the custom Edict called "Decree: Honored Protectors" which will let you choose from any species that you have set to Citizenship: Slavery and Slavery Type: Battle Thralls for 100 influence.  The chosen species has a flag applied (previously two flags) and is set to Military Service: Full Military Service.
 
-### Post-Game Start
+This mod is set to detect any species previously flagged in a single player game, and attempt to convert the old flags into the new (country-specific) flag.  It things still don't work right (or you were in a multiplayer game) then you can either use the edict to apply the flag, or use the console `setflag species <species_id> allow_military_leaders_honored_protectors<country_id>` where <species_id> is the specific species (or subspecies) you want to be flagged and <country_id> is your country's numeric ID (usually 0 for the player in single-player games).
+
+### When to Install
 
 This mod can be safely added to your savegame after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-ivalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
 
@@ -32,9 +34,13 @@ This mod is not compatible with achievements.
 
 ## Localisation
 
-This mod is localized for every language supported by Stellaris - mainly because it uses the built-in localisation.
+This mod is mostly localized for every language supported by Stellaris - mainly because it uses the built-in localisation.
 
-The updated Full Military Service species right now enforces that necrophage empires cannot select it for non-main species and needed a tooltip.  I created this tooltip by taking the first half of the second bullet point from the built-in localisation for the necrophage origin's effects, `civic_tooltip_necrophage_effects` in the file `localisation/<language>/necroids_l_<language>.yml`.  In English that is "Only Necrophage Pops may be leaders."  If I have destroyed your language and you'd like to suggest a better translation, please leave a comment.
+The updated Full Military Service species right now enforces that necrophage empires cannot select it for non-main species and needed a tooltip.  I created this tooltip by taking the first half of the second bullet point from the built-in localisation for the necrophage origin's effects, `civic_tooltip_necrophage_effects` in the file `localisation/<language>/necroids_l_<language>.yml`.  In English that is "Only Necrophage Pops may be leaders."  If I have destroyed your language and you'd like to suggest a better translation, please leave a comment or message me.
+
+I also found that the built-in localisation for `any_galaxy_species_trigger` was incorrect and referred to a "Number of Species in the Galaxy" when instead it should say "Any Species in the Galaxy" (English).  I've attempted some tooltip splicing to get the right translations for other languages (except Simplified Chinese).  As above, please comment or message me if I have massacred your language and you would like to help.
+
+However, the new edict to declare Battle Thralls as Honored Protectors is not localised - that is because it is my original writing.  The english text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
 
 ## Known Issues
 
@@ -53,6 +59,7 @@ This mode overrides a built-in trigger `can_be_military_leader` and a species ri
 * 1.2.0 remove monthly pulse for mod flag
 * 1.3.0 Enhance compatibility with [Gender Nonbinary Leaders](https://steamcommunity.com/sharedfiles/filedetails/?id=2528614880)
 * 1.4.0 Enhance compatibility with my other mods that work with changing leader species - no gameplay changes in this mod
+* 1.5.0 Add edict "Decree: Honored Protectors" so players can choose Battle Thralls they'd like to allow Full Military Service, despite being xenophobic and/or a necrophage
 
 ## Source Code
 
