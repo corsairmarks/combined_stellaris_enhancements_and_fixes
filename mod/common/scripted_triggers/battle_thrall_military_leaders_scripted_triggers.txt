@@ -1,0 +1,10 @@
+should_accumulate_potential_protector = {
+	check_variable = {
+		which = num_subset_potential_protectors
+		value < 10
+	}
+	check_variable = {
+		which = num_potential_protectors
+		value > 0
+	}
+}
