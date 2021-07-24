@@ -14,7 +14,7 @@ As a minor quality-of-life enhancement, I have also attached an event to `on_fle
 
 Finally, because this mod was inspired by my role-play for the [Eldanær Stellar Authority](https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535) it also allows bypassing the xenophobic and necrophage restrictions for allowing Full Military Service.  You can bypass these restrictions by using the custom Edict called "Decree: Honored Protectors" which will let you choose from any species that you have set to Citizenship: Slavery and Slavery Type: Battle Thralls for 100 influence.  The chosen species has a flag applied (previously two flags) and is set to Military Service: Full Military Service.
 
-This mod is set to detect any species previously flagged in a single player game, and attempt to convert the old flags into the new (country-specific) flag.  It things still don't work right (or you were in a multiplayer game) then you can either use the edict to apply the flag, or use the console `setflag species <species_id> allow_military_leaders_honored_protectors<country_id>` where <species_id> is the specific species (or subspecies) you want to be flagged and <country_id> is your country's numeric ID (usually 0 for the player in single-player games).
+This mod is set to detect any species previously flagged in a single player game, and attempt to convert the old flags into the new (country-specific) flag.  It things still don't work right (or you were in a multiplayer game) then you can either use the edict to apply the flag, or use the console to execute an effect to manually add the flag.
 
 ### When to Install
 
