@@ -19,11 +19,16 @@ designate_honored_protectors = {
 		}
 	}
 	allow = {
-		NOT = { has_country_flag = honored_protectors_open }
+		hidden_trigger = {
+			NOT = { has_country_flag = honored_protectors_open }
+		}
 		any_galaxy_species = {
-			NOR = {
-				is_same_species = PREV
-				has_species_flag = allow_military_leaders_honored_protectors@PREV
+			hidden_trigger = {
+				NOT = { is_same_species = PREV }
+			}
+			custom_tooltip = {
+				fail_text = edict_designate_honored_protectors.not_already_designated
+				NOT = { has_species_flag = allow_military_leaders_honored_protectors@PREV }
 			}
 			has_citizenship_type = {
 				type = citizenship_slavery
@@ -36,8 +41,10 @@ designate_honored_protectors = {
 		}
 	}
 	effect = {
-		country_event = {
-			id = honored_protectors_decree.2
+		hidden_effect = {
+			country_event = {
+				id = honored_protectors_decree.2
+			}
 		}
 	}
 	ai_weight = {

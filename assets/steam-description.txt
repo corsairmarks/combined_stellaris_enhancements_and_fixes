@@ -38,6 +38,8 @@ This mod is mostly localized for every language supported by Stellaris - mainly 
 
 The updated Full Military Service species right now enforces that necrophage empires cannot select it for non-main species and needed a tooltip.  I created this tooltip by taking the first half of the second bullet point from the built-in localisation for the necrophage origin's effects, [b]civic_tooltip_necrophage_effects[/b] in the file [b]localisation/<language>/necroids_l_<language>.yml[/b].  In English that is "Only Necrophage Pops may be leaders."  If I have destroyed your language and you'd like to suggest a better translation, please leave a comment or message me.
 
+I also found that the built-in localisation for [b]any_galaxy_species_trigger[/b] was incorrect and referred to a "Number of Species in the Galaxy" when instead it should say "Any Species in the Galaxy" (English).  I've attempted some tooltip splicing to get the right translations for other languages (except Simplified Chinese).  As above, please comment or message me if I have massacred your language and you would like to help.
+
 However, the new edict to declare Battle Thralls as Honored Protectors is not localised - that is because it is my original writing.  The english text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
 
 [h2]Known Issues[/h2]
