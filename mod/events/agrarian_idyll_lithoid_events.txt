@@ -35,3 +35,31 @@ planet_event = {
 		}
 	}
 }
+
+# fired by empire_init_capital_planet, intended to go after game_start.12
+planet_event = {
+	id = agrarian_idyll_lithoid.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = { has_valid_civic = civic_agrarian_idyll }
+	}
+	immediate = {
+		if = {
+			limit = { NOT = { has_planet_flag = special_start_planet } }
+			while = {
+				limit = { has_district = district_city }
+				remove_district = district_city
+				if = {
+					limit = { owner = { is_lithoid_empire = no } }
+					add_district = district_farming
+				}
+				else = {
+					add_district = district_mining
+				}
+			}
+		}
+	}
+}
+
+

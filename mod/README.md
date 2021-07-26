@@ -2,6 +2,8 @@
 
 Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied to farming districts.  This mod creates a swapped Agrarian Idyll just for lithoids - now your miners will generate amenities instead of farmers!  This mod also features english localisation for these effects.
 
+A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0.*: each rural district (generator, mining, or farming) now adds one-fifth (0.2) of a building slot - so every five rural districts will grant a building slot.
+
 And yes, I totally made up "lithorian" as an alternative to "agrarian" - going to stick with it for now.
 
 # Changes
@@ -55,6 +57,7 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
     * Remove monthly pulse event, add flag instead when single player games are loaded
     * Use a more "rocky" icon for Lithorian Utopias (housing tech)
     * Ensure any farming districts created during capitol planet setup are converted to mining districts
+* 1.5.0 Rural districts increase building slots
 
 ## Source Code
 
