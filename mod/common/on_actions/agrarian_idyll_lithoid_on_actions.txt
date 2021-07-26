@@ -18,6 +18,7 @@ on_single_player_save_game_load = {
 # FROMFROM = secondary species (if exists) - seems to not work
 empire_init_capital_planet = {
 	events = {
-		agrarian_idyll_lithoid.1 # alter starting districts
+		agrarian_idyll_lithoid.1 # ensure lithoids don't have farming
+		agrarian_idyll_lithoid.2 # replace cities with rural districts
 	}
 }
