@@ -2,13 +2,15 @@
 
 Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied to farming districts.  This mod creates a swapped Agrarian Idyll just for lithoids - now your miners will generate amenities instead of farmers!  This mod also features english localisation for these effects.
 
-A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0.*: each rural district (generator, mining, or farming) now adds one-fifth (0.2) of a building slot - so every five rural districts will grant a building slot.
+A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0.*: rural districts (generator, mining, or farming) now add one unit of planetary capacity per two districts and one building slot per four districts.  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for the appropriate district type (farming or mining).
 
 And yes, I totally made up "lithorian" as an alternative to "agrarian" - going to stick with it for now.
 
 # Changes
 
 Creates a civic swap for Agrarian Idyll for Lithoids (it will automatically change - similar to Devouring Swarm <-> Terravore).  Miners (_including_ those for mote/gas/crystal deposits) generate the same amount of Amenities that farmers generate for the standard version, and have their job weights adjusted accordingly for traits that affect Amenities output.  A new technology "Lithorian Utopias" replaces the standard "Agrarian Utopias" and adds +1 housing to Mining Districts.  Lithorian Idyll also loses the usual Agrarian Idyll bonus housing on Ringworld Farming Districts.
+
+Rural districts grant 0.5 planetary capacity and 0.25 building slots per district.  The Agrarian/Lithorian Utopias technology doubles these benefits for the appropriate district type (farming or mining).
 
 Because this is a tradition text swap, all the the normal restrictions for Agrarian Idyll apply to it (without further code changes).
 
@@ -57,7 +59,9 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
     * Remove monthly pulse event, add flag instead when single player games are loaded
     * Use a more "rocky" icon for Lithorian Utopias (housing tech)
     * Ensure any farming districts created during capitol planet setup are converted to mining districts
-* 1.5.0 Rural districts increase building slots
+* 1.5.0 Enhance Agrarian/Lithorian Idyll with building slots and carrying capacity bonuses - the goal is to reduce the need for City Districts
+    * Rural districts increase building slots and carrying capacity
+    * Utopias tech doubles down on these bonuses for Agricultural or Mining Districts (depending on whether you are a lithoid empire)
 
 ## Source Code
 
