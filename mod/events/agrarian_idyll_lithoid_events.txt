@@ -27,10 +27,25 @@ planet_event = {
 	immediate = {
 		if = {
 			limit = { NOT = { has_planet_flag = special_start_planet } }
-			while = {
-				limit = { has_district = district_farming }
-				remove_district = district_farming
-				add_district = district_mining
+			if = {
+				limit = { owner = { NOT = { has_country_flag = non_lithoid_subspecies } } }
+				while = {
+					limit = { has_district = district_farming }
+					remove_district = district_farming
+					add_district = district_mining
+				}
+			}
+			else = {
+				while = {
+					limit = {
+						num_districts = {
+							type = district_farming
+							value > 2
+						}
+					}
+					remove_district = district_farming
+					add_district = district_mining
+				}
 			}
 		}
 	}
@@ -61,5 +76,3 @@ planet_event = {
 		}
 	}
 }
-
-
