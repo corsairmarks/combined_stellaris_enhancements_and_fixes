@@ -2,13 +2,13 @@
 
 Have you ever conquered a Machine World as a regular empire?  Or perhaps you ended up with one after integrating a machine subject?  The build-in Replicator job is not usable by regular empires - so this mod set out to fix that.
 
-However, instead of just adding a Roboticist job and calling it a day, I decided to add a little extra flavor.  Machine Worlds themselves are gestalt consciousnesses even when disconnected from a Machine Intelligence.  While content to continue their existence without expanding, they will only grant their production bonuses (and a Robiticist job) to empires that enfranchise AI.  Conversely, empires that ban AI will have their efforts to use the Machine World subtly hampered by the world itself, in the form of additional penalties.  They are watching your policy decisions and will adjust their opinion of you accordingly.
+However, instead of just adding a Roboticist job and calling it a day, I decided to add a little extra flavor.  Machine Worlds themselves are gestalt consciousnesses even when disconnected from a Machine Intelligence.  While content to continue their existence without expanding, they will only grant their production bonuses (and a Roboticist job) to empires that enfranchise AI.  Conversely, empires that ban AI will have their efforts to use the Machine World subtly hampered by the world itself, in the form of additional penalties.  They are watching your policy decisions and will adjust their opinion of you accordingly.
 
 # Changes
 
-Adjusts the Industrial District to provide the correct job shift to Metallurgists from Artisans for Foundy Machine Worlds (and vice versa for Factory Machine Worlds) - previously the designation could be picked, but no jobs shifted.  The Factory Machine World designation is now usable by regular empires (was previously unavailable).
+Adjusts the Industrial District to provide the correct job shift to Metallurgists from Artisans for Foundry Machine Worlds (and vice versa for Factory Machine Worlds) - previously the designation could be picked, but no jobs shifted.  The Factory Machine World designation is now usable by regular empires (was previously unavailable).
 
-Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displayes the World's opinion of your empire (Cooperative, Neutral, or Hostile).  All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job.  Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels our the bonuses and adds additional production and maintenance penalties.
+Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displays the Machine World's opinion of your empire (Cooperative, Neutral, or Hostile).  All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job to replace it.  Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels our the bonuses and adds additional production and maintenance penalties.
 
 ## Compatibility
 
@@ -25,14 +25,17 @@ What this means to you is that this mod is not compatible with other mods that a
 
 Together with the above two mods, you're more likely to obtain a Machine World as a non-Machine empire.
 
-
 ### When to Install
 
-This mod can be safely added to your savegame after the game has started. Because it adds  Back up your savegame before trying to remove a mod.
+This mod can be safely added to your savegame after the game has started.  Because it adds static modifiers for planets, it is not advisable to remove during gameplay.  If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested.  Back up your savegame before trying to remove a mod.
 
 ## Known Issues
 
-Are there any?
+Overriding a colony designation causes the game to log an error like this:
+
+```
+[19:47:33][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists
+```
 
 ## Changelog
 
