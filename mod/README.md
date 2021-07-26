@@ -62,6 +62,7 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
 * 1.5.0 Enhance Agrarian/Lithorian Idyll with building slots and carrying capacity bonuses - the goal is to reduce the need for City Districts
     * Rural districts increase building slots and carrying capacity
     * Utopias tech doubles down on these bonuses for Agricultural or Mining Districts (depending on whether you are a lithoid empire)
+* 1.5.1 Update images (including thumbnail)
 
 ## Source Code
 
