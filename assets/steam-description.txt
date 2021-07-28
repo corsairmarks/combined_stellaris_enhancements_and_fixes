@@ -17,7 +17,6 @@ This mod started as a response to four very specific, small areas:
 
 To address these issues, this mod implements free districts upon conquering a primitive planet for both players and AIs.  It also generates the appropriate housing/urban districts based on the conquering empire (including some organic sanctuaries for Rogue Servitors).  Mining districts are generated instead of farming districts if the conquered primitive species is lithoid.  Finally, it triggers the aforementioned free district creation in the Necrophage AI helper event.  In combination, these small changes should help AI players be a bit more successful when conquering primitive planets.
 
-
 [h2]Primitive Infiltration Now Included[/h2]
 
 The "Infiltration" observation station mission was yet another place where the game did something different when transferring primitive planet control.  A fixed amount of districts and buildings (including a branch office building, which was probably intended to be Commercial Zones instead) were generated.  It didn't account for lithoids and ringworlds received nothing at all.
@@ -30,6 +29,10 @@ This mod replaces four events from the base game: [b]action.14[/b], [b]action.14
 
 Most of the new custom logic is implemented outside of these events.  New in version 1.3.0 are two custom on_actions: [b]on_primitive_planet_transferring[/b] that fires before planet ownership changes and [b]on_primitive_planet_transferred[/b] that fires after planet ownership changes.  District/building generation is triggered by [b]on_primitive_planet_transferred[/b].  The most useful part of all of this is that you can make other mods tie in to these on_actions to create new effects when primitives are conquered/infiltrated.
 
+[h2]Localisation[/h2]
+
+Includes English
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2558494770]corsairmarks's Leader Traits MOD Chinese patch[/url] by Hua Zhang - Chinese localisation
 
 [h2]Known Issues[/h2]
 

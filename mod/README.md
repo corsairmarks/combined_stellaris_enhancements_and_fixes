@@ -27,6 +27,11 @@ This mod replaces four events from the base game: `action.14`, `action.140`, `ne
 
 Most of the new custom logic is implemented outside of these events.  New in version 1.3.0 are two custom on_actions: `on_primitive_planet_transferring` that fires before planet ownership changes and `on_primitive_planet_transferred` that fires after planet ownership changes.  District/building generation is triggered by `on_primitive_planet_transferred`.  The most useful part of all of this is that you can make other mods tie in to these on_actions to create new effects when primitives are conquered/infiltrated.
 
+## Localisation
+
+Includes English
+[corsairmarks's Leader Traits MOD Chinese patch](https://steamcommunity.com/sharedfiles/filedetails/?id=2558494770) by Hua Zhang - Chinese localisation
+
 ## Known Issues
 
 Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate four error lines that look similar to this:
