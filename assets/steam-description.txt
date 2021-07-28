@@ -41,7 +41,7 @@ Overriding a colony designation causes the game to log an error like this:
 
 [h2]Changelog[/h2]
 
-See [url=]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2559702143]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
