@@ -958,3 +958,32 @@ country_event = {
 		remove_country_flag = honored_protectors_open
 	}
 }
+
+# test event
+country_event = {
+	id = honored_protectors_decree.999
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_species = {
+			limit = { NOT = { is_same_species = ROOT } }
+			if = {
+				limit = {
+					PREV = { is_xenophobe = yes }
+					NOT = { has_species_flag = allow_military_leaders_for_xenophobe }
+				}
+				set_species_flag = allow_military_leaders_for_xenophobe
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_origin = origin_necrophage
+						has_trait = trait_necrophage
+					}
+					NOT = { has_species_flag = allow_military_leaders_for_necrophage }
+				}
+				set_species_flag = allow_military_leaders_for_necrophage
+			}
+		}
+	}
+}
