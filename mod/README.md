@@ -4,10 +4,16 @@ This mod is a compilation of most of my other fixes and balance mods.  Please se
 
 Individual mods update first, then changes are merged here.
 
+# Major Update
+
+Version 2.0.0 adds a mod that reduces compatibility of this mod.  Because Deassimilate Machines can be incompatible with other assimilation mods, this may cause issues if you are already using such a mod.  You can manually download the most recent version without this breaking change here: [1.3.4](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/1.3.4).  You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
+
 # Bundled Mods
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
+* [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 0b59f81a4ed1672fab9a3fae7fe60f4c2e191d49)
+* [Deassimilated Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 78ced56c472b7417331337ac36e62eb79598f6b8)
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 26a61cd4f3d426f7b12648238f87bd65d19a3377)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 528ed549fcbff74592781d5c58061334482e3f2f)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) a9680961b4bf4370d7b958eb9d290dba69cea4e1)
@@ -88,3 +94,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 1.3.4 Update merged mods:
     * Full Military Service for Battle Thralls at 1.5.1
     * Retain Leaders from Integrated Subjects at 1.1.0
+* 2.0.0 Add merged mods:
+    * Deassimilate Machines at 1.0.1
+    * Deassimilated Machine Worlds at 1.0.0
