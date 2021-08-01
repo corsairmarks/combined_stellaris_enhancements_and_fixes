@@ -1,5 +1,6 @@
 # THIS = leader
 add_former_ruler_trait = {
+	try_add_demoted_ruler_bonus_trait = yes
 	if = {
 		limit = { is_machine_species = yes }
 		if = {
@@ -54,6 +55,7 @@ add_former_ruler_trait = {
 
 # THIS = leader
 add_former_heir_trait = {
+	try_add_demoted_ruler_bonus_trait = yes
 	if = {
 		limit = {
 			is_machine_species = no

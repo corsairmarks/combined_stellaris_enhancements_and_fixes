@@ -545,13 +545,60 @@ is_bypass_leader_restriction_honored_protectors = {
 }
 
 # THIS = country
+any_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
+	any_owned_leader = {
+		is_eligible_transfer_leader_from_storage = yes
+		OR = {
+			is_same_species = event_target:potential_owner
+			is_bypass_leader_restriction_honored_protectors = yes
+		}
+	}
+}
+
+# THIS = country
 all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
-	NOT = {
-		any_owned_leader = {
-			is_eligible_transfer_leader_from_storage = yes
-			NOR = {
+	count_owned_leader = {
+		count = all
+		limit = {
+			OR = {
+				is_eligible_transfer_leader_from_storage = no
 				is_same_species = event_target:potential_owner
 				is_bypass_leader_restriction_honored_protectors = yes
+			}
+		}
+	}
+}
+
+# THIS = country
+all_stored_organic_leaders_eligible_transfer_to_main_species_leader_restricted = {
+	count_owned_leader = {
+		count = all
+		limit = {
+			OR = {
+				is_eligible_transfer_leader_from_storage = no
+				is_same_species = event_target:potential_owner
+				AND = {
+					is_bypass_leader_restriction_honored_protectors = yes
+					is_organic_species = yes
+					is_hive_species = no
+				}
+			}
+		}
+	}
+}
+
+# THIS = country
+all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted = {
+	count_owned_leader = {
+		count = all
+		limit = {
+			OR = {
+				is_eligible_transfer_leader_from_storage = no
+				is_same_species = event_target:potential_owner
+				AND = {
+					is_bypass_leader_restriction_honored_protectors = yes
+					is_robotic_species_lenient = yes
+				}
 			}
 		}
 	}
@@ -563,6 +610,16 @@ all_stored_leaders_same_species = {
 		any_owned_leader = {
 			is_eligible_transfer_leader_from_storage = yes
 			NOT = { is_same_species = event_target:potential_owner }
+		}
+	}
+}
+
+# THIS = country
+all_stored_leaders_robotic_strict = {
+	NOT = {
+		any_owned_leader = {
+			is_eligible_transfer_leader_from_storage = yes
+			is_robotic_species = no
 		}
 	}
 }

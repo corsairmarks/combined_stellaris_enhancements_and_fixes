@@ -46,4 +46,18 @@ defined_text = { # scope with species
 	}
 }
 
-# 
+# scope doesn't matter - workaround to read localisation into an argument for custom_tooltip_with_params
+defined_text = {
+	name = GetUnityName
+	text = {
+		localization_key = unity
+	}
+}
+
+# scope doesn't matter - workaround to read localisation into an argument for custom_tooltip_with_params
+defined_text = {
+	name = GetSocietyResearchName
+	text = {
+		localization_key = society_research
+	}
+}
