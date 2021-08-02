@@ -41,6 +41,7 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.0.1 Fix thumbnail
 
 ## Source Code
 
