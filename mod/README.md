@@ -12,6 +12,7 @@ Version 2.0.0 adds a mod that reduces compatibility of this mod.  Because Deassi
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
+* [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) dfe33503bee3c0484e3dba7ec5d31059fcc499a5)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 0b59f81a4ed1672fab9a3fae7fe60f4c2e191d49)
 * [Deassimilated Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 78ced56c472b7417331337ac36e62eb79598f6b8)
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 26a61cd4f3d426f7b12648238f87bd65d19a3377)
@@ -97,3 +98,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 2.0.0 Add merged mods:
     * Deassimilate Machines at 1.0.1
     * Deassimilated Machine Worlds at 1.0.0
+* 2.1.0 Add merged mod: Counter-Limited Armies Fix
