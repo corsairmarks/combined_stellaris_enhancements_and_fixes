@@ -40,7 +40,7 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 
 [h2]Changelog[/h2]
 
-See [url=]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2564348666]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
