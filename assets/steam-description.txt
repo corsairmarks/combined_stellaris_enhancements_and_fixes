@@ -1,0 +1,49 @@
+[h1]Overview[/h1]
+
+Are you frustrated that you have a limited supply of Titanic Beasts or Imperial Legions or Azizian Armies?  Well fret no more!  This mod actively tracks how many many of each type you own and lets you build reinforcements up to the regular cap for each type.
+
+Additionally, this mod now entitles you to number of Titanic Beats equal to your successful Titanic Life projects times three (instead of three no matter how many times you have completed the project).  Have 2 Titanic Life worlds?  Now your maximum is 6 instead of 3.
+
+To make things easier, this mod recalculates army counts and the maximum Titanic Beasts for any qualifying countries when you load your savegame - in particular this means it will immediately apply to your existing, single-player games without any hassle.  It also recalculates monthly because some things that might alter the amount of armies aren't able to be tracked directly.  If recalculation is needed manually, run [b]event limited_army_counter_fix.3[/b] from the console.
+
+[h1]Changes[/h1]
+
+The counter-limited army types (Titanic Beasts, Azizian Armies, and Imperial Legions) now allow you to build replacements when killed, up to the original caps: 3 for Azizians, 12 for Imperial Legions, and 3 Titanic Beasts per world with a successful Titanic Life research project).
+
+This mod won't affect any other kinds of armies.
+
+[h2]Compatibility[/h2]
+
+Overwrites the three built-in counter-limited armies in order to improve their counter usage: [b]titanic_assault_army[/b], [b]titanic_azizian_assault_army[/b], and [b]imperial_legion[/b].  The [b]titanic_assault_army[/b] also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
+
+Preempts the event [b]colony_mod.101[/b] (the positive Titanic Life outcome) in order to implement the scaling maximum and event [b]emperor.450[/b] to remove its effects.  Counter-limited army decrementing is now handled in [b]limited_army_counter_fix.1[/b] for all three types.
+
+This mod is incompatible with other mods that also replace the same army types or make changes to the same events.  Not compatible with achievements.
+
+[h3]When to Install[/h3]
+
+This mod can be safely added to your savegame after the game has started.  If removed, your game should generally function normally - Stellaris is usually fairly forgiving and just ignores missing events that were attached to an [b]on_action[/b].  Because this mod uses the same counter variables as the default code, the built-in army limits will be enforced.  Always back up your savegame before trying to remove a mod.
+
+[h2]Known Issues[/h2]
+
+Because this mod replaces three army types ([b]titanic_assault_army[/b], [b]titanic_azizian_assault_army[/b], and [b]imperial_legion[/b]) and preempts two events ([b]colony_mod.101[/b] and [b]emperor.450[/b]), it is expected to generate five lines in error.log like this:
+
+[code]
+[12:35:16][game_singleobjectdatabase.h:147]: Object with key: titanic_assault_army already exists
+[12:35:16][game_singleobjectdatabase.h:147]: Object with key: titanic_azizian_assault_army already exists
+[12:35:16][game_singleobjectdatabase.h:147]: Object with key: imperial_legion already exists
+[12:35:18][eventmanager.cpp:355]: an event with id [colony_mod.101] already exists!  file: events/colony_events_3.txt line: 234
+[12:35:18][eventmanager.cpp:355]: an event with id [emperor.450] already exists!  file: events/nemesis_emperor_events.txt line: 2304
+[/code]
+
+When an empire loses a Titanic Life planet (thus lowering their cap) while recruiting Titanic Beasts on another planet and would exceed the new, lower cap, ideally army recruitment would be be cancelled.  Armies cannot be dequeued via script, so instead this mod watches when armies are recruited and automatically deletes and refunds armies that would be over the cap.  Because of a possible crash, the army deletion occurs one day after the "over cap" army finishes being recruited.
+
+[h2]Changelog[/h2]
+
+See [url=]Change Notes[/url]
+
+[h2]Source Code[/h2]
+
+Hosted on [url=https://github.com/corsairmarks/limited_army_counter_fix]GitHub[/url]
+
+[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
