@@ -22,6 +22,7 @@ planet_event = {
 	trigger = {
 		is_planet_class = pc_machine
 		exists = FROM
+		FROM = { is_regular_empire = yes }
 		days_passed > 0
 	}
 	immediate = {
