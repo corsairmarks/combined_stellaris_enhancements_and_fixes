@@ -100,6 +100,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Deassimilated Machine Worlds at 1.0.0
 * 2.1.0 Add merged mod: Counter-Limited Armies Fix
 * 2.1.1 Update merged mods:
-    * Deassimilated Machines at 1.0.2
+    * Deassimilate Machines at 1.0.2
     * Deassimilated Machine Worlds at 1.0.1
     * Shattered Ring Rebalance for 3.0.* at 1.1.0
