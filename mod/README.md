@@ -40,7 +40,10 @@ Overriding a colony designation causes the game to log an error like this:
 ## Changelog
 
 * 1.0.0 Initial version
-* 1.0.1 Prevent confusing initial event description complaining about lack of synth rights when the empire does in fact have synth rights
+* 1.0.1 Bugfixes
+    * Prevent confusing initial event description complaining about lack of synth rights when the empire does in fact have synth rights
+    * Machine empires won't get a Machine World opinion because they integrate it (debuffs suck)
+    * Don't add duplicate modifiers to Machine Worlds
 
 ## Source Code
 
