@@ -40,6 +40,7 @@ Overriding a colony designation causes the game to log an error like this:
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.0.1 Prevent confusing initial event description complaining about lack of synth rights when the empire does in fact have synth rights
 
 ## Source Code
 

@@ -63,13 +63,11 @@ planet_event = {
 		text = deassimilated_machine_world.20.desc
 		trigger = {
 			FROM  = {
-				OR = {
-					NAND = {
-						has_policy_flag = robots_allowed
-						has_policy_flag = ai_full_rights
-					}
-					is_mechanical_empire = no
+				NAND = {
+					has_policy_flag = robots_allowed
+					has_policy_flag = ai_full_rights
 				}
+				is_mechanical_empire = no
 			}
 		}
 	}
