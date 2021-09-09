@@ -14,7 +14,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 * [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) dfe33503bee3c0484e3dba7ec5d31059fcc499a5)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 55764384b73eca3cc54e89820c4ba008e8442458)
-* [Deassimilated Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 13275b0e539abdec82f81c008d34d5a541891481)
+* [Deassimilated Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 70712de2ddd3c4c04800f53c3455cde90394c49d)
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 781113cd6e6498f775bd2652133628344bfe7669)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 528ed549fcbff74592781d5c58061334482e3f2f)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) a9680961b4bf4370d7b958eb9d290dba69cea4e1)
@@ -105,3 +105,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Shattered Ring Rebalance for 3.0.* at 1.1.0
 * 2.1.2 Update merged mods:
     * Retain Leaders from Integrated Subjects at 1.2.1
+    * Deassimilated Machines at 1.0.3
