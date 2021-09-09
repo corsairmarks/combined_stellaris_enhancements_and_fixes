@@ -305,7 +305,7 @@ set_minimum_standard_of_living_species = {
 					has_citizenship_type = {
 						country = event_target:potential_owner
 						type = citizenship_full
-					} 
+					}
 				}
 				set_living_standard = {
 					country = event_target:potential_owner
@@ -392,9 +392,7 @@ set_former_gestalt_ruler_flag = {
 remove_gestalt_ruler_traits = {
 	if = {
 		limit = { has_trait = leader_trait_ruler_machine_intelligence }
-		set_leader_flag = former_gestalt_ruler
 		remove_trait = leader_trait_ruler_machine_intelligence
-		add_random_leader_trait = yes
 	}
 	if = {
 		limit = { has_ruler_trait = leader_trait_ruler_machine_intelligence }
@@ -402,9 +400,7 @@ remove_gestalt_ruler_traits = {
 	}
 	if = {
 		limit = { has_trait = leader_trait_ruler_hive_mind }
-		set_leader_flag = former_gestalt_ruler
 		remove_trait = leader_trait_ruler_hive_mind
-		add_random_leader_trait = yes
 	}
 	if = {
 		limit = { has_ruler_trait = leader_trait_ruler_hive_mind }
@@ -437,6 +433,14 @@ replace_leader_as_governor = {
 			save_event_target_as = leader_to_replace
 		}
 	}
+	else = {
+		event_target:leader_to_replace = {
+			if = {
+				limit = { has_leader_flag = clear_traits }
+				remove_leader_flag = clear_traits
+			}
+		}
+	}
 }
 
 # THIS = country
@@ -462,6 +466,14 @@ replace_leader_as_scientist = {
 			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
 			leader_event = { id = keep_leaders.6 }
 			save_event_target_as = leader_to_replace
+		}
+	}
+	else = {
+		event_target:leader_to_replace = {
+			if = {
+				limit = { has_leader_flag = clear_traits }
+				remove_leader_flag = clear_traits
+			}
 		}
 	}
 }
@@ -491,6 +503,14 @@ replace_leader_as_admiral = {
 			save_event_target_as = leader_to_replace
 		}
 	}
+	else = {
+		event_target:leader_to_replace = {
+			if = {
+				limit = { has_leader_flag = clear_traits }
+				remove_leader_flag = clear_traits
+			}
+		}
+	}
 }
 
 # THIS = country
@@ -516,6 +536,14 @@ replace_leader_as_general = {
 			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
 			leader_event = { id = keep_leaders.6 }
 			save_event_target_as = leader_to_replace
+		}
+	}
+	else = {
+		event_target:leader_to_replace = {
+			if = {
+				limit = { has_leader_flag = clear_traits }
+				remove_leader_flag = clear_traits
+			}
 		}
 	}
 }
@@ -1039,7 +1067,7 @@ try_add_demoted_ruler_general_bonus_trait = {
 	else_if = {
 		limit = {
 			has_ruler_trait = trait_ruler_warlike
-			NOR = { 
+			NOR = {
 				has_trait = leader_trait_butcher
 				has_trait = leader_trait_demoralizer
 			}

@@ -1,5 +1,24 @@
 namespace = keep_leaders_bonus_traits
 
+# fired by on_ruler_back_to_pre_ruler_class
+country_event = {
+	id = keep_leaders_bonus_traits.19
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		exists = FROM
+		FROM = {
+			NOR = {
+				has_leader_flag = former_ruler
+				has_leader_flag = former_heir
+			}
+		}
+	}
+	immediate = {
+		FROM = { add_former_ruler_trait = yes }
+	}
+}
+
 # fired when this mod adds one of these traits to a leader, and by on_ruler_set and on_ruler_back_to_pre_ruler_class
 # fired by keep_leaders_bonus_traits.21 which manually delays a day from leader firing/death in order to update
 # after the game removes them from the leader pool
@@ -237,7 +256,7 @@ country_event = {
 	}
 }
 
-# shim event in order to update cxountry-level leader bonuses after the game removes them from the leader pool
+# shim event in order to update country-level leader bonuses after the game removes them from the leader pool
 # fired by on_leader_fired and on_leader_death 
 country_event = {
 	id = keep_leaders_bonus_traits.21

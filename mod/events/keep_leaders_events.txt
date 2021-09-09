@@ -147,6 +147,7 @@ country_event = {
 				limit = { exists = ruler }
 				ruler = {
 					set_name = keep_leaders.former_ruler_name
+					set_leader_flag = former_ruler
 					save_event_target_as = integrated_ruler
 				}
 				if = {
@@ -172,12 +173,18 @@ country_event = {
 						save_event_target_as = leader_to_replace
 					}
 					replace_leader_based_on_government_type = yes
-					event_target:leader_to_replace = { save_event_target_as = integrated_ruler }
+					event_target:leader_to_replace = {
+						if = {
+							limit = { NOT = { has_leader_flag = former_ruler } }
+							set_leader_flag = former_ruler
+						}
+						save_event_target_as = integrated_ruler
+					}
 				}
 				event_target:integrated_ruler = {
 					accumulate_leader = yes
-					set_leader_flag = former_ruler
 					set_former_gestalt_ruler_flag = yes
+					remove_gestalt_ruler_traits = yes
 					add_former_ruler_trait = yes
 					transfer_leader_to_storage = yes
 				}
@@ -186,6 +193,7 @@ country_event = {
 				limit = { exists = heir }
 				heir = {
 					set_name = keep_leaders.former_ruler_name
+					set_leader_flag = former_heir
 					save_event_target_as = integrated_heir
 				}
 				if = {
@@ -215,11 +223,16 @@ country_event = {
 						save_event_target_as = leader_to_replace
 					}
 					replace_leader_based_on_government_type = yes
-					event_target:leader_to_replace = { save_event_target_as = integrated_heir }
+					event_target:leader_to_replace = {
+						if = {
+							limit = { NOT = { has_leader_flag = former_heir } }
+							set_leader_flag = former_heir
+						}
+						save_event_target_as = integrated_heir
+					}
 				}
 				event_target:integrated_heir = {
 					accumulate_leader = yes
-					set_leader_flag = former_heir
 					add_former_heir_trait = yes
 					transfer_leader_to_storage = yes
 				}
@@ -276,7 +289,7 @@ country_event = {
 	}
 	option = {
 		name = keep_leaders.1.a.pur
-		custom_tooltip = keep_leaders.1.a.tooltip
+			custom_tooltip = keep_leaders.1.a.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip.none
 			description_parameters = {
@@ -459,7 +472,7 @@ country_event = {
 	# keep none (nice)
 	option = {
 		name = keep_leaders.1.b
-		custom_tooltip = keep_leaders.1.b.tooltip
+			custom_tooltip = keep_leaders.1.b.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip.none
 			description_parameters = {
@@ -693,14 +706,14 @@ country_event = {
 				}
 			}
 			while = {
-				limit = {
+					limit = {
 					event_target:variable_storage = {
 						check_variable = {
 							which = index
 							value < leader_organic_accumulator
+							}
 						}
 					}
-				}
 				add_resource = {
 					unity = @keep_leaders_civic_reward_base
 				}
@@ -738,17 +751,17 @@ country_event = {
 					has_valid_civic = civic_machine_terminator
 				}
 				event_target:storage_owner = {
-					any_owned_leader = {
-						is_eligible_transfer_leader_from_storage = yes
-						is_organic_species = yes
-						is_hive_species = no
-					}
-					any_owned_leader = {
-						is_eligible_transfer_leader_from_storage = yes
-						is_robotic_species = yes
-					}
+				any_owned_leader = {
+					is_eligible_transfer_leader_from_storage = yes
+					is_organic_species = yes
+					is_hive_species = no
+				}
+				any_owned_leader = {
+					is_eligible_transfer_leader_from_storage = yes
+					is_robotic_species = yes
 				}
 			}
+		}
 		}
 		allow = {
 			custom_tooltip = {
@@ -839,7 +852,7 @@ country_event = {
 		}
 		allow = {
 			OR = {
-				has_completed_special_project_in_log = FLESH_IS_WEAK_PROJECT
+				has_country_flag = flesh_weakened
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -869,7 +882,7 @@ country_event = {
 		}
 		allow = {
 			OR = {
-				has_completed_special_project_in_log = FLESH_IS_WEAK_PROJECT
+				has_country_flag = flesh_weakened
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -890,7 +903,7 @@ country_event = {
 	# keep mechanical only (nice) - non-assimilation
 	option = {
 		name = keep_leaders.1.d
-		custom_tooltip = keep_leaders.1.d.tooltip
+			custom_tooltip = keep_leaders.1.d.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
 			description_parameters = {
@@ -947,7 +960,6 @@ country_event = {
 					event_target:storage_owner = { all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
 				}
 			}
-			
 		}
 		ai_chance = {
 			factor = 1
@@ -1016,7 +1028,7 @@ country_event = {
 		name = {
 			text = keep_leaders.1.e.spir
 			trigger = { is_spiritualist = yes }
-		}
+			}
 		custom_tooltip = keep_leaders.1.e.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
@@ -1100,7 +1112,7 @@ country_event = {
 		}
 		trigger = {
 			OR = {
-				hidden_trigger = { has_completed_special_project_in_log = SYNTHETIC_EVOLUTION_PROJECT }
+				hidden_trigger = { has_country_flag = synthetic_empire }
 				AND = {
 					has_policy_flag = robots_allowed
 					has_policy_flag = ai_full_rights
@@ -1162,7 +1174,7 @@ country_event = {
 	# same species only
 	option = {
 		name = keep_leaders.1.g
-		custom_tooltip = keep_leaders.1.g.tooltip
+			custom_tooltip = keep_leaders.1.g.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
 			description_parameters = {
@@ -2013,15 +2025,15 @@ country_event = {
 		# necrophage unity
 		if = {
 			limit = { has_swapped_tradition = tr_harmony_unity_of_self }
-			custom_tooltip_with_params = {
+		custom_tooltip_with_params = {
 				description = ADD_RESOURCE_EFFECT
-				description_parameters = {
+			description_parameters = {
 					RESOURCE = "[This.GetUnityName]"
 					KEY = "unity"
 					NUM = "[variable_storage.leader_necrophagable_reward_accumulator]"
-				}
 			}
-			hidden_effect = {
+		}
+		hidden_effect = {
 				event_target:variable_storage = {
 					set_variable = {
 						which = index
@@ -2316,6 +2328,7 @@ planet_event = {
 				}
 				ruler = {
 					set_name = keep_leaders.former_ruler_name
+					set_leader_flag = former_ruler
 					save_event_target_as = integrated_ruler
 				}
 				if = {
@@ -2341,11 +2354,17 @@ planet_event = {
 						save_event_target_as = leader_to_replace
 					}
 					replace_leader_based_on_government_type = yes
-					event_target:leader_to_replace = { save_event_target_as = integrated_ruler }
+					event_target:leader_to_replace = {
+						if = {
+							limit = { NOT = { has_leader_flag = former_ruler } }
+							set_leader_flag = former_ruler
+						}
+						save_event_target_as = integrated_ruler
+					}
 				}
 				event_target:integrated_ruler = {
-					set_leader_flag = former_ruler
 					set_former_gestalt_ruler_flag = yes
+					remove_gestalt_ruler_traits = yes
 					add_former_ruler_trait = yes
 					transfer_leader_to_storage = yes
 				}
@@ -2360,6 +2379,7 @@ planet_event = {
 				}
 				heir = {
 					set_name = keep_leaders.former_ruler_name
+					set_leader_flag = former_heir
 					save_event_target_as = integrated_heir
 				}
 				if = {
@@ -2389,10 +2409,15 @@ planet_event = {
 						save_event_target_as = leader_to_replace
 					}
 					replace_leader_based_on_government_type = yes
-					event_target:leader_to_replace = { save_event_target_as = integrated_heir }
+					event_target:leader_to_replace = {
+						if = {
+							limit = { NOT = { has_leader_flag = former_heir } }
+							set_leader_flag = former_heir
+						}
+						save_event_target_as = integrated_heir
+					}
 				}
 				event_target:integrated_heir = {
-					set_leader_flag = former_heir
 					add_former_heir_trait = yes
 					transfer_leader_to_storage = yes
 				}
@@ -2427,7 +2452,7 @@ country_event = {
 						fleet = {
 							set_variable = {
 								which = keep_leaders_army_transport_fleet
-								value = event_target:integrating_country
+									value = event_target:integrating_country
 							}
 						}
 						event_target:integrating_country = {

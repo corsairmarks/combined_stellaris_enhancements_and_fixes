@@ -80,6 +80,7 @@ on_ruler_set = {
 # FROM = Previous ruler, already has the new class
 on_ruler_back_to_pre_ruler_class = {
 	events = {
+		keep_leaders_bonus_traits.19
 		keep_leaders_bonus_traits.20
 	}
 }
