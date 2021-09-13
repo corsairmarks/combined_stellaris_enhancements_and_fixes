@@ -13,6 +13,8 @@ Version 2.0.0 adds a mod that reduces compatibility of this mod. Because Deassim
 This is a bundle of mods to resolve compatibility issues if you want to use them all together. Please check each individual mod for the effects and any known issues. The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
 [list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912]Psionic Ascension: Even in Other Empires[/url] ([url=https://github.com/corsairmarks/psionic_assimilation_galaxy_species]Source[/url] f1c7a20d5e541905a04e31b91a868f35879d577f)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] ([url=https://github.com/corsairmarks/ecumenopolis_trade]Source[/url] 81c73163a00990e0ac49d8fc891f3d193fa6a17d)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] ([url=https://github.com/corsairmarks/limited_army_counter_fix]Source[/url] dfe33503bee3c0484e3dba7ec5d31059fcc499a5)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143]Deassimilated Machine Worlds[/url] ([url=https://github.com/corsairmarks/deassimilated_machine_worlds]Source[/url] 55764384b73eca3cc54e89820c4ba008e8442458)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimilated Machines[/url] ([url=https://github.com/corsairmarks/deassimilate_machines]Source[/url] 70712de2ddd3c4c04800f53c3455cde90394c49d)
@@ -22,7 +24,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] 0933af2894d3f7ec772f7de81c334e490849b340)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] 8337ab353dd1a6ba0edbb5904572939f6e8c0485)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978]Shattered Ring Rebalance for 3.0.*[/url] ([url=https://github.com/corsairmarks/ringworld_origin_rebalance]Source[/url] 9ecdadf8a443bef6c22b31fba04973e09b6a08e0)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] bed661ebb09fb98bbbaef466519ed652ec618ce0)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] faf195cce401dc1ff19b0a590c530a6d56e298fa)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] df600ad6e737f56144aaa7ea596c9f8b763b58c7)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630]Prosperity Tradition Rebalance for 3.0.3[/url] ([url=https://github.com/corsairmarks/prosperity_tradition_rebalance]Source[/url] 5ebe0a0ba146bce8792be411276bae186fa620fe)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Full Military Service for Battle Thralls[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 55444c031afc8d926dc701c61a326b6b110ecaf4)
@@ -39,7 +41,7 @@ Hosted on [url=https://github.com/corsairmarks/combined_stellaris_enhancements_a
 
 [h1]Compatibility[/h1]
 
-Requires Stellaris 3.0.3 and disables achievements.
+Requires Stellaris 3.0.4 and disables achievements.
 
 Check each of the contained mods for an explicit list of incompatibility notes. Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
 
