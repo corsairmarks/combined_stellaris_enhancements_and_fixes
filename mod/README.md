@@ -14,6 +14,8 @@ This mod won't affect any other kinds of armies.
 
 ## Compatibility
 
+Built for Stellaris version 3.1.\* "Lem."
+
 Overwrites the three built-in counter-limited armies in order to improve their counter usage: `titanic_assault_army`, `titanic_azizian_assault_army`, and `imperial_legion`.  The `titanic_assault_army` also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
 
 Preempts the event `colony_mod.101` (the positive Titanic Life outcome) in order to implement the scaling maximum and event `emperor.450` to remove its effects.  Counter-limited army decrementing is now handled in `limited_army_counter_fix.1` for all three types.
@@ -42,6 +44,7 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 
 * 1.0.0 Initial version
 * 1.0.1 Fix thumbnail
+* 2.0.0 Mark as compatible for Stellaris 3.1.* "Lem" - update to use new arithmetic syntax
 
 ## Source Code
 
