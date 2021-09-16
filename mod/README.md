@@ -12,9 +12,11 @@ Machine Worlds owned by regular empires now have a planetary modifier (visible o
 
 Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
 
-Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit (Malfunctioning Replicator Bay, `d_resource_consolidation_1`) was overridden to block the Roboticist job granted by the custom modifier.
+Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit `d_resource_consolidation_1` (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
-This mod overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd tier factory building.  The 3.1.1 "Lem" update addressed the designation being unavailable for regular empires and fixed the designation-based Metallurgi<->Artisan job shift, which means this mod no longer needs to overwrite the entire base-game urban ditricts file.
+This mod does need to overwrite the `common/districts/00_urban_districts.txt` file in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.
+
+What this means to you is that this mod is not compatible with other mods that alter urban districts, including a few of my other mods.  If you would like to use my conflicting mods as a package, please use [Subtle Polish](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead of the individual mods.
 
 ### Recommended Companion Mods
 
@@ -44,9 +46,9 @@ Overriding a colony designation and a deposit causes the game to log two errors 
     * Machine empires won't get a Machine World opinion because they integrate it (debuffs suck)
     * Don't add duplicate modifiers to Machine Worlds
 * 2.0.0 Update mod for Stellaris version 3.1.1 "Lem"
-    * Remove district overrides - now much more compatible with other mods!
+    * Update district overrides to import new features, such as the special new artificer and catalytic technician jobs
     * Update `col_mac_factory` override
-    * Update Malfunctioning Replicator Bay blocker to also block the free Roboticist job
+    * Add Malfunctioning Replicator Bay blocker override to also block the free Roboticist job
 
 ## Source Code
 
