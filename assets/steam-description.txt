@@ -39,10 +39,10 @@ Includes English
 Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate four error lines that look similar to this:
 
 [code]
-[17:47:01][eventmanager.cpp:355]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 518
-[17:47:01][eventmanager.cpp:355]: an event with id [observation.3009] already exists!  file: events/observation_events.txt line: 4480
-[17:47:01][eventmanager.cpp:355]: an event with id [action.14] already exists!  file: events/on_action_events.txt line: 5824
-[17:47:01][eventmanager.cpp:355]: an event with id [action.140] already exists!  file: events/on_action_events.txt line: 5886
+[00:44:45][eventmanager.cpp:355]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 548
+[00:44:45][eventmanager.cpp:355]: an event with id [observation.3009] already exists!  file: events/observation_events.txt line: 4480
+[00:44:45][eventmanager.cpp:355]: an event with id [action.14] already exists!  file: events/on_action_events_1.txt line: 5824
+[00:44:45][eventmanager.cpp:355]: an event with id [action.140] already exists!  file: events/on_action_events_1.txt line: 5890
 [/code]
 
 [h2]Compatibility[/h2]
