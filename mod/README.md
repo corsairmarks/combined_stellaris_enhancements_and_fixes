@@ -49,7 +49,7 @@ You do **not** need the Necroids or Lithoids content packs to use this mod.
 
 This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same event IDs.  If another mod is attempting to make changes to primitive planet conquest but uses a different method (for example, adding new events activated by on action events such as `on_planet_transfer`, `on_planet_conquer`, or `on_planet_attackers_win`) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
 
-This mod is not compatible with achievements because it overwrites data from core Stellaris files.
+Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
 
 ### When to Install
 
@@ -65,6 +65,9 @@ This mod can be safely added or removed from your savegame after the game has st
 * 1.3.0 Add handling for primitive infiltration
     * Free buildings and districts processing is more intelligent
     * Changed "generate districts/buildings" to a pair of custom on_actions
+* 2.0.0 Update for compatible for Stellaris 3.1.* "Lem"
+    * Update to use new arithmetic syntax
+    * Update minor underlying game changes (mainly to sopport new features in the base game)
 
 ## Source Code
 

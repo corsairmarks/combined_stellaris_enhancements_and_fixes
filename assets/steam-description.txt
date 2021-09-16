@@ -51,7 +51,7 @@ You do [b]not[/b] need the Necroids or Lithoids content packs to use this mod.
 
 This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same event IDs.  If another mod is attempting to make changes to primitive planet conquest but uses a different method (for example, adding new events activated by on action events such as [b]on_planet_transfer[/b], [b]on_planet_conquer[/b], or [b]on_planet_attackers_win[/b]) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
 
-This mod is not compatible with achievements because it overwrites data from core Stellaris files.
+Built for Stellaris version 3.1.* "Lem."  Not compatible with achievements.
 
 [h3]When to Install[/h3]
 
