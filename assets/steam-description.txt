@@ -14,7 +14,7 @@ This mod won't affect any other kinds of armies.
 
 [h2]Compatibility[/h2]
 
-Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
+Built for Stellaris version 3.1.* "Lem."  Not compatible with achievements.
 
 Overwrites the three built-in counter-limited armies in order to improve their counter usage: [b]titanic_assault_army[/b], [b]titanic_azizian_assault_army[/b], and [b]imperial_legion[/b].  The [b]titanic_assault_army[/b] also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
 
