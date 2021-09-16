@@ -2,7 +2,7 @@
 
 Are you frustrated that you have a limited supply of Titanic Beasts or Imperial Legions or Azizian Armies?  Well fret no more!  This mod actively tracks how many many of each type you own and lets you build reinforcements up to the regular cap for each type.
 
-Additionally, this mod now entitles you to number of Titanic Beats equal to your successful Titanic Life projects times three (instead of three no matter how many times you have completed the project).  Have 2 Titanic Life worlds?  Now your maximum is 6 instead of 3.
+Additionally, this mod now entitles you to number of Titanic Beasts equal to your successful Titanic Life projects times three (instead of three no matter how many times you have completed the project).  Have 2 Titanic Life worlds?  Now your maximum is 6 instead of 3.
 
 To make things easier, this mod recalculates army counts and the maximum Titanic Beasts for any qualifying countries when you load your savegame - in particular this means it will immediately apply to your existing, single-player games without any hassle.  It also recalculates monthly because some things that might alter the amount of armies aren't able to be tracked directly.  If recalculation is needed manually, run `event limited_army_counter_fix.3` from the console.
 
