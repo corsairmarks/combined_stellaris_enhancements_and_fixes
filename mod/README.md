@@ -12,7 +12,7 @@ Machine Worlds owned by regular empires now have a planetary modifier (visible o
 
 Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
 
-Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.
+Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit (Malfunctioning Replicator Bay, `d_resource_consolidation_1`) was overridden to block the Roboticist job granted by the custom modifier.
 
 This mod overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd tier factory building.  The 3.1.1 "Lem" update addressed the designation being unavailable for regular empires and fixed the designation-based Metallurgi<->Artisan job shift, which means this mod no longer needs to overwrite the entire base-game urban ditricts file.
 
@@ -29,10 +29,11 @@ This mod can be safely added to your savegame after the game has started.  Becau
 
 ## Known Issues
 
-Overriding a colony designation causes the game to log an error like this:
+Overriding a colony designation and a deposit causes the game to log two errors like this:
 
 ```
-[19:47:33][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists
+[21:23:19][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists
+[21:23:20][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists
 ```
 
 ## Changelog
@@ -45,6 +46,7 @@ Overriding a colony designation causes the game to log an error like this:
 * 2.0.0 Update mod for Stellaris version 3.1.1 "Lem"
     * Remove district overrides - now much more compatible with other mods!
     * Update `col_mac_factory` override
+    * Update Malfunctioning Replicator Bay blocker to also block the free Roboticist job
 
 ## Source Code
 
