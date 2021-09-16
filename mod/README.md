@@ -65,7 +65,7 @@ This mod can be safely added or removed from your savegame after the game has st
 * 1.3.0 Add handling for primitive infiltration
     * Free buildings and districts processing is more intelligent
     * Changed "generate districts/buildings" to a pair of custom on_actions
-* 2.0.0 Update for compatible for Stellaris 3.1.* "Lem"
+* 2.0.0 Update for compatibility with Stellaris 3.1.* "Lem"
     * Update to use new arithmetic syntax
     * Update minor underlying game changes (mainly to sopport new features in the base game)
 
