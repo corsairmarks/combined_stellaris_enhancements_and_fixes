@@ -53,6 +53,10 @@ col_mac_factory = {
 			has_building = building_factory_2
 		}
 		modifier = {
+			add = 6
+			has_building = building_factory_3
+		}
+		modifier = {
 			add = 5
 			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
 		}
@@ -61,6 +65,7 @@ col_mac_factory = {
 			NOT = { num_districts = { type = district_industrial value >= @built_districts_medium_threshold } }
 			num_buildings = { type = building_factory_1 value = 0 }
 			num_buildings = { type = building_factory_2 value = 0 }
+			num_buildings = { type = building_factory_3 value = 0 }
 		}
 	}
 }
