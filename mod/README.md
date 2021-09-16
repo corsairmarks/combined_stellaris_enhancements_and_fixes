@@ -6,17 +6,15 @@ However, instead of just adding a Roboticist job and calling it a day, I decided
 
 # Changes
 
-Adjusts the Industrial District to provide the correct job shift to Metallurgists from Artisans for Foundry Machine Worlds (and vice versa for Factory Machine Worlds) - previously the designation could be picked, but no jobs shifted.  The Factory Machine World designation is now usable by regular empires (was previously unavailable).
-
-Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displays the Machine World's opinion of your empire (Cooperative, Neutral, or Hostile).  All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job to replace it.  Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels our the bonuses and adds additional production and maintenance penalties.
+Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displays the Machine World's opinion of your empire (Cooperative, Neutral, or Hostile).  All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job to replace it.  Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels out the bonuses and adds additional production and maintenance penalties.
 
 ## Compatibility
 
+Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
+
 Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.
 
-This mod does have to overwrite the `common/districts/00_urban_districts.txt` file in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to make it usable for non-Machine empires.
-
-What this means to you is that this mod is not compatible with other mods that alter urban districts, including a few of my other mods.  If you would like to use my conflicting mods as a package, please use [Subtle Polish](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead of the individual mods.
+This mod overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd tier factory building.  The 3.1.1 "Lem" update addressed the designation being unavailable for regular empires and fixed the designation-based Metallurgi<->Artisan job shift, which means this mod no longer needs to overwrite the entire base-game urban ditricts file.
 
 ### Recommended Companion Mods
 
@@ -44,6 +42,9 @@ Overriding a colony designation causes the game to log an error like this:
     * Prevent confusing initial event description complaining about lack of synth rights when the empire does in fact have synth rights
     * Machine empires won't get a Machine World opinion because they integrate it (debuffs suck)
     * Don't add duplicate modifiers to Machine Worlds
+* 2.0.0 Update mod for Stellaris version 3.1.1 "Lem"
+    * Remove district overrides - now much more compatible with other mods!
+    * Update `col_mac_factory` override
 
 ## Source Code
 
