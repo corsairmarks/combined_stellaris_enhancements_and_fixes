@@ -19,7 +19,13 @@ country_event = {
 		save_event_target_as = conquering_country
 		FROM = {
 			save_event_target_as = actually_conquered_primitive_country
-			owner_species = { save_event_target_as = conquered_primitive_species }
+			owner_species = {
+				save_event_target_as = conquered_primitive_species
+				set_timed_species_flag = {
+					flag = primitive_species
+					years = 10
+				}
+			}
 		}
 		FROMFROM = {
 			save_event_target_as = conquered_primitive_country
