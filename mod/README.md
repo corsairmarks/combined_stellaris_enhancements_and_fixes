@@ -67,7 +67,7 @@ This mod can be safely added or removed from your savegame after the game has st
     * Changed "generate districts/buildings" to a pair of custom on_actions
 * 2.0.0 Update for compatibility with Stellaris 3.1.* "Lem"
     * Update to use new arithmetic syntax
-    * Update minor underlying game changes (mainly to sopport new features in the base game)
+    * Update minor underlying game changes (mainly to support new features in the base game)
 
 ## Source Code
 
