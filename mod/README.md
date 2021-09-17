@@ -30,7 +30,7 @@ Because this mod replaces two built-in objects, it is inherently incompatible wi
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
-This mod is not compatible with achievements.
+Built for Stellaris version 3.1.\* "Lem."  This mod is not compatible with achievements.
 
 ## Localisation
 
@@ -61,6 +61,8 @@ This mode overrides a built-in trigger `can_be_military_leader` and a species ri
 * 1.4.0 Enhance compatibility with my other mods that work with changing leader species - no gameplay changes in this mod
 * 1.5.0 Add edict "Decree: Honored Protectors" so players can choose Battle Thralls they'd like to allow Full Military Service, despite being xenophobic and/or a necrophage
 * 1.5.1 Add test event, prevent Fanatic Purifiers from naming Honored Protectors
+* 1.6.0 Update for compatibility with Stellaris version 3.1.* "Lem"
+    * No homicidal empires can use the edict (just in case)
 
 ## Source Code
 

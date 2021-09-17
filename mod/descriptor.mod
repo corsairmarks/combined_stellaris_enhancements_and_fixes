@@ -4,7 +4,7 @@ tags={
 	"Leaders"
 	"Military"
 }
-version="1.5.1"
+version="1.6.0"
 picture="thumbnail.png"
-supported_version="3.0.*"
+supported_version="3.1.*"
 remote_file_id="2496357447"

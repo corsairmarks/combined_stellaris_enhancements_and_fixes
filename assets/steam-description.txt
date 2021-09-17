@@ -30,7 +30,7 @@ Because this mod replaces two built-in objects, it is inherently incompatible wi
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimiliate Machines[/url].
 
-This mod is not compatible with achievements.
+Built for Stellaris version 3.1.* "Lem."  This mod is not compatible with achievements.
 
 [h2]Localisation[/h2]
 
