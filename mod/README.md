@@ -66,7 +66,7 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
 * 2.0.0 Updated for Stellaris version 3.1.1 "Lem" - no changes to what the mod does, just integrated the underlying game changes
     * Scrap miners (used by Origin: Shattered Ring) benefit from Lithorian Idyll
     * Turtle miners (from an event) benefit from both versions of Agrarian Idyll (produces food and minerals)
-
+    * Fix localisation mistake for the updated Agrarian Idyll tooltip - it's still for farmers, I promise!
 
 ## Source Code
 
