@@ -16,14 +16,14 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 [h2]Compatibility[/h2]
 
-Requires Stellaris version 3.0.3. This mod alters the following core Stellaris files:
+Requires Stellaris version 3.1.1 "Lem."  This mod alters the following core Stellaris files:
 
 [list]
 [*][i]governments/civics/00_civics.txt[/i] - replaces one civic [i]civic_agrarian_idyll[/i] (new file [i]government/civics/01_agrarian_idyll_override.txt[/i])
 [*][i]districts/02_rural_districts.txt[/i] - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
-[*][i]districts/04_ringworld_districts.txt[/i] entire file, excludes agrarian idyll lithoids from the farming district benefits ([b]NOT[/b] compatible with my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2497266630]Prosperity Tradition Rebalance[/url] because they both affect ringworld districts)
-[*][i]pop_jobs/03_worker_jobs.txt[/i] - entire file, adds amenities production to miners, mote miners, gas miners, and crystal miners (but not the specialist refiners) ([b]NOT[/b] compatible with my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority[/url] but includes the same fix)
-[*][i]pop_jobs/06_event_jobs.txt[/i] - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic
+[*][i]districts/04_ringworld_districts.txt[/i] entire file, excludes agrarian idyll lithoids from the farming district benefits
+[*][i]pop_jobs/03_worker_jobs.txt[/i] - entire file, adds amenities production to miners, mote miners, gas miners, crystal miners, and scrap miners (but not the specialist refiners) ([b]NOT[/b] compatible with my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority[/url] but includes the same fix)
+[*][i]pop_jobs/06_event_jobs.txt[/i] - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic, add amenities to turte miners for both Agrarian and Lithorian Idyll
 [*][i]technology/00_soc_tech.txt[/i] entire file, excludes lithoids from researching [i]tech_housing_agrarian_idyll[/i]
 [/list]
 
@@ -31,7 +31,7 @@ Stellaris requires overriding the entire containing file to make changes to a di
 
 This mod is not compatible with achievements because it overwrites core Stellaris files.
 
-[h3]Post-Game Start[/h3]
+[h3]When to Install[/h3]
 
 This mod can be safely added after the game has started, but should not be removed from a game in-progress.  Losing access to the new technology "Lithorian Idyll" could cause problems for the game if any countries have researched it.
 
