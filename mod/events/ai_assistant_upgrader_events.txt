@@ -10,6 +10,7 @@ country_event = {
 	hide_window = yes
 	trigger = {
 		last_increased_tech = tech_sapient_ai
+		NOT = { has_policy_flag = ai_outlawed }
 	}
 	immediate = {
 		every_owned_leader = {
@@ -52,6 +53,7 @@ country_event = {
 	hide_window = yes
 	trigger = {
 		has_technology = tech_sapient_ai
+		NOT = { has_policy_flag = ai_outlawed }
 		FROM = { has_trait = leader_trait_custom_AI_assistant }
 	}
 	immediate = {
@@ -66,7 +68,10 @@ leader_event = {
 	hide_window = yes
 	trigger = {
 		has_trait = leader_trait_custom_AI_assistant
-		OWNER = { has_technology = tech_sapient_ai }
+		owner = {
+			has_technology = tech_sapient_ai
+			NOT = { has_policy_flag = ai_outlawed }
+		}
 	}
 	immediate = {
 		upgrade_custom_AI_assistant_to_sapient_AI_assistant = yes
@@ -84,5 +89,94 @@ country_event = {
 	option = {
 		name = MARVELOUS
 		custom_tooltip = ai_assistant_upgrader.4.a.tooltip
+	}
+}
+
+# banning AI removes AI-dependent traits from leaders
+# preempts leader.30 by altering traits first
+country_event = {
+	id = ai_assistant_upgrader.30
+	title = leader.30.name
+	desc = leader.30.desc
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+	trigger = {
+		last_changed_policy = artificial_intelligence_policy
+		has_policy_flag = ai_outlawed
+		OR = {
+			any_owned_leader = {
+				leader_class = scientist
+				has_trait = leader_trait_sapient_AI_assistant
+			}
+			any_pool_leader = {
+				leader_class = scientist
+				has_trait = leader_trait_sapient_AI_assistant
+			}
+		}
+	}
+	immediate = {
+		every_owned_leader = {
+			limit = {
+				leader_class = scientist
+				has_trait = leader_trait_sapient_AI_assistant
+			}
+			remove_trait = leader_trait_sapient_AI_assistant
+			add_trait = leader_trait_custom_AI_assistant
+		}
+		every_pool_leader = {
+			limit = {
+				leader_class = scientist
+				has_trait = leader_trait_sapient_AI_assistant
+			}
+			remove_trait = leader_trait_sapient_AI_assistant
+			add_trait = leader_trait_custom_AI_assistant
+		}
+	}
+	option = {
+		name = GOOD
+	}
+}
+
+# un-banning AI allows AI-related traits for leaders
+country_event = {
+	id = ai_assistant_upgrader.31
+	title = ai_assistant_upgrader.31.title
+	desc = ai_assistant_upgrader.31.desc
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+	trigger = {
+		last_changed_policy = artificial_intelligence_policy
+		NOT = { has_policy_flag = ai_outlawed }
+		has_technology = tech_sapient_ai
+		OR = {
+			any_owned_leader = {
+				leader_class = scientist
+				has_trait = leader_trait_custom_AI_assistant
+			}
+			any_pool_leader = {
+				leader_class = scientist
+				has_trait = leader_trait_custom_AI_assistant
+			}
+		}
+	}
+	immediate = {
+		every_owned_leader = {
+			limit = {
+				leader_class = scientist
+				has_trait = leader_trait_custom_AI_assistant
+			}
+			upgrade_custom_AI_assistant_to_sapient_AI_assistant = yes
+		}
+		every_pool_leader = {
+			limit = {
+				leader_class = scientist
+				has_trait = leader_trait_custom_AI_assistant
+			}
+			upgrade_custom_AI_assistant_to_sapient_AI_assistant = yes
+		}
+	}
+	option = {
+		name = GOOD
+		custom_tooltip = ai_assistant_upgrader.31.a.tooltip
 	}
 }
