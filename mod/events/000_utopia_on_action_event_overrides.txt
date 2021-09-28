@@ -119,14 +119,7 @@ country_event = {
 			}
 			country_event = { id = utopia.2602 }
 		}
-		create_leader = {
-			species = owner_species
-			set_age = 1
-			effect = {
-				set_name = trait_latent_psionic
-				save_event_target_as = trait_add_leader
-			}
-		}
+
 	}
 	option = {
 		name = utopia.2600.a
@@ -134,21 +127,11 @@ country_event = {
 			description = MODIFY_GALAXY_SPECIES_ADD
 			description_parameters = {
 				SPECIES = "[owner_species.GetName]"
-				TRAIT = "[trait_add_leader.GetName]"
+				TRAIT = "[This.GetLatentPsionicTraitName]"
 			}
 		}
 		custom_tooltip = ALLOW_PSI_CORPS
 		custom_tooltip = ALLOW_PSI_ARMIES
-	}
-	after = {
-		hidden_effect = {
-			event_target:trait_add_leader = {
-				kill_leader = {
-					show_notification = no
-					fire = yes
-				}
-			}
-		}
 	}
 }
 
@@ -273,22 +256,6 @@ country_event = {
 			days = 30
 			random = 20
 		}
-		create_leader = {
-			species = owner_species
-			set_age = 1
-			effect = {
-				set_name = trait_latent_psionic
-				save_event_target_as = trait_remove_leader
-			}
-		}
-		create_leader = {
-			species = owner_species
-			set_age = 1
-			effect = {
-				set_name = trait_psionic
-				save_event_target_as = trait_add_leader
-			}
-		}
 	}
 	option = {
 		name = utopia.2650.a
@@ -296,24 +263,8 @@ country_event = {
 			description = MODIFY_GALAXY_SPECIES
 			description_parameters = {
 				SPECIES = "[owner_species.GetName]"
-				TRAIT_REMOVE = "[trait_remove_leader.GetName]"
-				TRAIT_ADD = "[trait_add_leader.GetName]"
-			}
-		}
-	}
-	after = {
-		hidden_effect = {
-			event_target:trait_remove_leader = {
-				kill_leader = {
-					show_notification = no
-					fire = yes
-				}
-			}
-			event_target:trait_add_leader = {
-				kill_leader = {
-					show_notification = no
-					fire = yes
-				}
+				TRAIT_REMOVE = "[This.GetLatentPsionicTraitName]"
+				TRAIT_ADD = "[This.GetPsionicTraitName]"
 			}
 		}
 	}
