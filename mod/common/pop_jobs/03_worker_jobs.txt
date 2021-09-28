@@ -58,15 +58,6 @@ clerk = {
 			trade_value_add = 1
 		}
 	}
-	triggered_planet_modifier = {
-		potential = {
-			owner = { has_non_swapped_tradition = tr_prosperity_finish }
-		}
-		modifier = {
-			trade_value_add = 1
-			planet_amenities_add = 0.5
-		}
-	}
 	weight = {
 		weight = @clerk_job_weight
 		modifier = {
