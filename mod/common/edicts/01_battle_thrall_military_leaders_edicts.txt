@@ -10,7 +10,7 @@ designate_honored_protectors = {
 	}
 	modifier = { }
 	potential = {
-		NOT = { has_valid_civic = civic_fanatic_purifiers }
+		is_homicidal = no
 		OR = {
 			AND = {
 				has_origin = origin_necrophage
