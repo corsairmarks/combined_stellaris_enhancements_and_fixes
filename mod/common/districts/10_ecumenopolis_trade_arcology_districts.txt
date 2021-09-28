@@ -1,0 +1,199 @@
+district_arcology_commercial = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	show_on_uncolonized = { always = no }
+	potential = {
+		uses_district_set = city_world
+		exists = owner
+		owner = {
+			is_gestalt = no
+			is_fallen_empire = no
+		}
+	}
+	allow = {
+		colony_type = col_ecu_trade
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 10
+		job_clerk_add = 6
+		job_merchant_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = { colony_type = col_ecu_trade }
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_merchant_guilds }
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_corporate_dominion }
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_authority = auth_corporate }
+		}
+		modifier = {
+			job_clerk_add = -2
+			job_executive_add = 1
+			job_manager_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+		}
+		modifier = {
+			job_merchant_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			colony_type = col_ecu_trade
+			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_merchant_guilds
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_corporate_dominion
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_authority = auth_corporate
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_clerk_add = -2
+			job_executive_add = 1
+			job_manager_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { solar_system = { has_trade_route = yes } }
+		modifier = {
+			trade_value_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = { has_starbase_building = offworld_trading_company }
+			}
+		}
+		modifier = {
+			trade_value_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = { has_starbase_building = trader_proxy_office }
+			}
+		}
+		modifier = {
+			trade_value_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = { has_starbase_building = transit_hub }
+			}
+		}
+		modifier = {
+			trade_value_add = 2
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			NAND = {
+				colony_type = col_ecu_trade
+				owner = {
+					has_authority = auth_corporate
+					has_active_tradition = tr_mercantile_commercial_enterprise
+				}
+			}
+		}
+		text = job_clerk_effect_desc
+	}
+	triggered_desc = {
+		text = job_merchant_effect_desc
+	}
+	triggered_desc = {
+		trigger = { owner = { has_authority = auth_corporate } }
+		text = job_manager_effect_desc
+	}
+	triggered_desc = {
+		trigger = { owner = { has_authority = auth_corporate } }
+		text = job_executive_effect_desc
+	}
+}

@@ -1,11 +1,14 @@
 # Ecumenpolis Commercial
 col_ecu_trade = {
-	icon = 1
+	icon = GFX_colony_type_urban
 
 	potential = {
 		uses_district_set = city_world
 		exists = owner
-		owner = { is_gestalt = no }
+		owner = {
+			is_gestalt = no
+			is_fallen_empire = no
+		}
 		is_special_colony_type = no
 	}
 
@@ -13,23 +16,29 @@ col_ecu_trade = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
 		planet_building_commercial_megaplex_build_speed_mult = 0.25
 		planet_building_galactic_stock_exchange_build_speed_mult = 0.25
-		planet_district_arcology_housing_build_speed_mult = 0.25
+		planet_district_arcology_commercial_build_speed_mult = 0.25
 		trade_value_mult = 0.2
 	}
 
 	weight_modifier = {
 		base = 10
-		modifier = {
+		modifier = { 
 			add = 5
 			has_designation = col_ecu_trade
 		}
 		modifier = {
 			add = 3
-			num_districts = { type = district_arcology_housing value >= 4 }
+			num_districts = {
+				type = district_arcology_commercial
+				value >= 2
+			}
 		}
 		modifier = {
 			add = 5
-			num_districts = { type = district_arcology_housing value >= 6 }
+			num_districts = {
+				type = district_arcology_commercial
+				value >= 4
+			}
 		}
 		modifier = {
 			add = 2
@@ -41,6 +50,17 @@ col_ecu_trade = {
 				num_buildings = {
 					type = building_commercial_megaplex
 					value > 1
+				}
+			}
+		}
+		modifier = {
+			add = 2
+			exists = owner
+			owner = {
+				OR = {
+					has_valid_civic = civic_merchant_guilds
+					has_valid_civic = civic_corporate_dominion
+					has_authority = auth_corporate
 				}
 			}
 		}
@@ -76,8 +96,8 @@ col_ecu_trade = {
 				value = 0
 			}
 			num_districts = {
-				type = district_arcology_housing
-				value < 2
+				type = district_arcology_commercial
+				value = 0
 			}
 		}
 	}
