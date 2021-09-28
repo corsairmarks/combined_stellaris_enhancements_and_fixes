@@ -4,23 +4,34 @@
 
 # Machine World Factory
 col_mac_factory = {
-	icon = 6
+	icon = GFX_colony_type_factory
 
 	potential = {
 		uses_district_set = machine_world
 		exists = owner
-		owner = {
-			OR = {
-				has_civic = civic_machine_servitor
-				is_regular_empire = yes
-			}
-		}
+		owner = { country_uses_consumer_goods = yes }
 	}
 
 	planet_modifier = {
 		custom_tooltip = col_factory_custom
 		planet_district_industrial_build_speed_mult = 0.25
 		planet_artisans_upkeep_mult = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			OR = {
+				is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+				is_active_resolution = "resolution_industry_project_cornucopia"
+			}
+		}
+		modifier = {
+			planet_artisans_produces_mult = 0.05
+		}
 	}
 
 	weight_modifier = {
@@ -42,6 +53,10 @@ col_mac_factory = {
 			has_building = building_factory_2
 		}
 		modifier = {
+			add = 6
+			has_building = building_factory_3
+		}
+		modifier = {
 			add = 5
 			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
 		}
@@ -50,6 +65,7 @@ col_mac_factory = {
 			NOT = { num_districts = { type = district_industrial value >= @built_districts_medium_threshold } }
 			num_buildings = { type = building_factory_1 value = 0 }
 			num_buildings = { type = building_factory_2 value = 0 }
+			num_buildings = { type = building_factory_3 value = 0 }
 		}
 	}
 }
