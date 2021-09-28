@@ -428,8 +428,8 @@ replace_leader_as_governor = {
 			}
 		}
 		last_created_leader = {
+			add_experience = event_target:leader_to_replace.trigger:has_experience
 			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
-			leader_event = { id = keep_leaders.6 }
 			save_event_target_as = leader_to_replace
 		}
 	}
@@ -463,8 +463,8 @@ replace_leader_as_scientist = {
 			}
 		}
 		last_created_leader = {
+			add_experience = event_target:leader_to_replace.trigger:has_experience
 			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
-			leader_event = { id = keep_leaders.6 }
 			save_event_target_as = leader_to_replace
 		}
 	}
@@ -498,8 +498,8 @@ replace_leader_as_admiral = {
 			}
 		}
 		last_created_leader = {
+			add_experience = event_target:leader_to_replace.trigger:has_experience
 			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
-			leader_event = { id = keep_leaders.6 }
 			save_event_target_as = leader_to_replace
 		}
 	}
@@ -533,8 +533,8 @@ replace_leader_as_general = {
 			}
 		}
 		last_created_leader = {
+			add_experience = event_target:leader_to_replace.trigger:has_experience
 			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
-			leader_event = { id = keep_leaders.6 }
 			save_event_target_as = leader_to_replace
 		}
 	}
@@ -1150,10 +1150,6 @@ accumulate_leader = {
 				which = leader_organic_accumulator
 				value = 1
 			}
-			change_variable = {
-				which = leader_organic_reward_accumulator
-				value = @keep_leaders_civic_reward_base
-			}
 		}
 		if = {
 			limit = { is_cyborg_species = no }
@@ -1161,10 +1157,6 @@ accumulate_leader = {
 				change_variable = {
 					which = leader_organic_non_cyborg_accumulator
 					value = 1
-				}
-				change_variable = {
-					which = leader_organic_non_cyborg_reward_accumulator
-					value = @keep_leaders_civic_reward_base
 				}
 			}
 		}
@@ -1193,9 +1185,12 @@ accumulate_leader = {
 				is_sapient = yes
 				NOR = {
 					is_same_species = event_target:potential_owner.owner_species
-					has_slavery_type = {
-						type = slavery_livestock
-						country = event_target:potential_owner
+					AND = {
+						has_slavery_type = {
+							type = slavery_livestock
+							country = event_target:potential_owner
+						}
+						event_target:potential_owner = { is_hive_empire = no }
 					}
 				}
 				OR = {
@@ -1208,10 +1203,6 @@ accumulate_leader = {
 			change_variable = {
 				which = leader_necrophagable_accumulator
 				value = 1
-			}
-			change_variable = {
-				which = leader_necrophagable_reward_accumulator
-				value = @keep_leaders_civic_reward_base
 			}
 		}
 	}
@@ -1229,10 +1220,6 @@ accumulate_leader = {
 			change_variable = {
 				which = leader_not_same_species_accumulator
 				value = 1
-			}
-			change_variable = {
-				which = leader_not_same_species_reward_accumulator
-				value = @keep_leaders_civic_reward_base
 			}
 		}
 	}
@@ -1267,130 +1254,6 @@ accumulate_leader = {
 	}
 }
 
-# randomise the leader's XP between the minimum and maximum for their level
-# THIS = leader
-randomise_leader_xp = {
-	if = {
-		limit = {
-			has_skill < 10
-			has_experience = 0
-		}
-		set_variable = {
-			which = rng_places
-			value = 0
-		}
-		switch = {
-			trigger = has_skill
-			1 = {
-				set_variable = {
-					which = rng_max
-					value = 199
-				}
-			}
-			2 = {
-				set_variable = {
-					which = rng_max
-					value = 474
-				}
-			}
-			3 = {
-				set_variable = {
-					which = rng_max
-					value = 824
-				}
-			}
-			4 = {
-				set_variable = {
-					which = rng_max
-					value = 1249
-				}
-			}
-			5 = {
-				set_variable = {
-					which = rng_max
-					value = 1749
-				}
-			}
-			6 = {
-				set_variable = {
-					which = rng_max
-					value = 2324
-				}
-			}
-			7 = {
-				set_variable = {
-					which = rng_max
-					value = 2974
-				}
-			}
-			8 = {
-				set_variable = {
-					which = rng_max
-					value = 3699
-				}
-			}
-			9 = {
-				set_variable = {
-					which = rng_max
-					value = 4499
-				}
-			}
-		}
-		random_number_generator_effect = yes
-		# attempt to scale the expereince gain by the inverse of the leader's experience bonus
-		# i.e. make sure we give exactly the randomized amount of experience, ignoring modifiers
-		if = {
-			limit = {
-				check_variable = {
-					which = rng_number
-					value > 0
-				}
-			}
-			set_variable = {
-				which = pct_gain
-				value = 0
-			}
-			export_modifier_to_variable = {
-				modifier = species_leader_exp_gain
-				variable = pct_gain
-			}
-			change_variable = {
-				which = pct_gain
-				value = 1
-			}
-			set_variable = {
-				which = rng_buffer
-				value = rng_number
-			}
-			set_variable = {
-				which = rng_buffer_scaled
-				value = rng_number
-			}
-			multiply_variable = {
-				which = rng_buffer_scaled
-				value = pct_gain
-			}
-			divide_variable = {
-				which = rng_buffer
-				value = rng_buffer_scaled
-			}
-			multiply_variable = {
-				which = rng_number
-				value = rng_buffer
-			}
-			round_variable = rng_number
-			clear_variable = pct_gain
-			clear_variable = rng_buffer
-			clear_variable = rng_buffer_scaled
-		}
-		while = {
-			count = rng_number
-			add_experience = 1
-		}
-		clear_variable = rng_number
-	}
-}
-
 # event_target:mechanical_species - used as the base species to be modified, will be overwritten with the new species if one or more traits had to be swapped
 assimilate_species_traits_machine_to_robot = {
 	if = {
@@ -1417,24 +1280,7 @@ assimilate_species_traits_machine_to_robot = {
 }
 
 # THIS = leader
-# event_target:potential_owner = country, source of army-match variables
 tag_leader_for_reassignment = {
-	event_target:potential_owner = {
-		if = {
-			limit = { NOT = { is_variable_set = keep_leader_match_transport_fleet } }
-			set_variable = {
-				which = keep_leader_match_transport_fleet
-				value = 13 # semi-arbitrary start value
-			}
-		}
-		if = {
-			limit = { NOT = { is_variable_set = keep_leader_match_army } }
-			set_variable = {
-				which = keep_leader_match_army
-				value = 13 # semi-arbitrary start value
-			}
-		}
-	}
 	switch = {
 		trigger = leader_class
 		# governors can't be reassigned because sectors are cleared and cannot be recreated by script
@@ -1469,22 +1315,8 @@ tag_leader_for_reassignment = {
 		general = {
 			if = {
 				limit = { exists = fleet }
-				set_variable = {
-					which = keep_leader_match_transport_fleet
-					value = event_target:potential_owner
-				}
-				fleet = {
-					set_variable = {
-						which = keep_leader_match_transport_fleet
-						value = event_target:potential_owner
-					}
-				}
-				event_target:potential_owner = {
-					change_variable = {
-						which = keep_leader_match_transport_fleet
-						value = 1
-					}
-				}
+				set_leader_flag = keep_leader_match_transport_fleet@THIS
+				fleet = { set_fleet_flag = keep_leader_match_transport_fleet@PREV }
 			}
 			owner = {
 				random_owned_army = {
@@ -1492,22 +1324,8 @@ tag_leader_for_reassignment = {
 						exists = leader
 						leader = { is_same_value = PREVPREV }
 					}
-					leader = {
-						set_variable = {
-							which = keep_leader_match_army
-							value = event_target:potential_owner
-						}
-					}
-					set_variable = {
-						which = keep_leader_match_army
-						value = event_target:potential_owner
-					}
-					event_target:potential_owner = {
-						change_variable = {
-							which = keep_leader_match_army
-							value = 1
-						}
-					}
+					leader = { set_leader_flag = keep_leader_match_army@THIS }
+					set_army_flag = keep_leader_match_army@leader
 				}
 			}
 		}
@@ -1539,12 +1357,12 @@ try_assign_retained_leader_to_former_assignment = {
 				limit = { has_leader_flag = keep_leader_match_fleet@THIS }
 				owner = {
 					random_owned_fleet = {
-						limit = { has_fleet_flag = keep_leader_match_fleet@PREVPREV }
-						if = {
-							limit = { NOT = { exists = leader } }
-							assign_leader = PREVPREV
-							log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of science vessel \\[This.GetName]"
+						limit = {
+							has_fleet_flag = keep_leader_match_fleet@PREVPREV
+							NOT = { exists = leader }
 						}
+						assign_leader = PREVPREV
+						log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of science vessel \\[This.GetName]"
 					}
 				}
 			}
@@ -1554,12 +1372,12 @@ try_assign_retained_leader_to_former_assignment = {
 				limit = { has_leader_flag = keep_leader_match_fleet@THIS }
 				owner = {
 					random_owned_fleet = {
-						limit = { has_fleet_flag = keep_leader_match_fleet@PREVPREV }
-						if = {
-							limit = { NOT = { exists = leader } }
-							assign_leader = PREVPREV
-							log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of fleet \\[This.GetName]"
+						limit = {
+							has_fleet_flag = keep_leader_match_fleet@PREVPREV
+							NOT = { exists = leader }
 						}
+						assign_leader = PREVPREV
+						log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of fleet \\[This.GetName]"
 					}
 				}
 			}
@@ -1567,40 +1385,28 @@ try_assign_retained_leader_to_former_assignment = {
 		# armies can't have their owners changed, an it's unclear how I could clone the transports before integration fires, which means there's nothing to which to reassign a general
 		# general = {
 		# 	if = {
-		# 		limit = { is_variable_set = keep_leader_match_transport_fleet }
+		# 		limit = { has_leader_flag = keep_leader_match_transport_fleet@THIS }
 		# 		owner = {
 		# 			random_owned_fleet = {
 		# 				limit = {
-		# 					is_variable_set = keep_leader_match_transport_fleet
-		# 					check_variable = {
-		# 						which = keep_leader_match_transport_fleet
-		# 						value = PREVPREV
-		# 					}
+		# 					has_fleet_flag = keep_leader_match_transport_fleet@PREVPREV
+		# 					NOT = { exists = leader }
 		# 				}
-		# 				if = {
-		# 					limit = { NOT = { exists = leader } }
-		# 					assign_leader = PREVPREV
-		# 					log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of transport fleet \\[This.GetName]"
-		# 				}
+		# 				assign_leader = PREVPREV
+		# 				log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of transport fleet \\[This.GetName]"
 		# 			}
 		# 		}
 		# 	}
 		# 	else_if = {
-		# 		limit = { is_variable_set = keep_leader_match_army }
+		# 		limit = { has_leader_flag = keep_leader_match_army@THIS }
 		# 		owner = {
 		# 			random_owned_army = {
 		# 				limit = {
-		# 					is_variable_set = keep_leader_match_army
-		# 					check_variable = {
-		# 						which = keep_leader_match_army
-		# 						value = PREVPREV
-		# 					}
+		# 					has_army_flag = keep_leader_match_army@PREVPREV
+		# 					NOT = { exists = leader }
 		# 				}
-		# 				if = {
-		# 					limit = { NOT = { exists = leader } }
-		# 					assign_leader = PREVPREV
-		# 					log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of the army \\[This.GetName]"
-		# 				}
+		# 				assign_leader = PREVPREV
+		# 				log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of the army \\[This.GetName]"
 		# 			}
 		# 		}
 		# 	}

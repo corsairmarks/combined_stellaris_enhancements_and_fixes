@@ -77,15 +77,7 @@ country_event = {
 					value = 0
 				}
 				set_variable = {
-					which = leader_organic_reward_accumulator
-					value = 0
-				}
-				set_variable = {
 					which = leader_organic_non_cyborg_accumulator
-					value = 0
-				}
-				set_variable = {
-					which = leader_organic_non_cyborg_reward_accumulator
 					value = 0
 				}
 				set_variable = {
@@ -101,19 +93,11 @@ country_event = {
 					value = 0
 				}
 				set_variable = {
-					which = leader_necrophagable_reward_accumulator
-					value = 0
-				}
-				set_variable = {
 					which = leader_same_species_accumulator
 					value = 0
 				}
 				set_variable = {
 					which = leader_not_same_species_accumulator
-					value = 0
-				}
-				set_variable = {
-					which = leader_not_same_species_reward_accumulator
 					value = 0
 				}
 				set_variable = {
@@ -289,7 +273,7 @@ country_event = {
 	}
 	option = {
 		name = keep_leaders.1.a.pur
-			custom_tooltip = keep_leaders.1.a.tooltip
+		custom_tooltip = keep_leaders.1.a.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip.none
 			description_parameters = {
@@ -297,42 +281,11 @@ country_event = {
 			}
 		}
 		trigger = { has_valid_civic = civic_fanatic_purifiers }
-		custom_tooltip_with_params = {
-			description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-				RESOURCE = "[This.GetUnityName]"
-				KEY = "unity"
-				NUM = "[variable_storage.leader_not_same_species_reward_accumulator]"
-			}
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_not_same_species_accumulator
 		}
-		hidden_effect = {
-			event_target:variable_storage = {
-				set_variable = {
-					which = index
-					value = 0
-				}
-			}
-			while = {
-				limit = {
-					event_target:variable_storage = {
-						check_variable = {
-							which = index
-							value < leader_not_same_species_accumulator
-						}
-					}
-				}
-				add_resource = {
-					unity = @keep_leaders_civic_reward_base
-				}
-				event_target:variable_storage = {
-					change_variable = {
-						which = index
-						value = 1
-					}
-				}
-			}
-			event_target:storage_owner = { destroy_country = yes }
-		}
+		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -365,42 +318,11 @@ country_event = {
 			}
 		}
 		trigger = { has_valid_civic = civic_hive_devouring_swarm }
-		custom_tooltip_with_params = {
-			description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-				RESOURCE = "[This.GetSocietyResearchName]"
-				KEY = "society"
-				NUM = "[variable_storage.leader_organic_reward_accumulator]"
-			}
+		add_resource = {
+			society_research = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_organic_accumulator
 		}
-		hidden_effect = {
-			event_target:variable_storage = {
-				set_variable = {
-					which = index
-					value = 0
-				}
-			}
-			while = {
-				limit = {
-					event_target:variable_storage = {
-						check_variable = {
-							which = index
-							value < leader_organic_accumulator
-						}
-					}
-				}
-				add_resource = {
-					society_research = @keep_leaders_civic_reward_base
-				}
-				event_target:variable_storage = {
-					change_variable = {
-						which = index
-						value = 1
-					}
-				}
-			}
-			event_target:storage_owner = { destroy_country = yes }
-		}
+		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -419,42 +341,11 @@ country_event = {
 			}
 		}
 		trigger = { has_valid_civic = civic_machine_terminator }
-		custom_tooltip_with_params = {
-			description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-				RESOURCE = "[This.GetUnityName]"
-				KEY = "unity"
-				NUM = "[variable_storage.leader_organic_reward_accumulator]"
-			}
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_organic_accumulator
 		}
-		hidden_effect = {
-			event_target:variable_storage = {
-				set_variable = {
-					which = index
-					value = 0
-				}
-			}
-			while = {
-				limit = {
-					event_target:variable_storage = {
-						check_variable = {
-							which = index
-							value < leader_organic_accumulator
-						}
-					}
-				}
-				add_resource = {
-					unity = @keep_leaders_civic_reward_base
-				}
-				event_target:variable_storage = {
-					change_variable = {
-						which = index
-						value = 1
-					}
-				}
-			}
-			event_target:storage_owner = { destroy_country = yes }
-		}
+		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -587,8 +478,10 @@ country_event = {
 			hidden_trigger = {
 				NOR = {
 					has_valid_civic = civic_fanatic_purifiers
-					has_country_flag = flesh_weakened
-					has_country_flag = synthetic_empire
+					AND = {
+						has_ascension_perk = ap_the_flesh_is_weak
+						has_country_flag = flesh_weakened
+					}
 				}
 				event_target:storage_owner = {
 					any_owned_leader = {
@@ -690,40 +583,9 @@ country_event = {
 				NOT = { has_valid_civic = civic_machine_terminator }
 			}
 		}
-		custom_tooltip_with_params = {
-			description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-				RESOURCE = "[This.GetUnityName]"
-				KEY = "unity"
-				NUM = "[variable_storage.leader_organic_reward_accumulator]"
-			}
-		}
-		hidden_effect = {
-			event_target:variable_storage = {
-				set_variable = {
-					which = index
-					value = 0
-				}
-			}
-			while = {
-					limit = {
-					event_target:variable_storage = {
-						check_variable = {
-							which = index
-							value < leader_organic_accumulator
-							}
-						}
-					}
-				add_resource = {
-					unity = @keep_leaders_civic_reward_base
-				}
-				event_target:variable_storage = {
-					change_variable = {
-						which = index
-						value = 1
-					}
-				}
-			}
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_organic_accumulator
 		}
 		hidden_effect = {
 			country_event = {
@@ -751,17 +613,17 @@ country_event = {
 					has_valid_civic = civic_machine_terminator
 				}
 				event_target:storage_owner = {
-				any_owned_leader = {
-					is_eligible_transfer_leader_from_storage = yes
-					is_organic_species = yes
-					is_hive_species = no
-				}
-				any_owned_leader = {
-					is_eligible_transfer_leader_from_storage = yes
-					is_robotic_species = yes
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_organic_species = yes
+						is_hive_species = no
+					}
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_robotic_species = yes
+					}
 				}
 			}
-		}
 		}
 		allow = {
 			custom_tooltip = {
@@ -852,7 +714,10 @@ country_event = {
 		}
 		allow = {
 			OR = {
-				has_country_flag = flesh_weakened
+				custom_tooltip = {
+					text = keep_leaders.1.k.cyb2.fail_text
+					has_country_flag = flesh_weakened
+				}
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -1272,40 +1137,9 @@ country_event = {
 				has_trait = trait_necrophage
 			}
 		}
-		custom_tooltip_with_params = {
-			description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-				RESOURCE = "[This.GetUnityName]"
-				KEY = "unity"
-				NUM = "[variable_storage.leader_not_same_species_reward_accumulator]"
-			}
-		}
-		hidden_effect = {
-			event_target:variable_storage = {
-				set_variable = {
-					which = index
-					value = 0
-				}
-			}
-			while = {
-				limit = {
-					event_target:variable_storage = {
-						check_variable = {
-							which = index
-							value < leader_not_same_species_accumulator
-						}
-					}
-				}
-				add_resource = {
-					unity = @keep_leaders_civic_reward_base
-				}
-				event_target:variable_storage = {
-					change_variable = {
-						which = index
-						value = 1
-					}
-				}
-			}
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_not_same_species_accumulator
 		}
 		hidden_effect = {
 			country_event = {
@@ -1854,49 +1688,10 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		custom_tooltip_with_params = {
-			description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-				RESOURCE = "[This.GetUnityName]"
-				KEY = "unity"
-				NUM = "[variable_storage.leader_organic_non_cyborg_reward_accumulator]"
-			}
-		}
-		custom_tooltip_with_params = {
-			description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-				RESOURCE = "[This.GetSocietyResearchName]"
-				KEY = "society"
-				NUM = "[variable_storage.leader_organic_non_cyborg_reward_accumulator]"
-			}
-		}
-		hidden_effect = {
-			event_target:variable_storage = {
-				set_variable = {
-					which = index
-					value = 0
-				}
-			}
-			while = {
-				limit = {
-					event_target:variable_storage = {
-						check_variable = {
-							which = index
-							value < leader_organic_non_cyborg_accumulator
-						}
-					}
-				}
-				add_resource = {
-					unity = @keep_leaders_civic_reward_base
-					society_research = @keep_leaders_civic_reward_base
-				}
-				event_target:variable_storage = {
-					change_variable = {
-						which = index
-						value = 1
-					}
-				}
-			}
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			society_research = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_organic_non_cyborg_accumulator
 		}
 		hidden_effect = {
 			country_event = {
@@ -2024,41 +1819,10 @@ country_event = {
 		}
 		# necrophage unity
 		if = {
-			limit = { has_swapped_tradition = tr_harmony_unity_of_self }
-		custom_tooltip_with_params = {
-				description = ADD_RESOURCE_EFFECT
-			description_parameters = {
-					RESOURCE = "[This.GetUnityName]"
-					KEY = "unity"
-					NUM = "[variable_storage.leader_necrophagable_reward_accumulator]"
-			}
-		}
-		hidden_effect = {
-				event_target:variable_storage = {
-					set_variable = {
-						which = index
-						value = 0
-					}
-				}
-				while = {
-					limit = {
-						event_target:variable_storage = {
-							check_variable = {
-								which = index
-								value < leader_necrophagable_accumulator
-							}
-						}
-					}
-					add_resource = {
-						unity = @keep_leaders_civic_reward_base
-					}
-					event_target:variable_storage = {
-						change_variable = {
-							which = index
-							value = 1
-						}
-					}
-				}
+			limit = { has_active_tradition = tr_harmony_unity_of_self }
+			add_resource = {
+				unity = @keep_leaders_civic_reward_base
+				mult = event_target:variable_storage.leader_necrophagable_accumulator
 			}
 		}
 		hidden_effect = {
@@ -2435,37 +2199,21 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		set_variable = {
-			which = keep_leaders_army_transport_fleet
-			value = 13 # semi-arbitrary start value
-		}
 		save_event_target_as = integrating_country
 		FROM = {
 			save_event_target_as = integrated_country
-			# tag each army with a variable value that corresponds to one set on its transport fleet
+			# flag each army to correspond to a flag set on its transport fleet
 			every_owned_army = {
 				log = "[This.GetName] owned by [This.Owner.GetName]"
 				if = {
 					limit = { exists = fleet }
-					if = {
-						limit = { fleet = { NOT = { is_variable_set = keep_leaders_army_transport_fleet } } }
-						fleet = {
-							set_variable = {
-								which = keep_leaders_army_transport_fleet
-									value = event_target:integrating_country
-							}
-						}
-						event_target:integrating_country = {
-							change_variable = {
-								which = keep_leaders_army_transport_fleet
-								value = 1
-							}
+					fleet = {
+						if = {
+							limit = { NOT = { has_fleet_flag = keep_leaders_army_transport_fleet@THIS } }
+							set_fleet_flag = keep_leaders_army_transport_fleet@THIS
 						}
 					}
-					set_variable = {
-						which = keep_leaders_army_transport_fleet
-						value = fleet
-					}
+					set_army_flag = keep_leaders_army_transport_fleet@fleet
 				}
 			}
 			every_owned_fleet = {
@@ -2476,12 +2224,9 @@ country_event = {
 					create_fleet = {
 						effect = {
 							if = {
-								limit = { event_target:source_fleet = { is_variable_set = keep_leader_match_transport_fleet } }
-								set_variable = {
-									which = keep_leader_match_transport_fleet
-									value = event_target:source_fleet
-								}
-								event_target:source_fleet = { clear_variable = keep_leader_match_transport_fleet }
+								limit = { event_target:source_fleet = { has_fleet_flag = keep_leader_match_transport_fleet@THIS } }
+								event_target:source_fleet = { remove_fleet_flag = keep_leader_match_transport_fleet@THIS }
+								set_fleet_flag = keep_leader_match_transport_fleet@event_target:source_fleet
 							}
 							save_event_target_as = target_fleet
 							set_name = "[source_fleet.GetName]"
@@ -2494,15 +2239,9 @@ country_event = {
 									event_target:target_fleet = {
 										event_target:source_fleet.owner = {
 											random_owned_army = {
-												limit = {
-													is_variable_set = keep_leaders_army_transport_fleet
-													check_variable = {
-														which = keep_leaders_army_transport_fleet
-														value = event_target:source_fleet
-													}
-												}
+												limit = { has_army_flag = keep_leaders_army_transport_fleet@event_target:source_fleet }
 												log = "army [This.GetName] was in fleet [source_fleet.GetName]"
-												clear_variable = keep_leaders_army_transport_fleet
+												remove_army_flag = keep_leaders_army_transport_fleet@event_target:source_fleet
 												save_event_target_as = source_army
 											}
 										}
@@ -2538,18 +2277,6 @@ country_event = {
 				delete_fleet = THIS
 			}
 		}
-	}
-}
-
-# randomise a leader's experience between 0 and the maximum for their current level
-# triggered by an effect, because directly invoking the effect directly resulted in exceeding the maximum call depth of 5
-# ROOT = leader
-leader_event = {
-	id = keep_leaders.6
-	is_triggered_only = yes
-	hide_window = yes
-	immediate = {
-		randomise_leader_xp = yes
 	}
 }
 
