@@ -6,30 +6,31 @@ Individual mods update first, then changes are merged here.
 
 # Major Update
 
-Version 2.0.0 adds a mod that reduces compatibility of this mod.  Because Deassimilate Machines can be incompatible with other assimilation mods, this may cause issues if you are already using such a mod.  You can manually download the most recent version without this breaking change here: [1.3.4](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/1.3.4).  You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
+Version 3.0.0 is fully updated for Stellaris version 3.1 "Lem" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [2.2.0](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/2.2.0).
+
+You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
 
 # Bundled Mods
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
-* [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) f1c7a20d5e541905a04e31b91a868f35879d577f)
-* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 81c73163a00990e0ac49d8fc891f3d193fa6a17d)
-* [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) dfe33503bee3c0484e3dba7ec5d31059fcc499a5)
-* [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 55764384b73eca3cc54e89820c4ba008e8442458)
-* [Deassimilated Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 70712de2ddd3c4c04800f53c3455cde90394c49d)
-* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 781113cd6e6498f775bd2652133628344bfe7669)
-* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 528ed549fcbff74592781d5c58061334482e3f2f)
-* [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) a9680961b4bf4370d7b958eb9d290dba69cea4e1)
-* [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 0933af2894d3f7ec772f7de81c334e490849b340)
-* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 8337ab353dd1a6ba0edbb5904572939f6e8c0485)
-* [Shattered Ring Rebalance for 3.0.*](https://steamcommunity.com/sharedfiles/filedetails/?id=2499901978) ([Source](https://github.com/corsairmarks/ringworld_origin_rebalance) 9ecdadf8a443bef6c22b31fba04973e09b6a08e0)
-* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) faf195cce401dc1ff19b0a590c530a6d56e298fa)
-* [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) df600ad6e737f56144aaa7ea596c9f8b763b58c7)
-* [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 55444c031afc8d926dc701c61a326b6b110ecaf4)
-* [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 7bce0431a890e1b2afb6dde533d8194577f1a6cf)
-* [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) afd75e8c4728c7e7fd5150f0705df9255631b2f7)
+* [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
+* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 5fd7c58c6c9593a0805c5d62379f5bed8257e816)
+* [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) e201f248b605fff6df72b95d8e7ee34c88deafcd)
+* [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 78cf0757da03a6358575e7cd21d632a7c88b2631)
+* [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 518bc29448abf3d481bbd419265f8c68d01ef4f2)
+* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) ff63fd46421eb964659f16582cb8a1f548e1cee8)
+* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 4f12f8c7f27d40098d60106686707249bf93186f)
+* [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 47ba2c6a4c92c189765d431283bb1cc9abdbfd06)
+* [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 9c2ec40d6be73174c1864de8e3ae359936bbd967)
+* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) b22c639acbe8aceb97fd5bf5fcc78a378266c3d3)
+* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 15af8f7d7ec0e2fc7c221b5a560c5fd56dfc2c5b)
+* [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 8f8a7b6c738a288aad36181c011545693e3aa92b)
+* [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 02997388c697a62576e7e064421b8ec67dc9d296)
+* [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) e50bb31e6f480092feebab3c6d0635c7bb6ed2b3)
+* [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) ba1c2b09b0ad7c4ad5cde406dd181fe64cb47a92)
 * [Technician Job Priority Fix for Slaves](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) ([Source](https://github.com/corsairmarks/technician_slave_fix)) - this mod is not actually merged via `git`, but the same 1-character change is present in this one
-* [Manifesti 'Personal Autonomy for Munitions' Demand Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831) ([Source](https://github.com/corsairmarks/manifesti_fix) 12ecdce87fde0ebf7c04302e1d0dd4fe4a76a004)
+* [Manifesti 'Personal Autonomy for Munitions' Demand Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831) ([Source](https://github.com/corsairmarks/manifesti_fix) af6bb98c62a4283eafc12748c9704b8fe449b18e)
 
 ## Source Code
 
@@ -52,9 +53,9 @@ Each of the source repositories above is added as a remote to this repository on
 
 # Compatibility
 
-Requires Stellaris 3.0.4 and disables achievements.
+Requires Stellaris version 3.1.1 "Lem" and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
+Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, the Full Military Service species right, or (most) society technologies.
 
 ## Recommended Companion Mods
 
@@ -62,7 +63,7 @@ The standard planet view has a very small graphic representing your planet's env
 
 ## When to Install
 
-This mod should not be removed from your save game.  Some added modifiers and technologies will not work without the changes in this mod.  You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as Ringworld preference for Driven Assimilators/Rogue Servitors with Shattered Ring, or the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
+This mod should not be removed from your save game.  Some added modifiers and technologies will not work without the changes in this mod.  You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
 
 ## Changelog
 
@@ -107,6 +108,26 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Retain Leaders from Integrated Subjects at 1.2.1
     * Deassimilated Machines at 1.0.3
 * 2.2.0 Add and update merged mods
-    * Update merged mods: Leader Traits: All Eligible Species Traits at 1.4.1
+    * Update merged mod: Leader Traits: All Eligible Species Traits at 1.4.1
     * Add merged mod: Colony Designation: Ecumenopolis Commercial at 1.0.0
     * Add merged mod: Psionic Ascension: Even in Other Empires at 1.0.0
+* 3.0.0 Update all merged mods for Stellaris version 3.1 "Lem"
+    * Removed: Shattered Ring Rebalance for 3.0.* (deprecated)
+    * Removed: Prosperity Tradition Rebalance for 3.0.3 (deprecated)
+    * Removed: Space Fauna Multiple Resolutions Fix (deprecated)
+    * Updated: Psionic Ascension: Even in Other Empires at 1.1.0
+    * Updated: Colony Designation: Ecumenopolis Commercial at 2.1.0
+    * Updated: Counter-Limited Armies Fix at 2.0.0
+    * Updated: Deassimilated Machine Worlds at 2.0.0
+    * Updated: Deassimilate Machines at 1.1.0
+    * Updated: Retain Leaders from Integrated Subjects at 2.0.0
+    * Updated: Leader Traits: Enhanced Randomisation at 2.0.0
+    * Updated: Restored Content: Fungoids at 1.1.0
+    * Updated: Yet Another Planetary Sky Fix at 2.0.0
+    * Updated: "Agrarian" Idyll for Lithoids at 2.0.0
+    * Updated: Leader Traits: All Eligible Species Traits at 2.0.1
+    * Updated: Leader Traits: Scientist AI Assistant Upgrader at 1.1.0
+    * Updated: Full Military Service for Battle Thralls at 1.6.0
+    * Updated: Planetary Modifier Enhancements at 2.4.0
+    * Updated: Primitive Conquest Enhancements at 2.0.0
+    * Updated: Manifesti 'Personal Autonomy for Munitions' Demand Fix at 3.0.0
