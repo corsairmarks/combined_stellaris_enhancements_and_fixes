@@ -1819,7 +1819,12 @@ country_event = {
 		}
 		# necrophage unity
 		if = {
-			limit = { has_active_tradition = tr_harmony_unity_of_self }
+			limit = {
+				OR = {
+					has_active_tradition = tr_harmony_unity_of_self
+					has_active_tradition = tr_synchronicity_unity_of_mind
+				}
+			}
 			add_resource = {
 				unity = @keep_leaders_civic_reward_base
 				mult = event_target:variable_storage.leader_necrophagable_accumulator
