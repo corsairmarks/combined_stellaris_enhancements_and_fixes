@@ -45,7 +45,7 @@ Overriding a colony designation and a deposit causes the game to log two errors 
     * Prevent confusing initial event description complaining about lack of synth rights when the empire does in fact have synth rights
     * Machine empires won't get a Machine World opinion because they integrate it (debuffs suck)
     * Don't add duplicate modifiers to Machine Worlds
-* 2.0.0 Update mod for Stellaris version 3.1.1 "Lem"
+* 2.0.0 Update mod for Stellaris version 3.1 "Lem"
     * Update district overrides to import new features, such as the special new artificer and catalytic technician jobs
     * Update `col_mac_factory` override
     * Add Malfunctioning Replicator Bay blocker override to also block the free Roboticist job
