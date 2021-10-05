@@ -76,9 +76,7 @@ planet_event = {
 								FROM = { has_renaissance_age_or_greater = yes }
 							}
 						}
-						add_district_if_free = {
-							DISTRICT = district_mining
-						}
+						add_district_if_free = { DISTRICT = district_mining }
 						if = {
 							limit = {
 								OR = {
