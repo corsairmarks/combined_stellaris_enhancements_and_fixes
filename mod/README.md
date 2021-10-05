@@ -68,6 +68,10 @@ This mod can be safely added or removed from your savegame after the game has st
 * 2.0.0 Update for compatibility with Stellaris 3.1.* "Lem"
     * Update to use new arithmetic syntax
     * Update minor underlying game changes (mainly to support new features in the base game)
+* 2.1.0 Improve mod reliability and safety
+    * Ensure AI Necrophage homeworlds cannot be fully depopulated by their special primitive conquest event (unlikely to occur but better to be safe)
+    * Do not attempt to auto-resettle Necrophage Pops to a world they can't live on (modified for regular land appropriation in 3.1 but not the AI Necrophage helper event)
+    * Add trigger to account for a primitive planet's primitive age OR its Pop count when adding free buildings/districts - whichever value is "higher" is used to determine how much to build
 
 ## Source Code
 
