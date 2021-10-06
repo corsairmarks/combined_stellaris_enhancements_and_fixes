@@ -289,7 +289,7 @@ country_event = {
 			limit = {
 				has_modifier = planet_culture_shock
 				count_owned_pop = {
-					count <= 1
+					count < 3
 					limit = { is_same_species = event_target:necrophage_country }
 				}
 			}
@@ -301,13 +301,24 @@ country_event = {
 						limit = { is_same_species = event_target:necrophage_country }
 					}
 				}
-				event_target:necrophage_country = {
-					capital_scope = {
+				if = {
+					limit = {
+						event_target:necrophage_country.capital_scope = {
+							count_owned_pop = {
+								count > 3
+								limit = { is_same_species = event_target:necrophage_country }
+							}
+						}
+					}
+					event_target:necrophage_country.capital_scope = {
 						random_owned_pop = {
-							limit = { species = { is_same_species = event_target:necrophage_country } }
+							limit = {
+								is_same_species = event_target:necrophage_country
+								can_live_on_planet = PREVPREV
+							}
 							resettle_pop = {
 								pop = THIS
-								planet = PREVPREVPREV
+								planet = PREVPREV
 							}
 							clear_pop_category = yes # in case a specialist/ruler was moved
 						}
@@ -315,16 +326,21 @@ country_event = {
 				}
 			}
 			check_planet_employment = yes
-			add_district = district_city
 		}
-		# automatically take control of any primitves within borders
+		# automatically take control of any primitives within borders
 		every_planet_within_border = {
 			limit = {
 				is_colony = yes
 				owner = { is_country_type = primitive }
 			}
 			owner = { save_event_target_as = conquered_primitive_country }
-			owner_species = { save_event_target_as = conquered_primitive_species }
+			owner_species = {
+				set_timed_species_flag = {
+					flag = primitive_species
+					years = 10
+				}
+				save_event_target_as = conquered_primitive_species
+			}
 			if = {
 				limit = { has_observation_outpost = yes }
 				observation_outpost = { dismantle = yes }
@@ -341,15 +357,26 @@ country_event = {
 				years = 10
 			}
 			# move 3 necrophage pops to the newly "conquered" planet
-			while = {
-				count = 3
-				event_target:necrophage_country = {
-					capital_scope = {
+			if = {
+				limit = {
+					event_target:necrophage_country.capital_scope = {
+						count_owned_pop = {
+							count > 3
+							limit = { is_same_species = event_target:necrophage_country }
+						}
+					}
+				}
+				while = {
+					count = 3
+					event_target:necrophage_country.capital_scope = {
 						random_owned_pop = {
-							limit = { species = { is_same_species = event_target:necrophage_country } }
+							limit = {
+								is_same_species = event_target:necrophage_country
+								can_live_on_planet = PREVPREV
+							}
 							resettle_pop = {
 								pop = THIS
-								planet = PREVPREVPREV
+								planet = PREVPREV
 							}
 							clear_pop_category = yes # in case a specialist/ruler was moved
 						}

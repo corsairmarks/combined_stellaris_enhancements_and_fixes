@@ -53,32 +53,72 @@ planet_event = {
 			add_primitive_conquest_urban_district = yes
 			add_primitive_conquest_food_district = yes
 			if = {
-				limit = { num_pops > 5 }
+				limit = {
+					OR = {
+						num_pops > 5
+						FROM = { has_bronze_age_or_greater = yes }
+					}
+				}
 				add_primitive_conquest_food_district = yes
 				add_district_if_free = { DISTRICT = district_mining }
 				if = {
-					limit = { num_pops > 9 }
+					limit = {
+						OR = {
+							num_pops > 9
+							FROM = { has_iron_age_or_greater = yes }
+						}
+					}
 					add_primitive_conquest_food_district = yes
 					if = {
-						limit = { num_pops > 11 }
+						limit = {
+							OR = {
+								num_pops > 11
+								FROM = { has_renaissance_age_or_greater = yes }
+							}
+						}
 						add_district_if_free = { DISTRICT = district_mining }
 						if = {
-							limit = { num_pops > 15 }
+							limit = {
+								OR = {
+									num_pops > 15
+									FROM = { has_steam_age_or_greater = yes }
+								}
+							}
 							add_primitive_conquest_urban_district = yes
 							add_district_if_free = { DISTRICT = district_industrial }
 							if = {
-								limit = { num_pops > 20 }
+								limit = {
+									OR = {
+										num_pops > 20
+										FROM = { has_industrial_age_or_greater = yes }
+									}
+								}
 								add_district_if_free = { DISTRICT = district_generator }
 								add_district_if_free = { DISTRICT = district_generator }
 								add_district_if_free = { DISTRICT = district_industrial }
 								if = {
-									limit = { num_pops > 22 }
+									limit = {
+										OR = {
+											num_pops > 22
+											FROM = { has_machine_age_or_greater = yes }
+										}
+									}
 									add_building_if_free = { BUILDING = building_research_lab_1 }
 									if = {
-										limit = { num_pops > 24 }
+										limit = {
+											OR = {
+												num_pops > 24
+												FROM = { has_atomic_age_or_greater = yes }
+											}
+										}
 										add_primitive_conquest_urban_district = yes
 										if = {
-											limit = { num_pops > 26 }
+											limit = {
+												OR = {
+													num_pops > 26
+													FROM = { has_early_space_age_or_greater = yes }
+												}
+											}
 											add_primitive_conquest_unity_building_building_if_free = yes
 										}
 									}
