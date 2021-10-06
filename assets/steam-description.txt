@@ -29,7 +29,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] https://github.com/corsairmarks/scientist_ai_assistant_upgrader 8f8a7b6c738a288aad36181c011545693e3aa92b
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Full Military Service for Battle Thralls[/url] https://github.com/corsairmarks/battle_thrall_military_leaders 02997388c697a62576e7e064421b8ec67dc9d296
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] https://github.com/corsairmarks/planetary_modifier_enhancements e50bb31e6f480092feebab3c6d0635c7bb6ed2b3
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] https://github.com/corsairmarks/primitive_conquest_enhancements ba1c2b09b0ad7c4ad5cde406dd181fe64cb47a92
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] https://github.com/corsairmarks/primitive_conquest_enhancements 492402efccb93d175699d3d3f6717c446b509f8c
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority Fix for Slaves[/url] https://github.com/corsairmarks/technician_slave_fix - this mod is not actually merged via [b]git[/b], but the same 1-character change is present in this one
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831]Manifesti 'Personal Autonomy for Munitions' Demand Fix[/url] https://github.com/corsairmarks/manifesti_fix af6bb98c62a4283eafc12748c9704b8fe449b18e
 [/list]

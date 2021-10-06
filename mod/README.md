@@ -28,7 +28,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 8f8a7b6c738a288aad36181c011545693e3aa92b)
 * [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 02997388c697a62576e7e064421b8ec67dc9d296)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) e50bb31e6f480092feebab3c6d0635c7bb6ed2b3)
-* [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) ba1c2b09b0ad7c4ad5cde406dd181fe64cb47a92)
+* [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 492402efccb93d175699d3d3f6717c446b509f8c)
 * [Technician Job Priority Fix for Slaves](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) ([Source](https://github.com/corsairmarks/technician_slave_fix)) - this mod is not actually merged via `git`, but the same 1-character change is present in this one
 * [Manifesti 'Personal Autonomy for Munitions' Demand Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831) ([Source](https://github.com/corsairmarks/manifesti_fix) af6bb98c62a4283eafc12748c9704b8fe449b18e)
 
@@ -134,3 +134,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 3.0.1 Mark compatibility for Stellaris 3.1.2
     * Updated: Retain Leaders from Integrated Subjects at 2.0.1
     * Updated: "Agrarian" Idyll for Lithoids at 2.0.1
+* 3.0.2 Update merged mod: Primitive Conquest Enhancements at 2.1.0
