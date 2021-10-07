@@ -1,0 +1,77 @@
+namespace = terraforming_stations_aesthetic
+
+# flag mod as active
+# triggered by on_game_start and on_single_player_save_game_load
+event = {
+	id = terraforming_stations_aesthetic.13
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = terraforming_stations_aesthetic_installed }
+	}
+	immediate = {
+		set_global_flag = terraforming_stations_aesthetic_installed
+	}
+}
+
+# triggered by on_terraforming_begun
+# THIS = planet
+# FROM = country, terraformer
+planet_event = {
+	id = terraforming_stations_aesthetic.1
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		NOT = { any_fleet_in_orbit = { has_fleet_flag = terraform_station@PREV } }
+	}
+	immediate = {
+		save_event_target_as = terraform_planet
+		create_fleet = {
+			set_take_point = no
+			settings = {
+				can_change_composition = no
+				uses_naval_capacity = no
+				ai_ignore_strength = yes
+				can_change_leader = no
+				garrison = yes
+				spawn_debris = no
+			}
+			effect = {
+				set_name = NAME_fleet_terraform_station
+				set_owner = FROM
+				set_fleet_flag = terraform_station@event_target:terraform_planet
+				set_location = {
+					target = event_target:terraform_planet
+					distance = 0
+					angle = random
+				}
+				create_ship = {
+					graphical_culture = FROM
+					prefix = no
+					random_existing_design = terraform_station
+					effect = {
+						set_name = NAME_ship_terraform_station
+					}
+				}
+			}
+		}
+	}
+}
+
+# triggered by on_terraforming_complete
+# THIS = planet
+# FROM = country, terraformer
+planet_event = {
+	id = terraforming_stations_aesthetic.2
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		any_fleet_in_orbit = { has_fleet_flag = terraform_station@PREV }
+	}
+	immediate = {
+		every_fleet_in_orbit = {
+			limit = { has_fleet_flag = terraform_station@PREV }
+			delete_fleet = THIS
+		}
+	}
+}

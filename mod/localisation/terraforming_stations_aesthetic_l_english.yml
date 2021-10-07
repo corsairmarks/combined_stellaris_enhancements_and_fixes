@@ -1,0 +1,4 @@
+﻿l_english:
+ NAME_fleet_terraform_station: "[terraform_planet.GetName] $shipclass_terraform_station$"
+ NAME_ship_terraform_station: "[terraform_planet.GetName] $shipclass_terraform_station$"
+ DEFAULT_TERRAFORM_STATION_SECTION: "$shipclass_terraform_station$ Frame"
