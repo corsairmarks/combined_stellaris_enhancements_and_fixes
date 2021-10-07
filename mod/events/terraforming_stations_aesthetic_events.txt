@@ -22,7 +22,7 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		NOT = { any_fleet_in_orbit = { has_fleet_flag = terraform_station@PREV } }
+		NOT = { solar_system = { any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV } } }
 	}
 	immediate = {
 		save_event_target_as = terraform_planet
@@ -66,12 +66,14 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		any_fleet_in_orbit = { has_fleet_flag = terraform_station@PREV }
+		solar_system = { any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV } }
 	}
 	immediate = {
-		every_fleet_in_orbit = {
-			limit = { has_fleet_flag = terraform_station@PREV }
-			delete_fleet = THIS
+		solar_system = {
+			every_orbital_station = {
+				limit = { has_fleet_flag = terraform_station@PREVPREV }
+				delete_fleet = THIS
+			}
 		}
 	}
 }
