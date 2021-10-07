@@ -1,4 +1,4 @@
-name="Aesthetic Terraforming Stations"
+name="Aesthetic Terraform Stations"
 tags={
 	"Graphics"
 }
