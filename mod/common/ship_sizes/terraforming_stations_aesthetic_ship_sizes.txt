@@ -1,4 +1,5 @@
 terraform_station = {
+	entity = aesthetic_terraform_station_entity
 	max_speed = 0.0
 	acceleration = 0.0
 	rotation_speed = 0.0
@@ -9,7 +10,7 @@ terraform_station = {
 	}
 	size_multiplier = 1
 	fleet_slot_size = 1
-	section_slots = { "mid" = { locator = "root" } }
+	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
