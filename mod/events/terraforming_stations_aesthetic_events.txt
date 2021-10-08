@@ -14,6 +14,7 @@ event = {
 	}
 }
 
+# set up terraform station and graphics
 # triggered by on_terraforming_begun
 # THIS = planet
 # FROM = country, terraformer
@@ -55,10 +56,15 @@ planet_event = {
 				}
 			}
 		}
+		planet_event = {
+			id = terraforming_stations_aesthetic.3
+			days = 30
+		}
 	}
 }
 
-# triggered by on_terraforming_complete
+# clean up terraform station and graphics
+# triggered by on_terraforming_complete and terraforming_stations_aesthetic.3
 # THIS = planet
 # FROM = country, terraformer
 planet_event = {
@@ -73,6 +79,39 @@ planet_event = {
 			every_orbital_station = {
 				limit = { has_fleet_flag = terraform_station@PREVPREV }
 				delete_fleet = THIS
+			}
+		}
+	}
+}
+
+# check to see if terraforming has stopped - if so, fire the cleanup event, otherwise check again in a month
+# triggered by terraforming_stations_aesthetic.1 and terraforming_stations_aesthetic.3
+# THIS = planet
+# FROM = country, terraformer
+planet_event = {
+	id = terraforming_stations_aesthetic.3
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		solar_system = { any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV } }
+	}
+	immediate = {
+		if = {
+			limit = { is_terraforming = yes }
+			planet_event = {
+				id = terraforming_stations_aesthetic.3
+				days = 30
+				scopes = {
+					from = FROM
+				}
+			}
+		}
+		else = {
+			planet_event = {
+				id = terraforming_stations_aesthetic.2
+				scopes = {
+					from = FROM
+				}
 			}
 		}
 	}
