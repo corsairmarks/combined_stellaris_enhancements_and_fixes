@@ -143,9 +143,16 @@ entity = {
 
 entity = {
 	name = "mammalian_01_aesthetic_terraform_station_entity"
+	locator = { name = "station1" position = { 0 30 0 } rotation = { 0 75 0 } }
+
+	attach = { "station1" = mammalian_01_aesthetic_terraform_station_inner_entity }
+}
+
+entity = {
+	name = "mammalian_01_aesthetic_terraform_station_inner_entity"
 	pdxmesh = "mammalian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10.25 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -5 0 } scale = 40 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
