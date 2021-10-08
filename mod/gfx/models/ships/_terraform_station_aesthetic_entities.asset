@@ -4,7 +4,7 @@ entity = {
 	name = "arthropoid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "arthropoid_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 0 -0.4 } scale = 61 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -41,7 +41,7 @@ entity = {
 	name = "avian_01_aesthetic_terraform_station_entity"
 	pdxmesh = "avian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -11 0 } scale = 100 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" animation = "rotate"
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -74,7 +74,7 @@ entity = {
 	name = "fungoid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "fungoid_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -8 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -6 0 } scale = 105 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" animation = "idle"
 		event = { time = 1 node = "light_locator_01" particle = "ship_light_green_effect" keep_particle = yes trigger_once = yes }
@@ -108,7 +108,7 @@ entity = {
 	name = "humanoid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "mammalian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -4.5 0 } scale = 68 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -163,7 +163,7 @@ entity = {
 	name = "mammalian_01_aesthetic_terraform_station_entity"
 	pdxmesh = "mammalian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -4.5 0 } scale = 68 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -200,7 +200,7 @@ entity = {
 	name = "molluscoid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "molluscoid_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -6 0 } scale = 115 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" animation = "idle"
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -238,7 +238,7 @@ entity = {
 	name = "necroid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "necroid_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -4.5 0 } scale = 68 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -273,7 +273,7 @@ entity = {
 	name = "nemesis_01_aesthetic_terraform_station_entity"
 	pdxmesh = "mammalian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -4.5 0 } scale = 68 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -310,7 +310,7 @@ entity = {
 	name = "plantoid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "plantoid_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -6 0 } scale = 95 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		event = { time = 0.0 node = "light_locator_01" particle = "ship_light_yellow_effect" keep_particle = yes trigger_once = yes }
@@ -345,7 +345,7 @@ entity = {
 	name = "reptilian_01_aesthetic_terraform_station_entity"
 	pdxmesh = "reptilian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -2 -1.4 } scale = 108 rotation = { 0 -90 0 } }
 	scale = 1.0
 	default_state = idle
 	state = { name = "idle" state_time = 5
