@@ -1,12 +1,12 @@
 terraform_station = {
-	entity = aesthetic_terraform_station_entity
-	construction_entity = terraform_station_construction_entity
+	entity = aesthetic_megastructure_terraform_station_entity
+	construction_entity = aesthetic_megastructure_terraform_station_construction_entity
 	portrait = GFX_spaceport_background # OR GFX_starbase_background
-	entity_offset = { x = 20 y = 20 }
+	entity_offset = { x = -25 y = 25 }
 	scale_offset = yes
 	rotate_to_center = yes
-	place_entity_on_planet_plane = yes
-	build_time = 60
+	place_entity_on_planet_plane = no
+	build_time = 30
 	resources = {
 		category = megastructures
 		cost = {
@@ -16,14 +16,14 @@ terraform_station = {
 	show_galactic_map_icon = no
 	construction_blocked_by_others = no
 	prerequisites = { tech_terrestrial_sculpting }
-	# potential = { always = no }
+	potential = { always = no }
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
 				fail_text = "requires_surveyed_planet"
 				habitable_planet = yes
 				is_surveyed = {
-					who = prev.from
+					who = from
 					status = yes
 				}
 			}
