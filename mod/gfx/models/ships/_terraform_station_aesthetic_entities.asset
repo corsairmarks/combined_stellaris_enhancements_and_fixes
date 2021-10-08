@@ -108,7 +108,7 @@ entity = {
 	name = "humanoid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "mammalian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10.25 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -141,18 +141,29 @@ entity = {
 	attach = { "beam1" = "terraforming_effect_entity" }
 }
 
+# angle is right, but it spawns way far away
+# attempting to define a construction entity for the megastructure
 entity = {
-	name = "mammalian_01_aesthetic_terraform_station_entity"
-	locator = { name = "station1" position = { 0 30 0 } rotation = { 0 75 0 } }
+	name = "mammalian_01_aesthetic_megastructure_terraform_station_construction_entity"
+	pdxmesh = "locator_mesh"
+	locator = { name = "station1" position = { 0 0 0 } rotation = { 0 45 0 } }
+	attach = { "station1" = "mammalian_01_terraform_station_construction_entity" }
+}
 
-	attach = { "station1" = mammalian_01_aesthetic_terraform_station_inner_entity }
+# special "shell" entity for the megastructure in order to push the station graphics lower in the z-plane,
+# as well as provide correct rotation to face the planet rather then away from it
+entity = {
+	name = "mammalian_01_aesthetic_megastructure_terraform_station_entity"
+	pdxmesh = "locator_mesh"
+	locator = { name = "station1" position = { 0 0 -50 } rotation = { 0 90 0 } }
+	attach = { "station1" = "mammalian_01_aesthetic_terraform_station_entity" }
 }
 
 entity = {
-	name = "mammalian_01_aesthetic_terraform_station_inner_entity"
+	name = "mammalian_01_aesthetic_terraform_station_entity"
 	pdxmesh = "mammalian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -5 0 } scale = 40 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -227,7 +238,7 @@ entity = {
 	name = "necroid_01_aesthetic_terraform_station_entity"
 	pdxmesh = "necroid_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10.25 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
@@ -262,7 +273,7 @@ entity = {
 	name = "nemesis_01_aesthetic_terraform_station_entity"
 	pdxmesh = "mammalian_01_terraforming_station_mesh"
 	locator = { name = "part1" position = { 0 0 0 } }
-	locator = { name = "beam1" position = { 0 -10.25 0 } scale = 60 rotation = { 0 -90 0 } }
+	locator = { name = "beam1" position = { 0 -5 0 } scale = 65 rotation = { 0 -90 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		start_event = { trigger_once = yes sound = { soundeffect = "amb_terraforming_station_idle_hum" } }
