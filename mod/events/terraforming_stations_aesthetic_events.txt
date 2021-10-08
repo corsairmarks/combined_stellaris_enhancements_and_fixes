@@ -23,10 +23,29 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		NOT = { solar_system = { any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV } } }
+		solar_system = {
+			NOR = {
+				any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV }
+				# any_system_megastructure = { has_megastructure_flag = terraform_station@PREVPREV }
+			}
+		}
 	}
 	immediate = {
 		save_event_target_as = terraform_planet
+		# solar_system = {
+		# 	spawn_megastructure = {
+		# 		planet = PREV
+		# 		coords_from = PREV
+		# 		type = terraform_station
+		# 		owner = PREV.FROM
+		# 		graphical_culture = PREV.FROM
+		# 		orbit_distance = 18
+		# 		init_effect = {
+		# 			set_name = NAME_terraform_station
+		# 			set_megastructure_flag = terraform_station@PREVPREV
+		# 		}
+		# 	}
+		# }
 		create_fleet = {
 			set_take_point = no
 			settings = {
@@ -38,7 +57,8 @@ planet_event = {
 				spawn_debris = no
 			}
 			effect = {
-				set_name = NAME_fleet_terraform_station
+				save_event_target_as = terraform_station
+				set_name = NAME_terraform_station
 				set_owner = FROM
 				set_fleet_flag = terraform_station@event_target:terraform_planet
 				set_location = {
@@ -51,9 +71,20 @@ planet_event = {
 					prefix = no
 					random_existing_design = terraform_station
 					effect = {
-						set_name = NAME_ship_terraform_station
+						set_name = NAME_terraform_station
 					}
 				}
+			}
+		}
+		create_ambient_object = {
+			type = terraform_planet_effect_object
+			use_3d_location = yes
+			base_angle_towards = event_target:terraform_planet
+			entity_face_object = event_target:terraform_station
+			scale = 2.25
+			entity_scale_to_size = yes
+			effect = {
+				set_ambient_object_flag = terraform_station@PREV
 			}
 		}
 		planet_event = {
@@ -72,7 +103,13 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		solar_system = { any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV } }
+		solar_system = {
+			OR = {
+				any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV }
+				any_system_ambient_object = { has_ambient_object_flag = terraform_station@PREVPREV }
+				# any_system_megastructure = { has_megastructure_flag = terraform_station@PREVPREV }
+			}
+		}
 	}
 	immediate = {
 		solar_system = {
@@ -80,14 +117,14 @@ planet_event = {
 				limit = { has_fleet_flag = terraform_station@PREVPREV }
 				delete_fleet = THIS
 			}
-			every_ambient_object = {
+			every_system_ambient_object = {
 				limit = { has_ambient_object_flag = terraform_station@PREVPREV }
 				destroy_ambient_object = THIS
 			}
-			every_megastructure = {
-				limit = { has_megastructure_flag = terraform_station@PREVPREV }
-				delete_megastructure = THIS
-			}
+			# every_system_megastructure = {
+			# 	limit = { has_megastructure_flag = terraform_station@PREVPREV }
+			# 	delete_megastructure = THIS
+			# }
 		}
 	}
 }
@@ -101,7 +138,12 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		solar_system = { any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV } }
+		solar_system = {
+			# OR = {
+				any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV }
+			#	any_system_megastructure = { has_megastructure_flag = terraform_station@PREVPREV }
+			# }
+		}
 	}
 	immediate = {
 		if = {
