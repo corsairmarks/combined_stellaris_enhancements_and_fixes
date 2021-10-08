@@ -1,14 +1,14 @@
 # fired when the game starts
 on_game_start = {
 	events = {
-		terraforming_stations_aesthetic.13 # flag mod as installed
+		terraform_stations_aesthetic.13 # flag mod as installed
 	}
 }
 
 # fired when loading a single-player game
 on_single_player_save_game_load = {
 	events = {
-		terraforming_stations_aesthetic.13 # flag mod as installed
+		terraform_stations_aesthetic.13 # flag mod as installed
 	}
 }
 
@@ -17,7 +17,7 @@ on_single_player_save_game_load = {
 # FROM = country, terraformer
 on_terraforming_begun = {
 	events = {
-		terraforming_stations_aesthetic.1
+		terraform_stations_aesthetic.1
 	}
 }
 
@@ -26,6 +26,6 @@ on_terraforming_begun = {
 # FROM = country, terraformer
 on_terraforming_complete = {
 	events = {
-		terraforming_stations_aesthetic.2
+		terraform_stations_aesthetic.2
 	}
 }

@@ -1,16 +1,16 @@
-namespace = terraforming_stations_aesthetic
+namespace = terraform_stations_aesthetic
 
 # flag mod as active
 # triggered by on_game_start and on_single_player_save_game_load
 event = {
-	id = terraforming_stations_aesthetic.13
+	id = terraform_stations_aesthetic.13
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_global_flag = terraforming_stations_aesthetic_installed }
+		NOT = { has_global_flag = terraform_stations_aesthetic_installed }
 	}
 	immediate = {
-		set_global_flag = terraforming_stations_aesthetic_installed
+		set_global_flag = terraform_stations_aesthetic_installed
 	}
 }
 
@@ -19,7 +19,7 @@ event = {
 # THIS = planet
 # FROM = country, terraformer
 planet_event = {
-	id = terraforming_stations_aesthetic.1
+	id = terraform_stations_aesthetic.1
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
@@ -88,18 +88,18 @@ planet_event = {
 			}
 		}
 		planet_event = {
-			id = terraforming_stations_aesthetic.3
+			id = terraform_stations_aesthetic.3
 			days = 30
 		}
 	}
 }
 
 # clean up terraform station and graphics
-# triggered by on_terraforming_complete and terraforming_stations_aesthetic.3
+# triggered by on_terraforming_complete and terraform_stations_aesthetic.3
 # THIS = planet
 # FROM = country, terraformer
 planet_event = {
-	id = terraforming_stations_aesthetic.2
+	id = terraform_stations_aesthetic.2
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
@@ -130,11 +130,11 @@ planet_event = {
 }
 
 # check to see if terraforming has stopped - if so, fire the cleanup event, otherwise check again in a month
-# triggered by terraforming_stations_aesthetic.1 and terraforming_stations_aesthetic.3
+# triggered by terraform_stations_aesthetic.1 and terraform_stations_aesthetic.3
 # THIS = planet
 # FROM = country, terraformer
 planet_event = {
-	id = terraforming_stations_aesthetic.3
+	id = terraform_stations_aesthetic.3
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
@@ -149,7 +149,7 @@ planet_event = {
 		if = {
 			limit = { is_terraforming = yes }
 			planet_event = {
-				id = terraforming_stations_aesthetic.3
+				id = terraform_stations_aesthetic.3
 				days = 30
 				scopes = {
 					from = FROM
@@ -158,7 +158,7 @@ planet_event = {
 		}
 		else = {
 			planet_event = {
-				id = terraforming_stations_aesthetic.2
+				id = terraform_stations_aesthetic.2
 				scopes = {
 					from = FROM
 				}
