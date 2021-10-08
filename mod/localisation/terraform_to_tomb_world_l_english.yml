@@ -1,0 +1,5 @@
+﻿l_english:
+ pc_nuked_terraform_owner_species_pass: "$TRIGGER_PASS$Our species thrives on §Y$pc_nuked_adj$§! worlds."
+ pc_nuked_terraform_owner_species_fail: "$TRIGGER_FAIL$Our species has a low tolerance for radiation - any other functioning biosphere would be better."
+ pc_nuked_terraform_any_pop_species_pass: "$TRIGGER_PASS$There is one or more species in out empire that can thrive on a §Y$pc_nuked$§!."
+ pc_nuked_terraform_any_pop_species_fail: "$TRIGGER_FAIL$No species in our empire that can easily tolerate such §Y$pc_nuked_adj$§! conditions - any other functioning biosphere would be better."
