@@ -80,6 +80,14 @@ planet_event = {
 				limit = { has_fleet_flag = terraform_station@PREVPREV }
 				delete_fleet = THIS
 			}
+			every_ambient_object = {
+				limit = { has_ambient_object_flag = terraform_station@PREVPREV }
+				destroy_ambient_object = THIS
+			}
+			every_megastructure = {
+				limit = { has_megastructure_flag = terraform_station@PREVPREV }
+				delete_megastructure = THIS
+			}
 		}
 	}
 }
