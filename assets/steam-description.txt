@@ -24,7 +24,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 
 [h2]Changelog[/h2]
 
-See [url=]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2622411084]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
