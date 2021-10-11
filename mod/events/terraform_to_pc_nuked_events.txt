@@ -27,13 +27,13 @@ planet_event = {
 			eligible_pc_nuked_terraform_habitable = yes
 			eligible_pc_nuked_terraform_hostile = yes
 		}
-		NOT = { solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@PREV } } }
+		NOT = { solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@PREVPREV } } }
 	}
 	immediate = {
 		create_ambient_object = {
-			type = orbital_bombardment_effects_object
+			type = terraform_bombardment_effects_object
 			use_3d_location = yes
-			scale = 1
+			scale = 0.13
 			entity_scale_to_size = yes
 			effect = {
 				set_ambient_object_flag = terraform_bombardment@PREV

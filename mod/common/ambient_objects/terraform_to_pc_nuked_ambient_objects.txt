@@ -1,6 +1,6 @@
 ambient_object = {
-	name = "orbital_bombardment_effects_object"
-	entity = "orbital_bombardment_effects"
+	name = "terraform_bombardment_effects_object"
+	entity = "terraform_bombardment_effects"
 	selectable = no
 	show_name = no
 }
