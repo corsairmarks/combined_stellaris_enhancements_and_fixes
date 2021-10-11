@@ -10,10 +10,6 @@
 @pc_nuked_from_opposite_candidate_energy_cost = 15000
 @pc_nuked_from_opposite_candidate_duration = 7200
 
-# TODO: basic ones:
-# potential: have any nuked species
-# condition: have nuked main species, or have tomb adaptation tech + any nuked species
-
 terraform_link = {
 	from = pc_alpine
 	to = pc_nuked
@@ -26,7 +22,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -49,7 +45,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -72,7 +68,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -95,7 +91,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -118,7 +114,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -147,7 +143,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -170,7 +166,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -193,7 +189,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -216,7 +212,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -239,7 +235,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = { set_planet_flag = nuked_planet_anomalies_disabled }
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -262,8 +258,8 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
+		post_terraform_to_pc_nuked = yes
 		from = {
-			set_planet_flag = nuked_planet_anomalies_disabled
 			reroll_deposits = yes
 			clear_blockers = yes
 		}
@@ -293,8 +289,8 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
+		post_terraform_to_pc_nuked = yes
 		from = {
-			set_planet_flag = nuked_planet_anomalies_disabled
 			reroll_deposits = yes
 			clear_blockers = yes
 		}
@@ -326,10 +322,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = {
-			set_planet_flag = nuked_planet_anomalies_disabled
-			remove_modifier = terraforming_candidate
-		}
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -354,10 +347,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = {
-			set_planet_flag = nuked_planet_anomalies_disabled
-			remove_modifier = terraforming_candidate
-		}
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
@@ -382,10 +372,7 @@ terraform_link = {
 		eligible_for_pc_nuked_terraform_country = yes
 	}
 	effect = {
-		from = {
-			set_planet_flag = nuked_planet_anomalies_disabled
-			remove_modifier = terraforming_candidate
-		}
+		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
 		weight = 2
