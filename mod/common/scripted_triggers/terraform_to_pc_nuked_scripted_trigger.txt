@@ -15,7 +15,10 @@ eligible_for_pc_nuked_terraform_country = {
 			custom_tooltip = {
 				success_text = pc_nuked_terraform_any_pop_species_pass
 				fail_text = pc_nuked_terraform_any_pop_species_fail
-				has_any_nuked_pop_species = yes
+				OR = {
+					has_country_flag = terraformed_to_pc_nuked
+					has_any_nuked_pop_species = yes
+				}
 			}
 		}
 	}
@@ -27,8 +30,8 @@ is_nuked_species = {
 	OR = {
 		has_trait = trait_pc_nuked_preference
 		has_trait = trait_survivor
-		has_trait = trait_presapient_irradiated
 		has_trait = trait_plantoid_radiotrophic
+		has_trait = trait_presapient_irradiated
 	}
 }
 
