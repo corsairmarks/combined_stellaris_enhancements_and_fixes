@@ -2,7 +2,7 @@
 
 Do you have trouble finding you "in-progress" terraforming planets?  Or maybe you miss terraform stations?  This mod is for you!  The new terraforming gameplay is a bit less clunky to use, but does suffer from a lack of visual pizzazz.  This mod reintroduces terraform stations, and the best past is that you don't have to do anything special, use resources, or pay maintenance!
 
-When a planet begins terraforming, this mod will automatically spawn an terraform station above it complete with sound effects, an animated terraform beam, and a healthy green glow around the planet.  These stations are real gameplay objects, but losing (or disbanding) them does not affect the terraforming process - it is purely a visual embellishment.  Once terraforming completes, your geo-engineers will automatically dismantle the terraform station.  If you cancel terraforming, expect a delay of up to one month (30 days) before the station can be decommissioned.
+When a planet begins terraforming, this mod will automatically spawn a terraform station above it complete with sound effects, an animated terraform beam, and a healthy green glow around the planet.  These stations are real gameplay objects, but losing (or disbanding) them does not affect the terraforming process - it is purely a visual embellishment.  Once terraforming completes, your geo-engineers will automatically dismantle the terraform station.  If you cancel terraforming, expect a delay of up to one month (30 days) before the station will be automatically decommissioned.
 
 [h1]Changes[/h1]
 
