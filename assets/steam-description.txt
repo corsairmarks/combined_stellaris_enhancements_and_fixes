@@ -41,7 +41,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
 
 [h2]Changelog[/h2]
 
-See [url=]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2625663437]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
