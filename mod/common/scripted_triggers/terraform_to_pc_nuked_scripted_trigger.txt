@@ -4,6 +4,7 @@
 # Includes tooltips.
 # this = country
 eligible_for_pc_nuked_terraform_country = {
+	has_technology = tech_terrestrial_sculpting
 	OR = {
 		custom_tooltip = {
 			success_text = pc_nuked_terraform_owner_species_pass
