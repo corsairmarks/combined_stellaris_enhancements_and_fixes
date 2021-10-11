@@ -1,3 +1,54 @@
+[h1]Overview[/h1]
 
+Does your species prefer the warm glow of an irradiated planet?  Whether you "accidentally" nuked your homeworld or evolved to feed on radiation, this mod will help you [strike]bombard[/strike] "terraform" planets into tomb worlds.  This includes applying orbital bombardment graphics to any planet being "terraformed" to a tomb world.
+
+[h1]Changes[/h1]
+
+Adds terraforming links to change almost any colonizable, non-artificial planet into a tomb world ([b]pc_nuked[/b]).  Empires whose founder species has one (or more) of the Tomb World Preference, Survivor, Radiotrophic, or Irradiated traits (nuked empires) do not require any special technologies to "terraform" into tomb worlds.  Non-nuked empires must have at least 1 Pop of a nuked species and the Tomb World Adaptation technology.  Converting unhabitable worlds (barren, cold barren, or frozen) that have the Terraforming Candidate modifier always requires the Climate Restoration technology.
+
+These new terraforming links allowing them to "terraform" planets into tomb worlds.  Supported "terraforming" transformations:
+
+[list]
+[*]All nine basic habitable planet classes plus gaia planets
+	[list]
+	[*]One-quarter the normal cost
+	[*]Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
+	[*]Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
+	[*]Shows the planetary bombardment graphics while "terraforming"
+	[/list]
+[*]Hive and machine worlds
+	[list]
+	[*]One-half the normal cost (requires more [strike]bombs[/strike] "terraforming devices" to remove)
+	[*]Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
+	[*]Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
+	[*]Shows the planetary bombardment graphics while "terraforming"
+	[/list]
+[*]Barren/cold barren/frozen worlds with the "Terraforming Candidate" modifier
+	[list]
+	[*]Standard cost for barren
+	[*]Standard high cost for cold barren/frozen
+	[*]Requires Climate Restoration technology
+	[/list]
+[/list]
+
+Planets converted to tomb worlds this way are not eligible for the random events that can sometimes occur on tomb worlds - there's no mystery about what happened, it was [strike]bombed[/strike] "terraformed" on purpose.  Non-nuked empires that have already "terraformed" a planet into a tomb world waive the requirement to have at lease one nuked Pop.
+
+[h2]Compatibility[/h2]
+
+Built for Stellaris version 3.1.* "Lem."  Not compatible with achievements.
+
+Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
+
+[h2]Changelog[/h2]
+
+See [url=]Change Notes[/url]
+
+[h2]Source Code[/h2]
+
+Hosted on [url=https://github.com/corsairmarks/terraform_to_pc_nuked]GitHub[/url]
+
+[h1]Special Thanks[/h1]
+
+Inspired by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2311769287]Tomb World 'Terraforming'[/url] by [url=https://steamcommunity.com/id/singabrightsong/myworkshopfiles/?appid=281990]SingABrightSong[/url] and the new Radiotrophic trait added in Stellaris 3.1 for owners of the Plantoids Species Pack. Radiotrophic plantoid and fungoid species have decreased upkeep cost and a population growth rate increase on tomb worlds, so would also benefit from the ability to "create" tomb worlds.  The original mod has not been updated, so I created this enhanced and expanded version.
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]

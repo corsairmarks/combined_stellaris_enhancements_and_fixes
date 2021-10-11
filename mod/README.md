@@ -1,22 +1,35 @@
 # Overview
 
-Does your species prefer the warm glow of an irradiated planet?  Whether you "accidentally" nuked your homeworld or evolved to feed on radiation, this mod will help you ~~bombard~~ "terraform" planets into tomb worlds.
+Does your species prefer the warm glow of an irradiated planet?  Whether you "accidentally" nuked your homeworld or evolved to feed on radiation, this mod will help you ~~bombard~~ "terraform" planets into tomb worlds.  This includes applying orbital bombardment graphics to any planet being "terraformed" to a tomb world.
 
 # Changes
 
-Adds terraforming links for empires whose founder species has one (or more) of the Survivor, Tomb World Preference, Radiotrophic, or Irradiated traits. These new terraforming links allowing them to "terraform" planets into tomb worlds (`pc_nuked`).  Supported "terraforming" transformations:
+Adds terraforming links to change almost any colonizable, non-artificial planet into a tomb world (`pc_nuked`).  Empires whose founder species has one (or more) of the Tomb World Preference, Survivor, Radiotrophic, or Irradiated traits (nuked empires) do not require any special technologies to "terraform" into tomb worlds.  Non-nuked empires must have at least 1 Pop of a nuked species and the Tomb World Adaptation technology.  Converting unhabitable worlds (barren, cold barren, or frozen) that have the Terraforming Candidate modifier always requires the Climate Restoration technology.
 
-* All nine basic habitable planet classes plus gaia planets - one-quarter the normal cost, does **not** require a special technology
-* Hive and machine worlds - one-half the normal cost, does **not** require a special technology
-* Barren/cold barren/frozen worlds with the "Terraforming Candidate" modifier - standard cost for barren, standard high cost for cold barren/frozen, requires Climate Restoration technology
+These new terraforming links allowing them to "terraform" planets into tomb worlds.  Supported "terraforming" transformations:
 
-Planets converted to tomb worlds this way are not eligible for the random events that can sometimes occur on tomb worlds - there's no mystery about what happened, it was ~~bombed~~ "terraformed" on purpose.
+* All nine basic habitable planet classes plus gaia planets
+    * One-quarter the normal cost
+    * Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
+    * Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
+    * Shows the planetary bombardment graphics while "terraforming"
+* Hive and machine worlds
+    * One-half the normal cost (requires more ~~bombs~~ "terraforming devices" to remove)
+    * Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
+    * Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
+    * Shows the planetary bombardment graphics while "terraforming"
+* Barren/cold barren/frozen worlds with the "Terraforming Candidate" modifier
+    * Standard cost for barren
+    * Standard high cost for cold barren/frozen
+    * Requires Climate Restoration technology
+
+Planets converted to tomb worlds this way are not eligible for the random events that can sometimes occur on tomb worlds - there's no mystery about what happened, it was ~~bombed~~ "terraformed" on purpose.  Non-nuked empires that have already "terraformed" a planet into a tomb world waive the requirement to have at lease one nuked Pop.
 
 ## Compatibility
 
 Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
 
-Only adds new terraforming links, so it should not conflict with other mods.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
+Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 
 ## Changelog
 
@@ -24,7 +37,7 @@ Only adds new terraforming links, so it should not conflict with other mods.  Do
 
 ## Source Code
 
-Hosted on [GitHub]()
+Hosted on [GitHub](https://github.com/corsairmarks/terraform_to_pc_nuked)
 
 ### Development Notes
 
