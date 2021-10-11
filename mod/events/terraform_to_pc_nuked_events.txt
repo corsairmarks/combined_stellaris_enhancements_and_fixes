@@ -82,7 +82,7 @@ planet_event = {
 		if = {
 			limit = { is_terraforming = yes }
 			planet_event = {
-				id = terraform_stations_aesthetic.3
+				id = terraform_to_pc_nuked.3
 				days = 30
 				scopes = {
 					from = FROM
@@ -91,7 +91,7 @@ planet_event = {
 		}
 		else = {
 			planet_event = {
-				id = terraform_stations_aesthetic.2
+				id = terraform_to_pc_nuked.2
 				scopes = {
 					from = FROM
 				}
