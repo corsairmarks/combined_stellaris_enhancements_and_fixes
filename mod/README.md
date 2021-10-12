@@ -6,7 +6,7 @@ Individual mods update first, then changes are merged here.
 
 # Major Update
 
-Version 3.0.0 is fully updated for Stellaris version 3.1 "Lem" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [2.2.0](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/2.2.0).
+Versions 3.0.0 and above are fully updated for Stellaris version 3.1 "Lem" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [2.2.0](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/2.2.0).
 
 You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
 
@@ -14,6 +14,8 @@ You only need the contents of the `mod` folder for a local install, disregard th
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
+* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 858abb50290fb5794fd53c5c6fb0b63dd61b2eee)
+* [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 7a6d0b634d0be9adb856bc9f4cbf5417c82d9389)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 5fd7c58c6c9593a0805c5d62379f5bed8257e816)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) e201f248b605fff6df72b95d8e7ee34c88deafcd)
@@ -82,9 +84,9 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Full Military Service for Battle Thralls at 1.4.0
     * Planetary Modifier Enhancements at 2.3.0
     * Primitive Conquest Enhancements at 1.3.0
-    * Add mod: Restored Content: Fungoids at 1.0.1
-    * Add mod: Leader Traits: Enhanced Randomisation at 1.0.0
-    * Add mod: Retain Leaders from Integrated Subjects at 1.0.1
+    * Added: Restored Content: Fungoids at 1.0.1
+    * Added: Leader Traits: Enhanced Randomisation at 1.0.0
+    * Added: Retain Leaders from Integrated Subjects at 1.0.1
 * 1.3.1 Update merged mods:
     * Full Military Service for Battle Thralls at 1.5.0
     * Retain Leaders from Integrated Subjects at 1.0.2
@@ -108,9 +110,9 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Retain Leaders from Integrated Subjects at 1.2.1
     * Deassimilated Machines at 1.0.3
 * 2.2.0 Add and update merged mods
-    * Update merged mod: Leader Traits: All Eligible Species Traits at 1.4.1
-    * Add merged mod: Colony Designation: Ecumenopolis Commercial at 1.0.0
-    * Add merged mod: Psionic Ascension: Even in Other Empires at 1.0.0
+    * Updated: Leader Traits: All Eligible Species Traits at 1.4.1
+    * Added: Colony Designation: Ecumenopolis Commercial at 1.0.0
+    * Added: Psionic Ascension: Even in Other Empires at 1.0.0
 * 3.0.0 Update all merged mods for Stellaris version 3.1 "Lem"
     * Removed: Shattered Ring Rebalance for 3.0.* (deprecated)
     * Removed: Prosperity Tradition Rebalance for 3.0.3 (deprecated)
@@ -135,3 +137,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Updated: Retain Leaders from Integrated Subjects at 2.0.1
     * Updated: "Agrarian" Idyll for Lithoids at 2.0.1
 * 3.0.2 Update merged mod: Primitive Conquest Enhancements at 2.1.0
+* 3.1.0 Add merged mods:
+    * Aesthetic Terraform Stations at 1.0.0
+    * "Terraform" to Tomb World at 1.0.0
