@@ -68,6 +68,7 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
     * Turtle miners (from an event) benefit from both versions of Agrarian Idyll (produces food and minerals)
     * Fix localisation mistake for the updated Agrarian Idyll tooltip - it's still for farmers, I promise!
 * 2.0.1 Add priority weightings for Agrarian/Lithorian Idyll based on Charismatic/Repugnant to Turtle Miner job
+* 2.0.2 Fix gas extractors (from Feral Overload) improperly disallowing enslaved species
 
 ## Source Code
 

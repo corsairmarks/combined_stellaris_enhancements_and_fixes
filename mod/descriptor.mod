@@ -5,7 +5,7 @@ tags={
 	"Gameplay"
 	"Fixes"
 }
-version="2.0.1"
+version="2.0.2"
 picture="thumbnail.png"
 supported_version="3.1.2"
 remote_file_id="2510669821"
