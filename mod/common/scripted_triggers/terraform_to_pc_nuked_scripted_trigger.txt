@@ -4,7 +4,6 @@
 # Includes tooltips.
 # this = country
 eligible_for_pc_nuked_terraform_country = {
-	has_technology = tech_terrestrial_sculpting
 	OR = {
 		custom_tooltip = {
 			success_text = pc_nuked_terraform_owner_species_pass
@@ -12,12 +11,14 @@ eligible_for_pc_nuked_terraform_country = {
 			owner_species = { is_nuked_species = yes }
 		}
 		AND = {
+			has_technology = tech_terrestrial_sculpting
 			has_technology = tech_tomb_world_adaption
 			custom_tooltip = {
 				success_text = pc_nuked_terraform_any_pop_species_pass
 				fail_text = pc_nuked_terraform_any_pop_species_fail
 				OR = {
 					has_country_flag = terraformed_to_pc_nuked
+					has_technology = tech_pc_nuked_terraform
 					has_any_nuked_pop_species = yes
 				}
 			}

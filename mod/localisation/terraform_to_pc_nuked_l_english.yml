@@ -3,3 +3,5 @@
  pc_nuked_terraform_owner_species_fail: "Our species has a low tolerance for radiation - any other functioning biosphere would be better."
  pc_nuked_terraform_any_pop_species_pass: "There is one or more species in our empire that can thrive on a §Y$pc_nuked$§!."
  pc_nuked_terraform_any_pop_species_fail: "No species in our empire that can easily tolerate such §Y$pc_nuked_adj$§! conditions - any other functioning biosphere would be better."
+ tech_pc_nuked_terraform: "$pc_nuked$ \"$PLANETVIEW_TERRAFORMING$\""
+ tech_pc_nuked_terraform_desc: "Allows access to the §Y$PLANETVIEW_TERRAFORMING$§! tab before it would otherwise be available but does not enable any specific form of terraforming. This technology is intended to unlock the tab for empires whose main species is at home on Tomb Worlds and thus qualify to \"terraform\" planets into them without other prerequisites."

@@ -1,8 +1,6 @@
 # this = country, terraformer
 # from = planet
 post_terraform_to_pc_nuked = {
-	log = "this \\[This.GetName]"
-	log = "from \\[From.GetName]"
 	from = {
 		if = {
 			limit = { NOT = { has_planet_flag = nuked_planet_anomalies_disabled } }

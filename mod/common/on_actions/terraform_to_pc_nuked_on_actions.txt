@@ -2,6 +2,14 @@
 on_game_start = {
 	events = {
 		terraform_to_pc_nuked.13 # flag mod as installed
+		terraform_to_pc_nuked.4
+	}
+}
+
+# fired yearly
+on_yearly_pulse = {
+	events = {
+		terraform_to_pc_nuked.4
 	}
 }
 
@@ -9,12 +17,13 @@ on_game_start = {
 on_single_player_save_game_load = {
 	events = {
 		terraform_to_pc_nuked.13 # flag mod as installed
+		terraform_to_pc_nuked.4
 	}
 }
 
 # fired when a planet starts being terraformed
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 on_terraforming_begun = {
 	events = {
 		terraform_to_pc_nuked.1
@@ -22,8 +31,8 @@ on_terraforming_begun = {
 }
 
 # fired when a planet has been terraformed
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 on_terraforming_complete = {
 	events = {
 		terraform_to_pc_nuked.2
