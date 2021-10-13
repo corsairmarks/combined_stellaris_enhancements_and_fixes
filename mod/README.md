@@ -14,7 +14,7 @@ You only need the contents of the `mod` folder for a local install, disregard th
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
-* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 858abb50290fb5794fd53c5c6fb0b63dd61b2eee)
+* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) ae8fbb52d40ca9483673d90855a7106dc56ff2f0)
 * [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 7a6d0b634d0be9adb856bc9f4cbf5417c82d9389)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 5fd7c58c6c9593a0805c5d62379f5bed8257e816)
@@ -141,3 +141,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Aesthetic Terraform Stations at 1.0.0
     * "Terraform" to Tomb World at 1.0.0
 * 3.1.1 Update merged mod: "Agrarian" Idyll for Lithoids at 2.0.2
+* 3.1.2 Update merged mod: "Terraform" to Tomb World at 1.1.0
