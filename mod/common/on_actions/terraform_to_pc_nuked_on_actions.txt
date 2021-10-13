@@ -6,8 +6,7 @@ on_game_start = {
 	}
 }
 
-# fired when the game starts
-# this = country
+# fired yearly
 on_yearly_pulse = {
 	events = {
 		terraform_to_pc_nuked.4
