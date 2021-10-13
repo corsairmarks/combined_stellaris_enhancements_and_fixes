@@ -9,14 +9,14 @@ Adds terraforming links to change almost any colonizable, non-artificial planet 
 These new terraforming links allowing them to "terraform" planets into tomb worlds.  Supported "terraforming" transformations:
 
 * All nine basic habitable planet classes plus gaia planets
-    * One-quarter the normal cost
-    * Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
-    * Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
+    * One-quarter the normal cost to terraform a world into a different category (e.g. dry to wet or cold)
+    * Nuked empires can use tomb world "terraforming" without first researching Terrestrial Sculpting
+    * Non-nuked empires must have at least one Pop of a nuked species as well as the Terrestrial Sculpting and Tomb World Adaptation technologies
     * Shows the planetary bombardment graphics while "terraforming"
 * Hive and machine worlds
-    * One-half the normal cost (requires more ~~bombs~~ "terraforming devices" to remove)
-    * Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
-    * Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
+    * One-half the normal cost to terraform a world into a different category (requires more ~~bombs~~ "terraforming devices" to remove)
+    * Nuked empires can use tomb world "terraforming" without first researching Terrestrial Sculpting
+    * Non-nuked empires must have at least one Pop of a nuked species as well as the Terrestrial Sculpting and Tomb World Adaptation technologies
     * Shows the planetary bombardment graphics while "terraforming"
 * Barren/cold barren/frozen worlds with the "Terraforming Candidate" modifier
     * Standard cost for barren
@@ -34,6 +34,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.1.0 Remove Terrestrial Sculpting as a prerequisite for "nuked" empires - you can "terraform" worlds into tomb worlds at game start
 
 ## Source Code
 

@@ -10,25 +10,25 @@ These new terraforming links allowing them to "terraform" planets into tomb worl
 
 [list]
 [*]All nine basic habitable planet classes plus gaia planets
-	[list]
-	[*]One-quarter the normal cost
-	[*]Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
-	[*]Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
-	[*]Shows the planetary bombardment graphics while "terraforming"
-	[/list]
+    [list]
+    [*]One-quarter the normal cost to terraform a world into a different category (e.g. dry to wet or cold)
+    [*]Nuked empires can use tomb world "terraforming" without first researching Terrestrial Sculpting
+    [*]Non-nuked empires must have at least one Pop of a nuked species as well as the Terrestrial Sculpting and Tomb World Adaptation technologies
+    [*]Shows the planetary bombardment graphics while "terraforming"
+    [/list]
 [*]Hive and machine worlds
-	[list]
-	[*]One-half the normal cost (requires more [strike]bombs[/strike] "terraforming devices" to remove)
-	[*]Nuked empires require the Terrestrial Sculpting technology (the standard prerequisite for any terraforming)
-	[*]Non-nuked empires must have at least one Pop of a nuked species as well as the Tomb World Adaptation technology
-	[*]Shows the planetary bombardment graphics while "terraforming"
-	[/list]
+    [list]
+    [*]One-half the normal cost to terraform a world into a different category (requires more [strike]bombs[/strike] "terraforming devices" to remove)
+    [*]Nuked empires can use tomb world "terraforming" without first researching Terrestrial Sculpting
+    [*]Non-nuked empires must have at least one Pop of a nuked species as well as the Terrestrial Sculpting and Tomb World Adaptation technologies
+    [*]Shows the planetary bombardment graphics while "terraforming"
+    [/list]
 [*]Barren/cold barren/frozen worlds with the "Terraforming Candidate" modifier
-	[list]
-	[*]Standard cost for barren
-	[*]Standard high cost for cold barren/frozen
-	[*]Requires Climate Restoration technology
-	[/list]
+    [list]
+    [*]Standard cost for barren
+    [*]Standard high cost for cold barren/frozen
+    [*]Requires Climate Restoration technology
+    [/list]
 [/list]
 
 Planets converted to tomb worlds this way are not eligible for the random events that can sometimes occur on tomb worlds - there's no mystery about what happened, it was [strike]bombed[/strike] "terraformed" on purpose.  Non-nuked empires that have already "terraformed" a planet into a tomb world waive the requirement to have at lease one nuked Pop.
