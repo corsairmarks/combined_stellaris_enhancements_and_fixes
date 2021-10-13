@@ -16,8 +16,8 @@ event = {
 
 # set up terraform station and graphics
 # triggered by on_terraforming_begun
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 planet_event = {
 	id = terraform_to_pc_nuked.1
 	is_triggered_only = yes
@@ -27,7 +27,7 @@ planet_event = {
 			eligible_pc_nuked_terraform_habitable = yes
 			eligible_pc_nuked_terraform_hostile = yes
 		}
-		NOT = { solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@PREVPREV } } }
+		NOT = { solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@prevprev } } }
 	}
 	immediate = {
 		create_ambient_object = {
@@ -36,7 +36,7 @@ planet_event = {
 			scale = 0.13
 			entity_scale_to_size = yes
 			effect = {
-				set_ambient_object_flag = terraform_bombardment@PREV
+				set_ambient_object_flag = terraform_bombardment@prev
 			}
 		}
 		planet_event = {
@@ -48,20 +48,20 @@ planet_event = {
 
 # clean up terraform station and graphics
 # triggered by on_terraforming_complete and terraform_to_pc_nuked.3
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 planet_event = {
 	id = terraform_to_pc_nuked.2
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@PREVPREV } }
+		solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@prevprev } }
 	}
 	immediate = {
 		solar_system = {
 			every_system_ambient_object = {
-				limit = { has_ambient_object_flag = terraform_bombardment@PREVPREV }
-				destroy_ambient_object = THIS
+				limit = { has_ambient_object_flag = terraform_bombardment@prevprev }
+				destroy_ambient_object = this
 			}
 		}
 	}
@@ -69,14 +69,14 @@ planet_event = {
 
 # check to see if terraforming has stopped - if so, fire the cleanup event, otherwise check again in a month
 # triggered by terraform_to_pc_nuked.1 and terraform_to_pc_nuked.3
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 planet_event = {
 	id = terraform_to_pc_nuked.3
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@PREVPREV } }
+		solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@prevprev } }
 	}
 	immediate = {
 		if = {
@@ -85,7 +85,7 @@ planet_event = {
 				id = terraform_to_pc_nuked.3
 				days = 30
 				scopes = {
-					from = FROM
+					from = from
 				}
 			}
 		}
@@ -93,8 +93,27 @@ planet_event = {
 			planet_event = {
 				id = terraform_to_pc_nuked.2
 				scopes = {
-					from = FROM
+					from = from
 				}
+			}
+		}
+	}
+}
+
+# triggered by on_game_start, on_yearly_pulse, and and on_single_player_save_game_load
+event = {
+	id = terraform_to_pc_nuked.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_playable_country = {
+			limit = {
+				NOT = { has_technology = tech_pc_nuked_terraform }
+				owner_main_species = { is_nuked_species = yes }
+			}
+			give_technology = {
+				tech = tech_pc_nuked_terraform
+				message = no
 			}
 		}
 	}
