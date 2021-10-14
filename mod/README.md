@@ -10,12 +10,12 @@ These new terraforming links allowing them to "terraform" planets into tomb worl
 
 * All nine basic habitable planet classes plus gaia planets
     * One-quarter the normal cost to terraform a world into a different category (e.g. dry to wet or cold)
-    * Nuked empires can use tomb world "terraforming" without first researching Terrestrial Sculpting
+    * Nuked empires and Memorialists can use tomb world "terraforming" without first researching Terrestrial Sculpting
     * Non-nuked empires must have at least one Pop of a nuked species as well as the Terrestrial Sculpting and Tomb World Adaptation technologies
     * Shows the planetary bombardment graphics while "terraforming"
 * Hive and machine worlds
     * One-half the normal cost to terraform a world into a different category (requires more ~~bombs~~ "terraforming devices" to remove)
-    * Nuked empires can use tomb world "terraforming" without first researching Terrestrial Sculpting
+    * Nuked empires and Memorialists can use tomb world "terraforming" without first researching Terrestrial Sculpting
     * Non-nuked empires must have at least one Pop of a nuked species as well as the Terrestrial Sculpting and Tomb World Adaptation technologies
     * Shows the planetary bombardment graphics while "terraforming"
 * Barren/cold barren/frozen worlds with the "Terraforming Candidate" modifier
