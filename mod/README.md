@@ -44,7 +44,7 @@ However, the new edict to declare Battle Thralls as Honored Protectors is not lo
 
 ## Known Issues
 
-This mode overrides a built-in trigger `can_be_military_leader` and a species right `military_service_full`.  These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
+This mod overrides a built-in trigger `can_be_military_leader` and a species right `military_service_full`.  These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
 
 ```
 [20:51:18][game_singleobjectdatabase.h:147]: Object with key: can_be_military_leader already exists
