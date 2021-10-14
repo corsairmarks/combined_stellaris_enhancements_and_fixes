@@ -35,6 +35,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
 
 * 1.0.0 Initial version
 * 1.1.0 Remove Terrestrial Sculpting as a prerequisite for "nuked" empires - you can "terraform" worlds into tomb worlds at game start
+* 1.2.0 Memorialist (all types) are now included, but the Memorialist AIs won't use it
 
 ## Source Code
 
