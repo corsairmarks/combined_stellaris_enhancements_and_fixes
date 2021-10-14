@@ -109,12 +109,32 @@ event = {
 		every_playable_country = {
 			limit = {
 				NOT = { has_technology = tech_pc_nuked_terraform }
-				owner_main_species = { is_nuked_species = yes }
+				OR = {
+					owner_main_species = { is_nuked_species = yes }
+					is_memorialist_empire = yes
+				}
 			}
 			give_technology = {
 				tech = tech_pc_nuked_terraform
 				message = no
 			}
+		}
+	}
+}
+
+# triggered by on_post_government_changed
+country_event = {
+	id = terraform_to_pc_nuked.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_technology = tech_pc_nuked_terraform }
+		is_memorialist_empire = yes
+	}
+	immediate = {
+		give_technology = {
+			tech = tech_pc_nuked_terraform
+			message = no
 		}
 	}
 }
