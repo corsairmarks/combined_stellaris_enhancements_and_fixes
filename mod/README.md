@@ -15,7 +15,7 @@ You only need the contents of the `mod` folder for a local install, disregard th
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
 * Ringworld Graphical Enhancements (unpublished on Steam; [Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) dd1a2848fc5da8f512d1216bc9518a7af28c32d0)
-* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) ae8fbb52d40ca9483673d90855a7106dc56ff2f0)
+* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 5c745960bbf52c19357d3e150eeb08ebd7dd7449)
 * [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 7a6d0b634d0be9adb856bc9f4cbf5417c82d9389)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 5fd7c58c6c9593a0805c5d62379f5bed8257e816)
@@ -143,4 +143,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * "Terraform" to Tomb World at 1.0.0
 * 3.1.1 Update merged mod: "Agrarian" Idyll for Lithoids at 2.0.2
 * 3.1.2 Update merged mod: "Terraform" to Tomb World at 1.1.0
-* 3.2.0 Add merged mod: Ringworld Graphical Enhancements at 1.0.0
+* 3.2.0 Add and update merged mods
+    * Added: Ringworld Graphical Enhancements at 1.0.0
+    * Updated: "Terraform" to Tomb World at 1.2.0
