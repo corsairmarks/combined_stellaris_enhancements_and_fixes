@@ -16,7 +16,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -39,7 +39,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -62,7 +62,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -85,7 +85,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -108,7 +108,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -131,7 +131,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		from = {
@@ -160,7 +160,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -183,7 +183,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -206,7 +206,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -229,7 +229,7 @@ terraform_link = {
 	energy = @pc_nuked_from_habitable_energy_cost
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -252,7 +252,7 @@ terraform_link = {
 	energy = @pc_nuked_from_hostile_energy_cost
 	duration = @pc_nuked_from_hostile_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -283,7 +283,7 @@ terraform_link = {
 	energy = @pc_nuked_from_hostile_energy_cost
 	duration = @pc_nuked_from_hostile_duration
 	potential = {
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		eligible_for_pc_nuked_terraform_country = yes
@@ -315,7 +315,7 @@ terraform_link = {
 	duration = @pc_nuked_from_similar_candidate_duration
 	potential = {
 		from = { has_modifier = terraforming_candidate }
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		has_technology = tech_climate_restoration
@@ -340,7 +340,7 @@ terraform_link = {
 	duration = @pc_nuked_from_opposite_candidate_duration
 	potential = {
 		from = { has_modifier = terraforming_candidate }
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		has_technology = tech_climate_restoration
@@ -365,7 +365,7 @@ terraform_link = {
 	duration = @pc_nuked_from_opposite_candidate_duration
 	potential = {
 		from = { has_modifier = terraforming_candidate }
-		has_any_nuked_pop_species = yes
+		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {
 		has_technology = tech_climate_restoration

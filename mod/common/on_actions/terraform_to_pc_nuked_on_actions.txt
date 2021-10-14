@@ -38,3 +38,11 @@ on_terraforming_complete = {
 		terraform_to_pc_nuked.2
 	}
 }
+
+# fired just as country is changing its government, after the new one is applied
+# this = country
+on_post_government_changed = {
+	events = {
+		terraform_to_pc_nuked.5
+	}
+}
