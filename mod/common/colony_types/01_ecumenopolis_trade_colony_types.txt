@@ -20,6 +20,142 @@ col_ecu_trade = {
 		trade_value_mult = 0.2
 	}
 
+	triggered_planet_modifier = {
+		potential = { solar_system = { has_trade_route = yes } }
+		modifier = {
+			trade_value_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = {
+					count_starbase_modules = {
+						count > 0
+						type = trading_hub
+					}
+				}
+			}
+		}
+		modifier = {
+			trade_value_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = {
+					count_starbase_modules = {
+						count > 1
+						type = trading_hub
+					}
+				}
+			}
+		}
+		modifier = {
+			trade_value_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = {
+					count_starbase_modules = {
+						count > 2
+						type = trading_hub
+					}
+				}
+			}
+		}
+		modifier = {
+			trade_value_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = {
+					count_starbase_modules = {
+						count > 3
+						type = trading_hub
+					}
+				}
+			}
+		}
+		modifier = {
+			trade_value_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = {
+					count_starbase_modules = {
+						count > 4
+						type = trading_hub
+					}
+				}
+			}
+		}
+		modifier = {
+			trade_value_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = {
+					count_starbase_modules = {
+						count > 5
+						type = trading_hub
+					}
+				}
+			}
+		}
+		modifier = {
+			trade_value_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = { has_starbase_building = offworld_trading_company }
+			}
+		}
+		modifier = {
+			trade_value_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = { has_starbase_building = trader_proxy_office }
+			}
+		}
+		modifier = {
+			trade_value_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			solar_system = {
+				exists = starbase
+				starbase = { has_starbase_building = transit_hub }
+			}
+		}
+		modifier = {
+			trade_value_add = 2
+		}
+	}
+
 	weight_modifier = {
 		base = 10
 		modifier = { 

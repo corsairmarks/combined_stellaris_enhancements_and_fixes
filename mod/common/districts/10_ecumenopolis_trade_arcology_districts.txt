@@ -11,7 +11,10 @@ district_arcology_commercial = {
 		}
 	}
 	allow = {
-		colony_type = col_ecu_trade
+		OR = {
+			colony_type = col_ecu_trade
+			is_capital = yes
+		}
 	}
 	conversion_ratio = 1
 	convert_to = {
@@ -132,45 +135,6 @@ district_arcology_commercial = {
 			job_clerk_add = -2
 			job_executive_add = 1
 			job_manager_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = { solar_system = { has_trade_route = yes } }
-		modifier = {
-			trade_value_add = 4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			solar_system = {
-				exists = starbase
-				starbase = { has_starbase_building = offworld_trading_company }
-			}
-		}
-		modifier = {
-			trade_value_add = 4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			solar_system = {
-				exists = starbase
-				starbase = { has_starbase_building = trader_proxy_office }
-			}
-		}
-		modifier = {
-			trade_value_add = 4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			solar_system = {
-				exists = starbase
-				starbase = { has_starbase_building = transit_hub }
-			}
-		}
-		modifier = {
-			trade_value_add = 2
 		}
 	}
 	triggered_desc = {
