@@ -1,0 +1,4 @@
+﻿l_english:
+ district_rw_commercial_desc: "Civilian industry and infrastructure populate this Ring World segment dedicated to commerce.\n\nAttracts more £job_merchant£ §Y$job_merchant_plural$§! when the colony is designated §Y$col_ring_trade$§!."
+ district_hab_commercial_desc: "A sprawling habitat trading district where merchants and clerks conduct business.\n\nAttracts more £job_merchant£ §Y$job_merchant_plural$§! when the colony is designated §Y$col_habitat_trade$§!."
+ district_srw_commercial_desc: "A district of offices and factories where goods are manufactured and sold.\n\nAttracts more £job_merchant£ §Y$job_merchant_plural$§! when the colony is designated §Y$col_habitat_trade$§!." # TODO just the urban world designation?
