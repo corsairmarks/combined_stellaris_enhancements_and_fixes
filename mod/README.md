@@ -18,7 +18,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 5c745960bbf52c19357d3e150eeb08ebd7dd7449)
 * [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 7a6d0b634d0be9adb856bc9f4cbf5417c82d9389)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
-* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 5fd7c58c6c9593a0805c5d62379f5bed8257e816)
+* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 656836614466fd8055b9c5a62d5a0f6281222053)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) e201f248b605fff6df72b95d8e7ee34c88deafcd)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 78cf0757da03a6358575e7cd21d632a7c88b2631)
 * [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 518bc29448abf3d481bbd419265f8c68d01ef4f2)
@@ -30,7 +30,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 15af8f7d7ec0e2fc7c221b5a560c5fd56dfc2c5b)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 8f8a7b6c738a288aad36181c011545693e3aa92b)
 * [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 02997388c697a62576e7e064421b8ec67dc9d296)
-* [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) e50bb31e6f480092feebab3c6d0635c7bb6ed2b3)
+* [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 4df510712de31ebdf7e4756ab8cb96dfee8fb9a7)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 492402efccb93d175699d3d3f6717c446b509f8c)
 * [Technician Job Priority Fix for Slaves](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) ([Source](https://github.com/corsairmarks/technician_slave_fix)) - this mod is not actually merged via `git`, but the same 1-character change is present in this one
 * [Manifesti 'Personal Autonomy for Munitions' Demand Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831) ([Source](https://github.com/corsairmarks/manifesti_fix) af6bb98c62a4283eafc12748c9704b8fe449b18e)
@@ -147,3 +147,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Added: Ringworld Graphical Enhancements at 1.0.0
     * Updated: "Terraform" to Tomb World at 1.2.0
 * 3.2.1 Update merged mod: Ringworld Graphical Enhancements at 1.1.0
+* 3.2.2 Update merged mods:
+    * Colony Designation: Ecumenopolis Commercial at 2.2.0
+    * Planetary Modifier Enhancements at 2.5.0

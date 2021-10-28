@@ -19,7 +19,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437]"Terraform" to Tomb World[/url] ([url=https://github.com/corsairmarks/terraform_to_pc_nuked]Source[/url] 1.2.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084]Aesthetic Terraform Stations[/url] ([url=https://github.com/corsairmarks/terraform_stations_aesthetic]Source[/url] 1.0.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912]Psionic Ascension: Even in Other Empires[/url] ([url=https://github.com/corsairmarks/psionic_assimilation_galaxy_species]Source[/url] 1.1.0)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] ([url=https://github.com/corsairmarks/ecumenopolis_trade]Source[/url] 2.1.0)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] ([url=https://github.com/corsairmarks/ecumenopolis_trade]Source[/url] 2.2.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] ([url=https://github.com/corsairmarks/limited_army_counter_fix]Source[/url] 2.0.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143]Deassimilated Machine Worlds[/url] ([url=https://github.com/corsairmarks/deassimilated_machine_worlds]Source[/url] 2.0.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimilate Machines[/url] ([url=https://github.com/corsairmarks/deassimilate_machines]Source[/url] 1.1.0)
@@ -31,7 +31,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 2.0.1)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] 1.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Full Military Service for Battle Thralls[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 1.6.1)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] ([url=https://github.com/corsairmarks/planetary_modifier_enhancements]Source[/url] 2.4.0)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] ([url=https://github.com/corsairmarks/planetary_modifier_enhancements]Source[/url] 2.5.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] ([url=https://github.com/corsairmarks/primitive_conquest_enhancements]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority Fix for Slaves[/url] ([url=https://github.com/corsairmarks/technician_slave_fix]Source[/url]) - this mod is not actually merged via [b]git[/b], but the same 1-character change is present in this one
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831]Manifesti 'Personal Autonomy for Munitions' Demand Fix[/url] ([url=https://github.com/corsairmarks/manifesti_fix]Source[/url] 3.0.0)
