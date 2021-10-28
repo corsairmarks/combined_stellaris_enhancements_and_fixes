@@ -3,6 +3,7 @@
 @free_districts_medium_threshold = 10
 @free_districts_high_threshold = 15
 @built_districts_low_threshold = 3
+@built_districts_medium_threshold = 4
 @built_districts_high_threshold = 8
 
 # Urban Planet
@@ -37,6 +38,20 @@ col_city = {
 			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
 			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
 			num_free_districts = { type = district_city value >= @free_districts_high_threshold }
+		}
+		modifier = {
+			add = 1
+			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
+			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
+			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
+			num_free_districts = { type = district_srw_commercial value >= @free_districts_medium_threshold }
+		}
+		modifier = {
+			add = 3
+			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
+			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
+			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
+			num_free_districts = { type = district_srw_commercial value >= @free_districts_high_threshold }
 		}
 		modifier = {
 			add = 2
@@ -92,6 +107,13 @@ col_city = {
 			num_districts = {
 				type = district_city
 				value >= @built_districts_high_threshold
+			}
+		}
+		modifier = {
+			add = 5
+			num_districts = {
+				type = district_srw_commercial
+				value >= @built_districts_medium_threshold
 			}
 		}
 		modifier = {
