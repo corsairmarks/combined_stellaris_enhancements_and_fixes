@@ -690,11 +690,11 @@ district_hab_commercial = {
 		potential = {
 			exists = owner
 			owner = {
+				has_active_tradition = tr_prosperity_interstellar_franchising
 				OR = {
 					is_megacorp = yes
 					is_fallen_empire_spiritualist = yes
 				}
-				has_active_tradition = tr_prosperity_interstellar_franchising
 			}
 		}
 		modifier = {

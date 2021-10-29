@@ -4,6 +4,7 @@
 @rw_maintenance_sr = 2
 @rw_district_buildtime = 360
 
+# this district is altered by Trade District Enhancements (remove clerks from tr_prosperity_interstellar_franchising)
 district_rw_city = {
 	base_buildtime = @rw_district_buildtime
 	is_capped_by_modifier = no
@@ -101,16 +102,6 @@ district_rw_city = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_prosperity_interstellar_franchising }
-		}
-		modifier = {
-			job_clerk_add = 3
-		}
-	}
-
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -124,12 +115,13 @@ district_rw_city = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_regular_empire = yes }
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+			}
 		}
 		text = job_clerk_effect_desc
 	}
-
-
 }
 
 district_rw_hive = {
@@ -416,7 +408,7 @@ district_rw_generator = {
 	}
 }
 
-# only this district is altered by Trade District Enhancements
+# this district is altered by Trade District Enhancements
 district_rw_commercial = {
 	base_buildtime = @rw_district_buildtime
 	is_capped_by_modifier = no
@@ -497,6 +489,15 @@ district_rw_commercial = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = { has_active_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = {
+			job_clerk_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
 		}
 		modifier = {
@@ -565,15 +566,6 @@ district_rw_commercial = {
 		text = arcane_generator_upkeep_desc
 	}
 	triggered_desc = {
-		trigger = {
-			NAND = {
-				colony_type = col_ring_trade
-				owner = {
-					is_megacorp = yes
-					has_active_tradition = tr_mercantile_commercial_enterprise
-				}
-			}
-		}
 		text = job_clerk_effect_desc
 	}
 	triggered_desc = {
