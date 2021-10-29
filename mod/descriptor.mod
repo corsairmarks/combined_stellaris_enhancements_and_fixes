@@ -1,4 +1,4 @@
-name="Trade Districts and Colony Designations Enhancements"
+name="Enhanced Trade Districts and Designations"
 tags={
 	"Buildings"
 	"Economy"
