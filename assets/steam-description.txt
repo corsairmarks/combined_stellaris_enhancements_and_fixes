@@ -26,6 +26,16 @@ Built for Stellaris version 3.1.2 "Lem."  Not compatible with achievements.
 
 This mod can be safely added to your savegame after the game has started.  Because it does not add and gameplay objects, it should be safe to remove during a game.  Back up your savegame before trying to remove a mod.
 
+[h3]Known Issues[/h3]
+
+Overwriting a colony type produces an error log.  Expect to see three entries in error.log similar to these:
+
+[code]
+[00:28:40][game_singleobjectdatabase.h:147]: Object with key: col_city already exists
+[00:28:40][game_singleobjectdatabase.h:147]: Object with key: col_habitat_trade already exists
+[00:28:40][game_singleobjectdatabase.h:147]: Object with key: col_ring_trade already exists
+[/code]
+
 [h2]Changelog[/h2]
 
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/]Change Notes[/url]
