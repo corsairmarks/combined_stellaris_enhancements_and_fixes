@@ -814,19 +814,14 @@ district_srw_commercial = {
 			owner = { is_crafter_empire = yes }
 		}
 		modifier = {
-			job_artisan_add = -11
+			job_artisan_add = -1
 			job_artificer_add = 1
 		}
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				OR = {
-					is_fallen_empire_spiritualist = yes
-					is_megacorp = yes
-				}
-			}
+			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
 			job_clerk_add = -1
@@ -835,10 +830,31 @@ district_srw_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
+			colony_type = col_city
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = no }
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			colony_type = col_city
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_manager_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = {
 				has_active_tradition = tr_prosperity_interstellar_franchising
-				is_megacorp = no
 				is_fallen_empire_spiritualist = no
 			}
 		}
@@ -851,10 +867,7 @@ district_srw_commercial = {
 			exists = owner
 			owner = {
 				has_active_tradition = tr_prosperity_interstellar_franchising
-				OR = {
-					is_megacorp = yes
-					is_fallen_empire_spiritualist = yes
-				}
+				is_fallen_empire_spiritualist = yes
 			}
 		}
 		modifier = {
@@ -872,22 +885,7 @@ district_srw_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = {
-				# sorry no double-dipping if you have the old corp-lite civic with merchant guilds
-				OR = {
-					has_valid_civic = civic_merchant_guilds
-					has_valid_civic = civic_corporate_dominion
-				}
-			}
-		}
-		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
+			colony_type = col_city
 			exists = owner
 			owner = {
 				# sorry no double-dipping if you have the old corp-lite civic with merchant guilds
@@ -909,39 +907,14 @@ district_srw_commercial = {
 			colony_type = col_city
 			exists = owner
 			owner = {
-				has_active_tradition = tr_mercantile_commercial_enterprise
 				is_megacorp = yes
+				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_commercial_enterprise
 			}
 		}
 		modifier = {
-			job_manager_add = -1
+			job_clerk_add = -1
 			job_executive_add = 1
-		}
-	}
-	triggered_desc = {
-		text = job_clerk_effect_desc
-		trigger = {
-			owner = {
-				is_fallen_empire_spiritualist = no
-				is_megacorp = no
-				OR = {
-					NOR = {
-						has_valid_civic = civic_merchant_guilds
-						has_valid_civic = civic_corporate_dominion
-					}
-					AND = {
-						has_active_tradition = tr_prosperity_interstellar_franchising
-						NOT = { has_active_tradition = tr_mercantile_commercial_enterprise }
-					}
-				}
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_merchant_effect_desc
-		trigger = {
-			exists = owner
-			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
 		}
 	}
 	triggered_desc = {
@@ -957,6 +930,54 @@ district_srw_commercial = {
 			owner = { is_crafter_empire = yes }
 		}
 		text = job_artificer_effect_desc
+	}
+	triggered_desc = {
+		text = job_clerk_effect_desc
+		trigger = {
+			OR = {
+				NOT = { exists = owner }
+				owner = { is_fallen_empire_spiritualist = no }
+			}
+			OR = {
+				prev = { NOT = { colony_type = col_city } }
+				AND = {
+					has_active_tradition = tr_prosperity_interstellar_franchising
+					NOT = { has_active_tradition = tr_mercantile_commercial_enterprise }
+				}
+			}
+		}
+	}
+	triggered_desc = {
+		text = job_manager_effect_desc
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+	}
+	triggered_desc = {
+		text = job_executive_effect_desc
+		trigger = {
+			colony_type = col_city
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+	}
+	triggered_desc = {
+		text = job_merchant_effect_desc
+		trigger = {
+			OR = {
+				colony_type = col_city
+				AND = {
+					exists = owner
+					is_megacorp = no
+					owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+				}
+			}
+		}
 	}
 	ai_resource_production = {
 		energy = 1
