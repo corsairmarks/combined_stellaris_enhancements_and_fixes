@@ -835,7 +835,7 @@ district_srw_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			colony_type = col_city
+			colony_type = col_srw_trade
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = no }
 		}
@@ -846,7 +846,7 @@ district_srw_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			colony_type = col_city
+			colony_type = col_srw_trade
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -890,7 +890,7 @@ district_srw_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			colony_type = col_city
+			colony_type = col_srw_trade
 			exists = owner
 			owner = {
 				# sorry no double-dipping if you have the old corp-lite civic with merchant guilds
@@ -909,7 +909,7 @@ district_srw_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			colony_type = col_city
+			colony_type = col_srw_trade
 			exists = owner
 			owner = {
 				is_megacorp = yes
@@ -944,7 +944,7 @@ district_srw_commercial = {
 				owner = { is_fallen_empire_spiritualist = no }
 			}
 			OR = {
-				prev = { NOT = { colony_type = col_city } }
+				prev = { NOT = { colony_type = col_srw_trade } }
 				owner = {
 					has_active_tradition = tr_prosperity_interstellar_franchising
 					NOT = { has_active_tradition = tr_mercantile_commercial_enterprise }
@@ -962,7 +962,7 @@ district_srw_commercial = {
 	triggered_desc = {
 		text = job_executive_effect_desc
 		trigger = {
-			colony_type = col_city
+			colony_type = col_srw_trade
 			exists = owner
 			owner = {
 				is_megacorp = yes
@@ -975,7 +975,7 @@ district_srw_commercial = {
 		text = job_merchant_effect_desc
 		trigger = {
 			OR = {
-				colony_type = col_city
+				colony_type = col_srw_trade
 				AND = {
 					exists = owner
 					owner = {
