@@ -6,7 +6,6 @@
  mod_planet_building_commercial_zone_build_speed_mult: "$building_commercial_zone$ $mod_planet_built_speed_mult_suffix$"
  mod_planet_building_commercial_megaplex_build_speed_mult: "$building_commercial_megaplex$ $mod_planet_built_speed_mult_suffix$"
  mod_planet_building_galactic_stock_exchange_build_speed_mult: "$building_galactic_stock_exchange$ $mod_planet_built_speed_mult_suffix$"
- district_srw_commercial_desc: "A district of offices and factories where goods are manufactured and sold.\n\nAttracts more £job_merchant£ §Y$job_merchant_plural$§! when the ring segment is designated as a §Y$col_srw_trade$§!."
  col_srw_trade: "Trade Ring World"
  col_srw_trade_desc: "A damaged but livable ring segment dedicated to consumer industries and trade"
  pc_shattered_ring_habitable_adj: "$pc_ringworld_habitable_adj$"
