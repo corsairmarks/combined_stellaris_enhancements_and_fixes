@@ -349,7 +349,7 @@ col_habitat_trade = {
 
 # Ringworld Trade
 col_ring_trade = {
-	icon = GFX_colony_type_urban
+	icon = GFX_colony_type_ring_trade
 
 	potential = {
 		uses_district_set = ring_world
