@@ -38,7 +38,7 @@ Overwriting a colony type produces an error log.  Expect to see three entries in
 
 [h2]Changelog[/h2]
 
-See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2641081470]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
