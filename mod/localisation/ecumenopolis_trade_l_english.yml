@@ -8,4 +8,4 @@
  mod_planet_building_galactic_stock_exchange_build_speed_mult: "$building_galactic_stock_exchange$ $mod_planet_built_speed_mult_suffix$"
  district_arcology_commercial: "Commercial Arcology"
  district_arcology_commercial_plural: "Commercial Arcologies"
- district_arcology_commercial_desc: "Endless tiers of offices to support the shuffling of goods and commodities, and the management of financial instruments, and the other arcane tasks that drive the galactic economy.\n\nAttracts more £job_merchant£ §Y$job_merchant_plural$§! when the colony is designated §Y$col_ecu_trade$§!."
+ district_arcology_commercial_desc: "Endless tiers of offices to support the shuffling of goods and commodities, and the management of financial instruments, and the other arcane tasks that drive the galactic economy.\n\nAttracts more £job_merchant£ §Y$job_merchant_plural$§! when the planet is designated §Y$col_ecu_trade$§!."

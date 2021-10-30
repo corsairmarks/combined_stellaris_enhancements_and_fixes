@@ -40,6 +40,15 @@ district_arcology_commercial = {
 		job_merchant_add = 2
 	}
 	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = {
+			job_clerk_add = 3
+		}
+	}
+	triggered_planet_modifier = {
 		potential = { colony_type = col_ecu_trade }
 		modifier = {
 			job_clerk_add = -1
@@ -69,7 +78,7 @@ district_arcology_commercial = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_authority = auth_corporate }
+			owner = { is_megacorp = yes }
 		}
 		modifier = {
 			job_clerk_add = -2
@@ -127,7 +136,7 @@ district_arcology_commercial = {
 		potential = {
 			exists = owner
 			owner = {
-				has_authority = auth_corporate
+				is_megacorp = yes
 				has_active_tradition = tr_mercantile_commercial_enterprise
 			}
 		}
@@ -142,7 +151,8 @@ district_arcology_commercial = {
 			NAND = {
 				colony_type = col_ecu_trade
 				owner = {
-					has_authority = auth_corporate
+					is_megacorp = yes
+					NOT = { has_active_tradition = tr_prosperity_interstellar_franchising }
 					has_active_tradition = tr_mercantile_commercial_enterprise
 				}
 			}
@@ -153,11 +163,11 @@ district_arcology_commercial = {
 		text = job_merchant_effect_desc
 	}
 	triggered_desc = {
-		trigger = { owner = { has_authority = auth_corporate } }
+		trigger = { owner = { is_megacorp = yes } }
 		text = job_manager_effect_desc
 	}
 	triggered_desc = {
-		trigger = { owner = { has_authority = auth_corporate } }
+		trigger = { owner = { is_megacorp = yes } }
 		text = job_executive_effect_desc
 	}
 }
