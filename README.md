@@ -1,1 +1,1 @@
-C:/Users/butchern/Documents/Paradox Interactive/Stellaris/mod/trade_district_enhancements/mod/README.md
+mod/README.md
