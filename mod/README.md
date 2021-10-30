@@ -14,7 +14,7 @@ Also updates the regular City districts to provide part of a Merchant or Executi
 
 Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony types and the entirety of the `common/districts/00_urban_districts.txt`, `common/districts/03_habitat_districts.txt`, and `common/districts/04_ringworld_districts.txt` files.  Because overwriting district files presents a large compatibility challenge, I opted to develop this as a separate from [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) despite the mods providing very similar effects but for different districts.
 
-This mod will not work well with other mods that make changes to habitat or ringworld districts, or that make changes to the same colony designations.  Overhaul mods commonly make changes to districts - and so do some of my other mods!  If you want to play many of my mods together, consider using [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead - it resolves the incompatibilities between them.
+This mod will not work well with other mods that make changes to urban, habitat, or ringworld districts, or that make changes to the same colony designations.  Overhaul mods commonly make changes to districts - and so do some of my other mods!  If you want to play many of my mods together, consider using [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead - it resolves the incompatibilities between them.
 
 Built for Stellaris version 3.1.2 "Lem."  Not compatible with achievements.
 
