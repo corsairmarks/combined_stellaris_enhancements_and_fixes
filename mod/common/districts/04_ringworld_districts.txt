@@ -4,6 +4,7 @@
 @rw_maintenance_sr = 2
 @rw_district_buildtime = 360
 
+# this district is altered by Trade District Enhancements (remove clerks from tr_prosperity_interstellar_franchising)
 district_rw_city = {
 	base_buildtime = @rw_district_buildtime
 	is_capped_by_modifier = no
@@ -124,12 +125,13 @@ district_rw_city = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_regular_empire = yes }
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire = no
+			}
 		}
 		text = job_clerk_effect_desc
 	}
-
-
 }
 
 district_rw_hive = {
@@ -416,10 +418,10 @@ district_rw_generator = {
 	}
 }
 
+# this district is altered by Trade District Enhancements
 district_rw_commercial = {
 	base_buildtime = @rw_district_buildtime
 	is_capped_by_modifier = no
-
 	show_on_uncolonized = {
 		uses_district_set = ring_world
 		exists = from
@@ -428,7 +430,6 @@ district_rw_commercial = {
 			is_fallen_empire = no
 		}
 	}
-
 	potential = {
 		exists = owner
 		owner = {
@@ -437,11 +438,10 @@ district_rw_commercial = {
 		}
 		uses_district_set = ring_world
 	}
-
+	conversion_ratio = 1
 	convert_to = {
 		district_rw_generator
 	}
-
 	resources = {
 		category = planet_districts
 		cost = {
@@ -453,22 +453,116 @@ district_rw_commercial = {
 			rare_crystals = @rw_maintenance_sr
 		}
 	}
-
-	triggered_planet_modifier = {
+	planet_modifier = {
 		planet_housing_add = 10
 		job_merchant_add = 2
 		job_clerk_add = 6
 	}
-
+	triggered_planet_modifier = {
+		potential = { colony_type = col_ring_trade }
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_merchant_guilds }
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_corporate_dominion }
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			job_clerk_add = -2
+			job_executive_add = 1
+			job_manager_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_interstellar_franchising }
+		}
+		modifier = {
+			job_clerk_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+		}
+		modifier = {
+			job_merchant_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			colony_type = col_ring_trade
+			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
+				has_valid_civic = civic_merchant_guilds
 				has_active_tradition = tr_mercantile_commercial_enterprise
 			}
 		}
 		modifier = {
-			job_merchant_add = 2
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_corporate_dominion
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_clerk_add = -1
+			job_merchant_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_clerk_add = -2
+			job_executive_add = 1
+			job_manager_add = 1
 		}
 	}
 
@@ -481,15 +575,20 @@ district_rw_commercial = {
 		}
 		text = arcane_generator_upkeep_desc
 	}
-
-	triggered_desc = {
-		text = job_merchant_effect_desc
-	}
-
 	triggered_desc = {
 		text = job_clerk_effect_desc
 	}
-
+	triggered_desc = {
+		text = job_merchant_effect_desc
+	}
+	triggered_desc = {
+		trigger = { owner = { is_megacorp = yes } }
+		text = job_manager_effect_desc
+	}
+	triggered_desc = {
+		trigger = { owner = { is_megacorp = yes } }
+		text = job_executive_effect_desc
+	}
 	ai_resource_production = {
 		energy = 10
 		trigger = {
