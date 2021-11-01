@@ -4,6 +4,10 @@ Do you have trouble finding you "in-progress" terraforming planets?  Or maybe yo
 
 When a planet begins terraforming, this mod will automatically spawn a terraform station above it complete with sound effects, an animated terraform beam, and a healthy green glow around the planet.  These stations are real gameplay objects, but losing (or disbanding) them does not affect the terraforming process - it is purely a visual embellishment.  Once terraforming completes, your geo-engineers will automatically dismantle the terraform station.  If you cancel terraforming, expect a delay of up to one month (30 days) before the station will be automatically decommissioned.
 
+[h2]Recommend a Shipset[/h2]
+
+Would you like this mod to offer a submod for your favourite shipset?  Please ask nicely and provide a link to the shipset you'd like to have matching terraform stations.  For compatibility, I'll use the terraform station graphics if the shipset has a unique model, or whatever model is defined for the terraform station in the mod's entities.  Finally, I'll fall back to picking the same model as the mining station, research station, or possibly outpost (if there are not custom graphics for the mining/research stations).
+
 [h1]Changes[/h1]
 
 Reintroduces terraform stations and existing (but unused) graphical effects to provide a more obvious indicator when planets are terraforming.  Events attached to the [b]on_terraforming_begun[/b] and [b]on_terraforming_complete[/b] provide the basic functionality.  However, there is no on_action for when terraforming is cancelled - instead, each station checks monthly whether the planet below is still terraforming - if not, it decommissions itself.
@@ -27,6 +31,10 @@ This mod should be added before you start a new game so that all empires are ass
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994]Machine Shipset Add-on: Shattered Ring Appearance[/url] ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset.  This mod adds missing graphical definitions to the Machine Shipset.
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628972292]Machine Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Machine Shipset, this compatibility patch ensures the correct Machine Shipset graphics are used for terraform stations.
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457]Enigmatic Shipset[/url] is a menacing, hexagonal shipset that highlights your primary color.
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667]Enigmatic Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations.
 
 [h2]Known Issues[/h2]
 
