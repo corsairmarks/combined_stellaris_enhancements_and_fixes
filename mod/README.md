@@ -28,7 +28,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 47ba2c6a4c92c189765d431283bb1cc9abdbfd06)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 9c2ec40d6be73174c1864de8e3ae359936bbd967)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 6485ac747be7ce7aff982bc79ba6957eeaa6460c)
-* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 15af8f7d7ec0e2fc7c221b5a560c5fd56dfc2c5b)
+* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 190e5010a21f3a0dabc30aa6f994be6e38deead1)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 8f8a7b6c738a288aad36181c011545693e3aa92b)
 * [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 02997388c697a62576e7e064421b8ec67dc9d296)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 4df510712de31ebdf7e4756ab8cb96dfee8fb9a7)
@@ -152,3 +152,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Added: Enhanced Trade Districts and Designations at 1.0.0
     * Updated: Colony Designation: Ecumenopolis Commercial at 2.4.0
     * Updated: Planetary Modifier Enhancements at 2.5.0
+* 3.3.1 Update merged mod: Leader Traits: All Eligible Species Traits at 2.1.0
