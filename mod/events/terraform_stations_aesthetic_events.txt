@@ -29,6 +29,18 @@ planet_event = {
 				# any_system_megastructure = { has_megastructure_flag = terraform_station@PREVPREV }
 			}
 		}
+		NAND = {
+			has_global_flag = terraform_to_pc_nuked_installed
+			uninhabitable_regular_planet = no
+			space_owner.owner_main_species = {
+				OR = {
+					has_trait = trait_pc_nuked_preference
+					has_trait = trait_survivor
+					has_trait = trait_plantoid_radiotrophic
+					has_trait = trait_presapient_irradiated
+				}
+			}
+		}
 	}
 	immediate = {
 		save_event_target_as = terraform_planet
