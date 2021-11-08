@@ -43,6 +43,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.0.1 Decrease overlap in effects when installed with ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437)
 
 ## Source Code
 
