@@ -28,13 +28,17 @@ This mod should be added before you start a new game so that all empires are ass
 
 [Machine Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491) is a phenomenal, fully-sectioned shipset and includes megastructures.
 
-[Machine Shipset Add-on: Shattered Ring Appearance](https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994) ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset.  This mod adds missing graphical definitions to the Machine Shipset.
+[Machine Shipset Add-on: Shattered Ring and Habitat Appearance](https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994) ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset.  This mod adds missing graphical definitions to the Machine Shipset and enhances the appearance of its habitable ringworlds segments and mini-ring habitats.
 
 [Machine Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2628972292) combined with the Machine Shipset, this compatibility patch ensures the correct Machine Shipset graphics are used for terraform stations.
 
 [Enigmatic Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457) is a menacing, hexagonal shipset that highlights your primary color.
 
 [Enigmatic Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667) combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations.
+
+[Ascendant Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457) is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well.  It also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits.
+
+[Ascendant Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667) combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations.
 
 ## Known Issues
 
