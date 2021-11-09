@@ -16,8 +16,8 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) dcef74159a18ef2fdd23f09eb2348062f1b32946)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 32b471c4b6dc242c528ad65a992d2973799d1025)
-* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 5c745960bbf52c19357d3e150eeb08ebd7dd7449)
-* [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 7a6d0b634d0be9adb856bc9f4cbf5417c82d9389)
+* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 21e7d7d7c57f22363e2cab234031266b20462bda)
+* [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 9591568fe5fc435555a3246012a7561d7422160f)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 2592f232779f943459e4f80651a2abf6fa089b4e)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) e201f248b605fff6df72b95d8e7ee34c88deafcd)
@@ -153,3 +153,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Updated: Colony Designation: Ecumenopolis Commercial at 2.4.0
     * Updated: Planetary Modifier Enhancements at 2.5.0
 * 3.3.1 Update merged mod: Leader Traits: All Eligible Species Traits at 2.1.0
+* 3.3.2 Update merged mods
+    * Aesthetic Terraform Stations at 1.0.1
+    * "Terraform" to Tomb World at 1.2.1
