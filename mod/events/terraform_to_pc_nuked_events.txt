@@ -14,7 +14,7 @@ event = {
 	}
 }
 
-# set up terraform station and graphics
+# set up "terraform" graphics
 # triggered by on_terraforming_begun
 # this = planet
 # from = country, terraformer
@@ -28,6 +28,13 @@ planet_event = {
 			eligible_pc_nuked_terraform_hostile = yes
 		}
 		NOT = { solar_system = { any_system_ambient_object = { has_ambient_object_flag = terraform_bombardment@prevprev } } }
+		space_owner = {
+			eligible_for_pc_nuked_terraform_country = yes
+			NAND = {
+				has_global_flag = terraform_stations_aesthetic_installed
+				owner_main_species = { is_nuked_species = no }
+			}
+		}
 	}
 	immediate = {
 		create_ambient_object = {
@@ -46,7 +53,7 @@ planet_event = {
 	}
 }
 
-# clean up terraform station and graphics
+# clean up "terraform" graphics
 # triggered by on_terraforming_complete and terraform_to_pc_nuked.3
 # this = planet
 # from = country, terraformer
