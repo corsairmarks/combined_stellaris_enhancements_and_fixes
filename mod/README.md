@@ -14,12 +14,12 @@ You only need the contents of the `mod` folder for a local install, disregard th
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
-* [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) dcef74159a18ef2fdd23f09eb2348062f1b32946)
+* [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 264d65b831badf7416bbef782f29bebffe114672)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 32b471c4b6dc242c528ad65a992d2973799d1025)
 * ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 21e7d7d7c57f22363e2cab234031266b20462bda)
 * [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 9591568fe5fc435555a3246012a7561d7422160f)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
-* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) 2592f232779f943459e4f80651a2abf6fa089b4e)
+* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) aa9a92921690cb3f84c4fd07c49797eb7322a433)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) e201f248b605fff6df72b95d8e7ee34c88deafcd)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 78cf0757da03a6358575e7cd21d632a7c88b2631)
 * [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 518bc29448abf3d481bbd419265f8c68d01ef4f2)
@@ -156,3 +156,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 3.3.2 Update merged mods
     * Aesthetic Terraform Stations at 1.0.1
     * "Terraform" to Tomb World at 1.2.1
+* 3.3.3 Update merged mods
+    * Colony Designation: Ecumenopolis Commercial at 2.4.1
+    * Enhanced Trade Districts and Designations at 1.0.1
