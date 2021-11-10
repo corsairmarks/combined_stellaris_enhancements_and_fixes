@@ -39,6 +39,7 @@ Overwriting a colony type produces an error log.  Expect to see three entries in
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.0.1 Improved colony automation plans
 
 ## Source Code
 
