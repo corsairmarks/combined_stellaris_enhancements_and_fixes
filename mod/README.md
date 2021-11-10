@@ -55,6 +55,8 @@ This mod can be safely added or removed from your savegame at any time.
 
 The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is paricularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
+[Bigger Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1587178040) or [UI Overhaul Dynamic](https://steamcommunity.com/sharedfiles/filedetails/?id=1623423360) also provide expanded planetview graphics.
+
 ## Changelog
 
 * 1.0.0 Initial version
