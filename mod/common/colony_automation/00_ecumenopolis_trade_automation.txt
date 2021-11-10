@@ -14,6 +14,11 @@ automate_ecumenopolis_commercial_planet = {
 		}
 
 		2 = {
+			building = building_clone_vats
+			available = { owner = { has_ascension_perk = ap_engineered_evolution } }
+		}
+
+		3 = {
 			building = building_robot_assembly_plant
 			available = {
 				owner = {
@@ -24,11 +29,6 @@ automate_ecumenopolis_commercial_planet = {
 					}
 				}
 			}
-		}
-
-		3 = {
-			building = building_clone_vats
-			available = { owner = { has_ascension_perk = ap_engineered_evolution } }
 		}
 
 		4 = {
@@ -54,22 +54,17 @@ automate_ecumenopolis_commercial_planet = {
 
 		7 = {
 			building = building_psi_corps
-			available = {
-				planet_crime > 35
-				owner = { has_ascension_perk = ap_mind_over_matter }
-			}
+			available = { owner = { has_ascension_perk = ap_mind_over_matter } }
 		}
 
 		8 = {
-			building = building_precinct_house
+			building = building_galactic_memorial_1
 			available = {
-				planet_crime > 25
-				owner = {
-					precinct_house_upkeep_affordable = yes
-					OR = {
-						NOT = { has_ascension_perk = ap_mind_over_matter }
-						prev = { has_building = building_psi_corps }
-					}
+				owner = { has_valid_civic = civic_memorialist }
+				NOR = {
+					has_building = building_galactic_memorial_1
+					has_building = building_galactic_memorial_2
+					has_building = building_galactic_memorial_3
 				}
 			}
 		}
@@ -87,11 +82,11 @@ automate_ecumenopolis_commercial_planet = {
 		11 = {
 			building = building_crystal_plant
 			available = {
-				num_buildings = { type = building_crystal_plant value < 2 }
 				owner = {
+					crystal_plant_upkeep_affordable = yes
 					has_monthly_income = {
 						resource = rare_crystals
-						value < 1
+						value < 2
 					}
 				}
 			}
