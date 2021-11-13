@@ -1101,9 +1101,9 @@ guiTypes = {
 					gridBoxType = {
 						name = "districts_grid_box"
 						position = { x = 4 y = 68 }
-						size = { width = 180 height = 760 }
+						size = { width = 180 height = 580 }
 						format = "UPPER_LEFT"
-						slotsize = { width = 108 height = 66 }
+						slotsize = { width = 108 height = 58 }
 						add_horizontal = yes
 						max_slots_horizontal = 1
 						max_slots_vertical = 12
@@ -4702,31 +4702,31 @@ guiTypes = {
 	containerWindowType = {
 		name = "planet_district_entry"
 		position = { x = 0 y = 0 }
-		size = { width = 192 height = 72 }
+		size = { width = 192 height = 58 }
 		moveable = no
 
-		background = {
-			name = "background"
-			spriteType = "GFX_tiles_frame_light"
-		}
+		# background = {
+		# 	name = "background"
+		# 	spriteType = "GFX_tiles_frame_light"
+		# }
 
 		iconType = {
 			name = "selected_district_icon"
 			spriteType = "GFX_selected_building"
-			position = { x = 9 y = 10 }
+			position = { x = 1 y = 10 }
 			scale = 0.52941
 		}
 
 		iconType = {
 			name = "district_icon"
 			spriteType = "GFX_district_unknown"
-			position = { x = 13 y = 13 }
+			position = { x = 5 y = 13 }
 			scale = 0.58442
 		}
 
 		buttonType = {
 			name = "district_button"
-			position = { x = 8 y = 8 }
+			position = { x = 0 y = 8 }
 			size = { x = 56 y = 56 }
 			quadTextureSprite = "GFX_button_light"
 			clicksound = "menu_slide_open"
@@ -4735,7 +4735,7 @@ guiTypes = {
 		iconType = {
 			name = "progressbar"
 			spriteType = "GFX_building_progressbar"
-			position = { x = 10 y = 52 }
+			position = { x = 2 y = 50 }
 			alwaysTransparent = yes
 		}
 
@@ -4753,7 +4753,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "district_box"
 			size = { width = 52 height = 24 }
-			position = { x = 62 y = 10 }
+			position = { x = 54 y = 10 }
 
 			##VM: the boxes are here
 
@@ -4773,22 +4773,21 @@ guiTypes = {
 		# Passed 15 Cubes, Number Box is shown. Replaces the bottom 6 cubes.
 		containerWindowType = {
 			name = "planet_district_cap_container"
-			size = { width = 46 height = 28 }
-			position = { x = 110 y = 8 }
+			size = { width = 46 height = 46 }
+			position = { x = 135 y = 4 }
 
 			iconType = {
 				name = "cap_background"
 				spriteType = "GFX_district_any_big"
-				position = { x = 18 y = 11 }
 				scale = 1
 			}
 
 			instantTextBoxType = {
 				name = "num_districts_text"
 				font = "cg_16b"
-				position = { x = 15 y = 26 }
+				position = { x = 0 y = 16 }
 				text = "10"
-				maxWidth = 52
+				maxWidth = 46
 				maxHeight = 20
 				fixedSize = yes
 				format = center
