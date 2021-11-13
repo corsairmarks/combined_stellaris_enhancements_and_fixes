@@ -25,10 +25,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -48,10 +80,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -71,10 +135,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -94,10 +190,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -117,10 +245,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -146,11 +306,7 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
-		modifier = {
-			factor = 0
-			is_robot_empire = yes
-		}
+		weight = 0
 	}
 }
 
@@ -169,10 +325,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -192,10 +380,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -215,10 +435,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -238,10 +490,42 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			is_robot_empire = yes
+			add = 1
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 1
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -267,12 +551,42 @@ terraform_link = {
 	ai_weight = {
 		weight = 2
 		modifier = {
-			factor = 3
-			eligible_for_pc_nuked_terraform_country = yes
+			add = 4
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 4
+			pop_percentage = {
+				percentage > 0.8
+				limit = { species = { is_nuked_species = yes } }
+				exclude = {
+					OR = {
+						is_sapient = no
+						has_citizenship_type = { type = citizenship_purge }
+						has_citizenship_type = { type = citizenship_purge_machine }
+					}
+				}
+			}
 		}
 		modifier = {
 			factor = 0
-			has_authority = auth_hive_mind
+			is_hive_empire = yes
 		}
 	}
 }
@@ -298,12 +612,42 @@ terraform_link = {
 	ai_weight = {
 		weight = 2
 		modifier = {
-			factor = 3
-			eligible_for_pc_nuked_terraform_country = yes
+			add = 4
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > 0.6
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 4
+			pop_percentage = {
+				percentage > 0.8
+				limit = { species = { is_nuked_species = yes } }
+				exclude = {
+					OR = {
+						is_sapient = no
+						has_citizenship_type = { type = citizenship_purge }
+						has_citizenship_type = { type = citizenship_purge_machine }
+					}
+				}
+			}
 		}
 		modifier = {
 			factor = 0
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 		}
 	}
 }
@@ -327,8 +671,8 @@ terraform_link = {
 	ai_weight = {
 		weight = 2
 		modifier = {
-			factor = 3
-			eligible_for_pc_nuked_terraform_country = yes
+			add = 4
+			owner_main_species = { is_nuked_species = yes }
 		}
 	}
 }
@@ -352,8 +696,8 @@ terraform_link = {
 	ai_weight = {
 		weight = 2
 		modifier = {
-			factor = 3
-			eligible_for_pc_nuked_terraform_country = yes
+			add = 4
+			owner_main_species = { is_nuked_species = yes }
 		}
 	}
 }
@@ -377,8 +721,8 @@ terraform_link = {
 	ai_weight = {
 		weight = 2
 		modifier = {
-			factor = 3
-			eligible_for_pc_nuked_terraform_country = yes
+			add = 4
+			owner_main_species = { is_nuked_species = yes }
 		}
 	}
 }
