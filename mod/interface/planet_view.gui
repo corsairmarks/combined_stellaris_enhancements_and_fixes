@@ -4714,20 +4714,20 @@ guiTypes = {
 			name = "selected_district_icon"
 			spriteType = "GFX_selected_building"
 			position = { x = 1 y = 10 }
-			scale = 0.52941
+			scale = 0.52941 # 53x53
 		}
 
 		iconType = {
 			name = "district_icon"
 			spriteType = "GFX_district_unknown"
-			position = { x = 5 y = 13 }
-			scale = 0.58442
+			position = { x = 2 y = 11 }
+			scale = 0.67532 # 51x51
 		}
 
 		buttonType = {
 			name = "district_button"
 			position = { x = 0 y = 8 }
-			size = { x = 56 y = 56 }
+			size = { x = 56 y = 55 }
 			quadTextureSprite = "GFX_button_light"
 			clicksound = "menu_slide_open"
 		}
@@ -4735,7 +4735,7 @@ guiTypes = {
 		iconType = {
 			name = "progressbar"
 			spriteType = "GFX_building_progressbar"
-			position = { x = 2 y = 50 }
+			position = { x = 2 y = 54 }
 			alwaysTransparent = yes
 		}
 
