@@ -37,7 +37,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
 * 1.1.0 Remove Terrestrial Sculpting as a prerequisite for "nuked" empires - you can "terraform" worlds into tomb worlds at game start
 * 1.2.0 Memorialist (all types) are now included, but the Memorialist AIs won't use it
 * 1.2.1 Decrease overlap in effects when installed with [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084)
-* 1.2.2 Help the AI calm down about terraforming to tomb worlds - these things make the AI likely to terraform to a tomb world
+* 1.2.2 Help the AI calm down about terraforming to tomb worlds - these conditions make the AI likely to terraform to a tomb world
     * Owner is a nuked species and the planet is not colonized
     * Owner is a nuked species and over 60% of Pops are a nuked species (excludes non-sapient pops and undesirables)
     * Over 80% of Pops are a nuked species (excludes non-sapient pops and undesirables)
