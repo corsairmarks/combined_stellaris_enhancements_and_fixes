@@ -1101,7 +1101,7 @@ guiTypes = {
 					gridBoxType = {
 						name = "districts_grid_box"
 						position = { x = 4 y = 68 }
-						size = { width = 180 height = 580 }
+						size = { width = 180 height = 706 } # (slots * slot height) + 10 offset = height
 						format = "UPPER_LEFT"
 						slotsize = { width = 108 height = 58 }
 						add_horizontal = yes
