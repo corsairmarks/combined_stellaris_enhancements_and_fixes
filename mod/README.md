@@ -16,6 +16,10 @@ Built for Stellaris version 3.1.\* "Lem."  As a UI-only mod, this is achievement
 
 [More Standard Districts](https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194) adds 5 district types based on basic buildings: Research, Commercial, Leisure, Military, and Administrative.  Commercial Districts are not available for gestalt empires and Leisure Districts are only available for regular empires and Rogue Servitors.
 
+### Not Included in "Subtle Polish"
+
+This mod is intentionally not included in my modpack [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) because it is an optional, basic UI change targeted at specific screen resolutions.
+
 ## Changelog
 
 * 1.0.0 Initial version
