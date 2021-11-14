@@ -522,35 +522,35 @@ col_ring_trade = {
 			}
 		}
 		modifier = {
-			factor = 150
+			add = 75
 			num_buildings = {
 				type = building_commercial_zone
 				value > 2
 			}
 		}
 		modifier = {
-			factor = 300
+			add = 150
 			num_buildings = {
 				type = building_commercial_zone
 				value > 4
 			}
 		}
 		modifier = {
-			factor = 150
+			add = 75
 			num_buildings = {
 				type = building_commercial_megaplex
 				value > 1
 			}
 		}
 		modifier = {
-			add = 300
+			add = 150
 			num_buildings = {
 				type = building_commercial_megaplex
 				value > 2
 			}
 		}
 		modifier = {
-			add = 150
+			add = 75
 			exists = owner
 			owner = {
 				OR = {
@@ -561,11 +561,11 @@ col_ring_trade = {
 			}
 		}
 		modifier = {
-			add = 400
+			add = 150
 			has_building = building_galactic_stock_exchange
 		}
 		modifier = {
-			add = 400
+			add = 150
 			has_building = building_nuumismatic_shrine
 		}
 	}
