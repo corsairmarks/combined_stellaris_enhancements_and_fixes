@@ -40,6 +40,7 @@ Overwriting a colony type produces an error log.  Expect to see three entries in
 
 * 1.0.0 Initial version
 * 1.0.1 Improved colony automation plans
+* 1.0.2 Adjust colony designation weighting
 
 ## Source Code
 
