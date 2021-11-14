@@ -22,7 +22,7 @@ This mod is intentionally not included in my modpack [url=https://steamcommunity
 
 [h2]Changelog[/h2]
 
-See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2654043078]Change notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2654043078]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
