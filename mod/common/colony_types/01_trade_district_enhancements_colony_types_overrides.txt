@@ -50,15 +50,33 @@ col_city = {
 		modifier = {
 			add = 2
 			NOT = { uses_district_set = shattered_ring_world }
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 2
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 1
-				}
+			num_buildings = {
+				type = building_commercial_zone
+				value > 2
+			}
+		}
+		modifier = {
+			add = 4
+			NOT = { uses_district_set = shattered_ring_world }
+			num_buildings = {
+				type = building_commercial_zone
+				value > 4
+			}
+		}
+		modifier = {
+			add = 2
+			NOT = { uses_district_set = shattered_ring_world }
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 1
+			}
+		}
+		modifier = {
+			add = 4
+			NOT = { uses_district_set = shattered_ring_world }
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 2
 			}
 		}
 		modifier = {
@@ -76,21 +94,17 @@ col_city = {
 		modifier = {
 			add = 4
 			NOT = { uses_district_set = shattered_ring_world }
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 4
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 2
-				}
-			}
+			has_building = building_galactic_stock_exchange
 		}
 		modifier = {
 			add = 4
 			NOT = { uses_district_set = shattered_ring_world }
-			has_building = building_galactic_stock_exchange
+			has_building = building_nuumismatic_shrine
+		}
+		modifier = {
+			add = 4
+			has_global_flag = planetary_modifier_enhancements_installed
+			has_modifier = pm_planetary_mechanocalibrator
 		}
 		modifier = {
 			add = 5
@@ -112,7 +126,6 @@ col_city = {
 # Habitat Trade
 col_habitat_trade = {
 	icon = GFX_colony_type_habitat_trade
-
 	potential = {
 		uses_district_set = habitat
 		exists = owner
@@ -288,15 +301,30 @@ col_habitat_trade = {
 		}
 		modifier = {
 			factor = 1.25
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 2
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 1
-				}
+			num_buildings = {
+				type = building_commercial_zone
+				value > 2
+			}
+		}
+		modifier = {
+			factor = 1.5
+			num_buildings = {
+				type = building_commercial_zone
+				value > 4
+			}
+		}
+		modifier = {
+			factor = 1.25
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 1
+			}
+		}
+		modifier = {
+			factor = 1.5
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 2
 			}
 		}
 		modifier = {
@@ -311,21 +339,12 @@ col_habitat_trade = {
 			}
 		}
 		modifier = {
-			factor = 1.25
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 4
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 2
-				}
-			}
+			factor = 2
+			has_building = building_galactic_stock_exchange
 		}
 		modifier = {
 			factor = 2
-			has_building = building_galactic_stock_exchange
+			has_building = building_nuumismatic_shrine
 		}
 	}
 }
@@ -333,13 +352,11 @@ col_habitat_trade = {
 # Ringworld Trade
 col_ring_trade = {
 	icon = GFX_colony_type_ring_trade
-
 	potential = {
 		uses_district_set = ring_world
 		exists = owner
 		owner = { is_gestalt = no }
 	}
-
 	planet_modifier = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
 		planet_building_commercial_megaplex_build_speed_mult = 0.25
@@ -347,7 +364,6 @@ col_ring_trade = {
 		planet_district_rw_commercial_build_speed_mult = 0.25
 		trade_value_mult = 0.2
 	}
-
 	triggered_planet_modifier = {
 		potential = { solar_system = { has_trade_route = yes } }
 		modifier = {
@@ -483,7 +499,6 @@ col_ring_trade = {
 			trade_value_add = 2
 		}
 	}
-
 	weight_modifier = {
 		base = 10
 		modifier = {
@@ -507,16 +522,31 @@ col_ring_trade = {
 			}
 		}
 		modifier = {
-			add = 150
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 2
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 1
-				}
+			factor = 150
+			num_buildings = {
+				type = building_commercial_zone
+				value > 2
+			}
+		}
+		modifier = {
+			factor = 300
+			num_buildings = {
+				type = building_commercial_zone
+				value > 4
+			}
+		}
+		modifier = {
+			factor = 150
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 1
+			}
+		}
+		modifier = {
+			add = 300
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 2
 			}
 		}
 		modifier = {
@@ -531,21 +561,12 @@ col_ring_trade = {
 			}
 		}
 		modifier = {
-			add = 300
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 4
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 2
-				}
-			}
+			add = 400
+			has_building = building_galactic_stock_exchange
 		}
 		modifier = {
 			add = 400
-			has_building = building_galactic_stock_exchange
+			has_building = building_nuumismatic_shrine
 		}
 	}
 }
@@ -587,15 +608,30 @@ col_srw_trade = {
 		}
 		modifier = {
 			add = 2
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 2
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 1
-				}
+			num_buildings = {
+				type = building_commercial_zone
+				value > 2
+			}
+		}
+		modifier = {
+			add = 4
+			num_buildings = {
+				type = building_commercial_zone
+				value > 4
+			}
+		}
+		modifier = {
+			add = 2
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 1
+			}
+		}
+		modifier = {
+			add = 4
+			num_buildings = {
+				type = building_commercial_megaplex
+				value > 2
 			}
 		}
 		modifier = {
@@ -611,16 +647,7 @@ col_srw_trade = {
 		}
 		modifier = {
 			add = 4
-			OR = {
-				num_buildings = {
-					type = building_commercial_zone
-					value > 4
-				}
-				num_buildings = {
-					type = building_commercial_megaplex
-					value > 2
-				}
-			}
+			has_building = building_nuumismatic_shrine
 		}
 		modifier = {
 			add = 4
