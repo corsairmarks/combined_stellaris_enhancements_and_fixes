@@ -43,6 +43,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Over 80% of Pops are a nuked species (excludes non-sapient pops and undesirables)
     * Terraforming Candidate and the empire's main species is nuked
     * Never for Gaia worlds
+* 1.2.3 Machine World and Hive World terraform to Tomb World should check Pop percentage of the planet, not empire
 
 ## Source Code
 
