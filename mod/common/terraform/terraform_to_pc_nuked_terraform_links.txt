@@ -572,14 +572,16 @@ terraform_link = {
 		}
 		modifier = {
 			weight = 4
-			pop_percentage = {
-				percentage > 0.8
-				limit = { species = { is_nuked_species = yes } }
-				exclude = {
-					OR = {
-						is_sapient = no
-						has_citizenship_type = { type = citizenship_purge }
-						has_citizenship_type = { type = citizenship_purge_machine }
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
 					}
 				}
 			}
@@ -633,14 +635,16 @@ terraform_link = {
 		}
 		modifier = {
 			weight = 4
-			pop_percentage = {
-				percentage > 0.8
-				limit = { species = { is_nuked_species = yes } }
-				exclude = {
-					OR = {
-						is_sapient = no
-						has_citizenship_type = { type = citizenship_purge }
-						has_citizenship_type = { type = citizenship_purge_machine }
+			from = {
+				pop_percentage = {
+					percentage > 0.8
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
 					}
 				}
 			}
