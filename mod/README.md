@@ -16,7 +16,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 1c3186e2f8f94b2a627bf62d5baa883a19289919)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 32b471c4b6dc242c528ad65a992d2973799d1025)
-* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) f6ed9b36415c1b66b1be2873c382e1206cc4c18c)
+* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 1aff7c7fd3b8c402492529b04eda2aa1f6ebb3e0)
 * [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 9591568fe5fc435555a3246012a7561d7422160f)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) bc6745a0ad0bfb4469e7fa51b919beeeeaa090b2)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) eae34c11afaf1db5ebbaf713b71ac1478189020b)
@@ -163,3 +163,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * "Terraform" to Tomb World at 1.2.2
     * Colony Designation: Ecumenopolis Commercial at 2.4.2
     * Enhanced Trade Districts and Designations at 1.0.2
+* 3.3.5 Update merged mod: "Terraform" to Tomb World at 1.2.3
