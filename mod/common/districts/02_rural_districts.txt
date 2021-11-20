@@ -461,7 +461,6 @@ district_farming = {
 		}
 		text = job_fe_acolyte_farm_effect_desc
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -470,7 +469,6 @@ district_farming = {
 		}
 		text = job_aqu_angler_effect_desc
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
