@@ -10,7 +10,7 @@ Machine Worlds owned by regular empires now have a planetary modifier (visible o
 
 [h2]Compatibility[/h2]
 
-Built for Stellaris version 3.1.* "Lem."  Not compatible with achievements.
+Built for Stellaris version 3.2.* "Herbert."  Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was [b]not[/b] necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit [b]d_resource_consolidation_1[/b] (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
