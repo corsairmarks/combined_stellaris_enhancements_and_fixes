@@ -61,9 +61,9 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 1.4.0 Enhance compatibility with my other mods that work with changing leader species - no gameplay changes in this mod
 * 1.5.0 Add edict "Decree: Honored Protectors" so players can choose Battle Thralls they'd like to allow Full Military Service, despite being xenophobic and/or a necrophage
 * 1.5.1 Add test event, prevent Fanatic Purifiers from naming Honored Protectors
-* 1.6.0 Update for compatibility with Stellaris version 3.1.* "Lem"
+* 1.6.0 Update for compatibility with Stellaris version 3.1 "Lem"
     * No homicidal empires can use the edict (just in case)
-* 1.7.0 Update for compatibility with Stellaris version 3.2.* "Herbert"
+* 1.7.0 Update for compatibility with Stellaris version 3.2 "Herbert"
 
 ## Source Code
 
