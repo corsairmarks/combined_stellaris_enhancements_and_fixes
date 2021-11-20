@@ -6,9 +6,9 @@ In addition to just Battle Thralls being eligible to be rolled as military leade
 
 # Changes
 
-The Battle Thralls slavery type is allowed to be assigned the Full Military Service service type, which then allows them to become military leaders - Admirals and Generals.  In order to achieve this, I've attached an event to `on_leader_spawned` that can alter the species of the spawned leader to any species which has Full Military Service; this applies anywhere leaders are created.  The leader's species is randomly rerolled by seelcting a Pop out of all those that have Full Military service and using that species, and is thus implicilty weighted based on the relative population size of the eligible species.  Second, I've updated Full Military Service to be selectable for Battle Thralls.  As a bonus for allowing Battle Thralls even greater responsibility, their Pops are 10% happier when given Full Military Service.
+The Battle Thralls slavery type is allowed to be assigned the Full Military Service service type, which then allows them to become military leaders - Admirals and Generals.  In order to achieve this, I've attached an event to `on_leader_spawned` that can alter the species of the spawned leader to any species which has Full Military Service; this applies anywhere leaders are created.  The leader's species is randomly rerolled by selecting a Pop out of all those that have Full Military service and using that species, and is thus implicitly weighted based on the relative population size of the eligible species.  Second, I've updated Full Military Service to be selectable for Battle Thralls.  As a bonus for allowing Battle Thralls even greater responsibility, their Pops are 10% happier when given Full Military Service.
 
-In addition to allowing Battle Thralls to have Full Military Service, I slightly updated the conditions for which it is allowed.  Necrophages now cannot set any species that is not their main necrophage species to have Full Military Service (as described in the origin) and the allowing Full Military Service for robots now requires Synthetic Personality Matrix rather than Droids.  Syncretic Proles (as described by the trait) and nonsentients cannot be military leaders.  Hive and Machine empires are unaffected by these changes.
+In addition to allowing Battle Thralls to have Full Military Service, I slightly updated the conditions for which it is allowed.  Necrophages now cannot set any species that is not their main necrophage species to have Full Military Service (as described in the origin) and the allowing Full Military Service for robots now requires Synthetic Personality Matrix rather than Droids.  Syncretic Proles (as described by the trait) and non-sentients cannot be military leaders.  Hive and Machine empires are unaffected by these changes.
 
 As a minor quality-of-life enhancement, I have also attached an event to `on_fleet_destroyed_perp` that will fire after `leader.1` (captain promoted to admiral) has generated a leader of the owner's main species.  This allows the species of that leader to be rerolled if the empire in question allows Full Military Service for any non-main, non-Battle Thrall species.  If there is a species of Battle Thralls with Full Military Service, then the leader has already had a shot at having their species rerolled.
 
@@ -30,7 +30,7 @@ Because this mod replaces two built-in objects, it is inherently incompatible wi
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
-Built for Stellaris version 3.1.\* "Lem."  This mod is not compatible with achievements.
+Built for Stellaris version 3.2.\* "Herbert."  This mod is not compatible with achievements.
 
 ## Localisation
 
@@ -63,6 +63,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 1.5.1 Add test event, prevent Fanatic Purifiers from naming Honored Protectors
 * 1.6.0 Update for compatibility with Stellaris version 3.1.* "Lem"
     * No homicidal empires can use the edict (just in case)
+* 1.7.0 Update for compatibility with Stellaris version 3.2.* "Herbert"
 
 ## Source Code
 
