@@ -20,6 +20,7 @@ civic_agrarian_idyll = {
 				value = origin_remnants
 			}
 		}
+		civics = { NOT = { value = civic_anglers } }
 	}
 	random_weight = { base = 5 }
 	modifier = { }
