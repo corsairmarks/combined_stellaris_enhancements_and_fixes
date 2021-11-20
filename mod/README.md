@@ -2,7 +2,7 @@
 
 Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied to farming districts.  This mod creates a swapped Agrarian Idyll just for lithoids - now your miners will generate amenities instead of farmers!  This mod also features english localisation for these effects.
 
-A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) now add one unit of planetary capacity per two districts and one building slot per four districts.  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
+A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) now add one unit of planetary capacity per two districts and one building slot per four districts (as of 3.2 farming districts do this in base game).  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
 
 And yes, I totally made up "lithorian" as an alternative to "agrarian" - going to stick with it for now.
 
@@ -16,13 +16,13 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 ## Compatibility
 
-Requires Stellaris version 3.1.2 "Lem." This mod alters the following core Stellaris files:
+Requires Stellaris version 3.2.1 "Herbert." This mod alters the following core Stellaris files:
 
 * `governments/civics/00_civics.txt` - replaces one civic `civic_agrarian_idyll` (new file `government/civics/01_agrarian_idyll_override.txt`)
 * `districts/02_rural_districts.txt` - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
 * `districts/04_ringworld_districts.txt` entire file, excludes agrarian idyll lithoids from the farming district benefits
 * `pop_jobs/03_worker_jobs.txt` - entire file, adds amenities production to miners, mote miners, gas miners, crystal miners, and scrap miners (but not the specialist refiners) (**NOT** compatible with my mod [Technician Job Priority](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) but includes the same fix)
-* `pop_jobs/06_event_jobs.txt` - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic, add amenities to turte miners for both Agrarian and Lithorian Idyll
+* `pop_jobs/06_event_jobs.txt` - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic, add amenities to turtle miners for both Agrarian and Lithorian Idyll
 * `technology/00_soc_tech.txt` entire file, excludes lithoids from researching `tech_housing_agrarian_idyll`
 
 Stellaris requires overriding the entire containing file to make changes to a district, job, or technology (there are technical consequences if not). That means this mod is incompatible with other mods that make changes to rural and/or ringworld districts, mods that change worker-strata jobs or special event jobs, and mods that make changes to any Society technologies.
@@ -69,6 +69,7 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
     * Fix localisation mistake for the updated Agrarian Idyll tooltip - it's still for farmers, I promise!
 * 2.0.1 Add priority weightings for Agrarian/Lithorian Idyll based on Charismatic/Repugnant to Turtle Miner job
 * 2.0.2 Fix gas extractors (from Feral Overload) improperly disallowing enslaved species
+* 3.0.0 Update for Stellaris 3.2.1 "Herbert" - integrate underlying changes from the base game in overridden files
 
 ## Source Code
 
