@@ -48,6 +48,7 @@ ratling_scavenger = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
 		owner = { is_country_type = ratlings }
@@ -80,10 +81,7 @@ odd_factory_worker = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_metallurgists
 		produces = {
@@ -126,17 +124,13 @@ odd_factory_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_drone_job
 	resources = {
 		category = planet_metallurgists
 		produces = {
 			alloys = 4
 		}
 	}
-
 	weight = {
 		weight = 999
 		modifier = {
@@ -161,10 +155,7 @@ underground_trade_worker = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_specialist_job
 	planet_modifier = {
 		planet_amenities_add = 3
 		trade_value_add = 6
@@ -267,10 +258,7 @@ underground_contact_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_drone_job
 	planet_modifier = {
 		planet_amenities_add = 3
 	}
@@ -337,6 +325,7 @@ dimensional_portal_researcher = {
 		is_sapient = yes
 	}
 
+	# TODO: verify for 3.2.1
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -526,6 +515,7 @@ dimensional_portal_researcher_gestalt = {
 		is_sapient = yes
 	}
 
+	# TODO: verify for 3.2.1
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -769,10 +759,7 @@ gas_plant_engineer = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_specialist_job
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -815,6 +802,8 @@ gas_plant_engineer_gestalt = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_drone_job
+	# TODO: verify for 3.2.1
 	possible = {
 		specialist_job_check_trigger = yes
 	}
@@ -861,10 +850,7 @@ cave_cleaner = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -978,10 +964,7 @@ cave_cleaner_gestalt = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_drone_job
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -1024,10 +1007,7 @@ titan_hunter = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	planet_modifier = {
 		trade_value_add = 8
 	}
@@ -1215,6 +1195,7 @@ robot_caretaker = {
 		is_sapient = yes
 	}
 
+	# TODO: verify for 3.2.1
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -1291,10 +1272,7 @@ turtle_miner = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_miners
 		produces = {
@@ -1478,11 +1456,7 @@ turtle_miner_gestalt = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
-
-
+	possible_precalc = can_fill_drone_job
 	resources = {
 		category = planet_miners
 		produces = {
