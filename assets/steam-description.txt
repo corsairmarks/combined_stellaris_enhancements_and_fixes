@@ -35,7 +35,7 @@ Planets converted to tomb worlds this way are not eligible for the random events
 
 [h2]Compatibility[/h2]
 
-Built for Stellaris version 3.1.* "Lem."  Not compatible with achievements.
+Built for Stellaris version 3.2.* "Herbert."  Not compatible with achievements.
 
 Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 

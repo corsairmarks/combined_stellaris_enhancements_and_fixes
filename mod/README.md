@@ -27,7 +27,7 @@ Planets converted to tomb worlds this way are not eligible for the random events
 
 ## Compatibility
 
-Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
+Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
 
 Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 
@@ -44,6 +44,10 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Terraforming Candidate and the empire's main species is nuked
     * Never for Gaia worlds
 * 1.2.3 Machine World and Hive World terraform to Tomb World should check Pop percentage of the planet, not empire
+* 2.0.0 Upgrade compatibility for Stellaris 3.2 "Herbert"
+    * Use new resource syntax for terraform links
+    * Account for the `trait_harvested_radiotrophic` trait
+    * Re-weight `pc_nuked` terraform links to be of similar weight to the newly-re-weighted built-in terraform links
 
 ## Source Code
 
