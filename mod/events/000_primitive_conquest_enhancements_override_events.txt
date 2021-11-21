@@ -1,6 +1,7 @@
 namespace = action
 namespace = necroids
 namespace = observation
+namespace = primitive
 
 # triggered by on_planet_attackers_win
 # ROOT = country, leader attacker
