@@ -16,7 +16,7 @@ Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony type
 
 This mod will not work well with other mods that make changes to urban, habitat, or ringworld districts, or that make changes to the same colony designations.  Overhaul mods commonly make changes to districts - and so do some of my other mods!  If you want to play many of my mods together, consider using [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead - it resolves the incompatibilities between them.
 
-Built for Stellaris version 3.1.2 "Lem."  Not compatible with achievements.
+Built for Stellaris version 3.3.1 "Herbert."  Not compatible with achievements.
 
 ### Recommended Companion Mods
 
@@ -41,6 +41,7 @@ Overwriting a colony type produces an error log.  Expect to see three entries in
 * 1.0.0 Initial version
 * 1.0.1 Improved colony automation plans
 * 1.0.2 Adjust colony designation weighting
+* 1.1.0 Update for compatibility with Stellaris 3.2.1 "Herbert" - integrate base game changes
 
 ## Source Code
 
