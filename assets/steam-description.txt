@@ -33,15 +33,13 @@ No gameplay changes.  This mod updates several of the default planet classes, wh
 
 [h2]Compatibility[/h2]
 
-Built for Stellaris version 3.1.* "Lem."
-
 In order to change the default planet classes without impacting habitability (i.e. breaking it), it is necessary to override the entire [i]common/planet_classes/00_planet_classes.txt[/i] file.  What this means to you is that this mod is incompatible with other mods that need to override the default habitable planet classes.
 
 Fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1419304439]Ancient Cache of Technologies[/url] because those mods do not overwrite the built-in planetary classes.
 
 [b]Not[/b] compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=937289339]Real Space[/url], but that mod already activates the same art so you don't need this one.
 
-[b]Not[/b] compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+Built for Stellaris version 3.2.* "Herbert."  [b]Not[/b] compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
 
 [h3]Verifying Mod Compatibility[/h3]
 
