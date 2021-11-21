@@ -72,14 +72,81 @@ add_primitive_conquest_urban_district = {
 }
 
 # scope should be planet
-# event_target:conquered_primitive_species should be species
+# event_target:conquered_primitive_civilization should be country
 add_primitive_conquest_food_district = {
 	if = {
-		limit = { event_target:conquered_primitive_species = { NOT = { is_archetype = LITHOID } } }
-		add_district_if_free = { DISTRICT = district_farming }
+		limit = { event_target:conquered_primitive_civilization = { is_lithoid_empire = yes } }
+		add_primitive_conquest_mining_district = yes
+	}
+	else_if = {
+		limit = {
+			event_target:conquered_primitive_species = { is_phototrophic = yes }
+			num_districts = {
+				type = district_farming
+				value >= 2
+			}
+		}
+		add_primitive_conquest_generator_district = yes
+	}
+	else = {
+		add_primitive_conquest_farming_district = yes
+	}
+}
+
+# scope should be planet
+add_primitive_conquest_mining_district = {
+	if = {
+		limit = {
+			OR = {
+				uses_district_set = shattered_ring_world
+				uses_district_set = hive_world
+				uses_district_set = machine_world
+			}
+		}
+		add_district_if_free = { DISTRICT = district_mining_uncapped }
 	}
 	else = {
 		add_district_if_free = { DISTRICT = district_mining }
+	}
+}
+
+# scope should be planet
+add_primitive_conquest_generator_district = {
+	if = {
+		limit = { uses_district_set = shattered_ring_world }
+		add_district_if_free = { DISTRICT = district_srw_commercial }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				uses_district_set = hive_world
+				uses_district_set = machine_world
+			}
+		}
+		add_district_if_free = { DISTRICT = district_generator_uncapped }
+	}
+	else = {
+		add_district_if_free = { DISTRICT = district_generator }
+	}
+}
+
+# scope should be planet
+add_primitive_conquest_farming_district = {
+	if = {
+		limit = {
+			OR = {
+				uses_district_set = hive_world
+				uses_district_set = shattered_ring_world
+				AND = {
+					is_planet_class = pc_ocean
+					owner = { is_anglers_empire = yes }
+				}
+			}
+		}
+		add_district_if_free = { DISTRICT = district_farming_uncapped }
+	}
+	else = {
+		add_district_if_free = { DISTRICT = district_farming }
 	}
 }
 
