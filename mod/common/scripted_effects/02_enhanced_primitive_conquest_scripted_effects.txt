@@ -113,7 +113,13 @@ add_primitive_conquest_mining_district = {
 # scope should be planet
 add_primitive_conquest_generator_district = {
 	if = {
-		limit = { uses_district_set = shattered_ring_world }
+		limit = {
+			uses_district_set = shattered_ring_world
+			owner = {
+				is_gestalt = no
+				is_fallen_empire = no
+			}
+		}
 		add_district_if_free = { DISTRICT = district_srw_commercial }
 	}
 	else_if = {
@@ -121,6 +127,7 @@ add_primitive_conquest_generator_district = {
 			OR = {
 				uses_district_set = hive_world
 				uses_district_set = machine_world
+				uses_district_set = shattered_ring_world
 			}
 		}
 		add_district_if_free = { DISTRICT = district_generator_uncapped }
