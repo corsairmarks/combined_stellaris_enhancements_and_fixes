@@ -21,30 +21,95 @@ planet_event = {
 			limit = { uses_district_set = ring_world }
 			if = {
 				limit = { owner = { has_valid_civic = civic_machine_servitor } }
-				add_building_if_free = { BUILDING = building_organic_sanctuary }
-				if = {
-					limit = { num_pops > 10 }
-					add_building_if_free = { BUILDING = building_organic_sanctuary }
-					if = {
-						limit = { num_pops > 20 }
-						add_building_if_free = { BUILDING = building_organic_sanctuary }
-						if = {
-							limit = { num_pops > 30 }
-							add_building_if_free = { BUILDING = building_organic_sanctuary }
+				set_variable = {
+					which = num_primitive_pops
+					value = trigger:num_pops
+				}
+				while = {
+					limit = {
+						check_variable = {
+							which = num_primitive_pops
+							value > 0
 						}
 					}
+					add_building_if_free = { BUILDING = building_organic_sanctuary }
+					change_variable = {
+						which = num_primitive_pops
+						value = -10
+					}
 				}
+				clear_variable = num_primitive_pops
 			}
 			else = {
 				add_primitive_conquest_rw_urban_district = yes
 				if = {
-					limit = { num_pops > 25 }
-					if = {
-						limit = { event_target:conquered_primitive_civilization = { is_lithoid_empire = yes } }
-						add_primitive_conquest_rw_urban_district = yes
+					limit = {
+						OR = {
+							num_pops > 5
+							FROM = { has_bronze_age_or_greater = yes }
+						}
 					}
-					else = {
+					if = {
+						limit = { event_target:conquered_primitive_civilization = { is_lithoid_empire = no } }
 						add_district_if_free = { DISTRICT = district_rw_farming }
+						add_building_if_free = { BUILDING = building_chemical_plant }
+					}
+					else_if = {
+						limit = { owner = { is_gestalt = no } }
+						add_primitive_conquest_rw_urban_district = yes
+						if = {
+							limit = {
+								OR = {
+									num_pops > 11
+									FROM = { has_renaissance_age_or_greater = yes }
+								}
+							}
+							add_primitive_conquest_unity_building_building_if_free = yes
+							if = {
+								limit = {
+									OR = {
+										num_pops > 15
+										FROM = { has_steam_age_or_greater = yes }
+									}
+								}
+								add_primitive_conquest_admin_building_if_free = yes
+							}
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								num_pops > 15
+								FROM = { has_steam_age_or_greater = yes }
+							}
+						}
+						add_building_if_free = { BUILDING = building_factory_1 }
+						if = {
+							limit = {
+								OR = {
+									num_pops > 20
+									FROM = { has_industrial_age_or_greater = yes }
+								}
+							}
+							add_building_if_free = { BUILDING = building_foundry_1 }
+							add_building_if_free = { BUILDING = building_research_lab_1 }
+							if = {
+								limit = {
+									OR = {
+										num_pops > 22
+										FROM = { has_machine_age_or_greater = yes }
+									}
+								}
+								if = {
+									limit = { owner = { is_gestalt = no } }
+									add_district_if_free = { DISTRICT = district_rw_commercial }
+								}
+								else = {
+									add_district_if_free = { DISTRICT = district_rw_generator }
+								}
+								add_building_if_free = { BUILDING = building_crystal_plant }
+							}
+						}
 					}
 				}
 			}
