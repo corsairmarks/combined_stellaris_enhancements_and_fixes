@@ -63,7 +63,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 1.5.1 Add test event, prevent Fanatic Purifiers from naming Honored Protectors
 * 1.6.0 Update for compatibility with Stellaris version 3.1 "Lem"
     * No homicidal empires can use the edict (just in case)
-* 1.7.0 Update for compatibility with Stellaris version 3.2 "Herbert"
+* 1.7.0 Mark as compatible with Stellaris version 3.2 "Herbert" - no script changes
 
 ## Source Code
 
