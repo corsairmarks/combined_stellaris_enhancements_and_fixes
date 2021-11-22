@@ -16,7 +16,7 @@ Reintroduces terraform stations and existing (but unused) graphical effects to p
 
 This mod reuses existing game entities and 3D assets plus new events to handle the spawning and despawning for terraform stations.  The terraform station ship size is restored to the game and used to create real stations as visual markers.  What this means to you is that this mod should work with practically any other mod, although new shipsets will use their fallback option for terraform stations.
 
-Built for Stellaris version 3.1.\* "Lem."  Not compatible with achievements.
+Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
 
 ### When to Install
 
@@ -48,6 +48,8 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 
 * 1.0.0 Initial version
 * 1.0.1 Decrease overlap in effects when installed with ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437)
+* 2.0.0 Upgrade for compatibility with Stellaris version 3.2 "Herbert"
+    * Account for new radiotrophic variant
 
 ## Source Code
 
