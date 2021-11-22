@@ -892,8 +892,8 @@ district_farming_uncapped = {
 			uses_district_set = hive_world
 			uses_district_set = shattered_ring_world
 			AND = {
-				exists = from
-				from = { is_anglers_empire = yes }
+				exists = owner
+				owner = { is_anglers_empire = yes }
 				planet = { is_planet_class = pc_ocean }
 			}
 		}

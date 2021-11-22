@@ -48,7 +48,6 @@ ratling_scavenger = {
 		is_sapient = yes
 	}
 
-	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
 		owner = { is_country_type = ratlings }
@@ -145,7 +144,7 @@ underground_trade_worker = {
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_holo_theatres
 	clothes_texture_index = 3
-	icon = clerk
+	# icon = clerk
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -325,7 +324,7 @@ dimensional_portal_researcher = {
 		is_sapient = yes
 	}
 
-	# TODO: verify for 3.2.1
+	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
@@ -515,10 +514,8 @@ dimensional_portal_researcher_gestalt = {
 		is_sapient = yes
 	}
 
-	# TODO: verify for 3.2.1
-	possible = {
-		complex_specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	triggered_planet_modifier = {
 		potential = {
@@ -803,10 +800,7 @@ gas_plant_engineer_gestalt = {
 	}
 
 	possible_precalc = can_fill_drone_job
-	# TODO: verify for 3.2.1
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
 
 	triggered_planet_modifier = {
 		potential = {
@@ -1195,7 +1189,7 @@ robot_caretaker = {
 		is_sapient = yes
 	}
 
-	# TODO: verify for 3.2.1
+	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
