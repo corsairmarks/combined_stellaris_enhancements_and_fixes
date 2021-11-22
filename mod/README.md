@@ -10,7 +10,7 @@ Alters the built-in planetview to have districts and buildings stacked verticall
 
 ## Compatibility
 
-Built for Stellaris version 3.1.\* "Lem."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
+Built for Stellaris version 3.2.\* "Herbert," backwards compatible with version 3.1.\* "Lem."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
 
 ### Recommended Companion Mods
 
@@ -23,6 +23,7 @@ This mod is intentionally not included in my modpack [Subtle Polish: A Collectio
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.1.0 Mark as compatible with Stellaris version 3.2 "Herbert"
 
 ## Source Code
 
