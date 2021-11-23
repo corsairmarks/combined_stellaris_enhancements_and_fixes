@@ -50,6 +50,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 * 1.0.1 Decrease overlap in effects when installed with ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437)
 * 2.0.0 Upgrade for compatibility with Stellaris version 3.2 "Herbert"
     * Account for new radiotrophic variant
+    * Verify the fallback is used for Aquatic
 
 ## Source Code
 
