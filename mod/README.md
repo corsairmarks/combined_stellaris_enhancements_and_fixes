@@ -63,7 +63,9 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 1.5.1 Add test event, prevent Fanatic Purifiers from naming Honored Protectors
 * 1.6.0 Update for compatibility with Stellaris version 3.1 "Lem"
     * No homicidal empires can use the edict (just in case)
-* 1.7.0 Mark as compatible with Stellaris version 3.2 "Herbert" - no script changes
+* 2.0.0 Upgrade for compatibility with Stellaris version 3.2 "Herbert"
+    * Battle Thrall leaders will try to match the gender of their new species
+    * Leader reselected to be a Battle Thrall species which were originally from gendered (binary, male-exclusive, or female-exclusive) species must be cloned to have their gender set to `indeterminable` - this is disabled when combined with "Gender Nonbinary Leaders" because that mod does its own cloning shenanigans
 
 ## Source Code
 
