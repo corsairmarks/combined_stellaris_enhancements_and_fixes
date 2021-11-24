@@ -5,15 +5,15 @@ namespace = primitive_conquest_enhancements
 # primitives, which logically wouldn't have needed farming, and phototrophic/raditrophic  species which need
 # more energy.  The base game has addressed some of these issues, but not the main primitive conquest event.
 # fired by on_primitive_planet_transferred
-# ROOT = planet (after ownership change)
-# FROM = country, primitive former owner
+# root = planet (after ownership change)
+# from = country, primitive former owner
 planet_event = {
 	id = primitive_conquest_enhancements.1
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		log = "add districts/buildings: primitive conquest of the [From.GetName] on [Root.GetName], constructing for the [Root.Owner.GetName]"
-		FROM = {
+		from = {
 			save_event_target_as = conquered_primitive_civilization
 			owner_species = { save_event_target_as = conquered_primitive_species }
 		}
@@ -46,7 +46,7 @@ planet_event = {
 					limit = {
 						OR = {
 							num_pops > 5
-							FROM = { has_bronze_age_or_greater = yes }
+							from = { has_bronze_age_or_greater = yes }
 						}
 					}
 					if = {
@@ -61,7 +61,7 @@ planet_event = {
 							limit = {
 								OR = {
 									num_pops > 11
-									FROM = { has_renaissance_age_or_greater = yes }
+									from = { has_renaissance_age_or_greater = yes }
 								}
 							}
 							add_primitive_conquest_unity_building_building_if_free = yes
@@ -69,7 +69,7 @@ planet_event = {
 								limit = {
 									OR = {
 										num_pops > 15
-										FROM = { has_steam_age_or_greater = yes }
+										from = { has_steam_age_or_greater = yes }
 									}
 								}
 								add_primitive_conquest_admin_building_if_free = yes
@@ -80,7 +80,7 @@ planet_event = {
 						limit = {
 							OR = {
 								num_pops > 15
-								FROM = { has_steam_age_or_greater = yes }
+								from = { has_steam_age_or_greater = yes }
 							}
 						}
 						add_building_if_free = { BUILDING = building_factory_1 }
@@ -88,7 +88,7 @@ planet_event = {
 							limit = {
 								OR = {
 									num_pops > 20
-									FROM = { has_industrial_age_or_greater = yes }
+									from = { has_industrial_age_or_greater = yes }
 								}
 							}
 							add_building_if_free = { BUILDING = building_foundry_1 }
@@ -97,7 +97,7 @@ planet_event = {
 								limit = {
 									OR = {
 										num_pops > 22
-										FROM = { has_machine_age_or_greater = yes }
+										from = { has_machine_age_or_greater = yes }
 									}
 								}
 								if = {
@@ -125,7 +125,7 @@ planet_event = {
 				limit = {
 					OR = {
 						num_pops > 5
-						FROM = { has_bronze_age_or_greater = yes }
+						from = { has_bronze_age_or_greater = yes }
 					}
 				}
 				add_primitive_conquest_food_district = yes
@@ -134,7 +134,7 @@ planet_event = {
 					limit = {
 						OR = {
 							num_pops > 9
-							FROM = { has_iron_age_or_greater = yes }
+							from = { has_iron_age_or_greater = yes }
 						}
 					}
 					add_primitive_conquest_mining_district = yes
@@ -142,7 +142,7 @@ planet_event = {
 						limit = {
 							OR = {
 								num_pops > 11
-								FROM = { has_renaissance_age_or_greater = yes }
+								from = { has_renaissance_age_or_greater = yes }
 							}
 						}
 						add_primitive_conquest_food_district = yes
@@ -150,7 +150,7 @@ planet_event = {
 							limit = {
 								OR = {
 									num_pops > 15
-									FROM = { has_steam_age_or_greater = yes }
+									from = { has_steam_age_or_greater = yes }
 								}
 							}
 							add_primitive_conquest_urban_district = yes
@@ -159,7 +159,7 @@ planet_event = {
 								limit = {
 									OR = {
 										num_pops > 20
-										FROM = { has_industrial_age_or_greater = yes }
+										from = { has_industrial_age_or_greater = yes }
 									}
 								}
 								add_primitive_conquest_generator_district = yes
@@ -169,7 +169,7 @@ planet_event = {
 									limit = {
 										OR = {
 											num_pops > 22
-											FROM = { has_machine_age_or_greater = yes }
+											from = { has_machine_age_or_greater = yes }
 										}
 									}
 									add_building_if_free = { BUILDING = building_research_lab_1 }
@@ -177,7 +177,7 @@ planet_event = {
 										limit = {
 											OR = {
 												num_pops > 24
-												FROM = { has_atomic_age_or_greater = yes }
+												from = { has_atomic_age_or_greater = yes }
 											}
 										}
 										add_primitive_conquest_urban_district = yes
@@ -185,7 +185,7 @@ planet_event = {
 											limit = {
 												OR = {
 													num_pops > 26
-													FROM = { has_early_space_age_or_greater = yes }
+													from = { has_early_space_age_or_greater = yes }
 												}
 											}
 											add_primitive_conquest_unity_building_building_if_free = yes
@@ -198,6 +198,146 @@ planet_event = {
 				}
 			}
 			clear_variable = count_machine_servitor_urban
+		}
+	}
+}
+
+# triggered by on_primitive_planet_transfered after colossus weapons that transfer planets have been activated
+# root = planet (after ownership change)
+# from = country, primitive former owner
+planet_event = {
+	id = primitive_conquest_enhancements.2
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		owner = {
+			is_country_type = primitive
+			has_country_flag = colossus_transfer@prev
+		}
+	}
+	immediate = {
+		planet_event = {
+			id = primitive_conquest_enhancements.1
+			scopes = {
+				from = from
+			}
+		}
+	}
+}
+
+# fires on_primitive_planet_transferring before the Nanobot Diffuser activates
+# this = planet that have been fired upon
+# from = fleet that fired
+planet_event = {
+	id = primitive_conquest_enhancements.20
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		owner = { is_country_type = primitive }
+	}
+	immediate = {
+		owner = {
+			set_country_flag = colossus_transfer@prev
+			set_country_flag = nanobot_assimilated@prev
+		}
+		fire_on_action = {
+			on_action = on_primitive_planet_transferring
+			scopes = {
+				from = from.owner
+			}
+		}
+	}
+}
+
+# fires on_primitive_planet_transfered after the Nanobot Diffuser has been activated
+# this = planet that have been fired upon
+# from = fleet that fired
+planet_event = {
+	id = primitive_conquest_enhancements.21
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	immediate = {
+		log = "[Owner.GetRealName] owner of nanobotted primitive planet [This.GetName]"
+		random_country = {
+			limit = {
+				has_country_flag = colossus_transfer@prev
+				has_country_flag = nanobot_assimilated@prev
+			}
+			log = "[This.GetRealName] was nanobotted"
+		}
+		fire_on_action = {
+			on_action = on_primitive_planet_transferred
+			scopes = {
+				from = owner
+			}
+		}
+	}
+}
+
+# fires on_primitive_planet_transferring before the Deluge Machine activates
+# this = planet that have been fired upon
+# from = fleet that fired
+planet_event = {
+	id = primitive_conquest_enhancements.30
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		owner = { is_country_type = primitive }
+	}
+	immediate = {
+		owner = {
+			set_country_flag = colossus_transfer@prev
+			set_country_flag = orbitally_drenched@prev
+		}
+		fire_on_action = {
+			on_action = on_primitive_planet_transferring
+			scopes = {
+				from = from.owner
+			}
+		}
+	}
+}
+
+# fires on_primitive_planet_transfered after the Deluge Machine has been activated
+# this = planet that have been fired upon
+# from = fleet that fired
+planet_event = {
+	id = primitive_conquest_enhancements.31
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		num_pops > 0
+		any_owned_species = { has_trait = trait_aquatic }
+	}
+	immediate = {
+		log = "[Owner.GetRealName] owner of drenched primitive planet [This.GetName]"
+		random_country = {
+			limit = {
+				has_country_flag = colossus_transfer@prev
+				has_country_flag = orbitally_drenched@prev
+			}
+			log = "[This.GetRealName] was drenched"
+		}
+		fire_on_action = {
+			on_action = on_primitive_planet_transferred
+			scopes = {
+				from = owner
+			}
 		}
 	}
 }
