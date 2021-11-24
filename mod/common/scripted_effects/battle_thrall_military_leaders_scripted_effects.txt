@@ -1,4 +1,4 @@
-# THIS = species
+# this = species
 # event_target:protected_country = country, who is designating this species as protectors
 set_species_honored_protector = {
 	if = {
@@ -40,10 +40,10 @@ set_species_honored_protector = {
 	}
 }
 
-# THIS = species
+# this = species
 accumulate_potential_protector = {
-	remove_species_flag = potential_protector@PREV
-	PREV = {
+	remove_species_flag = potential_protector@prev
+	prev = {
 		change_variable = {
 			which = num_subset_potential_protectors
 			value = 1
@@ -51,6 +51,48 @@ accumulate_potential_protector = {
 		change_variable = {
 			which = num_potential_protectors
 			value = -1
+		}
+	}
+}
+
+# this = leader
+btml_leader_spawned_match_gender_to_species = {
+	species = {
+		switch = {
+			trigger = species_gender
+			indeterminable = { } # do nothing - changing to indeterminable requires cloning, and that's a solution that can be used during on_leader_spawned
+			female = {
+				prev = {
+					if = {
+						limit = { NOT = { gender = female } }
+						set_is_female = yes
+					}
+				}
+			}
+			male = {
+				prev = {
+					if = {
+						limit = { NOT = { gender = male } }
+						set_is_female = no
+					}
+				}
+			}
+			not_set = {
+				prev = {
+					if = {
+						limit = {
+							NOR = {
+								gender = female
+								gender = male
+							}
+						}
+						random_list = {
+							50 = { set_is_female = yes }
+							50 = { set_is_female = no }
+						}
+					}
+				}
+			}
 		}
 	}
 }
