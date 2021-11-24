@@ -55,12 +55,13 @@ accumulate_potential_protector = {
 	}
 }
 
+# logic does not change if nonbinary_leaders_installed - we're changing them to an entirely "new" leader and not converting an existing one
 # this = leader
 btml_leader_spawned_match_gender_to_species = {
 	species = {
 		switch = {
 			trigger = species_gender
-			indeterminable = { } # do nothing - changing to indeterminable requires cloning, and that's a solution that can be used during on_leader_spawned
+			indeterminable = { } # do nothing - changing to indeterminable requires cloning, and that should happen after on_leader_species_changed
 			female = {
 				prev = {
 					if = {
@@ -93,6 +94,19 @@ btml_leader_spawned_match_gender_to_species = {
 					}
 				}
 			}
+		}
+	}
+}
+
+# this = leader
+btml_leader_spawned_clone_to_indeterminable_species = {
+	clone_leader = {
+		target = this
+		gender = indeterminable
+		effect = {
+			change_leader_portrait = prev
+			recruitable = no
+			recruitable = yes
 		}
 	}
 }

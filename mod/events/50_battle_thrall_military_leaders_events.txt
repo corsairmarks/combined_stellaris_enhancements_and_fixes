@@ -59,7 +59,6 @@ country_event = {
 				set_leader_flag = battle_thrall_replacement
 				log = "...and rerolled the leader's species from [leader_prev_species.GetName]..."
 				change_species = event_target:leader_new_species
-				# logic does not change if nonbinary_leaders_installed - we're changing them to an entirely "new" leader and not converting an existing one
 				btml_leader_spawned_match_gender_to_species = yes
 				set_name = random
 				log = "...to [leader_new_species.GetName]"
@@ -70,6 +69,11 @@ country_event = {
 					}
 				}
 				remove_leader_flag = battle_thrall_replacement
+				if = {
+					limit = { btml_leader_spawned_should_clone_to_indeterminable_species = yes }
+					btml_leader_spawned_clone_to_indeterminable_species = yes
+					kill_leader = { show_notification = no }
+				}
 			}
 			else = {
 				log = "...but did not make changes because the rerolled species was the same as the leader's current species ([This.Species.GetName])"
@@ -127,7 +131,6 @@ country_event = {
 				set_leader_flag = battle_thrall_replacement
 				log = "...and rerolled the leader's species from [leader_prev_species.GetName]..."
 				change_species = event_target:leader_new_species
-				# logic does not change if nonbinary_leaders_installed - we're changing them to an entirely "new" leader and not converting an existing one
 				btml_leader_spawned_match_gender_to_species = yes
 				# name randomization unnecessary - handled automatically by create_leader
 				log = "...to [leader_new_species.GetName]"
@@ -138,6 +141,11 @@ country_event = {
 					}
 				}
 				remove_leader_flag = battle_thrall_replacement
+				if = {
+					limit = { btml_leader_spawned_should_clone_to_indeterminable_species = yes }
+					btml_leader_spawned_clone_to_indeterminable_species = yes
+					kill_leader = { show_notification = no }
+				}
 			}
 			else = {
 				log = "...but did not make changes because the rerolled species was the same as the leader's current species ([This.Species.GetName])"
@@ -145,5 +153,3 @@ country_event = {
 		}
 	}
 }
-
-# TODO: clone leaders into indeterminable unless nonbinary is active
