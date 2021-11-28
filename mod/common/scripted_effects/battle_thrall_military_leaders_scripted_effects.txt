@@ -41,16 +41,33 @@ set_species_honored_protector = {
 }
 
 # this = species
-accumulate_potential_protector = {
-	remove_species_flag = potential_protector@prev
-	prev = {
-		change_variable = {
-			which = num_subset_potential_protectors
-			value = 1
+# DISCRIMINATOR = something to give the event target a unique name
+accumulate_potential_protector_if_available = {
+	if = {
+		limit = {
+			check_variable = {
+				which = num_subset_potential_protectors
+				value < 10
+			}
+			check_variable = {
+				which = num_potential_protectors
+				value > 0
+			}
 		}
-		change_variable = {
-			which = num_potential_protectors
-			value = -1
+		random_galaxy_species = {
+			limit = { has_species_flag = potential_protector@prev }
+			remove_species_flag = potential_protector@prev
+			prev = {
+				change_variable = {
+					which = num_subset_potential_protectors
+					value = 1
+				}
+				change_variable = {
+					which = num_potential_protectors
+					value = -1
+				}
+			}
+			save_event_target_as = potential_protectors$DISCRIMINATOR$
 		}
 	}
 }
