@@ -69,7 +69,8 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
     * Fix localisation mistake for the updated Agrarian Idyll tooltip - it's still for farmers, I promise!
 * 2.0.1 Add priority weightings for Agrarian/Lithorian Idyll based on Charismatic/Repugnant to Turtle Miner job
 * 2.0.2 Fix gas extractors (from Feral Overload) improperly disallowing enslaved species
-* 3.0.0 Update for Stellaris 3.2.1 "Herbert" - integrate underlying changes from the base game in overridden files
+* 3.0.0 Update for Stellaris version 3.2.1 "Herbert" - integrate underlying changes from the base game in overridden files
+* 3.0.1 Mark as compatible with Stellaris version 3.2.2 "Herbert" - the game patch had no script changes
 
 ## Source Code
 
