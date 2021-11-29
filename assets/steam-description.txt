@@ -16,7 +16,7 @@ Overwrites the [b]col_city[/b], [b]col_habitat_trade[/b], and [b]col_ring_trade[
 
 This mod will not work well with other mods that make changes to urban, habitat, or ringworld districts, or that make changes to the same colony designations.  Overhaul mods commonly make changes to districts - and so do some of my other mods!  If you want to play many of my mods together, consider using [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089]Subtle Polish: A Collection of Fixes and Enhancements[/url] instead - it resolves the incompatibilities between them.
 
-Built for Stellaris version 3.2.1 "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.2.2 "Herbert."  Not compatible with achievements.
 
 [h3]Recommended Companion Mods[/h3]
 
