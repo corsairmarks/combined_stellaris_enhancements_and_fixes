@@ -16,7 +16,7 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 [h2]Compatibility[/h2]
 
-Requires Stellaris version 3.2.1 "Herbert."  This mod alters the following core Stellaris files:
+Requires Stellaris version 3.2.2 "Herbert."  This mod alters the following core Stellaris files:
 
 [list]
 [*][i]governments/civics/00_civics.txt[/i] - replaces one civic [i]civic_agrarian_idyll[/i] (new file [i]government/civics/01_agrarian_idyll_override.txt[/i])

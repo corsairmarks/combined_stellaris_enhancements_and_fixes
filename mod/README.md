@@ -16,7 +16,7 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 ## Compatibility
 
-Requires Stellaris version 3.2.1 "Herbert." This mod alters the following core Stellaris files:
+Requires Stellaris version 3.2.2 "Herbert." This mod alters the following core Stellaris files:
 
 * `governments/civics/00_civics.txt` - replaces one civic `civic_agrarian_idyll` (new file `government/civics/01_agrarian_idyll_override.txt`)
 * `districts/02_rural_districts.txt` - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
