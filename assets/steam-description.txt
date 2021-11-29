@@ -36,9 +36,9 @@ This mod should be added before you start a new game so that all empires are ass
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667]Enigmatic Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations.
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457]Ascendant Shipset[/url] is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well.  It also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits.
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2130588320]Ascendant Shipset[/url] is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well.  It also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits.
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667]Ascendant Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations.
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2649734046]Ascendant Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations.
 
 [h2]Known Issues[/h2]
 
