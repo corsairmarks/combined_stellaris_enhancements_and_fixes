@@ -4,21 +4,21 @@ namespace = observation
 namespace = primitive
 
 # triggered by on_planet_attackers_win
-# ROOT = country, leader attacker
-# FROM = country, planet owner
-# FROMFROM = planet
+# root = country, leader attacker
+# from = country, planet owner
+# fromfrom = planet
 country_event = {
 	id = action.14
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		FROM = { is_country_type = primitive }
+		from = { is_country_type = primitive }
 		is_country_type = default
 	}
 	immediate = {
-		log = "primitive conquest: [FromFrom.GetName] conquered by the [Root.GetName]"
+		log = "primitive conquest: [FromFrom.GetName] ([From.GetName]) conquered by the [Root.GetName]"
 		save_event_target_as = conquering_country
-		FROM = {
+		from = {
 			save_event_target_as = actually_conquered_primitive_country
 			owner_species = {
 				save_event_target_as = conquered_primitive_species
@@ -28,7 +28,7 @@ country_event = {
 				}
 			}
 		}
-		FROMFROM = {
+		fromfrom = {
 			save_event_target_as = conquered_primitive_country
 			fire_on_action = {
 				on_action = on_primitive_planet_transferring
@@ -68,7 +68,7 @@ country_event = {
 }
 
 # chained from action.14, which is triggered for primitive planets by on_planet_attackers_win
-# ROOT = country that just conquered the planet
+# root = country that just conquered the planet
 # event_target:conquered_primitive_country = the planet that was conquered (the default files use this name, including localisation - don't change it)
 # event_target:conquered_primitive_species = the species that was conquered (the default files use this name, including localisation - don't change it)
 country_event = {
@@ -80,7 +80,7 @@ country_event = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				event_target:conquered_primitive_species = {
-					has_citizenship_type = { country = ROOT type = citizenship_purge }
+					has_citizenship_type = { country = root type = citizenship_purge }
 				}
 			}
 		}
@@ -90,7 +90,7 @@ country_event = {
 		trigger = {
 			NOT = { has_ethic = ethic_gestalt_consciousness }
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = ROOT type = citizenship_purge }
+				has_citizenship_type = { country = root type = citizenship_purge }
 			}
 		}
 	}
@@ -117,7 +117,7 @@ country_event = {
 		trigger = {
 			has_authority = auth_machine_intelligence
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = ROOT type = citizenship_purge }
+				has_citizenship_type = { country = root type = citizenship_purge }
 			}
 			NOR = {
 				has_civic = civic_machine_servitor
@@ -131,7 +131,7 @@ country_event = {
 		trigger = {
 			has_authority = auth_machine_intelligence
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = ROOT type = citizenship_slavery }
+				has_citizenship_type = { country = root type = citizenship_slavery }
 			}
 			NOR = {
 				has_civic = civic_machine_servitor
@@ -145,7 +145,7 @@ country_event = {
 		trigger = {
 			has_authority = auth_hive_mind
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = ROOT type = citizenship_purge }
+				has_citizenship_type = { country = root type = citizenship_purge }
 			}
 		}
 	}
@@ -154,7 +154,7 @@ country_event = {
 		trigger = {
 			has_authority = auth_hive_mind
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = ROOT type = citizenship_slavery }
+				has_citizenship_type = { country = root type = citizenship_slavery }
 			}
 		}
 	}
@@ -274,7 +274,7 @@ country_event = {
 }
 
 # scheduled to fire 4 times, 5 years apart by game_start.33, which itself is triggered by on_game_start_country
-# ROOT = a country with necrophage origin
+# root = a country with necrophage origin
 country_event = {
 	id = necroids.6
 	hide_window = yes
@@ -315,11 +315,11 @@ country_event = {
 						random_owned_pop = {
 							limit = {
 								is_same_species = event_target:necrophage_country
-								can_live_on_planet = PREVPREV
+								can_live_on_planet = prevprev
 							}
 							resettle_pop = {
-								pop = THIS
-								planet = PREVPREV
+								pop = this
+								planet = prevprev
 							}
 							clear_pop_category = yes # in case a specialist/ruler was moved
 						}
@@ -346,6 +346,7 @@ country_event = {
 				limit = { has_observation_outpost = yes }
 				observation_outpost = { dismantle = yes }
 			}
+			prev = { set_country_flag = keeping_leaders_infiltration@prev.owner }
 			fire_on_action = {
 				on_action = on_primitive_planet_transferring
 				scopes = {
@@ -373,11 +374,11 @@ country_event = {
 						random_owned_pop = {
 							limit = {
 								is_same_species = event_target:necrophage_country
-								can_live_on_planet = PREVPREV
+								can_live_on_planet = prevprev
 							}
 							resettle_pop = {
-								pop = THIS
-								planet = PREVPREV
+								pop = this
+								planet = prevprev
 							}
 							clear_pop_category = yes # in case a specialist/ruler was moved
 						}
@@ -410,11 +411,11 @@ country_event = {
 	desc = "observation.3009.desc"
 	picture = GFX_evt_metropolis
 	show_sound = event_cityscape ### Celebration sound?
-	location = FROM
+	location = from
 	is_triggered_only = yes
 	immediate = {
-		ROOT = { save_event_target_as = infiltrator_civ }
-		FROM = {
+		root = { save_event_target_as = infiltrator_civ }
+		from = {
 			owner = {
 				save_event_target_as = primitive_civ
 				if = {
@@ -427,8 +428,7 @@ country_event = {
 			}
 			add_modifier = { modifier = infiltration_happiness days = 7300 }
 			random_owned_pop = { save_event_target_as = prim_species } # used by the localisation, don't change
-
-			# using from = ROOT ends up passing the planet,
+			# using from = root ends up passing the planet,
 			# so the event_target is necessary
 			fire_on_action = {
 				on_action = on_primitive_planet_transferring
@@ -643,7 +643,7 @@ country_event = {
 		}
 		random_owned_ship = {
 			limit = { is_ship_size = primitive_space_station }
-			fleet = { destroy_fleet = THIS }
+			fleet = { destroy_fleet = this }
 		}
 	}
 }
@@ -654,10 +654,10 @@ country_event = {
 	title = "primitive.17.name"
 	desc = "primitive.17.desc"
 	picture = GFX_evt_satellite_in_orbit
-	location = FROM.capital_scope
+	location = from.capital_scope
 	is_triggered_only = yes
 	immediate = {
-		FROM = {
+		from = {
 			capital_scope = {
 				observation_outpost = {
 					dismantle = yes
