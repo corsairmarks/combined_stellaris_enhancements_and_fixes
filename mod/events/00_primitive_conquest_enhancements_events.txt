@@ -12,7 +12,7 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "add districts/buildings: primitive conquest of the [From.GetName] on [Root.GetName], constructing for the [Root.Owner.GetName]"
+		log = "primitive planet transferred: add districts/buildings to [This.GetName] ([From.GetName]), constructing for the [This.Owner.GetRealName]"
 		from = {
 			save_event_target_as = conquered_primitive_civilization
 			owner_species = { save_event_target_as = conquered_primitive_species }
@@ -228,6 +228,7 @@ planet_event = {
 	}
 }
 
+# triggered by on_destroy_planet_with_PLANET_KILLER_NANOBOT
 # fires on_primitive_planet_transferring before the Nanobot Diffuser activates
 # this = planet that have been fired upon
 # from = fleet that fired
@@ -255,6 +256,7 @@ planet_event = {
 	}
 }
 
+# triggered by on_destroy_planet_with_PLANET_KILLER_NANOBOT
 # fires on_primitive_planet_transfered after the Nanobot Diffuser has been activated
 # this = planet that have been fired upon
 # from = fleet that fired
@@ -266,14 +268,14 @@ planet_event = {
 		has_owner = yes
 	}
 	immediate = {
-		log = "[Owner.GetRealName] owner of nanobotted primitive planet [This.GetName]"
-		random_country = {
-			limit = {
-				has_country_flag = colossus_transfer@prev
-				has_country_flag = nanobot_assimilated@prev
-			}
-			log = "[This.GetRealName] was nanobotted"
-		}
+		# TODO: test this!
+		# random_country = {
+		# 	limit = {
+		# 		has_country_flag = colossus_transfer@prev
+		# 		has_country_flag = nanobot_assimilated@prev
+		# 	}
+		# 	log = "[This.GetRealName] was nanobotted"
+		# }
 		fire_on_action = {
 			on_action = on_primitive_planet_transferred
 			scopes = {
@@ -283,6 +285,7 @@ planet_event = {
 	}
 }
 
+# triggerd by on_destroy_planet_with_PLANET_KILLER_DELUGE
 # fires on_primitive_planet_transferring before the Deluge Machine activates
 # this = planet that have been fired upon
 # from = fleet that fired
@@ -310,6 +313,7 @@ planet_event = {
 	}
 }
 
+# triggered by on_destroy_planet_with_PLANET_KILLER_DELUGE
 # fires on_primitive_planet_transfered after the Deluge Machine has been activated
 # this = planet that have been fired upon
 # from = fleet that fired
@@ -325,14 +329,15 @@ planet_event = {
 		any_owned_species = { has_trait = trait_aquatic }
 	}
 	immediate = {
-		log = "[Owner.GetRealName] owner of drenched primitive planet [This.GetName]"
-		random_country = {
-			limit = {
-				has_country_flag = colossus_transfer@prev
-				has_country_flag = orbitally_drenched@prev
-			}
-			log = "[This.GetRealName] was drenched"
-		}
+		# TODO: test this!
+		log = "colossus fired: [This.GetName] ([This.Owner.GetRealName]) drenched by [From.Owner.GetRealName]"
+		# random_country = {
+		# 	limit = {
+		# 		has_country_flag = colossus_transfer@prev
+		# 		has_country_flag = orbitally_drenched@prev
+		# 	}
+		# 	log = "[This.GetRealName] was drenched"
+		# }
 		fire_on_action = {
 			on_action = on_primitive_planet_transferred
 			scopes = {
