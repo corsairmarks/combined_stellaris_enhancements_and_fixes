@@ -230,7 +230,7 @@ planet_event = {
 
 # triggered by on_destroy_planet_with_PLANET_KILLER_NANOBOT
 # fires on_primitive_planet_transferring before the Nanobot Diffuser activates
-# this = planet that have been fired upon
+# this = planet that has been fired upon
 # from = fleet that fired
 planet_event = {
 	id = primitive_conquest_enhancements.20
@@ -240,6 +240,7 @@ planet_event = {
 		has_owner = yes
 	}
 	trigger = {
+		num_pops > 0
 		owner = { is_country_type = primitive }
 	}
 	immediate = {
@@ -258,7 +259,7 @@ planet_event = {
 
 # triggered by on_destroy_planet_with_PLANET_KILLER_NANOBOT
 # fires on_primitive_planet_transfered after the Nanobot Diffuser has been activated
-# this = planet that have been fired upon
+# this = planet that has been fired upon
 # from = fleet that fired
 planet_event = {
 	id = primitive_conquest_enhancements.21
@@ -267,19 +268,28 @@ planet_event = {
 	pre_triggers = {
 		has_owner = yes
 	}
+	trigger = {
+		any_country = {
+			is_country_type = primitive
+			has_country_flag = colossus_transfer@prev
+			has_country_flag = nanobot_assimilated@prev
+			capital_scope = { is_planet = prevprev }
+		}
+	}
 	immediate = {
-		# TODO: test this!
-		# random_country = {
-		# 	limit = {
-		# 		has_country_flag = colossus_transfer@prev
-		# 		has_country_flag = nanobot_assimilated@prev
-		# 	}
-		# 	log = "[This.GetRealName] was nanobotted"
-		# }
+		random_country = {
+			limit = {
+				is_country_type = primitive
+				has_country_flag = colossus_transfer@prev
+				has_country_flag = nanobot_assimilated@prev
+				capital_scope = { is_planet = prevprev }
+			}
+			save_event_target_as = former_owner
+		}
 		fire_on_action = {
 			on_action = on_primitive_planet_transferred
 			scopes = {
-				from = owner
+				from = event_target:former_owner
 			}
 		}
 	}
@@ -287,7 +297,7 @@ planet_event = {
 
 # triggerd by on_destroy_planet_with_PLANET_KILLER_DELUGE
 # fires on_primitive_planet_transferring before the Deluge Machine activates
-# this = planet that have been fired upon
+# this = planet that has been fired upon
 # from = fleet that fired
 planet_event = {
 	id = primitive_conquest_enhancements.30
@@ -297,7 +307,9 @@ planet_event = {
 		has_owner = yes
 	}
 	trigger = {
+		num_pops > 0
 		owner = { is_country_type = primitive }
+		any_owned_species = { has_trait = trait_aquatic }
 	}
 	immediate = {
 		owner = {
@@ -327,21 +339,27 @@ planet_event = {
 	trigger = {
 		num_pops > 0
 		any_owned_species = { has_trait = trait_aquatic }
+		any_country = {
+			is_country_type = primitive
+			has_country_flag = colossus_transfer@prev
+			has_country_flag = orbitally_drenched@prev
+			capital_scope = { is_planet = prevprev }
+		}
 	}
 	immediate = {
-		# TODO: test this!
-		log = "colossus fired: [This.GetName] ([This.Owner.GetRealName]) drenched by [From.Owner.GetRealName]"
-		# random_country = {
-		# 	limit = {
-		# 		has_country_flag = colossus_transfer@prev
-		# 		has_country_flag = orbitally_drenched@prev
-		# 	}
-		# 	log = "[This.GetRealName] was drenched"
-		# }
+		random_country = {
+			limit = {
+				is_country_type = primitive
+				has_country_flag = colossus_transfer@prev
+				has_country_flag = orbitally_drenched@prev
+				capital_scope = { is_planet = prevprev }
+			}
+			save_event_target_as = former_owner
+		}
 		fire_on_action = {
 			on_action = on_primitive_planet_transferred
 			scopes = {
-				from = owner
+				from = event_target:former_owner
 			}
 		}
 	}
