@@ -12,7 +12,6 @@ on_primitive_planet_transferring = {
 on_primitive_planet_transferred = {
 	events = {
 		primitive_conquest_enhancements.1
-		primitive_conquest_enhancements.2 # gatekeeping for colossus weapon planet xfer effects; might fire primitive_conquest_enhancements.1
 	}
 }
 

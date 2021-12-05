@@ -202,32 +202,6 @@ planet_event = {
 	}
 }
 
-# triggered by on_primitive_planet_transfered after colossus weapons that transfer planets have been activated
-# root = planet (after ownership change)
-# from = country, primitive former owner
-planet_event = {
-	id = primitive_conquest_enhancements.2
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
-	trigger = {
-		owner = {
-			is_country_type = primitive
-			has_country_flag = colossus_transfer@prev
-		}
-	}
-	immediate = {
-		planet_event = {
-			id = primitive_conquest_enhancements.1
-			scopes = {
-				from = from
-			}
-		}
-	}
-}
-
 # triggered by on_destroy_planet_with_PLANET_KILLER_NANOBOT
 # fires on_primitive_planet_transferring before the Nanobot Diffuser activates
 # this = planet that has been fired upon
