@@ -147,12 +147,13 @@ btml_clone_leader_with_gender = {
 		limit = { NOT = { gender = $GENDER$ } } # last minute sanity check to make sure we're only replacing leaders who are changing gender
 		save_event_target_as = leader_to_clone
 		owner = {
+			set_country_flag = disable_gender_clones_on_leader_spawned
 			clone_leader = {
 				target = event_target:leader_to_clone
 				gender = $GENDER$
 				effect = {
 					change_leader_portrait = event_target:leader_to_clone
-					set_name =  event_target:leader_to_clone
+					set_name = event_target:leader_to_clone
 					add_experience = event_target:leader_to_clone.trigger:has_experience # doesn't get copied implicitly when cloned
 					if = {
 						limit = { event_target:leader_to_clone = { has_leader_flag = clone_should_be_recruitable } }
@@ -167,6 +168,7 @@ btml_clone_leader_with_gender = {
 							fire = yes
 						}
 					}
+					owner = { remove_country_flag = disable_gender_clones_on_leader_spawned }
 				}
 			}
 		}

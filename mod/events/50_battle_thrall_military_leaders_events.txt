@@ -21,11 +21,9 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		NOT = { has_country_flag = disable_gender_clones_on_leader_spawned }
 		exists = from
 		from = {
-			# enhanced compatibility for "Gender Nonbinary Leaders" - don't reroll species for a leader that has already rerolled
-			# their gender identity because they already had a chance to change species before changing gender identity
-			NOT = { has_leader_flag = gender_reselected }
 			OR = {
 				leader_class = admiral
 				leader_class = general
@@ -33,21 +31,21 @@ country_event = {
 		}
 		any_owned_pop_species = {
 			has_citizenship_type = {
-				country = root
+				country = prev
 				type = citizenship_slavery
 			}
 			has_slavery_type = {
-				country = root
+				country = prev
 				type = slavery_military
 			}
 			has_military_service_type = {
-				country = root
+				country = prev
 				type = military_service_full
 			}
 		}
 	}
 	immediate = {
-		log = "battle_thrall_military_leaders.1 detected a spawned military leader for a country with Full Military Service for Battle Thralls..."
+		log = "battle_thrall_military_leaders.1 detected spawned military leader [From.GetName] for the [This.GetRealName] with Full Military Service for Battle Thralls..."
 		random_owned_pop = {
 			limit = { can_be_military_leader = yes }
 			species = { save_event_target_as = leader_new_species }
@@ -83,19 +81,24 @@ country_event = {
 }
 
 # follows the random event for a new random admiral (leader.1); triggered by on_fleet_destroyed_perp
+# root = owner of fleet 1 (combatant)
+# from = owner of fleet 2 (destroyed)
+# fromfrom = fleet 1
+# fromfromfrom = fleet 2
 country_event = {
 	id = battle_thrall_military_leaders.2
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		NOT = { has_country_flag = disable_gender_clones_on_leader_spawned }
 		has_active_event = { leader.1 }
 		exists = last_created_leader
-		is_same_value = last_created_leader.owner
+		is_country = last_created_leader.owner
 		last_created_leader = { leader_class = admiral }
 		any_owned_pop_species = {
-			NOT = { is_same_species = root.owner_species }
+			NOT = { is_same_species = prev.owner_species }
 			has_military_service_type = {
-				country = root
+				country = prev
 				type = military_service_full
 			}
 		}
@@ -104,27 +107,28 @@ country_event = {
 		NOT = {
 			any_owned_pop_species = {
 				has_citizenship_type = {
-					country = root
+					country = prev
 					type = citizenship_slavery
 				}
 				has_slavery_type = {
-					country = root
+					country = prev
 					type = slavery_military
 				}
 				has_military_service_type = {
-					country = root
+					country = prev
 					type = military_service_full
 				}
 			}
 		}
 	}
 	immediate = {
-		log = "battle_thrall_military_leaders.2 detected a spawned admiral from leader.1 for a country with Full Military Service for a non-main species..."
+		last_created_leader = { save_event_target_as = spawned_admiral }
+		log = "battle_thrall_military_leaders.2 detected spawned admiral [spawned_admiral.GetName] from leader.1 for the [This.GetRealName] with Full Military Service for a non-main species..."
 		random_owned_pop = {
 			limit = { can_be_military_leader = yes }
 			species = { save_event_target_as = leader_new_species }
 		}
-		from = {
+		event_target:spawned_admiral = {
 			if = {
 				limit = { species = { NOT = { is_same_species = event_target:leader_new_species } } }
 				species = { save_event_target_as = leader_prev_species }
@@ -170,6 +174,8 @@ leader_event = {
 		exists = from
 		from = { is_scope_type = species }
 		btml_leader_new_species_allows_current_gender = no
+		owner = { NOT = { has_country_flag = disable_gender_clones_on_leader_spawned } }
+
 	}
 	immediate = {
 		btml_leader_spawned_match_gender_to_species = yes
