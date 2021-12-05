@@ -136,10 +136,6 @@ country_event = {
 					flag =force_gender_match_species
 					days = 1
 				}
-				set_timed_leader_flag = {
-					flag = clone_should_be_recruitable
-					days = 1
-				}
 				log = "...and rerolled the leader's species from [leader_prev_species.GetName]..."
 				change_species = event_target:leader_new_species
 				# name randomization unnecessary - handled automatically by create_leader
