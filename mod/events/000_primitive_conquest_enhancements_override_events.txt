@@ -55,7 +55,7 @@ country_event = {
 			limit = {
 				has_communications = event_target:conquering_country
 				is_country_type = default
-				NOT = { is_same_value = event_target:conquering_country }
+				NOT = { is_country = event_target:conquering_country }
 			}
 			add_opinion_modifier = {
 				who = event_target:conquering_country
@@ -630,7 +630,7 @@ country_event = {
 					}
 				}
 				else_if = {
-					limit = { starbase = { NOT = { owner = { is_same_value = root } } } }
+					limit = { starbase = { NOT = { owner = { is_country = root } } } }
 					starbase = {
 						owner = {
 							country_event = {
