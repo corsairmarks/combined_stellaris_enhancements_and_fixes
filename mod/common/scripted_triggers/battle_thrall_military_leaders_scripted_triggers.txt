@@ -1,0 +1,44 @@
+# this follows the game's default rules - does not account for Gender Nonbinary Leaders
+# this = leader, after species change
+btml_leader_new_species_allows_current_gender = {
+	switch = {
+		trigger = gender
+		indeterminable = { species = { species_gender = indeterminable } }
+		female = {
+			species = {
+				OR = {
+					species_gender = not_set
+					species_gender = female
+				}
+			}
+		}
+		male = {
+			species = {
+				OR = {
+					species_gender = not_set
+					species_gender = male
+				}
+			}
+		}
+	}
+}
+
+# this = species
+btml_species_can_set_is_female = {
+	NOT = { species_gender = indeterminable }
+}
+
+# this = leader, with new species
+# from = species, previous
+btml_leader_species_gender_change_requires_clone = {
+	OR = {
+		AND = {
+			species = { btml_species_can_set_is_female = no }
+			from = { btml_species_can_set_is_female = yes }
+		}
+		AND = {
+			species = { btml_species_can_set_is_female = yes }
+			from = { btml_species_can_set_is_female = no }
+		}
+	}
+}

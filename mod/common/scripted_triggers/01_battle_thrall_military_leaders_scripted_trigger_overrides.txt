@@ -4,14 +4,3 @@
 can_be_military_leader = {
 	has_military_service_type = { type = military_service_full }
 }
-
-# this = leader
-btml_leader_spawned_should_clone_to_indeterminable_species ={
-	has_leader_flag = battle_thrall_replacement
-	NOR = {
-		# if this mod is installed, the leader's gender will be adjusted there
-		has_global_flag = nonbinary_leaders_installed
-		gender = indeterminable
-	}
-	species = { species_gender = indeterminable }
-}

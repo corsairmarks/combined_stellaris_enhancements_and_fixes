@@ -56,10 +56,16 @@ country_event = {
 			if = {
 				limit = { species = { NOT = { is_same_species = event_target:leader_new_species } } }
 				species = { save_event_target_as = leader_prev_species }
-				set_leader_flag = battle_thrall_replacement
+				set_timed_leader_flag = {
+					flag = force_gender_match_species
+					days = 1
+				}
+				set_timed_leader_flag = {
+					flag = clone_should_be_recruitable
+					days = 1
+				}
 				log = "...and rerolled the leader's species from [leader_prev_species.GetName]..."
 				change_species = event_target:leader_new_species
-				btml_leader_spawned_match_gender_to_species = yes
 				set_name = random
 				log = "...to [leader_new_species.GetName]"
 				fire_on_action = {
@@ -67,12 +73,6 @@ country_event = {
 					scopes = {
 						from = event_target:leader_prev_species
 					}
-				}
-				remove_leader_flag = battle_thrall_replacement
-				if = {
-					limit = { btml_leader_spawned_should_clone_to_indeterminable_species = yes }
-					btml_leader_spawned_clone_to_indeterminable_species = yes
-					kill_leader = { show_notification = no }
 				}
 			}
 			else = {
@@ -128,10 +128,16 @@ country_event = {
 			if = {
 				limit = { species = { NOT = { is_same_species = event_target:leader_new_species } } }
 				species = { save_event_target_as = leader_prev_species }
-				set_leader_flag = battle_thrall_replacement
+				set_timed_leader_flag = {
+					flag =force_gender_match_species
+					days = 1
+				}
+				set_timed_leader_flag = {
+					flag = clone_should_be_recruitable
+					days = 1
+				}
 				log = "...and rerolled the leader's species from [leader_prev_species.GetName]..."
 				change_species = event_target:leader_new_species
-				btml_leader_spawned_match_gender_to_species = yes
 				# name randomization unnecessary - handled automatically by create_leader
 				log = "...to [leader_new_species.GetName]"
 				fire_on_action = {
@@ -140,16 +146,32 @@ country_event = {
 						from = event_target:leader_prev_species
 					}
 				}
-				remove_leader_flag = battle_thrall_replacement
-				if = {
-					limit = { btml_leader_spawned_should_clone_to_indeterminable_species = yes }
-					btml_leader_spawned_clone_to_indeterminable_species = yes
-					kill_leader = { show_notification = no }
-				}
 			}
 			else = {
 				log = "...but did not make changes because the rerolled species was the same as the leader's current species ([This.Species.GetName])"
 			}
 		}
+	}
+}
+
+# triggered by on_leader_species_changed
+# root = leader, post-modification
+# from = species, pre-modification (if known)
+leader_event = {
+	id = battle_thrall_military_leaders.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_leader_flag = force_gender_match_species
+			NOT = { has_global_flag = nonbinary_leaders_installed }
+		}
+		NOT = { has_leader_flag = leader_replaced_by_clone }
+		exists = from
+		from = { is_scope_type = species }
+		btml_leader_new_species_allows_current_gender = no
+	}
+	immediate = {
+		btml_leader_spawned_match_gender_to_species = yes
 	}
 }

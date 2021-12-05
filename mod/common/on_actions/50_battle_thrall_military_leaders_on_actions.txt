@@ -40,5 +40,6 @@ on_fleet_destroyed_perp = {
 # from = species, pre-modification (if known)
 on_leader_species_changed = {
 	events = {
+		battle_thrall_military_leaders.7
 	}
 }
