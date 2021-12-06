@@ -9,11 +9,19 @@
 @pc_nuked_from_similar_candidate_duration = 3600
 @pc_nuked_from_opposite_candidate_energy_cost = 15000
 @pc_nuked_from_opposite_candidate_duration = 7200
+# % nuked pops required for terraform
+@nuked_country_percent_threshold = 0.5
+@non_nuked_country_percent_threshold = 0.75
 
 terraform_link = {
 	from = pc_alpine
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -28,35 +36,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -68,7 +84,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_arctic
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -83,35 +104,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -123,7 +152,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_arid
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -138,35 +172,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -178,7 +220,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_continental
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -193,35 +240,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -233,7 +288,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_desert
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -248,35 +308,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -288,7 +356,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_gaia
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -307,13 +380,21 @@ terraform_link = {
 	}
 	ai_weight = {
 		weight = 0
+		modifier = {
+			factor = 0
+		}
 	}
 }
 
 terraform_link = {
 	from = pc_ocean
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -328,35 +409,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -368,7 +457,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_savannah
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -383,35 +477,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -423,7 +525,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_tropical
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -438,35 +545,43 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -478,7 +593,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_tundra
 	to = pc_nuked
-	energy = @pc_nuked_from_habitable_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_habitable_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_habitable_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -493,35 +613,44 @@ terraform_link = {
 		weight = 0
 		modifier = {
 			weight = 1
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		}
-		modifier = {
-			weight = 1
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+				AND = {
+					OR = {
+						is_machine_empire = no
+						has_valid_civic = civic_machine_assimilator
+						has_valid_civic = civic_machine_servitor
+					}
+					from = {
+						is_colony = yes
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -533,7 +662,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_hive
 	to = pc_nuked
-	energy = @pc_nuked_from_hostile_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_hostile_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_hostile_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -549,38 +683,41 @@ terraform_link = {
 		}
 	}
 	ai_weight = {
-		weight = 2
+		weight = 3
 		modifier = {
-			weight = 4
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
-					pop_percentage = {
-						percentage > 0.6
-						limit = { species = { is_nuked_species = yes } }
-						exclude = {
-							OR = {
-								is_sapient = no
-								has_citizenship_type = { type = citizenship_purge }
-								has_citizenship_type = { type = citizenship_purge_machine }
+			weight = 2
+			is_hive_empire = no
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
 							}
 						}
 					}
-				}
-			}
-		}
-		modifier = {
-			weight = 4
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
+					from = {
+						is_colony = yes
+						pop_percentage = {
+							percentage > @non_nuked_country_percent_threshold
+							limit = { species = { is_nuked_species = yes } }
+							exclude = {
+								OR = {
+									is_sapient = no
+									has_citizenship_type = { type = citizenship_purge }
+									has_citizenship_type = { type = citizenship_purge_machine }
+								}
+							}
 						}
 					}
 				}
@@ -596,7 +733,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_machine
 	to = pc_nuked
-	energy = @pc_nuked_from_hostile_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_hostile_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_hostile_duration
 	potential = {
 		potential_for_pc_nuked_terraform_country = yes
@@ -612,15 +754,34 @@ terraform_link = {
 		}
 	}
 	ai_weight = {
-		weight = 2
+		weight = 3
 		modifier = {
-			weight = 4
-			owner_main_species = { is_nuked_species = yes }
-			from = {
-				OR = {
-					is_colony = no
+			factor = 2
+			is_machine_empire = no
+			OR = {
+				AND = {
+					owner_main_species = { is_nuked_species = yes }
+					from = {
+						OR = {
+							is_colony = no
+							pop_percentage = {
+								percentage > @nuked_country_percent_threshold
+								limit = { species = { is_nuked_species = yes } }
+								exclude = {
+									OR = {
+										is_sapient = no
+										has_citizenship_type = { type = citizenship_purge }
+										has_citizenship_type = { type = citizenship_purge_machine }
+									}
+								}
+							}
+						}
+					}
+				}
+				from = {
+					is_colony = yes
 					pop_percentage = {
-						percentage > 0.6
+						percentage > @non_nuked_country_percent_threshold
 						limit = { species = { is_nuked_species = yes } }
 						exclude = {
 							OR = {
@@ -628,22 +789,6 @@ terraform_link = {
 								has_citizenship_type = { type = citizenship_purge }
 								has_citizenship_type = { type = citizenship_purge_machine }
 							}
-						}
-					}
-				}
-			}
-		}
-		modifier = {
-			weight = 4
-			from = {
-				pop_percentage = {
-					percentage > 0.8
-					limit = { species = { is_nuked_species = yes } }
-					exclude = {
-						OR = {
-							is_sapient = no
-							has_citizenship_type = { type = citizenship_purge }
-							has_citizenship_type = { type = citizenship_purge_machine }
 						}
 					}
 				}
@@ -659,7 +804,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_barren
 	to = pc_nuked
-	energy = @pc_nuked_from_similar_candidate_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_similar_candidate_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_similar_candidate_duration
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -675,7 +825,7 @@ terraform_link = {
 	ai_weight = {
 		weight = 2
 		modifier = {
-			weight = 4
+			factor = 3
 			owner_main_species = { is_nuked_species = yes }
 		}
 	}
@@ -684,7 +834,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_barren_cold
 	to = pc_nuked
-	energy = @pc_nuked_from_opposite_candidate_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_opposite_candidate_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_opposite_candidate_duration
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -698,9 +853,9 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 3
 		modifier = {
-			weight = 4
+			factor = 2
 			owner_main_species = { is_nuked_species = yes }
 		}
 	}
@@ -709,7 +864,12 @@ terraform_link = {
 terraform_link = {
 	from = pc_frozen
 	to = pc_nuked
-	energy = @pc_nuked_from_opposite_candidate_energy_cost
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_opposite_candidate_energy_cost
+		}
+	}
 	duration = @pc_nuked_from_opposite_candidate_duration
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -723,9 +883,9 @@ terraform_link = {
 		post_terraform_to_pc_nuked = yes
 	}
 	ai_weight = {
-		weight = 2
+		weight = 5
 		modifier = {
-			weight = 4
+			factor = 5
 			owner_main_species = { is_nuked_species = yes }
 		}
 	}
