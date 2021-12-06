@@ -21,6 +21,8 @@ Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony type
 
 This mod will not work well with other mods that make changes to urban, habitat, or ringworld districts, or that make changes to the same colony designations.  Overhaul mods commonly make changes to districts - and so do some of my other mods!  If you want to play many of my mods together, consider using [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead - it resolves the incompatibilities between them.
 
+Compatible with Planetary Diversity.
+
 Built for Stellaris version 3.2.2 "Herbert."  Not compatible with achievements.
 
 ### Recommended Companion Mods
@@ -51,7 +53,6 @@ Overwriting a colony type produces an error log.  Expect to see three entries in
 * 1.2.0 Exclude the basic More Standard Districts from Planetary Diversity's Planetary Habitats # TODO
     * Special thanks to Gatzek for help with the correct special `district_set`s
     * Add Polish localisation by Gatzek
-
 
 ## Source Code
 
