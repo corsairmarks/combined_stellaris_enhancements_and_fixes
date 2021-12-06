@@ -107,28 +107,11 @@ country_event = {
 				type = military_service_full
 			}
 		}
-		# countries with Full Military Service for Battle Thralls already got randomized
-		# by battle_thrall_military_leaders.1 so don't re-randomize
-		NOT = {
-			any_owned_pop_species = {
-				has_citizenship_type = {
-					country = prev
-					type = citizenship_slavery
-				}
-				has_slavery_type = {
-					country = prev
-					type = slavery_military
-				}
-				has_military_service_type = {
-					country = prev
-					type = military_service_full
-				}
-			}
-		}
 	}
 	immediate = {
 		last_created_leader = { save_event_target_as = spawned_admiral }
 		log = "battle_thrall_military_leaders.2 detected spawned admiral [spawned_admiral.GetName] from leader.1 for the [This.GetRealName] with Full Military Service for a non-main species..."
+		log = "...where the fleet [FromFrom.GetName] defeated the [FromFromFrom.GetName] fleet from the [From.GetRealName]..."
 		random_owned_pop = {
 			limit = { can_be_military_leader = yes }
 			species = { save_event_target_as = leader_new_species }
@@ -138,7 +121,7 @@ country_event = {
 				limit = { species = { NOT = { is_same_species = event_target:leader_new_species } } }
 				species = { save_event_target_as = leader_prev_species }
 				set_timed_leader_flag = {
-					flag =force_gender_match_species
+					flag = force_gender_match_species
 					days = 1
 				}
 				log = "...and rerolled the leader's species from [leader_prev_species.GetName]..."

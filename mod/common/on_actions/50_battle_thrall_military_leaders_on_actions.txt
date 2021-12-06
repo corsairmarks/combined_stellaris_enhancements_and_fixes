@@ -28,6 +28,7 @@ on_leader_spawned = {
 # fromfromfrom = fleet 2
 on_fleet_destroyed_perp = {
 	events = {
+		# leader.1 # uncomment this for testing with every fleet destruction
 		battle_thrall_military_leaders.2
 	}
 }
