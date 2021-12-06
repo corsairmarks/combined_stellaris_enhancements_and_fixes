@@ -78,7 +78,6 @@ accumulate_potential_protector_if_available = {
 btml_leader_spawned_match_gender_to_species = {
 	if = {
 		limit = { btml_leader_species_gender_change_requires_clone = no }
-		log = "no clone"
 		species = {
 			switch = {
 				trigger = species_gender
@@ -119,7 +118,6 @@ btml_leader_spawned_match_gender_to_species = {
 		}
 	}
 	else = {
-		log = "clone"
 		save_event_target_as = leader_to_clone
 		owner = { save_event_target_as = leader_owner } # must stay an event_target - the game dislikes prev.owner in the switch statement
 		species = {
