@@ -14,9 +14,9 @@ tech_housing_agrarian_idyll_lithoid = {
 		factor = 1.5
 		modifier = {
 			factor = 0
-			NOR = {
+			NAND = {
 				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = no
+				is_lithoid_empire = yes
 			}
 		}
 		modifier = {

@@ -15,10 +15,7 @@ clerk = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	planet_modifier = {
 		planet_amenities_add = 2
 		trade_value_add = 4
@@ -152,11 +149,10 @@ technician = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_worker_job
 	possible = {
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-		}
+		hidden_trigger = { exists = owner }
+		owner = { is_gestalt = no }
 	}
 
 	resources = {
@@ -317,12 +313,10 @@ miner = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-		}
+		owner = { is_gestalt = no }
 	}
 
 	resources = {
@@ -502,8 +496,9 @@ crystal_miner = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_worker_job
 	possible = {
-		worker_job_check_trigger = yes
+		hidden_trigger = { exists = owner }
 		owner = { is_gestalt = no }
 	}
 
@@ -686,10 +681,7 @@ gas_extractor = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_miners
 		produces = {
@@ -869,10 +861,7 @@ mote_harvester = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_miners
 		produces = {
@@ -1052,12 +1041,10 @@ farmer = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-		owner = {
-			is_gestalt = no
-		}
+		owner = { is_gestalt = no }
 	}
 
 	resources = {
@@ -1439,10 +1426,7 @@ preacher = {
 		is_sapient = yes
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_priests
 		produces = {
@@ -1592,13 +1576,10 @@ mortal_initiate = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_robot_pop = no
 	}
 
-	possible = {
-		worker_job_check_trigger = yes
-		NOT = { has_trait = trait_mechanical } #No machines
-	}
-
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_culture_workers
 		produces = {
@@ -1689,11 +1670,7 @@ scrap_miner = {
 		is_sapient = yes
 	}
 
-	possible = {
-		hidden_trigger = { exists = owner }
-		worker_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_worker_job
 	resources = {
 		category = planet_miners
 		produces = {
@@ -1868,6 +1845,92 @@ scrap_miner = {
 				is_lithoid_empire = yes
 			}
 			has_trait = trait_repugnant
+		}
+	}
+}
+
+angler = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_food_processing_facility
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+			is_anglers_empire = yes
+		}
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 8
+		}
+	}
+
+	triggered_planet_modifier = {
+		modifier = {
+			trade_value_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_thrifty
+		}
+		modifier = {
+			trade_value_add = 0.5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_nuumismatic_administration
+		}
+		modifier = {
+			trade_value_add = 0.2
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		modifier = {
+			factor = 3
+			has_trait = trait_agrarian
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_syncretic_proles
+		}
+		modifier = {
+			factor = 1.4
+			has_trait = trait_presapient_proles
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
 		}
 	}
 }
