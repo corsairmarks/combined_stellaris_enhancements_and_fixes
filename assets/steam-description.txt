@@ -10,6 +10,13 @@ Overwrites the Trade Station and Commercial Ring World colony designations and t
 
 Also updates the regular City districts to provide part of a Merchant or Executive job for Trade Guilds, Corporate Dominions, or Megacorps as appropriate when combined with the "Commercial Enterprise" tradition.  Ringworld city segments no longer receive bonus clerks from the "Interstellar Franchising" tradition - instead, those clerk jobs are provided by the commercial segments.
 
+[h2]Localisation[/h2]
+
+[list]
+[*]English by corsairmarks (author)
+[*]Polish (Polskie) by [url=https://steamcommunity.com/profiles/76561198440146604]Gatzek[/url]
+[/list]
+
 [h2]Compatibility[/h2]
 
 Overwrites the [b]col_city[/b], [b]col_habitat_trade[/b], and [b]col_ring_trade[/b] colony types and the entirety of the [b]common/districts/00_urban_districts.txt[/b], [b]common/districts/03_habitat_districts.txt[/b], and [b]common/districts/04_ringworld_districts.txt[/b] files.  Because overwriting district files presents a large compatibility challenge, I opted to develop this as a separate from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] despite the mods providing very similar effects but for different districts.
