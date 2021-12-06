@@ -50,7 +50,7 @@ Overwriting a colony type produces an error log.  Expect to see three entries in
 * 1.0.2 Adjust colony designation weighting
 * 1.1.0 Update for compatibility with Stellaris 3.2.1 "Herbert" - integrate base game changes
 * 1.1.1 Mark as compatible with Stellaris version 3.2.2 "Herbert" - the game patch had no script changes
-* 1.2.0 Exclude the basic More Standard Districts from Planetary Diversity's Planetary Habitats # TODO
+* 1.2.0 Apply colony designation exclusions from Planetary Diversity
     * Special thanks to Gatzek for help with the correct special `district_set`s
     * Add Polish localisation by Gatzek
 
