@@ -26,7 +26,7 @@ country_event = {
 					is_exact_same_species = event_target:root_non_psionic_species
 					count_species_pop = {
 						count > 0
-						limit = { is_owned_by = ROOT }
+						limit = { is_owned_by = root }
 					}
 				}
 			}
@@ -35,11 +35,11 @@ country_event = {
 					is_exact_same_species = event_target:root_non_psionic_species
 					count_species_pop = {
 						count > 0
-						limit = { is_owned_by = ROOT }
+						limit = { is_owned_by = root }
 					}
 				}
 				random_species_pop = {
-					limit = { is_owned_by = ROOT }
+					limit = { is_owned_by = root }
 					save_event_target_as = representative_pop
 				}
 			}
@@ -50,11 +50,11 @@ country_event = {
 					is_same_species = event_target:root_non_psionic_species
 					count_species_pop = {
 						count > 0
-						limit = { is_owned_by = ROOT }
+						limit = { is_owned_by = root }
 					}
 				}
 				random_species_pop = {
-					limit = { is_owned_by = ROOT }
+					limit = { is_owned_by = root }
 					save_event_target_as = representative_pop
 				}
 			}
@@ -78,7 +78,7 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = { any_owned_pop = { species = { is_exact_same_species = event_target:root_non_psionic_species } } }
+				limit = { any_owned_pop = { species = { is_exact_same_species = event_target:non_psionic_species } } }
 				every_owned_pop = {
 					limit = { is_exact_same_species = event_target:non_psionic_species }
 					change_species = event_target:latent_psionic_species
@@ -100,12 +100,22 @@ country_event = {
 				every_owned_leader = {
 					limit = { is_exact_same_species = event_target:non_psionic_species }
 					change_species = event_target:latent_psionic_species
-					fire_on_action = { on_action = on_leader_species_changed }
+					fire_on_action = {
+						on_action = on_leader_species_changed
+						scopes = {
+							from = event_target:non_psionic_species
+						}
+					}
 				}
 				every_pool_leader = {
 					limit = { is_exact_same_species = event_target:non_psionic_species }
 					change_species = event_target:latent_psionic_species
-					fire_on_action = { on_action = on_leader_species_changed }
+					fire_on_action = {
+						on_action = on_leader_species_changed
+						scopes = {
+							from = event_target:non_psionic_species
+						}
+					}
 				}
 			}
 		}
@@ -114,8 +124,8 @@ country_event = {
 		every_country = {
 			limit = {
 				is_ai = no
-				has_communications = ROOT
-				NOT = { is_same_value = ROOT }
+				has_communications = root
+				NOT = { is_same_value = root }
 			}
 			country_event = { id = utopia.2602 }
 		}
@@ -159,7 +169,7 @@ country_event = {
 					is_exact_same_species = event_target:root_latent_psionic_species
 					count_species_pop = {
 						count > 0
-						limit = { is_owned_by = ROOT }
+						limit = { is_owned_by = root }
 					}
 				}
 			}
@@ -168,11 +178,11 @@ country_event = {
 					is_exact_same_species = event_target:root_latent_psionic_species
 					count_species_pop = {
 						count > 0
-						limit = { is_owned_by = ROOT }
+						limit = { is_owned_by = root }
 					}
 				}
 				random_species_pop = {
-					limit = { is_owned_by = ROOT }
+					limit = { is_owned_by = root }
 					save_event_target_as = representative_pop
 				}
 			}
@@ -183,11 +193,11 @@ country_event = {
 					is_same_species = event_target:root_latent_psionic_species
 					count_species_pop = {
 						count > 0
-						limit = { is_owned_by = ROOT }
+						limit = { is_owned_by = root }
 					}
 				}
 				random_species_pop = {
-					limit = { is_owned_by = ROOT }
+					limit = { is_owned_by = root }
 					save_event_target_as = representative_pop
 				}
 			}
@@ -210,7 +220,7 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = { any_owned_pop = { species = { is_exact_same_species = event_target:root_latent_psionic_species } } }
+				limit = { any_owned_pop = { species = { is_exact_same_species = event_target:latent_psionic_species } } }
 				every_owned_pop = {
 					limit = { is_exact_same_species = event_target:latent_psionic_species }
 					change_species = event_target:psionic_species
@@ -232,12 +242,22 @@ country_event = {
 				every_owned_leader = {
 					limit = { is_exact_same_species = event_target:latent_psionic_species }
 					change_species = event_target:psionic_species
-					fire_on_action = { on_action = on_leader_species_changed }
+					fire_on_action = {
+						on_action = on_leader_species_changed
+						scopes = {
+							from = event_target:latent_psionic_species
+						}
+					}
 				}
 				every_pool_leader = {
 					limit = { is_exact_same_species = event_target:latent_psionic_species }
 					change_species = event_target:psionic_species
-					fire_on_action = { on_action = on_leader_species_changed }
+					fire_on_action = {
+						on_action = on_leader_species_changed
+						scopes = {
+							from = event_target:latent_psionic_species
+						}
+					}
 				}
 			}
 		}
@@ -246,8 +266,8 @@ country_event = {
 		every_country = {
 			limit = {
 				is_ai = no
-				has_communications = ROOT
-				NOT = { is_same_value = ROOT }
+				has_communications = root
+				NOT = { is_same_value = root }
 			}
 			country_event = { id = utopia.2652 }
 		}
