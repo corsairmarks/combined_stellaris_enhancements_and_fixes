@@ -15,11 +15,13 @@ This mod started as a response to four very specific, small areas:
 
 To address these issues, this mod implements free districts upon conquering a primitive planet for both players and AIs.  It also generates the appropriate housing/urban districts based on the conquering empire (including some organic sanctuaries for Rogue Servitors).  Mining districts are generated instead of farming districts if the conquered primitive species is lithoid.  Finally, it triggers the aforementioned free district creation in the Necrophage AI helper event, primitive infiltration, and primitive enlightenment (including advancing on their own).  In combination, these changes should help AI players be a bit more successful when acquiring primitive planets.
 
-## Primitive Enlightenment Now Included
+## Primitive Enlightenment and Colossus Weapons Now Included
 
 The "Technological Enlightenment" observation station mission was still another place where the game did something different when converting primitives for use by a regular empire. A fixed amount of districts and buildings (including a branch office building, which was probably intended to be Commercial Zones instead) were generated.  Although it accounted for ringworlds (and as of 3.2 lithoids), it was still significantly different from other primitive conversions.
 
-This mod continues its trend of unification by hooking up the enlightenment finisher event to the same district-generation code as primitive conquest.  This event also controls the planet infrastructure self-enlightened primitives receive.  Additionally, I further adjusted the shared district/building generation to be even smarter for ringworlds!
+While testing changes to the [Eldanær Stellar Authority](https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535), I noticed that my custom colossus weapon did not grant any infrastructure when using the Necrophagic Spore Diffuser on primitive planets.  After deciding to rectify the situation I realized that the built-in colossus weapons suffered from the same lack!
+
+This mod continues its trend of unification by hooking up the enlightenment finisher event and colossus weapon firing events to the same district-generation code as primitive conquest - thus ensuring enlightened or converted primitives receive infrastructure.  This event also controls the planet infrastructure self-enlightened primitives receive.  Additionally, I further adjusted the shared district/building generation to be even smarter for ringworlds!  Don't forget that the Sanctuary ringworld is stocked with 4 primitive empires ripe for ~~conquest~~ enlightenment.
 
 # Changes
 
@@ -79,6 +81,8 @@ This mod can be safely added or removed from your savegame after the game has st
     * Angler on oceans get uncapped farming districts
     * Add handling for primitive enlightenment
     * Ringworld setup is even more intelligent
+    * Built-in colossus weapons that allow the "conquest" of primitive worlds (Deluge Machine, Nanobot Diffuser) now also get infrastructure
+    * My custom colossus weapon (Necrophagic Spore Diffuser) now also gets infrastructure
 
 ## Source Code
 
