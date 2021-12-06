@@ -102,6 +102,7 @@ btml_leader_spawned_match_gender_to_species = {
 					prev = {
 						if = {
 							limit = {
+								btml_species_class_uses_gender = yes
 								NOR = {
 									gender = female
 									gender = male
@@ -127,11 +128,17 @@ btml_leader_spawned_match_gender_to_species = {
 				female = { prev = { btml_clone_leader_with_gender = { GENDER = female } } }
 				male = { prev = { btml_clone_leader_with_gender = { GENDER = male } } }
 				not_set = {
-					prev = {
-						random_list = {
-							50 = { btml_clone_leader_with_gender = { GENDER = female } }
-							50 = { btml_clone_leader_with_gender = { GENDER = male } }
+					if = {
+						limit = { btml_species_class_uses_gender = yes }
+						prev = {
+							random_list = {
+								50 = { btml_clone_leader_with_gender = { GENDER = female } }
+								50 = { btml_clone_leader_with_gender = { GENDER = male } }
+							}
 						}
+					}
+					else = {
+						prev = { btml_clone_leader_with_gender = { GENDER = indeterminable } }
 					}
 				}
 			}
@@ -146,7 +153,6 @@ btml_clone_leader_with_gender = {
 	if = {
 		limit = { NOT = { gender = $GENDER$ } } # last minute sanity check to make sure we're only replacing leaders who are changing gender
 		save_event_target_as = leader_to_clone
-		log = "cloning \\[This.GetName]"
 		owner = {
 			set_country_flag = disable_gender_clones_on_leader_spawned
 			clone_leader = {
@@ -164,6 +170,7 @@ btml_clone_leader_with_gender = {
 					# leave the original cleanup inside the effect block or portraits won't get copied
 					event_target:leader_to_clone = {
 						set_leader_flag = leader_replaced_by_clone # other events will fire before the leader is removed - this is to prevent duplicate cloning
+						set_leader_flag = leader_replaced_by_clone@prev
 						kill_leader = {
 							show_notification = no
 							fire = yes
