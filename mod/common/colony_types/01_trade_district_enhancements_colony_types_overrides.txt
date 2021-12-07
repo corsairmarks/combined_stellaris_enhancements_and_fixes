@@ -17,6 +17,7 @@ col_city = {
 			uses_district_set = ring_world
 			uses_district_set = habitat
 		}
+		tde_uses_planetary_diversity_special_district_set = no
 		is_special_colony_type = no
 	}
 	planet_modifier = {
@@ -127,7 +128,10 @@ col_city = {
 col_habitat_trade = {
 	icon = GFX_colony_type_habitat_trade
 	potential = {
-		uses_district_set = habitat
+		OR = {
+			uses_district_set = habitat
+			uses_district_set = pdarchive
+		}
 		exists = owner
 		owner = { is_gestalt = no }
 	}
