@@ -1,10 +1,78 @@
-should_accumulate_potential_protector = {
-	check_variable = {
-		which = num_subset_potential_protectors
-		value < 10
+# this follows the game's default rules - does not account for Gender Nonbinary Leaders
+# this = leader, after species change
+btml_leader_new_species_allows_current_gender = {
+	switch = {
+		trigger = gender
+		indeterminable = {
+			species = {
+				OR = {
+					species_gender = indeterminable
+					AND = {
+						species_gender = not_set
+						klfis_species_class_uses_gender = no
+					}
+				}
+			}
+		}
+		female = {
+			species = {
+				OR = {
+					AND = {
+						species_gender = not_set
+						btml_species_can_set_is_female = yes
+					}
+					species_gender = female
+				}
+			}
+		}
+		male = {
+			species = {
+				OR = {
+					AND = {
+						species_gender = not_set
+						btml_species_can_set_is_female = yes
+					}
+					species_gender = male
+				}
+			}
+		}
 	}
-	check_variable = {
-		which = num_potential_protectors
-		value > 0
+}
+
+# this = species
+btml_species_can_set_is_female = {
+	NOR = {
+		species_gender = indeterminable
+		AND = {
+			species_gender = not_set
+			btml_species_class_uses_gender = no
+		}
+	}
+}
+
+# this = species
+btml_species_class_uses_gender = {
+	# NOTE: this assumes custom species classes use gender (the default)
+	NOR = {
+		is_species_class = MACHINE
+		is_species_class = ROBOT
+		is_species_class = AI # contingency
+		is_species_class = SWARM # praethoryn
+		is_species_class = EXD # extradimensionals: unbidden/aberrant/vehement
+	}
+}
+
+# this = leader, with new species
+# from = species, previous
+btml_leader_species_gender_change_requires_clone = {
+	OR = {
+		AND = {
+			species = { btml_species_can_set_is_female = no }
+			from = { btml_species_can_set_is_female = yes }
+		}
+		AND = {
+			species = { btml_species_can_set_is_female = yes }
+			from = { btml_species_can_set_is_female = no }
+		}
 	}
 }

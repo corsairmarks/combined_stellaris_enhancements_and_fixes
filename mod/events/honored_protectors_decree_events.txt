@@ -116,83 +116,16 @@ country_event = {
 			which = num_subset_potential_protectors
 			value = 0
 		}
-		random_galaxy_species = {
-			limit = { has_species_flag = potential_protector@PREV }
-			accumulate_potential_protector = yes
-			save_event_target_as = potential_protectors0
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors1
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors2
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors3
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors4
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors5
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors6
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors7
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors8
-			}
-		}
-		if = {
-			limit = { should_accumulate_potential_protector = yes }
-			random_galaxy_species = {
-				limit = { has_species_flag = potential_protector@PREV }
-				accumulate_potential_protector = yes
-				save_event_target_as = potential_protectors9
-			}
-		}
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "0" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "1" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "2" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "3" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "4" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "5" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "6" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "7" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "8" }
+		accumulate_potential_protector_if_available = { DISCRIMINATOR = "9" }
 		country_event = {
 			id = honored_protectors_decree.4
 		}
