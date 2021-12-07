@@ -3,7 +3,10 @@ col_ecu_mix = {
 	icon = GFX_colony_type_workers
 
 	potential = {
-		uses_district_set = city_world
+		OR = {
+			uses_district_set = city_world
+			et_uses_planetary_diversity_arcology_district_set = yes
+		}
 	}
 
 	planet_modifier = {
