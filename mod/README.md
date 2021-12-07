@@ -71,6 +71,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Battle Thrall leaders will match the gender of their new species
     * Leader reselected to be a Battle Thrall species which were originally from gendered (binary, male-exclusive, or female-exclusive) species must be cloned to have their gender set to `indeterminable` and vice versa - this is disabled when combined with "Gender Nonbinary Leaders" because that mod does its own cloning shenanigans
     * Integrates with Retain Leaders from Integrated Subjects to avoid duplicate cloning
+* 2.1.0 Enable special leadership decree for Rogue Servitors and Bio-Trophies
 
 ## Source Code
 
