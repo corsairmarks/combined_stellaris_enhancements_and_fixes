@@ -13,10 +13,10 @@ living_standard_organic_trophy = {
 	}
 
 	potential = {
-		host_has_dlc = "Synthetic Dawn Story Pack"
+		has_synthethic_dawn = yes
 		exists = from
 		from = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 			has_valid_civic = civic_machine_servitor
 		}
 	}
@@ -42,7 +42,6 @@ living_standard_organic_trophy = {
 			}
 		}
 	}
-
 	ai_will_do = {
 		factor = 100
 	}
