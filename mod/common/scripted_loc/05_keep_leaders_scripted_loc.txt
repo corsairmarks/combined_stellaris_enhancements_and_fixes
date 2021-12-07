@@ -2,62 +2,53 @@
 defined_text = { # scope with species
 	name = GetSpeciesUnitDrone
 	text = {
-		trigger = {
-			is_hive_species = yes
-		}
+		trigger = { is_hive_species = yes }
 		localization_key = getunitdrone_unit
 	}
 	text = {
-		trigger = {
-			is_machine_species = yes
-		}
+		trigger = { is_machine_species = yes }
 		localization_key = getunitdrone_drone
 	}
-	text = { # fallback if not hive/machine
-		trigger = {
-			is_hive_species = no
-			is_machine_species = no
-		}
-		localization_key = getunitdrone_leader
-	}
+	# fallback if not hive/machine
+	default = getunitdrone_leader
 }
 
 # assumes that anything organic used to be hive, anything robotic used to be a machine, and a fallback for things that were neither organic not robotic
 defined_text = { # scope with species
 	name = GetSpeciesPreviouslyUnitDrone
 	text = {
-		trigger = {
-			is_organic_species = yes
-		}
+		trigger = { is_organic_species = yes }
 		localization_key = getunitdrone_unit
 	}
 	text = {
-		trigger = {
-			is_robotic_species = yes
-		}
+		trigger = { is_robotic_species = yes }
 		localization_key = getunitdrone_drone
 	}
-	text = { # fallback if not hive/machine
+	# fallback if not hive/machine
+	default = getunitdrone_leader
+}
+
+# this = country
+# from = country
+defined_text = { # country
+	name = GetKeepLeadersEventTitle
+	text = {
 		trigger = {
-			is_organic_species = no
-			is_robotic_species = no
+			has_country_flag = colossus_transfer@capital_scope
+			has_country_flag = orbitally_drenched@capital_scope
 		}
-		localization_key = getunitdrone_leader
+		localization_key = keep_leaders.1.title.planet_killer_deluge
 	}
-}
-
-# scope doesn't matter - workaround to read localisation into an argument for custom_tooltip_with_params
-defined_text = {
-	name = GetUnityName
 	text = {
-		localization_key = unity
+		trigger = {
+			has_country_flag = colossus_transfer@capital_scope
+			NOR = {
+				has_country_flag = orbitally_drenched@capital_scope
+				has_country_flag = nanobot_assimilated@capital_scope
+				has_country_flag = orbitally_necrophaged@capital_scope
+			}
+		}
+		localization_key = keep_leaders.1.title.planet_killer_generic
 	}
-}
-
-# scope doesn't matter - workaround to read localisation into an argument for custom_tooltip_with_params
-defined_text = {
-	name = GetSocietyResearchName
-	text = {
-		localization_key = society_research
-	}
+	default = keep_leaders.1.title
 }

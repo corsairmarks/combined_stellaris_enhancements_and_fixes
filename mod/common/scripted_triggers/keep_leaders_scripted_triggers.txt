@@ -1,22 +1,22 @@
-# THIS = country
+# this = country
 is_devouring_hive_empire = {
 	is_hive_empire = yes
 	has_valid_civic = civic_hive_devouring_swarm
 }
 
-# THIS = country
+# this = country
 is_regular_hive_empire = {
 	is_hive_empire = yes
 	NOT = { has_valid_civic = civic_hive_devouring_swarm }
 }
 
-# THIS = country
+# this = country
 is_necrophage_empire = {
 	has_origin = origin_necrophage
 	has_trait = trait_necrophage
 }
 
-# THIS = country
+# this = country
 empire_considers_cyborgs_robotic = {
 	OR = {
 		has_valid_civic = civic_machine_assimilator
@@ -27,7 +27,7 @@ empire_considers_cyborgs_robotic = {
 	}
 }
 
-# THIS = country
+# this = country
 has_full_ai_rights = {
 	OR = {
 		has_authority = auth_machine_intelligence
@@ -39,7 +39,7 @@ has_full_ai_rights = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 can_be_civilian_leaders_species = {
 	species = {
@@ -56,7 +56,7 @@ can_be_civilian_leaders_species = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 can_be_military_leaders_species = {
 	species = {
@@ -67,7 +67,7 @@ can_be_military_leaders_species = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_policy_full_citizenship_species = {
 	OR = {
@@ -106,7 +106,7 @@ is_eligible_for_policy_full_citizenship_species = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_policy_full_military_service_species = {
 	OR = {
@@ -149,7 +149,7 @@ is_eligible_for_policy_full_military_service_species = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_machine_assimilation_species = {
 	event_target:potential_owner = { has_valid_civic = civic_machine_assimilator }
@@ -158,7 +158,7 @@ is_eligible_for_machine_assimilation_species = {
 	is_hive_species = no
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_unmachine_assimilation_species = {
 	event_target:potential_owner = {
@@ -174,7 +174,7 @@ is_eligible_for_unmachine_assimilation_species = {
 	is_machine_species = yes
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_hive_assimilation_species = {
 	event_target:potential_owner = {
@@ -185,7 +185,7 @@ is_eligible_for_hive_assimilation_species = {
 	is_hive_species = no
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_unhive_assimilation_species = {
 	event_target:potential_owner = {
@@ -200,7 +200,7 @@ is_eligible_for_unhive_assimilation_species = {
 	is_hive_species = yes
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_synthetic_assimilation_species = {
 	event_target:potential_owner = {
@@ -211,7 +211,7 @@ is_eligible_for_synthetic_assimilation_species = {
 	is_hive_species = no
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_cybernetic_assimilation_species = {
 	event_target:potential_owner = {
@@ -223,7 +223,7 @@ is_eligible_for_cybernetic_assimilation_species = {
 	is_hive_species = no
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_psionic_assimilation_species = {
 	event_target:potential_owner = { has_ascension_perk = ap_transcendence }
@@ -236,7 +236,7 @@ is_eligible_for_psionic_assimilation_species = {
 	is_hive_species = no
 }
 
-# THIS = something with a species
+# this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_assimilation_species = {
 	species = { NOT = { is_exact_same_species = event_target:potential_owner } }
@@ -266,22 +266,22 @@ is_eligible_for_assimilation_species = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
 is_psionic_species = {
 	species = { has_trait = trait_psionic }
 }
 
-# THIS = something with a species
+# this = something with a species
 is_cyborg_species = {
 	species = { has_trait = trait_cybernetic }
 }
 
-# THIS = something with a species
+# this = something with a species
 is_hive_species = {
 	species = { has_trait = trait_hive_mind }
 }
 
-# THIS = something with a species
+# this = something with a species
 is_machine_species = {
 	species = {
 		OR = {
@@ -291,7 +291,7 @@ is_machine_species = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
 is_mechanical_species = {
 	species = {
 		OR = {
@@ -301,7 +301,12 @@ is_mechanical_species = {
 	}
 }
 
-# THIS = something with a species
+# this = something with a species
+is_aquatic_species = {
+	species = { has_trait = trait_aquatic }
+}
+
+# this = something with a species
 is_smart_enough_for_leadership_species = {
 	species = {
 		is_sapient = yes
@@ -312,7 +317,7 @@ is_smart_enough_for_leadership_species = {
 	}
 }
 
-# THIS = leader
+# this = leader
 is_civilian_leader = {
 	OR = {
 		leader_class = governor
@@ -320,7 +325,7 @@ is_civilian_leader = {
 	}
 }
 
-# THIS = leader
+# this = leader
 is_military_leader = {
 	OR = {
 		leader_class = admiral
@@ -328,7 +333,7 @@ is_military_leader = {
 	}
 }
 
-# THIS = leader
+# this = leader
 is_psionic_leader = {
 	OR = {
 		is_psionic_species = yes
@@ -373,7 +378,7 @@ is_psionic_leader = {
 	}
 }
 
-# THIS = leader
+# this = leader
 is_cyborg_leader = {
 	OR = {
 		is_cyborg_species = yes
@@ -403,7 +408,7 @@ is_cyborg_leader = {
 	}
 }
 
-# THIS = leader
+# this = leader
 is_synthetic_leader = {
 	is_mechanical_species = yes
 	if = {
@@ -431,7 +436,7 @@ is_synthetic_leader = {
 	}
 }
 
-# THIS = leader
+# this = leader
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_transfer_without_assimilation = {
 	OR = {
@@ -466,7 +471,7 @@ is_eligible_transfer_without_assimilation = {
 	}
 }
 
-# THIS = leader
+# this = leader
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_transfer_with_assimilation = {
 	OR = {
@@ -511,14 +516,14 @@ is_eligible_transfer_with_assimilation = {
 	}
 }
 
-# THIS = leader
+# this = leader
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_transfer_leader_from_storage = {
 	has_leader_flag = potential_owner@event_target:potential_owner
 	is_eligible_transfer_leader_class = yes
 }
 
-# THIS = leader
+# this = leader
 is_eligible_transfer_leader_class = {
 	NOR = {
 		leader_class = ruler
@@ -527,7 +532,7 @@ is_eligible_transfer_leader_class = {
 }
 
 # allows cyborgs to be considered robotic if the potential owner considers them to be robotic
-# THIS = leader
+# this = leader
 is_robotic_species_lenient = {
 	OR = {
 		is_robotic_species = yes
@@ -538,13 +543,13 @@ is_robotic_species_lenient = {
 	}
 }
 
-# THIS = leader
+# this = leader
 is_bypass_leader_restriction_honored_protectors = {
 	is_military_leader = yes
 	species = { has_species_flag = allow_military_leaders_honored_protectors@event_target:potential_owner }
 }
 
-# THIS = country
+# this = country
 any_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
 	any_owned_leader = {
 		is_eligible_transfer_leader_from_storage = yes
@@ -555,7 +560,7 @@ any_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
 	}
 }
 
-# THIS = country
+# this = country
 all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
 	count_owned_leader = {
 		count = all
@@ -569,7 +574,7 @@ all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
 	}
 }
 
-# THIS = country
+# this = country
 all_stored_organic_leaders_eligible_transfer_to_main_species_leader_restricted = {
 	count_owned_leader = {
 		count = all
@@ -587,7 +592,7 @@ all_stored_organic_leaders_eligible_transfer_to_main_species_leader_restricted =
 	}
 }
 
-# THIS = country
+# this = country
 all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted = {
 	count_owned_leader = {
 		count = all
@@ -604,7 +609,7 @@ all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted =
 	}
 }
 
-# THIS = country
+# this = country
 all_stored_leaders_same_species = {
 	NOT = {
 		any_owned_leader = {
@@ -614,7 +619,7 @@ all_stored_leaders_same_species = {
 	}
 }
 
-# THIS = country
+# this = country
 all_stored_leaders_robotic_strict = {
 	NOT = {
 		any_owned_leader = {
@@ -624,7 +629,7 @@ all_stored_leaders_robotic_strict = {
 	}
 }
 
-# THIS = country
+# this = country
 all_stored_leaders_robotic_lenient = {
 	NOT = {
 		any_owned_leader = {
@@ -634,12 +639,104 @@ all_stored_leaders_robotic_lenient = {
 	}
 }
 
-# THIS = country
+# this = country
 all_stored_leaders_hive = {
 	NOT = {
 		any_owned_leader = {
 			is_eligible_transfer_leader_from_storage = yes
 			is_hive_species = no
+		}
+	}
+}
+
+# this = planet (after ownership change)
+# from = country, former owner
+has_leader_storage_from_country_to_planet_owner = {
+	any_country = {
+		is_country_type = neutral_faction
+		has_country_flag = former_owner@from
+		any_owned_leader = {
+			has_leader_flag = former_owner@from
+			has_leader_flag = potential_owner@prevprev.owner
+		}
+	}
+}
+
+# this follows the game's default rules - does not account for Gender Nonbinary Leaders
+# this = leader, after species change
+klfis_leader_new_species_allows_current_gender = {
+	switch = {
+		trigger = gender
+		indeterminable = {
+			species = {
+				OR = {
+					species_gender = indeterminable
+					AND = {
+						species_gender = not_set
+						klfis_species_class_uses_gender = no
+					}
+				}
+			}
+		}
+		female = {
+			species = {
+				OR = {
+					AND = {
+						species_gender = not_set
+						klfis_species_class_uses_gender = yes
+					}
+					species_gender = female
+				}
+			}
+		}
+		male = {
+			species = {
+				OR = {
+					AND = {
+						species_gender = not_set
+						klfis_species_class_uses_gender = yes
+					}
+					species_gender = male
+				}
+			}
+		}
+	}
+}
+
+# this = species
+klfis_species_can_set_is_female = {
+	NOR = {
+		species_gender = indeterminable
+		AND = {
+			species_gender = not_set
+			klfis_species_class_uses_gender = no
+		}
+	}
+}
+
+# this = species
+klfis_species_class_uses_gender = {
+	# NOTE: this assumes custom species classes use gender (the default)
+	NOR = {
+		is_species_class = MACHINE
+		is_species_class = ROBOT
+		is_species_class = AI # contingency
+		is_species_class = SWARM # praethoryn
+		is_species_class = EXD # extradimensionals: unbidden/aberrant/vehement
+	}
+}
+
+# this = leader, with new species
+# from = species, previous
+klfis_leader_species_gender_change_requires_clone = {
+	OR = {
+		AND = {
+			species = { klfis_species_can_set_is_female = no }
+			from = { klfis_species_can_set_is_female = yes }
+		}
+		AND = {
+			species = { klfis_species_can_set_is_female = yes }
+			from = { klfis_species_can_set_is_female = no }
 		}
 	}
 }

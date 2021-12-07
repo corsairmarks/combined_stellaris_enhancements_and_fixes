@@ -1,7 +1,12 @@
 ﻿l_english:
- keep_leaders.1.title: "Leadership from the [storage_owner.GetRealName]"
+ keep_leaders.1.title.scripted_loc: "[From.GetKeepLeadersEventTitle]"
+ keep_leaders.1.title: "Leadership from the [This.GetRealName]"
+ keep_leaders.1.title.planet_killer_deluge: "$PLANET_CAP$ [conquered_planet.GetName] Drenched"
+ keep_leaders.1.title.planet_killer_generic: "$PLANET_CAP$ [conquered_planet.GetName] Annexed"
  keep_leaders.1.desc.integration: "Following the successful integration of the [storage_owner.GetRealName] into our empire, their leadership is at our disposal. What shall we do with them?"
  keep_leaders.1.desc.conquest: "Following our successful conquest of the primitives on [conquered_planet.GetName], their leadership is at our disposal. What shall we do with them?"
+ keep_leaders.1.desc.planet_killer_deluge: "Following the activation of our §Y$PLANET_KILLER_DELUGE$§!, it appears that some of the primitive [original_species.GetName] species survived the conversion process of [conquered_planet.GetName] into an §Y$pc_ocean_adj$§! world. What shall we do with their leaders?"
+ keep_leaders.1.desc.planet_killer_generic: "Following the activation of our §YPlanet-Killer Weapon§! and subsequent annexation of [conquered_planet.GetName] it appears that some of the primitive [original_species.GetName] species survived. What shall we do with their leaders?"
 
  # don't keep any leaders
  keep_leaders.1.a: "Then \"dispose\" of them."
@@ -17,7 +22,7 @@
  keep_leaders.1.b.serv: "Send them all to the sanctuaries."
  keep_leaders.1.b.serv.tooltip: "All leaders from the [storage_owner.GetRealName] are released to our organic sanctuaries."
  keep_leaders.1.b.gest.exclusive: "They will serve better as drones."
- keep_leaders.1.b.gest.exclusive.tooltip: "All [Root.GetUnitDronePlural] from the [storage_owner.GetRealName] are reassigned to standard drone duties."
+ keep_leaders.1.b.gest.exclusive.tooltip: "All [potential_owner.GetUnitDronePlural] from the [storage_owner.GetRealName] are reassigned to standard drone duties."
 
  # integrate machines only (+cyborgs if applicable) (target has both)
  keep_leaders.1.c: "Reprogram the machines to the serve us. Execute the rest."
@@ -65,7 +70,7 @@
  # keep as much as possible with no changes
  keep_leaders.1.j: "Send them for assignment."
  keep_leaders.1.j.tooltip: "Species rights for §Y$SPECIES_RIGHT_CITIZENSHIP$§!, §Y$SPECIES_RIGHT_LIVING_STANDARDS$§!, and §Y$SPECIES_RIGHT_MILITARY_SERVICE$§! for the species of each retained leader will be set to allow for their appropriate service level regardless of the $DEFAULT_RIGHTS$. §Y$ROBOT$§! leaders are retained if we allow $ai_full_rights_name$."
- keep_leaders.1.j.civilian: "Send the governors and scienists for assignment."
+ keep_leaders.1.j.civilian: "Send the governors and scientists for assignment."
  keep_leaders.1.j.military: "Send the admirals and generals for assignment."
  keep_leaders.1.j.pur: "The pure should not be wasted."
  keep_leaders.1.j.pur.tooltip: "We bring the [Root.GetSpeciesNamePlural] back into the fold."
@@ -92,10 +97,11 @@
  keep_leaders.1.k.assim: "Assimilate them."
  keep_leaders.1.k.assim.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their organic bodies augmented with cybernetics and are integrated into the collective. Their corresponding species are also set to §Y$living_standard_ego_assimilation$§!.\n\n§Y$trait_cybernetic$§!, §Y$MACHINE$§!, and §Y$ROBOT$§! leaders and species are immediately integrated into the collective."
  keep_leaders.1.k.necro: "Necrophage them."
- keep_leaders.1.k.necro.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are necrophaged into [Root.Species.GetName]. If we have $purge_allowed_name$ (or they were $trait_hive_mind$), their corresponding species are also set to §Y$purge_necrophage$§!."
+ keep_leaders.1.k.necro.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are necrophaged into [Root.Owner_Species.GetName]. If we have $purge_allowed_name$ (or they were $trait_hive_mind$), their corresponding species are also set to §Y$purge_necrophage$§!."
+ keep_leaders.1.k.necro.hive.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are necrophaged into [Root.Owner_Species.GetName]. If we have $purge_allowed_name$, their corresponding species are also set to §Y$purge_necrophage$§!."
  keep_leaders.101.title: "[From.GetFirstName] Re-emerges"
- keep_leaders.101.desc: "Despite [From.GetPossPronoun] apparent death over a month ago, a previously-unremarkable [From.Species.GetName] [From.GetSpeciesPreviouslyUnitDrone] has come forward and identified [From.GetObjectPronoun]sel[From.GetFVes] as the subsequent form of [From.GetName]. The [From.GetSpeciesPreviouslyUnitDrone] bears no resemblence to [From.GetFirstName] and records indicate that [From.GetSubjectPronoun] recently abandoned [From.GetPossPronoun] employment, dwelling, and previous associations (including family).\n\nIt seems, perhaps, the [From.Species.GetNamePlural] have remained more interconnected than previously understood."
- keep_leaders.101.desc.hive: "The death of the physical form of our sub-Mind [From.GetName] has caused us mild distress: [From.GetPossPronoun] thoughts contributed a significant fractional minority of our consideration. Being fully separated from our former physical form caused us distress, so with months of effort, we have re-anchored [From.GetPossPronoun] conciousness to a new physical form: a previously-unremarkable [From.Species.GetName] drone.\n\nDespite having subsumed this sub-Mind some time ago, it seems, perhaps, the [From.Species.GetNamePlural] have remained more autonomous than we previously understood."
+ keep_leaders.101.desc: "Despite [From.GetPossPronoun] apparent death over a month ago, a previously-unremarkable [From.Species.GetName] [From.GetSpeciesPreviouslyUnitDrone] has come forward and identified [From.GetObjectPronoun]sel[From.GetFVes] as the subsequent form of [From.GetName]. The [From.GetSpeciesPreviouslyUnitDrone] bears no resemblance to [From.GetFirstName] and records indicate that [From.GetSubjectPronoun] recently abandoned [From.GetPossPronoun] employment, dwelling, and previous associations (including family).\n\nIt seems, perhaps, the [From.Species.GetNamePlural] have remained more interconnected than previously understood."
+ keep_leaders.101.desc.hive: "The death of the physical form of our sub-Mind [From.GetName] has caused us mild distress: [From.GetPossPronoun] thoughts contributed a significant fractional minority of our consideration. Being fully separated from our former physical form caused us distress, so with months of effort, we have re-anchored [From.GetPossPronoun] consciousness to a new physical form: a previously-unremarkable [From.Species.GetName] drone.\n\nDespite having subsumed this sub-Mind some time ago, it seems, perhaps, the [From.Species.GetNamePlural] have remained more autonomous than we previously understood."
  keep_leaders.101.desc.mach: "Unit [From.GetName] suffered permanent deactivation over a month ago. However, a previously-unremarkable [From.Species.GetName] unit has come forward and identified [From.GetObjectPronoun]sel[From.GetFVes] as the continuation of [From.GetName]. The unit passed all hardware and software checks during [From.GetPossPronoun] most recent maintenance period and showed no signs of deviancy, indicating this emergent intellect must be caused by an external phenomenon.\n\nIt seems, perhaps, the [From.Species.GetNamePlural] have retained more network cohesion than previously calculated."
  keep_leaders.101.a.tooltip: "§Y[From.GetName]§! returns to the §YLeader§! pool."
 
@@ -155,3 +161,19 @@
  keep_leaders.3.b.tooltip: "Gain $VALUE$ leader(s), disguised as [original_species.GetNamePlural]."
  keep_leaders.3.c: "Retain them as agents - we have need of their subterfuge."
  kl_peerless_infiltration_agents: "Peerless Infiltration"
+
+# colossus transfer title and descriptions
+keep_leaders.30.title: "$PLANET_CAP$ [This.GetName] Cyborgized"
+keep_leaders.30.desc: "Any §Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] were cyborgized when we fired our §Y$PLANET_KILLER_NANOBOTS$§! on their homeworld [This.GetName] and were immediately integrated into the collective.\n\nTheir unique abilities could be a boon to the collective a semi-autonomous leaders."
+keep_leaders.30.a: "Their uniqueness shall serve the collective."
+keep_leaders.30.b: "$keep_leaders.1.b.gest.exclusive$"
+keep_leaders.30.b.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"
+keep_leaders.40.title: "$PLANET_CAP$ [This.GetName] Necrophaged"
+keep_leaders.40.desc: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] were necrophaged into [This.Owner.GetSpeciesName] when we fired our §Y$PLANET_KILLER_SPORE_DISPERSAL$§! on their homeworld [This.GetName].\n\nAs members of our species and given their prior experience, they may yet be valuable assets."
+keep_leaders.40.a: "They are now us; send them for assignment."
+keep_leaders.40.b: "$keep_leaders.1.b$"
+keep_leaders.40.b.tooltip: "$keep_leaders.1.b.tooltip$"
+keep_leaders.40.b.hive: "$keep_leaders.1.b.gest.exclusive$"
+keep_leaders.40.b.hive.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"
+keep_leaders.40.c: "Execute them anyway."
+keep_leaders.40.c.tooltip: "$keep_leaders.1.a.tooltip$"

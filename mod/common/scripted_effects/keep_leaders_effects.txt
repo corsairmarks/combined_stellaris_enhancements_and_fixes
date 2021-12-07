@@ -1,3 +1,214 @@
+# creates a country to store leaders and variables counting them, then transfers and counts them
+# event_target:potential_owner = country, overlord/infiltrator/planet-killer
+# event_target:former_owner = country, integrated subject/primitives/victims
+create_leader_storage_and_transfer_leaders = {
+	# "arguments" for transfer_leader_to_storage
+	create_country = {
+		type = neutral_faction
+		species = event_target:former_owner
+		flag = event_target:former_owner
+		auto_delete = no
+		ignore_initial_colony_error = yes
+		effect = {
+			set_name = "\\[former_owner.GetRealName]"
+			set_country_flag = former_owner@event_target:former_owner
+			save_event_target_as = storage_owner
+			save_event_target_as = variable_storage
+			# variables for the counts from accumulate_leader
+			set_variable = {
+				which = leader_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_organic_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_organic_non_cyborg_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_hive_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_robotic_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_necrophagable_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_same_species_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_not_same_species_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_transferable_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_transferable_or_assimilatable_accumulator
+				value = 0
+			}
+			set_variable = {
+				which = leader_aquatic_accumulator
+				value = 0
+			}
+		}
+	}
+	# count the leaders so we know the multiplier for adding resources
+	# like unity or society research for empires that qualify
+	event_target:former_owner = {
+		every_owned_leader = {
+			limit = { is_eligible_transfer_leader_class = yes }
+			accumulate_leader = yes
+			tag_leader_for_reassignment = yes
+			transfer_leader_to_storage = yes
+		}
+		set_country_flag = disable_gender_clones_on_leader_spawned
+		create_leader = {
+			species = owner_species
+			class = ruler
+			effect = {
+				owner = { remove_country_flag = disable_gender_clones_on_leader_spawned }
+			}
+		}
+		# can't always save in effect - is it because the primitive country is being deleted?
+		last_created_leader = { save_event_target_as = dummy_ruler }
+		if = {
+			limit = { exists = ruler }
+			ruler = {
+				set_name = keep_leaders.former_ruler_name
+				set_leader_flag = former_ruler
+				save_event_target_as = integrated_ruler
+			}
+			if = {
+				limit = {
+					event_target:integrated_ruler = {
+						OR = {
+							pre_ruler_leader_class = governor
+							pre_ruler_leader_class = scientist
+							pre_ruler_leader_class = admiral
+							pre_ruler_leader_class = general
+						}
+					}
+				}
+				# force the ruler back to their pre-ruler class
+				assign_leader = event_target:dummy_ruler
+			}
+			# else they didn't have a pre-ruler class, or it's one we don't recognize
+			else = {
+				# force the ruler to a non-ruler class (probably governor)
+				assign_leader = event_target:dummy_ruler
+				event_target:integrated_ruler = {
+					set_leader_flag = clear_traits
+					save_event_target_as = leader_to_replace
+				}
+				replace_leader_based_on_government_type = yes
+				event_target:leader_to_replace = {
+					if = {
+						limit = { NOT = { has_leader_flag = former_ruler } }
+						set_leader_flag = former_ruler
+					}
+					save_event_target_as = integrated_ruler
+				}
+			}
+			event_target:integrated_ruler = {
+				accumulate_leader = yes
+				set_former_gestalt_ruler_flag = yes
+				remove_gestalt_ruler_traits = yes
+				add_former_ruler_trait = yes
+				transfer_leader_to_storage = yes
+			}
+		}
+		if = {
+			limit = { exists = heir }
+			heir = {
+				set_name = keep_leaders.former_ruler_name
+				set_leader_flag = former_heir
+				save_event_target_as = integrated_heir
+			}
+			if = {
+				limit = {
+					event_target:integrated_heir = {
+						OR = {
+							pre_ruler_leader_class = governor
+							pre_ruler_leader_class = scientist
+							pre_ruler_leader_class = admiral
+							pre_ruler_leader_class = general
+						}
+					}
+				}
+				# set the heir as the ruler...
+				assign_leader = event_target:integrated_heir
+				# ...then force them back to their pre-ruler class by assigning the dummy back
+				assign_leader = event_target:dummy_ruler
+			}
+			# else they didn't have a pre-ruler class, or it's one we don't recognize
+			else = {
+				# set the heir as the ruler...
+				assign_leader = event_target:integrated_heir
+				# ...then force them to a pre-ruler class by assigning the dummy back (probably governor)
+				assign_leader = event_target:dummy_ruler
+				event_target:integrated_heir = {
+					set_leader_flag = clear_traits
+					save_event_target_as = leader_to_replace
+				}
+				replace_leader_based_on_government_type = yes
+				event_target:leader_to_replace = {
+					if = {
+						limit = { NOT = { has_leader_flag = former_heir } }
+						set_leader_flag = former_heir
+					}
+					save_event_target_as = integrated_heir
+				}
+			}
+			event_target:integrated_heir = {
+				accumulate_leader = yes
+				add_former_heir_trait = yes
+				transfer_leader_to_storage = yes
+			}
+		}
+		event_target:dummy_ruler = {
+			kill_leader = {
+				show_notification = no
+				fire = yes
+			}
+		}
+	}
+}
+
+# sets up necessary event_targets:
+# event_target:potential_owner = this.owner
+# event_target:former_owner = from
+# event_target:original_species = from.owner_species
+# event_target:storage_owner = country, primitive leader storage
+# event_target:variable_storage = country, primitive leader variable storage
+# this = planet (after ownership change)
+# from = country, former owner
+prepare_for_primitive_planet_transferred = {
+	owner = { save_event_target_as = potential_owner }
+	from = {
+		set_country_flag = colossus_transfer_handled@prev
+		save_event_target_as = former_owner
+		owner_species = { save_event_target_as = original_species }
+	}
+	# acquire leader and variable storage
+	random_country = {
+		limit = {
+			is_country_type = neutral_faction
+			has_country_flag = former_owner@from
+		}
+		save_event_target_as = storage_owner
+		save_event_target_as = variable_storage
+	}
+}
+
 # THIS = leader
 # event_target:potential_owner = country for whom the leader is being stored
 # event_target:storage_owner = country in which to store leaders
@@ -413,6 +624,7 @@ remove_gestalt_ruler_traits = {
 replace_leader_as_governor = {
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = governor } } }
+		set_country_flag = disable_gender_clones_on_leader_spawned
 		if = {
 			limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
 			clone_leader = {
@@ -429,8 +641,14 @@ replace_leader_as_governor = {
 		}
 		last_created_leader = {
 			add_experience = event_target:leader_to_replace.trigger:has_experience
-			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+			event_target:leader_to_replace = {
+				kill_leader = {
+					show_notification = no
+					fire = yes
+				}
+			}
 			save_event_target_as = leader_to_replace
+			owner = { remove_country_flag = disable_gender_clones_on_leader_spawned }
 		}
 	}
 	else = {
@@ -448,6 +666,7 @@ replace_leader_as_governor = {
 replace_leader_as_scientist = {
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = scientist } } }
+		set_country_flag = disable_gender_clones_on_leader_spawned
 		if = {
 			limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
 			clone_leader = {
@@ -464,8 +683,14 @@ replace_leader_as_scientist = {
 		}
 		last_created_leader = {
 			add_experience = event_target:leader_to_replace.trigger:has_experience
-			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+			event_target:leader_to_replace = {
+				kill_leader = {
+					show_notification = no
+					fire = yes
+				}
+			}
 			save_event_target_as = leader_to_replace
+			owner = { remove_country_flag = disable_gender_clones_on_leader_spawned }
 		}
 	}
 	else = {
@@ -483,6 +708,7 @@ replace_leader_as_scientist = {
 replace_leader_as_admiral = {
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = admiral } } }
+		set_country_flag = disable_gender_clones_on_leader_spawned
 		if = {
 			limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
 			clone_leader = {
@@ -499,8 +725,14 @@ replace_leader_as_admiral = {
 		}
 		last_created_leader = {
 			add_experience = event_target:leader_to_replace.trigger:has_experience
-			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+			event_target:leader_to_replace = {
+				kill_leader = {
+					show_notification = no
+					fire = yes
+				}
+			}
 			save_event_target_as = leader_to_replace
+			owner = { remove_country_flag = disable_gender_clones_on_leader_spawned }
 		}
 	}
 	else = {
@@ -518,6 +750,7 @@ replace_leader_as_admiral = {
 replace_leader_as_general = {
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = general } } }
+		set_country_flag = disable_gender_clones_on_leader_spawned
 		if = {
 			limit = { event_target:leader_to_replace = { has_leader_flag = clear_traits } }
 			clone_leader = {
@@ -534,8 +767,14 @@ replace_leader_as_general = {
 		}
 		last_created_leader = {
 			add_experience = event_target:leader_to_replace.trigger:has_experience
-			event_target:leader_to_replace = { kill_leader = { show_notification = no } }
+			event_target:leader_to_replace = {
+				kill_leader = {
+					show_notification = no
+					fire = yes
+				}
+			}
 			save_event_target_as = leader_to_replace
+			owner = { remove_country_flag = disable_gender_clones_on_leader_spawned }
 		}
 	}
 	else = {
@@ -744,11 +983,19 @@ replace_leader_based_on_government_type = {
 		gov_military_order = { replace_leader_as_admiral = yes } # sentinels
 		gov_ancient_machine_intelligence = { replace_leader_as_admiral = yes } # immortal/contingency
 		gov_fallback = { replace_leader_as_random = yes }
-		# custom governments (defined by mods)
-		gov_bureaucratic_autocracy = { replace_leader_as_governor = yes } # Eldanær Stellar Authority uses this
 		default = {
-			log_error = "\\[This.GetRealName] has an unrecognized government (\\[This.GetGovernmentName]) - falling back to a random leader class"
-			replace_leader_as_random = yes
+			# custom governments (defined by mods) - moved into default so it doesn't cause lots of error logs
+			if = {
+				limit = {
+					has_global_flag = eldanaer_stellar_authority_installed
+					has_government = gov_bureaucratic_autocracy # Eldanær Stellar Authority uses this
+				}
+				replace_leader_as_governor = yes
+			}
+			else = {
+				log_error = "\\[This.GetRealName] has an unrecognized government (\\[This.GetGovernmentName]) - falling back to a random leader class"
+				replace_leader_as_random = yes
+			}
 		}
 	}
 }
@@ -1142,6 +1389,7 @@ try_add_demoted_ruler_generic_bonus_trait = {
 # * leader_not_same_species_accumulator
 # * leader_transferable_accumulator
 # * leader_transferable_or_assimilatable_accumulator
+# * leader_aquatic_accumulator
 accumulate_leader = {
 	if = {
 		limit = { is_organic_species = yes }
@@ -1242,6 +1490,15 @@ accumulate_leader = {
 		event_target:variable_storage = {
 			change_variable = {
 				which = leader_transferable_or_assimilatable_accumulator
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { is_aquatic_species = yes }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_aquatic_accumulator
 				value = 1
 			}
 		}
@@ -1427,6 +1684,117 @@ create_army_transport_parameterized = {
 		effect = {
 			set_name = "\\[source_ship.GetName]"
 			last_created_army = { set_name = "\\[source_army.GetName]" }
+		}
+	}
+}
+
+# changes a gender's leader to match the norms for their species (possibly cloning and replacing them)
+# this = leader, with new species
+# from = species, previous
+klfis_leader_transferred_match_gender_to_species = {
+	if = {
+		limit = { klfis_leader_species_gender_change_requires_clone = no }
+		species = {
+			switch = {
+				trigger = species_gender
+				# if indeterminable, then nothing should change
+				female = {
+					prev = {
+						if = {
+							limit = { NOT = { gender = female } }
+							set_is_female = yes
+						}
+					}
+				}
+				male = {
+					prev = {
+						if = {
+							limit = { NOT = { gender = male } }
+							set_is_female = no
+						}
+					}
+				}
+				not_set = {
+					prev = {
+						if = {
+							limit = {
+								klfis_species_class_uses_gender = yes
+								NOR = {
+									gender = female
+									gender = male
+								}
+							}
+							random_list = {
+								50 = { set_is_female = yes }
+								50 = { set_is_female = no }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	else = {
+		save_event_target_as = leader_to_clone
+		owner = { save_event_target_as = leader_owner } # must stay an event_target - the game dislikes prev.owner in the switch statement
+		species = {
+			switch = {
+				trigger = species_gender
+				indeterminable = { prev = { klfis_clone_leader_with_gender = { GENDER = indeterminable } } }
+				female = { prev = { klfis_clone_leader_with_gender = { GENDER = female } } }
+				male = { prev = { klfis_clone_leader_with_gender = { GENDER = male } } }
+				not_set = {
+					if = {
+						limit = { klfis_species_class_uses_gender = yes }
+						prev = {
+							random_list = {
+								50 = { klfis_clone_leader_with_gender = { GENDER = female } }
+								50 = { klfis_clone_leader_with_gender = { GENDER = male } }
+							}
+						}
+					}
+					else = {
+						prev = { klfis_clone_leader_with_gender = { GENDER = indeterminable } }
+					}
+				}
+			}
+		}
+	}
+}
+
+# creates an exact copy of the current leader, except that the gender of the clone is set to GENDER
+# this = leader, to be cloned
+# GENDER = gender for the clone (indeterminable/female/male)
+klfis_clone_leader_with_gender = {
+	if = {
+		limit = { NOT = { gender = $GENDER$ } } # last minute sanity check to make sure we're only replacing leaders who are changing gender
+		save_event_target_as = leader_to_clone
+		owner = {
+			set_country_flag = disable_gender_clones_on_leader_spawned
+			clone_leader = {
+				target = event_target:leader_to_clone
+				gender = $GENDER$
+				effect = {
+					change_leader_portrait = event_target:leader_to_clone
+					set_name = event_target:leader_to_clone
+					add_experience = event_target:leader_to_clone.trigger:has_experience # doesn't get copied implicitly when cloned
+					if = {
+						limit = { event_target:leader_to_clone = { has_leader_flag = clone_should_be_recruitable } }
+						recruitable = no
+						recruitable = yes
+					}
+					# leave the original cleanup inside the effect block or portraits won't get copied
+					event_target:leader_to_clone = {
+						set_leader_flag = leader_replaced_by_clone # other events will fire before the leader is removed - this is to prevent duplicate cloning
+						set_leader_flag = leader_replaced_by_clone@prev
+						kill_leader = {
+							show_notification = no
+							fire = yes
+						}
+					}
+					owner = { remove_country_flag = disable_gender_clones_on_leader_spawned }
+				}
+			}
 		}
 	}
 }
