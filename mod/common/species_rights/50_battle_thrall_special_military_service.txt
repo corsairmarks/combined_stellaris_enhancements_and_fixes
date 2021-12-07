@@ -29,7 +29,7 @@ military_service_full = { # TODO: scripted_loc for tooltip/delayed tooltip for b
 						has_species_flag = allow_leaders_organic_advisors@from
 						has_citizenship_type = {
 							country = from
-							type = citizenship_full
+							type = citizenship_organic_trophy
 						}
 						from = { has_valid_civic = civic_machine_servitor }
 					}
@@ -139,10 +139,7 @@ military_service_full = { # TODO: scripted_loc for tooltip/delayed tooltip for b
 		modifier = {
 			factor = 0
 			from = { has_valid_civic = civic_machine_servitor }
-			NOR = {
-				has_trait = trait_machine_unit
-				has_trait = trait_mechanical
-			}
+			btml_is_mechanical_or_machine = no
 			OR = {
 				btml_is_species_smart_enough_for_leadership = no
 				btml_has_species_trait_with_leader_trait = no

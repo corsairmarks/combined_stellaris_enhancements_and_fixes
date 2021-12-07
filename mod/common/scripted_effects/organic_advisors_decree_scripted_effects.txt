@@ -4,21 +4,6 @@ set_species_organic_advisors = {
 	if = {
 		limit = { event_target:advised_country = { is_eligible_to_designate_organic_advisors = yes } }
 		set_species_flag = allow_leaders_organic_advisors@event_target:advised_country
-		if = {
-			limit = {
-				NOT = {
-					has_citizenship_type = {
-						type = citizenship_full
-						country = event_target:advised_country
-					}
-				}
-			}
-			set_citizenship_type = {
-				type = citizenship_full
-				country = event_target:advised_country
-				cooldown = yes
-			}
-		}
 	}
 }
 
