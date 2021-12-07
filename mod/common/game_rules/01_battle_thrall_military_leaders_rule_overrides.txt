@@ -1,0 +1,20 @@
+# root = species
+# this = country
+can_generate_army_from_species = {
+	root = {
+		OR = {
+			has_military_service_type = {
+				type = military_service_full
+				country = prev
+			}
+			has_military_service_type = {
+				type = military_service_limited
+				country = prev
+			}
+		}
+		NAND = {
+			prev = { has_valid_civic = civic_machine_servitor }
+			is_robotic_species = no
+		}
+	}
+}

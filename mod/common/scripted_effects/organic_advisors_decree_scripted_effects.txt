@@ -1,0 +1,55 @@
+# this = species
+# event_target:advised_country = country, who is designating this species as advisors
+set_species_organic_advisors = {
+	if = {
+		limit = { event_target:advised_country = { is_eligible_to_designate_organic_advisors = yes } }
+		set_species_flag = allow_leaders_organic_advisors@event_target:advised_country
+		if = {
+			limit = {
+				NOT = {
+					has_citizenship_type = {
+						type = citizenship_full
+						country = event_target:advised_country
+					}
+				}
+			}
+			set_citizenship_type = {
+				type = citizenship_full
+				country = event_target:advised_country
+				cooldown = yes
+			}
+		}
+	}
+}
+
+# this = species
+# DISCRIMINATOR = something to give the event target a unique name
+accumulate_potential_advisor_if_available = {
+	if = {
+		limit = {
+			check_variable = {
+				which = num_subset_potential_advisors
+				value < 10
+			}
+			check_variable = {
+				which = num_potential_advisors
+				value > 0
+			}
+		}
+		random_owned_pop_species = {
+			limit = { has_species_flag = potential_advisors@prev }
+			remove_species_flag = potential_advisors@prev
+			prev = {
+				change_variable = {
+					which = num_subset_potential_advisors
+					value = 1
+				}
+				change_variable = {
+					which = num_potential_advisors
+					value = -1
+				}
+			}
+			save_event_target_as = potential_advisors$DISCRIMINATOR$
+		}
+	}
+}

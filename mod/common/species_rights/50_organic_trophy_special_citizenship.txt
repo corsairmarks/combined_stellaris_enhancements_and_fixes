@@ -1,0 +1,83 @@
+# a copy of the default Full Citizenship rights, with extra logic added so Bio-trophies are eligible
+citizenship_full = { # TODO: scripted_loc for tooltip/delayed tooltip for biotrophies
+	token = citizenship_full
+	potential = {
+		exists = from
+		from = {
+			OR = {
+				NOT = { is_machine_empire = yes }
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		NOR = {
+			has_trait = trait_machine_unit
+			is_shackled_robot_species_rights = yes
+		}
+	}
+	allow = {
+		hidden_trigger = { exists = from }
+		custom_tooltip = {
+			fail_text = lonely_hive_mind_pops_kill_themselves_citizenship
+			is_lonely_hive_mind_pop = no
+		}
+		custom_tooltip = {
+			fail_text = disconnected_machine_pops_kill_themselves_citizenship
+			is_disconnected_machine_pop = no
+		}
+		custom_tooltip = {
+			fail_text = HIVE_MIND_SPECIES_CITIZENS_ONLY
+			OR = {
+				NOT = { from = { is_hive_empire = yes } }
+				has_trait = trait_hive_mind
+			}
+		}
+		custom_tooltip = {
+			fail_text = FANATIC_PURIFIERS_MUST_PURIFY
+			OR = {
+				NOT = { from = { has_valid_civic = civic_fanatic_purifiers } }
+				is_same_species = from
+			}
+		}
+		custom_tooltip = {
+			fail_text = too_alien
+			OR = {
+				is_same_species = from
+				from = { is_xenophobe = no }
+			}
+		}
+		custom_tooltip = {
+			fail_text = no_service_no_citizenship
+			if = {
+				limit = { from = { has_valid_civic = civic_citizen_service } }
+				has_military_service_type = {
+					type = military_service_full
+					country = from
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_species_flag = allow_leaders_organic_advisors@from
+				from = { has_valid_civic = civic_machine_servitor }
+			}
+			custom_tooltip = {
+				fail_text = species_is_not_organic
+				btml_is_mechanical_or_machine = no
+			}
+			custom_tooltip = {
+				fail_text = nerve_stapled_cannot_lead
+				btml_is_species_smart_enough_for_leadership = yes
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			add = 110
+			from = { has_valid_civic = civic_machine_servitor }
+			btml_is_mechanical_or_machine = no
+			btml_is_species_smart_enough_for_leadership = yes
+			btml_has_species_trait_with_leader_trait = yes
+		}
+	}
+}
