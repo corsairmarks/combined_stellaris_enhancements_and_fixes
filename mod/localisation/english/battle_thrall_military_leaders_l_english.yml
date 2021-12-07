@@ -1,2 +1,4 @@
 ﻿l_english:
  necrophage_only_allows_necrophage_leaders: "$TRIGGER_FAIL$Only Necrophage Pops may be §Yleaders§!."
+ nerve_stapled_cannot_lead: "$TRIGGER_FAIL$This species has insufficient mental capacity to serve as leaders."
+ # TODO add translations to other languages
