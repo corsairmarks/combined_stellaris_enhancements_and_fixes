@@ -4,6 +4,10 @@ Have you ever wanted to entrust your Battle Thralls to lead on the battlefield? 
 
 In addition to Battle Thralls being eligible to be rolled as military leaders and Bio-Trophies as non-ruler leaders, any species with Full Military Service can be rewarded as a promoted captain after destroying an enemy fleet.  The free admiral from a promotion is built-in, but by default it only ever rewards admirals of the owner's main species.
 
+## Renamed
+
+Previously known as "Full Military Service for Battle Thralls" - the new name calls out the new functionality.
+
 # Changes
 
 The Battle Thralls slavery type is allowed to be assigned the Full Military Service service type, which then allows them to become military leaders - Admirals and Generals.  In order to achieve this, I've attached an event to `on_leader_spawned` that can alter the species of the spawned leader to any species which has Full Military Service; this applies anywhere leaders are created.  The leader's species is randomly rerolled by selecting a Pop out of all those that have Full Military service and using that Pop's species, and is thus implicitly weighted based on the relative population size of the eligible species.  Second, I've updated Full Military Service to be selectable for Battle Thralls.  As a bonus for allowing Battle Thralls even greater responsibility, their Pops are 10% happier when given Full Military Service.
@@ -16,11 +20,11 @@ Bio-Trophies seemed like another candidate for being leaders under special condi
 
 Finally, as a minor quality-of-life enhancement, I have also attached an event to `on_fleet_destroyed_perp` that will fire after `leader.1` (captain promoted to admiral) has generated a leader of the owner's main species.  This allows the species of that leader to be rerolled if the empire in question allows Full Military Service for any non-main species - including Battle Thralls and Bio-Trophies.
 
-### When to Install
+## When to Install
 
 This mod can be safely added to your savegame after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
 
-# Recommended Companion Mods
+## Recommended Companion Mods
 
 If you like species traits that add leader traits, check out my mod [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295).  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
 
@@ -34,13 +38,9 @@ Built for Stellaris version 3.2.\* "Herbert."  This mod is not compatible with a
 
 ## Localisation
 
-This mod is mostly localized for every language supported by Stellaris - mainly because it uses the built-in localisation.
+This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
 
-The updated Full Military Service species right now enforces that necrophage empires cannot select it for non-main species and needed a tooltip.  I created this tooltip by taking the first half of the second bullet point from the built-in localisation for the necrophage origin's effects, `civic_tooltip_necrophage_effects` in the file `localisation/<language>/necroids_l_<language>.yml`.  In English that is "Only Necrophage Pops may be leaders."  If I have destroyed your language and you'd like to suggest a better translation, please leave a comment or message me.
-
-I also found that the built-in localisation for `any_galaxy_species_trigger` was incorrect and referred to a "Number of Species in the Galaxy" when instead it should say "Any Species in the Galaxy" (English).  I've attempted some tooltip splicing to get the right translations for other languages (except Simplified Chinese).  As above, please comment or message me if I have massacred your language and you would like to help.
-
-However, the new edict to declare Battle Thralls as Honored Protectors is not localised - that is because it is my original writing.  The English text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
+However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing.  The English text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
 
 ## Known Issues
 
