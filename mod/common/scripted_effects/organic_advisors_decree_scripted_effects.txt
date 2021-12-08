@@ -38,3 +38,71 @@ accumulate_potential_advisor_if_available = {
 		}
 	}
 }
+
+# this = species
+# event_target:advised_country = country, who is revoking advisorship from this species
+remove_species_organic_advisors = {
+	if = {
+		limit = { event_target:advised_country = { is_eligible_to_designate_organic_advisors = yes } }
+		remove_species_flag = allow_leaders_organic_advisors@event_target:advised_country
+		if = {
+			limit = {
+				has_military_service_type = {
+					type = military_service_full
+					country = event_target:advised_country
+				}
+			}
+			set_military_service_type = {
+				type = military_service_none
+				country = event_target:advised_country
+				cooldown = yes # even if you set them back to advisors, you gotta wait
+			}
+		}
+		every_owned_leader = {
+			limit = { is_exact_same_species = prev }
+			kill_leader = {
+				show_notification = no
+				fire = yes
+			}
+		}
+		every_pool_leader = {
+			limit = { is_exact_same_species = prev }
+			kill_leader = {
+				show_notification = no
+				fire = yes
+			}
+		}
+	}
+}
+
+# this = species
+# DISCRIMINATOR = something to give the event target a unique name
+accumulate_current_advisor_if_available = {
+	if = {
+		limit = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value < 10
+			}
+			check_variable = {
+				which = num_current_advisors
+				value > 0
+			}
+		}
+		random_owned_pop_species = {
+			limit = { has_species_flag = current_advisors@prev }
+			remove_species_flag = current_advisors@prev
+			prev = {
+				change_variable = {
+					which = num_subset_current_advisors
+					value = 1
+				}
+				change_variable = {
+					which = num_current_advisors
+					value = -1
+				}
+			}
+			save_event_target_as = current_advisors$DISCRIMINATOR$
+		}
+	}
+}

@@ -843,3 +843,317 @@ country_event = {
 		remove_country_flag = organic_advisors_open
 	}
 }
+
+country_event = {
+	id = organic_advisors_decree.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_eligible_to_designate_organic_advisors = yes
+		NOT = { has_country_flag = organic_advisors_open }
+	}
+	immediate = {
+		set_country_flag = organic_advisors_open
+		set_variable = {
+			which = num_current_advisors
+			value = 0
+		}
+		every_owned_pop_species = {
+			limit = {
+				NOT = { is_same_species = root }
+				has_species_flag = allow_leaders_organic_advisors@root
+				has_citizenship_type = {
+					type = citizenship_organic_trophy
+					country = prev
+				}
+			}
+			prev = {
+				change_variable = {
+					which = num_current_advisors
+					value = 1
+				}
+			}
+			set_species_flag = current_advisors@root
+		}
+		country_event = {
+			id = organic_advisors_decree.7
+		}
+	}
+}
+
+country_event = {
+	id = organic_advisors_decree.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_eligible_to_designate_organic_advisors = yes
+		has_country_flag = organic_advisors_open
+	}
+	immediate = {
+		set_variable = {
+			which = num_subset_current_advisors
+			value = 0
+		}
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "0" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "1" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "2" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "3" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "4" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "5" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "6" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "7" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "8" }
+		accumulate_current_advisor_if_available = { DISCRIMINATOR = "9" }
+		country_event = {
+			id = organic_advisors_decree.8
+		}
+	}
+}
+
+country_event = {
+	id = organic_advisors_decree.8
+	title = organic_advisors_decree.8.title
+	desc = organic_advisors_decree.8.desc
+	picture = GFX_evt_organic_oppression
+	is_triggered_only = yes
+	trigger = {
+		is_eligible_to_designate_organic_advisors = yes
+		has_country_flag = organic_advisors_open
+	}
+	immediate = {
+		save_event_target_as = advised_country
+	}
+	option = {
+		name = organic_advisors_decree.4.reroll
+		custom_tooltip = organic_advisors_decree.4.reroll.tooltip
+		trigger = {
+			check_variable = {
+				which = num_current_advisors
+				value > 0
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = organic_advisors_decree.7
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.a
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors0.GetName]"
+			}
+		}
+		hidden_effect = { event_target:current_advisors0 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.b
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors1.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 1
+			}
+		}
+		hidden_effect = { event_target:current_advisors1 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.c
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors2.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 2
+			}
+		}
+		hidden_effect = { event_target:current_advisors2 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.d
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors3.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 3
+			}
+		}
+		hidden_effect = { event_target:current_advisors3 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.e
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors4.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 4
+			}
+		}
+		hidden_effect = { event_target:current_advisors4 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.f
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors5.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 5
+			}
+		}
+		hidden_effect = { event_target:current_advisors5 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.g
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors6.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 6
+			}
+		}
+		hidden_effect = { event_target:current_advisors6 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.h
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors7.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 7
+			}
+		}
+		hidden_effect = { event_target:current_advisors7 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.i
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors8.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 8
+			}
+		}
+		hidden_effect = { event_target:current_advisors8 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.j
+		custom_tooltip_with_params = {
+			description = organic_advisors_decree.8.option.tooltip
+			description_parameters = {
+				NAME = "[current_advisors9.GetName]"
+			}
+		}
+		trigger = {
+			check_variable = {
+				which = num_subset_current_advisors
+				value > 9
+			}
+		}
+		hidden_effect = { event_target:current_advisors9 = { remove_species_organic_advisors = yes } }
+		ai_chance = {
+			weight = 0
+			factor = 0
+		}
+	}
+	option = {
+		name = organic_advisors_decree.8.cancel
+		custom_tooltip = organic_advisors_decree.8.cancel.tooltip
+		add_resource = {
+			influence = 100
+		}
+		hidden_effect = {
+			country_event = {
+				id = organic_advisors_decree.9
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = organic_advisors_decree.9
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_galaxy_species = {
+			limit = { has_species_flag = current_advisors@root }
+			remove_species_flag = current_advisors@root
+		}
+		clear_variable = num_current_advisors
+		clear_variable = num_subset_current_advisors
+		remove_country_flag = organic_advisors_open
+	}
+}

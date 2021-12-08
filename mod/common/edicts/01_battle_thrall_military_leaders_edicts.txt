@@ -135,5 +135,43 @@ designate_organic_advisors = {
 	}
 }
 
-# TODO: designation for has_species_flag = allow_leaders_organic_advisors@from
-# TODO: check reqs for bio-trophy job
+revoke_organic_advisors = {
+	length = 0
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 0
+	resources = {
+		category = edicts
+		cost = {
+			influence = 100
+		}
+	}
+	modifier = { }
+	potential = {
+		is_eligible_to_designate_organic_advisors = yes
+	}
+	allow = {
+		hidden_trigger = { NOT = { has_country_flag = organic_advisors_open } }
+		any_owned_pop_species = {
+			hidden_trigger = { NOT = { is_same_species = prev } }
+			has_citizenship_type = {
+				type = citizenship_organic_trophy
+				country = prev
+			}
+			custom_tooltip = {
+				fail_text = edict_revoke_organic_advisors.already_designated
+				has_species_flag = allow_leaders_organic_advisors@prev
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			country_event = {
+				id = organic_advisors_decree.6
+			}
+		}
+	}
+	ai_weight = {
+		weight = 0
+		factor = 0
+	}
+}
