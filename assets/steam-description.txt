@@ -1,44 +1,42 @@
 [h1]Overview[/h1]
 
-Have you ever wanted to entrust your Battle Thralls to lead on the battlefield? With this mod you now have the option to allow your Battle Thralls greater freedom to command ships and armies as Admirals and Generals.
+Have you ever wanted to entrust your Battle Thralls to lead on the battlefield? With this mod you now have the option to allow your Battle Thralls greater freedom to command ships and armies as Admirals and Generals. Or maybe some organic insight is just what your Rogue Servitors need to build a better paradise? This mod also allows you to designate Bio-Trophy species as Organic Advisors as Governors and Scientists. Should you need to wield the "chaotic and violent organic nature" you also have the option to grant your Organic Advisors the Full Military Service species right so they can serve ad Admirals and Generals - but not armies. Even the most jaded Rogue Servitors would never send a mass of the precious Bio-Trophies into battle!
 
-In addition to just Battle Thralls being eligible to be rolled as military leaders, any species with Full Military Service can be rewarded as a promoted captain after destroying an enemy fleet.  The free admiral from a promotion is built in, but by default it only ever rewards admirals of the owner's main species.
+In addition to Battle Thralls being eligible to be rolled as military leaders and Bio-Trophies as non-ruler leaders, any species with Full Military Service can be rewarded as a promoted captain after destroying an enemy fleet. The free admiral from a promotion is built-in, but by default it only ever rewards admirals of the owner's main species.
 
 [h1]Changes[/h1]
 
-The Battle Thralls slavery type is allowed to be assigned the Full Military Service service type, which then allows them to become military leaders - Admirals and Generals.  In order to achieve this, I've attached an event to [b]on_leader_spawned[/b] that can alter the species of the spawned leader to any species which has Full Military Service; this applies anywhere leaders are created.  The leader's species is randomly rerolled by selecting a Pop out of all those that have Full Military service and using that Pop's species, and is thus implicitly weighted based on the relative population size of the eligible species.  Second, I've updated Full Military Service to be selectable for Battle Thralls.  As a bonus for allowing Battle Thralls even greater responsibility, their Pops are 10% happier when given Full Military Service.
+The Battle Thralls slavery type is allowed to be assigned the Full Military Service service type, which then allows them to become military leaders - Admirals and Generals. In order to achieve this, I've attached an event to [b]on_leader_spawned[/b] that can alter the species of the spawned leader to any species which has Full Military Service; this applies anywhere leaders are created. The leader's species is randomly rerolled by selecting a Pop out of all those that have Full Military service and using that Pop's species, and is thus implicitly weighted based on the relative population size of the eligible species. Second, I've updated Full Military Service to be selectable for Battle Thralls. As a bonus for allowing Battle Thralls even greater responsibility, their Pops are 10% happier when given Full Military Service.
 
-In addition to allowing Battle Thralls to have Full Military Service, I slightly updated the conditions for which it is allowed.  Necrophages now cannot set any species that is not their main necrophage species to have Full Military Service (as described in the origin) and the allowing Full Military Service for robots now requires Synthetic Personality Matrix rather than Droids.  Syncretic Proles (as described by the trait) and non-sentients cannot be military leaders.  Hive and Machine empires are unaffected by these changes.
+In addition to allowing Battle Thralls to have Full Military Service, I slightly updated the conditions for which it is allowed. Necrophages now cannot set any species that is not their main necrophage species to have Full Military Service (as described in the origin) and the allowing Full Military Service for robots now requires Synthetic Personality Matrix rather than Droids. Syncretic Proles (as described by the trait) and non-sentients cannot be military leaders. Hive and Machine empires are unaffected by these changes.
 
-As a minor quality-of-life enhancement, I have also attached an event to [b]on_fleet_destroyed_perp[/b] that will fire after [b]leader.1[/b] (captain promoted to admiral) has generated a leader of the owner's main species.  This allows the species of that leader to be rerolled if the empire in question allows Full Military Service for any non-main species - including Battle Thralls.
+Because this mod was inspired by my role-play for the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535]Eldanær Stellar Authority[/url] it also allows bypassing the xenophobic and necrophage restrictions for allowing Full Military Service to Battle Thralls. You can bypass the restrictions by using the custom edict "Decree: Honored Protectors" which will let you declare a species of Battle Thralls as "Honored Protectors" for 100 influence. Honored Protectors are automatically set to Full Military Service, but may later be demoted.
 
-Finally, because this mod was inspired by my role-play for the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535]Eldanær Stellar Authority[/url] it also allows bypassing the xenophobic and necrophage restrictions for allowing Full Military Service.  You can bypass these restrictions by using the custom Edict called "Decree: Honored Protectors" which will let you choose from any species that you have set to Citizenship: Slavery and Slavery Type: Battle Thralls for 100 influence.  The chosen species has a flag applied and is set to Military Service: Full Military Service.
+Bio-Trophies seemed like another candidate for being leaders under special conditions. Building on the framework for "Decree: Honored Protectors," it is now possible for Rogue Servitors to designate one or more species of Bio-Trophies as as advisors. They may use the custom edict "Decree: Organic Advisors" to declare a species of Bio-Tropies as "Organic Advisors" for 100 influence. Organic Advisors can produce civilian leaders by default, and may produce military leaders if set to Full Military Service.
+
+Finally, as a minor quality-of-life enhancement, I have also attached an event to [b]on_fleet_destroyed_perp[/b] that will fire after [b]leader.1[/b] (captain promoted to admiral) has generated a leader of the owner's main species. This allows the species of that leader to be rerolled if the empire in question allows Full Military Service for any non-main species - including Battle Thralls and Bio-Trophies.
 
 [h3]When to Install[/h3]
 
-This mod can be safely added to your savegame after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
-
-[h1]Recommended Companion Mods[/h1]
-
-If you like species traits that add leader traits, check out my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url].  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
+This mod can be safely added to your savegame after the game has started, but not removed. Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service. If you'd like to find out, make a backup of your savegame before experimenting.
 
 [h2]Compatibility[/h2]
 
-Because this mod replaces two built-in objects, it is inherently incompatible with mods that alter the same objects.  While I doubt most mods will fiddle with [b]can_be_military_leader[/b] it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one.  The only species right that this mod overrides is [b]military_service_full[/b].
+Because this mod replaces several built-in objects, it is inherently incompatible with mods that alter the same objects. While I doubt most mods will fiddle with the [b]can_be_military_leader[/b] trigger it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one. The only species right that this mod overrides is [b]military_service_full[/b]. To support Bio-Trophies as leaders, this mod also overrides three game rules: [b]can_generate_army_from_species[/b], [b]can_generate_leader_from_pop[/b], and [b]can_generate_leader_from_species[/b].
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimiliate Machines[/url].
 
-Built for Stellaris version 3.2.* "Herbert."  This mod is not compatible with achievements.
+Built for Stellaris version 3.2.* "Herbert." This mod is not compatible with achievements.
 
 [h2]Localisation[/h2]
 
 This mod is mostly localized for every language supported by Stellaris - mainly because it uses the built-in localisation.
 
-The updated Full Military Service species right now enforces that necrophage empires cannot select it for non-main species and needed a tooltip.  I created this tooltip by taking the first half of the second bullet point from the built-in localisation for the necrophage origin's effects, [b]civic_tooltip_necrophage_effects[/b] in the file [b]localisation/<language>/necroids_l_<language>.yml[/b].  In English that is "Only Necrophage Pops may be leaders."  If I have destroyed your language and you'd like to suggest a better translation, please leave a comment or message me.
+The updated Full Military Service species right now enforces that necrophage empires cannot select it for non-main species and needed a tooltip. I created this tooltip by taking the first half of the second bullet point from the built-in localisation for the necrophage origin's effects, [b]civic_tooltip_necrophage_effects[/b] in the file [b]localisation/<language>/necroids_l_<language>.yml[/b]. In English that is "Only Necrophage Pops may be leaders." If I have destroyed your language and you'd like to suggest a better translation, please leave a comment or message me.
 
-I also found that the built-in localisation for [b]any_galaxy_species_trigger[/b] was incorrect and referred to a "Number of Species in the Galaxy" when instead it should say "Any Species in the Galaxy" (English).  I've attempted some tooltip splicing to get the right translations for other languages (except Simplified Chinese).  As above, please comment or message me if I have massacred your language and you would like to help.
+I also found that the built-in localisation for [b]any_galaxy_species_trigger[/b] was incorrect and referred to a "Number of Species in the Galaxy" when instead it should say "Any Species in the Galaxy" (English). I've attempted some tooltip splicing to get the right translations for other languages (except Simplified Chinese). As above, please comment or message me if I have massacred your language and you would like to help.
 
-However, the new edict to declare Battle Thralls as Honored Protectors is not localised - that is because it is my original writing.  The English text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
+However, the new edicts to declare Battle Thralls as Honored Protectors and Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing. The English text is used as a placeholder for other languages. If you want to translate it into your language, please leave a comment or message me.
 
 [h2]Known Issues[/h2]
 
@@ -48,7 +46,7 @@ When cloning a leader and changing them from a species class without gender to a
 
 [h3]Error Logs[/h3]
 
-This mod overrides a built-in trigger [b]can_be_military_leader[/b] and a species right [b]military_service_full[/b].  These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
+This mod overrides a built-in trigger [b]can_be_military_leader[/b] and a species right [b]military_service_full[/b]. These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
 
 [code]
 [20:51:18][game_singleobjectdatabase.h:147]: Object with key: can_be_military_leader already exists
