@@ -1,5 +1,5 @@
 # a copy of the default Full Military Service rights, with extra logic added so Battle Thralls and Bio-trophies are eligible
-military_service_full = { # TODO: scripted_loc for tooltip/delayed tooltip for biotrophies
+military_service_full = {
 	token = military_service_full
 	potential = {
 		if = {
@@ -92,7 +92,7 @@ military_service_full = { # TODO: scripted_loc for tooltip/delayed tooltip for b
 		custom_tooltip = {
 			fail_text = HIVE_MIND_SPECIES_CITIZENS_ONLY
 			OR = {
-				NOT = { from = { is_hive_empire = yes } }
+				from = { is_hive_empire = no }
 				has_trait = trait_hive_mind
 			}
 		}
@@ -151,6 +151,7 @@ military_service_full = { # TODO: scripted_loc for tooltip/delayed tooltip for b
 		}
 		modifier = {
 			factor = 0
+			NOT = { has_species_flag = allow_military_leaders_honored_protectors@from }
 			from = {
 				has_valid_ai_personality = yes
 				NOT = { has_ai_personality_behaviour = multispecies }
