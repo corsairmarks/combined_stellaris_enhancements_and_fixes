@@ -1,4 +1,4 @@
-name="Full Military Service for Battle Thralls"
+name="Special Leadership Privileges for Battle Thralls and Bio-Trophies"
 tags={
 	"Gameplay"
 	"Leaders"
