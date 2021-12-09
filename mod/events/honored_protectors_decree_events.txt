@@ -57,16 +57,16 @@ country_event = {
 		every_galaxy_species = {
 			limit = {
 				NOR = {
-					is_same_species = root
-					has_species_flag = allow_military_leaders_honored_protectors@root
+					is_same_species = prev
+					has_species_flag = allow_military_leaders_honored_protectors@prev
 				}
 				has_citizenship_type = {
 					type = citizenship_slavery
-					country = root
+					country = prev
 				}
 				has_slavery_type = {
 					type = slavery_military
-					country = root
+					country = prev
 				}
 			}
 			prev = {
@@ -75,7 +75,7 @@ country_event = {
 					value = 1
 				}
 			}
-			set_species_flag = potential_protectors@root
+			set_species_flag = potential_protectors@prev
 		}
 		country_event = {
 			id = honored_protectors_decree.3
@@ -837,8 +837,8 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		every_galaxy_species = {
-			limit = { has_species_flag = potential_protectors@root }
-			remove_species_flag = potential_protectors@root
+			limit = { has_species_flag = potential_protectors@prev }
+			remove_species_flag = potential_protectors@prev
 		}
 		clear_variable = num_potential_protectors
 		clear_variable = num_subset_potential_protectors
