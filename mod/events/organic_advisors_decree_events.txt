@@ -1122,7 +1122,6 @@ country_event = {
 		}
 		hidden_effect = { event_target:current_advisors9 = { remove_species_organic_advisors = yes } }
 		ai_chance = {
-			weight = 0
 			factor = 0
 		}
 	}
@@ -1149,8 +1148,8 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		every_galaxy_species = {
-			limit = { has_species_flag = current_advisors@root }
-			remove_species_flag = current_advisors@root
+			limit = { has_species_flag = current_advisors@prev }
+			remove_species_flag = current_advisors@prev
 		}
 		clear_variable = num_current_advisors
 		clear_variable = num_subset_current_advisors
