@@ -48,7 +48,7 @@ accumulate_potential_advisor_if_available = {
 # event_target:advised_country = country, who is revoking advisorship from this species
 remove_species_organic_advisors = {
 	if = {
-		limit = { event_target:advised_country = { is_eligible_to_designate_organic_advisors = yes } }
+		limit = { has_species_flag = allow_leaders_organic_advisors@event_target:advised_country }
 		remove_species_flag = allow_leaders_organic_advisors@event_target:advised_country
 		if = {
 			limit = {
@@ -63,18 +63,20 @@ remove_species_organic_advisors = {
 				cooldown = yes # even if you set them back to advisors, you gotta wait
 			}
 		}
-		every_owned_leader = {
-			limit = { is_exact_same_species = prev }
-			kill_leader = {
-				show_notification = no
-				fire = yes
+		event_target:advised_country = {
+			every_owned_leader = {
+				limit = { is_exact_same_species = prevprev }
+				kill_leader = {
+					show_notification = no
+					fire = yes
+				}
 			}
-		}
-		every_pool_leader = {
-			limit = { is_exact_same_species = prev }
-			kill_leader = {
-				show_notification = no
-				fire = yes
+			every_pool_leader = {
+				limit = { is_exact_same_species = prevprev }
+				kill_leader = {
+					show_notification = no
+					fire = yes
+				}
 			}
 		}
 	}
