@@ -30,6 +30,11 @@ set_species_honored_protectors = {
 			}
 		}
 	}
+	event_target:protected_country = {
+		country_event = {
+			id = honored_protectors_decree.5
+		}
+	}
 }
 
 # this = species

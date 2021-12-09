@@ -5,6 +5,11 @@ set_species_organic_advisors = {
 		limit = { event_target:advised_country = { is_eligible_to_designate_organic_advisors = yes } }
 		set_species_flag = allow_leaders_organic_advisors@event_target:advised_country
 	}
+	event_target:advised_country = {
+		country_event = {
+			id = organic_advisors_decree.5
+		}
+	}
 }
 
 # this = species
@@ -71,6 +76,11 @@ remove_species_organic_advisors = {
 				show_notification = no
 				fire = yes
 			}
+		}
+	}
+	event_target:advised_country = {
+		country_event = {
+			id = organic_advisors_decree.9
 		}
 	}
 }
