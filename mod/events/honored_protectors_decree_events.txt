@@ -16,15 +16,7 @@ event = {
 	}
 	immediate = {
 		every_country = {
-			limit = {
-				OR = {
-					AND = {
-						has_origin = origin_necrophage
-						has_trait = trait_necrophage
-					}
-					is_xenophobe = yes
-				}
-			}
+			limit = { is_eligible_to_designate_honored_protectors = yes }
 			every_owned_pop_species = {
 				limit = {
 					OR = {
@@ -32,7 +24,7 @@ event = {
 						has_species_flag = allow_military_leaders_for_xenophobe
 					}
 				}
-				set_species_flag = allow_military_leaders_honored_protectors@PREV
+				set_species_flag = allow_military_leaders_honored_protectors@prev
 			}
 		}
 		every_galaxy_species = {
@@ -53,13 +45,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			AND = {
-				has_origin = origin_necrophage
-				has_trait = trait_necrophage
-			}
-			is_xenophobe = yes
-		}
+		is_eligible_to_designate_honored_protectors = yes
 		NOT = { has_country_flag = honored_protectors_open }
 	}
 	immediate = {
@@ -71,25 +57,25 @@ country_event = {
 		every_galaxy_species = {
 			limit = {
 				NOR = {
-					is_same_species = ROOT
-					has_species_flag = allow_military_leaders_honored_protectors@ROOT
+					is_same_species = prev
+					has_species_flag = allow_military_leaders_honored_protectors@prev
 				}
 				has_citizenship_type = {
 					type = citizenship_slavery
-					country = ROOT
+					country = prev
 				}
 				has_slavery_type = {
 					type = slavery_military
-					country = ROOT
+					country = prev
 				}
 			}
-			PREV = {
+			prev = {
 				change_variable = {
 					which = num_potential_protectors
 					value = 1
 				}
 			}
-			set_species_flag = potential_protector@ROOT
+			set_species_flag = potential_protectors@prev
 		}
 		country_event = {
 			id = honored_protectors_decree.3
@@ -102,13 +88,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			AND = {
-				has_origin = origin_necrophage
-				has_trait = trait_necrophage
-			}
-			is_xenophobe = yes
-		}
+		is_eligible_to_designate_honored_protectors = yes
 		has_country_flag = honored_protectors_open
 	}
 	immediate = {
@@ -139,13 +119,7 @@ country_event = {
 	picture = GFX_evt_ground_combat # also considered: announcement, interior_battle, victorious_army
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			AND = {
-				has_origin = origin_necrophage
-				has_trait = trait_necrophage
-			}
-			is_xenophobe = yes
-		}
+		is_eligible_to_designate_honored_protectors = yes
 		has_country_flag = honored_protectors_open
 	}
 	immediate = {
@@ -184,9 +158,7 @@ country_event = {
 				NAME = "[potential_protectors0.GetName]"
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors0 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors0 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -253,9 +225,7 @@ country_event = {
 				value > 1
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors1 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors1 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -322,9 +292,7 @@ country_event = {
 				value > 2
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors2 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors2 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -391,9 +359,7 @@ country_event = {
 				value > 3
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors3 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors3 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -460,9 +426,7 @@ country_event = {
 				value > 4
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors4 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors4 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -529,9 +493,7 @@ country_event = {
 				value > 5
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors5 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors5 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -598,9 +560,7 @@ country_event = {
 				value > 6
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors6 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors6 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -667,9 +627,7 @@ country_event = {
 				value > 7
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors7 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors7 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -736,9 +694,7 @@ country_event = {
 				value > 8
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors8 = { set_species_honored_protector = yes }
-		}
+		hidden_effect = { event_target:potential_protectors8 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -805,9 +761,7 @@ country_event = {
 				value > 9
 			}
 		}
-		hidden_effect = {
-			event_target:potential_protectors9 = { set_species_honored_protector = yes }	
-		}
+		hidden_effect = { event_target:potential_protectors9 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -883,40 +837,11 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		every_galaxy_species = {
-			limit = { has_species_flag = potential_protector@ROOT }
-			remove_species_flag = potential_protector@ROOT
+			limit = { has_species_flag = potential_protectors@prev }
+			remove_species_flag = potential_protectors@prev
 		}
 		clear_variable = num_potential_protectors
 		clear_variable = num_subset_potential_protectors
 		remove_country_flag = honored_protectors_open
-	}
-}
-
-# test event
-country_event = {
-	id = honored_protectors_decree.999
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		random_owned_species = {
-			limit = { NOT = { is_same_species = ROOT } }
-			if = {
-				limit = {
-					PREV = { is_xenophobe = yes }
-					NOT = { has_species_flag = allow_military_leaders_for_xenophobe }
-				}
-				set_species_flag = allow_military_leaders_for_xenophobe
-			}
-			if = {
-				limit = {
-					PREV = {
-						has_origin = origin_necrophage
-						has_trait = trait_necrophage
-					}
-					NOT = { has_species_flag = allow_military_leaders_for_necrophage }
-				}
-				set_species_flag = allow_military_leaders_for_necrophage
-			}
-		}
 	}
 }
