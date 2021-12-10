@@ -30,7 +30,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 94f0c7c4ee27b28034f639aabc4f4ef70faf0a47)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 2855abeb0a555b84591748714523d7cfafc14e78)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 7b389194d0f08b79d2859b0107275641cdc85e77)
-* [Full Military Service for Battle Thralls](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) a83eedf914d460dbefc20b98356a638af37dbeb7)
+* [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 90a72d92efbd7b8fa32c828c231c45711c171806)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 37c1af3645fd8df873fc643d34d932bf346b26ea)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 342f17493e33704e2a9b4bcfc0f2a9a0aa5b64de)
 * [Technician Job Priority Fix for Slaves](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) ([Source](https://github.com/corsairmarks/technician_slave_fix)) - this mod is not actually merged via `git`, but the same 1-character change is present in this one
@@ -159,9 +159,10 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 3.3.3 Update merged mods
     * Colony Designation: Ecumenopolis Commercial at 2.4.1
     * Enhanced Trade Districts and Designations at 1.0.1
-* 3.3.4 Update merged mod
+* 3.3.4 Update merged mods
     * "Terraform" to Tomb World at 1.2.2
     * Colony Designation: Ecumenopolis Commercial at 2.4.2
     * Enhanced Trade Districts and Designations at 1.0.2
 * 3.3.5 Update merged mod: "Terraform" to Tomb World at 1.2.3
 * 4.0.0 Update all merged mods for Stellaris version 3.2.2 "Herbert"
+* 4.0.1 Update merged mod: Special Leadership Privileges for Battle Thralls and Bio-Trophies at 2.1.1 (previously named Full Military Service for Battle Thralls)
