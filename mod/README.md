@@ -77,6 +77,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Rename mod to "Special Leadership Privileges for Battle Thralls and Bio-Trophies"
     * Add edict "Decree: Organic Advisors" so players can choose Bio-Trophies as civilian leaders (optionally also military leaders), despite being Rogue Servitors
     * Edit game rules to allow Bio-Trophies to be civilian leaders (with decree) and eligible to be military leaders (but not armies) if optionally granted Full Military Service
+    * Fix a bug where you couldn't re-open the Honored Protectors edict
 
 ## Source Code
 
