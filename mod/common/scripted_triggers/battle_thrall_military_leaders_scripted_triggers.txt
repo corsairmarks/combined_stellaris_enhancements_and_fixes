@@ -29,10 +29,8 @@ btml_is_mechanical_or_machine = {
 
 # this = country
 btml_is_necrophage_empire = {
-	AND = {
-		has_origin = origin_necrophage
-		has_trait = trait_necrophage
-	}
+	has_origin = origin_necrophage
+	has_trait = trait_necrophage
 }
 
 # this = country
