@@ -24,7 +24,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] ([url=https://github.com/corsairmarks/limited_army_counter_fix]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143]Deassimilated Machine Worlds[/url] ([url=https://github.com/corsairmarks/deassimilated_machine_worlds]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimilate Machines[/url] ([url=https://github.com/corsairmarks/deassimilate_machines]Source[/url] 2.0.0)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] ([url=https://github.com/corsairmarks/keep_leaders_from_integrated_subjects]Source[/url] 3.0.0)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] ([url=https://github.com/corsairmarks/keep_leaders_from_integrated_subjects]Source[/url] 3.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] ([url=https://github.com/corsairmarks/leader_trait_randomisation_enhancement]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941]Restored Content: Fungoids[/url] ([url=https://github.com/corsairmarks/portrait_unlock_fungoid]Source[/url] 1.2.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] 2.1.0)

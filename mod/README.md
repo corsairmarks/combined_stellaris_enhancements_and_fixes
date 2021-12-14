@@ -23,7 +23,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 1ea27ecef57a2153d26a7a547b092de3253e1e6b)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 50af1137ce7057a2e434b61e7bdc3b52eb3469e2)
 * [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) b3bc3fafe835cc031333002574a0a0fb6ef00034)
-* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 2985ebb969caa80042dc10e671fe9a60c68fc0f5)
+* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) bcfe5b8f9f2bf41d0862c9aca04fecf76f0c14c4)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) eec18846883eeb15ea06b04d164eb21fb574c215)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) c91b3f85999ac6fe588f5755a7d7208f03a1e5ff)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 37987685f374a3d18a43d9daec0e39ce0d28c6d9)
@@ -166,3 +166,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 3.3.5 Update merged mod: "Terraform" to Tomb World at 1.2.3
 * 4.0.0 Update all merged mods for Stellaris version 3.2.2 "Herbert"
 * 4.0.1 Update merged mod: Special Leadership Privileges for Battle Thralls and Bio-Trophies at 2.1.1 (previously named Full Military Service for Battle Thralls)
+* 4.0.2 Update merged mod: Retain Leaders from Integrated Subjects at 3.1.0
