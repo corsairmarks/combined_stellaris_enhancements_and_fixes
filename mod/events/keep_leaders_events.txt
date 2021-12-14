@@ -270,7 +270,7 @@ country_event = {
 	# keep none (nice)
 	option = {
 		name = keep_leaders.1.b
-			custom_tooltip = keep_leaders.1.b.tooltip
+		custom_tooltip = keep_leaders.1.b.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip.none
 			description_parameters = {
@@ -313,10 +313,6 @@ country_event = {
 		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 2
-				has_valid_civic = civic_machine_servitor
-			}
 		}
 	}
 	option = {
@@ -778,11 +774,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 10
-				has_valid_civic = civic_machine_servitor
-			}
+			factor = 4
 		}
 		hidden_effect = {
 			country_event = {
@@ -800,7 +792,7 @@ country_event = {
 		name = {
 			text = keep_leaders.1.e.spir
 			trigger = { is_spiritualist = yes }
-			}
+		}
 		custom_tooltip = keep_leaders.1.e.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
@@ -934,6 +926,129 @@ country_event = {
 			modifier = {
 				factor = 0
 				is_materialist = yes
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = keep_leaders.11
+				scopes = { from = event_target:storage_owner }
+			}
+		}
+	}
+	option = {
+		name = keep_leaders.1.e.serv
+		custom_tooltip = keep_leaders.1.e.serv.tooltip
+		custom_tooltip_with_params = {
+			description = keep_leaders.1.tooltip
+			description_parameters = {
+				VALUE = "[variable_storage.leader_organic_accumulator]"
+				TOTAL = "[variable_storage.leader_accumulator]"
+			}
+		}
+		trigger = {
+			# doesn't use a trigger so that this will be translated into an icon
+			has_valid_civic = civic_machine_servitor
+			hidden_trigger = {
+				has_global_flag = battle_thrall_military_leaders_installed
+				event_target:storage_owner = {
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_organic_species = yes
+						is_hive_species = no
+					}
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_robotic_species = yes
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				event_target:storage_owner = {
+					any_owned_leader = {
+						is_organic_species = yes
+						is_hive_species = no
+						klfis_has_species_trait_with_leader_trait = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				event_target:storage_owner = {
+					NOT = {
+						any_owned_leader = {
+							is_organic_species = yes
+							is_hive_species = no
+							klfis_has_species_trait_with_leader_trait = yes
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = keep_leaders.11
+				scopes = { from = event_target:storage_owner }
+			}
+		}
+	}
+	option = {
+		name = keep_leaders.1.e.serv.exclusive
+		custom_tooltip = keep_leaders.1.e.serv.exclusive.tooltip
+		custom_tooltip_with_params = {
+			description = keep_leaders.1.tooltip
+			description_parameters = {
+				VALUE = "[variable_storage.leader_organic_accumulator]"
+				TOTAL = "[variable_storage.leader_accumulator]"
+			}
+		}
+		trigger = {
+			# doesn't use a trigger so that this will be translated into an icon
+			has_valid_civic = civic_machine_servitor
+			hidden_trigger = {
+				has_global_flag = battle_thrall_military_leaders_installed
+				event_target:storage_owner = {
+					count_owned_leader = {
+						count = all
+						limit = {
+							OR = {
+								is_eligible_transfer_leader_from_storage = no
+								AND = {
+									is_organic_species = yes
+									is_hive_species = no
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 3
+				event_target:storage_owner = {
+					any_owned_leader = {
+						is_organic_species = yes
+						is_hive_species = no
+						klfis_has_species_trait_with_leader_trait = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				event_target:storage_owner = {
+					NOT = {
+						any_owned_leader = {
+							is_organic_species = yes
+							is_hive_species = no
+							klfis_has_species_trait_with_leader_trait = yes
+						}
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -1175,13 +1290,29 @@ country_event = {
 	option = {
 		name = {
 			text = keep_leaders.1.j
-			trigger = { NOT = { has_valid_civic = civic_fanatic_purifiers } }
+			trigger = {
+				NOR = {
+					has_valid_civic = civic_fanatic_purifiers
+					has_valid_civic = civic_machine_servitor
+				}
+			}
 		}
 		name = {
 			text = keep_leaders.1.j.pur
 			trigger = { has_valid_civic = civic_fanatic_purifiers }
 		}
+		name = {
+			text = keep_leaders.1.j.serv
+			trigger = { has_valid_civic = civic_machine_servitor }
+		}
 		if = {
+			limit = {
+				has_valid_civic = civic_machine_servitor
+				has_global_flag = battle_thrall_military_leaders_installed
+			}
+			custom_tooltip = keep_leaders.1.j.serv.tooltip
+		}
+		else_if = {
 			limit = { NOT = { has_valid_civic = civic_fanatic_purifiers } }
 			custom_tooltip = keep_leaders.1.j.tooltip
 		}
@@ -1196,7 +1327,26 @@ country_event = {
 			}
 		}
 		trigger = {
-			is_regular_empire = yes
+			OR = {
+				is_regular_empire = yes
+				AND = {
+					has_valid_civic = civic_machine_servitor
+					hidden_trigger = {
+						has_global_flag = battle_thrall_military_leaders_installed
+						event_target:storage_owner = {
+							any_owned_leader = {
+								is_eligible_transfer_leader_from_storage = yes
+								is_organic_species = yes
+								is_hive_species = no
+							}
+							any_owned_leader = {
+								is_eligible_transfer_leader_from_storage = yes
+								is_robotic_species = yes
+							}
+						}
+					}
+				}
+			}
 		}
 		allow = {
 			custom_tooltip = {
@@ -1274,6 +1424,11 @@ country_event = {
 				factor = 20
 				has_valid_civic = civic_fanatic_purifiers
 				event_target:storage_owner = { all_stored_leaders_same_species = yes }
+			}
+			modifier = {
+				factor = 10
+				has_valid_civic = civic_machine_servitor
+				has_global_flag = battle_thrall_military_leaders_installed
 			}
 		}
 		hidden_effect = {
@@ -2308,7 +2463,13 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_regular_empire = yes
+		OR = {
+			is_regular_empire = yes
+			AND = {
+				has_valid_civic = civic_machine_servitor
+				has_global_flag = battle_thrall_military_leaders_installed
+			}
+		}
 	}
 	immediate = {
 		log = "keep_leaders.15 keep as many as possible"

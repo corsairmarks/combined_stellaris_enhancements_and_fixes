@@ -41,15 +41,19 @@
  # integrate machines only, but be nice (target has both)
  keep_leaders.1.d: "Allow the machines to the join us. Retire the organics."
  keep_leaders.1.d.tooltip: "§Y$ROBOT$§! leaders from the [storage_owner.GetRealName] are allowed to join our empire, but the untrustworthy §Y$BIOLOGICAL$§! leaders are forced to retire."
- keep_leaders.1.d.serv: "Send the organics to the sanctuaries, but integrate any compatible machines."
+ keep_leaders.1.d.serv: "Send all organics to the sanctuaries. Integrate the hardware."
  keep_leaders.1.d.serv.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are released to the care of our organic sanctuaries, but the §Y$MACHINE$§! and §Y$ROBOT$§! leaders are integrated."
 
  # keep organics only (target has both)
  keep_leaders.1.e: "Allow the organics to the join us. Recycle the robots."
  keep_leaders.1.e.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are integrated into our empire, but §Y$MACHINE$§! and §Y$ROBOT$§! leaders are recycled."
- keep_leaders.1.e.spir: "Allow the organics to the join us. Cleanse the abominable thinking machines."
+ keep_leaders.1.e.spir: "The organics are welcome. Cleanse the abominable thinking machines."
  keep_leaders.1.e.ai: "Allow the organics to the join us. Retire the robots."
  keep_leaders.1.e.ai.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are allowed to join our empire, but §Y$MACHINE$§! and §Y$ROBOT$§! leaders are forced to retire."
+ keep_leaders.1.e.serv: "Machine stewardship failed these organics; they shall advise us."
+ keep_leaders.1.e.serv.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them. §Y$MACHINE$§! and §Y$ROBOT$§! leaders are clearly defective because they were not replacing the need for organics to serve in stressful leadership roles."
+ keep_leaders.1.e.serv.exclusive: "These organics show initiative - they shall make fine Advisors."
+ keep_leaders.1.e.serv.exclusive.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them."
 
  # keep same species (target has both)
  keep_leaders.1.g: "Allow any [Root.GetSpeciesNamePlural] to join us. Execute the rest."
@@ -74,6 +78,8 @@
  keep_leaders.1.j.military: "Send the admirals and generals for assignment."
  keep_leaders.1.j.pur: "The pure should not be wasted."
  keep_leaders.1.j.pur.tooltip: "We bring the [Root.GetSpeciesNamePlural] back into the fold."
+ keep_leaders.1.j.serv: "Retain the organics as advisors and integrate the machines."
+ keep_leaders.1.j.serv.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them. §Y$MACHINE$§! and §Y$ROBOT$§! leaders are integrated."
 
  # assimilate options (all require at least one leader that could be assimilated)
  keep_leaders.1.k.hive: "They shall become one with the Mind."

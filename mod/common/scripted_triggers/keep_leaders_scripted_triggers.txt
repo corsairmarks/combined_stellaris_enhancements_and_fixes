@@ -443,7 +443,14 @@ is_eligible_transfer_without_assimilation = {
 		species = { is_same_species = event_target:potential_owner }
 		if = {
 			limit = { event_target:potential_owner = { is_machine_empire = yes } }
-			is_robotic_species_lenient = yes
+			OR = {
+				is_robotic_species_lenient = yes
+				AND = {
+					event_target:potential_owner = { has_valid_civic = civic_machine_servitor }
+					is_hive_species = no
+					has_global_flag = battle_thrall_military_leaders_installed
+				}
+			}
 		}
 		else_if = {
 			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
@@ -738,5 +745,17 @@ klfis_leader_species_gender_change_requires_clone = {
 			species = { klfis_species_can_set_is_female = yes }
 			from = { klfis_species_can_set_is_female = no }
 		}
+	}
+}
+
+# this = species
+klfis_has_species_trait_with_leader_trait = {
+	OR = {
+		has_trait = trait_cybernetic
+		has_trait = trait_erudite
+		has_trait = trait_psionic
+		has_trait = trait_latent_psionic
+		has_trait = trait_brainslug
+		has_trait = trait_clone_soldier_fertile
 	}
 }
