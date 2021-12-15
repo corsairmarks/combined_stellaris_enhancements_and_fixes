@@ -4,7 +4,7 @@ Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied t
 
 A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) now add one unit of planetary capacity per two districts and one building slot per four districts (as of 3.2 farming districts do this in base game).  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
 
-And yes, I totally made up "lithorian" as an alternative to "agrarian" - going to stick with it for now.
+**_Important Update:_** No longer overrides most society technologies, making this mod easier to mix and match with other mods!
 
 # Changes
 
@@ -18,14 +18,14 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 Requires Stellaris version 3.2.2 "Herbert." This mod alters the following core Stellaris files:
 
-* `governments/civics/00_civics.txt` - replaces one civic `civic_agrarian_idyll` (new file `government/civics/01_agrarian_idyll_override.txt`)
+* `governments/civics/00_civics.txt` - replaces one civic `civic_agrarian_idyll` to add the alternative description for lithoids
 * `districts/02_rural_districts.txt` - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
 * `districts/04_ringworld_districts.txt` entire file, excludes agrarian idyll lithoids from the farming district benefits
 * `pop_jobs/03_worker_jobs.txt` - entire file, adds amenities production to miners, mote miners, gas miners, crystal miners, and scrap miners (but not the specialist refiners) (**NOT** compatible with my mod [Technician Job Priority](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) but includes the same fix)
 * `pop_jobs/06_event_jobs.txt` - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic, add amenities to turtle miners for both Agrarian and Lithorian Idyll
-* `technology/00_soc_tech.txt` entire file, excludes lithoids from researching `tech_housing_agrarian_idyll`
+* `technology/00_soc_tech.txt` replaces one technology `tech_housing_agrarian_idyll` in order to excludes lithoids, who now have their own version
 
-Stellaris requires overriding the entire containing file to make changes to a district, job, or technology (there are technical consequences if not). That means this mod is incompatible with other mods that make changes to rural and/or ringworld districts, mods that change worker-strata jobs or special event jobs, and mods that make changes to any Society technologies.
+Stellaris requires overriding the entire containing file to make changes to districts and jobs (there are technical consequences if not). That means this mod is incompatible with other mods that make changes to rural and/or ringworld districts as well as mods that change worker-strata jobs and/or special event jobs.
 
 This mod is not compatible with achievements because it overwrites core Stellaris files.
 
@@ -35,11 +35,14 @@ This mod can be safely added after the game has started, but should not be remov
 
 ## Known Issues
 
-Overriding a civic generates an error log. Expect to see one line in the error.log file similar to this:
+Overriding a civic or technology causes the game to log errors. Expect to see two lines in the error.log file similar to these:
 
 ```
-[15:49:52][game_singleobjectdatabase.h:147]: Object with key: civic_agrarian_idyll already exists
+[21:23:09][technology.cpp:1177]: Duplicate technology: tech_housing_agrarian_idyll
+[21:23:12][game_singleobjectdatabase.h:147]: Object with key: civic_agrarian_idyll already exists
 ```
+
+Normally overriding a single technology can cause problems with the game being confused by duplicates, but only technologies that are considered prerequisites for other technologies are affected. 
 
 ## Change Log
 
@@ -71,6 +74,7 @@ Overriding a civic generates an error log. Expect to see one line in the error.l
 * 2.0.2 Fix gas extractors (from Feral Overload) improperly disallowing enslaved species
 * 3.0.0 Update for Stellaris version 3.2.1 "Herbert" - integrate underlying changes from the base game in overridden files
 * 3.0.1 Mark as compatible with Stellaris version 3.2.2 "Herbert" - the game patch had no script changes
+* 3.1.0 Remove full-file Society technology overwrite - now much more compatible with other mods!
 
 ## Source Code
 
