@@ -28,7 +28,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] ([url=https://github.com/corsairmarks/leader_trait_randomisation_enhancement]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941]Restored Content: Fungoids[/url] ([url=https://github.com/corsairmarks/portrait_unlock_fungoid]Source[/url] 1.2.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] 2.1.0)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] 3.0.1)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] 3.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 2.2.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] 1.2.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Special Leadership Privileges for Battle Thralls and Bio-Trophies[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 2.1.1)
@@ -46,7 +46,7 @@ Hosted on [url=https://github.com/corsairmarks/combined_stellaris_enhancements_a
 
 Requires Stellaris version 3.2.2 "Herbert" and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes. Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, the Full Military Service species right, (most) society technologies, or changes to the Prosperity tradition.
+Check each of the contained mods for an explicit list of incompatibility notes. Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, or the Full Military Service species right.
 
 [h2]Recommended Companion Mods[/h2]
 

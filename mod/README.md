@@ -27,7 +27,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) eec18846883eeb15ea06b04d164eb21fb574c215)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) c91b3f85999ac6fe588f5755a7d7208f03a1e5ff)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 37987685f374a3d18a43d9daec0e39ce0d28c6d9)
-* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 94f0c7c4ee27b28034f639aabc4f4ef70faf0a47)
+* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) d5b8236f686310cddcec8c6adfd52d19ee65a18c)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 2855abeb0a555b84591748714523d7cfafc14e78)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 7b389194d0f08b79d2859b0107275641cdc85e77)
 * [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 90a72d92efbd7b8fa32c828c231c45711c171806)
@@ -59,7 +59,7 @@ Each of the source repositories above is added as a remote to this repository on
 
 Requires Stellaris version 3.2.2 "Herbert" and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, the Full Military Service species right, or (most) society technologies.
+Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, or the Full Military Service species right.
 
 ## Recommended Companion Mods
 
@@ -166,4 +166,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 3.3.5 Update merged mod: "Terraform" to Tomb World at 1.2.3
 * 4.0.0 Update all merged mods for Stellaris version 3.2.2 "Herbert"
 * 4.0.1 Update merged mod: Special Leadership Privileges for Battle Thralls and Bio-Trophies at 2.1.1 (previously named Full Military Service for Battle Thralls)
-* 4.0.2 Update merged mod: Retain Leaders from Integrated Subjects at 3.1.0
+* 4.0.2 Update merged mods:
+    * "Agrarian" Idyll for Lithoids at 3.1.0
+    * Retain Leaders from Integrated Subjects at 3.1.0
