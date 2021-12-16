@@ -24,7 +24,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 50af1137ce7057a2e434b61e7bdc3b52eb3469e2)
 * [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) b3bc3fafe835cc031333002574a0a0fb6ef00034)
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) bcfe5b8f9f2bf41d0862c9aca04fecf76f0c14c4)
-* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) eec18846883eeb15ea06b04d164eb21fb574c215)
+* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 18f31cc72b64cae2e6a299e9f3221b70afc7ed49)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) c91b3f85999ac6fe588f5755a7d7208f03a1e5ff)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 37987685f374a3d18a43d9daec0e39ce0d28c6d9)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) d5b8236f686310cddcec8c6adfd52d19ee65a18c)
@@ -169,3 +169,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 4.0.2 Update merged mods:
     * "Agrarian" Idyll for Lithoids at 3.1.0
     * Retain Leaders from Integrated Subjects at 3.1.0
+* 4.0.3 Update merged mod: Leader Traits: Enhanced Randomisation at 2.2.0
