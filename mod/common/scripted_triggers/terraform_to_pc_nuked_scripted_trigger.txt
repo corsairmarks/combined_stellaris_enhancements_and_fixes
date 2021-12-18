@@ -52,6 +52,7 @@ potential_for_pc_nuked_terraform_country = {
 # this = species
 is_nuked_species = {
 	OR = {
+		ideal_planet_class = pc_nuked
 		has_trait = trait_pc_nuked_preference
 		has_trait = trait_survivor
 		has_trait = trait_plantoid_radiotrophic

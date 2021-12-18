@@ -49,6 +49,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Account for the `trait_harvested_radiotrophic` trait
     * Re-weight `pc_nuked` terraform links to be of similar weight to the newly-re-weighted built-in terraform links
     * Pop % for the AI to want to terraform is not 50%/75% nuked empire/non-nuked empire
+* vNext Improve trigger for determining if a species is "nuked"
 
 ## Source Code
 
