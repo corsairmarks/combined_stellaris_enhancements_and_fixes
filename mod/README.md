@@ -170,5 +170,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 4.0.2 Update merged mods:
     * "Agrarian" Idyll for Lithoids at 3.1.0
     * Retain Leaders from Integrated Subjects at 3.1.0
-* 4.0.3 Update merged mod: Leader Traits: Enhanced Randomisation at 2.2.0
-* 4.1.0 Add merged mod: Penal Colony: Enhanced at 1.0.0
+* 4.1.0 Add and update merged mods
+    * Added: Penal Colony: Enhanced at 1.0.0
+    * Updated: Leader Traits: Enhanced Randomisation at 2.2.0
