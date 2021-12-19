@@ -14,7 +14,7 @@ You only need the contents of the `mod` folder for a local install, disregard th
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
-* [Penal Colony: Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) bdc877917ccf170e5e3941b7f8e983c20c29fa9b)
+* [Penal Colony: Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 3cc61030957424050284a51153eeb3913891dfc6)
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 20ffc4935074f45b63bff2404f920b1c961c9cc9)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 36e7668f36417df1fec5a1d9e850beef66b331d1)
 * ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) befacb6ebe4cb3cefd2bc75e217c99252960b8e2)
@@ -173,3 +173,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 4.1.0 Add and update merged mods
     * Added: Penal Colony: Enhanced at 1.0.0
     * Updated: Leader Traits: Enhanced Randomisation at 2.2.0
+* 4.1.1 Update merged mod: Penal Colony: Enhanced at 1.0.0
