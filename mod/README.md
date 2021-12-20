@@ -25,11 +25,11 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 50af1137ce7057a2e434b61e7bdc3b52eb3469e2)
 * [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) b3bc3fafe835cc031333002574a0a0fb6ef00034)
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) bcfe5b8f9f2bf41d0862c9aca04fecf76f0c14c4)
-* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 18f31cc72b64cae2e6a299e9f3221b70afc7ed49)
+* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) eff0a845198777ad1df4b57c2a14abaf222c00fa)
 * [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) c91b3f85999ac6fe588f5755a7d7208f03a1e5ff)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 37987685f374a3d18a43d9daec0e39ce0d28c6d9)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) d5b8236f686310cddcec8c6adfd52d19ee65a18c)
-* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 2855abeb0a555b84591748714523d7cfafc14e78)
+* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 3d85c097f3a5d57d5b2b34128ffdc16603dee381)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 7b389194d0f08b79d2859b0107275641cdc85e77)
 * [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 90a72d92efbd7b8fa32c828c231c45711c171806)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 37c1af3645fd8df873fc643d34d932bf346b26ea)
@@ -174,3 +174,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Added: Penal Colony: Enhanced at 1.0.0
     * Updated: Leader Traits: Enhanced Randomisation at 2.2.0
 * 4.1.1 Update merged mod: Penal Colony: Enhanced at 1.1.0
+* 4.1.2 Update merged mods:
+    * Leader Traits: All Eligible Species Traits at 2.2.1
+    * Leader Traits: Enhanced Randomisation at 2.2.1
