@@ -17,7 +17,6 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 [h2]Compatibility[/h2]
 
 Requires Stellaris version 3.2.2 "Herbert."  This mod alters the following core Stellaris files:
-
 [list]
 [*][b]governments/civics/00_civics.txt[/b] - replaces one civic [i]civic_agrarian_idyll[/i] to add the alternative description for lithoids
 [*][b]districts/02_rural_districts.txt[/b] - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
@@ -26,7 +25,6 @@ Requires Stellaris version 3.2.2 "Herbert."  This mod alters the following core 
 [*][b]pop_jobs/06_event_jobs.txt[/b] - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic, add amenities to turtle miners for both Agrarian and Lithorian Idyll
 [*][b]technology/00_soc_tech.txt[/b] replaces one technology [i]tech_housing_agrarian_idyll[/i] in order to excludes lithoids, who now have their own version
 [/list]
-
 Stellaris requires overriding the entire containing file to make changes to districts and jobs (there are technical consequences if not). That means this mod is incompatible with other mods that make changes to rural and/or ringworld districts as well as mods that change worker-strata jobs and/or special event jobs.
 
 This mod is not compatible with achievements because it overwrites core Stellaris files.
