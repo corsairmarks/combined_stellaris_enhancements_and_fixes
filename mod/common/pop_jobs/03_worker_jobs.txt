@@ -1868,10 +1868,7 @@ angler = {
 	possible_precalc = can_fill_worker_job
 	possible = {
 		hidden_trigger = { exists = owner }
-		owner = {
-			is_gestalt = no
-			is_anglers_empire = yes
-		}
+		owner = { is_gestalt = no }
 	}
 
 	resources = {
