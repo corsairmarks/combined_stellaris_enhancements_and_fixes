@@ -75,6 +75,7 @@ Normally overriding a single technology can cause problems with the game being c
 * 3.0.0 Update for Stellaris version 3.2.1 "Herbert" - integrate underlying changes from the base game in overridden files
 * 3.0.1 Mark as compatible with Stellaris version 3.2.2 "Herbert" - the game patch had no script changes
 * 3.1.0 Remove full-file Society technology overwrite - now much more compatible with other mods!
+* 3.1.1 Don't restrict the ability to work the Angler job to Anglers empires (allows other empires to employ Anglers should they somehow get access to the job)
 
 ## Source Code
 
