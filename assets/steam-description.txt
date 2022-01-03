@@ -36,12 +36,10 @@ This mod can be safely added after the game has started, but should not be remov
 [h2]Known Issues[/h2]
 
 Overriding a civic or technology causes the game to log errors. Expect to see two lines in the error.log file similar to these:
-
 [code]
 [21:23:09][technology.cpp:1177]: Duplicate technology: tech_housing_agrarian_idyll
 [21:23:12][game_singleobjectdatabase.h:147]: Object with key: civic_agrarian_idyll already exists
 [/code]
-
 Normally overriding a single technology can cause problems with the game being confused by duplicates, but only technologies that are considered prerequisites for other technologies are affected. 
 
 [h2]Change Log[/h2]
