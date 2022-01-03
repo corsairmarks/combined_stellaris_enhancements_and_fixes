@@ -51,12 +51,10 @@ When cloning a leader and changing them from a species class without gender to a
 [h3]Error Logs[/h3]
 
 This mod overrides a built-in trigger [b]can_be_military_leader[/b] and a species right [b]military_service_full[/b]. These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
-
 [code]
 [20:51:18][game_singleobjectdatabase.h:147]: Object with key: can_be_military_leader already exists
 [20:51:20][game_singleobjectdatabase.h:147]: Object with key: military_service_full already exists
 [/code]
-
 [h2]Change Log[/h2]
 
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2496357447]Change Notes[/url]
