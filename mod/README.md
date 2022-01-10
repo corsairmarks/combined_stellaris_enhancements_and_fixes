@@ -26,6 +26,7 @@ This mod is intentionally not included in my modpack [Subtle Polish: A Collectio
 
 * 1.0.0 Initial version
 * 1.1.0 Mark as compatible with Stellaris version 3.2 "Herbert"
+* 1.2.0 Add support for 5 rows of building slots - enabling it requires the submod [Basic Planetview: More Districts & Buildings](url=https://steamcommunity.com/sharedfiles/filedetails/?id=2714695762)
 
 ## Source Code
 
