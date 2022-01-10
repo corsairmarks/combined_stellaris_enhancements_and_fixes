@@ -49,7 +49,9 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Account for the `trait_harvested_radiotrophic` trait
     * Re-weight `pc_nuked` terraform links to be of similar weight to the newly-re-weighted built-in terraform links
     * Pop % for the AI to want to terraform is not 50%/75% nuked empire/non-nuked empire
-* vNext Improve trigger for determining if a species is "nuked"
+* 2.1.0 Nanite worlds now eligible to become Tomb Worlds
+    * Add `pc_gray_goo` to `pc_nuked` terraforming link (standard cost - since Nanite Worlds have a flat cost no matter which type to which it is terraformed)
+    * Improve trigger for determining if a species is "nuked"
 
 ## Source Code
 
