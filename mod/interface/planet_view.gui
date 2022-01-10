@@ -546,9 +546,9 @@ guiTypes = {
 			size = { width = 289 height = 170 }
 
 			iconType = {
-			name = "background"
-			spriteType = "GFX_planetview_topright_frame"
-			position = { x = -5 y = 1 }
+				name = "background"
+				spriteType = "GFX_planetview_topright_frame"
+				position = { x = -5 y = 1 }
 			}
 
 
@@ -954,89 +954,86 @@ guiTypes = {
 				}
 			}
 
-
 			containerWindowType = {
 				name = "colonizable_planet_window"
-
-
-			#<------------------------ PLANET FEATURES / DEPOSITS --------------------------->
-			# Planet Features
-			containerWindowType = {
-				name = "deposits_summary_window"
-				size = { width = 150 height = 90 }
-				position = { x = 415 y = 95 }
-
-				background = {
-					name = "background"
-					spriteType = "GFX_dark_area_cut"
-				}
-
-				buttonType = {
-					name = "deposits_button"
-					position = { x = 5 y = -3 }
-					spriteType = "GFX_standard_button_116_34"
-					buttonFont = "cg_16b"
-					text = "FEATURES"
-					font = "cg_16b"
-					orientation = UPPER_LEFT
-					oversound = mouse_over
-					pdx_tooltip = "DEPOSITS_TOOLTIP"
-					navLeft = "change"
-					shortcut = "K"
-				}
-
+				#<------------------------ PLANET FEATURES / DEPOSITS --------------------------->
+				# Planet Features
 				containerWindowType = {
-					name = "blocker_deposits_window"
-					size = { width = 100 height = 30 }
-					position = { x = 30 y = 55 }
-					iconType = {
-						name = "blocker_deposit_frame"
-						spriteType = "GFX_blocker_icon"
-						position = { x = -7 y = 0 }
-						scale = 1
+					name = "deposits_summary_window"
+					size = { width = 150 height = 90 }
+					position = { x = 415 y = 95 }
+
+					background = {
+						name = "background"
+						spriteType = "GFX_dark_area_cut"
 					}
 
-					instantTextBoxType = {
-						name = "blocker_deposit_num"
+					buttonType = {
+						name = "deposits_button"
+						position = { x = 5 y = -3 }
+						spriteType = "GFX_standard_button_116_34"
+						buttonFont = "cg_16b"
+						text = "FEATURES"
 						font = "cg_16b"
-						position = { x = 26 y = 1 }
-						text = "x5"
-						maxWidth = 35
-						maxHeight = 50
-						fixedSize = yes
-						format = left
-						orientation = upper_left
+						orientation = UPPER_LEFT
+						oversound = mouse_over
+						pdx_tooltip = "DEPOSITS_TOOLTIP"
+						navLeft = "change"
+						shortcut = "K"
+					}
+
+					containerWindowType = {
+						name = "blocker_deposits_window"
+						size = { width = 100 height = 30 }
+						position = { x = 30 y = 55 }
+						iconType = {
+							name = "blocker_deposit_frame"
+							spriteType = "GFX_blocker_icon"
+							position = { x = -7 y = 0 }
+							scale = 1
+						}
+
+						instantTextBoxType = {
+							name = "blocker_deposit_num"
+							font = "cg_16b"
+							position = { x = 26 y = 1 }
+							text = "x5"
+							maxWidth = 35
+							maxHeight = 50
+							fixedSize = yes
+							format = left
+							orientation = upper_left
+						}
+					}
+
+					# Rare Deposits Summary, shown when grid overflows
+					containerWindowType = {
+						name = "rare_deposits_window"
+						size = { width = 90 height = 30 }
+						position = { x = 80 y = 55 }
+
+						iconType = {
+							name = "blocker_deposit_frame"
+							spriteType = "GFX_resource_strategic_top_bar"
+							position = { x = 6 y = 0 }
+							scale = 1.1
+						}
+
+						instantTextBoxType = {
+							name = "blocker_deposit_num"
+							font = "cg_16b"
+							position = { x = 32 y = 1 }
+							text = "x5"
+							maxWidth = 35
+							maxHeight = 50
+							fixedSize = yes
+							format = left
+							orientation = upper_left
+						}
 					}
 				}
 
-				# Rare Deposits Summary, shown when grid overflows
-				containerWindowType = {
-					name = "rare_deposits_window"
-					size = { width = 90 height = 30 }
-					position = { x = 80 y = 55 }
-
-					iconType = {
-						name = "blocker_deposit_frame"
-						spriteType = "GFX_resource_strategic_top_bar"
-						position = { x = 6 y = 0 }
-						scale = 1.1
-					}
-
-					instantTextBoxType = {
-						name = "blocker_deposit_num"
-						font = "cg_16b"
-						position = { x = 32 y = 1 }
-						text = "x5"
-						maxWidth = 35
-						maxHeight = 50
-						fixedSize = yes
-						format = left
-						orientation = upper_left
-					}
-				}
-			}
-
-			#<---------------------------- DISTRICTS ----------------------------->
+				#<---------------------------- DISTRICTS ----------------------------->
 
 				### Districts Container Window
 				containerWindowType = {
@@ -1059,7 +1056,7 @@ guiTypes = {
 							name = "district_background"
 							spriteType = "GFX_dark_area_cut"
 						}
-					}	
+					}
 
 					# Districts num
 					containerWindowType = {
@@ -1118,7 +1115,7 @@ guiTypes = {
 						gridBoxType = {
 							name = "available_districts_grid_box"
 							size = { width = 100 height = 20 }
-							position = { x = -`5 y = 16 }
+							position = { x = -5 y = 16 }
 							format = "UPPER_RIGHT"
 							slotsize = { width = 10 height = 10 }
 							max_slots_horizontal = 20
@@ -1371,7 +1368,6 @@ guiTypes = {
 					position = { x = 220 y = 50 }
 
 					background = {
-						position = { x = 0 y = 0 }
 						name = "buildings_box_background"
 						spriteType = "GFX_dark_area_cut"
 					}
@@ -1397,7 +1393,7 @@ guiTypes = {
 					slotsize = { width = 60 height = 60 }
 					add_horizontal = yes
 					max_slots_horizontal = 3
-					max_slots_vertical = 4
+					max_slots_vertical = 5
 				}
 
 				#<--------------------- Designation --------------------------->
@@ -5932,7 +5928,7 @@ guiTypes = {
 		name = "planet_building_entry"
 		position = { x=0 y=0 }
 		size = { width = 58 height = 58 }
-		
+
 
 		buttonType = {
 			name = "locked_building_button"
