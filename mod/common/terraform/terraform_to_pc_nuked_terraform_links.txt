@@ -12,6 +12,9 @@
 # % nuked pops required for terraform
 @nuked_country_percent_threshold = 0.5
 @non_nuked_country_percent_threshold = 0.75
+# L-Cluster (pc_grey_goo) "from" cost (see 02_special_terraform_links.txt)
+@lClusterDuration = 360
+@lClusterCost = 1000
 
 terraform_link = {
 	from = pc_alpine
@@ -886,6 +889,36 @@ terraform_link = {
 		weight = 5
 		modifier = {
 			factor = 5
+			owner_main_species = { is_nuked_species = yes }
+		}
+	}
+}
+
+terraform_link = {
+	from = pc_gray_goo
+	to = pc_nuked
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+	duration = @lClusterDuration
+	potential = {
+		from = { has_modifier = terraforming_candidate }
+		potential_for_pc_nuked_terraform_country = yes
+	}
+	condition = {
+		has_technology = tech_climate_restoration
+		eligible_for_pc_nuked_terraform_country = yes
+	}
+	effect = {
+		post_terraform_to_pc_nuked = yes
+	}
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 10
 			owner_main_species = { is_nuked_species = yes }
 		}
 	}
