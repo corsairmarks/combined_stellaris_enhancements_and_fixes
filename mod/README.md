@@ -16,6 +16,8 @@ Built for Stellaris version 3.2.\* "Herbert," backwards compatible with version 
 
 [More Standard Districts](https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194) adds 5 district types based on basic buildings: Research, Commercial, Leisure, Military, and Administrative.  Commercial Districts are not available for gestalt empires and Leisure Districts are only available for regular empires and Rogue Servitors.
 
+[Basic Planetview: More Districts & Building Slots](url=https://steamcommunity.com/sharedfiles/filedetails/?id=2714695762) adds 3 additional building slots for use with this mod.  Number of additional districts limited by lack of scrollbars for this part of the UI.
+
 ### Not Included in "Subtle Polish"
 
 This mod is intentionally not included in my modpack [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) because it is an optional, basic UI change targeted at specific screen resolutions.
