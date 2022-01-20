@@ -52,6 +52,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
 * 2.1.0 Nanite worlds now eligible to become Tomb Worlds
     * Add `pc_gray_goo` to `pc_nuked` terraforming link (standard cost - since Nanite Worlds have a flat cost no matter which type to which it is terraformed)
     * Improve trigger for determining if a species is "nuked"
+* 2.2.0 Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility]() - no functionality changes, but the logic is now much easier for the add-on to reuse TODO link
 
 ## Source Code
 
