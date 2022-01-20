@@ -643,7 +643,6 @@ terraform_link = {
 						has_valid_civic = civic_machine_servitor
 					}
 					from = {
-						is_colony = yes
 						pop_percentage = {
 							percentage > @non_nuked_country_percent_threshold
 							limit = { species = { is_nuked_species = yes } }
