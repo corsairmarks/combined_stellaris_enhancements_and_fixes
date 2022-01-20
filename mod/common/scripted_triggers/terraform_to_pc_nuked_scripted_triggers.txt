@@ -1,7 +1,3 @@
-# % nuked pops required for terraform
-@nuked_country_percent_threshold = 0.5
-@non_nuked_country_percent_threshold = 0.75
-
 # Whether this country is eligible to use tomb world "terraforming."
 # Requires either the main species be nuked (no tech requirement), or
 # that the country is a Memorialist (any type, no tech requirement),
