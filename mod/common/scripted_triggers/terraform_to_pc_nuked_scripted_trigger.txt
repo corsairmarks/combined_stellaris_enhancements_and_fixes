@@ -1,3 +1,7 @@
+# % nuked pops required for terraform
+@nuked_country_percent_threshold = 0.5
+@non_nuked_country_percent_threshold = 0.75
+
 # Whether this country is eligible to use tomb world "terraforming."
 # Requires either the main species be nuked (no tech requirement), or
 # that the country is a Memorialist (any type, no tech requirement),
@@ -121,5 +125,90 @@ eligible_pc_nuked_terraform_unhabitable = {
 		is_planet_class = pc_barren
 		is_planet_class = pc_barren_cold
 		is_planet_class = pc_frozen
+	}
+}
+
+# this = country, prospective "terraformer"
+# from = planet
+basic_planet_should_weight_for_terraform_to_pc_nuked = {
+	OR = {
+		AND = {
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > @nuked_country_percent_threshold
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		AND = {
+			OR = {
+				is_machine_empire = no
+				has_valid_civic = civic_machine_assimilator
+				has_valid_civic = civic_machine_servitor
+			}
+			from = {
+				pop_percentage = {
+					percentage > @non_nuked_country_percent_threshold
+					limit = { species = { is_nuked_species = yes } }
+					exclude = {
+						OR = {
+							is_sapient = no
+							has_citizenship_type = { type = citizenship_purge }
+							has_citizenship_type = { type = citizenship_purge_machine }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+special_planet_should_weight_for_terraform_to_pc_nuked = {
+	is_hive_empire = no
+	OR = {
+		AND = {
+			owner_main_species = { is_nuked_species = yes }
+			from = {
+				OR = {
+					is_colony = no
+					pop_percentage = {
+						percentage > @nuked_country_percent_threshold
+						limit = { species = { is_nuked_species = yes } }
+						exclude = {
+							OR = {
+								is_sapient = no
+								has_citizenship_type = { type = citizenship_purge }
+								has_citizenship_type = { type = citizenship_purge_machine }
+							}
+						}
+					}
+				}
+			}
+		}
+		from = {
+			is_colony = yes
+			pop_percentage = {
+				percentage > @non_nuked_country_percent_threshold
+				limit = { species = { is_nuked_species = yes } }
+				exclude = {
+					OR = {
+						is_sapient = no
+						has_citizenship_type = { type = citizenship_purge }
+						has_citizenship_type = { type = citizenship_purge_machine }
+					}
+				}
+			}
+		}
 	}
 }
