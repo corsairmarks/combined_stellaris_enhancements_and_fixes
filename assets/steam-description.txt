@@ -13,7 +13,7 @@ Rural districts grant 0.5 planetary capacity and 0.25 building slots per distric
 Because this is a tradition text swap, all the the normal restrictions for Agrarian Idyll apply to it (without further code changes).
 
 [h2]Compatibility[/h2]
-Requires Stellaris version 3.2.2 "Herbert."  This mod alters the following core Stellaris files:
+Requires Stellaris version 3.3.0 "Libra."  This mod alters the following core Stellaris files:
 [list]
 [*][b]governments/civics/00_civics.txt[/b] - replaces one civic [i]civic_agrarian_idyll[/i] to add the alternative description for lithoids
 [*][b]districts/02_rural_districts.txt[/b] - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
