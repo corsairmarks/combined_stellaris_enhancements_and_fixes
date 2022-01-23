@@ -818,7 +818,7 @@ country_event = {
 		name = honored_protectors_decree.4.cancel
 		custom_tooltip = honored_protectors_decree.4.cancel.tooltip
 		add_resource = {
-			influence = 100
+			unity = 100
 		}
 		hidden_effect = {
 			country_event = {

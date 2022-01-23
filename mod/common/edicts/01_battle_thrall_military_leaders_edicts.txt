@@ -1,11 +1,10 @@
 designate_honored_protectors = {
 	length = 0
 	icon = "GFX_edict_type_policy"
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
-			influence = 100
+			unity = 100
 		}
 	}
 	modifier = { }
@@ -78,11 +77,10 @@ designate_honored_protectors = {
 designate_organic_advisors = {
 	length = 0
 	icon = "GFX_edict_type_policy"
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
-			influence = 100
+			unity = 100
 		}
 	}
 	modifier = { }
@@ -138,11 +136,10 @@ designate_organic_advisors = {
 revoke_organic_advisors = {
 	length = 0
 	icon = "GFX_edict_type_policy"
-	edict_cap_usage = 0
 	resources = {
 		category = edicts
 		cost = {
-			influence = 100
+			unity = 100
 		}
 	}
 	modifier = { }
