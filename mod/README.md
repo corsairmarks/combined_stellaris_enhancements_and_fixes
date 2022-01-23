@@ -10,7 +10,7 @@ Machine Worlds owned by regular empires now have a planetary modifier (visible o
 
 ## Compatibility
 
-Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.3.\* "Libra."  Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit `d_resource_consolidation_1` (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
@@ -45,11 +45,13 @@ Overriding a colony designation and a deposit causes the game to log two errors 
     * Prevent confusing initial event description complaining about lack of synth rights when the empire does in fact have synth rights
     * Machine empires won't get a Machine World opinion because they integrate it (debuffs suck)
     * Don't add duplicate modifiers to Machine Worlds
-* 2.0.0 Update mod for Stellaris version 3.1 "Lem"
+* 2.0.0 Update for Stellaris version 3.1 "Lem"
     * Update district overrides to import new features, such as the special new artificer and catalytic technician jobs
     * Update `col_mac_factory` override
     * Add Malfunctioning Replicator Bay blocker override to also block the free Roboticist job
-* 2.1.0 Update mod for Stellaris version 3.2 "Herbert" - no changes (yes it surprised me too)
+* 2.1.0 Update for Stellaris version 3.2 "Herbert" - no changes (yes it surprised me too)
+* 3.0.0 Update for Stellaris version 3.3 "Libra" - integrate underlying changes from the base game in overridden files
+
 
 ## Source Code
 
