@@ -12,8 +12,8 @@ col_mac_factory = {
 		owner = { country_uses_consumer_goods = yes }
 	}
 
+	custom_tooltip = col_factory_custom
 	planet_modifier = {
-		custom_tooltip = col_factory_custom
 		planet_district_industrial_build_speed_mult = 0.25
 		planet_artisans_upkeep_mult = -0.2
 	}
