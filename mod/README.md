@@ -14,7 +14,7 @@ This mod won't affect any other kinds of armies.
 
 ## Compatibility
 
-Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.3.\* "Herbert."  Not compatible with achievements.
 
 Overwrites the three built-in counter-limited armies in order to improve their counter usage: `titanic_assault_army`, `titanic_azizian_assault_army`, and `imperial_legion`.  The `titanic_assault_army` also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
 
@@ -46,6 +46,7 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 * 1.0.1 Fix thumbnail
 * 2.0.0 Mark as compatible with Stellaris 3.1 "Lem" - update to use new arithmetic syntax
 * 2.1.0 Mark as compatible with Stellaris 3.2 "Herbert" - no script changes
+* 2.2.0 Mark as compatible with Stellaris 3.3 "Libra" - no script changes
 
 ## Source Code
 
