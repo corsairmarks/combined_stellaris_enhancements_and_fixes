@@ -36,7 +36,6 @@ This mod is somewhat localized for every language supported by Stellaris - mainl
 However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing.  The English text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
 
 [h2]Known Issues[/h2]
-
 [h3]Stellaris Bugs[/h3]
 When cloning a leader and changing them from a species class without gender to a species class with gender (or vice versa) the Leader screen interface breaks. The Leader screen does not hide the replaced leader or correctly show their replacement until the player manually recruits a new leader.
 
