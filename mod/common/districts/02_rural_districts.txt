@@ -1038,8 +1038,8 @@ district_farming_uncapped = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = { 
-			s_ai = yes
+		owner = {
+			is_ai = yes
 			country_uses_food = no
 		}
 	}
