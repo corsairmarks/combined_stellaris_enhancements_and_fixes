@@ -1,9 +1,7 @@
 [h1]Overview[/h1]
-
 Have you ever noticed that some habitable planet classes, when they are moons, will display the parent planet in the sky in the planet view (with rings, if it has them)?  Do you wish that all habitable moons had this feature instead of just a few?  This mod is for you.
 
 The artwork is already present in [i]common/gfx/portraits/environments[/i], it just isn't enabled for all planet classes which have art.  These planet classes already use the fancy sky art:
-
 [list]
 [*]Arid ([i]pc_arid[/i])
 [*]Savannah ([i]pc_savannah[/i])
@@ -11,17 +9,13 @@ The artwork is already present in [i]common/gfx/portraits/environments[/i], it j
 [*]Alpine ([i]pc_alpine[/i])
 [*]Ecumenopolis ([i]pc_city[/i])
 [/list]
-
 Note that Tomb Worlds ([i]pc_nuked[/i]) do not have fancy sky art available.
 
 [h2]Notes[/h2]
-
 There are probably lots of other mods that make this same change, but I made this one with the express purpose of merging it in to [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089]Subtle Polish[/url].
 
 [h1]Changes[/h1]
-
 No gameplay changes.  This mod updates several of the default planet classes, where the only change is to set [b]uses_alternative_skies_for_moons = yes[/b].
-
 [list]
 [*]Desert ([i]pc_desert[/i])
 [*]Tropical ([i]pc_tropical[/i])
@@ -30,19 +24,16 @@ No gameplay changes.  This mod updates several of the default planet classes, wh
 [*]Tundra ([i]pc_tundra[/i])
 [*]Gaia ([i]pc_gaia[/i])
 [/list]
-
 [h2]Compatibility[/h2]
-
 In order to change the default planet classes without impacting habitability (i.e. breaking it), it is necessary to override the entire [i]common/planet_classes/00_planet_classes.txt[/i] file.  What this means to you is that this mod is incompatible with other mods that need to override the default habitable planet classes.
 
 Fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1419304439]Ancient Cache of Technologies[/url] because those mods do not overwrite the built-in planetary classes.
 
 [b]Not[/b] compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=937289339]Real Space[/url], but that mod already activates the same art so you don't need this one.
 
-Built for Stellaris version 3.2.* "Herbert."  [b]Not[/b] compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+Built for Stellaris version 3.3 "Libra" and backwards-compatible with version 3.2 "Herbert."  [b]Not[/b] compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
 
 [h3]Verifying Mod Compatibility[/h3]
-
 You can verify mod compatibility yourself very easily.  Steam downloads mods into a directory in your Steam library (if you have more than one, mods go into the one with their corresponding game).  Inside the library (the default is at [i]C:/Program Files (x86)/Steam/steamapps[/i]), browse to [i]steamapps/workshop/content/281990[/i] (281990 is the Steam ID of Stellaris).
 
 Inside this folder, you will see many directories named with just numbers.  Those numbers are Steam Mod IDs - you can find a mod's ID easily from its Workshop web address.  For example, this mod's Workshop page is at https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521 so its ID is 2527918521.  What you need to do is find the ID of the mod(s) you want to check for compatibility - then open their directories.
@@ -50,21 +41,17 @@ Inside this folder, you will see many directories named with just numbers.  Thos
 Inside each mod you want to check, browse to the [i]common/planet_classes[/i] directory.  If you see a file named [i]00_planet_classes.txt[/i] then that mod is [b]not[/b] compatible with this one.  Otherwise there should not be a conflict - that's the only code file contained in this mod.
 
 [h3]When to Install[/h3]
-
 This mod can be safely added or removed from your savegame at any time.
 
 [h3]Recommended Companion Mods[/h3]
-
 The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I [i][b]highly[/b][/i] recommend you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239]Planetary Diversity - Planet View[/url] to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1587178040]Bigger Planet View[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1623423360]UI Overhaul Dynamic[/url] also provide expanded planetview graphics.
 
 [h2]Changelog[/h2]
-
 See the [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2527918521]Change Notes[/url]
 
 [h2]Source Code[/h2]
-
 Hosted on [url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]GitHub[/url]
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
