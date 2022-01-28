@@ -1,6 +1,7 @@
 @base_cost = 300
 @city_cost = 500
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_generator = {
 	base_buildtime = 240
 
@@ -126,7 +127,8 @@ district_generator = {
 	}
 }
 
-# Modified: added extra housing for lithoid agrarian idyll housing technology
+# Modified: added extra housing for agrarian idyll (lithoid) housing technology
+# Modified: added extra capacity and building slot for agrarian idyll
 district_mining = {
 	base_buildtime = 240
 
@@ -268,6 +270,7 @@ district_mining = {
 	}
 }
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_farming = {
 	base_buildtime = 240
 
@@ -477,6 +480,7 @@ district_farming = {
 	}
 }
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_generator_uncapped = {
 	base_buildtime = 240
 	icon = district_generator
@@ -625,7 +629,8 @@ district_generator_uncapped = {
 	}
 }
 
-# Modified: added extra housing for lithoid agrarian idyll housing technology
+# Modified: added extra housing for agrarian idyll (lithoid) housing technology
+# Modified: added extra capacity and building slot for agrarian idyll
 district_mining_uncapped = {
 	base_buildtime = 240
 	icon = district_mining
@@ -840,6 +845,7 @@ district_mining_uncapped = {
 	}
 }
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_farming_uncapped = {
 	base_buildtime = 240
 	icon = district_farming
