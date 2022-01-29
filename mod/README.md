@@ -34,7 +34,7 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
-Built for Stellaris version 3.3.\* "Libra."  This mod is not compatible with achievements.
+Built for Stellaris version 3.3 "Libra."  This mod is not compatible with achievements.
 
 ## Localisation
 
@@ -53,8 +53,8 @@ When cloning a leader and changing them from a species class without gender to a
 This mod overrides a built-in trigger `can_be_military_leader` and a species right `military_service_full`.  These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
 
 ```
-[20:51:18][game_singleobjectdatabase.h:147]: Object with key: can_be_military_leader already exists
-[20:51:20][game_singleobjectdatabase.h:147]: Object with key: military_service_full already exists
+[15:38:58][game_singleobjectdatabase.h:147]: Object with key: can_be_military_leader already exists, using the one at  file: common/scripted_triggers/01_battle_thrall_military_leaders_scripted_trigger_overrides.txt line: 4
+[15:38:58][game_singleobjectdatabase.h:147]: Object with key: military_service_full already exists, using the one at  file: common/species_rights/50_battle_thrall_special_military_service.txt line: 2
 ```
 
 ## Change Log
@@ -79,7 +79,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Edit game rules to allow Bio-Trophies to be civilian leaders (with decree) and eligible to be military leaders (but not armies) if optionally granted Full Military Service
     * Fix a bug where you couldn't re-open the Honored Protectors edict
 * 2.1.1 Fix incorrect filename
-* 3.0.0 Update for Stellaris version 3.3.0 "Libra" - integrate changes from the base game that influence the mod's content
+* 3.0.0 Update for Stellaris version 3.3 "Libra" - integrate changes from the base game that influence the mod's content
 
 ## Source Code
 
