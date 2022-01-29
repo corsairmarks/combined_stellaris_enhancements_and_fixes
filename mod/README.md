@@ -88,8 +88,8 @@ Normally overriding a single technology can cause problems with the game being c
 * 4.0.0 Update for Stellaris version 3.3 "Libra"
     * Jobs and districts are no longer full-file overwrites!
     * Only the relevant `planet_farmer` and `planet_miner` jobs are overridden (but not Angler since the Anglers civic cannot be combined with Agrarian/Lithorian Idyll)
-    * All rural districts are still overridden in order to apply the +capacity/+building slot bonue to them, but now only the ringworld farming district is overridden instead of all of them
-    * Integrate additional changes to game overrides from 3.3
+    * All rural districts are still overridden in order to apply the +capacity/+building slot bonus to them, but now only the ringworld farming district is overridden instead of all of them
+    * Integrate additional changes from 3.3 to overridden content
 
 ## Source Code
 
