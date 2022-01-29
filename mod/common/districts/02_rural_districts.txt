@@ -638,7 +638,7 @@ district_mining_uncapped = {
 
 	desc = {
 		trigger = {
-			NOT = { uses_district_set = shattered_ring_world  }
+			NOT = { uses_district_set = shattered_ring_world }
 		}
 		text = district_mining_uncapped_desc
 	}
@@ -1028,7 +1028,7 @@ district_farming_uncapped = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_anglers_empire = yes  }
+			owner = { is_anglers_empire = yes }
 			planet = { is_wet = yes }
 		}
 		text = job_aqu_angler_effect_desc
@@ -1036,7 +1036,7 @@ district_farming_uncapped = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_anglers_empire = yes  }
+			owner = { is_anglers_empire = yes }
 			planet = { is_wet = yes }
 		}
 		text = job_pearl_diver_effect_desc
