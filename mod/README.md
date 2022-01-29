@@ -4,7 +4,7 @@ Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied t
 
 A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) now add one unit of planetary capacity per two districts and one building slot per four districts (as of 3.2 farming districts do this in base game).  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
 
-**_Important Update:_** No longer overrides ever worker job, mot event job, or ringworld districts, making this mod even easier to mix and match with other mods!
+**_Important Update 3.3:_** No longer overrides ever worker job, mot event job, or ringworld districts, making this mod even easier to mix and match with other mods!
 
 # Changes
 
