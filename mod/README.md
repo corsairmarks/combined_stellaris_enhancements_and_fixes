@@ -10,13 +10,11 @@ Machine Worlds owned by regular empires now have a planetary modifier (visible o
 
 ## Compatibility
 
-Built for Stellaris version 3.3.\* "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit `d_resource_consolidation_1` (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
-This mod does need to overwrite the `common/districts/00_urban_districts.txt` file in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.
-
-What this means to you is that this mod is not compatible with other mods that alter urban districts, including a few of my other mods.  If you would like to use my conflicting mods as a package, please use [Subtle Polish](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead of the individual mods.
+This mod also overwrites the `district_industrial` in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.  What this means to you is that this mod is not compatible with other mods that alter industrial districts or (much more unlikely) the Machine World Factory colony designation.
 
 ### Recommended Companion Mods
 
@@ -33,6 +31,7 @@ This mod can be safely added to your savegame after the game has started.  Becau
 
 Overriding a colony designation and a deposit causes the game to log two errors like this:
 
+TODO
 ```
 [21:23:19][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists
 [21:23:20][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists
@@ -50,8 +49,10 @@ Overriding a colony designation and a deposit causes the game to log two errors 
     * Update `col_mac_factory` override
     * Add Malfunctioning Replicator Bay blocker override to also block the free Roboticist job
 * 2.1.0 Update for Stellaris version 3.2 "Herbert" - no changes (yes it surprised me too)
-* 3.0.0 Update for Stellaris version 3.3 "Libra" - integrate underlying changes from the base game in overridden files
-
+* 3.0.0 Update for Stellaris version 3.3 "Libra"
+    * Districts are no longer full-file overwrites!
+    * Only the relevant `district_industrial` district is overridden
+    * Integrate additional changes from 3.3 to overridden content
 
 ## Source Code
 
