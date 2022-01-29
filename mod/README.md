@@ -4,7 +4,7 @@ Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied t
 
 A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) now add one unit of planetary capacity per two districts and one building slot per four districts (as of 3.2 farming districts do this in base game).  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
 
-**_Important Update:_** No longer overrides most society technologies, making this mod easier to mix and match with other mods!
+**_Important Update:_** No longer overrides ever worker job, mot event job, or ringworld districts, making this mod even easier to mix and match with other mods!
 
 # Changes
 
@@ -16,18 +16,15 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 ## Compatibility
 
-Requires Stellaris version 3.3.0 "Libra." This mod alters the following core Stellaris files:
+Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.  This mod overrides one core Stellaris file (`common/districts/02_rural_districts.txt` in order to add +capacity/+building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
 
-* `governments/civics/00_civics.txt` - replaces one civic `civic_agrarian_idyll` to add the alternative description for lithoids
-* `districts/02_rural_districts.txt` - entire file, excludes farming districts for agrarian idyll lithoids and includes mining districts for them instead
-* `districts/04_ringworld_districts.txt` entire file, excludes agrarian idyll lithoids from the farming district benefits
-* `pop_jobs/03_worker_jobs.txt` - entire file, adds amenities production to miners, mote miners, gas miners, crystal miners, and scrap miners (but not the specialist refiners) (**NOT** compatible with my mod [Technician Job Priority](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) but includes the same fix)
-* `pop_jobs/06_event_jobs.txt` - entire file, adds amenities production to cave miners for agrarian idyll lithoids, add amenities to titan hunters for agrarian idyll (non-lithoids); titan hunters were already weighted for this civic, add amenities to turtle miners for both Agrarian and Lithorian Idyll
-* `technology/00_soc_tech.txt` replaces one technology `tech_housing_agrarian_idyll` in order to excludes lithoids, who now have their own version
+* `civic_agrarian_idyll` to add the alternative description for lithoids
+* `district_rw_farming` to excludes Lithorian Idyll from the farming district housing benefits (Agrarian Idyll normally gets +5 housing)
+* Many worker-stratum job to ensure the Agrarian Idyll and Lithorian Idyll bonus apply to farming or mining jobs, respectively: `miner`, `crystal_miner`, `gas_extractor`, `mote_harvester`, `farmer`, and `scrap_miner`
+* Several event-related jobs, for the same reason: `cave_cleaner`, `titan_hunter`, `turtle_miner`
+* `tech_housing_agrarian_idyll` in order to exclude Lithorian Idyll, who now have their own version of this technology
 
-Stellaris requires overriding the entire containing file to make changes to districts and jobs (there are technical consequences if not). That means this mod is incompatible with other mods that make changes to rural and/or ringworld districts as well as mods that change worker-strata jobs and/or special event jobs.
-
-This mod is not compatible with achievements because it overwrites core Stellaris files.
+Due to upgrades in Stellaris version 3.3 "Libra," this mod now avoid overwriting job unrelated to the core game mechanic being modified.  It should therefor not conflict with mods that make changes to other worker and event jobs, or other ringworld districts.  It is now only incompatible with mods that want to edit exactly the same game objects (as listed above).
 
 ### When to Install
 
@@ -35,11 +32,23 @@ This mod can be safely added after the game has started, but should not be remov
 
 ## Known Issues
 
-Overriding a civic or technology causes the game to log errors. Expect to see two lines in the error.log file similar to these:
+Overriding a job, technology, or civic causes the game to log errors. Expect to see thirteen lines in the error.log file similar to these:
 
 ```
-[21:23:09][technology.cpp:1177]: Duplicate technology: tech_housing_agrarian_idyll
-[21:23:12][game_singleobjectdatabase.h:147]: Object with key: civic_agrarian_idyll already exists
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 2
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: crystal_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 185
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: gas_extractor already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 370
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: mote_harvester already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 550
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: farmer already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 730
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: scrap_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 959
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: technician already exists, using the one at  file: common/pop_jobs/10_technician_slave_fix_worker_job_overrides.txt line: 1
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: gas_plant_engineer already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 3
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: cave_cleaner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 47
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: titan_hunter already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 159
+[01:48:49][game_singleobjectdatabase.h:147]: Object with key: turtle_miner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 347
+[01:48:50][technology.cpp:1176]: Duplicate technology: tech_housing_agrarian_idyll
+[01:48:50][game_singleobjectdatabase.h:147]: Object with key: district_rw_farming already exists, using the one at  file: common/districts/10_agrarian_idyll_lithoid_ringworld_district_overrides.txt line: 9
+[01:48:53][game_singleobjectdatabase.h:147]: Object with key: civic_agrarian_idyll already exists, using the one at  file: common/governments/civics/01_agrarian_idyll_override.txt line: 1
 ```
 
 Normally overriding a single technology can cause problems with the game being confused by duplicates, but only technologies that are considered prerequisites for other technologies are affected. 
@@ -76,7 +85,11 @@ Normally overriding a single technology can cause problems with the game being c
 * 3.0.1 Mark as compatible with Stellaris version 3.2.2 "Herbert" - the game patch had no script changes
 * 3.1.0 Remove full-file Society technology overwrite - now much more compatible with other mods!
 * 3.1.1 Don't restrict the ability to work the Angler job to Anglers empires (allows other empires to employ Anglers should they somehow get access to the job)
-* 4.0.0 Update for Stellaris version 3.3.0 "Libra" - integrate underlying changes from the base game in overridden files
+* 4.0.0 Update for Stellaris version 3.3 "Libra"
+    * Jobs and districts are no longer full-file overwrites!
+    * Only the relevant `planet_farmer` and `planet_miner` jobs are overridden (but not Angler since the Anglers civic cannot be combined with Agrarian/Lithorian Idyll)
+    * All rural districts are still overridden in order to apply the +capacity/+building slot bonue to them, but now only the ringworld farming district is overridden instead of all of them
+    * Integrate additional changes to game overrides from 3.3
 
 ## Source Code
 
