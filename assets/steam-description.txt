@@ -24,10 +24,11 @@ Together with the above two mods, you're more likely to obtain a Machine World a
 This mod can be safely added to your savegame after the game has started.  Because it adds static modifiers for planets, it is not advisable to remove during gameplay.  If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested.  Back up your savegame before trying to remove a mod.
 
 [h2]Known Issues[/h2]
-Overriding a colony designation and a deposit causes the game to log two errors like this:
+Overriding the district, colony designation, and deposit causes the game to log three errors like this:
 [code]
-[21:23:19][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists
-[21:23:20][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists
+[15:22:33][game_singleobjectdatabase.h:147]: Object with key: district_industrial already exists, using the one at  file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
+[15:22:34][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists, using the one at  file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
+[15:22:35][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists, using the one at  file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
 [/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2559702143]Change Notes[/url]

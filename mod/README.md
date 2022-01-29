@@ -29,12 +29,12 @@ This mod can be safely added to your savegame after the game has started.  Becau
 
 ## Known Issues
 
-Overriding a colony designation and a deposit causes the game to log two errors like this:
+Overriding the district, colony designation, and deposit causes the game to log three errors like this:
 
-TODO
 ```
-[21:23:19][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists
-[21:23:20][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists
+[15:22:33][game_singleobjectdatabase.h:147]: Object with key: district_industrial already exists, using the one at  file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
+[15:22:34][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists, using the one at  file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
+[15:22:35][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists, using the one at  file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
 ```
 
 ## Changelog
