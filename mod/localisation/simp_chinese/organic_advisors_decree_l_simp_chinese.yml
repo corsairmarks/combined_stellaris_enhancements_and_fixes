@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  edict_designate_organic_advisors: "Decree: Organic Advisors"
- edict_designate_organic_advisors_desc: "Designate a species of §Y$pop_cat_bio_trophy_plural$§! as Organic Advisors. Their mental acuity, unique abilities, and unpredictable nature could prove useful in carefully-monitored leadership roles.\n\nThe selection process can be cancelled for a refund of any £influence£ influence spent."
+ edict_designate_organic_advisors_desc: "Designate a species of §Y$pop_cat_bio_trophy_plural$§! as Organic Advisors. Their mental acuity, unique abilities, and unpredictable nature could prove useful in carefully-monitored leadership roles.\n\nThe selection process can be cancelled for a refund of any £unity£ $unity$ spent."
  edict_revoke_organic_advisors: "Decree: Revoke an Organic Advisorship"
- edict_revoke_organic_advisors_desc: "Revoke advisorship from a species of §Y$pop_cat_bio_trophy_plural$§! previously decreed as Organic Advisors. Their safety and comfort is paramount - they must be returned to their sanctuaries post-haste.\n\nThe revocation process can be cancelled for a refund of any £influence£ influence spent."
+ edict_revoke_organic_advisors_desc: "Revoke advisorship from a species of §Y$pop_cat_bio_trophy_plural$§! previously decreed as Organic Advisors. Their safety and comfort is paramount - they must be returned to their sanctuaries post-haste.\n\nThe revocation process can be cancelled for a refund of any £unity£ $unity$ spent."
  edict_designate_organic_advisors.not_already_designated: "Not already decreed as §HOrganic Advisors§! by our empire."
  edict_revoke_organic_advisors.already_designated: "Already decreed as §HOrganic Advisors§! by our empire."
  organic_advisors_decree.4.title: "Designate Organic Advisors"
