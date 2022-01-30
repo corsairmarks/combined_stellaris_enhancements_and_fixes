@@ -79,7 +79,9 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Edit game rules to allow Bio-Trophies to be civilian leaders (with decree) and eligible to be military leaders (but not armies) if optionally granted Full Military Service
     * Fix a bug where you couldn't re-open the Honored Protectors edict
 * 2.1.1 Fix incorrect filename
-* 3.0.0 Update for Stellaris version 3.3 "Libra" - integrate changes from the base game that influence the mod's content
+* 3.0.0 Update for Stellaris version 3.3 "Libra"
+    * Update Decrees to cost unity instead of influence
+    * Integrate underlying game change - zombies cannot produce leaders
 
 ## Source Code
 
