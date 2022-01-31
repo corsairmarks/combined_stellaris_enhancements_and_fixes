@@ -25,7 +25,7 @@ add_building_if_free = {
 }
 
 # this = planet
-# DISTRICT = the district for which to potentially add a deposit supports the built-in planet classes that have district-limiting deposits
+# DISTRICT = the district for which to potentially add a deposit supporting the built-in planet classes that have district-limiting deposits
 add_deposit_for_district = {
 	add_district = {
 		district_type = $DISTRICT$
@@ -332,7 +332,7 @@ add_primitive_conquest_unity_building_building_if_free = {
 	if = {
 		limit = { owner = { is_machine_empire = yes } }
 		if = {
-			limit = { owner = { has_valid_civic = civic_machine_memorialist } }
+			limit = { owner = { is_memorialist_empire = yes } }
 			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
 		}
 		else = {
@@ -342,7 +342,7 @@ add_primitive_conquest_unity_building_building_if_free = {
 	else_if = {
 		limit = { owner = { is_hive_empire = yes } }
 		if = {
-			limit = { owner = { has_valid_civic = civic_hive_memorialist } }
+			limit = { owner = { is_memorialist_empire = yes } }
 			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
 		}
 		else = {
@@ -353,14 +353,7 @@ add_primitive_conquest_unity_building_building_if_free = {
 		if = {
 			limit = { owner = { is_spiritualist = yes } }
 			if = {
-				limit = {
-					owner = {
-						OR = {
-							has_valid_civic = civic_death_cult
-							has_valid_civic = civic_death_cult_corporate
-						}
-					}
-				}
+				limit = { owner = { is_death_cult_empire = yes } }
 				add_building_if_free = { BUILDING = building_sacrificial_temple_1 }
 			}
 			else = {
@@ -368,7 +361,7 @@ add_primitive_conquest_unity_building_building_if_free = {
 			}
 		}
 		else_if = {
-			limit = { owner = { has_valid_civic = civic_memorialist } }
+			limit = { owner = { is_memorialist_empire = yes } }
 			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
 		}
 		else_if = {
