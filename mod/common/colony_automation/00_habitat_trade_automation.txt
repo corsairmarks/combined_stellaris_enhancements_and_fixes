@@ -19,6 +19,11 @@ automate_habitat_trade_planet = {
 		}
 
 		3 = {
+			building = building_posthumous_employment_center
+			available = { owner = { has_valid_civic = civic_permanent_employment } }
+		}
+
+		4 = {
 			building = building_robot_assembly_plant
 			available = {
 				owner = {
@@ -26,12 +31,13 @@ automate_habitat_trade_planet = {
 					NOR = {
 						has_policy_flag = robots_outlawed
 						has_ascension_perk = ap_engineered_evolution
+						has_valid_civic = civic_permanent_employment
 					}
 				}
 			}
 		}
 
-		4 = {
+		5 = {
 			building = building_necrophage_elevation_chamber
 			available = {
 				owner = {
@@ -42,17 +48,17 @@ automate_habitat_trade_planet = {
 			}
 		}
 
-		5 = {
+		6 = {
 			building = building_galactic_stock_exchange
 			available = { owner = { galactic_stock_exchange_upkeep_affordable = yes } }
 		}
 
-		6 = {
+		7 = {
 			building = building_nuumismatic_shrine
 			available = { owner = { has_country_flag = nuumismatic_shrine } }
 		}
 
-		7 = {
+		8 = {
 			building = building_luxury_residence
 			available = {
 				owner = { luxury_residence_upkeep_affordable = yes }
@@ -60,15 +66,15 @@ automate_habitat_trade_planet = {
 			}
 		}
 
-		8 = {
+		9 = {
 			building = building_psi_corps
 			available = { owner = { has_ascension_perk = ap_mind_over_matter } }
 		}
 
-		9 = {
+		10 = {
 			building = building_galactic_memorial_1
 			available = {
-				owner = { has_valid_civic = civic_memorialist }
+				owner = { is_memorialist_empire = yes }
 				NOR = {
 					has_building = building_galactic_memorial_1
 					has_building = building_galactic_memorial_2
@@ -77,22 +83,22 @@ automate_habitat_trade_planet = {
 			}
 		}
 
-		10 = {
+		11 = {
 			building = building_crystal_mines
 			available = { always = yes }
 		}
 
-		11 = {
+		12 = {
 			building = building_mote_harvesters
 			available = { always = yes }
 		}
 
-		12 = {
+		13 = {
 			building = building_gas_extractors
 			available = { always = yes }
 		}
 
-		13 = {
+		14 = {
 			building = building_crystal_plant
 			available = {
 				owner = {
@@ -105,7 +111,7 @@ automate_habitat_trade_planet = {
 			}
 		}
 
-		14 = {
+		15 = {
 			building = building_commercial_zone
 			available = {
 				owner = { commercial_zone_upkeep_affordable = yes }
