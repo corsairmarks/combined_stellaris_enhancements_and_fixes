@@ -17,13 +17,13 @@ Also updates the regular City districts to provide part of a Merchant or Executi
 
 ## Compatibility
 
-Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony types and the entirety of the `common/districts/00_urban_districts.txt`, `common/districts/03_habitat_districts.txt`, and `common/districts/04_ringworld_districts.txt` files.  Because overwriting district files presents a large compatibility challenge, I opted to develop this as a separate from [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) despite the mods providing very similar effects but for different districts.
+Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony types and existing trade-related districts: `district_city`, `district_srw_commercial`, `district_hab_commercial`, `district_rw_city`, and `district_rw_commercial`.  Despite vastly improved compatibility via Stellaris version 3.3 "Libra," this mod remains separate from [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) because viewing Commercial Arcologies now requires a UI mod, and this mod does not.
 
-This mod will not work well with other mods that make changes to urban, habitat, or ringworld districts, or that make changes to the same colony designations.  Overhaul mods commonly make changes to districts - and so do some of my other mods!  If you want to play many of my mods together, consider using [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) instead - it resolves the incompatibilities between them.
+This mod will not work well with other mods that make changes to the same colony designations or districts.  Overhaul mods commonly make changes to districts, but are more likely to overwrite the entire file.  Due to how Stellaris file-loading works, change from this mod will overwrite code from full-file district overwrites and apply the verion of commercial districts from this mod.  That's good for thi mod, but could interfere with other modifications bade by other mods.
 
 Compatible with Planetary Diversity.
 
-Built for Stellaris version 3.2.2 "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
 
 ### Recommended Companion Mods
 
@@ -31,16 +31,21 @@ Built for Stellaris version 3.2.2 "Herbert."  Not compatible with achievements.
 
 ### When to Install
 
-This mod can be safely added to your savegame after the game has started.  Because it does not add and gameplay objects, it should be safe to remove during a game.  Back up your savegame before trying to remove a mod.
+This mod can be safely added to your savegame after the game has started.  Because it adds gameplay objects, it should not be removed during a game.
 
 ### Known Issues
 
-Overwriting a colony type produces an error log.  Expect to see three entries in error.log similar to these:
+Overwriting a colony type or district produces an error log.  Expect to see eight entries in error.log similar to these:
 
 ```
-[00:28:40][game_singleobjectdatabase.h:147]: Object with key: col_city already exists
-[00:28:40][game_singleobjectdatabase.h:147]: Object with key: col_habitat_trade already exists
-[00:28:40][game_singleobjectdatabase.h:147]: Object with key: col_ring_trade already exists
+[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_city already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 5
+[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_srw_commercial already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 169
+[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_hab_commercial already exists, using the one at  file: common/districts/13_trade_district_enhancements_habitat_district_overrides.txt line: 5
+[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_rw_city already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 8
+[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_rw_commercial already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 116
+[00:24:05][game_singleobjectdatabase.h:147]: Object with key: col_city already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 10
+[00:24:05][game_singleobjectdatabase.h:147]: Object with key: col_habitat_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 128
+[00:24:05][game_singleobjectdatabase.h:147]: Object with key: col_ring_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 357
 ```
 
 ## Changelog
@@ -53,6 +58,16 @@ Overwriting a colony type produces an error log.  Expect to see three entries in
 * 1.2.0 Apply colony designation exclusions from Planetary Diversity
     * Special thanks to Gatzek for help with the correct special `district_set`s
     * Add Polish localisation by Gatzek
+* 2.0.0 Update for Stellaris version 3.3 "Libra"
+    * Districts are no longer full-file overwrites!
+    * Now only the five relevant districts are overridden
+        * `district_city`
+        * `district_srw_commercial`
+        * `district_hab_commercial`
+        * `district_rw_city`
+        * `district_rw_commercial`
+    * Update colony automation overrides to account for Permanent Employment
+    * Integrate additional changes from 3.3 to overridden content
 
 ## Source Code
 
