@@ -27,7 +27,7 @@ Planets converted to tomb worlds this way are not eligible for the random events
 
 ## Compatibility
 
-Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
 
 Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 
@@ -49,10 +49,12 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Account for the `trait_harvested_radiotrophic` trait
     * Re-weight `pc_nuked` terraform links to be of similar weight to the newly-re-weighted built-in terraform links
     * Pop % for the AI to want to terraform is not 50%/75% nuked empire/non-nuked empire
-* 2.1.0 Nanite worlds now eligible to become Tomb Worlds
-    * Add `pc_gray_goo` to `pc_nuked` terraforming link (standard cost - since Nanite Worlds have a flat cost no matter which type to which it is terraformed)
+* 2.1.0 Nanite Worlds now eligible to become Tomb Worlds
+    * Add `pc_gray_goo` to `pc_nuked` terraforming link (standard cost - since Nanite Worlds have a flat cost no matter to which type it is terraformed)
     * Improve trigger for determining if a species is "nuked"
-* 2.2.0 Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility]() - no functionality changes, but the logic is now much easier for the add-on to reuse TODO link
+* 3.0.0 Update for Stellaris version 3.3 "Libra"
+    * Memorialit trigger is built in to the game now, o remove implementation from this mod
+    * Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility]() - no functionality changes, but the logic is now much easier for the add-on to reuse TODO link
 
 ## Source Code
 
