@@ -67,15 +67,6 @@ has_any_nuked_pop_species = {
 	any_owned_pop_species = { is_nuked_species = yes }
 }
 
-# this = country
-is_memorialist_empire = {
-	OR = {
-		has_valid_civic = civic_memorialist
-		has_valid_civic = civic_hive_memorialist
-		has_valid_civic = civic_machine_memorialist
-	}
-}
-
 # assumes the terraformer meets technology/species requirements
 # this = planet
 eligible_pc_nuked_terraform = {
