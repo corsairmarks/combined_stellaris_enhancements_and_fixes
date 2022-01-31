@@ -1,3 +1,4 @@
+# variables match value from common/districts/00_urban_districts.txt
 @base_cost = 300
 @city_cost = 500
 

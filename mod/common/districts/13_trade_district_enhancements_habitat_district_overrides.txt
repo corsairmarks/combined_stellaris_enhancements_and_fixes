@@ -1,3 +1,4 @@
+# variables match values from common/districts/03_habitat_districts.txt
 @hab_cost = 500
 @hab_maintenance = 2
 
