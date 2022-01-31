@@ -53,7 +53,7 @@ You do **not** need the Necroids or Lithoids content packs to use this mod.
 
 This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same event IDs.  If another mod is attempting to make changes to primitive planet conquest but uses a different method (for example, adding new events activated by on action events such as `on_planet_transfer`, `on_planet_conquer`, or `on_planet_attackers_win`) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
 
-Built for Stellaris version 3.2.\* "Herbert."  Not compatible with achievements.
+Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
 
 ### When to Install
 
@@ -83,6 +83,7 @@ This mod can be safely added or removed from your savegame after the game has st
     * Ringworld setup is even more intelligent
     * Built-in colossus weapons that allow the "conquest" of primitive worlds (Deluge Machine, Nanobot Diffuser) now also get infrastructure
     * My custom colossus weapon (Necrophagic Spore Diffuser) now also gets infrastructure
+* 4.0.0 Update for Stellaris version 3.3.0 "Libra" - integrate new triggers from the base game
 
 ## Source Code
 
