@@ -122,6 +122,10 @@ miner = {
 			has_trait = trait_weak
 		}
 		modifier = {
+			factor = 0.5
+			has_trait = trait_zombie
+		}
+		modifier = {
 			factor = 1.5
 			has_trait = trait_syncretic_proles
 		}
@@ -311,6 +315,10 @@ crystal_miner = {
 			has_trait = trait_weak
 		}
 		modifier = {
+			factor = 0.5
+			has_trait = trait_zombie
+		}
+		modifier = {
 			factor = 3
 			OR = {
 				has_trait = trait_robust
@@ -491,6 +499,10 @@ gas_extractor = {
 			has_trait = trait_weak
 		}
 		modifier = {
+			factor = 0.5
+			has_trait = trait_zombie
+		}
+		modifier = {
 			factor = 3
 			OR = {
 				has_trait = trait_robust
@@ -669,6 +681,10 @@ mote_harvester = {
 		modifier = {
 			factor = 0.1
 			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_zombie
 		}
 		modifier = {
 			factor = 3
@@ -862,6 +878,10 @@ farmer = {
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_zombie
 		}
 		modifier = {
 			factor = 1.5
@@ -1073,6 +1093,10 @@ scrap_miner = {
 		modifier = {
 			factor = 0.9
 			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_zombie
 		}
 		modifier = {
 			factor = 1.5
