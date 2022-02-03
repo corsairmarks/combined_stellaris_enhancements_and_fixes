@@ -6,6 +6,22 @@
 col_mac_factory = {
 	icon = GFX_colony_type_factory
 
+	# used by AI to estimate what will happen when we change the designation
+	ai_resource_conversion = {
+		consumer_goods = 2
+		alloys = 0
+		
+		trigger = { owner = { country_uses_consumer_goods = yes } }
+	}
+
+	# Used by AI to estimate the current effects of this designation
+	ai_resource_current_conversion = {
+		consumer_goods = 0.5
+		alloys = -0.5
+
+		trigger = { owner = { country_uses_consumer_goods = yes } }
+	}
+
 	potential = {
 		uses_district_set = machine_world
 		exists = owner
