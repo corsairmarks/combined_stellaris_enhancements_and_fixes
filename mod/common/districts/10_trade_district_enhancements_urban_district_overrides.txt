@@ -7,24 +7,24 @@ district_city = {
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	show_on_uncolonized = {
+		OR = {
+			uses_district_set = standard
+			uses_district_set = hive_world
+			uses_district_set = machine_world
+			uses_district_set = shattered_ring_world
+		}
 		exists = from
 		from = { is_regular_empire = yes }
-		OR = {
-			uses_district_set = standard
-			uses_district_set = hive_world
-			uses_district_set = machine_world
-			uses_district_set = shattered_ring_world
-		}
 	}
 	potential = {
-		exists = owner
-		owner = { is_regular_empire = yes }
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
 			uses_district_set = machine_world
 			uses_district_set = shattered_ring_world
 		}
+		exists = owner
+		owner = { is_regular_empire = yes }
 	}
 	allow = {
 		NOT = { has_modifier = resort_colony }
@@ -172,14 +172,14 @@ district_srw_commercial = {
 	min_for_deposits_on_planet = 3
 	max_for_deposits_on_planet = 15
 	show_on_uncolonized = {
+		uses_district_set = shattered_ring_world
 		exists = from
 		from = { is_regular_empire = yes }
-		uses_district_set = shattered_ring_world
 	}
 	potential = {
+		uses_district_set = shattered_ring_world
 		exists = owner
 		owner = { is_regular_empire = yes }
-		uses_district_set = shattered_ring_world
 	}
 	allow = {
 		NOT = { has_modifier = resort_colony }

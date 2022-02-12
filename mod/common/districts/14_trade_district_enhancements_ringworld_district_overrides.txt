@@ -10,9 +10,9 @@ district_rw_city = {
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	show_on_uncolonized = {
+		uses_district_set = ring_world
 		exists = from
 		from = { is_regular_empire = yes }
-		uses_district_set = ring_world
 	}
 	potential = {
 		exists = owner
