@@ -115,7 +115,7 @@ country_event = {
 	desc = { #Purge Policy MIs
 		text = action.14.desc.mach.purge
 		trigger = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 			event_target:conquered_primitive_species = {
 				has_citizenship_type = { country = root type = citizenship_purge }
 			}
@@ -129,7 +129,7 @@ country_event = {
 	desc = { #Enslave Policy MIs
 		text = action.14.desc.mach.slave
 		trigger = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 			event_target:conquered_primitive_species = {
 				has_citizenship_type = { country = root type = citizenship_slavery }
 			}
@@ -143,7 +143,7 @@ country_event = {
 	desc = { #Purge Policy Hiveminds
 		text = action.14.desc.hive.purge
 		trigger = {
-			has_authority = auth_hive_mind
+			is_hive_empire = yes
 			event_target:conquered_primitive_species = {
 				has_citizenship_type = { country = root type = citizenship_purge }
 			}
@@ -152,7 +152,7 @@ country_event = {
 	desc = { #Enslave Policy Hiveminds
 		text = action.14.desc.hive.slave
 		trigger = {
-			has_authority = auth_hive_mind
+			is_hive_empire = yes
 			event_target:conquered_primitive_species = {
 				has_citizenship_type = { country = root type = citizenship_slavery }
 			}
