@@ -3,7 +3,7 @@
 ###################
 
 # Modified: No longer requires an empire to have an Anglers civic; allows any non-gestalt to employ Anglers if they somehow have the job available (such as from an Aquaponics Farm)
-# Modified: Weight factor increases by 1.25 for having Thrifty or Numistic Administration
+# Modified: Weight factor increases by 1.25 for having Thrifty or Numistic Administration, make the job weight slightly higher in order to attract farmers into switching
 angler = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
@@ -95,6 +95,17 @@ angler = {
 		modifier = {
 			factor = 1.25
 			has_trait = trait_nuumismatic_administration
+		}
+		modifier = {
+			add = 2
+			exists = planet
+			planet = {
+				has_available_jobs = angler
+				num_assigned_jobs = {
+					job = farmer
+					value > 0
+				}
+			}
 		}
 	}
 }
