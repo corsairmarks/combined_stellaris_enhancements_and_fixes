@@ -112,7 +112,7 @@ cave_cleaner = {
 }
 
 # Dinosaur Hunters
-# Modified: Removed the amenities-related weights for agrarian idyll (lithoid), add amenities production for agrarian idyll (non-lithoid)
+# Modified: Excluded the amenities-related weights for agrarian idyll (lithoid), add amenities production for agrarian idyll (non-lithoid)
 titan_hunter = {
 	category = worker
 
