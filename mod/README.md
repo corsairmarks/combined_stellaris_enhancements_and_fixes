@@ -26,7 +26,7 @@ Overriding a building or job causes the game to log errors noting the overrides.
 
 ## Source Code
 
-Hosted on [GitHub]()
+Hosted on [GitHub](https://github.com/corsairmarks/building_aquaponics_farm)
 
 ### Development Notes
 
