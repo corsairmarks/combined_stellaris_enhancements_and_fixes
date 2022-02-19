@@ -1,5 +1,5 @@
 building_aquaponics_farm = {
-	base_buildtime = @b2_time
+	base_buildtime = @b1_time # intentionally retains b1 build-time
 	category = resource
 	potential = {
 		exists = owner
@@ -90,7 +90,7 @@ building_aquaponics_farm = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
+			minerals = @b1_minerals # intentionally retains b1 cost
 		}
 		upkeep = {
 			energy = @b1_upkeep # intentionally retains b1 upkeep
