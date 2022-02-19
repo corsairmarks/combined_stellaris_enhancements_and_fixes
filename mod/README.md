@@ -17,7 +17,8 @@ Overwrites the built-in Hydroponics Farm building (`building_hydroponics_farm`) 
 Overriding a building or job causes the game to log errors noting the overrides.  Expect to see two lines in the error.log file like these:
 
 ```
-
+[01:53:56][game_singleobjectdatabase.h:147]: Object with key: angler already exists, using the one at  file: common/pop_jobs/13_building_aquaponics_farm_worker_job_overrides.txt line: 7
+[01:54:03][game_singleobjectdatabase.h:147]: Object with key: building_hydroponics_farm already exists, using the one at  file: common/buildings/13_building_aquaponics_farm_resource_building_overrides.txt line: 6
 ```
 
 ## Changelog
