@@ -60,7 +60,7 @@ Normally overriding a single technology can cause problems with the game being c
     * `titan_hunter` is in the `planet_farmers` resource category and already had code for amenities-related weighting for Agrarian Idyll, but lacked the actual amenities production for Agrarian Idyll (non-lithoid)
     * `cave_cleaner` is in the `planet_miners` resource category so it made sense to also apply amenities to it
     * purposely did not add agrarian idyll code to the potentially other relevant special job `ratling_scavenger` because it isn't for default countries
-* 1.2.0 Include technician fix from [Technician Job Priority](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578)
+* 1.2.0 Include technician fix from [Enslaved Technician Job Priority Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578)
 * 1.2.1 Fix spelling errors in README (no script changes)
 * 1.2.2 Add note about incompatibilities with mods that change Society technologies (no script changes)
 * 1.3.0 Add event to flag mod as installed
@@ -88,6 +88,7 @@ Normally overriding a single technology can cause problems with the game being c
 * 4.0.0 Update for Stellaris version 3.3 "Libra"
     * Jobs and districts are no longer full-file overwrites!
     * Only the relevant `planet_farmer` and `planet_miner` jobs are overridden (but not Angler since the Anglers civic cannot be combined with Agrarian/Lithorian Idyll)
+    * No longer conflicts with [Enslaved Technician Job Priority Fix](https://steamcommunity.com/workshop/filedetails/?id=2484702578), but also no longer contains the same fix
     * All rural districts are still overridden in order to apply the +capacity/+building slot bonus to them, but now only the ringworld farming district is overridden instead of all of them
     * Integrate additional changes from 3.3 to overridden content
 
