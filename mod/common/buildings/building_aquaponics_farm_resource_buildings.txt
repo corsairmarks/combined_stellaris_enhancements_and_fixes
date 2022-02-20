@@ -1,5 +1,6 @@
 building_aquaponics_farm = {
 	base_buildtime = @b1_time # intentionally retains b1 build-time
+	can_build = no
 	category = resource
 	potential = {
 		exists = owner
@@ -134,6 +135,7 @@ building_aquaponics_farm = {
 
 building_aquaponics_farm_2 = {
 	base_buildtime = @b2_time
+	can_build = no
 	category = resource
 	potential = {
 		exists = owner
