@@ -53,7 +53,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Add `pc_gray_goo` to `pc_nuked` terraforming link (standard cost - since Nanite Worlds have a flat cost no matter to which type it is terraformed)
     * Improve trigger for determining if a species is "nuked"
 * 3.0.0 Update for Stellaris version 3.3 "Libra"
-    * Memorialit trigger is built in to the game now, o remove implementation from this mod
+    * Memorialist trigger is built in to the game now, so remove implementation from this mod
     * Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility]() - no functionality changes, but the logic is now much easier for the add-on to reuse TODO link
 
 ## Source Code
