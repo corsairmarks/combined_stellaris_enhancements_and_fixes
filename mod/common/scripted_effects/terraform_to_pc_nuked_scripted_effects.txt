@@ -7,7 +7,7 @@ post_terraform_to_pc_nuked = {
 			set_planet_flag = nuked_planet_anomalies_disabled
 		}
 		if = {
-			limit = { NOT = { has_modifier = terraforming_candidate } }
+			limit = { has_modifier = terraforming_candidate }
 			remove_modifier = terraforming_candidate
 		}
 	}
