@@ -54,6 +54,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Improve trigger for determining if a species is "nuked"
 * 3.0.0 Update for Stellaris version 3.3 "Libra"
     * Memorialist trigger is built in to the game now, so remove implementation from this mod
+    * Fix bug where Terraforming Candidate modifier was not removed when terraforming to a Tomb World
     * Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility]() - no functionality changes, but the logic is now much easier for the add-on to reuse TODO link
 
 ## Source Code
