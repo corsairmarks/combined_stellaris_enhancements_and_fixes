@@ -6,12 +6,18 @@ district_hab_commercial = {
 	base_buildtime = 240
 	is_capped_by_modifier = no
 	show_on_uncolonized = {
-		uses_district_set = habitat
+		OR = {
+			uses_district_set = habitat
+			tde_uses_gigastructural_engineering_habitat_district_set = yes
+		}
 		exists = from
 		from = { is_gestalt = no }
 	}
 	potential = {
-		uses_district_set = habitat
+		OR = {
+			uses_district_set = habitat
+			tde_uses_gigastructural_engineering_habitat_district_set = yes
+		}
 		exists = owner
 		owner = { is_gestalt = no }
 	}

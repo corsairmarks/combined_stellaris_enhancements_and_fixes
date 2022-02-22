@@ -21,7 +21,7 @@ Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony type
 
 This mod will not work well with other mods that make changes to the same colony designations or districts.  Overhaul mods commonly make changes to districts, but are more likely to overwrite the entire file.  Due to how Stellaris file-loading works, change from this mod will overwrite code from full-file district overwrites and apply the verion of commercial districts from this mod.  That's good for thi mod, but could interfere with other modifications bade by other mods.
 
-Compatible with Planetary Diversity.
+Compatible with Planetary Diversity and Gigastructural Engineering (does not modify Gigas districts, but does exclude these districts from spawning on the wrong things).
 
 Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
 
@@ -68,6 +68,7 @@ Overwriting a colony type or district produces an error log.  Expect to see eigh
         * `district_rw_commercial`
     * Update colony automation overrides to account for Permanent Employment
     * Integrate additional changes from 3.3 to overridden content
+    * Add compatibility for Gigastructural Engineering: districts from this mod are prohibited on gigastructures, habitat-specific districts from this mod are allowed on Interstellar habitats and Gas Giant Habitats
 
 ## Source Code
 
