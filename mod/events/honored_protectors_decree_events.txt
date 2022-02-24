@@ -1,45 +1,5 @@
 namespace = honored_protectors_decree
 
-# triggered by on_single_player_save_game_load
-# tries to fix up old savegames with non-country-specific flags
-event = {
-	id = honored_protectors_decree.1
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		any_galaxy_species = {
-			OR = {
-				has_species_flag = allow_military_leaders_for_xenophobe
-				has_species_flag = allow_military_leaders_for_necrophage
-			}
-		}
-	}
-	immediate = {
-		every_country = {
-			limit = { is_eligible_to_designate_honored_protectors = yes }
-			every_owned_pop_species = {
-				limit = {
-					OR = {
-						has_species_flag = allow_military_leaders_for_necrophage
-						has_species_flag = allow_military_leaders_for_xenophobe
-					}
-				}
-				set_species_flag = allow_military_leaders_honored_protectors@prev
-			}
-		}
-		every_galaxy_species = {
-			if = {
-				limit = { has_species_flag = allow_military_leaders_for_xenophobe }
-				remove_species_flag = allow_military_leaders_for_xenophobe
-			}
-			if = {
-				limit = { has_species_flag = allow_military_leaders_for_necrophage }
-				remove_species_flag = allow_military_leaders_for_necrophage
-			}
-		}
-	}
-}
-
 country_event = {
 	id = honored_protectors_decree.2
 	hide_window = yes
