@@ -41,7 +41,6 @@ Overriding a job, technology, or civic causes the game to log errors. Expect to 
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: mote_harvester already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 550
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: farmer already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 730
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: scrap_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 959
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: technician already exists, using the one at  file: common/pop_jobs/10_technician_slave_fix_worker_job_overrides.txt line: 1
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: gas_plant_engineer already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 3
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: cave_cleaner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 47
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: titan_hunter already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 159
@@ -88,7 +87,6 @@ Normally overriding a single technology can cause problems with the game being c
 * 4.0.0 Update for Stellaris version 3.3 "Libra"
     * Jobs and districts are no longer full-file overwrites!
     * Only the relevant `planet_farmer` and `planet_miner` jobs are overridden (but not Angler since the Anglers civic cannot be combined with Agrarian/Lithorian Idyll)
-    * No longer conflicts with [Enslaved Technician Job Priority Fix](https://steamcommunity.com/workshop/filedetails/?id=2484702578), but also no longer contains the same fix
     * All rural districts are still overridden in order to apply the +capacity/+building slot bonus to them, but now only the ringworld farming district is overridden instead of all of them
     * Integrate additional changes from 3.3 to overridden content
 

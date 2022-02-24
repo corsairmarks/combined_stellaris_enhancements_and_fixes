@@ -35,7 +35,6 @@ Overriding a job, technology, or civic causes the game to log errors. Expect to 
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: mote_harvester already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 550
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: farmer already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 730
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: scrap_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 959
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: technician already exists, using the one at  file: common/pop_jobs/10_technician_slave_fix_worker_job_overrides.txt line: 1
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: gas_plant_engineer already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 3
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: cave_cleaner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 47
 [01:48:49][game_singleobjectdatabase.h:147]: Object with key: titan_hunter already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 159
