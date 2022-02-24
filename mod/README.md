@@ -10,7 +10,7 @@ Alters the built-in planetview to have districts and buildings stacked verticall
 
 ## Compatibility
 
-Built for Stellaris version 3.3.\* "Libra."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
+Built for Stellaris version 3.3 "Libra."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
 
 ### Recommended Companion Mods
 
