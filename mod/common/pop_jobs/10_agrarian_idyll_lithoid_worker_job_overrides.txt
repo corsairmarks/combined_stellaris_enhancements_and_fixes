@@ -126,6 +126,10 @@ miner = {
 			has_trait = trait_zombie
 		}
 		modifier = {
+			factor = 0.9
+			has_trait = trait_presapient_natural_intellectuals
+		}
+		modifier = {
 			factor = 1.5
 			has_trait = trait_syncretic_proles
 		}
@@ -1099,6 +1103,10 @@ scrap_miner = {
 			has_trait = trait_zombie
 		}
 		modifier = {
+			factor = 0.9
+			has_trait = trait_presapient_natural_intellectuals
+		}
+		modifier = {
 			factor = 1.5
 			has_trait = trait_syncretic_proles
 		}
@@ -1124,11 +1132,11 @@ scrap_miner = {
 
 			#OR = {
 			#	is_unemployed = yes
-			#	has_job = "miner"
+			#	has_job = "scrap_miner"
 			#}
 			exists = planet
 			planet = {
-				has_available_jobs = "miner"
+				has_available_jobs = "scrap_miner"
 			}
 			exists = owner
 			owner = {
