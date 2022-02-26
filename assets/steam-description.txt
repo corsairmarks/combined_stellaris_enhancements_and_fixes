@@ -6,10 +6,10 @@ It's my opinion that these free districts represent repurposing existing infrast
 [h2]A Bit More Detail[/h2]
 This mod started as a response to four very specific, small areas:
 [olist]
-    [*]When conquering primitive planets, human players get free districts to employ about half the population, but the AI does not
-    [*]Machine Empires and Hive Empires were given city districts instead of the appropriate nexus or hive districts
-    [*]When conquering a lithoid primitive planet, the player is given farming districts, which lithoids wouldn't need
-    [*]Necrophage AI players have a special helper event to gain control of primitives, but it is not actually conquest and thus misses out on some things
+[*]When conquering primitive planets, human players get free districts to employ about half the population, but the AI does not
+[*]Machine Empires and Hive Empires were given city districts instead of the appropriate nexus or hive districts
+[*]When conquering a lithoid primitive planet, the player is given farming districts, which lithoids wouldn't need
+[*]Necrophage AI players have a special helper event to gain control of primitives, but it is not actually conquest and thus misses out on some things
 [/olist]
 The "Technological Enlightenment" observation station mission was still another place where the game did something different when converting primitives for use by a regular empire. A fixed amount of districts and buildings (including a branch office building, which was probably intended to be Commercial Zones instead) were generated.  Although it accounted for ringworlds (and as of 3.2 lithoids), it was still significantly different from other primitive conversions.
 
