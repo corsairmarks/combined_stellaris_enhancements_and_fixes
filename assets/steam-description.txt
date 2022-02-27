@@ -34,6 +34,9 @@ Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
 
 Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 
+[h3]Recommended Companion Mods[/h3]
+[url=https://steamcommunity.com/workshop/filedetails/?id=2766967251]"Terraform" to Tomb World: Planetary Diversity Compatibility[/url] adds support for planet classes added by Planetary Diversity.  Almost all of them can now be "terraformed" into Tomb Worlds.
+
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2625663437]Change Notes[/url]
 
