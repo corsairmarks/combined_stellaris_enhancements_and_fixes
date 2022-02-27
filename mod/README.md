@@ -56,7 +56,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
 * 2.1.0 Nanite Worlds now eligible to become Tomb Worlds
     * Add `pc_gray_goo` to `pc_nuked` terraforming link (standard cost - since Nanite Worlds have a flat cost no matter to which type it is terraformed)
     * Improve trigger for determining if a species is "nuked"
-    * 3.0.0 Update for Stellaris version 3.3 "Libra"
+* 3.0.0 Update for Stellaris version 3.3 "Libra"
     * Memorialist trigger is built in to the game now, so remove implementation from this mod
     * Fix bug where Terraforming Candidate modifier was not removed when terraforming to a Tomb World
     * Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility](https://steamcommunity.com/workshop/filedetails/?id=2766967251) - no functionality changes, but the logic is now much easier for the add-on to reuse
