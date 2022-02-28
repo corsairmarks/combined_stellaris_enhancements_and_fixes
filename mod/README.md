@@ -6,7 +6,7 @@ Individual mods update first, then changes are merged here.
 
 # Major Update
 
-Versions 4.0.0 and above are fully updated for Stellaris version 3.2 "Herbert" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [3.3.4](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/3.3.4).
+Versions 5.0.0 and above are fully updated for Stellaris version 3.3 "Libra" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [4.1.2](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/4.1.2).
 
 You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
 
@@ -14,28 +14,25 @@ You only need the contents of the `mod` folder for a local install, disregard th
 
 This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The large hex strings are the commit hashes - that is mostly for my own record-keeping to know what revision of the other source code is contained here.
 
-* [Penal Colony: Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 3cc61030957424050284a51153eeb3913891dfc6)
-* [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 20ffc4935074f45b63bff2404f920b1c961c9cc9)
-* [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 36e7668f36417df1fec5a1d9e850beef66b331d1)
-* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) befacb6ebe4cb3cefd2bc75e217c99252960b8e2)
-* [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 6f9640d8c73630ae84b7562988cfa2fc0762e8c2)
-* [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) e1ef6e35308854ca00191e9843a766730afce0df)
-* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) ([Source](https://github.com/corsairmarks/ecumenopolis_trade) a13a80a8bf9cf8caff2986133dda39ae88afa599)
-* [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 1ea27ecef57a2153d26a7a547b092de3253e1e6b)
-* [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 50af1137ce7057a2e434b61e7bdc3b52eb3469e2)
-* [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) b3bc3fafe835cc031333002574a0a0fb6ef00034)
-* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) bcfe5b8f9f2bf41d0862c9aca04fecf76f0c14c4)
-* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) eff0a845198777ad1df4b57c2a14abaf222c00fa)
-* [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) c91b3f85999ac6fe588f5755a7d7208f03a1e5ff)
-* [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 37987685f374a3d18a43d9daec0e39ce0d28c6d9)
-* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) d5b8236f686310cddcec8c6adfd52d19ee65a18c)
-* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 3d85c097f3a5d57d5b2b34128ffdc16603dee381)
-* [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 7b389194d0f08b79d2859b0107275641cdc85e77)
-* [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 90a72d92efbd7b8fa32c828c231c45711c171806)
-* [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 37c1af3645fd8df873fc643d34d932bf346b26ea)
-* [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 342f17493e33704e2a9b4bcfc0f2a9a0aa5b64de)
-* [Technician Job Priority Fix for Slaves](https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578) ([Source](https://github.com/corsairmarks/technician_slave_fix)) - this mod is not actually merged via `git`, but the same 1-character change is present in this one
-* [Manifesti 'Personal Autonomy for Munitions' Demand Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831) ([Source](https://github.com/corsairmarks/manifesti_fix) fe150f094e069cd435d625af2be7daa2bc21a75f)
+* [Penal Colony: Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 1.1.0)
+* [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 1.2.0)
+* [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 2.0.0)
+* ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 2.0.0)
+* [Aesthetic Terraform Stations](https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 2.0.0)
+* [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 1.2.1)
+* [Counter-Limited Armies Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 2.1.0)
+* [Deassimilated Machine Worlds](https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 2.1.0)
+* [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 2.0.0)
+* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 3.1.0)
+* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/sharedfiles/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 2.2.1)
+* [Restored Content: Fungoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 1.2.0)
+* [Yet Another Planetary Sky Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 2.1.0)
+* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/sharedfiles/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 3.1.0)
+* [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 2.2.1)
+* [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 1.2.0)
+* [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 2.1.1)
+* [Planetary Modifier Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 2.6.0)
+* [Primitive Conquest Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 3.0.0)
 
 ## Source Code
 
@@ -58,13 +55,15 @@ Each of the source repositories above is added as a remote to this repository on
 
 # Compatibility
 
-Requires Stellaris version 3.2.2 "Herbert" and disables achievements.
+Requires Stellaris version 3.3 "Libra" and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes.  Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, or the Full Military Service species right.
+Check each of the contained mods for an explicit list of incompatibility notes.  As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings.  Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
 
 ## Recommended Companion Mods
 
-The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is also stand-alone, so it is not required to use the rest of [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239) or [Bigger Planet View](https://steamcommunity.com/sharedfiles/filedetails/?id=1587178040) to expand the viewport.  As graphics-only mods, they can be added or removed at any time.  Both are also stand-alone and do not require the use of other mods.  [UI Overhaul Dynamic](https://steamcommunity.com/sharedfiles/filedetails/?id=1623423360) also provides an expanded viewport if you prefer it over that built-in Stellaris UI.
+
+Should you choose to use an alternative planet view, it is also recommended to install [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) that was previously part of this collection.
 
 ## When to Install
 
@@ -177,3 +176,8 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 4.1.2 Update merged mods:
     * Leader Traits: All Eligible Species Traits at 2.2.1
     * Leader Traits: Enhanced Randomisation at 2.2.1
+* 5.0.0
+    * Removed: Technician Job Priority Fix for Slaves (deprecated)
+    * Removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix (deprecated)
+    * Removed: Colony Designation: Ecumenopolis Commercial (requires a UI mod)
+    * TODO - or add the UI mod and instructions for load order?

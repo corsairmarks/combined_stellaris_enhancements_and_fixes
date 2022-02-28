@@ -1,19 +1,15 @@
 [h1]Overview[/h1]
-
 This mod is a compilation of most of my other fixes and balance mods. Please see the description of each individual mod for what the effects are.
 
 Individual mods update first, then changes are merged here.
 
 [h1]Major Update[/h1]
-
-Versions 4.0.0 and above are fully updated for Stellaris version 3.2 "Herbert" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [url=https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/3.3.4]3.3.4[/url].
+Versions 5.0.0 and above are fully updated for Stellaris version 3.3 "Libra" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [url=https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/4.1.2]4.1.2[/url].
 
 You only need the contents of the [b]mod[/b] folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local [b]mod[/b] folder.  More instructions on where to install local mods can be found on the [url=https://stellaris.paradoxwikis.com/Mods]wiki[/url].
 
 [h1]Bundled Mods[/h1]
-
 This is a bundle of mods to resolve compatibility issues if you want to use them all together. Please check each individual mod for the effects and any known issues. The numbers indicate which version of a particular mod is contained in this mod (which also corresponds to the version tag in its [b]git[/b] repository).
-
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2686810902]Penal Colony: Enhanced[/url] ([url=https://github.com/corsairmarks/penal_colony_enhanced]Source[/url] 1.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] ([url=https://github.com/corsairmarks/trade_district_enhancements]Source[/url] 1.2.0)
@@ -21,7 +17,6 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437]"Terraform" to Tomb World[/url] ([url=https://github.com/corsairmarks/terraform_to_pc_nuked]Source[/url] 2.0.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2622411084]Aesthetic Terraform Stations[/url] ([url=https://github.com/corsairmarks/terraform_stations_aesthetic]Source[/url] 2.0.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2601239912]Psionic Ascension: Even in Other Empires[/url] ([url=https://github.com/corsairmarks/psionic_assimilation_galaxy_species]Source[/url] 1.2.1)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] ([url=https://github.com/corsairmarks/ecumenopolis_trade]Source[/url] 2.6.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] ([url=https://github.com/corsairmarks/limited_army_counter_fix]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2559702143]Deassimilated Machine Worlds[/url] ([url=https://github.com/corsairmarks/deassimilated_machine_worlds]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimilate Machines[/url] ([url=https://github.com/corsairmarks/deassimilate_machines]Source[/url] 2.0.0)
@@ -34,31 +29,24 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] 1.2.0)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357447]Special Leadership Privileges for Battle Thralls and Bio-Trophies[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 2.1.1)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] ([url=https://github.com/corsairmarks/planetary_modifier_enhancements]Source[/url] 2.6.0)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] ([url=https://github.com/corsairmarks/primitive_conquest_enhancements]Source[/url] 3..0)
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484702578]Technician Job Priority Fix for Slaves[/url] ([url=https://github.com/corsairmarks/technician_slave_fix]Source[/url]) - this mod is not actually merged via [b]git[/b], but the same 1-character change is present in this one
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2470975831]Manifesti 'Personal Autonomy for Munitions' Demand Fix[/url] ([url=https://github.com/corsairmarks/manifesti_fix]Source[/url] 4.0.0)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] ([url=https://github.com/corsairmarks/primitive_conquest_enhancements]Source[/url] 3.0.0)
 [/list]
-
 [h2]Source Code[/h2]
-
 Hosted on [url=https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes]Github[/url]
 
 [h1]Compatibility[/h1]
+Requires Stellaris version 3.3 "Libra" and disables achievements.
 
-Requires Stellaris version 3.2.2 "Herbert" and disables achievements.
-
-Check each of the contained mods for an explicit list of incompatibility notes. Generally, this mod is incompatible with other mods that change worker jobs or built-in special event jobs, districts, or the Full Military Service species right.
-
+Check each of the contained mods for an explicit list of incompatibility notes.  As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings.  Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
 [h2]Recommended Companion Mods[/h2]
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds. This is particularly true for the temperate planets: tropical, continental, and ocean. To solve that, I [i][b]highly[/b][/i] recommend you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239]Planetary Diversity - Planet View[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1587178040]Bigger Planet View[/url] to expand the viewport. As graphics-only mods, it can be added or removed at any time. It is also stand-alone and do not require the use of other mods.  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1623423360]UI Overhaul Dynamic[/url] also provides an expanded viewport if you prefer it over that built-in Stellaris UI.
 
-The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds. This is particularly true for the temperate planets: tropical, continental, and ocean. To solve that, I [i][b]highly[/b][/i] recommend you use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1866576239]Planetary Diversity - Planet View[/url] to expand the viewport. As a graphics-only mod, it can be added or removed at any time. It is also stand-alone, so it is not required to use the rest of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
+Should you choose to use an alternative planet view, it is also recommended to install [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] that was previously part of this collection.
 
 [h2]When to Install[/h2]
-
 This mod should not be removed from your save game. Some added modifiers and technologies will not work without the changes in this mod. You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
 
 [h2]Changelog[/h2]
-
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2522974089]Change Notes[/url].
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
