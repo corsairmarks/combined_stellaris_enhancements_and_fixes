@@ -24,6 +24,7 @@ Overriding a building or job causes the game to log errors noting the overrides.
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.0.1 Update name to be plural
 
 ## Source Code
 
