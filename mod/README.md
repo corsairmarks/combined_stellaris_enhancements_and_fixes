@@ -177,7 +177,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Leader Traits: All Eligible Species Traits at 2.2.1
     * Leader Traits: Enhanced Randomisation at 2.2.1
 * 5.0.0
-    * Removed: Technician Job Priority Fix for Slaves (deprecated)
     * Removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix (deprecated)
     * Removed: Colony Designation: Ecumenopolis Commercial (requires a UI mod)
     * TODO - or add the UI mod and instructions for load order?
