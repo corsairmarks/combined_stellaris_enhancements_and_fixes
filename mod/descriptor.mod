@@ -1,4 +1,4 @@
-name="Building: Aquaponics Farm"
+name="Building: Aquaponics Farms"
 tags={
 	"Buildings"
 	"Economy"
