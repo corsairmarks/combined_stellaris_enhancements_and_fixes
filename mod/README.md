@@ -27,7 +27,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 2.6.0)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 3.0.0)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 1.2.1)
-* [Restored Content: Fungoids](https://steamcommunity.com/workshop/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 1.2.0)
+* [Restored Content: Fungoids](https://steamcommunity.com/workshop/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 1.3.0)
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 3.1.0)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 2.0.0)
 * [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/workshop/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 2.1.1)
