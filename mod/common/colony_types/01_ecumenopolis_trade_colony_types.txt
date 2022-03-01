@@ -7,6 +7,7 @@ col_ecu_trade = {
 			uses_district_set = pdecocity
 			uses_district_set = pdcorpoarc
 		}
+		can_generate_trade_value = yes
 		exists = owner
 		owner = {
 			is_gestalt = no
