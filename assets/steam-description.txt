@@ -11,7 +11,7 @@ You only need the contents of the [b]mod[/b] folder for a local install, disrega
 [h1]Bundled Mods[/h1]
 This is a bundle of mods to resolve compatibility issues if you want to use them all together. Please check each individual mod for the effects and any known issues. The numbers indicate which version of a particular mod is contained in this mod (which also corresponds to the version tag in its [b]git[/b] repository).
 [list]
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2622411084]Aesthetic Terraform Stations[/url] ([url=https://github.com/corsairmarks/terraform_stations_aesthetic]Source[/url] 2.0.0)
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2622411084]Aesthetic Terraform Stations[/url] ([url=https://github.com/corsairmarks/terraform_stations_aesthetic]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] 3.1.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] ([url=https://github.com/corsairmarks/limited_army_counter_fix]Source[/url] 2.2.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553812372]Deassimilate Machines[/url] ([url=https://github.com/corsairmarks/deassimilate_machines]Source[/url] 2.0.0)

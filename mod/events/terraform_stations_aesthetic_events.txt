@@ -34,6 +34,7 @@ planet_event = {
 			uninhabitable_regular_planet = no
 			space_owner.owner_main_species = {
 				OR = {
+					ideal_planet_class = pc_nuked
 					has_trait = trait_pc_nuked_preference
 					has_trait = trait_survivor
 					has_trait = trait_plantoid_radiotrophic
