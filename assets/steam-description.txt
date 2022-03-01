@@ -17,7 +17,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553812372]Deassimilate Machines[/url] ([url=https://github.com/corsairmarks/deassimilate_machines]Source[/url] 3.0.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2559702143]Deassimilated Machine Worlds[/url] ([url=https://github.com/corsairmarks/deassimilated_machine_worlds]Source[/url] 3.0.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] ([url=https://github.com/corsairmarks/trade_district_enhancements]Source[/url] 2.0.0)
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 2.2.1)
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] ([url=https://github.com/corsairmarks/enable_all_species_traits_for_leaders]Source[/url] 2.3.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] ([url=https://github.com/corsairmarks/leader_trait_randomisation_enhancement]Source[/url] 2.2.1)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] ([url=https://github.com/corsairmarks/scientist_ai_assistant_upgrader]Source[/url] 1.3.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2686810902]Penal Colony: Enhanced[/url] ([url=https://github.com/corsairmarks/penal_colony_enhanced]Source[/url] 2.0.0)
