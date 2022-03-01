@@ -18,6 +18,8 @@ col_city = {
 			uses_district_set = habitat
 		}
 		tde_uses_planetary_diversity_special_district_set = no
+		tde_uses_gigastructural_engineering_habitat_district_set = no
+		tde_uses_gigastructural_engineering_gigastructure_district_set = no
 		is_special_colony_type = no
 	}
 	planet_modifier = {
@@ -131,6 +133,7 @@ col_habitat_trade = {
 		OR = {
 			uses_district_set = habitat
 			uses_district_set = pdarchive
+			tde_uses_gigastructural_engineering_habitat_district_set = yes
 		}
 		exists = owner
 		owner = { is_gestalt = no }
