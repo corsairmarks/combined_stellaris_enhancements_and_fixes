@@ -37,12 +37,7 @@ population_control_yes = {
 			}
 			custom_tooltip = {
 				fail_text = empire_xenophile
-				from = {
-					NOR = {
-						has_ethic = ethic_xenophile
-						has_ethic = ethic_fanatic_xenophile
-					}
-				}
+				from = { is_xenophile = yes }
 			}
 		}
 	}
@@ -87,8 +82,8 @@ population_control_no = {
 			OR = {
 				FROM = {
 					OR = {
-						NOT = { has_authority = auth_hive_mind }
-						has_origin = origin_necrophage
+						is_hive_empire = no
+						dm_is_necrophage_empire = yes
 					}
 				}
 				has_trait = trait_hive_mind
@@ -116,7 +111,7 @@ colonization_control_yes = {
 
 	potential = {
 		NAND = {
-			from = { has_authority = auth_machine_intelligence }
+			from = { is_machine_empire = yes }
 			OR = {
 				has_trait = trait_machine_unit
 				has_trait = trait_mechanical
@@ -157,11 +152,8 @@ colonization_control_yes = {
 		modifier = {
 			factor = 0
 			from = {
-				NOR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					has_ethic = ethic_gestalt_consciousness
-				}
+				is_xenophobe = no
+				is_gestalt = no
 			}
 		}
 		modifier = {
@@ -179,7 +171,7 @@ colonization_control_no = {
 	potential = {
 		exists = from
 		NAND = {
-			from = { has_authority = auth_machine_intelligence }
+			from = { is_machine_empire = yes }
 			NOR = {
 				has_trait = trait_machine_unit
 				has_trait = trait_mechanical
@@ -204,7 +196,7 @@ colonization_control_no = {
 		custom_tooltip = {
 			fail_text = "HIVE_MIND_SPECIES_CITIZENS_ONLY"
 			OR = {
-				NOT = { from = { has_authority = auth_hive_mind } }
+				from = { is_hive_empire = no }
 				has_trait = trait_hive_mind
 			}
 		}
@@ -213,7 +205,7 @@ colonization_control_no = {
 			OR = {
 				NOT = { has_trait = trait_mechanical }
 				from = { has_technology = tech_droid_workers }
-				from = { has_authority = auth_machine_intelligence }
+				from = { is_machine_empire = yes }
 			}
 		}
 		custom_tooltip = {
@@ -222,6 +214,7 @@ colonization_control_no = {
 			NOR = {
 				has_trait = trait_syncretic_proles
 				has_trait = trait_nerve_stapled
+				has_trait = trait_zombie
 			}
 		}
 		custom_tooltip = {

@@ -53,7 +53,7 @@ event = {
 									NOT = { has_country_flag = synthetic_empire }
 								}
 								AND = {
-									has_authority = auth_machine_intelligence
+									is_machine_empire = yes
 									has_valid_civic = civic_machine_assimilator
 								}
 							}
@@ -156,7 +156,7 @@ event = {
 				else_if = { # hive mind
 					limit = {
 						prev = {
-							has_authority = auth_hive_mind
+							is_hive_empire = yes
 							NOT = { has_civic = civic_hive_devouring_swarm }
 						}
 					}
