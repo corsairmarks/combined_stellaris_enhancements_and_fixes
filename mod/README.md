@@ -75,9 +75,9 @@ Check each of the contained mods for an explicit list of incompatibility notes. 
 
 ## Recommended Companion Mods
 
-The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/workshop/filedetails/?id=1866576239) or [Bigger Planet View](https://steamcommunity.com/workshop/filedetails/?id=1587178040) to expand the viewport.  As graphics-only mods, they can be added or removed at any time.  Both are also stand-alone and do not require the use of other mods.  [UI Overhaul Dynamic](https://steamcommunity.com/workshop/filedetails/?id=1623423360) also provides an expanded viewport if you prefer it over that built-in Stellaris UI.
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Bigger Planet View](https://steamcommunity.com/workshop/filedetails/?id=1587178040) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is stand-alone and does not require the use of [UI Overhaul Dynamic](https://steamcommunity.com/workshop/filedetails/?id=1623423360).  The full version of UIOD also provides an expanded viewport if you prefer it over that built-in Stellaris UI.
 
-Should you choose to use an alternative planet view, it should be placed _after_ Subtle Polish_ so that it properly overwrites the planetview from Basic Planetview: More Districts.
+Should you choose to use Bigger Planet View or the full UIOD mod, it should be loaded _after_ Subtle Polish so that it properly overwrites the planetview from Basic Planetview: More Districts.
 
 ## When to Install
 
