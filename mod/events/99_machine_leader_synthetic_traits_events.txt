@@ -1,0 +1,171 @@
+namespace = machine_leader_synthetic_traits
+
+# flag mod as active
+event = {
+	id = machine_leader_synthetic_traits.13
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = machine_leader_synthetic_traits_installed }
+	}
+	immediate = {
+		set_global_flag = machine_leader_synthetic_traits_installed
+	}
+}
+
+# new machine unit leaders get synthetic-specific leader traits
+country_event = {
+	id = machine_leader_synthetic_traits.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			leader_event = {
+				id = machine_leader_synthetic_traits.5
+			}
+		}
+	}
+}
+
+# modifying a species applies synthetic traits to machine units and removes them when no longer applicable
+country_event = {
+	id = machine_leader_synthetic_traits.2
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		every_owned_leader = {
+			limit = { species = { is_exact_same_species = FROM } }
+			leader_event = {
+				id = machine_leader_synthetic_traits.5
+			}
+		}
+
+		every_pool_leader = {
+			limit = { species = { is_exact_same_species = FROM } }
+			leader_event = {
+				id = machine_leader_synthetic_traits.5
+			}
+		}
+	}
+}
+
+# demoted rulers might need to gain or lose synthetic traits
+country_event = {
+	id = machine_leader_synthetic_traits.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			leader_event = {
+				id = machine_leader_synthetic_traits.5
+			}
+		}
+	}
+}
+
+# follows the random event for a new random admiral (leader.1); triggered by on_fleet_destroyed_perp
+# should be harmless if executed against another admiral - assuming they had species-appropriate traits in the first place, no changes will be made
+country_event = {
+	id = machine_leader_synthetic_traits.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_active_event = { leader.1 }
+		exists = last_created_leader
+		last_created_leader = { leader_class = admiral }
+		is_country = last_created_leader.owner
+	}
+	immediate = {
+		last_created_leader = {
+			leader_event = {
+				id = machine_leader_synthetic_traits.5
+			}
+		}
+	}
+}
+
+# manually triggered above - unified approach to adjusting traits for machine unit leaders
+# also triggered by custom on_action on_leader_species_changed
+leader_event = {
+	id = machine_leader_synthetic_traits.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		add_leader_trait_synthetic_for_machine_unit = yes
+		remove_leader_trait_synthetic_from_non_machine_unit_or_mechanical = yes
+	}
+}
+
+# gatekeeper for machine_leader_synthetic_traits.8
+# triggered by on_single_player_save_game_load
+event = {
+	id = machine_leader_synthetic_traits.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = machine_leader_synthetic_traits_installed }
+	}
+	immediate = {
+		every_country = {
+			country_event = {
+				id = machine_leader_synthetic_traits.8
+			}
+		}
+	}
+}
+
+# gatekeeper for machine_leader_synthetic_traits.8
+# triggered by on_tech_increased
+country_event = {
+	id = machine_leader_synthetic_traits.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_gestalt = no
+		last_increased_tech = tech_synthetic_leaders
+	}
+	immediate = {
+		country_event = {
+			id = machine_leader_synthetic_traits.8
+		}
+	}
+}
+
+# adjust all owned/pool machine unit leaders
+# triggered by on_game_start_country, and machine_leader_synthetic_traits.6, .7, and .9
+country_event = {
+	id = machine_leader_synthetic_traits.8
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_owned_leader = {
+			leader_event = {
+				id = machine_leader_synthetic_traits.5
+			}
+		}
+
+		every_pool_leader = {
+			leader_event = {
+				id = machine_leader_synthetic_traits.5
+			}
+		}
+	}
+}
+
+# gatekeeper for machine_leader_synthetic_traits.8
+# triggered by on_ascension_perk_picked
+country_event = {
+	id = machine_leader_synthetic_traits.9
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_ascension_perk = ap_synthetic_age
+		NOT = { has_country_flag = synthetic_age_leader_upgrade }
+	}
+	immediate = {
+		set_country_flag = synthetic_age_leader_upgrade
+		country_event = {
+			id = machine_leader_synthetic_traits.8
+		}
+	}
+}

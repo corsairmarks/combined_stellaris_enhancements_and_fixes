@@ -1,0 +1,97 @@
+add_leader_trait_synthetic_for_machine_unit = {
+	if = {
+		limit = {
+			species = { has_trait = trait_machine_unit }
+			owner = {
+				OR = {
+					is_fallen_machine_empire = yes
+					AND = {
+						is_machine_empire = yes
+						has_ascension_perk = ap_synthetic_age
+					}
+					AND = {
+						is_gestalt =  no
+						has_technology = tech_synthetic_leaders
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				leader_class = admiral
+				NOT = { has_trait = leader_trait_admiral_synthetic }
+			}
+			add_trait = leader_trait_admiral_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = general
+				NOT = { has_trait = leader_trait_general_synthetic }
+			}
+			add_trait = leader_trait_general_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = governor
+				NOT = { has_trait = leader_trait_governor_synthetic }
+			}
+			add_trait = leader_trait_governor_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_scientist_synthetic }
+			}
+			add_trait = leader_trait_scientist_synthetic
+		}
+		else_if = {
+			limit = {
+				leader_class = ruler
+				NOT = { has_trait = leader_trait_ruler_synthetic }
+			}
+			add_trait = leader_trait_ruler_synthetic
+		}
+		if = {
+			limit = { NOT = { has_ruler_trait = leader_trait_ruler_synthetic } }
+			add_ruler_trait = leader_trait_ruler_synthetic
+		}
+	}
+}
+
+remove_leader_trait_synthetic_from_non_machine_unit_or_mechanical = {
+	if = {
+		limit = {
+			species = {
+				NOR = {
+					has_trait = trait_machine_unit
+					has_trait = trait_mechanical
+				}
+			}
+		}
+		# leaders are allowed to keep synthetic even if their owner isn't a machine empire or doesn't have synth leaders
+		if = {
+			limit = { has_trait = leader_trait_admiral_synthetic }
+			remove_trait = leader_trait_admiral_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_general_synthetic }
+			remove_trait = leader_trait_general_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_governor_synthetic }
+			remove_trait = leader_trait_governor_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_scientist_synthetic }
+			remove_trait = leader_trait_scientist_synthetic
+		}
+		if = {
+			limit = { has_trait = leader_trait_ruler_synthetic }
+			remove_trait = leader_trait_ruler_synthetic
+		}
+		if = {
+			limit = { has_ruler_trait = leader_trait_ruler_synthetic }
+			remove_ruler_trait = leader_trait_ruler_synthetic
+		}
+	}
+}
