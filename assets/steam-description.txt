@@ -13,6 +13,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [list]
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2622411084]Aesthetic Terraform Stations[/url] ([url=https://github.com/corsairmarks/terraform_stations_aesthetic]Source[/url] 2.1.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] ([url=https://github.com/corsairmarks/agrarian_idyll_lithoid]Source[/url] 4.0.0)
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2768297949]Building: Aquaponics Farms[/url] ([url=https://github.com/corsairmarks/building_aquaponics_farm]Source[/url] 1.0.1)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] ([url=https://github.com/corsairmarks/ecumenopolis_trade]Source[/url] 3.0.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] ([url=https://github.com/corsairmarks/limited_army_counter_fix]Source[/url] 2.2.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553812372]Deassimilate Machines[/url] ([url=https://github.com/corsairmarks/deassimilate_machines]Source[/url] 3.0.0)
