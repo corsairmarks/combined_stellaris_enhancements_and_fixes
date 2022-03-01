@@ -6,7 +6,6 @@ leader_trait_former_ruler_machine_intelligence_ruler = {
 	leader_class = { ruler }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -26,7 +25,6 @@ leader_trait_former_ruler_machine_intelligence_ruler_industrial = {
 	leader_class = { ruler }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -47,7 +45,6 @@ leader_trait_former_ruler_machine_intelligence_ruler_science = {
 	leader_class = { ruler }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -66,7 +63,6 @@ leader_trait_former_ruler_machine_intelligence_ruler_caretaker = {
 	leader_class = { ruler }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -85,7 +81,6 @@ leader_trait_former_ruler_machine_intelligence_governor = {
 	leader_class = { governor }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -106,7 +101,6 @@ leader_trait_former_ruler_machine_intelligence_scientist = {
 	leader_class = { scientist }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -129,7 +123,6 @@ leader_trait_former_ruler_machine_intelligence_admiral = {
 	leader_class = { admiral }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -150,7 +143,6 @@ leader_trait_former_ruler_hive_ruler = {
 	leader_class = { ruler }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -169,7 +161,6 @@ leader_trait_former_ruler_hive_governor = {
 	leader_class = { governor }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -186,7 +177,6 @@ leader_trait_former_ruler_hive_admiral = {
 	leader_class = { admiral }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -205,7 +195,6 @@ leader_trait_former_ruler_ruler = {
 	leader_class = { ruler }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -223,7 +212,6 @@ leader_trait_former_ruler_governor = {
 	leader_class = { governor }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 
@@ -242,7 +230,6 @@ leader_trait_former_ruler_scientist = {
 	leader_class = { scientist }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -262,7 +249,6 @@ leader_trait_former_ruler_admiral = {
 	leader_class = { admiral }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -280,7 +266,6 @@ leader_trait_former_ruler_general = {
 	leader_class = { general }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -300,7 +285,6 @@ leader_trait_former_heir_ruler = {
 	leader_class = { ruler }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -322,7 +306,6 @@ leader_trait_former_heir_governor = {
 	leader_class = { governor }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 
@@ -345,7 +328,6 @@ leader_trait_former_heir_scientist = {
 	leader_class = { scientist }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -369,7 +351,6 @@ leader_trait_former_heir_admiral = {
 	leader_class = { admiral }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
@@ -391,7 +372,6 @@ leader_trait_former_heir_general = {
 	leader_class = { general }
 
 	cost = 0
-	modification = no
 	initial = no
 	randomized = no
 	
