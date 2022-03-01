@@ -18,10 +18,6 @@ Built for Stellaris version 3.3 "Libra."  As a UI-only mod, this is achievement 
 
 [Basic Planetview: More Districts & Buildings](url=https://steamcommunity.com/sharedfiles/filedetails/?id=2714695762) adds 3 additional building slots for use with this mod.  Number of additional districts limited by lack of scrollbars for this part of the UI.
 
-### Not Included in "Subtle Polish"
-
-This mod is intentionally not included in my modpack [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) because it is an optional, basic UI change targeted at specific screen resolutions.
-
 ## Changelog
 
 * 1.0.0 Initial version
