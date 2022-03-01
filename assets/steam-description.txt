@@ -29,7 +29,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2628518102]Ringworld Graphical Enhancements[/url] ([url=https://github.com/corsairmarks/ringworld_graphical_enhancements]Source[/url] 2.0.0)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2496357447]Special Leadership Privileges for Battle Thralls and Bio-Trophies[/url] ([url=https://github.com/corsairmarks/battle_thrall_military_leaders]Source[/url] 2.1.1)
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2625663437]"Terraform" to Tomb World[/url] ([url=https://github.com/corsairmarks/terraform_to_pc_nuked]Source[/url] 2.0.0)
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] 2.1.0)
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] ([url=https://github.com/corsairmarks/yet_another_planetary_sky_fix]Source[/url] 2.2.0)
 [/list]
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes]Github[/url]
