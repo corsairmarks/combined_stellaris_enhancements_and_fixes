@@ -4,6 +4,16 @@ This mod is a compilation of most of my other fixes and balance mods.  Please se
 
 Individual mods update first, then changes are merged here.
 
+## Included Mods Updated
+
+Three mods added for Stellaris version 3.3 "Libra:"
+
+1. Basic Planetview: More Districts - allows viewing more than 5 district types per planet, required because of the new unity-based arcologies from the base game pushing out Commercial Arcologies
+2. Building: Aquaponics Farms - a new mod that provides an upgrade path for hydroponic Farms, extracted from Animated Eldar Portraits: Revisited
+3. Leader Traits: Synthetic Leader Traits for Machine Units - Machine Unit leaders gain the same traits as Synthetic leaders once their owner selects Synthetic Age
+
+And one mod has been removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix - the fixes from this mod were integrated into the base game
+
 # Major Update
 
 Versions 5.0.0 and above are fully updated for Stellaris version 3.3 "Libra" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [4.1.2](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/4.1.2).
@@ -67,7 +77,7 @@ Check each of the contained mods for an explicit list of incompatibility notes. 
 
 The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Planetary Diversity - Planet View](https://steamcommunity.com/workshop/filedetails/?id=1866576239) or [Bigger Planet View](https://steamcommunity.com/workshop/filedetails/?id=1587178040) to expand the viewport.  As graphics-only mods, they can be added or removed at any time.  Both are also stand-alone and do not require the use of other mods.  [UI Overhaul Dynamic](https://steamcommunity.com/workshop/filedetails/?id=1623423360) also provides an expanded viewport if you prefer it over that built-in Stellaris UI.
 
-Should you choose to use an alternative planet view, it is also recommended to install [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) that was previously part of this collection.
+Should you choose to use an alternative planet view, it should be placed _after_ Subtle Polish_ so that it properly overwrites the planetview from Basic Planetview: More Districts.
 
 ## When to Install
 
@@ -78,18 +88,18 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 1.0.0 Initial version
 * 1.0.1 Fix effect file location (breaking bug), enhance documentation and thumbnail image
 * 1.1.0 Upstream updates
-    * Integrate "Yet Another Planetary Sky Fix" at version 1.0.2
-    * Update from "Full Military Service for Battle Thralls"
+    * Added: "Yet Another Planetary Sky Fix" at version 1.0.2
+    * Updated "Full Military Service for Battle Thralls"
 * 1.2.0 Apply fix from "Yet Another Planetary Sky Fix" version 1.1.0
 * 1.3.0 Update merged mods:
-    * "Agrarian" Idyll for Lithoids at 1.4.0
-    * Ringworld Origin Rebalance for 3.0.* at 1.0.3
-    * Leader Traits: All Eligible Species Traits at 1.3.0 (formerly Enable All Eligible Species Traits for Leaders)
-    * Leader Traits: Scientist AI Assistant Upgrader at 1.0.4 (formerly Scientist AI Assistant Upgrader)
-    * Prosperity Tradition Rebalance for 3.0.3 at 1.2.0
-    * Full Military Service for Battle Thralls at 1.4.0
-    * Planetary Modifier Enhancements at 2.3.0
-    * Primitive Conquest Enhancements at 1.3.0
+    * Updated: "Agrarian" Idyll for Lithoids at 1.4.0
+    * Updated: Ringworld Origin Rebalance for 3.0.* at 1.0.3
+    * Updated: Leader Traits: All Eligible Species Traits at 1.3.0 (formerly Enable All Eligible Species Traits for Leaders)
+    * Updated: Leader Traits: Scientist AI Assistant Upgrader at 1.0.4 (formerly Scientist AI Assistant Upgrader)
+    * Updated: Prosperity Tradition Rebalance for 3.0.3 at 1.2.0
+    * Updated: Full Military Service for Battle Thralls at 1.4.0
+    * Updated: Planetary Modifier Enhancements at 2.3.0
+    * Updated: Primitive Conquest Enhancements at 1.3.0
     * Added: Restored Content: Fungoids at 1.0.1
     * Added: Leader Traits: Enhanced Randomisation at 1.0.0
     * Added: Retain Leaders from Integrated Subjects at 1.0.1
@@ -123,22 +133,7 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Removed: Shattered Ring Rebalance for 3.0.* (deprecated)
     * Removed: Prosperity Tradition Rebalance for 3.0.3 (deprecated)
     * Removed: Space Fauna Multiple Resolutions Fix (deprecated)
-    * Updated: Psionic Ascension: Even in Other Empires at 1.1.0
-    * Updated: Colony Designation: Ecumenopolis Commercial at 2.1.0
-    * Updated: Counter-Limited Armies Fix at 2.0.0
-    * Updated: Deassimilated Machine Worlds at 2.0.0
-    * Updated: Deassimilate Machines at 1.1.0
-    * Updated: Retain Leaders from Integrated Subjects at 2.0.0
-    * Updated: Leader Traits: Enhanced Randomisation at 2.0.0
-    * Updated: Restored Content: Fungoids at 1.1.0
-    * Updated: Yet Another Planetary Sky Fix at 2.0.0
-    * Updated: "Agrarian" Idyll for Lithoids at 2.0.0
-    * Updated: Leader Traits: All Eligible Species Traits at 2.0.1
-    * Updated: Leader Traits: Scientist AI Assistant Upgrader at 1.1.0
-    * Updated: Full Military Service for Battle Thralls at 1.6.0
-    * Updated: Planetary Modifier Enhancements at 2.4.0
-    * Updated: Primitive Conquest Enhancements at 2.0.0
-    * Updated: Manifesti 'Personal Autonomy for Munitions' Demand Fix at 3.0.0
+    * Updated: all the rest
 * 3.0.1 Mark compatibility for Stellaris 3.1.2
     * Updated: Retain Leaders from Integrated Subjects at 2.0.1
     * Updated: "Agrarian" Idyll for Lithoids at 2.0.1
@@ -180,7 +175,9 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 4.1.2 Update merged mods:
     * Leader Traits: All Eligible Species Traits at 2.2.1
     * Leader Traits: Enhanced Randomisation at 2.2.1
-* 5.0.0
+* 5.0.0 Update merged mods for Stellaris version 3.3 "Libra"
     * Removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix (deprecated)
-    * Removed: Colony Designation: Ecumenopolis Commercial (requires a UI mod)
-    * TODO - or add the UI mod and instructions for load order?
+    * Added: Basic Planetview: More Districts at 2.0.0
+    * Added: Building: Aquaponics Farms at 1.0.1
+    * Added: Leader Traits: Synthetic Leader Traits for Machine Units at 1.3.0
+    * Updated: all the rest
