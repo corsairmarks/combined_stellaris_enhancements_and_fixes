@@ -1,6 +1,7 @@
 @base_cost = 300
 @city_cost = 500
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_generator = {
 	base_buildtime = 240
 
@@ -124,16 +125,10 @@ district_generator = {
 	prerequisites = {
 		tech_power_plant_1
 	}
-
-	ai_resource_production = {
-		energy = 1
-		trigger = {
-			always = yes
-		}
-	}
 }
 
-# Modified: added extra housing for lithoid agrarian idyll housing technology
+# Modified: added extra housing for agrarian idyll (lithoid) housing technology
+# Modified: added extra capacity and building slot for agrarian idyll
 district_mining = {
 	base_buildtime = 240
 
@@ -273,15 +268,9 @@ district_mining = {
 	prerequisites = {
 		tech_mechanized_mining
 	}
-
-	ai_resource_production = {
-		minerals = 1
-		trigger = {
-			always = yes
-		}
-	}
 }
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_farming = {
 	base_buildtime = 240
 
@@ -302,12 +291,18 @@ district_farming = {
 
 	potential = {
 		uses_district_set = standard
+		exists = owner
 		OR = {
-			NOT = { exists = owner }
 			owner = { is_anglers_empire = no }
 			AND = {
 				owner = { is_anglers_empire = yes }
 				NOT = { is_planet_class = pc_ocean }
+			}
+		}
+		NOT = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
 			}
 		}
 	}
@@ -482,14 +477,16 @@ district_farming = {
 		tech_industrial_farming
 	}
 
-	ai_resource_production = {
-		food = 1
-		trigger = {
-			always = yes
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_ai = yes
+			country_uses_food = no
 		}
 	}
 }
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_generator_uncapped = {
 	base_buildtime = 240
 	icon = district_generator
@@ -636,16 +633,10 @@ district_generator_uncapped = {
 		}
 		text = job_fe_acolyte_generator_effect_desc
 	}
-
-	ai_resource_production = {
-		energy = 1
-		trigger = {
-			always = yes
-		}
-	}
 }
 
-# Modified: added extra housing for lithoid agrarian idyll housing technology
+# Modified: added extra housing for agrarian idyll (lithoid) housing technology
+# Modified: added extra capacity and building slot for agrarian idyll
 district_mining_uncapped = {
 	base_buildtime = 240
 	icon = district_mining
@@ -653,7 +644,7 @@ district_mining_uncapped = {
 
 	desc = {
 		trigger = {
-			NOT = { uses_district_set = shattered_ring_world  }
+			NOT = { uses_district_set = shattered_ring_world }
 		}
 		text = district_mining_uncapped_desc
 	}
@@ -858,18 +849,9 @@ district_mining_uncapped = {
 		}
 		text = job_fe_acolyte_mine_effect_desc
 	}
-
-	prerequisites = {
-	}
-
-	ai_resource_production = {
-		minerals = 1
-		trigger = {
-			always = yes
-		}
-	}
 }
 
+# Modified: added extra capacity and building slot for agrarian idyll
 district_farming_uncapped = {
 	base_buildtime = 240
 	icon = district_farming
@@ -888,13 +870,19 @@ district_farming_uncapped = {
 	}
 
 	potential = {
+		exists = owner
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = shattered_ring_world
 			AND = {
-				exists = owner
 				owner = { is_anglers_empire = yes }
 				planet = { is_planet_class = pc_ocean }
+			}
+		}
+		NOT = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
 			}
 		}
 	}
@@ -1052,7 +1040,7 @@ district_farming_uncapped = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_anglers_empire = yes  }
+			owner = { is_anglers_empire = yes }
 			planet = { is_wet = yes }
 		}
 		text = job_aqu_angler_effect_desc
@@ -1060,16 +1048,17 @@ district_farming_uncapped = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_anglers_empire = yes  }
+			owner = { is_anglers_empire = yes }
 			planet = { is_wet = yes }
 		}
 		text = job_pearl_diver_effect_desc
 	}
 
-	ai_resource_production = {
-		food = 1
-		trigger = {
-			always = yes
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_ai = yes
+			country_uses_food = no
 		}
 	}
 }
