@@ -1,6 +1,6 @@
 ﻿l_braz_por:
  edict_designate_honored_protectors: "Decree: Honored Protectors"
- edict_designate_honored_protectors_desc: "Designate a species of §Y$slavery_military$§! as Honored Protectors. Their loyal service has earned a special place not afforded other Xenos.\n\nThe selection process can be cancelled for a refund of any £influence£ influence spent."
+ edict_designate_honored_protectors_desc: "Designate a species of §Y$slavery_military$§! as Honored Protectors. Their loyal service has earned a special place not afforded other Xenos.\n\nThe selection process can be cancelled for a refund of any £unity£ $unity$ spent."
  edict_designate_honored_protectors.not_already_designated: "Not already decreed as §HHonored Protectors§! by our empire."
  honored_protectors_decree.4.title: "Designate Honored Protectors"
  honored_protectors_decree.4.desc: "Few Xeno species are worthy of our attention. However, it may come to pass that a species earns our regard through faithful service on the battlefield. Such loyalty can be rewarded with the designation \"Honored Protectors.\"\n\nThose worthy shall receive greater responsibilities as naval and military officers... and commensurate privileges. They shall be our shield against the unknown Xenos."
