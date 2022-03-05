@@ -2,7 +2,7 @@
 
 Wish that your empire's Ruler jobs were a little bit more varied than just endless Politicians?  Then this mod is for you!
 
-Similar to how the Merchant Guilds, Exalted Priesthood, Aristocratic Elite, and Technocracy civics swap some Politician jobs out for their relevant jobs, capital buildings for regular, **non-**MegaCorp empires will now _also_ swap out some Politician jobs based on the planet's colony designation:
+Similar to how the Merchant Guilds, Exalted Priesthood, Aristocratic Elite, and Technocracy civics swap some Politician jobs out for their relevant jobs, capital buildings for regular, **non\-**MegaCorp empires will now _also_ swap out some Politician jobs based on the planet's colony designation:
 
 * Trade-related colonies will swap for Merchants
 * Unity-related colonies will swap for High Priests (spiritualist empires) or Nobles (Aristocratic Elite, imperial authorities, or the Galactic Emperor)
@@ -55,7 +55,7 @@ This mod also supports colony designations from my mods [Enhanced Trade District
 
 ## Source Code
 
-Hosted on [GitHub]()
+Hosted on [GitHub](https://github.com/corsairmarks/building_capital_colony_type_job_swaps)
 
 ### Development Notes
 
