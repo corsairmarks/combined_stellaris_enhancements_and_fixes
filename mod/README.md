@@ -69,6 +69,7 @@ Overwriting a colony type or district produces an error log.  Expect to see eigh
     * Update colony automation overrides to account for Permanent Employment
     * Integrate additional changes from 3.3 to overridden content
     * Add compatibility for Gigastructural Engineering: districts from this mod are prohibited on gigastructures, habitat-specific districts from this mod are allowed on Interstellar habitats and Gas Giant Habitats
+* 2.0.1 Add global flag to indicate that this mod is installed
 
 ## Source Code
 
