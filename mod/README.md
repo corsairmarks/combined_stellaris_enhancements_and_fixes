@@ -6,7 +6,7 @@ Similar to how the Merchant Guilds, Exalted Priesthood, Aristocratic Elite, and 
 
 * Trade-related colonies will swap for Merchants
 * Unity-related colonies will swap for High Priests (spiritualist empires) or Nobles (Aristocratic Elite, imperial authorities, or the Galactic Emperor)
-* Research-related colonies will swap for Head Researchers
+* Research-related colonies will swap for Science Directors
 
 These swaps combine with those for the leader-swap civics, so that some planets may end up with no Politicians at all.
 
