@@ -1,0 +1,62 @@
+# this = planet
+should_swap_extra_high_priests = {
+	OR = {
+		has_designation = col_bureau_spiritualist
+		has_designation = col_habitat_bureau_spiritualist
+	}
+	owner = {
+		is_regular_empire = yes
+		is_megacorp = no
+	}
+}
+
+should_swap_extra_nobles = {
+	OR = {
+		has_designation = col_bureau
+		has_designation = col_habitat_bureau
+	}
+	owner = {
+		is_regular_empire = yes
+		is_megacorp = no
+		OR = {
+			has_authority = auth_imperial
+			has_valid_civic = civic_landed_nobility
+			galactic_emperor = { is_country = prev }
+		}
+	}
+}
+
+should_swap_extra_head_researchers = {
+	OR = {
+		has_designation = col_research
+		has_designation = col_habitat_research
+		has_designation = col_ecu_research
+		has_designation = col_ring_research
+	}
+	owner = {
+		is_regular_empire = yes
+		is_megacorp = no
+	}
+}
+
+should_swap_extra_merchants = {
+	OR = {
+		has_designation = col_habitat_trade
+		has_designation = col_ring_trade
+		# from my trade mod
+		AND = {
+			has_global_flag = trade_district_enhancements_installed
+			has_designation = col_srw_trade
+		}
+		# from my ecu mod
+		AND = {
+			has_global_flag = ecumenopolis_trade_installed
+			has_designation = col_ecu_trade
+		}
+	}
+	exists = owner
+	owner = {
+		is_regular_empire = yes
+		is_megacorp = no
+	}
+}
