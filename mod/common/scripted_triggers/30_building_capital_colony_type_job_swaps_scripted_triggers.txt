@@ -10,6 +10,7 @@ should_swap_extra_high_priests = {
 	}
 }
 
+# this = planet
 should_swap_extra_nobles = {
 	OR = {
 		has_designation = col_bureau
@@ -26,6 +27,7 @@ should_swap_extra_nobles = {
 	}
 }
 
+# this = planet
 should_swap_extra_head_researchers = {
 	OR = {
 		has_designation = col_research
@@ -39,8 +41,10 @@ should_swap_extra_head_researchers = {
 	}
 }
 
+# this = planet
 should_swap_extra_merchants = {
 	OR = {
+		has_designation = col_city
 		has_designation = col_habitat_trade
 		has_designation = col_ring_trade
 		# from my trade mod
@@ -48,10 +52,20 @@ should_swap_extra_merchants = {
 			has_global_flag = trade_district_enhancements_installed
 			has_designation = col_srw_trade
 		}
+		# default ecu trade
+		AND = {
+			NOT = { has_global_flag = ecumenopolis_trade_installed }
+			has_designation = col_ecu_mix
+		}
 		# from my ecu mod
 		AND = {
 			has_global_flag = ecumenopolis_trade_installed
 			has_designation = col_ecu_trade
+		}
+		# from my district mod
+		AND = {
+			has_global_flag = more_standard_districts_installed
+			has_designation = col_standard_cm_trade
 		}
 	}
 	exists = owner
