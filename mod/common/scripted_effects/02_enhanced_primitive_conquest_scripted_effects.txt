@@ -302,7 +302,18 @@ add_primitive_conquest_farming_district = {
 }
 
 # this = planet
-add_primitive_conquest_unity_building_building_if_free = {
+add_primitive_conquest_science_building_if_free = {
+	if = {
+		limit = { owner = { has_valid_civic = civic_reanimated_armies } }
+		add_building_if_free = { BUILDING = building_dread_encampment }
+	}
+	else = {
+		add_building_if_free = { BUILDING = building_research_lab_1 }
+	}
+}
+
+# this = planet
+add_primitive_conquest_unity_building_if_free = {
 	if = {
 		limit = { owner = { is_memorialist_empire = yes } }
 		add_building_if_free = { BUILDING = building_galactic_memorial_1 }

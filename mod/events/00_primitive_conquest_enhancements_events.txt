@@ -80,7 +80,7 @@ planet_event = {
 									from = { has_renaissance_age_or_greater = yes }
 								}
 							}
-							add_primitive_conquest_unity_building_building_if_free = yes
+							add_primitive_conquest_unity_building_if_free = yes
 							if = {
 								limit = {
 									OR = {
@@ -88,7 +88,7 @@ planet_event = {
 										from = { has_steam_age_or_greater = yes }
 									}
 								}
-								add_primitive_conquest_unity_building_building_if_free = yes
+								add_primitive_conquest_unity_building_if_free = yes
 							}
 						}
 					}
@@ -108,7 +108,7 @@ planet_event = {
 								}
 							}
 							add_building_if_free = { BUILDING = building_foundry_1 }
-							add_building_if_free = { BUILDING = building_research_lab_1 }
+							add_primitive_conquest_science_building_if_free = yes
 							if = {
 								limit = {
 									OR = {
@@ -188,7 +188,7 @@ planet_event = {
 											from = { has_machine_age_or_greater = yes }
 										}
 									}
-									add_building_if_free = { BUILDING = building_research_lab_1 }
+									add_primitive_conquest_science_building_if_free = yes
 									if = {
 										limit = {
 											OR = {
@@ -204,7 +204,7 @@ planet_event = {
 													from = { has_early_space_age_or_greater = yes }
 												}
 											}
-											add_primitive_conquest_unity_building_building_if_free = yes
+											add_primitive_conquest_unity_building_if_free = yes
 										}
 									}
 								}
