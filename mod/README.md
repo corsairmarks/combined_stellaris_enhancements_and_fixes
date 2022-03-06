@@ -9,7 +9,7 @@ Individual mods update first, then changes are merged here.
 Three mods added for Stellaris version 3.3 "Libra:"
 
 1. Basic Planetview: More Districts - allows viewing more than 5 district types per planet, required because of the new unity-based arcologies from the base game pushing out Commercial Arcologies
-2. Building: Aquaponics Farms - a new mod that provides an upgrade path for hydroponic Farms, extracted from Animated Eldar Portraits: Revisited
+2. Building: Aquaponics Farms - a new mod that provides an upgrade path for Hydroponic Farms, extracted from Animated Eldar Portraits: Revisited
 3. Leader Traits: Synthetic Leader Traits for Machine Units - Machine Unit leaders gain the same traits as Synthetic leaders once their owner selects Synthetic Age
 
 And one mod has been removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix - the fixes from this mod were integrated into the base game
