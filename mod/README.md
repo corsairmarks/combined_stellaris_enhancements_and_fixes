@@ -188,3 +188,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Added: Colony Designations: Capital Building Job Swaps at 1.1.0
     * Updated: Colony Designation: Ecumenopolis Commercial at 3.0.1
     * Updated: Enhanced Trade Districts and Designations at 2.0.1
+* 5.1.1 Update merged mod: Primitive Conquest Enhancements at 4.1.0
