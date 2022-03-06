@@ -215,6 +215,11 @@ planet_event = {
 			}
 			clear_variable = count_machine_servitor_urban
 		}
+		every_owned_pop = {
+			limit = { is_unemployed = yes }
+			clear_pop_category = yes
+		}
+		check_planet_employment = yes
 	}
 }
 
