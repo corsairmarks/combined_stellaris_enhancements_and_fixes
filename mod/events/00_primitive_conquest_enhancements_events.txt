@@ -18,6 +18,22 @@ planet_event = {
 			owner_species = { save_event_target_as = conquered_primitive_species }
 		}
 		if = {
+			limit = {
+				is_planet_class = pc_ringworld_habitable
+				planet_size = 10
+			}
+			change_pc = pc_shattered_ring_habitable
+			set_planet_size = 25
+			# blockers match those added by generate_start_buildings_and_districts for origin_shattered_ring
+			add_deposit = d_segment_rubble_1
+			add_deposit = d_segment_rubble_2
+			add_deposit = d_segment_rubble_3
+			add_deposit = d_segment_rubble_4
+			add_deposit = d_decrepit_tunnels_1
+			add_deposit = d_decrepit_tunnels_2
+			add_deposit = d_decrepit_tunnels_3
+		}
+		if = {
 			limit = { uses_district_set = ring_world }
 			if = {
 				limit = { owner = { has_valid_civic = civic_machine_servitor } }
@@ -72,7 +88,7 @@ planet_event = {
 										from = { has_steam_age_or_greater = yes }
 									}
 								}
-								add_primitive_conquest_admin_building_if_free = yes
+								add_primitive_conquest_unity_building_building_if_free = yes
 							}
 						}
 					}
