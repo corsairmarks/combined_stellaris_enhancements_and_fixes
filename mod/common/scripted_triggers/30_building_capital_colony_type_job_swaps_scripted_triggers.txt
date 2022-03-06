@@ -21,7 +21,7 @@ should_swap_extra_nobles = {
 		is_megacorp = no
 		OR = {
 			has_authority = auth_imperial
-			has_valid_civic = civic_landed_nobility
+			has_valid_civic = civic_aristocratic_elite
 			galactic_emperor = { is_country = prev }
 		}
 	}
