@@ -1,11 +1,14 @@
 [h1]Overview[/h1]
-Like the idea of enlightened authoritarian rulers with Civic: Philosopher King but feel a bit underwhelmed at its actual affects?  Then this mod is for you!  It lightly enhances Civic: Philospher King to have effects similar to those added to Civic: Distinguished Admiralty in Stellaris version 3.3 "Libra:" Rulers and Governors begin with +2 levels.
+Like the idea of enlightened authoritarian rulers with Civic: Philosopher King but feel a bit underwhelmed at its actual affects?  Then this mod is for you!  It lightly enhances Civic: Philosopher King to have effects similar to those added to Civic: Distinguished Admiralty in Stellaris version 3.3 "Libra:" Rulers and Governors begin with +2 levels.
 
 [h1]Changes[/h1]
 Adds two events that grant bonus levels to Rulers and Governors for empires with Civic: Philosopher King.  Overwrites the built-in localisation for Civic: Philosopher King to describe this added effect.
 
 [h2]Compatibility[/h2]
 Any mod that does not remove Civic: Philosopher King.
+
+[h3]When to Install[/h3]
+This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events.  If you remove it, your game will work normally.  Any rulers or governors will keep their bonus levels.
 
 [h2]Localisation[/h2]
 The text describing the effects for Civic: Philosopher King has been edited to describe its new effect in for each of the eight officially-supported Stellaris languages.  I'm reasonably confident in my splicing for most languages, although I may have used the wrong word for "and" in Chinese.
