@@ -1,6 +1,7 @@
 name="Subtle Polish: A Collection of Fixes and Enhancements"
 tags={
 	"Balance"
+	"Buildings"
 	"Economy"
 	"Events"
 	"Fixes"
@@ -11,6 +12,6 @@ tags={
 	"Military"
 }
 picture="thumbnail.png"
-version="5.0.0"
+version="5.1.0"
 supported_version="3.3.*"
 remote_file_id="2522974089"
