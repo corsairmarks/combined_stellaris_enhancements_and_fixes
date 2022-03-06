@@ -20,6 +20,6 @@ See [url=]Change Notes[/url]
 
 [h2]Source Code[/h2]
 
-Hosted on [url=]GitHub[/url]
+Hosted on [url=https://github.com/corsairmarks/civic_philosopher_king_enhanced]GitHub[/url]
 
 [url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]

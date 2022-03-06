@@ -20,7 +20,7 @@ The text describing the effects for Civic: Philosopher King has been edited to d
 
 ## Source Code
 
-Hosted on [GitHub]()
+Hosted on [GitHub](https://github.com/corsairmarks/civic_philosopher_king_enhanced)
 
 ### Development Notes
 
