@@ -35,105 +35,99 @@ planet_event = {
 		}
 		if = {
 			limit = { uses_district_set = ring_world }
-			if = {
+			if = { 
 				limit = { owner = { has_valid_civic = civic_machine_servitor } }
-				set_variable = {
-					which = num_primitive_pops
-					value = trigger:num_pops
-				}
-				while = {
-					limit = {
-						check_variable = {
-							which = num_primitive_pops
-							value > 0
-						}
-					}
-					add_building_if_free = { BUILDING = building_organic_sanctuary }
-					change_variable = {
-						which = num_primitive_pops
-						value = -10
-					}
-				}
-				clear_variable = num_primitive_pops
+				add_building_if_free = { BUILDING = building_organic_sanctuary }
 			}
-			else = {
-				add_primitive_conquest_rw_urban_district = yes
+			add_primitive_conquest_rw_urban_district = yes
+			if = {
+				limit = {
+					OR = {
+						num_pops > 5
+						from = { has_bronze_age_or_greater = yes }
+					}
+				}
 				if = {
-					limit = {
-						OR = {
-							num_pops > 5
-							from = { has_bronze_age_or_greater = yes }
-						}
-					}
+					limit = { event_target:conquered_primitive_civilization = { is_lithoid_empire = no } }
+					add_district_if_free = { DISTRICT = district_rw_farming }
+					add_building_if_free = { BUILDING = building_chemical_plant }
+				}
+				else_if = {
+					limit = { owner = { is_gestalt = no } }
+					add_primitive_conquest_rw_urban_district = yes
 					if = {
-						limit = { event_target:conquered_primitive_civilization = { is_lithoid_empire = no } }
-						add_district_if_free = { DISTRICT = district_rw_farming }
-						add_building_if_free = { BUILDING = building_chemical_plant }
-					}
-					else_if = {
-						limit = { owner = { is_gestalt = no } }
-						add_primitive_conquest_rw_urban_district = yes
+						limit = {
+							OR = {
+								num_pops > 11
+								from = { has_renaissance_age_or_greater = yes }
+							}
+						}
+						add_primitive_conquest_unity_building_if_free = yes
 						if = {
 							limit = {
 								OR = {
-									num_pops > 11
-									from = { has_renaissance_age_or_greater = yes }
+									num_pops > 15
+									from = { has_steam_age_or_greater = yes }
 								}
 							}
 							add_primitive_conquest_unity_building_if_free = yes
-							if = {
-								limit = {
-									OR = {
-										num_pops > 15
-										from = { has_steam_age_or_greater = yes }
-									}
-								}
-								add_primitive_conquest_unity_building_if_free = yes
-							}
 						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							num_pops > 15
+							from = { has_steam_age_or_greater = yes }
+						}
+					}
+					if = { 
+						limit = { owner = { has_valid_civic = civic_machine_servitor } }
+						add_building_if_free = { BUILDING = building_organic_sanctuary }
+					}
+					else_if = {
+						limit = { owner = { is_gestalt = no } }
+						add_building_if_free = { BUILDING = building_factory_1 }
 					}
 					if = {
 						limit = {
 							OR = {
-								num_pops > 15
-								from = { has_steam_age_or_greater = yes }
+								num_pops > 20
+								from = { has_industrial_age_or_greater = yes }
 							}
 						}
-						add_building_if_free = { BUILDING = building_factory_1 }
+						if = { 
+							limit = { owner = { has_valid_civic = civic_machine_servitor } }
+							add_building_if_free = { BUILDING = building_organic_sanctuary }
+						}
+						else = {
+							add_building_if_free = { BUILDING = building_foundry_1 }
+							add_primitive_conquest_science_building_if_free = yes
+						}
 						if = {
 							limit = {
 								OR = {
-									num_pops > 20
-									from = { has_industrial_age_or_greater = yes }
+									num_pops > 22
+									from = { has_machine_age_or_greater = yes }
 								}
 							}
-							add_building_if_free = { BUILDING = building_foundry_1 }
-							add_primitive_conquest_science_building_if_free = yes
 							if = {
-								limit = {
-									OR = {
-										num_pops > 22
-										from = { has_machine_age_or_greater = yes }
-									}
-								}
-								if = {
-									limit = { owner = { is_gestalt = no } }
-									add_district_if_free = { DISTRICT = district_rw_commercial }
-								}
-								else = {
-									add_district_if_free = { DISTRICT = district_rw_generator }
-								}
-								add_building_if_free = { BUILDING = building_crystal_plant }
+								limit = { owner = { is_gestalt = no } }
+								add_district_if_free = { DISTRICT = district_rw_commercial }
 							}
+							else = {
+								add_district_if_free = { DISTRICT = district_rw_generator }
+							}
+							add_building_if_free = { BUILDING = building_crystal_plant }
 						}
 					}
 				}
 			}
 		}
 		else = {
-			set_variable = {
-				which = count_machine_servitor_urban
-				value = 0
+			if = { 
+				limit = { owner = { has_valid_civic = civic_machine_servitor } }
+				add_building_if_free = { BUILDING = building_organic_sanctuary }
 			}
 			add_primitive_conquest_urban_district = yes
 			add_primitive_conquest_food_district = yes
@@ -169,7 +163,13 @@ planet_event = {
 									from = { has_steam_age_or_greater = yes }
 								}
 							}
-							add_primitive_conquest_urban_district = yes
+							if = { 
+								limit = { owner = { has_valid_civic = civic_machine_servitor } }
+								add_building_if_free = { BUILDING = building_organic_sanctuary }
+							}
+							else = {
+								add_primitive_conquest_urban_district = yes
+							}
 							add_district_if_free = { DISTRICT = district_industrial }
 							if = {
 								limit = {
@@ -188,7 +188,13 @@ planet_event = {
 											from = { has_machine_age_or_greater = yes }
 										}
 									}
-									add_primitive_conquest_science_building_if_free = yes
+									if = { 
+										limit = { owner = { has_valid_civic = civic_machine_servitor } }
+										add_building_if_free = { BUILDING = building_organic_sanctuary }
+									}
+									else = {
+										add_primitive_conquest_science_building_if_free = yes
+									}
 									if = {
 										limit = {
 											OR = {
@@ -196,7 +202,10 @@ planet_event = {
 												from = { has_atomic_age_or_greater = yes }
 											}
 										}
-										add_primitive_conquest_urban_district = yes
+										if = { 
+											limit = { owner = { NOT = { has_valid_civic = civic_machine_servitor } } }
+											add_primitive_conquest_urban_district = yes
+										}
 										if = {
 											limit = {
 												OR = {
@@ -204,7 +213,10 @@ planet_event = {
 													from = { has_early_space_age_or_greater = yes }
 												}
 											}
-											add_primitive_conquest_unity_building_if_free = yes
+											if = { 
+												limit = { owner = { NOT = { has_valid_civic = civic_machine_servitor } } }
+												add_primitive_conquest_unity_building_if_free = yes
+											}
 										}
 									}
 								}
@@ -213,7 +225,6 @@ planet_event = {
 					}
 				}
 			}
-			clear_variable = count_machine_servitor_urban
 		}
 		every_owned_pop = {
 			limit = { is_unemployed = yes }
