@@ -84,6 +84,7 @@ This mod can be safely added or removed from your savegame after the game has st
     * Reanimators get a Dread Encampment instead of a Research Lab
     * Fix primitive unity building (wrongly spawned an Autochthon Monument) - usually only Early Space Age primitives would have a unity building
     * Previous ringworld conquest conversion still exists for non-standard-sized ringworlds (not size 10)
+    * Finally update the example screenshots
 
 ## Source Code
 
