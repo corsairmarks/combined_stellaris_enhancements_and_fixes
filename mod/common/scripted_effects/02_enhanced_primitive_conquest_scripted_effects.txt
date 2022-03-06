@@ -179,32 +179,10 @@ add_primitive_conquest_rw_urban_district = {
 }
 
 # this = planet
-# count_machine_servitor_urban is a variable in the planet scope - rogue servitors get organic sanctuaries if the value is zero or even
 add_primitive_conquest_urban_district = {
 	if = {
 		limit = { owner = { is_machine_empire = yes } }
-		if = { 
-			limit = {
-				owner = { has_valid_civic = civic_machine_servitor }
-				is_variable_set = count_machine_servitor_urban
-				check_variable_arithmetic = {
-					which = count_machine_servitor_urban
-					modulo = 2
-					value = 0
-				}
-			}
-			add_building_if_free = { BUILDING = building_organic_sanctuary }
-		}
-		else = {
-			add_district_if_free = { DISTRICT = district_nexus }
-		}
-		if = {
-			limit = { is_variable_set = count_machine_servitor_urban }
-			change_variable = {
-				which = count_machine_servitor_urban
-				value = 1
-			}
-		}
+		add_district_if_free = { DISTRICT = district_nexus }
 	}
 	else_if = {
 		limit = { owner = { is_hive_empire = yes } }
@@ -224,7 +202,7 @@ add_primitive_conquest_food_district = {
 	}
 	else_if = {
 		limit = {
-			event_target:conquered_primitive_species = { is_phototrophic = yes }
+			event_target:conquered_primitive_species = { has_phototrophic_energy_upkeep = yes }
 			num_districts = {
 				type = district_farming
 				value >= 2
@@ -302,52 +280,29 @@ add_primitive_conquest_farming_district = {
 }
 
 # this = planet
-add_primitive_conquest_admin_building_if_free = {
+add_primitive_conquest_science_building_if_free = {
 	if = {
+		limit = { owner = { has_valid_civic = civic_reanimated_armies } }
+		add_building_if_free = { BUILDING = building_dread_encampment }
+	}
+	else = {
+		add_building_if_free = { BUILDING = building_research_lab_1 }
+	}
+}
+
+# this = planet
+add_primitive_conquest_unity_building_if_free = {
+	if = {
+		limit = { owner = { is_memorialist_empire = yes } }
+		add_building_if_free = { BUILDING = building_galactic_memorial_1 }
+	}
+	else_if = {
 		limit = { owner = { is_machine_empire = yes } }
 		add_building_if_free = { BUILDING = building_uplink_node }
 	}
 	else_if = {
 		limit = { owner = { is_hive_empire = yes } }
 		add_building_if_free = { BUILDING = building_hive_node }
-	}
-	else = {
-		add_building_if_free = { BUILDING = building_bureaucratic_1 }
-	}
-}
-
-# this = planet
-add_primitive_conquest_security_building_if_free = {
-	if = {
-		limit = { owner = { is_gestalt = no } }
-		add_building_if_free = { BUILDING = building_precinct_house }
-	}
-	else = {
-		add_building_if_free = { BUILDING = building_sentinel_posts }
-	}
-}
-
-# this = planet
-add_primitive_conquest_unity_building_building_if_free = {
-	if = {
-		limit = { owner = { is_machine_empire = yes } }
-		if = {
-			limit = { owner = { is_memorialist_empire = yes } }
-			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
-		}
-		else = {
-			add_building_if_free = { BUILDING = building_simulation_1 }
-		}
-	}
-	else_if = {
-		limit = { owner = { is_hive_empire = yes } }
-		if = {
-			limit = { owner = { is_memorialist_empire = yes } }
-			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
-		}
-		else = {
-			add_building_if_free = { BUILDING = building_hive_node }
-		}
 	}
 	else = {
 		if = {
@@ -360,16 +315,8 @@ add_primitive_conquest_unity_building_building_if_free = {
 				add_building_if_free = { BUILDING = building_temple }
 			}
 		}
-		else_if = {
-			limit = { owner = { is_memorialist_empire = yes } }
-			add_building_if_free = { BUILDING = building_galactic_memorial_1 }
-		}
-		else_if = {
-			limit = { owner = { is_megacorp = yes } }
-			add_building_if_free = { BUILDING = building_corporate_monument }
-		}
 		else = {
-			add_building_if_free = { BUILDING = building_autochthon_monument }
+			add_building_if_free = { BUILDING = building_bureaucratic_1 }
 		}
 	}
 }
