@@ -14,6 +14,8 @@ These swaps combine with those for the leader-swap civics, so that some planets 
 
 Replaces five of the built-in capital buildings: `building_capital`, `building_major_capital`, `building_system_capital` (regular empire capital upgrades), `building_hab_major_capital` (the habitat capital upgrade - shared amongst all empire types), and `building_imperial_capital` (the Galactic Imperium capital buildings for regular empires).
 
+Although only loosely-related to this mod's main purpose, it also adds an event so that Aristocratic Elite empires begin with a Noble Estates building, as long as it does not already have one and there is room to add a building.
+
 ## Compatibility
 
 Compatible with any mod that does not overwrite the same buildings.  For mods that overwrite all the capital buildings, this mod's buildings will likely take precedence.  Might have problems with other mods that remove the expected colony types, but I highly doubt any mods do that.
@@ -52,6 +54,8 @@ This mod also supports colony designations from my mods [Enhanced Trade District
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.1.0 Aristocratic Elite gains Noble Estates on their homeworld, as long as it does not already have one and there is room to add a building
+    * Bugfix: refer to the right civic for Aristocratic Elite job swaps
 
 ## Source Code
 
