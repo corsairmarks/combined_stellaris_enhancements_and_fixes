@@ -13,3 +13,21 @@ event = {
 		set_global_flag = building_capital_colony_type_job_swaps_installed
 	}
 }
+
+# triggered by empire_init_capital_planet
+# this = planet, capital
+# from = species, founder
+planet_event = {
+	id = building_capital_colony_type_job_swaps.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = owner
+		owner = { has_valid_civic = civic_aristocratic_elite }
+		NOT = { has_building = building_noble_estates }
+		free_building_slots > 0
+	}
+	immediate = {
+		add_building = building_noble_estates
+	}
+}
