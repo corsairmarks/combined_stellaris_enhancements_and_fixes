@@ -11,7 +11,7 @@ Any mod that does not remove Civic: Philosopher King.
 The text describing the effects for Civic: Philosopher King has been edited to describe its new effect in for each of the eight officially-supported Stellaris languages.  I'm reasonably confident in my splicing for most languages, although I may have used the wrong word for "and" in Chinese.
 
 [h2]Changelog[/h2]
-See [url=]Change Notes[/url]
+See [url=https://steamcommunity.com/workshop/filedetails/changelog/2774084358]Change Notes[/url]
 
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/civic_philosopher_king_enhanced]GitHub[/url]
