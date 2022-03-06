@@ -1,0 +1,70 @@
+namespace = civic_philosopher_king_enhanced
+
+# triggered by on_leader_spawned
+# this = country
+# from = leader
+country_event = {
+	id = civic_philosopher_king_enhanced.405
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_valid_civic = civic_philosopher_king
+		exists = from
+		from = {
+			OR = {
+				leader_class = ruler
+				leader_class = governor
+			}
+		}
+	}
+	immediate = {
+		from = {
+			add_skill = 2
+		}
+	}
+}
+
+# triggered by on_post_government_changed
+# this = country
+country_event = {
+	id = civic_philosopher_king_enhanced.410
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_valid_civic = civic_philosopher_king
+	}
+	immediate = {
+		every_owned_leader = {
+			limit = {
+				OR = {
+					leader_class = ruler
+					leader_class = governor
+				}
+			}
+			if = {
+				limit = { has_skill = 1 }
+				add_skill = 2
+			}
+			else_if = {
+				limit = { has_skill = 2 }
+				add_skill = 1
+			}
+		}
+		every_pool_leader = {
+			limit = {
+				OR = {
+					leader_class = ruler
+					leader_class = governor
+				}
+			}
+			if = {
+				limit = { has_skill = 1 }
+				add_skill = 2
+			}
+			else_if = {
+				limit = { has_skill = 2 }
+				add_skill = 1
+			}
+		}
+	}
+}
