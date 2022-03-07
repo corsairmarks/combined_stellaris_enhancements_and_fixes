@@ -7,5 +7,5 @@
  mod_job_magistrate_add: "$job_magistrate$ $planet_jobs$"
  mod_job_magistrate_per_pop: "§G+1§! $job_magistrate$ Job per $VALUE$ $planet_pops$"
  mod_job_magistrate_per_pop_short: "\n§G+1§! £mod_job_magistrate_add£ per $VALUE$ £pop£"
- d_civic_byzantine_bureaucracy_capital: "[This.Owner.GetAdjective] Magistracy"
- d_civic_byzantine_bureaucracy_capital_desc: "As a sector capital, this planet's administrative needs surpass those provided by $job_politician_plural$ and $job_bureaucrat_plural$ alone. $job_magistrate_plural$ inevitably congregate along the lines of governmental authority, where their services are most necessary. Should the sector capital be moved from [This.GetName], the Magistrates will inexorably follow after concluding present business."
+ d_civic_byzantine_bureaucracy_capital: "Seat of the Magistracy"
+ d_civic_byzantine_bureaucracy_capital_desc: "As a sector capital, this planet's administrative needs surpass those provided by $job_politician_plural$ and $job_bureaucrat_plural$ alone. $job_magistrate_plural$ inevitably congregate along the lines of governmental authority, where their services are most necessary. Should the sector capital be moved from this planet, the Magistrates will inexorably follow after concluding present business."
