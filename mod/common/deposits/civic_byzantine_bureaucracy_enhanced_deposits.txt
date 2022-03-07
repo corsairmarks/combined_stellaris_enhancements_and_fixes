@@ -1,0 +1,60 @@
+d_civic_byzantine_bureaucracy_capital = {
+	is_for_colonizable = yes
+	icon = d_city
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_designation = col_bureau
+				has_designation = col_habitat_bureau
+			}
+		}
+		job_magistrate_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = sector
+			is_sector_capital = yes
+			has_upgraded_capital = yes
+		}
+		job_magistrate_add = 1
+	}
+
+	# intentionally disable since the T3 capital building doesn't add a swapped job
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = sector
+	# 		is_sector_capital = yes
+	# 		has_major_upgraded_capital = yes
+	# 	}
+	# 	job_magistrate_add = 1
+	# }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = sector
+			is_sector_capital = yes
+			has_fully_upgraded_capital = yes
+		}
+		job_magistrate_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = { is_capital = yes }
+		job_magistrate_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_capital = yes
+			has_building = building_imperial_capital
+		}
+		job_magistrate_add = 1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

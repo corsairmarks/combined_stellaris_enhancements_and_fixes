@@ -1,0 +1,201 @@
+namespace = civic_byzantine_bureaucracy_enhanced
+
+# flag mod as active
+# triggered by on_game_start and on_single_player_save_game_load
+event = {
+	id = civic_byzantine_bureaucracy_enhanced.13
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = civic_byzantine_bureaucracy_enhanced_installed }
+	}
+	immediate = {
+		set_global_flag = civic_byzantine_bureaucracy_enhanced_installed
+	}
+}
+
+# triggered by on_capital_changed
+# root = capital, new
+# from = capital, previous (may be unset)
+planet_event = {
+	id = civic_byzantine_bureaucracy_enhanced.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = owner
+		owner = { has_valid_civic = civic_byzantine_bureaucracy }
+	}
+	immediate = {
+		add_deposit = d_civic_byzantine_bureaucracy_capital
+		save_event_target_as = new_country_capital
+		if = {
+			limit = {
+				exists = from
+				from = { has_deposit = d_civic_byzantine_bureaucracy_capital }
+			}
+			from = {
+				export_trigger_value_to_variable = {
+					trigger = num_assigned_jobs
+					parameters = { job = magistrate }
+					variable = num_magistrate_jobs
+				}
+				set_variable = {
+					which = num_planet_pops
+					value = trigger:num_pops
+				}
+				remove_deposit = d_civic_byzantine_bureaucracy_capital
+				while = {
+					count = num_magistrate_jobs
+					random_owned_pop = {
+						limit = {
+							is_unemployed = yes
+							is_pop_category = ruler
+						}
+						clear_pop_category = yes
+						if = {
+							limit = {
+								prev = {
+									check_variable = {
+										which = num_planet_pops
+										value > 1
+									}
+								}
+							}
+							resettle_pop = {
+								pop = this
+								planet = event_target:new_sector_capital
+							}
+							prev = {
+								change_variable = {
+									which = num_planet_pops
+									value = -1
+								}
+							}
+						}
+					}
+				}
+				clear_variable = num_magistrate_jobs
+				clear_variable = num_planet_pops
+			}
+		}
+	}
+}
+
+# triggered by on_monthly_pulse_country
+# root = country
+country_event = {
+	id = civic_byzantine_bureaucracy_enhanced.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_valid_civic = civic_byzantine_bureaucracy
+	}
+	immediate = {
+		every_owned_sector = {
+			random_owned_planet = {
+				limit = {
+					is_sector_capital = yes
+					NOT = { has_deposit = d_civic_byzantine_bureaucracy_capital }
+				}
+				save_event_target_as = new_sector_capital
+				prev = {
+					every_owned_planet = {
+						limit = { has_deposit = d_civic_byzantine_bureaucracy_capital }
+						export_trigger_value_to_variable = {
+							trigger = num_assigned_jobs
+							parameters = { job = magistrate }
+							variable = num_magistrate_jobs
+						}
+						set_variable = {
+							which = num_planet_pops
+							value = trigger:num_pops
+						}
+						remove_deposit = d_civic_byzantine_bureaucracy_capital
+						while = {
+							count = num_magistrate_jobs
+							random_owned_pop = {
+								limit = {
+									is_unemployed = yes
+									is_pop_category = ruler
+								}
+								clear_pop_category = yes
+								if = {
+									limit = {
+										prev = {
+											check_variable = {
+												which = num_planet_pops
+												value > 1
+											}
+										}
+									}
+									resettle_pop = {
+										pop = this
+										planet = event_target:new_sector_capital
+									}
+									prev = {
+										change_variable = {
+											which = num_planet_pops
+											value = -1
+										}
+									}
+								}
+							}
+						}
+						clear_variable = num_magistrate_jobs
+						clear_variable = num_planet_pops
+					}
+				}
+				add_deposit = d_civic_byzantine_bureaucracy_capital
+			}
+		}
+	}
+}
+
+# triggered by on_planet_transfer
+# root = planet
+# from = country (new owner)
+planet_event = {
+	id = civic_byzantine_bureaucracy_enhanced.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_deposit = d_civic_byzantine_bureaucracy_capital
+		NAND = {
+			exists = owner
+			owner = { has_valid_civic = civic_byzantine_bureaucracy }
+		}
+	}
+	immediate = {
+		export_trigger_value_to_variable = {
+			trigger = num_assigned_jobs
+			parameters = { job = magistrate }
+			variable = num_magistrate_jobs
+		}
+		remove_deposit = d_civic_byzantine_bureaucracy_capital
+		while = {
+			count = num_magistrate_jobs
+			random_owned_pop = {
+				limit = {
+					is_unemployed = yes
+					is_pop_category = ruler
+				}
+				clear_pop_category = yes
+			}
+		}
+		clear_variable = num_magistrate_jobs
+	}
+}
+
+# triggered by on_colony_destroyed
+# root = planet
+planet_event = {
+	id = civic_byzantine_bureaucracy_enhanced.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_deposit = d_civic_byzantine_bureaucracy_capital
+	}
+	immediate = {
+		remove_deposit = d_civic_byzantine_bureaucracy_capital
+	}
+}

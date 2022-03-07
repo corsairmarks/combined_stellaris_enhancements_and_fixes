@@ -1,0 +1,47 @@
+# fired when the game starts
+on_game_start = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.13 # flag mod as installed
+	}
+}
+
+# fired when loading a single-player game
+on_single_player_save_game_load = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.13 # flag mod as installed
+	}
+}
+
+# fired monthly for each country
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.2
+	}
+}
+
+# fired when the location of an country's capital changes and when a country's capital is first set e.g. during galaxy creation (but then from is not set)
+# this = capital, new
+# from = capital, previous (may be unset)
+on_capital_changed = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.1
+	}
+}
+
+# fired whenever a new owner is set for a planet, be it after a war or through a trade
+# this = planet
+# from = country (new owner)
+on_planet_transfer = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.3
+	}
+}
+
+# fired when a colony has been destroyed just before owner and controller are cleared
+# thi = Planet
+on_colony_destroyed = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.4
+	}
+}

@@ -1,0 +1,11 @@
+﻿l_english:
+ planet_magistrates: "$job_magistrate$ $planet_jobs$"
+ job_magistrate: "Magistrate"
+ job_magistrate_plural: "Magistrates"
+ job_magistrate_desc: "Byzantine Bureaucracies thrive on complexity and ever-higher tiers of officialdom. Magistrates are another piece in the interlocking puzzle of empire administration, imbued with ostensibly expanded powers and responsibilities and empowered to act semi-independently."
+ job_magistrate_effect_desc: "£job_bureaucrat£ $job_magistrate_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £mod_planet_stability_add£ §Y$PLANET_STABILITY_TITLE$§!, £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and decrease £crime£ §Y$PLANET_CRIME_TITLE$§!"
+ mod_job_magistrate_add: "$job_magistrate$ $planet_jobs$"
+ mod_job_magistrate_per_pop: "§G+1§! $job_magistrate$ Job per $VALUE$ $planet_pops$"
+ mod_job_magistrate_per_pop_short: "\n§G+1§! £mod_job_magistrate_add£ per $VALUE$ £pop£"
+ d_civic_byzantine_bureaucracy_capital: "[This.Owner.GetName] Magistracy"
+ d_civic_byzantine_bureaucracy_capital_desc: "As a sector capital, this planet's administrative needs surpass those provided by $job_politician_plural$ and $job_bureaucrat_plural$ alone. $job_magistrate_plural$ inevitably congregate along the lines of governmental authority, where their services are most necessary. Should the sector capital be moved from [This.GetName], the Magistrates will inexorably follow after concluding present business."
