@@ -20,6 +20,15 @@ on_monthly_pulse_country = {
 	}
 }
 
+# fired during empire initialization when starting a new game
+# this = planet, capital
+# from = species, founder
+empire_init_capital_planet = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.1
+	}
+}
+
 # fired when the location of an country's capital changes and when a country's capital is first set e.g. during galaxy creation (but then from is not set)
 # this = capital, new
 # from = capital, previous (may be unset)

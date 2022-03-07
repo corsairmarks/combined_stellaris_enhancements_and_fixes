@@ -14,7 +14,7 @@ event = {
 	}
 }
 
-# triggered by on_capital_changed
+# triggered by empire_init_capital_planet and on_capital_changed
 # root = capital, new
 # from = capital, previous (may be unset)
 planet_event = {
@@ -31,7 +31,10 @@ planet_event = {
 		if = {
 			limit = {
 				exists = from
-				from = { has_deposit = d_civic_byzantine_bureaucracy_capital }
+				from = {
+					is_scope_type = planet
+					has_deposit = d_civic_byzantine_bureaucracy_capital
+				}
 			}
 			from = {
 				export_trigger_value_to_variable = {
