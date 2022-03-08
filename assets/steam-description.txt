@@ -24,7 +24,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] at 4.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2654043078]Basic Planetview: More Districts[/url] at 2.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2768297949]Building: Aquaponics Farms[/url] at 1.0.1
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2774084358]Civic: Philosopher King - Enhanced[/url] at 1.0.1
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2774084358]Civic: Philosopher King - Enhanced[/url] at 1.0.2
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] at 3.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2773995755]Colony Designations: Capital Building Job Swaps[/url] at 1.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] at 2.2.0
