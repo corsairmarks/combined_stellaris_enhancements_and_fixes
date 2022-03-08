@@ -22,6 +22,7 @@ The text describing the effects for Civic: Philosopher King has been edited to d
 
 * 1.0.0 Initial version
 * 1.0.1 Remove mod flag - as a small rules change, having a detection flag seems extraneous
+* 1.0.2 Fix localisation for Chinese and Spanish - the files accidentally claimed to be English!
 
 ## Source Code
 
