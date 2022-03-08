@@ -12,7 +12,7 @@ Compatible with practically anything.  Limitations: this mod is hard-coded to un
 Build for Stellaris version 3.3 "Libra."  Not compatible with achievements - however, you can start an Ironman game with this mod active, exit and disable the mod, and then resume your game.  That [i]should[/i] allow you to earn achievements, because the game doesn't seem to track whether mods have ever been active for a game, just if the checksum is modified when you earn the achievement.
 
 [h2]Changelog[/h2]
-See [url=]Change Notes[/url]
+See [url=https://steamcommunity.com/workshop/filedetails/changelog/2775465389]Change Notes[/url]
 
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/start_with_unity_fund]GitHub[/url]
