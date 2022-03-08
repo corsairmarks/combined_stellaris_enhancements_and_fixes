@@ -1,13 +1,6 @@
 # fired when the game starts
 on_game_start = {
 	events = {
-		start_with_unity_fund.13 # flag mod as installed
-	}
-}
-
-# fired when loading a single-player game
-on_single_player_save_game_load = {
-	events = {
-		start_with_unity_fund.13 # flag mod as installed
+		start_with_unity_fund.1
 	}
 }
