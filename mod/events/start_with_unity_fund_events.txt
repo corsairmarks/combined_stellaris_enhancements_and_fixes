@@ -1,0 +1,86 @@
+namespace = start_with_unity_fund
+
+# triggered by on_game_start
+event = {
+	id = start_with_unity_fund.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_playable_country = {
+			set_variable = {
+				which = starting_unity_fund
+				value = 10 # base amount, defined: common/static_modifiers/00_static_modifiers.txt at line 15 (empire_base)
+			}
+			if = {
+				limit = { exists = ruler }
+				set_variable = {
+					which = starting_ruler_level
+					value = ruler.trigger:has_skill
+				}
+				multiply_variable = {
+					which = starting_ruler_level
+					value = 5 # per ruler level, defined: common/static_modifiers/00_static_modifiers.txt at line 1122 (skill_ruler)
+				}
+				change_variable = {
+					which = starting_unity_fund
+					value = starting_ruler_level
+				}
+				clear_variable = starting_ruler_level
+				if = {
+					limit = {
+						ruler = {
+							OR = {
+								has_ruler_trait = trait_ruler_charismatic
+								has_trait = trait_ruler_charismatic
+							}
+						}
+					}
+					change_variable = {
+						which = starting_unity_fund
+						value = 20 # civic, defined: common/traits/00_ruler_traits.txt at line 277 (trait_ruler_charismatic)
+					}
+				}
+			}
+			if = {
+				limit = { has_valid_civic = civic_machine_ota_updates }
+				change_variable = {
+					which = starting_unity_fund
+					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 390 (civic_machine_ota_updates)
+				}
+			}
+			if = {
+				limit = { has_valid_civic = civic_hive_subsumed_will }
+				change_variable = {
+					which = starting_unity_fund
+					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 83 (civic_hive_subsumed_will)
+				}
+			}
+			if = {
+				limit = { has_valid_civic = civic_brand_loyalty }
+				change_variable = {
+					which = starting_unity_fund
+					value = 25 # civic, defined: common/governments/civics/03_corporate_civics.txt at line 245 (civic_brand_loyalty)
+				}
+			}
+			if = {
+				limit = { has_valid_civic = civic_imperial_cult }
+				change_variable = {
+					which = starting_unity_fund
+					value = 100 # civic, defined: common/governments/civics/00_civics.txt at line 80 (civic_imperial_cult)
+				}
+			}
+			if = {
+				limit = { has_valid_civic = civic_inwards_perfection }
+				change_variable = {
+					which = starting_unity_fund
+					value = 50 # civic, defined: common/governments/civics/00_civics.txt at line 381 (civic_inwards_perfection)
+				}
+			}
+			add_resource = {
+				unity = 1
+				mult = starting_unity_fund
+			}
+			clear_variable = starting_unity_fund
+		}
+	}
+}

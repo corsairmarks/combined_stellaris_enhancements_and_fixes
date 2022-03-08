@@ -1,0 +1,6 @@
+# fired when the game starts
+on_game_start = {
+	events = {
+		start_with_unity_fund.1
+	}
+}
