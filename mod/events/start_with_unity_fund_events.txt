@@ -1,0 +1,15 @@
+namespace = start_with_unity_fund
+
+# flag mod as active
+# triggered by on_game_start and on_single_player_save_game_load
+event = {
+	id = start_with_unity_fund.13
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = start_with_unity_fund_installed }
+	}
+	immediate = {
+		set_global_flag = start_with_unity_fund_installed
+	}
+}
