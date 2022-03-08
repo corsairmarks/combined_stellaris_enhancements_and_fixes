@@ -16,7 +16,7 @@ Notes
 
 ## Source Code
 
-Hosted on [GitHub](https://github.com/corsairmarks/start_with_unity_fundd)
+Hosted on [GitHub](https://github.com/corsairmarks/start_with_unity_fund)
 
 ### Development Notes
 
