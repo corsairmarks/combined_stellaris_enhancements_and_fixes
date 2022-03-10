@@ -56,6 +56,7 @@ This mod also supports colony designations from my mods [Enhanced Trade District
 * 1.0.0 Initial version
 * 1.1.0 Aristocratic Elite gains Noble Estates on their homeworld, as long as it does not already have one and there is room to add a building
     * Bugfix: refer to the right civic for Aristocratic Elite job swaps
+* 1.1.1 Fix bug when checking if a country is the Galactic Emperor
 
 ## Source Code
 
