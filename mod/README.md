@@ -192,3 +192,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 5.1.1 Update merged mod: Primitive Conquest Enhancements at 4.1.0
 * 5.2.0 Add merged mod: Start with Unity Fund at 1.0.0
 * 5.2.1 Update merged mod: Civic: Philosopher King - Enhanced at 1.0.2
+* 5.2.2 Update merged mods:
+    * Colony Designations: Capital Building Job Swaps at 1.1.1
+    * Leader Traits: All Eligible Species Traits at 2.4.0
