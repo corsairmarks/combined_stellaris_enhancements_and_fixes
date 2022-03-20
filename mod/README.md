@@ -25,6 +25,7 @@ Overriding a building or job causes the game to log errors noting the overrides.
 
 * 1.0.0 Initial version
 * 1.0.1 Update name to be plural
+* 1.0.2 Add override for the trigger `has_any_farming_district_or_buildings`, which helps the AI not get stuck in loops of creating/demolishing Food Processing buildings
 
 ## Source Code
 
