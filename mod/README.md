@@ -89,6 +89,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Only the relevant `planet_farmer` and `planet_miner` jobs are overridden (but not Angler since the Anglers civic cannot be combined with Agrarian/Lithorian Idyll)
     * All rural districts are still overridden in order to apply the +capacity/+building slot bonus to them, but now only the ringworld farming district is overridden instead of all of them
     * Integrate additional changes from 3.3 to overridden content
+* 4.0.1 Jobs `crystal_miner`, `gas_extractor`, `mote_harvester` are now part of the `planet_sr_miners` category, as intended by Paradox
 
 ## Source Code
 
