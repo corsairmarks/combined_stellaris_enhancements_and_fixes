@@ -195,3 +195,8 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 5.2.2 Update merged mods:
     * Colony Designations: Capital Building Job Swaps at 1.1.1
     * Leader Traits: All Eligible Species Traits at 2.4.0
+* 5.2.3 Update merged mods:
+    * "Agrarian" Idyll for Lithoids at 4.0.1
+    * Building: Aquaponics Farms at 1.0.2
+    * Deassimilate Machines at 3.1.0
+    * Retain Leaders from Integrated Subjects at 4.1.0

@@ -12,6 +12,6 @@ tags={
 	"Military"
 }
 picture="thumbnail.png"
-version="5.2.2"
+version="5.2.3"
 supported_version="3.3.*"
 remote_file_id="2522974089"
