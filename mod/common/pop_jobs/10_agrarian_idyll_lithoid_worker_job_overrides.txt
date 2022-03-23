@@ -210,7 +210,7 @@ crystal_miner = {
 	}
 
 	resources = {
-		category = planet_miners
+		category = planet_sr_miners
 		produces = {
 			rare_crystals = 2
 		}
@@ -394,7 +394,7 @@ gas_extractor = {
 
 	possible_precalc = can_fill_worker_job
 	resources = {
-		category = planet_miners
+		category = planet_sr_miners
 		produces = {
 			exotic_gases = 2
 		}
@@ -578,7 +578,7 @@ mote_harvester = {
 
 	possible_precalc = can_fill_worker_job
 	resources = {
-		category = planet_miners
+		category = planet_sr_miners
 		produces = {
 			volatile_motes = 2
 		}
