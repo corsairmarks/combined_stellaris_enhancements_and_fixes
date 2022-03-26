@@ -1,0 +1,73 @@
+# calculate the total magistrate jobs that would be added to a planet by d_civic_byzantine_bureaucracy_capital
+# result stored in variable num_magistrate_jobs_from_deposit; called must clear the variable after using it
+# important: math here matches the amound added by the implementation of d_civic_byzantine_bureaucracy_capital
+# scope = planet
+calculate_total_magistrate_jobs_from_deposit = {
+	set_variable = {
+		which = num_magistrate_jobs_from_deposit
+		value = 0
+	}
+	if = {
+		limit = {
+			OR = {
+				has_designation = col_bureau
+				has_designation = col_habitat_bureau
+			}
+		}
+		change_variable = {
+			which = num_magistrate_jobs_from_deposit
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			exists = sector
+			is_sector_capital = yes
+			has_upgraded_capital = yes
+		}
+		change_variable = {
+			which = num_magistrate_jobs_from_deposit
+			value = 1
+		}
+	}
+	# intentionally disable since the T3 capital building doesn't add a swapped job
+	# if = {
+	# 	limit = {
+	# 		exists = sector
+	# 		is_sector_capital = yes
+	# 		has_major_upgraded_capital = yes
+	# 	}
+	# 	change_variable = {
+	# 		which = num_magistrate_jobs_from_deposit
+	# 		value = 1
+	# 	}
+	# }
+	if = {
+		limit = {
+			exists = sector
+			is_sector_capital = yes
+			has_fully_upgraded_capital = yes
+		}
+		change_variable = {
+			which = num_magistrate_jobs_from_deposit
+			value = 1
+		}
+	}
+	if = {
+		limit = { is_capital = yes }
+		change_variable = {
+			which = num_magistrate_jobs_from_deposit
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			is_capital = yes
+			has_building = building_imperial_capital
+		}
+		change_variable = {
+			which = num_magistrate_jobs_from_deposit
+			value = 1
+		}
+	}
+}
