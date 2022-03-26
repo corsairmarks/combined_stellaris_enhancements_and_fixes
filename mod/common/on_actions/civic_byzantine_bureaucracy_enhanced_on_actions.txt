@@ -48,9 +48,18 @@ on_planet_transfer = {
 }
 
 # fired when a colony has been destroyed just before owner and controller are cleared
-# thi = Planet
+# this = planet
 on_colony_destroyed = {
 	events = {
 		civic_byzantine_bureaucracy_enhanced.4
+	}
+}
+
+# fired just as country is changing its government, after the new one is applied
+# this = country
+on_post_government_changed = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.2
+		civic_byzantine_bureaucracy_enhanced.5
 	}
 }
