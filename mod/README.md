@@ -82,6 +82,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 3.0.0 Update for Stellaris version 3.3 "Libra"
     * Update Decrees to cost unity instead of influence
     * Integrate underlying game change - zombies cannot produce leaders
+* 3.0.1 AI Rogue Servitors consider species with Numistic Administration as having leader traits (for purposes of creating Organic Advisors) when the mod Leader Traits: All Eligible Species Traits is also installed
 
 ## Source Code
 
