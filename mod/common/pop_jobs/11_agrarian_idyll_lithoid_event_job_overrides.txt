@@ -93,7 +93,10 @@ titan_hunter = {
 	}
 
 	possible_precalc = can_fill_worker_job
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
 		trade_value_add = 8
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
 	}
