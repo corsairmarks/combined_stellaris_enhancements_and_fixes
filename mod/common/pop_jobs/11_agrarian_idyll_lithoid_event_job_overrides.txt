@@ -32,10 +32,8 @@ cave_cleaner = {
 				is_lithoid_empire = yes
 			}
 		}
-		modifier = {
-			planet_amenities_add = 2
-			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
-		}
+		planet_amenities_add = 2
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	resources = {
@@ -108,10 +106,8 @@ titan_hunter = {
 				is_lithoid_empire = no
 			}
 		}
-		modifier = {
-			planet_amenities_add = 2
-			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
-		}
+		planet_amenities_add = 2
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	resources = {
@@ -210,10 +206,8 @@ turtle_miner = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
 		}
-		modifier = {
-			planet_amenities_add = 2
-			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
-		}
+		planet_amenities_add = 2
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	weight = {
