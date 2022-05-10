@@ -30,22 +30,23 @@ This mod can be safely added after the game has started, but should not be remov
 
 ## Known Issues
 
-Overriding a job, technology, or civic causes the game to log errors. Expect to see thirteen lines in the error.log file similar to these:
+Overriding a job, technology, or civic causes the game to log errors. Expect to see fourteen lines in the error.log file similar to these:
 
 ```
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 2
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: crystal_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 185
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: gas_extractor already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 370
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: mote_harvester already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 550
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: farmer already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 730
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: scrap_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 959
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: gas_plant_engineer already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 3
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: cave_cleaner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 47
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: titan_hunter already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 159
-[01:48:49][game_singleobjectdatabase.h:147]: Object with key: turtle_miner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 347
-[01:48:50][technology.cpp:1176]: Duplicate technology: tech_housing_agrarian_idyll
-[01:48:50][game_singleobjectdatabase.h:147]: Object with key: district_rw_farming already exists, using the one at  file: common/districts/10_agrarian_idyll_lithoid_ringworld_district_overrides.txt line: 9
-[01:48:53][game_singleobjectdatabase.h:147]: Object with key: civic_agrarian_idyll already exists, using the one at  file: common/governments/civics/01_agrarian_idyll_override.txt line: 1
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 2
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: crystal_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 126
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: gas_extractor already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 213
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: mote_harvester already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 295
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: farmer already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 377
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: scrap_miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 523
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: cave_cleaner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 4
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: titan_hunter already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 81
+[02:46:07][game_singleobjectdatabase.h:148]: Object with key: turtle_miner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 169
+[02:46:08][meantimetohappen.cpp:298]: script_value/weight field: operation at  file: common/technology/01_agrarian_idyll_lithoid_soc_tech.txt line: 15 will always be 0 as it is modifying a base value of 0
+[02:46:08][technology.cpp:1154]: Duplicate technology: tech_housing_agrarian_idyll
+[02:46:08][meantimetohappen.cpp:298]: script_value/weight field: operation at  file: common/technology/00_soc_tech.txt line: 6539 will always be 0 as it is modifying a base value of 0
+[02:46:08][game_singleobjectdatabase.h:148]: Object with key: district_rw_farming already exists, using the one at  file: common/districts/10_agrarian_idyll_lithoid_ringworld_district_overrides.txt line: 9
+[02:46:11][game_singleobjectdatabase.h:148]: Object with key: civic_agrarian_idyll already exists, using the one at  file: common/governments/civics/01_agrarian_idyll_lithoid_origin_overrides.txt line: 1
 ```
 
 Normally overriding a single technology can cause problems with the game being confused by duplicates, but only technologies that are considered prerequisites for other technologies are affected. 
