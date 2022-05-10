@@ -10,7 +10,7 @@ Alters the built-in planetview to have districts and buildings stacked verticall
 
 ## Compatibility
 
-Built for Stellaris version 3.3 "Libra."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
+Built for Stellaris version 3.4 "Cepheus."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
 
 ### Recommended Companion Mods
 
@@ -23,7 +23,8 @@ Built for Stellaris version 3.3 "Libra."  As a UI-only mod, this is achievement 
 * 1.0.0 Initial version
 * 1.1.0 Mark as compatible with Stellaris version 3.2 "Herbert"
 * 1.2.0 Add support for 5 rows of building slots - enabling it requires the submod [Basic Planetview: More Districts & Buildings](url=https://steamcommunity.com/sharedfiles/filedetails/?id=2714695762)
-* 2.0.0 Update for Stellaris version 3.3.0 "Libra" - integrate underlying changes from the base game in overridden file
+* 2.0.0 Update for Stellaris version 3.3 "Libra" - integrate underlying changes from the base game in overridden file
+* 3.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate underlying changes from the base game in overridden file
 
 ## Source Code
 

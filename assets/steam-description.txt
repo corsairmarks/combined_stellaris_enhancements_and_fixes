@@ -7,7 +7,7 @@ Credit for my motivation goes to arievilo and Kyllian.
 Alters the built-in planetview to have districts and buildings stacked vertically instead of horizontally, in order to accommodate a scrollbar for districts.  Up to 12 kinds of districts can be displayed.  This mod does [i]not[/i] add any additional building slots.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.3 "Libra."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview ([b]interface/planet_view.gui[/b]); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
+Built for Stellaris version 3.4 "Cepheus."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview ([b]interface/planet_view.gui[/b]); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
 
 [h3]Recommended Companion Mods[/h3]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194]More Standard Districts[/url] adds 5 district types based on basic buildings: Research, Commercial, Leisure, Military, and Administrative.  Commercial Districts are not available for gestalt empires and Leisure Districts are only available for regular empires and Rogue Servitors.
