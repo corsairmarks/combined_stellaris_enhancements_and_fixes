@@ -30,7 +30,7 @@ This mod can be safely added after the game has started, but should not be remov
 
 ## Known Issues
 
-Overriding a job, technology, or civic causes the game to log errors. Expect to see fourteen lines in the error.log file similar to these:
+Overriding a job, technology, or civic causes the game to log errors. Expect to see twelve lines in the error.log file similar to these:
 
 ```
 [02:46:07][game_singleobjectdatabase.h:148]: Object with key: miner already exists, using the one at  file: common/pop_jobs/10_agrarian_idyll_lithoid_worker_job_overrides.txt line: 2
@@ -42,9 +42,7 @@ Overriding a job, technology, or civic causes the game to log errors. Expect to 
 [02:46:07][game_singleobjectdatabase.h:148]: Object with key: cave_cleaner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 4
 [02:46:07][game_singleobjectdatabase.h:148]: Object with key: titan_hunter already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 81
 [02:46:07][game_singleobjectdatabase.h:148]: Object with key: turtle_miner already exists, using the one at  file: common/pop_jobs/11_agrarian_idyll_lithoid_event_job_overrides.txt line: 169
-[02:46:08][meantimetohappen.cpp:298]: script_value/weight field: operation at  file: common/technology/01_agrarian_idyll_lithoid_soc_tech.txt line: 15 will always be 0 as it is modifying a base value of 0
 [02:46:08][technology.cpp:1154]: Duplicate technology: tech_housing_agrarian_idyll
-[02:46:08][meantimetohappen.cpp:298]: script_value/weight field: operation at  file: common/technology/00_soc_tech.txt line: 6539 will always be 0 as it is modifying a base value of 0
 [02:46:08][game_singleobjectdatabase.h:148]: Object with key: district_rw_farming already exists, using the one at  file: common/districts/10_agrarian_idyll_lithoid_ringworld_district_overrides.txt line: 9
 [02:46:11][game_singleobjectdatabase.h:148]: Object with key: civic_agrarian_idyll already exists, using the one at  file: common/governments/civics/01_agrarian_idyll_lithoid_origin_overrides.txt line: 1
 ```
@@ -91,6 +89,7 @@ Normally overriding a single technology can cause problems with the game being c
 * 4.0.1 Jobs `crystal_miner`, `gas_extractor`, `mote_harvester` are now part of the `planet_sr_miners` category, as intended by Paradox
 * 5.0.0 Update for Stellaris version 3.4 "Cepheus"
     * Account for subterranean empires
+    * Fix bug that was likely causing 0 weight for the Agrarian and Lithorian Idyll special housing technologies
     * Integrate underlying changes from 3.4 to overridden content
 
 ## Source Code
