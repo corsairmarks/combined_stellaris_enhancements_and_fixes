@@ -34,7 +34,7 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
-Built for Stellaris version 3.3 "Libra."  This mod is not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  This mod is not compatible with achievements.
 
 ## Localisation
 
@@ -82,7 +82,10 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 3.0.0 Update for Stellaris version 3.3 "Libra"
     * Update Decrees to cost unity instead of influence
     * Integrate underlying game change - zombies cannot produce leaders
-* 3.0.1 AI Rogue Servitors consider species with Numistic Administration as having leader traits (for purposes of creating Organic Advisors) when the mod Leader Traits: All Eligible Species Traits is also installed
+* 4.0.0 Update for Stellaris version 3.4 "Cepheus"
+    * Integrate underlying game change - SALVAGER and SHROUDWALKER species classes do not use gender
+    * Reduce duplicated AI-weight code for Honored Protectors and Organic Advisors
+    * AI Rogue Servitors consider species with Numistic Administration as having leader traits (for purposes of creating Organic Advisors) when the mod Leader Traits: All Eligible Species Traits is also installed
 
 ## Source Code
 

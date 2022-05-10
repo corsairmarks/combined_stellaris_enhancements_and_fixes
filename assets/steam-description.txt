@@ -28,7 +28,7 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimiliate Machines[/url].
 
-Built for Stellaris version 3.3 "Libra." This mod is not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus." This mod is not compatible with achievements.
 
 [h2]Localisation[/h2]
 This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
