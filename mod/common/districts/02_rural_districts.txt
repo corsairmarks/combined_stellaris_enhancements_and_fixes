@@ -291,8 +291,8 @@ district_farming = {
 			NOT = { exists = from }
 			from = { is_anglers_empire = no }
 			AND = {
-				from = { is_anglers_empire = yes }
 				NOT = { is_planet_class = pc_ocean }
+				from = { is_anglers_empire = yes }
 			}
 		}
 	}
@@ -303,8 +303,8 @@ district_farming = {
 			NOT = { exists = owner }
 			owner = { is_anglers_empire = no }
 			AND = {
-				owner = { is_anglers_empire = yes }
 				NOT = { is_planet_class = pc_ocean }
+				owner = { is_anglers_empire = yes }
 			}
 		}
 		NAND = {
@@ -931,9 +931,9 @@ district_farming_uncapped = {
 			uses_district_set = hive_world
 			uses_district_set = shattered_ring_world
 			AND = {
+				is_planet_class = pc_ocean
 				exists = from
 				from = { is_anglers_empire = yes }
-				is_planet_class = pc_ocean
 			}
 		}
 	}
@@ -943,9 +943,9 @@ district_farming_uncapped = {
 			uses_district_set = hive_world
 			uses_district_set = shattered_ring_world
 			AND = {
+				is_planet_class = pc_ocean
 				exists = owner
 				owner = { is_anglers_empire = yes }
-				is_planet_class = pc_ocean
 			}
 		}
 		NAND = {
@@ -975,9 +975,9 @@ district_farming_uncapped = {
 		# Anglers Civic cost effect
 		cost = {
 			trigger = {
+				is_planet_class = pc_ocean
 				exists = owner
 				owner = { is_anglers_empire = yes }
-				planet = { is_planet_class = pc_ocean }
 			}
 			minerals = -50
 		}
