@@ -4,8 +4,6 @@ Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied t
 
 A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) now add one unit of planetary capacity per two districts and one building slot per four districts (as of 3.2 farming districts do this in base game).  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
 
-**_Important Update 3.3:_** No longer overrides ever worker job, mot event job, or ringworld districts, making this mod even easier to mix and match with other mods!
-
 # Changes
 
 Creates a civic swap for Agrarian Idyll for Lithoids (it will automatically change - similar to Devouring Swarm <-> Terravore).  Miners (_including_ those for mote/gas/crystal deposits) generate the same amount of Amenities that farmers generate for the standard version, and have their job weights adjusted accordingly for traits that affect Amenities output.  A new technology "Lithorian Utopias" replaces the standard "Agrarian Utopias" and adds +1 housing to Mining Districts.  Lithorian Idyll also loses the usual Agrarian Idyll bonus housing on Ringworld Farming Districts.
@@ -16,7 +14,7 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 ## Compatibility
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.  This mod overrides one core Stellaris file (`common/districts/02_rural_districts.txt` in order to add +capacity/+building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.  This mod overrides one core Stellaris file (`common/districts/02_rural_districts.txt` in order to add +capacity/+building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
 
 * `civic_agrarian_idyll` to add the alternative description for lithoids
 * `district_rw_farming` to excludes Lithorian Idyll from the farming district housing benefits (Agrarian Idyll normally gets +5 housing)
@@ -24,7 +22,7 @@ Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.  Thi
 * Several event-related jobs, for the same reason: `cave_cleaner`, `titan_hunter`, `turtle_miner`
 * `tech_housing_agrarian_idyll` in order to exclude Lithorian Idyll, who now have their own version of this technology
 
-Due to upgrades in Stellaris version 3.3 "Libra," this mod now avoid overwriting job unrelated to the core game mechanic being modified.  It should therefor not conflict with mods that make changes to other worker and event jobs, or other ringworld districts.  It is now only incompatible with mods that want to edit exactly the same game objects (as listed above).
+This mod avoids overwriting jobs unrelated to the core game mechanic being modified.  It should therefore not conflict with mods that make changes to other worker and event jobs, or other ringworld districts.  It is now only incompatible with mods that want to edit exactly the same game objects (as listed above).
 
 ### When to Install
 
@@ -88,8 +86,11 @@ Normally overriding a single technology can cause problems with the game being c
     * Jobs and districts are no longer full-file overwrites!
     * Only the relevant `planet_farmer` and `planet_miner` jobs are overridden (but not Angler since the Anglers civic cannot be combined with Agrarian/Lithorian Idyll)
     * All rural districts are still overridden in order to apply the +capacity/+building slot bonus to them, but now only the ringworld farming district is overridden instead of all of them
-    * Integrate additional changes from 3.3 to overridden content
+    * Integrate underlying changes from 3.3 to overridden content
 * 4.0.1 Jobs `crystal_miner`, `gas_extractor`, `mote_harvester` are now part of the `planet_sr_miners` category, as intended by Paradox
+* 5.0.0 Update for Stellaris version 3.4 "Cepheus"
+    * Account for subterranean empires
+    * Integrate underlying changes from 3.4 to overridden content
 
 ## Source Code
 
