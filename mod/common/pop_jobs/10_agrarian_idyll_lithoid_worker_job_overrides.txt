@@ -23,6 +23,26 @@ miner = {
 		produces = {
 			minerals = 4
 		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_reduction
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_minerals
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_overlord
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -35,51 +55,25 @@ miner = {
 		}
 		modifier = {
 			planet_amenities_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			planet_amenities_add = 0.4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			planet_amenities_add = -0.4
+			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 		}
 	}
 
 	weight = {
 		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|miner|RESOURCE|minerals|
 		modifier = {
-			factor = 3
-			OR = {
-				has_trait = trait_industrious
-				has_trait = trait_robot_power_drills
+			factor = 1.1
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
 			}
 		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
 		}
 		modifier = {
 			factor = 3
@@ -104,71 +98,16 @@ miner = {
 			can_take_servant_job = yes
 		}
 		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
+			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
 			}
-		}
-		modifier = {
-			factor = 1.2
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			factor = 1.1
-			has_trait = trait_strong
-		}
-		modifier = {
-			factor = 0.9
-			has_trait = trait_weak
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_zombie
-		}
-		modifier = {
-			factor = 0.9
-			has_trait = trait_presapient_natural_intellectuals
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 1.4
-			has_trait = trait_presapient_proles
-		}
-		modifier = {
-			factor = 1.1
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 1.1
-			has_trait = trait_nerve_stapled
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_planet_class = pc_habitat }
-		}
-		modifier = {
-			factor = 0.85
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_artificial = no }
 		}
 
 		# low income modifier
 		modifier = {
 			factor = 1.1
-
-			#OR = {
-			#	is_unemployed = yes
-			#	has_job = "miner"
-			#}
 			exists = planet
 			planet = {
 				has_available_jobs = miner
@@ -181,10 +120,6 @@ miner = {
 					value < 0
 				}
 			}
-		}
-		modifier = {
-			factor = 0.75
-			has_trait = trait_necrophage
 		}
 	}
 }
@@ -214,15 +149,6 @@ crystal_miner = {
 		produces = {
 			rare_crystals = 2
 		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_edict = mining_subsidies
-				}
-			}
-			energy = 0.5
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -235,44 +161,25 @@ crystal_miner = {
 		}
 		modifier = {
 			planet_amenities_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			planet_amenities_add = 0.4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			planet_amenities_add = -0.4
+			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 		}
 	}
 
 	weight = {
 		weight = @specialist_job_weight # Important job
+		mult = value:job_weights_modifier|JOB|crystal_miner|RESOURCE|rare_crystals|
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
+			}
+		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
 		}
 		modifier = {
 			factor = 2
@@ -297,83 +204,11 @@ crystal_miner = {
 			can_take_servant_job = yes
 		}
 		modifier = {
-			factor = 5
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}
-		modifier = {
-			factor = 3
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_strong
-		}
-		modifier = {
-			factor = 0.1
-			has_trait = trait_weak
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_zombie
-		}
-		modifier = {
-			factor = 3
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_planet_class = pc_habitat }
-		}
-		modifier = {
-			factor = 0.85
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_artificial = no }
-		}
-		modifier = {
-			factor = 3
-			has_trait = trait_nerve_stapled
-		}
-		modifier = {
-			factor = 0.75
-			has_trait = trait_necrophage
-		}
-		modifier = {
-			factor = 1.1
+			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
 				is_lithoid_empire = yes
 			}
-		}
-		modifier = {
-			factor = 1.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			factor = 0.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
 		}
 	}
 }
@@ -398,15 +233,6 @@ gas_extractor = {
 		produces = {
 			exotic_gases = 2
 		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_edict = mining_subsidies
-				}
-			}
-			energy = 0.5
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -419,44 +245,25 @@ gas_extractor = {
 		}
 		modifier = {
 			planet_amenities_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			planet_amenities_add = 0.4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			planet_amenities_add = -0.4
+			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 		}
 	}
 
 	weight = {
 		weight = @specialist_job_weight # Important job
+		mult = value:job_weights_modifier|JOB|gas_extractor|RESOURCE|exotic_gases|
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
+			}
+		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
 		}
 		modifier = {
 			factor = 2
@@ -481,83 +288,11 @@ gas_extractor = {
 			can_take_servant_job = yes
 		}
 		modifier = {
-			factor = 5
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}
-		modifier = {
-			factor = 3
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_strong
-		}
-		modifier = {
-			factor = 0.1
-			has_trait = trait_weak
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_zombie
-		}
-		modifier = {
-			factor = 3
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_planet_class = pc_habitat }
-		}
-		modifier = {
-			factor = 0.85
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_artificial = no }
-		}
-		modifier = {
-			factor = 3
-			has_trait = trait_nerve_stapled
-		}
-		modifier = {
-			factor = 0.75
-			has_trait = trait_necrophage
-		}
-		modifier = {
-			factor = 1.1
+			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
 				is_lithoid_empire = yes
 			}
-		}
-		modifier = {
-			factor = 1.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			factor = 0.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
 		}
 	}
 }
@@ -582,15 +317,6 @@ mote_harvester = {
 		produces = {
 			volatile_motes = 2
 		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_edict = mining_subsidies
-				}
-			}
-			energy = 0.5
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -603,44 +329,25 @@ mote_harvester = {
 		}
 		modifier = {
 			planet_amenities_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			planet_amenities_add = 0.4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			planet_amenities_add = -0.4
+			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 		}
 	}
 
 	weight = {
 		weight = @specialist_job_weight # Important job
+		mult = value:job_weights_modifier|JOB|mote_harvester|RESOURCE|volatile_motes|
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
+			}
+		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
 		}
 		modifier = {
 			factor = 2
@@ -665,83 +372,11 @@ mote_harvester = {
 			can_take_servant_job = yes
 		}
 		modifier = {
-			factor = 5
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
-			}
-		}
-		modifier = {
-			factor = 3
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_strong
-		}
-		modifier = {
-			factor = 0.1
-			has_trait = trait_weak
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_zombie
-		}
-		modifier = {
-			factor = 3
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_planet_class = pc_habitat }
-		}
-		modifier = {
-			factor = 0.85
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_artificial = no }
-		}
-		modifier = {
-			factor = 3
-			has_trait = trait_nerve_stapled
-		}
-		modifier = {
-			factor = 0.75
-			has_trait = trait_necrophage
-		}
-		modifier = {
-			factor = 1.1
+			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
 				is_lithoid_empire = yes
 			}
-		}
-		modifier = {
-			factor = 1.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			factor = 0.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
 		}
 	}
 }
@@ -780,6 +415,26 @@ farmer = {
 			}
 			food = -1
 		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_food
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_overlord
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -792,47 +447,13 @@ farmer = {
 		}
 		modifier = {
 			planet_amenities_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = no
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			planet_amenities_add = 0.4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = no
-			}
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			planet_amenities_add = -0.4
+			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 		}
 	}
 
 	weight = {
 		weight = @worker_job_weight
-		modifier = {
-			factor = 3
-			OR = {
-				has_trait = trait_robot_harvesters
-				has_trait = trait_agrarian
-			}
-		}
+		mult = value:job_weights_modifier|JOB|farmer|RESOURCE|food|
 		modifier = {
 			factor = 1.1
 			owner = {
@@ -844,6 +465,7 @@ farmer = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
 		}
 		modifier = {
 			factor = 3
@@ -868,84 +490,16 @@ farmer = {
 			can_take_servant_job = yes
 		}
 		modifier = {
-			factor = 2
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 1.2
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			factor = 1.1
-			has_trait = trait_strong
-		}
-		modifier = {
-			factor = 0.9
-			has_trait = trait_weak
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_zombie
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 1.4
-			has_trait = trait_presapient_proles
-		}
-		modifier = {
-			factor = 1.1
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 1.1
-			has_trait = trait_nerve_stapled
-		}
-		modifier = {
-			factor = 1.5
+			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
 				is_lithoid_empire = no
 			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
 		}
-		modifier = {
-			factor = 0.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = no
-			}
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_planet_class = pc_habitat }
-		}
-		modifier = {
-			factor = 0.85
-			has_trait = trait_void_dweller_1
-			exists = planet
-			planet = { is_artificial = no }
-		}
-
+		
 		# low income modifier
 		modifier = {
 			factor = 1.2
-
-			#OR = {
-			#	is_unemployed = yes
-			#	has_job = farmer
-			#}
 			exists = planet
 			planet = {
 				has_available_jobs = farmer
@@ -971,10 +525,6 @@ farmer = {
 					value >= 0
 				}
 			}
-		}
-		modifier = {
-			factor = 0.75
-			has_trait = trait_necrophage
 		}
 	}
 }
@@ -1012,51 +562,25 @@ scrap_miner = {
 		}
 		modifier = {
 			planet_amenities_add = 2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			planet_amenities_add = 0.4
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
-		}
-		modifier = {
-			planet_amenities_add = -0.4
+			mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 		}
 	}
 
 	weight = {
 		weight = @worker_job_weight
+		mult = value:job_weights_multiple_resources_modifier|JOB|scrap_miner|RESOURCE1|minerals|WEIGHT1|0.7|RESOURCE2|alloys|WEIGHT2|0.3|
 		modifier = {
-			factor = 3
-			OR = {
-				has_trait = trait_industrious
-				has_trait = trait_robot_power_drills
+			factor = 1.1
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
 			}
 		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
 		}
 		modifier = {
 			factor = 3
@@ -1081,59 +605,16 @@ scrap_miner = {
 			can_take_servant_job = yes
 		}
 		modifier = {
-			factor = 2
-			species = {
-				has_species_flag = racket_species_flag
+			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
 			}
-		}
-		modifier = {
-			factor = 1.2
-			has_trait = trait_very_strong
-		}
-		modifier = {
-			factor = 1.1
-			has_trait = trait_strong
-		}
-		modifier = {
-			factor = 0.9
-			has_trait = trait_weak
-		}
-		modifier = {
-			factor = 0.5
-			has_trait = trait_zombie
-		}
-		modifier = {
-			factor = 0.9
-			has_trait = trait_presapient_natural_intellectuals
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 1.4
-			has_trait = trait_presapient_proles
-		}
-		modifier = {
-			factor = 1.1
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 1.1
-			has_trait = trait_nerve_stapled
 		}
 
 		# low income modifier
 		modifier = {
 			factor = 1.1
-
-			#OR = {
-			#	is_unemployed = yes
-			#	has_job = "scrap_miner"
-			#}
 			exists = planet
 			planet = {
 				has_available_jobs = "scrap_miner"
@@ -1146,36 +627,6 @@ scrap_miner = {
 					value < 0
 				}
 			}
-		}
-		modifier = {
-			factor = 0.75
-			has_trait = trait_necrophage
-		}
-		modifier = {
-			factor = 1.1
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-		}
-		modifier = {
-			factor = 1.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			OR = {
-				has_trait = trait_robot_domestic_protocols
-				has_trait = trait_charismatic
-			}
-		}
-		modifier = {
-			factor = 0.5
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = yes
-			}
-			has_trait = trait_repugnant
 		}
 	}
 }
