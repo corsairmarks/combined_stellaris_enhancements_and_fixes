@@ -23,7 +23,7 @@ This mod continues its trend of unification by hooking up the enlightenment fini
 
 This mod replaces six events from the base game: `action.14`, `action.140`, `necroids.6`, `observation.3009`, `primitive.16`, and `primitive.17`.  The action events are responsible for the standard military conquest of primitives, the necroids event is responsible for necrophage auto-conquest, the observation event is responsible for primitive infiltration, and the primitive events are related to technological enlightenment.  These events are now altered to invoke the same code for generating buildings and districts.
 
-Most of the new custom logic is implemented outside of these events.  Version 1.3.0 of this mod added two custom on_actions: `on_primitive_planet_transferring` that fires before planet ownership changes and `on_primitive_planet_transferred` that fires after planet ownership changes.  District/building generation is triggered by `on_primitive_planet_transferred`.  The most useful part of all of this is that you can make other mods tie in to these on_actions to create new effects when primitives are conquered/infiltrated.
+Most of the new custom logic is implemented outside of these events.  This mod adds two custom on_actions: `on_primitive_planet_transferring` that fires before planet ownership changes and `on_primitive_planet_transferred` that fires after planet ownership changes.  District/building generation is triggered by `on_primitive_planet_transferred`.  The most useful part of all of this is that you can make other mods tie in to these on_actions to create new effects when primitives are conquered/infiltrated.
 
 ## Localisation
 
@@ -49,7 +49,7 @@ You do **not** need the Necroids or Lithoids content packs to use this mod.
 
 This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same event IDs.  If another mod is attempting to make changes to primitive planet conquest but uses a different method (for example, adding new events activated by on action events such as `on_planet_transfer`, `on_planet_conquer`, or `on_planet_attackers_win`) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 ### When to Install
 
@@ -79,12 +79,13 @@ This mod can be safely added or removed from your savegame after the game has st
     * Ringworld setup is even more intelligent
     * Built-in colossus weapons that allow the "conquest" of primitive worlds (Deluge Machine, Nanobot Diffuser) now also get infrastructure
     * My custom colossus weapon (Necrophagic Spore Diffuser) now also gets infrastructure
-* 4.0.0 Update for Stellaris version 3.3.0 "Libra" - integrate new triggers from the base game
+* 4.0.0 Update for Stellaris version 3.3 "Libra" - integrate new triggers from the base game
 * 4.1.0 More updates for 3.3 "Libra" and ringworld primitives have their homeworld transformed into a shattered ringworld segment
     * Reanimators get a Dread Encampment instead of a Research Lab
     * Fix primitive unity building (wrongly spawned an Autochthon Monument) - usually only Early Space Age primitives would have a unity building
     * Previous ringworld conquest conversion still exists for non-standard-sized ringworlds (not size 10)
     * Finally update the example screenshots
+* 5.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate base game changes
 
 ## Source Code
 
