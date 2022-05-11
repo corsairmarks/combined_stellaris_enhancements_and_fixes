@@ -24,7 +24,7 @@ This mod should be added before you start a new game so that all empires are ass
 
 ### Recommended Companion Mods
 
-[Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102), [Shattered Ring Shipset Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2566249278), or [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture).
+[Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) or [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture).
 
 [Machine Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491) is a phenomenal, fully-sectioned shipset and includes megastructures.
 

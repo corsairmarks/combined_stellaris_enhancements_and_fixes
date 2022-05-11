@@ -18,7 +18,7 @@ Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 This mod should be added before you start a new game so that all empires are assigned a (hidden) ship design for terraform stations.  Without the design, there is no way to spawn the terraform station fleets.  Furthermore, this mod should not be removed from a game in-progress.  Losing access to the ship size or entities may cause issues if there are any terraform stations still active, and attempting to fire an event that doesn't exist will frequently result in a crash.
 
 [h3]Recommended Companion Mods[/h3]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102]Ringworld Graphical Enhancements[/url], [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2566249278]Shattered Ring Shipset Fix[/url], or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089]Subtle Polish: A Collection of Fixes and Enhancements[/url] to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture).
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102]Ringworld Graphical Enhancements[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089]Subtle Polish: A Collection of Fixes and Enhancements[/url] to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture).
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491]Machine Shipset[/url] is a phenomenal, fully-sectioned shipset and includes megastructures.
 
