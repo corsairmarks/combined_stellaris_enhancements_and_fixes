@@ -14,7 +14,7 @@ terraform_station = {
 		}
 	}
 	show_galactic_map_icon = no
-	construction_blocked_by_others = no
+	construction_blocks_and_blocked_by = self_type
 	prerequisites = { tech_terrestrial_sculpting }
 	potential = { always = no }
 	placement_rules = {
