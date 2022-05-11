@@ -16,7 +16,7 @@ Reintroduces terraform stations and existing (but unused) graphical effects to p
 
 This mod reuses existing game entities and 3D assets plus new events to handle the spawning and despawning for terraform stations.  The terraform station ship size is restored to the game and used to create real stations as visual markers.  What this means to you is that this mod should work with practically any other mod, although new shipsets will use their fallback option for terraform stations.
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 ### When to Install
 
@@ -53,6 +53,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
     * Verify the fallback is used for Aquatic
 * 2.1.0 Mark as compatible with Stellaris 3.3 "Libra"
     * Improve trigger for determining if a species is "nuked" - this change is a general upgrade, not specific to version 3.3 "Libra"
+* 3.0.0 Upgrade for compatibility with Stellaris version 3.4 "Cepheus"
 
 ## Source Code
 
