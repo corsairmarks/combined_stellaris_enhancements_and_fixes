@@ -1,6 +1,7 @@
 # this = species
 # event_target:protected_country = country, who is designating this species as protectors
 set_species_honored_protectors = {
+	optimize_memory
 	if = {
 		limit = {
 			has_citizenship_type = {
@@ -40,6 +41,7 @@ set_species_honored_protectors = {
 # this = species
 # DISCRIMINATOR = something to give the event target a unique name
 accumulate_potential_protector_if_available = {
+	optimize_memory
 	if = {
 		limit = {
 			check_variable = {

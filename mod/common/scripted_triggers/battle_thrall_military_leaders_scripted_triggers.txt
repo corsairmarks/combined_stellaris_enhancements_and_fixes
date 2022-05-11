@@ -1,5 +1,6 @@
 # this = species
 btml_has_species_trait_with_leader_trait = {
+	optimize_memory
 	OR = {
 		has_trait = trait_cybernetic
 		has_trait = trait_erudite
@@ -16,6 +17,7 @@ btml_has_species_trait_with_leader_trait = {
 
 # this = species
 btml_is_species_smart_enough_for_leadership = {
+	optimize_memory
 	is_sapient = yes
 	NOR = {
 		has_trait = trait_syncretic_proles
@@ -26,6 +28,7 @@ btml_is_species_smart_enough_for_leadership = {
 
 # this = species
 btml_is_mechanical_or_machine = {
+	optimize_memory
 	OR = {
 		has_trait = trait_mechanical
 		has_trait = trait_machine_unit
@@ -34,17 +37,20 @@ btml_is_mechanical_or_machine = {
 
 # this = country
 btml_is_necrophage_empire = {
+	optimize_memory
 	has_origin = origin_necrophage
 	has_trait = trait_necrophage
 }
 
 # this = country
 is_eligible_to_designate_organic_advisors = {
+	optimize_memory
 	has_valid_civic = civic_machine_servitor
 }
 
 # this = country
 is_eligible_to_designate_honored_protectors = {
+	optimize_memory
 	OR = {
 		btml_is_necrophage_empire = yes
 		is_xenophobe = yes
@@ -54,6 +60,7 @@ is_eligible_to_designate_honored_protectors = {
 # this follows the game's default rules - does not account for Gender Nonbinary Leaders
 # this = leader, after species change
 btml_leader_new_species_allows_current_gender = {
+	optimize_memory
 	switch = {
 		trigger = gender
 		indeterminable = {
@@ -94,6 +101,7 @@ btml_leader_new_species_allows_current_gender = {
 
 # this = species
 btml_species_can_set_is_female = {
+	optimize_memory
 	NOR = {
 		species_gender = indeterminable
 		AND = {
@@ -105,6 +113,7 @@ btml_species_can_set_is_female = {
 
 # this = species
 btml_species_class_uses_gender = {
+	optimize_memory
 	# NOTE: this assumes custom species classes use gender (the default)
 	NOR = {
 		is_species_class = MACHINE
@@ -120,6 +129,7 @@ btml_species_class_uses_gender = {
 # this = leader, with new species
 # from = species, previous
 btml_leader_species_gender_change_requires_clone = {
+	optimize_memory
 	OR = {
 		AND = {
 			species = { btml_species_can_set_is_female = no }
