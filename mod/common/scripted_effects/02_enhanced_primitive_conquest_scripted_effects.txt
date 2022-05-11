@@ -1,6 +1,7 @@
 # this = planet
 # DISTRICT = the district type to add
-add_district_if_free = {
+epc_add_district_if_free = {
+	optimize_memory
 	if = {
 		limit = {
 			num_free_districts = {
@@ -12,12 +13,13 @@ add_district_if_free = {
 	}
 	else_if = {
 		limit = { free_district_slots > 0 }
-		add_deposit_for_district = { DISTRICT = $DISTRICT$ }
+		epc_add_deposit_for_district = { DISTRICT = $DISTRICT$ }
 	}
 }
 
 # this = planet
-add_building_if_free = {
+epc_add_building_if_free = {
+	optimize_memory
 	if = {
 		limit = { free_building_slots > 0 }
 		add_building = $BUILDING$
@@ -26,7 +28,8 @@ add_building_if_free = {
 
 # this = planet
 # DISTRICT = the district for which to potentially add a deposit supporting the built-in planet classes that have district-limiting deposits
-add_deposit_for_district = {
+epc_add_deposit_for_district = {
+	optimize_memory
 	add_district = {
 		district_type = $DISTRICT$
 		ignore_cap = yes
@@ -164,41 +167,44 @@ add_deposit_for_district = {
 }
 
 # this = planet
-add_primitive_conquest_rw_urban_district = {
+epc_add_rw_urban_district = {
+	optimize_memory
 	if = {
 		limit = { owner = { is_machine_empire = yes  } }
-		add_district_if_free = { DISTRICT = district_rw_nexus }
+		epc_add_district_if_free = { DISTRICT = district_rw_nexus }
 	}
 	else_if = {
 		limit = { owner = { is_hive_empire = yes } }
-		add_district_if_free = { DISTRICT = district_rw_hive }
+		epc_add_district_if_free = { DISTRICT = district_rw_hive }
 	}
 	else = {
-		add_district_if_free = { DISTRICT = district_rw_city }
+		epc_add_district_if_free = { DISTRICT = district_rw_city }
 	}
 }
 
 # this = planet
-add_primitive_conquest_urban_district = {
+epc_add_urban_district = {
+	optimize_memory
 	if = {
 		limit = { owner = { is_machine_empire = yes } }
-		add_district_if_free = { DISTRICT = district_nexus }
+		epc_add_district_if_free = { DISTRICT = district_nexus }
 	}
 	else_if = {
 		limit = { owner = { is_hive_empire = yes } }
-		add_district_if_free = { DISTRICT = district_hive }
+		epc_add_district_if_free = { DISTRICT = district_hive }
 	}
 	else = {
-		add_district_if_free = { DISTRICT = district_city }
+		epc_add_district_if_free = { DISTRICT = district_city }
 	}
 }
 
 # this = planet
 # event_target:conquered_primitive_civilization should be country
-add_primitive_conquest_food_district = {
+epc_add_primitive_species_appropriate_food_district = {
+	optimize_memory
 	if = {
 		limit = { event_target:conquered_primitive_civilization = { is_lithoid_empire = yes } }
-		add_primitive_conquest_mining_district = yes
+		epc_add_planet_appropriate_mining_district = yes
 	}
 	else_if = {
 		limit = {
@@ -208,32 +214,39 @@ add_primitive_conquest_food_district = {
 				value >= 2
 			}
 		}
-		add_primitive_conquest_generator_district = yes
+		epc_add_planet_appropriate_generator_district = yes
 	}
 	else = {
-		add_primitive_conquest_farming_district = yes
+		epc_add_planet_appropriate_farming_district = yes
 	}
 }
 
 # this = planet
-add_primitive_conquest_mining_district = {
+epc_add_planet_appropriate_mining_district = {
+	optimize_memory
 	if = {
 		limit = {
 			OR = {
 				uses_district_set = shattered_ring_world
 				uses_district_set = hive_world
 				uses_district_set = machine_world
+				AND = {
+					uses_district_set = standard
+					exists = owner
+					owner = { is_subterranean_empire = yes }
+				}
 			}
 		}
-		add_district_if_free = { DISTRICT = district_mining_uncapped }
+		epc_add_district_if_free = { DISTRICT = district_mining_uncapped }
 	}
 	else = {
-		add_district_if_free = { DISTRICT = district_mining }
+		epc_add_district_if_free = { DISTRICT = district_mining }
 	}
 }
 
 # this = planet
-add_primitive_conquest_generator_district = {
+epc_add_planet_appropriate_generator_district = {
+	optimize_memory
 	if = {
 		limit = {
 			uses_district_set = shattered_ring_world
@@ -242,7 +255,7 @@ add_primitive_conquest_generator_district = {
 				is_fallen_empire = no
 			}
 		}
-		add_district_if_free = { DISTRICT = district_srw_commercial }
+		epc_add_district_if_free = { DISTRICT = district_srw_commercial }
 	}
 	else_if = {
 		limit = {
@@ -252,15 +265,16 @@ add_primitive_conquest_generator_district = {
 				uses_district_set = shattered_ring_world
 			}
 		}
-		add_district_if_free = { DISTRICT = district_generator_uncapped }
+		epc_add_district_if_free = { DISTRICT = district_generator_uncapped }
 	}
 	else = {
-		add_district_if_free = { DISTRICT = district_generator }
+		epc_add_district_if_free = { DISTRICT = district_generator }
 	}
 }
 
 # this = planet
-add_primitive_conquest_farming_district = {
+epc_add_planet_appropriate_farming_district = {
+	optimize_memory
 	if = {
 		limit = {
 			OR = {
@@ -268,55 +282,58 @@ add_primitive_conquest_farming_district = {
 				uses_district_set = shattered_ring_world
 				AND = {
 					is_planet_class = pc_ocean
+					exists = owner
 					owner = { is_anglers_empire = yes }
 				}
 			}
 		}
-		add_district_if_free = { DISTRICT = district_farming_uncapped }
+		epc_add_district_if_free = { DISTRICT = district_farming_uncapped }
 	}
 	else = {
-		add_district_if_free = { DISTRICT = district_farming }
+		epc_add_district_if_free = { DISTRICT = district_farming }
 	}
 }
 
 # this = planet
 add_primitive_conquest_science_building_if_free = {
+	optimize_memory
 	if = {
 		limit = { owner = { has_valid_civic = civic_reanimated_armies } }
-		add_building_if_free = { BUILDING = building_dread_encampment }
+		epc_add_building_if_free = { BUILDING = building_dread_encampment }
 	}
 	else = {
-		add_building_if_free = { BUILDING = building_research_lab_1 }
+		epc_add_building_if_free = { BUILDING = building_research_lab_1 }
 	}
 }
 
 # this = planet
 add_primitive_conquest_unity_building_if_free = {
+	optimize_memory
 	if = {
 		limit = { owner = { is_memorialist_empire = yes } }
-		add_building_if_free = { BUILDING = building_galactic_memorial_1 }
+		epc_add_building_if_free = { BUILDING = building_galactic_memorial_1 }
 	}
 	else_if = {
 		limit = { owner = { is_machine_empire = yes } }
-		add_building_if_free = { BUILDING = building_uplink_node }
+		epc_add_building_if_free = { BUILDING = building_uplink_node }
 	}
 	else_if = {
 		limit = { owner = { is_hive_empire = yes } }
-		add_building_if_free = { BUILDING = building_hive_node }
+		epc_add_building_if_free = { BUILDING = building_hive_node }
 	}
 	else = {
 		if = {
 			limit = { owner = { is_spiritualist = yes } }
 			if = {
 				limit = { owner = { is_death_cult_empire = yes } }
-				add_building_if_free = { BUILDING = building_sacrificial_temple_1 }
+				epc_add_building_if_free = { BUILDING = building_sacrificial_temple_1 }
 			}
 			else = {
-				add_building_if_free = { BUILDING = building_temple }
+				epc_add_building_if_free = { BUILDING = building_temple }
 			}
 		}
 		else = {
-			add_building_if_free = { BUILDING = building_bureaucratic_1 }
+			epc_add_building_if_free = { BUILDING = building_bureaucratic_1 }
 		}
 	}
 }
