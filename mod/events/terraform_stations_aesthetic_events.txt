@@ -55,7 +55,10 @@ planet_event = {
 		# 		graphical_culture = PREV.FROM
 		# 		orbit_distance = 18
 		# 		init_effect = {
-		# 			set_name = NAME_terraform_station
+		# 			set_name = {
+		#				key = NAME_terraform_station
+		#				variable_string = "[terraform_planet.GetName]"
+		#			}
 		# 			set_megastructure_flag = terraform_station@PREVPREV
 		# 		}
 		# 	}
