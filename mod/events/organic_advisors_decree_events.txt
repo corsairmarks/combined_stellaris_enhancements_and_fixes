@@ -98,7 +98,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			base = 1.5
+			factor = 1.5
 			modifier = {
 				factor = 0
 				check_variable = {
@@ -118,7 +118,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors0 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|0|
 		}
 	}
@@ -138,7 +138,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors1 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|1|
 		}
 	}
@@ -158,7 +158,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors2 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|2|
 		}
 	}
@@ -178,7 +178,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors3 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|3|
 		}
 	}
@@ -198,7 +198,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors4 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|4|
 		}
 	}
@@ -218,7 +218,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors5 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|5|
 		}
 	}
@@ -238,7 +238,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors6 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|6|
 		}
 	}
@@ -258,7 +258,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors7 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|7|
 		}
 	}
@@ -278,7 +278,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors8 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|8|
 		}
 	}
@@ -298,7 +298,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:potential_advisors9 = { set_species_organic_advisors = yes } }
 		ai_chance = {
-			base = 1
+			factor = 1
 			mult = value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|9|
 		}
 	}
