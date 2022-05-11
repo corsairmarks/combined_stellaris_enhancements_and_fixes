@@ -35,7 +35,7 @@ Fully compatible with [Planetary Diversity](https://steamcommunity.com/sharedfil
 
 **Not** compatible with [Real Space](https://steamcommunity.com/sharedfiles/filedetails/?id=937289339), but that mod already activates the same art so you don't need this one.
 
-Built for Stellaris version 3.3 "Libra" and backwards-compatible with version 3.2 "Herbert."  **Not** compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+Built for Stellaris version 3.4 "Cepheus."  **Not** backwards-compatible.  Why?  Then "Cepheus" update alters planet classes to support alternate skies for the new orbital ring feature, and to weight "ideal" planets about 50% higher as resettlement targets.  **Not** compatible with achievements.  Why?  Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
 
 ### Verifying Mod Compatibility
 
@@ -64,6 +64,9 @@ The standard planet view has a very small graphic representing your planet's env
 * 2.0.0 Updated for Stellaris version 3.1 "Lem" - no changes to what the mod does, just integrated the underlying game changes
 * 2.1.0 Mark compatible with Stellaris version 3.2 "Herbert" - no script changes
 * 2.2.0 Mark compatible with Stellaris version 3.3 "Libra" - no script changes
+* 3.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate underlying game changes
+    * Add support for orbital ring alternate skies
+    * Add bonus resettlement chance to the appropriate planet classes
 
 ## Source Code
 

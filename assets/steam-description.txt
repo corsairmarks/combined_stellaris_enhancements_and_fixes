@@ -31,7 +31,7 @@ Fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?i
 
 [b]Not[/b] compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=937289339]Real Space[/url], but that mod already activates the same art so you don't need this one.
 
-Built for Stellaris version 3.3 "Libra" and backwards-compatible with version 3.2 "Herbert."  [b]Not[/b] compatible with achievements. Why? Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
+Built for Stellaris version 3.3 "Cepheus."  [b]Not[/b] backwards-compatible.  Why?  Then "Cepheus" update alters planet classes to support alternate skies for the new orbital ring feature, and to weight "ideal" planets about 50% higher as resettlement targets.  [b]Not[/b] compatible with achievements.  Why?  Planet classes are a gameplay object, even though the ultimate effect of this mod is cosmetic only.
 
 [h3]Verifying Mod Compatibility[/h3]
 You can verify mod compatibility yourself very easily.  Steam downloads mods into a directory in your Steam library (if you have more than one, mods go into the one with their corresponding game).  Inside the library (the default is at [i]C:/Program Files (x86)/Steam/steamapps[/i]), browse to [i]steamapps/workshop/content/281990[/i] (281990 is the Steam ID of Stellaris).
