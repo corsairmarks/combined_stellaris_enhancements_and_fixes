@@ -75,7 +75,7 @@ dynamic_biotrophy_leader_trait_weight = {
 		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_psionic }
 	}
 	modifier = {
-		multiply = 1.25
+		multiply = 1.35
 		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_latent_psionic }
 	}
 	modifier = {
@@ -86,6 +86,11 @@ dynamic_biotrophy_leader_trait_weight = {
 		multiply = 1.5
 		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_clone_soldier_fertile }
 	}
+	# modifier = {
+	# 	multiply = 1.5
+	# 	has_global_flag = leader_species_traits_installed
+	# 	event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_nuumismatic_administration }
+	# }
 	modifier = {
 		multiply = 0.75
 		event_target:potential_advisors$DISCRIMINATOR$ = {
@@ -96,6 +101,14 @@ dynamic_biotrophy_leader_trait_weight = {
 		}
 	}
 	modifier = {
+		multiply = 1.1
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_survivor }
+	}
+	modifier = {
+		multiply = 1.1
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_limited_regeneration }
+	}
+	modifier = {
 		multiply = 1.25
 		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_enduring }
 	}
@@ -103,11 +116,31 @@ dynamic_biotrophy_leader_trait_weight = {
 		multiply = 1.5
 		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_venerable }
 	}
-	
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_lithoid }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_necrophage }
+	}
+	modifier = {
+		multiply = 0.75
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_slow_learners }
+	}
+	modifier = {
+		multiply = 1.25
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_quick_learners }
+	}
 	modifier = {
 		set = 0
 		OR = {
-			event_target:potential_advisors$DISCRIMINATOR$ = { btml_is_species_smart_enough_for_leadership = no }
+			event_target:potential_advisors$DISCRIMINATOR$ = {
+				OR = {
+					btml_is_species_smart_enough_for_leadership = no
+					btml_has_species_trait_with_leader_trait = no
+				}
+			}
 			check_variable = {
 				which = num_subset_potential_advisors
 				value <= $DISCRIMINATOR$

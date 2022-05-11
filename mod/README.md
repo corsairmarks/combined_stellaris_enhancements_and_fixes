@@ -85,7 +85,6 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 4.0.0 Update for Stellaris version 3.4 "Cepheus"
     * Integrate underlying game change - SALVAGER and SHROUDWALKER species classes do not use gender
     * Reduce duplicated AI-weight code for Honored Protectors and Organic Advisors
-    * AI Rogue Servitors consider species with Numistic Administration as having leader traits (for purposes of creating Organic Advisors) when the mod Leader Traits: All Eligible Species Traits is also installed
 
 ## Source Code
 
