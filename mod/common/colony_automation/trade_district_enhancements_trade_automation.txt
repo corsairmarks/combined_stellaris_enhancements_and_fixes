@@ -1,0 +1,30 @@
+# duplicates the enhanced automate_trade_planet, but for shattered ring worlds
+automate_srw_trade_planet = {
+	category = "planet_automation_designation_construction"
+	available = {
+		has_designation = col_srw_trade
+	}
+	prio_districts = {
+		district_srw_commercial
+	}
+	buildings = {
+		1 = {
+			building = building_capital
+		}
+
+		2 = {
+			building = building_galactic_stock_exchange
+			available = { owner = { galactic_stock_exchange_upkeep_affordable = yes } }
+		}
+
+		3 = {
+			building = building_nuumismatic_shrine
+			available = { owner = { has_country_flag = nuumismatic_shrine } }
+		}
+
+		4 = {
+			building = building_commercial_zone
+			available = { owner = { commercial_zone_upkeep_affordable = yes } }
+		}
+	}
+}
