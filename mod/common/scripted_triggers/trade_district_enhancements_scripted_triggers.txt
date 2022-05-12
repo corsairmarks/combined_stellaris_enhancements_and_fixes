@@ -1,5 +1,6 @@
 # this = planet
 tde_uses_planetary_diversity_special_district_set = {
+	optimize_memory
 	OR = {
 		uses_district_set = pdarchive
 		uses_district_set = pdpalacearc
@@ -19,6 +20,7 @@ tde_uses_planetary_diversity_special_district_set = {
 
 # this = planet
 tde_uses_gigastructural_engineering_habitat_district_set = {
+	optimize_memory
 	OR = {
 		uses_district_set = giga_habitat
 		has_planet_flag = giga_interstellar_hab
@@ -28,6 +30,7 @@ tde_uses_gigastructural_engineering_habitat_district_set = {
 
 # this = planet
 tde_uses_gigastructural_engineering_gigastructure_district_set = {
+	optimize_memory
 	OR = {
 		uses_district_set = giga_alderson
 		uses_district_set = giga_birch
