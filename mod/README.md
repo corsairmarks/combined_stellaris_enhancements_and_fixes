@@ -14,7 +14,7 @@ This mod won't affect any other kinds of armies.
 
 ## Compatibility
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 Overwrites the three built-in counter-limited armies in order to improve their counter usage: `titanic_assault_army`, `titanic_azizian_assault_army`, and `imperial_legion`.  The `titanic_assault_army` also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
 
@@ -47,6 +47,10 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 * 2.0.0 Mark as compatible with Stellaris 3.1 "Lem" - update to use new arithmetic syntax
 * 2.1.0 Mark as compatible with Stellaris 3.2 "Herbert" - no script changes
 * 2.2.0 Mark as compatible with Stellaris 3.3 "Libra" - no script changes
+* 3.0.0 Update for Stellaris version 3.4 "Cepheus"
+    * Use memory optimization feature for effects and triggers
+    * Update armies with new army properties
+    * Add army weights so the AI will build Titanic Life and Azizians armies if possible
 
 ## Source Code
 
