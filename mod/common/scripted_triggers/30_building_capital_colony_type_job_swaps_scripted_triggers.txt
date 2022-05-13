@@ -1,5 +1,6 @@
 # this = planet
 should_swap_extra_high_priests = {
+	optimize_memory
 	OR = {
 		has_designation = col_bureau_spiritualist
 		has_designation = col_habitat_bureau_spiritualist
@@ -12,6 +13,7 @@ should_swap_extra_high_priests = {
 
 # this = planet
 should_swap_extra_nobles = {
+	optimize_memory
 	OR = {
 		has_designation = col_bureau
 		has_designation = col_habitat_bureau
@@ -29,6 +31,7 @@ should_swap_extra_nobles = {
 
 # this = planet
 should_swap_extra_head_researchers = {
+	optimize_memory
 	OR = {
 		has_designation = col_research
 		has_designation = col_habitat_research
@@ -43,6 +46,7 @@ should_swap_extra_head_researchers = {
 
 # this = planet
 should_swap_extra_merchants = {
+	optimize_memory
 	OR = {
 		has_designation = col_city
 		has_designation = col_habitat_trade
