@@ -14,7 +14,12 @@ district_city = {
 			uses_district_set = shattered_ring_world
 		}
 		exists = from
-		from = { is_regular_empire = yes }
+		from = {
+			OR = {
+				is_regular_empire = yes
+				is_country_type = primitive
+			}
+		}
 	}
 	potential = {
 		OR = {
@@ -24,11 +29,18 @@ district_city = {
 			uses_district_set = shattered_ring_world
 		}
 		exists = owner
-		owner = { is_regular_empire = yes }
+		owner = {
+			OR = {
+				is_regular_empire = yes
+				is_country_type = primitive
+			}
+		}
 	}
 	allow = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 	conversion_ratio = 1
 	convert_to = {
