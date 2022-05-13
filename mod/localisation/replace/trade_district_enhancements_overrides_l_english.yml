@@ -4,3 +4,5 @@
  district_srw_commercial_desc: "A district of offices and factories where goods are manufactured and sold.\n\nAttracts more £job_merchant£ §Y$job_merchant_plural$§! when the ring segment is designated as a §Y$col_srw_trade$§!."
  tr_prosperity_interstellar_franchising_desc: "§Y$district_city_plural$§! provide §Y1§! additional £job_clerk£ §Y$job_clerk$ Job§!.\n$pc_habitat$ §Y$district_hab_commercial_plural$§!, $pc_ringworld_habitable$ §Y$district_rw_commercial_plural$§! and $pc_city$ §Y$district_arcology_housing_plural$§! also produce additional £job_clerk£ §Y$job_clerk$ Jobs§!."
  col_ring_mix_desc: "An immense ringworld, its massive area spread between all matters of production"
+ col_habitat_trade_desc: "An artificial deep-space arcology dedicated to trade\n\nImproves the effects of §Y$district_hab_commercial_plural$§!"
+ col_ring_trade_desc: "If you can't buy it here, it either doesn't exist or you didn't really want it anyway\n\nImproves the effects of §Y$district_rw_commercial_plural$§!"
