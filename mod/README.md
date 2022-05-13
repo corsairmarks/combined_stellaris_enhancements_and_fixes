@@ -10,7 +10,7 @@ Machine Worlds owned by regular empires now have a planetary modifier (visible o
 
 ## Compatibility
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit `d_resource_consolidation_1` (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
@@ -53,6 +53,10 @@ Overriding the district, colony designation, and deposit causes the game to log 
     * Districts are no longer full-file overwrites!
     * Only the relevant `district_industrial` district is overridden
     * Integrate additional changes from 3.3 to overridden content
+* 4.0.0 Update for Stellaris version 3.4 "Cepheus"
+    * Use memory optimization feature for effects and triggers
+    * Update overridden Machine World Factory to account for sector automation
+    * Neutral and Hostile Machine Worlds negate the resettlement bonus chance (which was added to Machine Worlds in 3.4)
 
 ## Source Code
 
