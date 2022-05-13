@@ -27,7 +27,7 @@ Planets converted to tomb worlds this way are not eligible for the random events
 
 ## Compatibility
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 
@@ -60,6 +60,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Memorialist trigger is built in to the game now, so remove implementation from this mod
     * Fix bug where Terraforming Candidate modifier was not removed when terraforming to a Tomb World
     * Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility](https://steamcommunity.com/workshop/filedetails/?id=2766967251) - no functionality changes, but the logic is now much easier for the add-on to reuse
+* 4.0.0 Update for Stellaris version 3.4 "Cepheus" - use memory optimization feature for effects and triggers
 
 ## Source Code
 
