@@ -3,7 +3,7 @@
 ###################
 
 # Modified: No longer requires an empire to have an Anglers civic; allows any non-gestalt to employ Anglers if they somehow have the job available (such as from an Aquaponics Farm)
-# Modified: Weight factor increases by 1.25 for having Thrifty or Numistic Administration, make the job weight slightly higher in order to attract farmers into switching
+# Modified: Make the job weight slightly higher in order to attract farmers into switching, if any are present
 angler = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
@@ -28,76 +28,44 @@ angler = {
 		produces = {
 			food = 8
 		}
+		produces = {
+			trigger = { planet = { has_planet_flag = has_produce_requisitorium } }
+			food = @requisitorium_food_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_food
+		produces = {
+			trigger = { planet = { has_planet_flag = has_produce_requisitorium } }
+			food = @requisitorium_food_overlord
+		}
 	}
 
 	triggered_planet_modifier = {
+		potential = { always = yes }
 		modifier = {
 			trade_value_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_thrifty
-		}
-		modifier = {
-			trade_value_add = 0.5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_trait = trait_nuumismatic_administration
-		}
-		modifier = {
-			trade_value_add = 0.2
+			mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
 		}
 	}
 
 	weight = {
 		weight = @worker_job_weight
-		modifier = {
-			factor = 3
-			has_trait = trait_agrarian
-		}
+		mult = value:job_weights_modifier|JOB|angler|RESOURCE|food|
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
 		modifier = {
 			factor = 10
 			is_enslaved = yes
 			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
 		}
 		modifier = {
 			factor = 0.25
 			can_take_servant_job = yes
 		}
 		modifier = {
-			factor = 0.5
-			has_trait = trait_zombie
-		}
-		modifier = {
-			factor = 1.5
-			has_trait = trait_syncretic_proles
-		}
-		modifier = {
-			factor = 1.4
-			has_trait = trait_presapient_proles
-		}
-		modifier = {
-			factor = 1.1
-			OR = {
-				has_trait = trait_robust
-				has_trait = trait_robot_efficient_processors
-			}
-		}
-		modifier = {
-			factor = 1.25
-			has_trait = trait_thrifty
-		}
-		modifier = {
-			factor = 1.25
-			has_trait = trait_nuumismatic_administration
-		}
-		modifier = {
-			add = 2
+			add = 5
 			exists = planet
 			planet = {
 				has_available_jobs = angler
