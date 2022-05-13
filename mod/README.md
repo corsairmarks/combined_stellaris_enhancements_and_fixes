@@ -12,11 +12,12 @@ Adds one event that fires at game start.  This event calculates the value of eac
 
 Compatible with practically anything.  Limitations: this mod is hard-coded to understand the amount of edict fund given by built-in game effects only, because the modifier value does not seem eligible for export and use in script.  That means it will **not** account for custom traits/civics/etc that also add edict fund or changes to the amount of fund granted by the built-in effects.
 
-Build for Stellaris version 3.3 "Libra."  Not compatible with achievements - however, you can start an Ironman game with this mod active, exit and disable the mod, and then resume your game.  That _should_ allow you to earn achievements, because the game doesn't seem to track whether mods have ever been active for a game, just if the checksum is modified when you earn the achievement.
+Build for Stellaris version 3.4 "Cepheus."  Not compatible with achievements - however, you can start an Ironman game with this mod active, exit and disable the mod, and then resume your game.  That _should_ allow you to earn achievements, because the game doesn't seem to track whether mods have ever been active for a game, just if the checksum is modified when you earn the achievement.
 
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.1.0 Flagged as compatible with Stellaris 3.4 "Cepheus" - no actual changes
 
 ## Source Code
 
