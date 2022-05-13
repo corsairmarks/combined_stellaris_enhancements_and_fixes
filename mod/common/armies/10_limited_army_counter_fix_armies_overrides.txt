@@ -22,9 +22,11 @@ titanic_assault_army = {
 			energy = 1
 		}
 	}
+	potential_country = {
+		has_country_flag = titanic_life_soldiers
+	}
 	potential = {
-		owner = { has_country_flag = titanic_life_soldiers }
-		planet = { has_planet_flag = titanic_life_can_build }
+		has_planet_flag = titanic_life_can_build
 	}
 	allow = {
 		custom_tooltip = {
@@ -38,6 +40,13 @@ titanic_assault_army = {
 	}
 	on_unqueued = {
 		owner = { decrement_titanic_life_soldier_queued_count = yes }
+	}
+	ai_weight = {
+		base = 125
+		modifier = {
+			set = 0
+			has_available_titanic_life_capacity = no
+		}
 	}
 }
 
@@ -60,8 +69,10 @@ titanic_azizian_assault_army = {
 			energy = 1
 		}
 	}
+	potential_country = {
+		has_country_flag = titanic_azizian_soldiers
+	}
 	potential = {
-		owner = { has_country_flag = titanic_azizian_soldiers }
 		planet = { has_planet_flag = titanic_azizian_can_build }
 	}
 	allow = {
@@ -76,6 +87,13 @@ titanic_azizian_assault_army = {
 	}
 	on_unqueued = {
 		owner = { decrement_titanic_azizian_soldier_queued_count = yes }
+	}
+	ai_weight = {
+		base = 125
+		modifier = {
+			set = 0
+			has_available_titanic_azizian_capacity = no
+		}
 	}
 }
 
@@ -98,9 +116,9 @@ imperial_legion = {
 			energy = 3
 		}
 	}
-	potential = {
+	potential_country = {
 		is_active_resolution = resolution_emperor_imperial_legions
-		owner = { is_galactic_emperor = yes }
+		is_galactic_emperor = yes
 	}
 	allow = {
 		custom_tooltip = {
@@ -114,5 +132,12 @@ imperial_legion = {
 	}
 	on_unqueued = {
 		owner = { decrement_imperial_legion_soldier_queued_count = yes }
+	}
+	ai_weight = {
+		base = 500
+		modifier = {
+			set = 0
+			has_available_imperial_legion_capacity = no
+		}
 	}
 }
