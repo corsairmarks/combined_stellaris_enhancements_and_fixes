@@ -5,6 +5,7 @@ should_swap_extra_high_priests = {
 		has_designation = col_bureau_spiritualist
 		has_designation = col_habitat_bureau_spiritualist
 	}
+	exists = owner
 	owner = {
 		is_regular_empire = yes
 		is_megacorp = no
@@ -17,7 +18,14 @@ should_swap_extra_nobles = {
 	OR = {
 		has_designation = col_bureau
 		has_designation = col_habitat_bureau
+		AND = {
+			is_sector_capital = yes
+			should_swap_extra_high_priests = no
+			should_swap_extra_head_researchers = no
+			should_swap_extra_merchants = no
+		}
 	}
+	exists = owner
 	owner = {
 		is_regular_empire = yes
 		is_megacorp = no
@@ -38,6 +46,7 @@ should_swap_extra_head_researchers = {
 		has_designation = col_ecu_research
 		has_designation = col_ring_research
 	}
+	exists = owner
 	owner = {
 		is_regular_empire = yes
 		is_megacorp = no
