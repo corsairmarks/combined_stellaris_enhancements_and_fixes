@@ -20,7 +20,7 @@ Although only loosely-related to this mod's main purpose, it also adds an event 
 
 Compatible with any mod that does not overwrite the same buildings.  For mods that overwrite all the capital buildings, this mod's buildings will likely take precedence.  Might have problems with other mods that remove the expected colony types, but I highly doubt any mods do that.
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 ### Recommended Companion Mods
 
@@ -57,6 +57,7 @@ This mod also supports colony designations from my mods [Enhanced Trade District
 * 1.1.0 Aristocratic Elite gains Noble Estates on their homeworld, as long as it does not already have one and there is room to add a building
     * Bugfix: refer to the right civic for Aristocratic Elite job swaps
 * 1.1.1 Fix bug when checking if a country is the Galactic Emperor
+* 2.0.0 Update for Stellaris version 3.4 "Cepheus" - use memory optimization feature for triggers
 
 ## Source Code
 

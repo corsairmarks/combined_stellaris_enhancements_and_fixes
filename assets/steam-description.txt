@@ -17,7 +17,7 @@ Although only loosely-related to this mod's main purpose, it also adds an event 
 [h2]Compatibility[/h2]
 Compatible with any mod that does not overwrite the same buildings.  For mods that overwrite all the capital buildings, this mod's buildings will likely take precedence.  Might have problems with other mods that remove the expected colony types, but I highly doubt any mods do that.
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 [h3]Recommended Companion Mods[/h3]
 [list]
