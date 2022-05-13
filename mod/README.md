@@ -1,6 +1,6 @@
 # Overview
 
-Do you wish your Trade Stations and Commercial Ring Worlds had a little more "oomph?"  Or maybe you're disappointed with how far ahead Ecumenopolis Commercial Worlds got with my mod [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991).  Then this mod is for you!  The Trade Station and Commercial Ring World colony designations now also boost the build-speed of commercial buildings and the relevant commercial districts by 25% as well as the  overall trade value by 20%.  That is the boost as the Ecumenopolis Commercial designation.
+Do you wish your Trade Stations and Commercial Ring Worlds had a little more "oomph?"  Or maybe you're disappointed with how far ahead Ecumenopolis Commercial Worlds got with my mod [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991).  Then this mod is for you!  The Trade Station and Commercial Ring World colony designations now also boost the build-speed of commercial buildings and the relevant commercial districts by 25% as well as the  overall trade value by 20%.  That is the same boost as the Ecumenopolis Commercial designation.
 
 Additionally, Trade Districts and Commercial Segments now provide more Merchant jobs and fewer Clerk jobs as long as the colony designation is Trade Station or Commercial Ring World respectively.  But wait, there's more!  Empires with the Merchant Guilds civic will find that more Merchants replace Clerks.  But wait, there's _even_ more!  Megacorps replace some Clerks with an Executive(s) and Manager(s).  And if that wasn't enough, we'll throw in positive interaction with the "Commercial Enterprise" tradition for another/more Merchant(s) and the "Interstellar Franchising" tradition for another/more Clerk(s) or Manager(s).
 
@@ -17,13 +17,13 @@ Also updates the regular City districts to provide part of a Merchant or Executi
 
 ## Compatibility
 
-Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony types and existing trade-related districts: `district_city`, `district_srw_commercial`, `district_hab_commercial`, `district_rw_city`, and `district_rw_commercial`.  Despite vastly improved compatibility via Stellaris version 3.3 "Libra," this mod remains separate from [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) because viewing Commercial Arcologies now requires a UI mod, and this mod does not.
+Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony types and existing trade-related districts: `district_city`, `district_srw_commercial`, `district_hab_commercial`, `district_rw_city`, and `district_rw_commercial`.  This mod is separate from [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) because viewing Commercial Arcologies requires a UI mod, and this mod does not.
 
-This mod will not work well with other mods that make changes to the same colony designations or districts.  Overhaul mods commonly make changes to districts, but are more likely to overwrite the entire file.  Due to how Stellaris file-loading works, change from this mod will overwrite code from full-file district overwrites and apply the verion of commercial districts from this mod.  That's good for thi mod, but could interfere with other modifications bade by other mods.
+This mod will not work well with other mods that make changes to the same colony designations or districts.  Overhaul mods commonly make changes to districts, but are more likely to overwrite the entire file.  Due to how Stellaris file-loading works, change from this mod will overwrite code from full-file district overwrites and apply the version of commercial districts from this mod.  That's good for this mod, but could interfere with other modifications made by other mods.
 
 Compatible with Planetary Diversity and Gigastructural Engineering (does not modify Gigas districts, but does exclude these districts from spawning on the wrong things).
 
-Built for Stellaris version 3.3 "Libra."  Not compatible with achievements.
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
 
 ### Recommended Companion Mods
 
@@ -38,14 +38,14 @@ This mod can be safely added to your savegame after the game has started.  Becau
 Overwriting a colony type or district produces an error log.  Expect to see eight entries in error.log similar to these:
 
 ```
-[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_city already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 5
-[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_srw_commercial already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 169
-[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_hab_commercial already exists, using the one at  file: common/districts/13_trade_district_enhancements_habitat_district_overrides.txt line: 5
-[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_rw_city already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 8
-[00:24:04][game_singleobjectdatabase.h:147]: Object with key: district_rw_commercial already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 116
-[00:24:05][game_singleobjectdatabase.h:147]: Object with key: col_city already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 10
-[00:24:05][game_singleobjectdatabase.h:147]: Object with key: col_habitat_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 128
-[00:24:05][game_singleobjectdatabase.h:147]: Object with key: col_ring_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 357
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_city already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 5
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_srw_commercial already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 181
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_hab_commercial already exists, using the one at  file: common/districts/13_trade_district_enhancements_habitat_district_overrides.txt line: 5
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_rw_city already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 8
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_rw_commercial already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 117
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: col_city already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 10
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: col_habitat_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 71
+[16:41:32][game_singleobjectdatabase.h:148]: Object with key: col_ring_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 103
 ```
 
 ## Changelog
@@ -70,6 +70,13 @@ Overwriting a colony type or district produces an error log.  Expect to see eigh
     * Integrate additional changes from 3.3 to overridden content
     * Add compatibility for Gigastructural Engineering: districts from this mod are prohibited on gigastructures, habitat-specific districts from this mod are allowed on Interstellar habitats and Gas Giant Habitats
 * 2.0.1 Add global flag to indicate that this mod is installed
+* 3.0.0 Update for Stellaris version 3.4 "Cepheus"
+    * Integrate underlying district changes
+    * Better code for the trade-based colony designations
+    * Use memory optimization feature for triggers
+    * Replace old automation with an enhanced version of the new trade colony plan
+    * Add automation specifically for Commercial Shattered Ring Worlds
+    * Trade colony designations now indicate that they improve the relevant trade district type
 
 ## Source Code
 
