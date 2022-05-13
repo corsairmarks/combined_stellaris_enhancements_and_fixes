@@ -12,6 +12,8 @@ Requires the Aquatics DLC.
 
 Overwrites the built-in Hydroponics Farms building (`building_hydroponics_farm`) in order for it to be upgradeable to Aquaponics Farms.  Also overwrites the built-in Angler job (`angler`) so that any empire can work Angler jobs.
 
+Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+
 ## Known Issues
 
 Overriding a building, job, or trigger causes the game to log errors noting the overrides.  Expect to see three lines in the error.log file like these:
@@ -27,6 +29,9 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
 * 1.0.0 Initial version
 * 1.0.1 Update name to be plural
 * 1.0.2 Add override for the trigger `has_any_farming_district_or_buildings`, which helps the AI not get stuck in loops of creating/demolishing Food Processing buildings
+* 2.0.0 Update for Stellaris version 3.4 "Cepheus"
+    * Use memory optimization feature for a trigger
+    * Update `angler` job with changes from base game
 
 ## Source Code
 
