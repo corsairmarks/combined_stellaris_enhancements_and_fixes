@@ -1,5 +1,6 @@
 # THIS = country
 increment_titanic_life_soldier_count = {
+	optimize_memory
 	change_variable = {
 		which = titanic_life_soldier_count
 		value = 1
@@ -8,6 +9,7 @@ increment_titanic_life_soldier_count = {
 
 # THIS = country
 increment_titanic_azizian_soldier_count = {
+	optimize_memory
 	change_variable = {
 		which = titanic_azizian_soldier_count
 		value = 1
@@ -16,6 +18,7 @@ increment_titanic_azizian_soldier_count = {
 
 # THIS = country
 increment_imperial_legion_soldier_count = {
+	optimize_memory
 	change_variable = {
 		which = imperial_legion_soldier_count
 		value = 1
@@ -24,6 +27,7 @@ increment_imperial_legion_soldier_count = {
 
 # THIS = country
 increment_titanic_life_soldier_queued_count = {
+	optimize_memory
 	change_variable = {
 		which = titanic_life_soldier_queued_count
 		value = 1
@@ -32,6 +36,7 @@ increment_titanic_life_soldier_queued_count = {
 
 # THIS = country
 increment_titanic_azizian_soldier_queued_count = {
+	optimize_memory
 	change_variable = {
 		which = titanic_azizian_soldier_queued_count
 		value = 1
@@ -40,6 +45,7 @@ increment_titanic_azizian_soldier_queued_count = {
 
 # THIS = country
 increment_imperial_legion_soldier_queued_count = {
+	optimize_memory
 	change_variable = {
 		which = imperial_legion_soldier_queued_count
 		value = 1
@@ -49,6 +55,7 @@ increment_imperial_legion_soldier_queued_count = {
 # THIS = country
 # event_target:removed_army = army
 decrement_titanic_life_soldier_count = {
+	optimize_memory
 	if = {
 		limit = {
 			check_variable = {
@@ -70,6 +77,7 @@ decrement_titanic_life_soldier_count = {
 # THIS = country
 # event_target:removed_army = army
 decrement_titanic_azizian_soldier_count = {
+	optimize_memory
 	if = {
 		limit = {
 			check_variable = {
@@ -91,6 +99,7 @@ decrement_titanic_azizian_soldier_count = {
 # THIS = country
 # event_target:removed_army = army
 decrement_imperial_legion_soldier_count = {
+	optimize_memory
 	if = {
 		limit = {
 			check_variable = {
@@ -111,6 +120,7 @@ decrement_imperial_legion_soldier_count = {
 
 # THIS = country
 decrement_titanic_life_soldier_queued_count = {
+	optimize_memory
 	if = {
 		limit = {
 			check_variable = {
@@ -127,6 +137,7 @@ decrement_titanic_life_soldier_queued_count = {
 
 # THIS = country
 decrement_titanic_azizian_soldier_queued_count = {
+	optimize_memory
 	if = {
 		limit = {
 			check_variable = {
@@ -143,6 +154,7 @@ decrement_titanic_azizian_soldier_queued_count = {
 
 # THIS = country
 decrement_imperial_legion_soldier_queued_count = {
+	optimize_memory
 	if = {
 		limit = {
 			check_variable = {
