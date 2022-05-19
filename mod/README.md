@@ -57,9 +57,10 @@ This mod also supports colony designations from my mods [Enhanced Trade District
 * 1.1.0 Aristocratic Elite gains Noble Estates on their homeworld, as long as it does not already have one and there is room to add a building
     * Bugfix: refer to the right civic for Aristocratic Elite job swaps
 * 1.1.1 Fix bug when checking if a country is the Galactic Emperor
-* 2.0.0 Update for Stellaris version 3.4 "Cepheus"
+* 2.0.0 Update for Stellaris version 3.4.2 "Cepheus"
     * Use memory optimization feature for triggers
     * Update habitat capital building with deficit changes
+* 2.1.0 Update for Stellaris version 3.4.3 "Cepheus" - apply underlying fix for duplicate alloy deficit penalty (remove it from the habitat capital building)
 
 ## Source Code
 
