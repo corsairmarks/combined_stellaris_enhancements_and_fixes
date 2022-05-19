@@ -91,6 +91,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Account for subterranean empires
     * Fix bug that was likely causing 0 weight for the Agrarian and Lithorian Idyll special housing technologies
     * Integrate underlying changes from 3.4 to overridden content
+* 5.1.0 Add effects and triggers to improve district swaps
 
 ## Source Code
 
