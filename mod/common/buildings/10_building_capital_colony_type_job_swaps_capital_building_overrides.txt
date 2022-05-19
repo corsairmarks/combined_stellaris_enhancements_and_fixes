@@ -953,21 +953,6 @@ building_hab_major_capital = {
 		potential = {
 			exists = owner
 			owner = {
-				any_situation = {
-					is_situation_type = situation_alloys_deficit
-					current_situation_approach = deficit_approach_cut_maintenance
-				}
-			}
-		}
-		modifier = {
-			planet_stability_add = -50
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
 				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
