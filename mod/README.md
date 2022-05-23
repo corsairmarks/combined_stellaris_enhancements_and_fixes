@@ -86,6 +86,7 @@ This mod can be safely added or removed from your savegame after the game has st
     * Previous ringworld conquest conversion still exists for non-standard-sized ringworlds (not size 10)
     * Finally update the example screenshots
 * 5.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate base game changes
+* 5.1.0 Minor trigger and effect enhancements
 
 ## Source Code
 
