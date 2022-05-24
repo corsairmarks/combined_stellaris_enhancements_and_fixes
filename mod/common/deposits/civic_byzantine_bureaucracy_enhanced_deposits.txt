@@ -23,7 +23,7 @@ d_civic_byzantine_bureaucracy_capital = {
 		job_magistrate_add = 1
 	}
 
-	# intentionally disable since the T3 capital building doesn't add a swapped job
+	# intentionally disabled since the T3 capital building doesn't add a swapped job
 	# triggered_planet_modifier = {
 	# 	potential = {
 	# 		exists = sector
