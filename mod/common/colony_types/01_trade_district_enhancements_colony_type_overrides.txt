@@ -10,17 +10,10 @@
 col_city = {
 	icon = GFX_colony_type_urban
 	potential = {
+		tde_uses_regular_district_set = yes
+		is_special_colony_type = no
 		exists = owner
 		owner = { is_regular_empire = yes }
-		NOR = {
-			uses_district_set = city_world
-			uses_district_set = ring_world
-			uses_district_set = habitat
-		}
-		tde_uses_planetary_diversity_special_district_set = no
-		tde_uses_gigastructural_engineering_habitat_district_set = no
-		tde_uses_gigastructural_engineering_gigastructure_district_set = no
-		is_special_colony_type = no
 	}
 	planet_modifier = {
 		planet_structures_upkeep_mult = -0.10
@@ -72,9 +65,8 @@ col_habitat_trade = {
 	icon = GFX_colony_type_habitat_trade
 	potential = {
 		OR = {
-			uses_district_set = habitat
+			tde_uses_district_set_habitat = yes
 			uses_district_set = pdarchive
-			tde_uses_gigastructural_engineering_habitat_district_set = yes
 		}
 		exists = owner
 		owner = { is_gestalt = no }
@@ -103,7 +95,7 @@ col_habitat_trade = {
 col_ring_trade = {
 	icon = GFX_colony_type_ring_trade
 	potential = {
-		uses_district_set = ring_world
+		tde_uses_district_set_ring_world = yes
 		exists = owner
 		owner = { is_gestalt = no }
 	}

@@ -1,20 +1,28 @@
+# does not check arcology districts
 # this = planet
 tde_uses_planetary_diversity_special_district_set = {
 	optimize_memory
 	OR = {
 		uses_district_set = pdarchive
+		uses_district_set = pdplanethab
+		uses_district_set = pdbioforge
+		uses_district_set = pdbiofort
+		uses_district_set = pdmachinefactory
+		uses_district_set = pdmachinefort
+		uses_district_set = pdfloraforge
+	}
+}
+
+# this = planet
+tde_uses_planetary_diversity_arcology_district_set = {
+	optimize_memory
+	OR = {
+		uses_district_set = pdecocity
 		uses_district_set = pdpalacearc
 		uses_district_set = pdmilarc
 		uses_district_set = pdcorpoarc
-		uses_district_set = pdplanethab
 		uses_district_set = pdbiocapital
-		uses_district_set = pdbioforge
-		uses_district_set = pdbiofort
 		uses_district_set = pdmachinecapital
-		uses_district_set = pdmachinefactory
-		uses_district_set = pdmachinefort
-		uses_district_set = pdecocity
-		uses_district_set = pdfloraforge
 	}
 }
 
@@ -29,6 +37,18 @@ tde_uses_gigastructural_engineering_habitat_district_set = {
 }
 
 # this = planet
+tde_uses_gigastructural_engineering_ring_world_district_set = {
+	optimize_memory
+	OR = {
+		uses_district_set = maginot_ringworld_districts
+		uses_district_set = penrose_ring
+		has_planet_flag = giga_penrose
+		uses_district_set = interstellar_ring
+		has_planet_flag = giga_interstellar_ring
+	}
+}
+
+# this = planet
 tde_uses_gigastructural_engineering_gigastructure_district_set = {
 	optimize_memory
 	OR = {
@@ -36,14 +56,48 @@ tde_uses_gigastructural_engineering_gigastructure_district_set = {
 		uses_district_set = giga_birch
 		uses_district_set = giga_planet
 		uses_district_set = maginot_world_districts
-		uses_district_set = maginot_ringworld_districts
-		uses_district_set = penrose_ring
-		has_planet_flag = giga_penrose
-		uses_district_set = interstellar_ring
-		has_planet_flag = giga_interstellar_ring
 		uses_district_set = virtual_ring
 		uses_district_set = virtual_ring_industry
 		has_planet_flag = giga_virtual_industry
 		uses_district_set = acot_giga_void_sphere
+		uses_district_set = giga_frameworld
 	}
+}
+
+# this = planet
+tde_uses_district_set_city_world = {
+	optimize_memory
+	OR = {
+		uses_district_set = city_world
+		tde_uses_planetary_diversity_arcology_district_set = yes
+	}
+}
+
+# this = planet
+tde_uses_district_set_habitat = {
+	optimize_memory
+	OR = {
+		uses_district_set = habitat
+		uses_district_set = pdplanethab
+		tde_uses_gigastructural_engineering_habitat_district_set = yes
+	}
+}
+
+# this = planet
+tde_uses_district_set_ring_world = {
+	optimize_memory
+	OR = {
+		uses_district_set = ring_world # includes PD exotic rings
+		tde_uses_gigastructural_engineering_ring_world_district_set = yes
+	}
+}
+
+# this = planet
+tde_uses_regular_district_set = {
+	optimize_memory
+	tde_uses_district_set_city_world = no
+	tde_uses_district_set_habitat = no
+	tde_uses_district_set_ring_world = no
+	tde_uses_planetary_diversity_special_district_set = no
+	tde_uses_gigastructural_engineering_gigastructure_district_set = no
 }
