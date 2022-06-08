@@ -1,4 +1,4 @@
-# variable match values from common/districts/04_ringworld_districts.txt
+# variables match values from common/districts/04_ringworld_districts.txt
 @rw_cost = 1000
 @rw_cost_sr = 50
 @rw_maintenance = 5
@@ -150,45 +150,30 @@ district_rw_commercial = {
 	}
 	planet_modifier = {
 		planet_housing_add = 10
-		job_merchant_add = 2
 		job_clerk_add = 6
+		job_merchant_add = 2
 	}
 	triggered_planet_modifier = {
 		potential = { colony_type = col_ring_trade }
 		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
+			job_clerk_add = -2
+			job_merchant_add = 2
 		}
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_merchant_guilds }
-		}
-		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_corporate_dominion }
-		}
-		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_megacorp = yes }
+			owner = {
+				OR = {
+					has_valid_civic = civic_merchant_guilds
+					has_valid_civic = civic_corporate_dominion
+					is_megacorp = yes
+				}
+			}
 		}
 		modifier = {
 			job_clerk_add = -2
-			job_executive_add = 1
-			job_manager_add = 1
+			job_merchant_add = 2
 		}
 	}
 	triggered_planet_modifier = {
@@ -212,55 +197,16 @@ district_rw_commercial = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			colony_type = col_ring_trade
-			owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+			owner = { is_megacorp = yes }
 		}
 		modifier = {
+			# having 1 clerk => manager and 1 merchant => executive is more fair on a large district, where it's less of an overall power bump
 			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_merchant_guilds
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
-		}
-		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_corporate_dominion
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
-		}
-		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_megacorp = yes
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
-		}
-		modifier = {
-			job_clerk_add = -2
-			job_executive_add = 1
+			job_merchant_add = -1
 			job_manager_add = 1
+			job_executive_add = 1
 		}
 	}
-
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -277,11 +223,23 @@ district_rw_commercial = {
 		text = job_merchant_effect_desc
 	}
 	triggered_desc = {
-		trigger = { owner = { is_megacorp = yes } }
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
 		text = job_manager_effect_desc
 	}
 	triggered_desc = {
-		trigger = { owner = { is_megacorp = yes } }
+		trigger = {
+			exists = owner
+			owner = {
+				is_megacorp = yes
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
 		text = job_executive_effect_desc
 	}
 }

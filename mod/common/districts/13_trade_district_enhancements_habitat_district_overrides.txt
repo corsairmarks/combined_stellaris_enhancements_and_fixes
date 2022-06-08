@@ -38,8 +38,19 @@ district_hab_commercial = {
 		potential = {
 			exists = owner
 			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_clerk_add = -3
+			job_manager_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
 				has_active_tradition = tr_prosperity_interstellar_franchising
-				is_megacorp = no
 				is_fallen_empire_spiritualist = no
 			}
 		}
@@ -52,10 +63,7 @@ district_hab_commercial = {
 			exists = owner
 			owner = {
 				has_active_tradition = tr_prosperity_interstellar_franchising
-				OR = {
-					is_megacorp = yes
-					is_fallen_empire_spiritualist = yes
-				}
+				is_fallen_empire_spiritualist = yes
 			}
 		}
 		modifier = {
@@ -98,73 +106,24 @@ district_hab_commercial = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_merchant_guilds }
-		}
-		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
-				# sorry no double-dipping if you have the old corp-lite civic with merchant guilds
 				OR = {
 					has_valid_civic = civic_merchant_guilds
 					has_valid_civic = civic_corporate_dominion
+					is_megacorp = yes
 				}
-				has_active_tradition = tr_mercantile_commercial_enterprise
 			}
 		}
 		modifier = {
 			job_clerk_add = -1
 			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_corporate_dominion }
-		}
-		modifier = {
-			job_clerk_add = -1
-			job_merchant_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_megacorp = yes }
-		}
-		modifier = {
-			job_clerk_add = -2
-			job_executive_add = 1
-			job_manager_add = 1
 		}
 	}
 	triggered_desc = {
 		text = job_clerk_effect_desc
 		trigger = {
+			exists = owner
 			owner = { is_fallen_empire_spiritualist = no }
-			NAND = {
-				colony_type = col_habitat_trade
-				owner = {
-					OR = {
-						# megacorps remove all clerks
-						is_megacorp = yes
-						# corp-lite or guilds removes all clerks unless the bonus clerk tradition is selected
-						AND = {
-							OR = {
-								has_valid_civic = civic_corporate_dominion
-								has_valid_civic = civic_merchant_guilds
-							}
-							NOT = { has_active_tradition = tr_prosperity_interstellar_franchising }
-							has_active_tradition = tr_mercantile_commercial_enterprise
-						}
-					}
-				}
-			}
 		}
 	}
 	triggered_desc = {
@@ -174,7 +133,14 @@ district_hab_commercial = {
 				colony_type = col_habitat_trade
 				AND = {
 					exists = owner
-					owner = { has_active_tradition = tr_mercantile_commercial_enterprise }
+					owner = {
+						OR = {
+							has_active_tradition = tr_mercantile_commercial_enterprise
+							has_valid_civic = civic_merchant_guilds
+							has_valid_civic = civic_corporate_dominion
+							is_megacorp = yes
+						}
+					}
 				}
 			}
 		}
@@ -183,19 +149,7 @@ district_hab_commercial = {
 		text = job_manager_effect_desc
 		trigger = {
 			exists = owner
-			owner = {
-				OR = {
-					is_megacorp = yes
-					is_fallen_empire_spiritualist = yes
-				}
-			}
-		}
-	}
-	triggered_desc = {
-		text = job_executive_effect_desc
-		trigger = {
-			exists = owner
-			owner = { is_megacorp = yes }
+			owner = { is_fallen_empire_spiritualist = yes }
 		}
 	}
 }
