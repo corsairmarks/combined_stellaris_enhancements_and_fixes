@@ -71,6 +71,7 @@ col_habitat_trade = {
 		exists = owner
 		owner = { is_gestalt = no }
 	}
+	custom_tooltip = col_habitat_trade_custom
 	planet_modifier = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
 		planet_building_commercial_megaplex_build_speed_mult = 0.25
@@ -99,6 +100,7 @@ col_ring_trade = {
 		exists = owner
 		owner = { is_gestalt = no }
 	}
+	custom_tooltip = col_ring_trade_custom
 	planet_modifier = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
 		planet_building_commercial_megaplex_build_speed_mult = 0.25
