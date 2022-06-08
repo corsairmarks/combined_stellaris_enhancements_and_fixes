@@ -2,13 +2,13 @@
 
 Do you wish your Trade Stations and Commercial Ring Worlds had a little more "oomph?"  Or maybe you're disappointed with how far ahead Ecumenopolis Commercial Worlds got with my mod [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991).  Then this mod is for you!  The Trade Station and Commercial Ring World colony designations now also boost the build-speed of commercial buildings and the relevant commercial districts by 25% as well as the  overall trade value by 20%.  That is the same boost as the Ecumenopolis Commercial designation.
 
-Additionally, Trade Districts and Commercial Segments now provide more Merchant jobs and fewer Clerk jobs as long as the colony designation is Trade Station or Commercial Ring World respectively.  But wait, there's more!  Empires with the Merchant Guilds civic will find that more Merchants replace Clerks.  But wait, there's _even_ more!  Megacorps replace some Clerks with an Executive(s) and Manager(s).  And if that wasn't enough, we'll throw in positive interaction with the "Commercial Enterprise" tradition for another/more Merchant(s) and the "Interstellar Franchising" tradition for another/more Clerk(s) or Manager(s).
+Additionally, Trade Districts and Commercial Segments now provide more Merchant jobs and fewer Clerk jobs as long as the colony designation is Trade Station or Commercial Ring World respectively.  But wait, there's more!  MegaCorps and empires with the Merchant Guilds civic will find that more Merchants replace Clerks.  But wait, there's _even_ more!  One ringworld Commercial Segments, MegaCorps replace a Clerk with a Manager and a Merchant with an Executive (all those Clerks need bossing around).  And if that wasn't enough, we'll throw in positive interaction with the "Commercial Enterprise" tradition for another/more Merchant(s) and the "Interstellar Franchising" tradition for another/more Clerk(s).
 
 # Changes
 
-Overwrites the Trade Station and Commercial Ring World colony designations and the Trade District (for both habitats and the special district for Origin: Shattered Ring) and Commercial Segment district.  The colony designations enable some job swaps from Clerks to Merchants (extra swaps with the "Commercial Enterprise" tradition).  The designations also provide a small amount of bonus trade if you meet varying hidden, trade-related conditions - see if you can figure them out.  The districts themselves also swap jobs if the owner has Civic: Merchant Guilds, Civic: Corporate Dominion (for people who don't own Megacorp), and Megacorps.
+Overwrites the Trade Station and Commercial Ring World colony designations and the Trade District (for both habitats and the special district for Origin: Shattered Ring) and Commercial Segment district.  The colony designations enable some job swaps from Clerks to Merchants (extra swaps with the "Commercial Enterprise" tradition).  The designations also provide a small amount of bonus trade if you meet varying hidden, trade-related conditions - see if you can figure them out.  The districts themselves also swap jobs if the owner has Civic: Merchant Guilds, Civic: Corporate Dominion (for people who don't own MegaCorp), and MegaCorps.
 
-Also updates the regular City districts to provide part of a Merchant or Executive job for Trade Guilds, Corporate Dominions, or Megacorps as appropriate when combined with the "Commercial Enterprise" tradition.  Ringworld city segments no longer receive bonus clerks from the "Interstellar Franchising" tradition - instead, those clerk jobs are provided by the commercial segments.
+Also updates the regular City districts to provide part of a Merchant or Executive job for Merchant Guilds, Corporate Dominions, or MegaCorps as appropriate when combined with the "Commercial Enterprise" tradition.  Ringworld city segments no longer receive bonus clerks from the "Interstellar Franchising" tradition - instead, those clerk jobs are provided by the Commercial Segments.
 
 ## Localisation
 
@@ -77,6 +77,11 @@ Overwriting a colony type or district produces an error log.  Expect to see eigh
     * Replace old automation with an enhanced version of the new trade colony plan
     * Add automation specifically for Commercial Shattered Ring Worlds
     * Trade colony designations now indicate that they improve the relevant trade district type
+* 3.1.0 Balance update - reduce the overwhelming **Trade Power™** generated for minimal effort and also simplify triggered job swaps
+    * Update support for Planetary Diversity and Gigastructural Engineering
+    * Reduce the amount of free MegaCorp job swaps; post-unity-rework they are much more powerful than in the past
+    * City districts grant 1 Merchant job per 4 districts for regular and MegaCorp empires, instead of substituting Executives for MegaCorps
+    * Simplify the Merchant/Executive/Manager jobs swaps for commercial districts - things got a little out of hand
 
 ## Source Code
 
