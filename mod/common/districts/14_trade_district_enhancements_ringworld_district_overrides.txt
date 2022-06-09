@@ -167,7 +167,6 @@ district_rw_commercial = {
 				OR = {
 					has_valid_civic = civic_merchant_guilds
 					has_valid_civic = civic_corporate_dominion
-					is_megacorp = yes
 				}
 			}
 		}
