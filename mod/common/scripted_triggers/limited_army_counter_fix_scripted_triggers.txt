@@ -1,5 +1,6 @@
 # THIS = country
 has_available_titanic_life_capacity = {
+	optimize_memory
 	is_variable_set = titanic_life_soldier_count
 	is_variable_set = titanic_life_soldier_queued_count
 	is_variable_set = titanic_life_soldier_maximum
@@ -12,6 +13,7 @@ has_available_titanic_life_capacity = {
 
 # THIS = country
 has_available_titanic_azizian_capacity = {
+	optimize_memory
 	is_variable_set = titanic_azizian_soldier_count
 	is_variable_set = titanic_azizian_soldier_queued_count
 	check_variable_arithmetic = {
@@ -23,6 +25,7 @@ has_available_titanic_azizian_capacity = {
 
 # THIS = country
 has_available_imperial_legion_capacity = {
+	optimize_memory
 	is_variable_set = imperial_legion_soldier_count
 	is_variable_set = imperial_legion_soldier_queued_count
 	check_variable_arithmetic = {
