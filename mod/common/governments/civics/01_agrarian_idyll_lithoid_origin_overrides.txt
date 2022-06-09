@@ -28,7 +28,18 @@ civic_agrarian_idyll = {
 		name = civic_agrarian_idyll_lithoid
 		description = civic_tooltip_agrarian_idyll_lithoid_effects
 		trigger = {
-			local_human_species_class = LITHOID
+			# No scope in empire creation but still checked. Otherwise, country scope is valid and the latter condition is checked
+			# (borrowed from civic_hive_devouring_swarm)
+			OR = {
+				AND = {
+					is_scope_valid = no
+					local_human_species_class = LITHOID
+				}
+				AND = {
+					is_scope_valid = yes
+					is_lithoid_empire = yes
+				}
+			}
 		}
 	}
 }

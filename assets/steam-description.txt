@@ -12,7 +12,7 @@ You only need the contents of the [b]mod[/b] folder for a local install, disrega
 This is a bundle of mods to resolve compatibility issues if you want to use them all together. Please check each individual mod for the effects and any known issues. The numbers indicate which version of a particular mod is contained in this mod (which also corresponds to the version tag in its [b]git[/b] repository).
 [list]
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2622411084]Aesthetic Terraform Stations[/url] at 3.0.0
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] at 4.0.1
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] at 5.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2654043078]Basic Planetview: More Districts[/url] at 3.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2768297949]Building: Aquaponics Farms[/url] at 2.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2774084358]Civic: Philosopher King - Enhanced[/url] at 1.1.0

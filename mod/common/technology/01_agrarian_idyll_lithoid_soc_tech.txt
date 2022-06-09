@@ -11,7 +11,7 @@ tech_housing_agrarian_idyll_lithoid = {
 	}
 
 	weight_modifier = {
-		factor = value:tech_weight_likelihood
+		factor = 1.5
 		modifier = {
 			factor = 0
 			NAND = {
@@ -20,7 +20,7 @@ tech_housing_agrarian_idyll_lithoid = {
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = leader_trait_expertise_statecraft

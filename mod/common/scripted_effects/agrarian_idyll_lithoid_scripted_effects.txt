@@ -1,13 +1,8 @@
 # this = planet
 ail_add_planet_appropriate_mining_district = {
+	optimize_memory
 	if = {
-		limit = {
-			OR = {
-				is_planet_class = pc_hive
-				is_planet_class = pc_machine
-				is_planet_class = pc_shattered_ring_habitable
-			}
-		}
+		limit = { ail_planet_uses_district_mining_uncapped = yes }
 		add_district = district_mining_uncapped
 	}
 	else = {
@@ -17,17 +12,9 @@ ail_add_planet_appropriate_mining_district = {
 
 # this = planet
 ail_add_planet_appropriate_farming_district = {
+	optimize_memory
 	if = {
-		limit = {
-			OR = {
-				is_planet_class = pc_hive
-				is_planet_class = pc_shattered_ring_habitable
-				AND = {
-					is_planet_class = pc_ocean
-					owner = { is_anglers_empire = yes }
-				}
-			}
-		}
+		limit = { ail_planet_uses_district_farming_uncapped = yes }
 		add_district = district_farming_uncapped
 	}
 	else = {
@@ -36,40 +23,53 @@ ail_add_planet_appropriate_farming_district = {
 }
 
 # this = planet
-# MAXIMUM = the maximum amount of farming districts to allow (should be >= 0)
-ail_max_farming_districts = {
+ail_remove_planet_appropriate_farming_district = {
+	optimize_memory
 	if = {
-		limit = {
-			OR = {
-				is_planet_class = pc_hive
-				is_planet_class = pc_shattered_ring_habitable
-				AND = {
-					is_planet_class = pc_ocean
-					owner = { is_anglers_empire = yes }
-				}
+		limit = { ail_planet_uses_district_farming_uncapped = yes }
+		remove_district = district_farming_uncapped
+	}
+	else = {
+		remove_district = district_farming
+	}
+}
+
+# this = planet
+# NUM_RETAIN = the maximum amount of farming districts to retain (should be >= 0)
+ail_swap_farming_to_mining_districts = {
+	optimize_memory
+	if = {
+		limit = { ail_planet_uses_district_farming_uncapped = no }
+		export_trigger_value_to_variable = {
+			trigger = num_districts
+			parameters = {
+				type = district_farming
 			}
-		}
-		while = {
-			limit = {
-				num_districts = {
-					type = district_farming_uncapped
-					value > $MAXIMUM$
-				}
-			}
-			remove_district = district_farming_uncapped
-			ail_add_planet_appropriate_mining_district = yes
+			variable = num_district_farming
 		}
 	}
 	else = {
-		while = {
-			limit = {
-				num_districts = {
-					type = district_farming
-					value > $MAXIMUM$
-				}
+		export_trigger_value_to_variable = {
+			trigger = num_districts
+			parameters = {
+				type = district_farming_uncapped
 			}
-			remove_district = district_farming
-			ail_add_planet_appropriate_mining_district = yes
+			variable = num_district_farming
 		}
 	}
+	while = {
+		limit = {
+			check_variable = {
+				which = num_district_farming
+				value > $NUM_RETAIN$
+			}
+		}
+		ail_remove_planet_appropriate_farming_district = yes
+		ail_add_planet_appropriate_mining_district = yes
+		subtract_variable = {
+			which = num_district_farming
+			value = 1
+		}
+	}
+	clear_variable = num_district_farming
 }
