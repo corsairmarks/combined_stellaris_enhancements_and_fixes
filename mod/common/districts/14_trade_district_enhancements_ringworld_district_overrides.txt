@@ -225,20 +225,14 @@ district_rw_commercial = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				is_megacorp = yes
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
+			owner = { is_megacorp = yes }
 		}
 		text = job_manager_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				is_megacorp = yes
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
+			owner = { is_megacorp = yes }
 		}
 		text = job_executive_effect_desc
 	}
