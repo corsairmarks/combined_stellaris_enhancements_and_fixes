@@ -2,7 +2,7 @@ namespace = primitive_conquest_enhancements
 
 # NB NOTE: after more investigation, this event adds districts and buildings a bit more intelligently,
 # following the example in observation.3009 (which now points here). It also accounts for conquering lithoid
-# primitives, which logically wouldn't have needed farming, and phototrophic/raditrophic  species which need
+# primitives, which logically wouldn't have needed farming, and phototrophic/raditrophic species which need
 # more energy.  The base game has addressed some of these issues, but not the main primitive conquest event.
 # fired by on_primitive_planet_transferred
 # root = planet (after ownership change)
@@ -37,9 +37,9 @@ planet_event = {
 			limit = { uses_district_set = ring_world }
 			if = { 
 				limit = { owner = { has_valid_civic = civic_machine_servitor } }
-				add_building_if_free = { BUILDING = building_organic_sanctuary }
+				pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 			}
-			add_primitive_conquest_rw_urban_district = yes
+			pce_add_rw_urban_district = yes
 			if = {
 				limit = {
 					OR = {
@@ -49,12 +49,12 @@ planet_event = {
 				}
 				if = {
 					limit = { event_target:conquered_primitive_civilization = { is_lithoid_empire = no } }
-					add_district_if_free = { DISTRICT = district_rw_farming }
-					add_building_if_free = { BUILDING = building_chemical_plant }
+					pce_add_district_if_free = { DISTRICT = district_rw_farming }
+					pce_add_building_if_free = { BUILDING = building_chemical_plant }
 				}
 				else_if = {
 					limit = { owner = { is_gestalt = no } }
-					add_primitive_conquest_rw_urban_district = yes
+					pce_add_rw_urban_district = yes
 					if = {
 						limit = {
 							OR = {
@@ -83,11 +83,11 @@ planet_event = {
 					}
 					if = { 
 						limit = { owner = { has_valid_civic = civic_machine_servitor } }
-						add_building_if_free = { BUILDING = building_organic_sanctuary }
+						pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 					}
 					else_if = {
 						limit = { owner = { is_gestalt = no } }
-						add_building_if_free = { BUILDING = building_factory_1 }
+						pce_add_building_if_free = { BUILDING = building_factory_1 }
 					}
 					if = {
 						limit = {
@@ -98,10 +98,10 @@ planet_event = {
 						}
 						if = { 
 							limit = { owner = { has_valid_civic = civic_machine_servitor } }
-							add_building_if_free = { BUILDING = building_organic_sanctuary }
+							pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 						}
 						else = {
-							add_building_if_free = { BUILDING = building_foundry_1 }
+							pce_add_building_if_free = { BUILDING = building_foundry_1 }
 							add_primitive_conquest_science_building_if_free = yes
 						}
 						if = {
@@ -113,12 +113,12 @@ planet_event = {
 							}
 							if = {
 								limit = { owner = { is_gestalt = no } }
-								add_district_if_free = { DISTRICT = district_rw_commercial }
+								pce_add_district_if_free = { DISTRICT = district_rw_commercial }
 							}
 							else = {
-								add_district_if_free = { DISTRICT = district_rw_generator }
+								pce_add_district_if_free = { DISTRICT = district_rw_generator }
 							}
-							add_building_if_free = { BUILDING = building_crystal_plant }
+							pce_add_building_if_free = { BUILDING = building_crystal_plant }
 						}
 					}
 				}
@@ -127,10 +127,10 @@ planet_event = {
 		else = {
 			if = { 
 				limit = { owner = { has_valid_civic = civic_machine_servitor } }
-				add_building_if_free = { BUILDING = building_organic_sanctuary }
+				pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 			}
-			add_primitive_conquest_urban_district = yes
-			add_primitive_conquest_food_district = yes
+			pce_add_urban_district = yes
+			pce_add_primitive_species_appropriate_food_district = yes
 			if = {
 				limit = {
 					OR = {
@@ -138,8 +138,8 @@ planet_event = {
 						from = { has_bronze_age_or_greater = yes }
 					}
 				}
-				add_primitive_conquest_food_district = yes
-				add_primitive_conquest_mining_district = yes
+				pce_add_primitive_species_appropriate_food_district = yes
+				pce_add_planet_appropriate_mining_district = yes
 				if = {
 					limit = {
 						OR = {
@@ -147,7 +147,7 @@ planet_event = {
 							from = { has_iron_age_or_greater = yes }
 						}
 					}
-					add_primitive_conquest_mining_district = yes
+					pce_add_planet_appropriate_mining_district = yes
 					if = {
 						limit = {
 							OR = {
@@ -155,7 +155,7 @@ planet_event = {
 								from = { has_renaissance_age_or_greater = yes }
 							}
 						}
-						add_primitive_conquest_food_district = yes
+						pce_add_primitive_species_appropriate_food_district = yes
 						if = {
 							limit = {
 								OR = {
@@ -165,12 +165,12 @@ planet_event = {
 							}
 							if = { 
 								limit = { owner = { has_valid_civic = civic_machine_servitor } }
-								add_building_if_free = { BUILDING = building_organic_sanctuary }
+								pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 							}
 							else = {
-								add_primitive_conquest_urban_district = yes
+								pce_add_urban_district = yes
 							}
-							add_district_if_free = { DISTRICT = district_industrial }
+							pce_add_district_if_free = { DISTRICT = district_industrial }
 							if = {
 								limit = {
 									OR = {
@@ -178,9 +178,9 @@ planet_event = {
 										from = { has_industrial_age_or_greater = yes }
 									}
 								}
-								add_primitive_conquest_generator_district = yes
-								add_primitive_conquest_generator_district = yes
-								add_district_if_free = { DISTRICT = district_industrial }
+								pce_add_planet_appropriate_commercial_or_generator_district = yes
+								pce_add_planet_appropriate_commercial_or_generator_district = yes
+								pce_add_district_if_free = { DISTRICT = district_industrial }
 								if = {
 									limit = {
 										OR = {
@@ -190,7 +190,7 @@ planet_event = {
 									}
 									if = { 
 										limit = { owner = { has_valid_civic = civic_machine_servitor } }
-										add_building_if_free = { BUILDING = building_organic_sanctuary }
+										pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 									}
 									else = {
 										add_primitive_conquest_science_building_if_free = yes
@@ -204,7 +204,7 @@ planet_event = {
 										}
 										if = { 
 											limit = { owner = { NOT = { has_valid_civic = civic_machine_servitor } } }
-											add_primitive_conquest_urban_district = yes
+											pce_add_urban_district = yes
 										}
 										if = {
 											limit = {

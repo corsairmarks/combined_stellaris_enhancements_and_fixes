@@ -1,6 +1,7 @@
 # Determines whether this country is at or higher than Stone Age
 # this = country
 has_stone_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = stone_age
 		has_country_flag = bronze_age
@@ -19,6 +20,7 @@ has_stone_age_or_greater = {
 # Determines whether this country is at or higher than Bronze Age
 # this = country
 has_bronze_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = bronze_age
 		has_country_flag = iron_age
@@ -36,6 +38,7 @@ has_bronze_age_or_greater = {
 # Determines whether this country is at or higher than Iron Age
 # this = country
 has_iron_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = iron_age
 		has_country_flag = late_medieval_age
@@ -52,6 +55,7 @@ has_iron_age_or_greater = {
 # Determines whether this country is at or higher than Late Medieval Age
 # this = country
 has_late_medieval_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = late_medieval_age
 		has_country_flag = renaissance_age
@@ -67,6 +71,7 @@ has_late_medieval_or_greater = {
 # Determines whether this country is at or higher than Renaissance Age
 # this = country
 has_renaissance_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = renaissance_age
 		has_country_flag = steam_age
@@ -81,6 +86,7 @@ has_renaissance_age_or_greater = {
 # Determines whether this country is at or higher than Steam Age
 # this = country
 has_steam_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = steam_age
 		has_country_flag = industrial_age
@@ -94,6 +100,7 @@ has_steam_age_or_greater = {
 # Determines whether this country is at or higher than Industrial Age
 # this = country
 has_industrial_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = industrial_age
 		has_country_flag = machine_age
@@ -106,6 +113,7 @@ has_industrial_age_or_greater = {
 # Determines whether this country is at or higher than Machine Age
 # this = country
 has_machine_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = machine_age
 		has_country_flag = atomic_age
@@ -117,6 +125,7 @@ has_machine_age_or_greater = {
 # Determines whether this country is at or higher than Atomic Age
 # this = country
 has_atomic_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = atomic_age
 		has_country_flag = early_space_age
@@ -127,6 +136,7 @@ has_atomic_age_or_greater = {
 # Determines whether this country is at or higher than Early Space Age
 # this = country
 has_early_space_age_or_greater = {
+	optimize_memory
 	OR = {
 		has_country_flag = early_space_age
 		has_country_flag = primitives_can_into_space
@@ -136,5 +146,65 @@ has_early_space_age_or_greater = {
 # Determines whether this country was previously a primitive country that achieved interstellar spaceflight.
 # this = country
 can_into_space = {
+	optimize_memory
 	has_country_flag = primitives_can_into_space
+}
+
+
+# this = planet
+pce_planet_uses_district_mining_uncapped = {
+	optimize_memory
+	OR = {
+		uses_district_set = hive_world
+		uses_district_set = machine_world
+		uses_district_set = shattered_ring_world
+		AND = {
+			uses_district_set = standard
+			exists = owner
+			owner = { is_subterranean_empire = yes }
+		}
+	}
+}
+
+# this = planet
+pce_planet_uses_district_srw_commercial = {
+	uses_district_set = shattered_ring_world
+	exists = owner
+	owner = {
+		is_hive_empire = no
+		is_machine_empire = no
+		is_fallen_empire = no
+	}
+}
+
+# this = planet
+pce_planet_uses_district_generator_uncapped = {
+	optimize_memory
+	OR = {
+		uses_district_set = hive_world
+		uses_district_set = machine_world
+		uses_district_set = shattered_ring_world
+	}
+	exists = owner
+	owner = {
+		OR = {
+			is_hive_empire = yes
+			is_machine_empire = yes
+			is_fallen_empire = yes
+		}
+	}
+}
+
+# this = planet
+pce_planet_uses_district_farming_uncapped = {
+	optimize_memory
+	OR = {
+		uses_district_set = hive_world
+		uses_district_set = shattered_ring_world
+		AND = {
+			is_planet_class = pc_ocean
+			exists = owner
+			owner = { is_anglers_empire = yes }
+		}
+	}
 }
