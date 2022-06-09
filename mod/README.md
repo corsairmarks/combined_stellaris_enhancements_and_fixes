@@ -37,7 +37,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 4.1.0)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 2.2.0)
 * [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/workshop/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 3.0.0)
-* [Start with Unity Fund](https://steamcommunity.com/sharedfiles/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 1.0.0)
+* [Start with Unity Fund](https://steamcommunity.com/sharedfiles/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 1.1.0)
 * ["Terraform" to Tomb World](https://steamcommunity.com/workshop/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 4.0.0)
 * [Yet Another Planetary Sky Fix](https://steamcommunity.com/workshop/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 3.0.0)
 
