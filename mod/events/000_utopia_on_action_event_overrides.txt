@@ -90,7 +90,7 @@ country_event = {
 					}
 					change_species = event_target:latent_psionic_species
 				}
-				every_owned_ship = {
+				every_controlled_ship = {
 					limit = {
 						is_ship_class = shipclass_colonizer
 						species = { is_exact_same_species = event_target:non_psionic_species }
@@ -129,7 +129,7 @@ country_event = {
 			}
 			country_event = { id = utopia.2602 }
 		}
-
+		remove_country_flag = shroudwalker_enclave_diplomacy_engaged # Resets to fellow psionic greetings
 	}
 	option = {
 		name = utopia.2600.a
@@ -232,7 +232,7 @@ country_event = {
 					}
 					change_species = event_target:psionic_species
 				}
-				every_owned_ship = {
+				every_controlled_ship = {
 					limit = {
 						is_ship_class = shipclass_colonizer
 						species = { is_exact_same_species = event_target:latent_psionic_species }
