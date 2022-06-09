@@ -1,5 +1,6 @@
 # THIS = country
 is_eligible_for_machine_world_prompt = {
+	optimize_memory
 	is_regular_empire = yes
 	NOT = { has_country_flag = deassimilated_machine_world_offered_policy_change }
 	any_owned_planet = { is_planet_class = pc_machine }
@@ -7,6 +8,7 @@ is_eligible_for_machine_world_prompt = {
 
 # THIS = country
 should_machine_world_prompt_policy = {
+	optimize_memory
 	is_eligible_for_machine_world_prompt = yes
 	OR = {
 		has_ai_technology = yes
@@ -18,6 +20,7 @@ should_machine_world_prompt_policy = {
 
 # THIS = country
 has_ai_technology = {
+	optimize_memory
 	OR = {
 		has_technology = tech_synthetic_workers
 		has_technology = tech_sapient_ai
@@ -27,6 +30,7 @@ has_ai_technology = {
 # THIS = country, potential AI user
 # PREV = country, country with comms
 has_communications_with_ai_using_country = {
+	optimize_memory
 	has_communications = PREV
 	OR = {
 		has_ai_technology = yes

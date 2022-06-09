@@ -83,5 +83,16 @@ col_mac_factory = {
 			num_buildings = { type = building_factory_2 value = 0 }
 			num_buildings = { type = building_factory_3 value = 0 }
 		}
+		modifier = {
+			factor = 0
+			exists = sector
+			sector = {
+				has_any_sector_focus = yes
+				NOR = {
+					has_sector_focus = "manufacturing"
+					has_sector_focus = "balanced"
+				}
+			}
+		}
 	}
 }

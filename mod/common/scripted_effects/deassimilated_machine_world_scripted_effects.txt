@@ -1,5 +1,6 @@
 # THIS = planet
 clear_deassimilated_machine_world_modifiers = {
+	optimize_memory
 	if = {
 		limit = { has_modifier = deassimilated_machine_world_cooperative }
 		remove_modifier = deassimilated_machine_world_cooperative
@@ -16,6 +17,7 @@ clear_deassimilated_machine_world_modifiers = {
 
 # THIS = planet
 add_deassimilated_machine_world_modifier = {
+	optimize_memory
 	if = {
 		limit = {
 			owner = {
@@ -55,6 +57,7 @@ add_deassimilated_machine_world_modifier = {
 
 # THIS = country
 reassign_deassimilated_machine_world_modifiers_country = {
+	optimize_memory
 	every_owned_planet = {
 		limit = { is_planet_class = pc_machine }
 		clear_deassimilated_machine_world_modifiers = yes

@@ -11,6 +11,7 @@ deassimilated_machine_world_neutral = {
 	job_replicator_add = -1
 	planet_jobs_produces_mult = -0.1
 	pop_housing_usage_mult = 0.1
+	planet_resettlement_unemployed_destination_mult = -0.5
 }
 
 deassimilated_machine_world_hostile = {
@@ -22,4 +23,5 @@ deassimilated_machine_world_hostile = {
 	planet_districts_upkeep_mult = 0.1
 	planet_jobs_produces_mult = -0.2
 	pop_housing_usage_mult = 0.1
+	planet_resettlement_unemployed_destination_mult = -1
 }
