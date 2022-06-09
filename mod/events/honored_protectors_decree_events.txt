@@ -121,54 +121,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors0 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 0
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors0 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors0 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors0 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors0 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors0 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors0 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors0 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors0 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors0 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors0 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|0|
 		}
 	}
 	option = {
@@ -188,54 +141,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors1 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 1
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors1 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors1 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors1 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors1 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors1 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors1 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors1 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors1 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors1 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors1 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|1|
 		}
 	}
 	option = {
@@ -255,54 +161,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors2 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 2
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors2 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors2 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors2 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors2 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors2 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors2 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors2 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors2 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors2 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors2 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|2|
 		}
 	}
 	option = {
@@ -322,54 +181,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors3 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 3
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors3 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors3 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors3 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors3 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors3 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors3 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors3 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors3 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors3 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors3 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|3|
 		}
 	}
 	option = {
@@ -389,54 +201,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors4 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 4
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors4 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors4 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors4 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors4 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors4 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors4 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors4 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors4 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors4 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors4 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|4|
 		}
 	}
 	option = {
@@ -456,54 +221,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors5 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 5
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors5 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors5 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors5 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors5 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors5 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors5 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors5 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors5 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors5 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors5 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|5|
 		}
 	}
 	option = {
@@ -523,54 +241,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors6 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 6
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors6 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors6 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors6 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors6 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors6 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors6 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors6 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors6 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors6 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors6 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|6|
 		}
 	}
 	option = {
@@ -590,54 +261,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors7 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 7
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors7 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors7 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors7 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors7 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors7 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors7 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors7 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors7 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors7 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors7 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|7|
 		}
 	}
 	option = {
@@ -657,54 +281,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors8 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 8
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors8 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors8 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors8 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors8 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors8 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors8 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors8 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors8 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors8 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors8 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|8|
 		}
 	}
 	option = {
@@ -724,54 +301,7 @@ country_event = {
 		hidden_effect = { event_target:potential_protectors9 = { set_species_honored_protectors = yes } }
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				check_variable = {
-					which = num_subset_potential_protectors
-					value <= 9
-				}
-			}
-			modifier = {
-				factor = 0
-				event_target:potential_protectors9 = { has_trait = trait_weak }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors9 = { has_trait = trait_presapient_proles }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors9 = { has_trait = trait_limited_regeneration }
-			}
-			modifier = {
-				factor = 1.5
-				event_target:potential_protectors9 = { has_trait = trait_cybernetic }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors9 = { has_trait = trait_strong }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors9 = { has_trait = trait_resilient }
-			}
-			modifier = {
-				factor = 2
-				event_target:potential_protectors9 = { has_trait = trait_presapient_earthbound }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors9 = { has_trait = trait_very_strong }
-			}
-			modifier = {
-				factor = 3
-				event_target:potential_protectors9 = { has_trait = trait_lithoid }
-			}
-			modifier = {
-				factor = 10
-				has_country_flag = is_eldanaer_stellar_authority
-				event_target:potential_protectors9 = { has_species_flag = zdremite_species@event_target:protected_country }
-			}
+			mult = value:dynamic_military_trait_weight|DISCRIMINATOR|9|
 		}
 	}
 	option = {

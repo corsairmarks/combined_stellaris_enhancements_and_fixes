@@ -2,6 +2,7 @@
 # this = leader, with new species
 # from = species, previous
 btml_leader_spawned_match_gender_to_species = {
+	optimize_memory
 	if = {
 		limit = { btml_leader_species_gender_change_requires_clone = no }
 		species = {
@@ -76,6 +77,7 @@ btml_leader_spawned_match_gender_to_species = {
 # this = leader, to be cloned
 # GENDER = gender for the clone (indeterminable/female/male)
 btml_clone_leader_with_gender = {
+	optimize_memory
 	if = {
 		limit = { NOT = { gender = $GENDER$ } } # last minute sanity check to make sure we're only replacing leaders who are changing gender
 		save_event_target_as = leader_to_clone

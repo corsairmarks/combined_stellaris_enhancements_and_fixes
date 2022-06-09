@@ -1,0 +1,150 @@
+
+# value:dynamic_military_trait_weight|DISCRIMINATOR|0|
+# this = species
+dynamic_military_trait_weight = {
+	base = 1
+	modifier = {
+		multiply = 1.5
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_presapient_proles }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_limited_regeneration }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_cybernetic }
+	}
+	modifier = {
+		multiply = 2
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_strong }
+	}
+	modifier = {
+		multiply = 2
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_resilient }
+	}
+	modifier = {
+		multiply = 2
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_presapient_earthbound }
+	}
+	modifier = {
+		multiply = 3
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_very_strong }
+	}
+	modifier = {
+		multiply = 3
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_trait = trait_lithoid }
+	}
+	modifier = {
+		multiply = 10
+		has_country_flag = is_eldanaer_stellar_authority
+		event_target:potential_protectors$DISCRIMINATOR$ = { has_species_flag = zdremite_species@event_target:protected_country }
+	}
+	modifier = {
+		set = 0
+		OR = {
+			event_target:potential_protectors$DISCRIMINATOR$ = {
+				OR = {
+					has_trait = trait_weak
+					btml_is_species_smart_enough_for_leadership = no
+				}
+			}
+			check_variable = {
+				which = num_subset_potential_protectors
+				value <= $DISCRIMINATOR$
+			}
+		}
+	}
+}
+
+
+# value:dynamic_biotrophy_leader_trait_weight|DISCRIMINATOR|0|
+# this = species
+dynamic_biotrophy_leader_trait_weight = {
+	base = 1
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_cybernetic }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_erudite }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_psionic }
+	}
+	modifier = {
+		multiply = 1.35
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_latent_psionic }
+	}
+	modifier = {
+		multiply = 2
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_brainslug }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_clone_soldier_fertile }
+	}
+	# modifier = {
+	# 	multiply = 1.5
+	# 	has_global_flag = leader_species_traits_installed
+	# 	event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_nuumismatic_administration }
+	# }
+	modifier = {
+		multiply = 0.75
+		event_target:potential_advisors$DISCRIMINATOR$ = {
+			OR = {
+				has_trait = trait_fleeting
+				has_trait = trait_fleeting_lithoid
+			}
+		}
+	}
+	modifier = {
+		multiply = 1.1
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_survivor }
+	}
+	modifier = {
+		multiply = 1.1
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_limited_regeneration }
+	}
+	modifier = {
+		multiply = 1.25
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_enduring }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_venerable }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_lithoid }
+	}
+	modifier = {
+		multiply = 1.5
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_necrophage }
+	}
+	modifier = {
+		multiply = 0.75
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_slow_learners }
+	}
+	modifier = {
+		multiply = 1.25
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_quick_learners }
+	}
+	modifier = {
+		set = 0
+		OR = {
+			event_target:potential_advisors$DISCRIMINATOR$ = {
+				OR = {
+					btml_is_species_smart_enough_for_leadership = no
+					btml_has_species_trait_with_leader_trait = no
+				}
+			}
+			check_variable = {
+				which = num_subset_potential_advisors
+				value <= $DISCRIMINATOR$
+			}
+		}
+	}
+}
