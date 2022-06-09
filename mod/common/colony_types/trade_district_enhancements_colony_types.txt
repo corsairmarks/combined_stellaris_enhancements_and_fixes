@@ -15,12 +15,18 @@ col_srw_trade = {
 		uses_district_set = shattered_ring_world
 		is_special_colony_type = no
 	}
+	custom_tooltip = col_srw_trade_custom
 	planet_modifier = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
 		planet_building_commercial_megaplex_build_speed_mult = 0.25
 		planet_building_galactic_stock_exchange_build_speed_mult = 0.25
 		planet_district_srw_commercial_build_speed_mult = 0.25
 		trade_value_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = { always = yes }
+		trade_value_add = 1
+		mult = value:tde_trade_colony_bonus_trade
 	}
 	weight_modifier = {
 		modifier = {
@@ -38,55 +44,7 @@ col_srw_trade = {
 			num_free_districts = { type = district_srw_commercial value >= @free_districts_medium_threshold }
 		}
 		modifier = {
-			add = 2
-			has_designation = col_srw_trade
-		}
-		modifier = {
-			add = 2
-			num_buildings = {
-				type = building_commercial_zone
-				value > 2
-			}
-		}
-		modifier = {
-			add = 4
-			num_buildings = {
-				type = building_commercial_zone
-				value > 4
-			}
-		}
-		modifier = {
-			add = 2
-			num_buildings = {
-				type = building_commercial_megaplex
-				value > 1
-			}
-		}
-		modifier = {
-			add = 4
-			num_buildings = {
-				type = building_commercial_megaplex
-				value > 2
-			}
-		}
-		modifier = {
-			add = 2
-			exists = owner
-			owner = {
-				OR = {
-					has_valid_civic = civic_merchant_guilds
-					has_valid_civic = civic_corporate_dominion
-					is_megacorp = yes
-				}
-			}
-		}
-		modifier = {
-			add = 4
-			has_building = building_nuumismatic_shrine
-		}
-		modifier = {
-			add = 4
-			has_building = building_galactic_stock_exchange
+			add = value:tde_col_srw_trade_weight_multiplier
 		}
 		modifier = {
 			add = 2

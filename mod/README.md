@@ -24,7 +24,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Counter-Limited Armies Fix](https://steamcommunity.com/workshop/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 3.0.0)
 * [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 4.1.0)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/workshop/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 4.0.0)
-* [Enhanced Trade Districts and Designations](https://steamcommunity.com/workshop/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 2.0.0)
+* [Enhanced Trade Districts and Designations](https://steamcommunity.com/workshop/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 3.1.0)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 3.0.0)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 4.0.0)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.0.0)

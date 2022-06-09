@@ -1,0 +1,235 @@
+# value:tde_district_dynamic_weight|DISTRICT|district_arcology_commercial|
+# this = planet
+tde_district_dynamic_weight = {
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = add
+	}
+}
+
+# value:tde_building_dynamic_weight|BUILDING|building_commercial_zone|
+# this = planet
+tde_building_dynamic_weight = {
+	complex_trigger_modifier = {
+		trigger = num_buildings
+		parameters = {
+			type = $BUILDING$
+			disabled = no
+		}
+		mode = add
+	}
+}
+
+# value:tde_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
+# this = planet
+tde_building_dynamic_weight_tier_2 = {
+	add = value:tde_building_dynamic_weight|BUILDING|$BUILDING$|
+	mult = 2
+}
+
+# this = planet
+tde_trade_colony_bonus_trade = {
+	modifier = {
+		add = 4
+		solar_system = { has_trade_route = yes }
+	}
+	modifier = {
+		add = 4
+		exists = starbase
+		starbase = { has_starbase_building = offworld_trading_company }
+	}
+	modifier = {
+		add = 4
+		exists = starbase
+		starbase = { has_starbase_building = trader_proxy_office }
+	}
+	modifier = {
+		add = 2
+		exists = starbase
+		starbase = { has_starbase_building = transit_hub }
+	}
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		trigger_scope = starbase
+		parameters = {
+			type = trading_hub
+		}
+		mode = add
+	}
+}
+
+# this = planet
+tde_col_city_weight_multiplier = {
+	modifier = { 
+		add = 2
+		has_designation = col_city
+	}
+	# omits weight from districts intentionally, because the designation uses the ones copied from the base game
+	modifier = {
+		add = value:tde_building_dynamic_weight|BUILDING|building_commercial_zone|
+	}
+	modifier = {
+		add = value:tde_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
+	}
+	modifier = {
+		add = 2
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_merchant_guilds
+				has_valid_civic = civic_corporate_dominion
+				is_megacorp = yes
+			}
+		}
+	}
+	modifier = {
+		add = 4
+		has_building = building_galactic_stock_exchange
+	}
+	modifier = {
+		add = 4
+		has_building = building_nuumismatic_shrine
+	}
+	modifier = {
+		add = 4
+		has_global_flag = planetary_modifier_enhancements_installed
+		has_modifier = pm_planetary_mechanocalibrator
+	}
+}
+
+# this = planet
+tde_col_habitat_trade_weight_multiplier = {
+	modifier = {
+		add = 2
+		owner = {
+			has_monthly_income = {
+				resource = energy
+				value < 0
+			}
+		}
+	}
+	modifier = { 
+		add = 3
+		has_designation = col_habitat_trade
+	}
+	modifier = {
+		add = value:tde_district_dynamic_weight|DISTRICT|district_hab_commercial|
+	}
+	modifier = {
+		add = value:tde_building_dynamic_weight|BUILDING|building_commercial_zone|
+	}
+	modifier = {
+		add = value:tde_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
+	}
+	modifier = {
+		add = 2
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_merchant_guilds
+				has_valid_civic = civic_corporate_dominion
+				is_megacorp = yes
+			}
+		}
+	}
+	modifier = {
+		add = 4
+		has_building = building_galactic_stock_exchange
+	}
+	modifier = {
+		add = 4
+		has_building = building_nuumismatic_shrine
+	}
+	modifier = {
+		add = 4
+		has_global_flag = planetary_modifier_enhancements_installed
+		has_modifier = pm_planetary_mechanocalibrator
+	}
+	modifier = {
+		factor = 0.1
+		has_planet_flag = energy_habitat
+	}
+}
+
+# this = planet
+tde_col_ring_trade_weight_multiplier = {
+	modifier = { 
+		add = 100
+		has_designation = col_ring_trade
+	}
+	modifier = {
+		add = value:tde_district_dynamic_weight|DISTRICT|district_rw_commercial| # 100 per
+	}
+	modifier = {
+		add = value:tde_building_dynamic_weight|BUILDING|building_commercial_zone| # 50 per
+	}
+	modifier = {
+		add = value:tde_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex| # 50 per
+	}
+	modifier = {
+		add = 75
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_merchant_guilds
+				has_valid_civic = civic_corporate_dominion
+				is_megacorp = yes
+			}
+		}
+	}
+	modifier = {
+		add = 150
+		has_building = building_galactic_stock_exchange
+	}
+	modifier = {
+		add = 150
+		has_building = building_nuumismatic_shrine
+	}
+	modifier = {
+		add = 150
+		has_global_flag = planetary_modifier_enhancements_installed
+		has_modifier = pm_planetary_mechanocalibrator
+	}
+}
+
+# this = planet
+tde_col_srw_trade_weight_multiplier = {
+	modifier = { 
+		add = 2
+		has_designation = col_srw_trade
+	}
+	# omits weight from districts intentionally, because the designation uses the ones copied from the base game
+	modifier = {
+		add = value:tde_building_dynamic_weight|BUILDING|building_commercial_zone|
+	}
+	modifier = {
+		add = value:tde_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
+	}
+	modifier = {
+		add = 2
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_merchant_guilds
+				has_valid_civic = civic_corporate_dominion
+				is_megacorp = yes
+			}
+		}
+	}
+	modifier = {
+		add = 4
+		has_building = building_galactic_stock_exchange
+	}
+	modifier = {
+		add = 4
+		has_building = building_nuumismatic_shrine
+	}
+	modifier = {
+		add = 4
+		has_global_flag = planetary_modifier_enhancements_installed
+		has_modifier = pm_planetary_mechanocalibrator
+	}
+}
