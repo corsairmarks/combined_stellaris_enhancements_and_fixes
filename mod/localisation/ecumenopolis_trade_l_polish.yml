@@ -1,6 +1,7 @@
 ﻿l_polish:
  col_ecu_trade: "Handlowe Ekumenopolis"
- col_ecu_trade_desc: "Ogromne miasto-planeta, które specjalizuje się w nieustannej wymianie towarów, dóbr i instrumentach finansowych.\n\nUmożliwia budowę §Y$district_arcology_commercial_plural$§!"
+ col_ecu_trade_desc: "Ogromne miasto-planeta, które specjalizuje się w nieustannej wymianie towarów, dóbr i instrumentach finansowych."
+ col_ecu_trade_custom: "§Y$district_arcology_commercial_plural$§! przesuną dwo miejsce pracy z $job_clerk_plural$ do $job_merchant_plural$, jeśli to możliwe.\n\n"
  mod_planet_built_speed_mult_suffix: "Prędkość budowy"
  mod_planet_district_arcology_commercial_build_speed_mult: "$district_arcology_commercial$ $mod_planet_built_speed_mult_suffix$"
  mod_planet_building_commercial_zone_build_speed_mult: "$building_commercial_zone$ $mod_planet_built_speed_mult_suffix$"

@@ -1,5 +1,6 @@
 # this = planet
 et_uses_planetary_diversity_arcology_district_set = {
+	optimize_memory
 	OR = {
 		uses_district_set = pdecocity
 		uses_district_set = pdpalacearc
@@ -7,5 +8,14 @@ et_uses_planetary_diversity_arcology_district_set = {
 		uses_district_set = pdcorpoarc
 		uses_district_set = pdbiocapital
 		uses_district_set = pdmachinecapital
+	}
+}
+
+# this = planet
+et_uses_district_set_city_world = {
+	optimize_memory
+	OR = {
+		uses_district_set = city_world
+		et_uses_planetary_diversity_arcology_district_set = yes
 	}
 }

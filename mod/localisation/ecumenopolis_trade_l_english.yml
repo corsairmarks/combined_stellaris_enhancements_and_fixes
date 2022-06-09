@@ -1,6 +1,7 @@
 ﻿l_english:
  col_ecu_trade: "Ecumenopolis Commercial"
- col_ecu_trade_desc: "A vast city-planet that specializes in the continual exchange of commodities, goods, and financial instruments\n\nAllows construction of §Y$district_arcology_commercial_plural$§!"
+ col_ecu_trade_desc: "A vast city-planet that specializes in the continual exchange of commodities, goods, and financial instruments"
+ col_ecu_trade_custom: "§Y$district_arcology_commercial_plural$§! will shift two jobs from $job_clerk_plural$ to $job_merchant_plural$ if possible.\n\n"
  mod_planet_built_speed_mult_suffix: "Build Speed"
  mod_planet_district_arcology_commercial_build_speed_mult: "$district_arcology_commercial$ $mod_planet_built_speed_mult_suffix$"
  mod_planet_building_commercial_zone_build_speed_mult: "$building_commercial_zone$ $mod_planet_built_speed_mult_suffix$"

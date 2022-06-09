@@ -1,2 +1,4 @@
 ﻿l_russian:
  tr_mercantile_commercial_enterprise_desc: "£building£ §Y$building_commercial_zone$§! добавляют §Y1§! деятельность £job_merchant£ §Y$job_merchant$§!.\nТо же касается §Yкоммерческих сегментов§! миров-колец, §Yторговых районов§! орбитальных поселений, и §Yкоммерческих аркологий§! экуменополисов."
+ # was not updated in the base game - Merchants no longer produce Unity
+ job_merchant_effect_desc: "£job_merchant£ $job_merchant_plural$ превращают £consumer_goods£ §Y$consumer_goods$§! в £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! и £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
