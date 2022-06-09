@@ -4,19 +4,9 @@ This mod is a compilation of most of my other fixes and balance mods.  Please se
 
 Individual mods update first, then changes are merged here.
 
-## Included Mods Updated
-
-Three mods added for Stellaris version 3.3 "Libra:"
-
-1. Basic Planetview: More Districts - allows viewing more than 5 district types per planet, required because of the new unity-based arcologies from the base game pushing out Commercial Arcologies
-2. Building: Aquaponics Farms - a new mod that provides an upgrade path for Hydroponic Farms, extracted from Animated Eldar Portraits: Revisited
-3. Leader Traits: Synthetic Leader Traits for Machine Units - Machine Unit leaders gain the same traits as Synthetic leaders once their owner selects Synthetic Age
-
-And one mod has been removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix - the fixes from this mod were integrated into the base game
-
 # Major Update
 
-Versions 5.0.0 and above are fully updated for Stellaris version 3.3 "Libra" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [4.1.2](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/4.1.2).
+Versions 6.0.0 and above are fully updated for Stellaris version 3.4 "Cepheus" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [5.2.3](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/5.2.3).
 
 You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
 
@@ -26,7 +16,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 * [Aesthetic Terraform Stations](https://steamcommunity.com/workshop/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 2.1.0)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 4.0.1)
-* [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 2.0.0)
+* [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 3.0.0)
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 1.0.2)
 * [Civic: Philosopher King - Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) at 1.0.2)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 3.0.0)
@@ -72,7 +62,7 @@ Each of the source repositories above is added as a remote to this repository on
 
 # Compatibility
 
-Requires Stellaris version 3.3 "Libra" and disables achievements.
+Requires Stellaris version 3.4 "Cepheus" and disables achievements.
 
 Check each of the contained mods for an explicit list of incompatibility notes.  As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings.  Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
 
@@ -200,3 +190,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Building: Aquaponics Farms at 1.0.2
     * Deassimilate Machines at 3.1.0
     * Retain Leaders from Integrated Subjects at 4.1.0
+* 6.0.0 Update merged mods for Stellaris version 3.4 "Cepheus" (none added or removed)
