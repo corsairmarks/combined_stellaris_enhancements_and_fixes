@@ -365,7 +365,7 @@ country_event = {
 		}
 		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 	}
-	# keep mechanical only - non-assimilation
+	# keep robotic only - non-assimilation
 	option = {
 		name = keep_leaders.1.c
 		custom_tooltip = keep_leaders.1.c.tooltip
@@ -417,19 +417,13 @@ country_event = {
 			custom_tooltip = {
 				fail_text = ROBOTS_ARE_OUTLAWED_NO_X
 				OR = {
-					has_country_flag = synthetic_empire
 					has_policy_flag = robots_allowed
+					is_robot_empire = yes
 				}
 			}
 			custom_tooltip = {
 				fail_text = AI_IS_OUTLAWED_LEADER_NO_X
-				OR = {
-					has_country_flag = synthetic_empire
-					AND = {
-						has_policy_flag = robots_allowed
-						has_policy_flag = ai_full_rights
-					}
-				}
+				allows_ai_leaders = yes
 			}
 			custom_tooltip = {
 				fail_text = empire_is_xenophile_no_x
@@ -668,7 +662,7 @@ country_event = {
 			}
 		}
 	}
-	# keep mechanical only (nice) - non-assimilation
+	# keep robotic only (nice) - non-assimilation
 	option = {
 		name = keep_leaders.1.d
 		custom_tooltip = keep_leaders.1.d.tooltip
@@ -700,19 +694,13 @@ country_event = {
 			custom_tooltip = {
 				fail_text = ROBOTS_ARE_OUTLAWED_NO_X
 				OR = {
-					has_country_flag = synthetic_empire
 					has_policy_flag = robots_allowed
+					is_robot_empire = yes
 				}
 			}
 			custom_tooltip = {
 				fail_text = AI_IS_OUTLAWED_LEADER_NO_X
-				OR = {
-					has_country_flag = synthetic_empire
-					AND = {
-						has_policy_flag = robots_allowed
-						has_policy_flag = ai_full_rights
-					}
-				}
+				allows_ai_leaders = yes
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
@@ -875,13 +863,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			OR = {
-				hidden_trigger = { has_country_flag = synthetic_empire }
-				AND = {
-					has_policy_flag = robots_allowed
-					has_policy_flag = ai_full_rights
-				}
-			}
+			allows_ai_leaders = yes
 			hidden_trigger = {
 				is_regular_empire = yes
 				event_target:storage_owner = {
@@ -1408,7 +1390,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				has_full_ai_rights = yes
+				allows_ai_leaders = yes
 				event_target:storage_owner = {
 					any_owned_leader = {
 						is_eligible_transfer_leader_from_storage = yes
@@ -1443,6 +1425,7 @@ country_event = {
 		name = keep_leaders.1.k.hive
 		icon = {
 			icon = GFX_ap_evolutionary_mastery
+			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.gene.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.hive.tooltip
@@ -1489,6 +1472,7 @@ country_event = {
 		name = keep_leaders.1.k.unhive
 		icon = {
 			icon = GFX_ap_evolutionary_mastery
+			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.gene.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.unhive.tooltip
@@ -1546,6 +1530,7 @@ country_event = {
 		name = keep_leaders.1.k.psi
 		icon = {
 			icon = GFX_ap_transcendence
+			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.psi.icon.tooltip
 		}
 		if = {
@@ -1608,6 +1593,7 @@ country_event = {
 		name = keep_leaders.1.k.cyb
 		icon = {
 			icon = GFX_ap_the_flesh_is_weak
+			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.cyb.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.cyb.tooltip
@@ -1669,6 +1655,7 @@ country_event = {
 		name = keep_leaders.1.k.synth
 		icon = {
 			icon = GFX_ap_synthetic_evolution
+			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.synth.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.synth.tooltip
@@ -1767,6 +1754,7 @@ country_event = {
 		name = keep_leaders.1.k.unmach
 		icon = {
 			icon = GFX_icon_tech_sapient_ai_alternate
+			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.unmach.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.unmach.tooltip
@@ -1799,19 +1787,13 @@ country_event = {
 			custom_tooltip = {
 				fail_text = ROBOTS_ARE_OUTLAWED_NO_X
 				OR = {
-					has_country_flag = synthetic_empire
 					has_policy_flag = robots_allowed
+					is_robot_empire = yes
 				}
 			}
 			custom_tooltip = {
 				fail_text = AI_IS_OUTLAWED_LEADER_NO_X
-				OR = {
-					has_country_flag = synthetic_empire
-					AND = {
-						has_policy_flag = robots_allowed
-						has_policy_flag = ai_full_rights
-					}
-				}
+				allows_ai_leaders = yes
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
@@ -2219,7 +2201,7 @@ country_event = {
 					set_army_flag = keep_leaders_army_transport_fleet@fleet
 				}
 			}
-			every_owned_fleet = {
+			every_controlled_fleet = {
 				limit = { is_ship_class = shipclass_transport }
 				save_event_target_as = source_fleet
 				log = "[source_fleet.GetName] is a transport fleet"
@@ -2232,11 +2214,14 @@ country_event = {
 								set_fleet_flag = keep_leader_match_transport_fleet@event_target:source_fleet
 							}
 							save_event_target_as = target_fleet
-							set_name = "[source_fleet.GetName]"
+							set_name = {
+								key = keep_leaders.source_fleet_name
+								variable_string = "source_fleet.GetName"
+							}
 							set_owner = event_target:integrating_country
 							set_location = event_target:source_fleet
 							event_target:source_fleet = {
-								every_owned_ship = {
+								every_controlled_ship = {
 									save_event_target_as = source_ship
 									log = "transport [source_ship.GetName]"
 									event_target:target_fleet = {
@@ -2943,7 +2928,7 @@ country_event = {
 				else_if = {
 					limit = {
 						is_robotic_species = yes
-						event_target:potential_owner = { has_full_ai_rights = yes }
+						event_target:potential_owner = { allows_ai_leaders = yes }
 						is_bypass_leader_restriction_honored_protectors = yes
 					}
 					ensure_species_rights_and_take_ownership_of_leader = yes

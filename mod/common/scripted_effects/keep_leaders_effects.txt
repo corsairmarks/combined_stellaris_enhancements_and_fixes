@@ -2,15 +2,17 @@
 # event_target:potential_owner = country, overlord/infiltrator/planet-killer
 # event_target:former_owner = country, integrated subject/primitives/victims
 create_leader_storage_and_transfer_leaders = {
+	optimize_memory
 	# "arguments" for transfer_leader_to_storage
 	create_country = {
+		name = event_target:former_owner
+		adjective = event_target:former_owner
 		type = neutral_faction
 		species = event_target:former_owner
 		flag = event_target:former_owner
 		auto_delete = no
 		ignore_initial_colony_error = yes
 		effect = {
-			set_name = "\\[former_owner.GetRealName]"
 			set_country_flag = former_owner@event_target:former_owner
 			save_event_target_as = storage_owner
 			save_event_target_as = variable_storage
@@ -83,7 +85,13 @@ create_leader_storage_and_transfer_leaders = {
 		if = {
 			limit = { exists = ruler }
 			ruler = {
-				set_name = keep_leaders.former_ruler_name
+				set_name = {
+					key = keep_leaders.former_ruler_name
+					variable_string = "This.GetRegnalName"
+					variable_string = "This.GetRulerTitle"
+					# variable_string = "This.GetTitle"
+					variable_string = "former_owner.GetName"
+				}
 				set_leader_flag = former_ruler
 				save_event_target_as = integrated_ruler
 			}
@@ -129,7 +137,12 @@ create_leader_storage_and_transfer_leaders = {
 		if = {
 			limit = { exists = heir }
 			heir = {
-				set_name = keep_leaders.former_ruler_name
+				set_name = {
+					key = keep_leaders.former_heir_name
+					variable_string = "This.GetName"
+					# variable_string = "This.GetTitle"
+					variable_string = "former_owner.GetName"
+				}
 				set_leader_flag = former_heir
 				save_event_target_as = integrated_heir
 			}
@@ -192,6 +205,7 @@ create_leader_storage_and_transfer_leaders = {
 # this = planet (after ownership change)
 # from = country, former owner
 prepare_for_primitive_planet_transferred = {
+	optimize_memory
 	owner = { save_event_target_as = potential_owner }
 	from = {
 		set_country_flag = colossus_transfer_handled@prev
@@ -213,6 +227,7 @@ prepare_for_primitive_planet_transferred = {
 # event_target:potential_owner = country for whom the leader is being stored
 # event_target:storage_owner = country in which to store leaders
 transfer_leader_to_storage = {
+	optimize_memory
 	set_leader_flag = former_owner@owner
 	set_leader_flag = potential_owner@event_target:potential_owner
 	unassign_leader = THIS
@@ -223,6 +238,7 @@ transfer_leader_to_storage = {
 # event_target:former_owner = country that previously owned the leader
 # event_target:potential_owner = country for whom the leader is being stored
 set_leader_storage_flags = {
+	optimize_memory
 	set_leader_flag = former_owner@event_target:former_owner
 	set_leader_flag = potential_owner@event_target:potential_owner
 }
@@ -230,6 +246,7 @@ set_leader_storage_flags = {
 # THIS = leader
 # event_target:potential_owner = country to set citizenship
 ensure_species_rights_and_take_ownership_of_leader = {
+	optimize_memory
 	if = {
 		limit = {
 			is_civilian_leader = yes
@@ -256,6 +273,7 @@ ensure_species_rights_and_take_ownership_of_leader = {
 # THIS = something with species
 # event_target:potential_owner = country to set citizenship
 set_full_citizenship_species = {
+	optimize_memory
 	species= {
 		if = {
 			limit = {
@@ -318,6 +336,7 @@ set_full_citizenship_species = {
 # THIS = something with species
 # event_target:potential_owner = country to set military service
 set_full_military_service_species = {
+	optimize_memory
 	species= {
 		if = {
 			limit = {
@@ -434,6 +453,7 @@ set_full_military_service_species = {
 # THIS = something with species
 # event_target:potential_owner = country to ensure minimum standard of living
 set_minimum_standard_of_living_species = {
+	optimize_memory
 	species= {
 		if = {
 			limit = {
@@ -538,6 +558,7 @@ set_minimum_standard_of_living_species = {
 # THIS = something with species
 # event_target:potential_owner = country doing the assimilating
 set_assimilation_standard_of_living_species = {
+	optimize_memory
 	species= {
 		if = {
 			limit = {
@@ -586,6 +607,7 @@ set_assimilation_standard_of_living_species = {
 
 # THIS = leader
 set_former_gestalt_ruler_flag = {
+	optimize_memory
 	if = {
 		limit = {
 			OR = {
@@ -601,6 +623,7 @@ set_former_gestalt_ruler_flag = {
 
 # THIS = leader
 remove_gestalt_ruler_traits = {
+	optimize_memory
 	if = {
 		limit = { has_trait = leader_trait_ruler_machine_intelligence }
 		remove_trait = leader_trait_ruler_machine_intelligence
@@ -622,6 +645,7 @@ remove_gestalt_ruler_traits = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_governor = {
+	optimize_memory
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = governor } } }
 		set_country_flag = disable_gender_clones_on_leader_spawned
@@ -664,6 +688,7 @@ replace_leader_as_governor = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_scientist = {
+	optimize_memory
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = scientist } } }
 		set_country_flag = disable_gender_clones_on_leader_spawned
@@ -706,6 +731,7 @@ replace_leader_as_scientist = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_admiral = {
+	optimize_memory
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = admiral } } }
 		set_country_flag = disable_gender_clones_on_leader_spawned
@@ -748,6 +774,7 @@ replace_leader_as_admiral = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_general = {
+	optimize_memory
 	if = {
 		limit = { event_target:leader_to_replace = { NOT = { leader_class = general } } }
 		set_country_flag = disable_gender_clones_on_leader_spawned
@@ -790,6 +817,7 @@ replace_leader_as_general = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_civilian = {
+	optimize_memory
 	if = {
 		limit = {
 			event_target:leader_to_replace = {
@@ -809,6 +837,7 @@ replace_leader_as_civilian = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_military = {
+	optimize_memory
 	if = {
 		limit = {
 			event_target:leader_to_replace = {
@@ -828,6 +857,7 @@ replace_leader_as_military = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_non_military_as_admiral = {
+	optimize_memory
 	if = {
 		limit = {
 			event_target:leader_to_replace = {
@@ -844,6 +874,7 @@ replace_leader_non_military_as_admiral = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_non_scientist = {
+	optimize_memory
 	if = {
 		limit = {
 			event_target:leader_to_replace = {
@@ -865,6 +896,7 @@ replace_leader_as_non_scientist = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_random = {
+	optimize_memory
 	if = {
 		limit = {
 			event_target:leader_to_replace = {
@@ -888,6 +920,7 @@ replace_leader_as_random = {
 # THIS = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_based_on_government_type = {
+	optimize_memory
 	switch = {
 		trigger = has_government
 		# governor
@@ -1002,6 +1035,7 @@ replace_leader_based_on_government_type = {
 
 # THIS = leader
 try_add_demoted_ruler_bonus_trait = {
+	optimize_memory
 	switch = {
 		trigger = leader_class
 		governor = { try_add_demoted_ruler_governor_bonus_trait = yes }
@@ -1014,6 +1048,7 @@ try_add_demoted_ruler_bonus_trait = {
 # add the relevant +admin cap trait - which, if using enhanced randomisation, will get switched to the right kind for the new owner
 # THIS = leader
 try_add_demoted_ruler_governor_bonus_trait = {
+	optimize_memory
 	if = {
 		limit = {
 			has_ruler_trait = trait_ruler_military_pioneer
@@ -1133,6 +1168,7 @@ try_add_demoted_ruler_governor_bonus_trait = {
 
 # THIS = leader
 try_add_demoted_ruler_scientist_bonus_trait = {
+	optimize_memory
 	if = {
 		limit = {
 			has_ruler_trait = trait_ruler_explorer
@@ -1228,6 +1264,7 @@ try_add_demoted_ruler_scientist_bonus_trait = {
 
 # THIS = leader
 try_add_demoted_ruler_admiral_bonus_trait = {
+	optimize_memory
 	if = {
 		limit = {
 			has_ruler_trait = trait_ruler_warlike
@@ -1286,6 +1323,7 @@ try_add_demoted_ruler_admiral_bonus_trait = {
 
 # THIS = leader
 try_add_demoted_ruler_general_bonus_trait = {
+	optimize_memory
 	if = {
 		limit = {
 			OR = {
@@ -1355,6 +1393,7 @@ try_add_demoted_ruler_general_bonus_trait = {
 
 # THIS = leader
 try_add_demoted_ruler_generic_bonus_trait = {
+	optimize_memory
 	if = {
 		limit = {
 			NOR = {
@@ -1391,6 +1430,7 @@ try_add_demoted_ruler_generic_bonus_trait = {
 # * leader_transferable_or_assimilatable_accumulator
 # * leader_aquatic_accumulator
 accumulate_leader = {
+	optimize_memory
 	if = {
 		limit = { is_organic_species = yes }
 		event_target:variable_storage = {
@@ -1513,6 +1553,7 @@ accumulate_leader = {
 
 # event_target:mechanical_species - used as the base species to be modified, will be overwritten with the new species if one or more traits had to be swapped
 assimilate_species_traits_machine_to_robot = {
+	optimize_memory
 	if = {
 		limit = { has_trait = trait_robot_emotion_emulators }
 		modify_species = {
@@ -1538,6 +1579,7 @@ assimilate_species_traits_machine_to_robot = {
 
 # THIS = leader
 tag_leader_for_reassignment = {
+	optimize_memory
 	switch = {
 		trigger = leader_class
 		# governors can't be reassigned because sectors are cleared and cannot be recreated by script
@@ -1592,6 +1634,7 @@ tag_leader_for_reassignment = {
 
 # THIS = leader
 try_assign_retained_leader_to_former_assignment = {
+	optimize_memory
 	switch = {
 		trigger = leader_class
 		# governors can't be reassigned because sectors are cleared and cannot be recreated by script
@@ -1613,7 +1656,7 @@ try_assign_retained_leader_to_former_assignment = {
 			if = {
 				limit = { has_leader_flag = keep_leader_match_fleet@THIS }
 				owner = {
-					random_owned_fleet = {
+					random_controlled_fleet = {
 						limit = {
 							has_fleet_flag = keep_leader_match_fleet@PREVPREV
 							NOT = { exists = leader }
@@ -1628,7 +1671,7 @@ try_assign_retained_leader_to_former_assignment = {
 			if = {
 				limit = { has_leader_flag = keep_leader_match_fleet@THIS }
 				owner = {
-					random_owned_fleet = {
+					random_controlled_fleet = {
 						limit = {
 							has_fleet_flag = keep_leader_match_fleet@PREVPREV
 							NOT = { exists = leader }
@@ -1644,7 +1687,7 @@ try_assign_retained_leader_to_former_assignment = {
 		# 	if = {
 		# 		limit = { has_leader_flag = keep_leader_match_transport_fleet@THIS }
 		# 		owner = {
-		# 			random_owned_fleet = {
+		# 			random_controlled_fleet = {
 		# 				limit = {
 		# 					has_fleet_flag = keep_leader_match_transport_fleet@PREVPREV
 		# 					NOT = { exists = leader }
@@ -1672,18 +1715,47 @@ try_assign_retained_leader_to_former_assignment = {
 	}
 }
 
-# somewhat hacky workaround to spawn an army transport of a specific type with less repeated code, and also using loclisation for the name
+# somewhat hacky workaround to spawn an army transport of a specific type with less repeated code, and also using localisation for the name
 # THIS = fleet, to which the transport will be assigned
-# $ARMY_TYPE$ = army type to create
+# ARMY_TYPE = army type to create
 # event_target:source_ship = transport being duplicated
 # event_target:source_army = army being duplicated
 create_army_transport_parameterized = {
-	create_army_transport = {
-		species = event_target:source_army
-		army_type = $ARMY_TYPE$
-		effect = {
-			set_name = "\\[source_ship.GetName]"
-			last_created_army = { set_name = "\\[source_army.GetName]" }
+	optimize_memory
+	if = {
+		limit = { exists = event_target:source_army.species }
+		create_army_transport = {
+			species = event_target:source_army
+			army_type = $ARMY_TYPE$
+			effect = {
+				set_name = {
+					key = keep_leaders.source_ship_name
+					variable_string = "source_ship.GetName"
+				}
+				last_created_army = {
+					set_name = {
+						key = keep_leaders.source_army_name
+						variable_string = "source_army.GetName"
+					}
+				}
+			}
+		}
+	}
+	else = {
+		create_army_transport = {
+			army_type = $ARMY_TYPE$
+			effect = {
+				set_name = {
+					key = keep_leaders.source_ship_name
+					variable_string = "source_ship.GetName"
+				}
+				last_created_army = {
+					set_name = {
+						key = keep_leaders.source_army_name
+						variable_string = "source_army.GetName"
+					}
+				}
+			}
 		}
 	}
 }
@@ -1692,6 +1764,7 @@ create_army_transport_parameterized = {
 # this = leader, with new species
 # from = species, previous
 klfis_leader_transferred_match_gender_to_species = {
+	optimize_memory
 	if = {
 		limit = { klfis_leader_species_gender_change_requires_clone = no }
 		species = {
@@ -1766,6 +1839,7 @@ klfis_leader_transferred_match_gender_to_species = {
 # this = leader, to be cloned
 # GENDER = gender for the clone (indeterminable/female/male)
 klfis_clone_leader_with_gender = {
+	optimize_memory
 	if = {
 		limit = { NOT = { gender = $GENDER$ } } # last minute sanity check to make sure we're only replacing leaders who are changing gender
 		save_event_target_as = leader_to_clone

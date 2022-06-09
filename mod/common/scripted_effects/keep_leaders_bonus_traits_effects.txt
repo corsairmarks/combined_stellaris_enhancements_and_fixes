@@ -1,5 +1,6 @@
 # THIS = leader
 add_former_ruler_trait = {
+	optimize_memory
 	if = {
 		limit = {
 			has_former_ruler_trait = no
@@ -61,6 +62,7 @@ add_former_ruler_trait = {
 
 # THIS = leader
 add_former_heir_trait = {
+	optimize_memory
 	if = {
 		limit = {
 			has_former_ruler_trait = no

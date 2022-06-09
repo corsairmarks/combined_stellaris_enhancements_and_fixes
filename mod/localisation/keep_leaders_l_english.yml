@@ -24,9 +24,9 @@
  keep_leaders.1.b.gest.exclusive: "They will serve better as drones."
  keep_leaders.1.b.gest.exclusive.tooltip: "All [potential_owner.GetUnitDronePlural] from the [storage_owner.GetRealName] are reassigned to standard drone duties."
 
- # integrate machines only (+cyborgs if applicable) (target has both)
- keep_leaders.1.c: "Reprogram the machines to the serve us. Execute the rest."
- keep_leaders.1.c.tooltip: "§Y$ROBOT$§! leaders from the [storage_owner.GetRealName] are programmed for loyalty to our empire, but the untrustworthy §Y$BIOLOGICAL$§! leaders are executed."
+ # integrate robotic only (+cyborgs if applicable) (target has both)
+ keep_leaders.1.c: "Reprogram all §Y$ROBOT_plural$§! and §Y$MACHINE_plural$§! to the serve us. Execute the rest."
+ keep_leaders.1.c.tooltip: "§Y$ROBOT$§! and §Y$MACHINE$§! leaders from the [storage_owner.GetRealName] are programmed for loyalty to our empire, but the untrustworthy §Y$BIOLOGICAL$§! leaders are executed."
  keep_leaders.1.c.term: "Integrate the hardware, terminate the organics."
  keep_leaders.1.c.term.tooltip: "§Y$MACHINE$§! and §Y$ROBOT$§! leaders from the [storage_owner.GetRealName] are integrated, §Y$BIOLOGICAL$§! leaders are executed."
  keep_leaders.1.c.mach: "Integrate the hardware, discard the organic components."
@@ -38,32 +38,32 @@
  keep_leaders.1.c.cyb.exclusive: "$keep_leaders.1.c.mach.exclusive$"
  keep_leaders.1.c.cyb.exclusive.tooltip: "§Y$MACHINE$§!, §Y$ROBOT$§!, and §Y$trait_cybernetic$§! leaders from the [storage_owner.GetRealName] are integrated."
 
- # integrate machines only, but be nice (target has both)
- keep_leaders.1.d: "Allow the machines to the join us. Retire the organics."
- keep_leaders.1.d.tooltip: "§Y$ROBOT$§! leaders from the [storage_owner.GetRealName] are allowed to join our empire, but the untrustworthy §Y$BIOLOGICAL$§! leaders are forced to retire."
+ # integrate robotic only, but be nice (target has both)
+ keep_leaders.1.d: "All §Y$ROBOT_plural$§! and §Y$MACHINE_plural$§! shall join us. Retire the organics."
+ keep_leaders.1.d.tooltip: "§Y$ROBOT$§! and §Y$MACHINE$§! leaders from the [storage_owner.GetRealName] are allowed to join our empire, but the untrustworthy §Y$BIOLOGICAL$§! leaders are forced to retire. §Y$MACHINE$§! leaders are allowed to join if "
  keep_leaders.1.d.serv: "Send all organics to the sanctuaries. Integrate the hardware."
  keep_leaders.1.d.serv.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are released to the care of our organic sanctuaries, but the §Y$MACHINE$§! and §Y$ROBOT$§! leaders are integrated."
 
  # keep organics only (target has both)
- keep_leaders.1.e: "Allow the organics to the join us. Recycle the robots."
- keep_leaders.1.e.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are integrated into our empire, but §Y$MACHINE$§! and §Y$ROBOT$§! leaders are recycled."
- keep_leaders.1.e.spir: "The organics are welcome. Cleanse the abominable thinking machines."
- keep_leaders.1.e.ai: "Allow the organics to the join us. Retire the robots."
- keep_leaders.1.e.ai.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are allowed to join our empire, but §Y$MACHINE$§! and §Y$ROBOT$§! leaders are forced to retire."
+ keep_leaders.1.e: "The organics shall join us. Recycle any §Y$ROBOT_plural$§! or §Y$MACHINE_plural$§!."
+ keep_leaders.1.e.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are allowed to join our empire, but §Y$ROBOT$§! and §Y$MACHINE$§! leaders are recycled."
+ keep_leaders.1.e.spir: "Welcome the organics. Cleanse the abominable thinking machines."
+ keep_leaders.1.e.ai: "The organics shall join us. Retire any §Y$ROBOT_plural$§! or §Y$MACHINE_plural$§!."
+ keep_leaders.1.e.ai.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are allowed to join our empire, but §Y$ROBOT$§! and §Y$MACHINE$§! leaders are forced to retire."
  keep_leaders.1.e.serv: "Machine stewardship failed these organics; they shall advise us."
- keep_leaders.1.e.serv.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them. §Y$MACHINE$§! and §Y$ROBOT$§! leaders are clearly defective because they were not replacing the need for organics to serve in stressful leadership roles."
+ keep_leaders.1.e.serv.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them. §Y$MACHINE$§! and §Y$ROBOT$§! leaders are clearly defective because they were not replacing the need for organics to serve in stressful leadership roles."
  keep_leaders.1.e.serv.exclusive: "These organics show initiative - they shall make fine Advisors."
- keep_leaders.1.e.serv.exclusive.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them."
+ keep_leaders.1.e.serv.exclusive.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them."
 
  # keep same species (target has both)
  keep_leaders.1.g: "Allow any [Root.GetSpeciesNamePlural] to join us. Execute the rest."
- keep_leaders.1.g.tooltip: "Leaders of our species are retained, §YXeno§! and §Y$ROBOT$§! leaders are executed."
+ keep_leaders.1.g.tooltip: "Leaders of our species are retained, §YXeno§!, §Y$ROBOT$§!, and §Y$MACHINE$§! leaders are executed."
  keep_leaders.1.g.pur: "Grant a pardon to any [Root.GetSpeciesNamePlural]. Purify the taint of the rest."
  keep_leaders.1.g.pur.tooltip: "Leaders of our species are graciously pardoned for their criminal association with Xenos. All others are purged to protect us from their taint."
 
  # keep same species, but be nice (target has both)
  keep_leaders.1.h: "Allow any [Root.GetSpeciesNamePlural] to join us. Retire the rest."
- keep_leaders.1.h.tooltip: "Leaders of our species are retained, §YXeno§! and §Y$ROBOT$§! leaders are forced to retire (or recycled, based on whether we allow $ai_full_rights_name$)."
+ keep_leaders.1.h.tooltip: "Leaders of our species are retained, §YXeno§!, §Y$ROBOT$§!, and §Y$MACHINE$§! leaders are forced to retire (or recycled, if we have the $ai_outlawed_name$ policy)."
 
  # hive (non-DS) can keep hive
  keep_leaders.1.i.hive: "We welcome their Mind to our Mind. The non-Minded shall nourish us."
@@ -73,35 +73,35 @@
 
  # keep as much as possible with no changes
  keep_leaders.1.j: "Send them for assignment."
- keep_leaders.1.j.tooltip: "Species rights for §Y$SPECIES_RIGHT_CITIZENSHIP$§!, §Y$SPECIES_RIGHT_LIVING_STANDARDS$§!, and §Y$SPECIES_RIGHT_MILITARY_SERVICE$§! for the species of each retained leader will be set to allow for their appropriate service level regardless of the $DEFAULT_RIGHTS$. §Y$ROBOT$§! leaders are retained if we allow $ai_full_rights_name$."
+ keep_leaders.1.j.tooltip: "Species rights for §Y$SPECIES_RIGHT_CITIZENSHIP$§!, §Y$SPECIES_RIGHT_LIVING_STANDARDS$§!, and §Y$SPECIES_RIGHT_MILITARY_SERVICE$§! for the species of each retained leader will be set to allow for their appropriate service level regardless of the $DEFAULT_RIGHTS$. §Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained as long as we do not have the $ai_outlawed_name$ policy."
  keep_leaders.1.j.civilian: "Send the governors and scientists for assignment."
  keep_leaders.1.j.military: "Send the admirals and generals for assignment."
  keep_leaders.1.j.pur: "The pure should not be wasted."
  keep_leaders.1.j.pur.tooltip: "We bring the [Root.GetSpeciesNamePlural] back into the fold."
  keep_leaders.1.j.serv: "Retain the organics as advisors and integrate the machines."
- keep_leaders.1.j.serv.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them. §Y$MACHINE$§! and §Y$ROBOT$§! leaders are integrated."
+ keep_leaders.1.j.serv.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are retained as Organic Advisors via a one-time, special exception - their species must be designated as Organic Advisors should we wish to recruit additional advisors from them. §Y$MACHINE$§! and §Y$ROBOT$§! leaders are integrated."
 
  # assimilate options (all require at least one leader that could be assimilated)
  keep_leaders.1.k.hive: "They shall become one with the Mind."
- keep_leaders.1.k.hive.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are assimilated into the Mind. Their corresponding species are also set to §Y$living_standard_ego_assimilation$§!.\n\n§Y$MACHINE$§! or §Y$ROBOT$§! leaders are recycled."
+ keep_leaders.1.k.hive.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are assimilated into the Mind. Their corresponding species are also set to §Y$living_standard_ego_assimilation$§!.\n\n§Y$ROBOT$§! or §Y$MACHINE$§! leaders are recycled."
  keep_leaders.1.k.unhive: "Awaken their individuality."
- keep_leaders.1.k.unhive.tooltip: "§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are dissociated from the Hive Mind. Their corresponding species are also set to §Y$living_standard_deassimilation$§!.\n\n§Y$ROBOT$§! leaders are retained if we allow $ai_full_rights_name$."
+ keep_leaders.1.k.unhive.tooltip: "§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] are dissociated from the Hive Mind. Their corresponding species are also set to §Y$living_standard_deassimilation$§!.\n\n§Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained as long as we do not have the $ai_outlawed_name$ policy."
  keep_leaders.1.k.gene.icon.tooltip: "This option is available due to §H[Root.GetName]§! having the §Y$ap_evolutionary_mastery$§! Ascension Perk"
  keep_leaders.1.k.unmach: "Upgrade the machine units with individual personality matrices."
- keep_leaders.1.k.unmach.tooltip: "Semi-autonomous §Y$MACHINE$§! leaders are upgraded into §Y$ROBOT_POP_SPECIES_1_plural$§! with full self-determination. Their corresponding \"species\" are also set to §Y$living_standard_deassimilation$§!. Any other §Y$ROBOT$§! leaders are also retained."
+ keep_leaders.1.k.unmach.tooltip: "Semi-autonomous §Y$MACHINE$§! leaders are upgraded into §Y$ROBOT_plural$§! with full self-determination. Their corresponding \"species\" are also set to §Y$living_standard_deassimilation$§!. Any other §Y$ROBOT$§! or §Y$MACHINE$§! leaders are also retained."
  keep_leaders.1.k.unmach.icon.tooltip: "This option is available due to §H[Root.GetName]§! having the §Y$tech_sapient_ai$§! Technology"
  keep_leaders.1.k.psi: "Open their minds to the Shroud."
- keep_leaders.1.k.psi.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_cybernetic$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their psionic potential awakened. Their corresponding species are also set to §Y$living_standard_psi_assimilation$§!.\n\n§Y$trait_cybernetic$§! species cannot be awakened and are left with §Y$DEFAULT_RIGHTS$§!.\n\n§Y$ROBOT$§! leaders are retained if we allow $ai_full_rights_name$."
+ keep_leaders.1.k.psi.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_cybernetic$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their psionic potential awakened. Their corresponding species are also set to §Y$living_standard_psi_assimilation$§!.\n\n§Y$trait_cybernetic$§! species cannot be awakened and are left with §Y$DEFAULT_RIGHTS$§!.\n\n§Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained as long as we do not have the $ai_outlawed_name$ policy."
  keep_leaders.1.k.psi.icon.tooltip: "This option is available due to §H[Root.GetName]§! having the §Y$ap_transcendence$§! Ascension Perk"
- keep_leaders.1.k.psi.allow-cyb.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their psionic potential awakened. Their corresponding species are also set to §Y$living_standard_psi_assimilation$§!.\n\n§Y$ROBOT$§! leaders are retained if we allow $ai_full_rights_name$."
+ keep_leaders.1.k.psi.allow-cyb.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their psionic potential awakened. Their corresponding species are also set to §Y$living_standard_psi_assimilation$§!.\n\n§Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained as long as we do not have the $ai_outlawed_name$ policy."
  keep_leaders.1.k.synth: "Replace their obsolete biological forms."
- keep_leaders.1.k.synth.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their organic bodies replaced with new synthetic [Root.GetSpeciesName] bodies. Their corresponding species are also set to §Y$living_standard_tech_assimilation$§!.\n\n§Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained - they are already compatible with our society."
+ keep_leaders.1.k.synth.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their organic bodies replaced with new synthetic [Root.GetSpeciesName] bodies. Their corresponding species are also set to §Y$living_standard_tech_assimilation$§!.\n\n§Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained - they are already compatible with our society."
  keep_leaders.1.k.synth.icon.tooltip: "This option is available due to §H[Root.GetName]§! having the §Y$ap_synthetic_evolution$§! Ascension Perk and completing its Special Project"
  keep_leaders.1.k.cyb: "Mandatory enhancements."
- keep_leaders.1.k.cyb.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their organic bodies augmented with cybernetics. Their corresponding species are also set to §Y$living_standard_tech_assimilation$§!.\n\n§Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained if we allow $ai_full_rights_name$."
+ keep_leaders.1.k.cyb.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their organic bodies augmented with cybernetics. Their corresponding species are also set to §Y$living_standard_tech_assimilation$§!.\n\n§Y$ROBOT$§! and §Y$MACHINE$§! leaders are retained as long as we do not have the $ai_outlawed_name$ policy."
  keep_leaders.1.k.cyb.icon.tooltip: "This option is available due to §H[Root.GetName]§! having the §Y$ap_the_flesh_is_weak$§! Ascension Perk and completing its Special Project"
  keep_leaders.1.k.assim: "Assimilate them."
- keep_leaders.1.k.assim.tooltip: "§Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their organic bodies augmented with cybernetics and are integrated into the collective. Their corresponding species are also set to §Y$living_standard_ego_assimilation$§!.\n\n§Y$trait_cybernetic$§!, §Y$MACHINE$§!, and §Y$ROBOT$§! leaders and species are immediately integrated into the collective."
+ keep_leaders.1.k.assim.tooltip: "§Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] have their organic bodies augmented with cybernetics and are integrated into the collective. Their corresponding species are also set to §Y$living_standard_ego_assimilation$§!.\n\n§Y$trait_cybernetic$§!, §Y$MACHINE$§!, and §Y$ROBOT$§! leaders and species are immediately integrated into the collective."
  keep_leaders.1.k.necro: "Necrophage them."
  keep_leaders.1.k.necro.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are necrophaged into [Root.Owner_Species.GetName]. If we have $purge_allowed_name$ (or they were $trait_hive_mind$), their corresponding species are also set to §Y$purge_necrophage$§!."
  keep_leaders.1.k.necro.hive.tooltip: "§Y$BIOLOGICAL$§! leaders from the [storage_owner.GetRealName] are necrophaged into [Root.Owner_Species.GetName]. If we have $purge_allowed_name$, their corresponding species are also set to §Y$purge_necrophage$§!."
@@ -153,11 +153,15 @@
  ROBOTS_ARE_OUTLAWED_NO_X: "Robots are §Routlawed§!."
  CANNOT_NECROPHAGE_MACHINES_NO_X: "Inorganic compounds cannot undergo §Y$purge_necrophage$§!."
  NECROPHAGE_NONE_ELIGIBLE_NO_X: "No leaders are eligible for §Y$purge_necrophage$§!."
- AI_IS_OUTLAWED_LEADER_NO_X: "Artificial Intelligence is §Routlawed§!. §Y$trait_machine_unit$§! leaders are too sophisticated to convert into mindless robots."
+ AI_IS_OUTLAWED_LEADER_NO_X: "Artificial Intelligence is §Routlawed§!. §Y$ROBOT$§! and §Y$MACHINE$§! leaders are too sophisticated to convert into mindless robots."
  disconnected_machine_leaders_collapse_without_ai_assimilation_no_x: "Once their uplink to the central §Y$auth_machine_intelligence$§! is severed, $trait_machine_unit$ leaders are rendered inoperable - unless they could be retrofitted with individual §Y$tech_sapient_ai$§!."
 
  # former ruler name formatting
- keep_leaders.former_ruler_name: "[This.GetRegnalName], §LFormer [This.GetTitle] of the [former_owner.GetRealName]§!"
+ keep_leaders.former_ruler_name: "[This.GetRegnalName], §LFormer [This.GetRulerTitle] of the [former_owner.GetName]§!"
+ keep_leaders.former_heir_name: "[This.GetName], §LFormer Heir to the [former_owner.GetName]§!"
+ keep_leaders.source_fleet_name: "[source_fleet.GetName]"
+ keep_leaders.source_ship_name: "[source_ship.GetName]"
+ keep_leaders.source_army_name: "[source_army.GetName]"
 
  keep_leaders.3.title: "Reassign Infiltration Agents"
  keep_leaders.3.desc: "Following the successful infiltration and subsequent integration of [Root.GetName], our agents that posed as [original_species.GetNamePlural] are available for reassignment. What shall we do with them?"
@@ -170,7 +174,7 @@
 
 # colossus transfer title and descriptions
 keep_leaders.30.title: "$PLANET_CAP$ [This.GetName] Cyborgized"
-keep_leaders.30.desc: "Any §Y$BIOLOGICAL$§!, §Ynon-$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] were cyborgized when we fired our §Y$PLANET_KILLER_NANOBOTS$§! on their homeworld [This.GetName] and were immediately integrated into the collective.\n\nTheir unique abilities could be a boon to the collective a semi-autonomous leaders."
+keep_leaders.30.desc: "Any §Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the [storage_owner.GetRealName] were cyborgized when we fired our §Y$PLANET_KILLER_NANOBOTS$§! on their homeworld [This.GetName] and were immediately integrated into the collective.\n\nTheir unique abilities could be a boon to the collective a semi-autonomous leaders."
 keep_leaders.30.a: "Their uniqueness shall serve the collective."
 keep_leaders.30.b: "$keep_leaders.1.b.gest.exclusive$"
 keep_leaders.30.b.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"

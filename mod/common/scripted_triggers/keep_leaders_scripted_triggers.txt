@@ -1,23 +1,27 @@
 # this = country
 is_devouring_hive_empire = {
+	optimize_memory
 	is_hive_empire = yes
 	has_valid_civic = civic_hive_devouring_swarm
 }
 
 # this = country
 is_regular_hive_empire = {
+	optimize_memory
 	is_hive_empire = yes
 	NOT = { has_valid_civic = civic_hive_devouring_swarm }
 }
 
 # this = country
 is_necrophage_empire = {
+	optimize_memory
 	has_origin = origin_necrophage
 	has_trait = trait_necrophage
 }
 
 # this = country
 empire_considers_cyborgs_robotic = {
+	optimize_memory
 	OR = {
 		has_valid_civic = civic_machine_assimilator
 		has_ascension_perk = ap_the_flesh_is_weak
@@ -29,9 +33,9 @@ empire_considers_cyborgs_robotic = {
 
 # this = country
 has_full_ai_rights = {
+	optimize_memory
 	OR = {
-		is_machine_empire = yes
-		has_country_flag = synthetic_empire
+		is_robot_empire = yes
 		AND = {
 			has_policy_flag = robots_allowed
 			has_policy_flag = ai_full_rights
@@ -39,9 +43,19 @@ has_full_ai_rights = {
 	}
 }
 
+# this = country
+allows_ai_leaders = {
+	optimize_memory
+	OR = {
+		is_robot_empire = yes
+		NOT = { has_policy_flag = ai_outlawed }
+	}
+}
+
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 can_be_civilian_leaders_species = {
+	optimize_memory
 	species = {
 		OR = {
 			has_citizenship_type = {
@@ -59,6 +73,7 @@ can_be_civilian_leaders_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 can_be_military_leaders_species = {
+	optimize_memory
 	species = {
 		has_military_service_type = {
 			country = event_target:potential_owner
@@ -70,6 +85,7 @@ can_be_military_leaders_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_policy_full_citizenship_species = {
+	optimize_memory
 	OR = {
 		species = { is_same_species = event_target:potential_owner }
 		if = {
@@ -109,6 +125,7 @@ is_eligible_for_policy_full_citizenship_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_policy_full_military_service_species = {
+	optimize_memory
 	OR = {
 		species = { is_same_species = event_target:potential_owner }
 		if = {
@@ -152,6 +169,7 @@ is_eligible_for_policy_full_military_service_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_machine_assimilation_species = {
+	optimize_memory
 	event_target:potential_owner = { has_valid_civic = civic_machine_assimilator }
 	is_organic_species = yes
 	is_cyborg_species = no
@@ -161,6 +179,7 @@ is_eligible_for_machine_assimilation_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_unmachine_assimilation_species = {
+	optimize_memory
 	event_target:potential_owner = {
 		# machine pops aren't disconnected in FE/AE, so we can't use is_regular_empire
 		is_machine_empire = no
@@ -177,6 +196,7 @@ is_eligible_for_unmachine_assimilation_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_hive_assimilation_species = {
+	optimize_memory
 	event_target:potential_owner = {
 		is_hive_empire = yes
 		has_ascension_perk = ap_evolutionary_mastery
@@ -188,6 +208,7 @@ is_eligible_for_hive_assimilation_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_unhive_assimilation_species = {
+	optimize_memory
 	event_target:potential_owner = {
 		# hive pops aren't lonely in FE/AE, so we can't use is_regular_empire
 		is_hive_empire = no
@@ -203,6 +224,7 @@ is_eligible_for_unhive_assimilation_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_synthetic_assimilation_species = {
+	optimize_memory
 	event_target:potential_owner = {
 		has_ascension_perk = ap_synthetic_evolution
 		has_country_flag = synthetic_empire
@@ -214,6 +236,7 @@ is_eligible_for_synthetic_assimilation_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_cybernetic_assimilation_species = {
+	optimize_memory
 	event_target:potential_owner = {
 		has_ascension_perk = ap_the_flesh_is_weak
 		has_country_flag = flesh_weakened
@@ -226,6 +249,7 @@ is_eligible_for_cybernetic_assimilation_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_psionic_assimilation_species = {
+	optimize_memory
 	event_target:potential_owner = { has_ascension_perk = ap_transcendence }
 	is_organic_species = yes
 	OR = {
@@ -239,6 +263,7 @@ is_eligible_for_psionic_assimilation_species = {
 # this = something with a species
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_for_assimilation_species = {
+	optimize_memory
 	species = { NOT = { is_exact_same_species = event_target:potential_owner } }
 	if = {
 		limit = { event_target:potential_owner = { is_machine_empire = yes } }
@@ -267,22 +292,43 @@ is_eligible_for_assimilation_species = {
 }
 
 # this = something with a species
+is_latent_psionic_or_psionic_species = {
+	optimize_memory
+	species = {
+		OR = {
+			has_trait = trait_latent_psionic
+			has_trait = trait_psionic
+		}
+	}
+}
+
+# this = something with a species
+is_latent_psionic_species = {
+	optimize_memory
+	species = { has_trait = trait_latent_psionic }
+}
+
+# this = something with a species
 is_psionic_species = {
+	optimize_memory
 	species = { has_trait = trait_psionic }
 }
 
 # this = something with a species
 is_cyborg_species = {
+	optimize_memory
 	species = { has_trait = trait_cybernetic }
 }
 
 # this = something with a species
 is_hive_species = {
+	optimize_memory
 	species = { has_trait = trait_hive_mind }
 }
 
 # this = something with a species
 is_machine_species = {
+	optimize_memory
 	species = {
 		OR = {
 			has_trait = trait_machine_unit
@@ -293,6 +339,7 @@ is_machine_species = {
 
 # this = something with a species
 is_mechanical_species = {
+	optimize_memory
 	species = {
 		OR = {
 			has_trait = trait_mechanical
@@ -303,23 +350,23 @@ is_mechanical_species = {
 
 # this = something with a species
 is_aquatic_species = {
+	optimize_memory
 	species = { has_trait = trait_aquatic }
 }
 
 # this = something with a species
 is_smart_enough_for_leadership_species = {
+	optimize_memory
 	species = {
 		is_sapient = yes
-		NOR = {
-			has_trait = trait_syncretic_proles
-			has_trait = trait_nerve_stapled
-			has_trait = trait_zombie
-		}
+		NOT = { has_trait = trait_syncretic_proles }
+		can_think = yes
 	}
 }
 
 # this = leader
 is_civilian_leader = {
+	optimize_memory
 	OR = {
 		leader_class = governor
 		leader_class = scientist
@@ -328,6 +375,7 @@ is_civilian_leader = {
 
 # this = leader
 is_military_leader = {
+	optimize_memory
 	OR = {
 		leader_class = admiral
 		leader_class = general
@@ -336,8 +384,9 @@ is_military_leader = {
 
 # this = leader
 is_psionic_leader = {
+	optimize_memory
 	OR = {
-		is_psionic_species = yes
+		is_latent_psionic_or_psionic_species = yes
 		if = {
 			limit = { leader_class = ruler }
 			OR = {
@@ -381,65 +430,70 @@ is_psionic_leader = {
 
 # this = leader
 is_cyborg_leader = {
+	optimize_memory
 	OR = {
 		is_cyborg_species = yes
-		if = {
-			limit = { leader_class = ruler }
+		AND = {
+			leader_class = ruler
 			has_trait = leader_trait_ruler_cyborg
 		}
-		else_if = {
-			limit = { leader_class = governor }
+		AND = {
+			leader_class = governor
 			has_trait = leader_trait_governor_cyborg
 		}
-		else_if = {
-			limit = { leader_class = scientist }
+		AND = {
+			leader_class = scientist
 			has_trait = leader_trait_scientist_cyborg
 		}
-		else_if = {
-			limit = { leader_class = admiral }
+		AND = {
+			leader_class = admiral
 			has_trait = leader_trait_admiral_cyborg
 		}
-		else_if = {
-			limit = { leader_class = general }
+		AND = {
+			leader_class = general
 			has_trait = leader_trait_general_cyborg
-		}
-		else = {
-			always = no
 		}
 	}
 }
 
 # this = leader
 is_synthetic_leader = {
-	is_mechanical_species = yes
-	if = {
-		limit = { leader_class = ruler }
-		has_trait = leader_trait_ruler_synthetic
+	optimize_memory
+	OR = {
+		is_mechanical_species = yes
+		AND = {
+			has_global_flag = machine_leader_synthetic_traits_installed
+			is_machine_species = yes
+		}
 	}
-	else_if = {
-		limit = { leader_class = governor }
-		has_trait = leader_trait_governor_synthetic
-	}
-	else_if = {
-		limit = { leader_class = scientist }
-		has_trait = leader_trait_scientist_synthetic
-	}
-	else_if = {
-		limit = { leader_class = admiral }
-		has_trait = leader_trait_admiral_synthetic
-	}
-	else_if = {
-		limit = { leader_class = general }
-		has_trait = leader_trait_general_synthetic
-	}
-	else = {
-		always = no
+	OR = {
+		AND = {
+			leader_class = ruler
+			has_trait = leader_trait_ruler_synthetic
+		}
+		AND = {
+			leader_class = governor
+			has_trait = leader_trait_governor_synthetic
+		}
+		AND = {
+			leader_class = scientist
+			has_trait = leader_trait_scientist_synthetic
+		}
+		AND = {
+			leader_class = admiral
+			has_trait = leader_trait_admiral_synthetic
+		}
+		AND = {
+			leader_class = general
+			has_trait = leader_trait_general_synthetic
+		}
 	}
 }
 
 # this = leader
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_transfer_without_assimilation = {
+	optimize_memory
 	OR = {
 		species = { is_same_species = event_target:potential_owner }
 		if = {
@@ -470,7 +524,7 @@ is_eligible_transfer_without_assimilation = {
 			}
 			OR = {
 				is_robotic_species = no # intentionally allows machine leaders to join non-machines, even if their Pops can't
-				event_target:potential_owner = { has_full_ai_rights = yes }
+				event_target:potential_owner = { allows_ai_leaders = yes }
 			}
 		}
 		else = {
@@ -482,6 +536,7 @@ is_eligible_transfer_without_assimilation = {
 # this = leader
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_transfer_with_assimilation = {
+	optimize_memory
 	OR = {
 		is_same_species = event_target:potential_owner
 		if = {
@@ -527,12 +582,14 @@ is_eligible_transfer_with_assimilation = {
 # this = leader
 # event_target:potential_owner = country to which the leader would transfer
 is_eligible_transfer_leader_from_storage = {
+	optimize_memory
 	has_leader_flag = potential_owner@event_target:potential_owner
 	is_eligible_transfer_leader_class = yes
 }
 
 # this = leader
 is_eligible_transfer_leader_class = {
+	optimize_memory
 	NOR = {
 		leader_class = ruler
 		leader_class = envoy
@@ -542,6 +599,7 @@ is_eligible_transfer_leader_class = {
 # allows cyborgs to be considered robotic if the potential owner considers them to be robotic
 # this = leader
 is_robotic_species_lenient = {
+	optimize_memory
 	OR = {
 		is_robotic_species = yes
 		AND = {
@@ -553,12 +611,14 @@ is_robotic_species_lenient = {
 
 # this = leader
 is_bypass_leader_restriction_honored_protectors = {
+	optimize_memory
 	is_military_leader = yes
 	species = { has_species_flag = allow_military_leaders_honored_protectors@event_target:potential_owner }
 }
 
 # this = country
 any_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
+	optimize_memory
 	any_owned_leader = {
 		is_eligible_transfer_leader_from_storage = yes
 		OR = {
@@ -570,6 +630,7 @@ any_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
 
 # this = country
 all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
+	optimize_memory
 	count_owned_leader = {
 		count = all
 		limit = {
@@ -584,6 +645,7 @@ all_stored_leaders_eligible_transfer_to_main_species_leader_restricted = {
 
 # this = country
 all_stored_organic_leaders_eligible_transfer_to_main_species_leader_restricted = {
+	optimize_memory
 	count_owned_leader = {
 		count = all
 		limit = {
@@ -602,6 +664,7 @@ all_stored_organic_leaders_eligible_transfer_to_main_species_leader_restricted =
 
 # this = country
 all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted = {
+	optimize_memory
 	count_owned_leader = {
 		count = all
 		limit = {
@@ -619,6 +682,7 @@ all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted =
 
 # this = country
 all_stored_leaders_same_species = {
+	optimize_memory
 	NOT = {
 		any_owned_leader = {
 			is_eligible_transfer_leader_from_storage = yes
@@ -629,6 +693,7 @@ all_stored_leaders_same_species = {
 
 # this = country
 all_stored_leaders_robotic_strict = {
+	optimize_memory
 	NOT = {
 		any_owned_leader = {
 			is_eligible_transfer_leader_from_storage = yes
@@ -639,6 +704,7 @@ all_stored_leaders_robotic_strict = {
 
 # this = country
 all_stored_leaders_robotic_lenient = {
+	optimize_memory
 	NOT = {
 		any_owned_leader = {
 			is_eligible_transfer_leader_from_storage = yes
@@ -649,6 +715,7 @@ all_stored_leaders_robotic_lenient = {
 
 # this = country
 all_stored_leaders_hive = {
+	optimize_memory
 	NOT = {
 		any_owned_leader = {
 			is_eligible_transfer_leader_from_storage = yes
@@ -660,6 +727,7 @@ all_stored_leaders_hive = {
 # this = planet (after ownership change)
 # from = country, former owner
 has_leader_storage_from_country_to_planet_owner = {
+	optimize_memory
 	any_country = {
 		is_country_type = neutral_faction
 		has_country_flag = former_owner@from
@@ -673,6 +741,7 @@ has_leader_storage_from_country_to_planet_owner = {
 # this follows the game's default rules - does not account for Gender Nonbinary Leaders
 # this = leader, after species change
 klfis_leader_new_species_allows_current_gender = {
+	optimize_memory
 	switch = {
 		trigger = gender
 		indeterminable = {
@@ -713,6 +782,7 @@ klfis_leader_new_species_allows_current_gender = {
 
 # this = species
 klfis_species_can_set_is_female = {
+	optimize_memory
 	NOR = {
 		species_gender = indeterminable
 		AND = {
@@ -724,6 +794,7 @@ klfis_species_can_set_is_female = {
 
 # this = species
 klfis_species_class_uses_gender = {
+	optimize_memory
 	# NOTE: this assumes custom species classes use gender (the default)
 	NOR = {
 		is_species_class = MACHINE
@@ -731,12 +802,15 @@ klfis_species_class_uses_gender = {
 		is_species_class = AI # contingency
 		is_species_class = SWARM # praethoryn
 		is_species_class = EXD # extradimensionals: unbidden/aberrant/vehement
+		is_species_class = SALVAGER # salvager enclave species
+		is_species_class = SHROUDWALKER # shroudwalker enclave species
 	}
 }
 
 # this = leader, with new species
 # from = species, previous
 klfis_leader_species_gender_change_requires_clone = {
+	optimize_memory
 	OR = {
 		AND = {
 			species = { klfis_species_can_set_is_female = no }
@@ -751,6 +825,7 @@ klfis_leader_species_gender_change_requires_clone = {
 
 # this = species
 klfis_has_species_trait_with_leader_trait = {
+	optimize_memory
 	OR = {
 		has_trait = trait_cybernetic
 		has_trait = trait_erudite
@@ -758,5 +833,8 @@ klfis_has_species_trait_with_leader_trait = {
 		has_trait = trait_latent_psionic
 		has_trait = trait_brainslug
 		has_trait = trait_clone_soldier_fertile
+		# these clone soldier traits count for leader-keeping purposes
+		has_trait = trait_clone_soldier_infertile
+		has_trait = trait_clone_soldier_infertile_full_potential
 	}
 }
