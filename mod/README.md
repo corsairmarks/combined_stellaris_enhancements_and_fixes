@@ -30,7 +30,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.0.0)
 * [Leader Traits: Synthetic Leader Traits for Machine Units](https://steamcommunity.com/workshop/filedetails/?id=2642820468) ([Source](https://github.com/corsairmarks/enable_synthetic_leader_traits_for_machine_leaders) 2.0.0)
 * [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 3.0.0)
-* [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 2.7.0)
+* [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 3.1.0)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 5.1.0)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 2.0.0)
 * [Restored Content: Fungoids](https://steamcommunity.com/workshop/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 1.4.0)
