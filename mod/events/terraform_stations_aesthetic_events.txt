@@ -55,7 +55,10 @@ planet_event = {
 		# 		graphical_culture = PREV.FROM
 		# 		orbit_distance = 18
 		# 		init_effect = {
-		# 			set_name = NAME_terraform_station
+		# 			set_name = {
+		#				key = NAME_terraform_station
+		#				variable_string = "[terraform_planet.GetName]"
+		#			}
 		# 			set_megastructure_flag = terraform_station@PREVPREV
 		# 		}
 		# 	}
@@ -72,7 +75,10 @@ planet_event = {
 			}
 			effect = {
 				save_event_target_as = terraform_station
-				set_name = NAME_terraform_station
+				set_name = {
+					key = NAME_terraform_station
+					variable_string = "[terraform_planet.GetName]"
+				}
 				set_owner = FROM
 				set_fleet_flag = terraform_station@event_target:terraform_planet
 				set_location = {
@@ -85,7 +91,10 @@ planet_event = {
 					prefix = no
 					random_existing_design = terraform_station
 					effect = {
-						set_name = NAME_terraform_station
+						set_name = {
+							key = NAME_terraform_station
+							variable_string = "[terraform_planet.GetName]"
+						}
 					}
 				}
 			}
