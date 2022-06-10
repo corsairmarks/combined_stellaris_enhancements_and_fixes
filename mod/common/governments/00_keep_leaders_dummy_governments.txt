@@ -1,0 +1,9 @@
+# dummy government so I don't spam the error log when Eldanær Stellar Authority is not installed
+gov_bureaucratic_autocracy = {
+	ruler_title = RT_EMPEROR
+	ruler_title_female = RT_EMPRESS
+	possible = { always = no }
+	weight = {
+		base = 0
+	}
+}

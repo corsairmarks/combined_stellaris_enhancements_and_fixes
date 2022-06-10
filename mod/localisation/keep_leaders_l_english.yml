@@ -187,3 +187,7 @@ keep_leaders.40.b.hive: "$keep_leaders.1.b.gest.exclusive$"
 keep_leaders.40.b.hive.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"
 keep_leaders.40.c: "Execute them anyway."
 keep_leaders.40.c.tooltip: "$keep_leaders.1.a.tooltip$"
+
+ # localisation to make the game happy with the dummy government - matches the content from  Eldanær Stellar Authority so that it won't matter which mod loads first
+ gov_bureaucratic_autocracy: "Bureaucratic Autocracy"
+ gov_bureaucratic_autocracy_desc: "This government is a hierarchical and nigh-incomprehensible system of offices and sub-administrations, where even the absolute ruler is defined and bound by complex, arcane precepts and where succession is rigidly predetermined by law."
