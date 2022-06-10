@@ -43,14 +43,6 @@ This mod overwrites five buildings, so expect to see five errors in your error.l
 [16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_imperial_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 1255
 ```
 
-This mod also supports colony designations from my mods [Enhanced Trade Districts and Designations](https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470) and [More Standard Districts](https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194).  Expect to see some occasional error logs like this if those mods are _not_ installed:
-
-```
-[16:56:55][trigger_impl.cpp:3320]: Error in has_designation/colony_type trigger, cannot find planet designation with key: col_srw_trade file: in scripted trigger should_swap_extra_merchants at file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 864 line: 1
-[16:56:55][trigger_impl.cpp:3320]: Error in has_designation/colony_type trigger, cannot find planet designation with key: col_standard_cm_trade file: in scripted trigger should_swap_extra_merchants at file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 864 line: 1
-[16:56:55][trigger_impl.cpp:3320]: Error in has_designation/colony_type trigger, cannot find planet designation with key: col_ecu_trade file: in scripted trigger should_swap_extra_merchants at file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 864 line: 1
-```
-
 ## Changelog
 
 * 1.0.0 Initial version
@@ -61,6 +53,7 @@ This mod also supports colony designations from my mods [Enhanced Trade District
     * Use memory optimization feature for triggers
     * Update habitat capital building with deficit changes
 * 2.1.0 Update for Stellaris version 3.4.3 "Cepheus" - apply underlying fix for duplicate alloy deficit penalty (remove it from the habitat capital building)
+* 2.2.0 Add a dummy colony designations (from other supported mods) to stop spamming the error log when they are not installed
 
 ## Source Code
 
