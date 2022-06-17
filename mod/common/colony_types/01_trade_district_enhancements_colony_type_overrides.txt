@@ -10,7 +10,9 @@
 col_city = {
 	icon = GFX_colony_type_urban
 	potential = {
-		tde_uses_regular_district_set = yes
+		tde_uses_district_set_city_world = no
+		tde_uses_district_set_habitat = no
+		tde_uses_district_set_ring_world = no
 		is_special_colony_type = no
 		exists = owner
 		owner = { is_regular_empire = yes }
