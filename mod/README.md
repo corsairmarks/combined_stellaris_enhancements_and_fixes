@@ -83,6 +83,7 @@ Overwriting a colony type or district produces an error log.  Expect to see eigh
     * City districts grant 1 Merchant job per 4 districts for regular and MegaCorp empires, instead of substituting Executives for MegaCorps
     * Simplify the Merchant/Executive/Manager jobs swaps for commercial districts - things got a little out of hand
     * Add custom descriptions to the commercial districts, describing the job shift(s)
+* 3.2.0 The Urban World colony designation requirements more accurately reflect the base game: it can be used on any planet which is not an ecumenopolis, habitat, or ringworld
 
 ## Source Code
 
