@@ -236,3 +236,60 @@ turtle_miner = {
 		}
 	}
 }
+
+# Modified: Added amenities for agrarian idyll (lithoid)
+manufactorium_scraper = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_ancient_cryo_chamber
+	icon = miner
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
+			}
+		}
+		planet_amenities_add = 2
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 1
+			alloys = 1
+			engineering_research = 0.5
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|manufactorium_scraper|RESOURCE|minerals|
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
+			}
+		}
+		modifier = {
+			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+				is_lithoid_empire = yes
+			}
+		}
+	}
+}
