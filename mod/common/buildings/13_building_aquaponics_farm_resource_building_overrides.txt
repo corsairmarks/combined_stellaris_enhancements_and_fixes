@@ -19,7 +19,6 @@ building_hydroponics_farm = {
 	}
 
 	allow = {
-		buildings_simple_allow = yes
 	}
 
 	destroy_trigger = {

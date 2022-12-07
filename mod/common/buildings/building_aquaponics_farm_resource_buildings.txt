@@ -18,7 +18,6 @@ building_aquaponics_farm = {
 	}
 
 	allow = {
-		buildings_simple_allow = yes
 	}
 
 	destroy_trigger = {
@@ -153,7 +152,6 @@ building_aquaponics_farm_2 = {
 	}
 
 	allow = {
-		buildings_simple_allow = yes
 	}
 
 	destroy_trigger = {
