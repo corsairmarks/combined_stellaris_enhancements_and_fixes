@@ -1,0 +1,21 @@
+# $OPTION_CHAR$ = the character suffix of the name localisation key (I didn't feel like refactoring to use the index, and a literal string doesn't properly apply coloring)
+# $INDEX$ = the numeric index of the option
+option = {
+	name = organic_advisors_decree.8.$OPTION_CHAR$
+	custom_tooltip_with_params = {
+		description = organic_advisors_decree.8.option.tooltip
+		description_parameters = {
+			NAME = "[current_advisors$INDEX$.GetName]"
+		}
+	}
+	trigger = {
+		check_variable = {
+			which = num_subset_current_advisors
+			value > $INDEX$
+		}
+	}
+	hidden_effect = { event_target:current_advisors$INDEX$ = { remove_species_organic_advisors = yes } }
+	ai_chance = {
+		factor = 0
+	}
+}
