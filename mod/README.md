@@ -12,16 +12,16 @@ Requires the Aquatics DLC.
 
 Overwrites the built-in Hydroponics Farms building (`building_hydroponics_farm`) in order for it to be upgradeable to Aquaponics Farms.  Also overwrites the built-in Angler job (`angler`) so that any empire can work Angler jobs.
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 ## Known Issues
 
 Overriding a building, job, or trigger causes the game to log errors noting the overrides.  Expect to see three lines in the error.log file like these:
 
 ```
-[16:03:16][game_singleobjectdatabase.h:147]: Object with key: angler already exists, using the one at  file: common/pop_jobs/13_building_aquaponics_farm_worker_job_overrides.txt line: 7
-[16:03:18][game_singleobjectdatabase.h:147]: Object with key: building_hydroponics_farm already exists, using the one at  file: common/buildings/13_building_aquaponics_farm_resource_building_overrides.txt line: 6
-[16:03:18][game_singleobjectdatabase.h:147]: Object with key: has_any_farming_district_or_buildings already exists, using the one at  file: common/scripted_triggers/10_building_aquaponics_farm_scripted_trigger_overrides.txt line: 3
+[16:03:16][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at  file: common/pop_jobs/13_building_aquaponics_farm_worker_job_overrides.txt line: 7
+[16:03:18][game_singleobjectdatabase.h:165]: Object with key: building_hydroponics_farm already exists, using the one at  file: common/buildings/13_building_aquaponics_farm_resource_building_overrides.txt line: 6
+[16:03:18][game_singleobjectdatabase.h:165]: Object with key: has_any_farming_district_or_buildings already exists, using the one at  file: common/scripted_triggers/10_building_aquaponics_farm_scripted_trigger_overrides.txt line: 3
 ```
 
 ## Changelog
@@ -32,6 +32,11 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
 * 2.0.0 Update for Stellaris version 3.4 "Cepheus"
     * Use memory optimization feature for a trigger
     * Update `angler` job with changes from base game
+* 3.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Remove defunct trigger reference to `buildings_simple_allow`
+    * Update `angler` job with changes from base game, also account for "Agrarian" Idyll for Lithoids if installed
+    * Hydroponics or Aquaponics Farms on flooded habitats produce angler jobs in the same fashion as ocean worlds for angler empires
+    * Add aquaponics farm build speed to `col_habitat_farming`
 
 ## Source Code
 
