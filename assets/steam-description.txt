@@ -1,10 +1,7 @@
 [h1]Overview[/h1]
-Have you ever wanted to entrust your Battle Thralls to lead on the battlefield? With this mod you now have the option to allow your Battle Thralls greater freedom to command ships and armies as Admirals and Generals. Or maybe some organic insight is just what your Rogue Servitors need to build a better paradise? This mod also allows you to designate Bio-Trophy species as Organic Advisors as Governors and Scientists. Should you need to wield the "chaotic and violent organic nature" you also have the option to grant your Organic Advisors the Full Military Service species right so they can serve ad Admirals and Generals - but not armies. Even the most jaded Rogue Servitors would never send a mass of the precious Bio-Trophies into battle!
+Have you ever wanted to entrust your Battle Thralls to lead on the battlefield? With this mod you now have the option to allow your Battle Thralls greater freedom to command ships and armies as Admirals and Generals. Or maybe some organic insight is just what your Rogue Servitors need to build a better paradise? This mod also allows you to designate Bio-Trophy species as Organic Advisors as Governors and Scientists. Should you need to wield the "chaotic and violent organic nature" you also have the option to grant your Organic Advisors the Full Military Service species right so they can serve as Admirals and Generals - but not armies. Even the most jaded Rogue Servitors would never send a mass of the precious Bio-Trophies into battle!
 
 In addition to Battle Thralls being eligible to be rolled as military leaders and Bio-Trophies as non-ruler leaders, any species with Full Military Service can be rewarded as a promoted captain after destroying an enemy fleet. The free admiral from a promotion is built-in, but by default it only ever rewards admirals of the owner's main species.
-
-[h2]Renamed[/h2]
-Previously known as "Full Military Service for Battle Thralls" - the new name calls out the new functionality.
 
 [h1]Changes[/h1]
 The Battle Thralls slavery type is allowed to be assigned the Full Military Service service type, which then allows them to become military leaders - Admirals and Generals. In order to achieve this, I've attached an event to [b]on_leader_spawned[/b] that can alter the species of the spawned leader to any species which has Full Military Service; this applies anywhere leaders are created. The leader's species is randomly rerolled by selecting a Pop out of all those that have Full Military service and using that Pop's species, and is thus implicitly weighted based on the relative population size of the eligible species. Second, I've updated Full Military Service to be selectable for Battle Thralls. As a bonus for allowing Battle Thralls even greater responsibility, their Pops are 10% happier when given Full Military Service.
@@ -28,7 +25,7 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimiliate Machines[/url].
 
-Built for Stellaris version 3.4 "Cepheus." This mod is not compatible with achievements.
+Built for Stellaris version 3.6 "Orion." This mod is not compatible with achievements.
 
 [h2]Localisation[/h2]
 This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
@@ -51,4 +48,4 @@ See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2496357447
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/battle_thrall_military_leaders]GitHub[/url]
 
-[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]

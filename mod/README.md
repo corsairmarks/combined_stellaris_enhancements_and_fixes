@@ -1,12 +1,8 @@
 # Overview
 
-Have you ever wanted to entrust your Battle Thralls to lead on the battlefield? With this mod you now have the option to allow your Battle Thralls greater freedom to command ships and armies as Admirals and Generals.  Or maybe some organic insight is just what your Rogue Servitors need to build a better paradise?  This mod also allows you to designate Bio-Trophy species as Organic Advisors as Governors and Scientists.  Should you need to wield the "chaotic and violent organic nature" you also have the option to grant your Organic Advisors the Full Military Service species right so they can serve ad Admirals and Generals - but not armies.  Even the most jaded Rogue Servitors would never send a mass of the precious Bio-Trophies into battle!
+Have you ever wanted to entrust your Battle Thralls to lead on the battlefield? With this mod you now have the option to allow your Battle Thralls greater freedom to command ships and armies as Admirals and Generals.  Or maybe some organic insight is just what your Rogue Servitors need to build a better paradise?  This mod also allows you to designate Bio-Trophy species as Organic Advisors as Governors and Scientists.  Should you need to wield the "chaotic and violent organic nature" you also have the option to grant your Organic Advisors the Full Military Service species right so they can serve as Admirals and Generals - but not armies.  Even the most jaded Rogue Servitors would never send a mass of the precious Bio-Trophies into battle!
 
 In addition to Battle Thralls being eligible to be rolled as military leaders and Bio-Trophies as non-ruler leaders, any species with Full Military Service can be rewarded as a promoted captain after destroying an enemy fleet.  The free admiral from a promotion is built-in, but by default it only ever rewards admirals of the owner's main species.
-
-## Renamed
-
-Previously known as "Full Military Service for Battle Thralls" - the new name calls out the new functionality.
 
 # Changes
 
@@ -86,6 +82,10 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Integrate underlying game change - SALVAGER and SHROUDWALKER species classes do not use gender
     * Reduce duplicated AI-weight code for Honored Protectors and Organic Advisors
 * 4.1.0 Minor trigger enhancement
+* 5.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Update overridden game rules with underlying game changes
+    * Update `species_rights` to override files based on changed directories in the base game
+    * Refactor events to use inline script in order to reduce code duplication (no change to functionality)
 
 ## Source Code
 
