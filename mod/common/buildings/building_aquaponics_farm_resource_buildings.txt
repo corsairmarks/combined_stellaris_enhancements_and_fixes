@@ -79,7 +79,14 @@ building_aquaponics_farm = {
 				is_regular_empire = yes
 				is_fallen_empire_spiritualist = no
 				is_anglers_empire = yes
-				PREV = { planet = { is_wet = yes } }
+				prev = {
+					planet = {
+						OR = {
+							is_wet = yes
+							has_modifier = flooded_habitat
+						}
+					}
+				}
 			}
 		}
 		modifier = {
@@ -213,7 +220,14 @@ building_aquaponics_farm_2 = {
 				is_regular_empire = yes
 				is_fallen_empire_spiritualist = no
 				is_anglers_empire = yes
-				PREV = { planet = { is_wet = yes } }
+				prev = {
+					planet = {
+						OR = {
+							is_wet = yes
+							has_modifier = flooded_habitat
+						}
+					}
+				}
 			}
 		}
 		modifier = {

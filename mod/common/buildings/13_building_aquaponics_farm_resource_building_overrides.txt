@@ -52,7 +52,12 @@ building_hydroponics_farm = {
 					is_anglers_empire = no
 					AND = {
 						is_anglers_empire = yes
-						NOT = { PREV = { planet = { is_wet = yes } } }
+						prev.planet = {
+							NOR = {
+								is_wet = yes
+								has_modifier = flooded_habitat
+							}
+						}
 					}
 				}
 			}
@@ -99,7 +104,12 @@ building_hydroponics_farm = {
 				is_regular_empire = yes
 				is_fallen_empire_spiritualist = no
 				is_anglers_empire = yes
-				PREV = { planet = { is_wet = yes } }
+				prev.planet = {
+					OR = {
+						is_wet = yes
+						has_modifier = flooded_habitat
+					}
+				}
 			}
 		}
 		modifier = {
@@ -134,7 +144,12 @@ building_hydroponics_farm = {
 					is_anglers_empire = no
 					AND = {
 						is_anglers_empire = yes
-						NOT = { PREV = { planet = { is_wet = yes } } }
+						prev.planet = {
+							NOR = {
+								is_wet = yes
+								has_modifier = flooded_habitat
+							}
+						}
 					}
 				}
 			}
@@ -154,7 +169,12 @@ building_hydroponics_farm = {
 			owner = {
 				is_fallen_empire_spiritualist = no
 				is_anglers_empire = yes
-				PREV = { planet = { is_wet = yes } }
+				prev.planet = {
+					OR = {
+						is_wet = yes
+						has_modifier = flooded_habitat
+					}
+				}
 			}
 		}
 		text = job_aqu_angler_effect_desc
