@@ -7,3 +7,5 @@
  building_aquaponics_farm_desc: "Aquaponics Farms produce nutrient-rich fish and vegetable matter tailored for consumption by local Pops."
  building_aquaponics_farm_2: "Advanced Aquaponics Farms"
  building_aquaponics_farm_2_desc: "Advanced aquaponics farms are made possible by sophisticated genetic engineering techniques. Hydroponic crops and aquaculture yield more edible biomass with both a higher caloric density and improved flavor profiles designed to appeal to local Pops."
+ mod_planet_building_aquaponics_farm_build_speed_mult: "$building_aquaponics_farm$ Build Speed"
+ mod_planet_building_aquaponics_farm_2_build_speed_mult: "$building_aquaponics_farm_2$ Build Speed"
