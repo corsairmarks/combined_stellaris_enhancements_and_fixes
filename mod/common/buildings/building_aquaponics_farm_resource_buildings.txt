@@ -80,11 +80,9 @@ building_aquaponics_farm = {
 				is_fallen_empire_spiritualist = no
 				is_anglers_empire = yes
 				prev = {
-					planet = {
-						OR = {
-							is_wet = yes
-							has_modifier = flooded_habitat
-						}
+					OR = {
+						is_wet = yes
+						has_modifier = flooded_habitat
 					}
 				}
 			}
@@ -221,11 +219,9 @@ building_aquaponics_farm_2 = {
 				is_fallen_empire_spiritualist = no
 				is_anglers_empire = yes
 				prev = {
-					planet = {
-						OR = {
-							is_wet = yes
-							has_modifier = flooded_habitat
-						}
+					OR = {
+						is_wet = yes
+						has_modifier = flooded_habitat
 					}
 				}
 			}
