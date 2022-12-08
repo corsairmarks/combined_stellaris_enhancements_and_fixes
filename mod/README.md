@@ -36,7 +36,8 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
     * Remove defunct trigger reference to `buildings_simple_allow`
     * Update `angler` job with changes from base game, also account for "Agrarian" Idyll for Lithoids if installed
     * Hydroponics or Aquaponics Farms on flooded habitats produce angler jobs in the same fashion as ocean worlds for angler empires
-    * Add aquaponics farm build speed to `col_habitat_farming`
+    * Add aquaponics farm build speed to `col_habitat_farming` (and the gestalt version)
+    * You are more likely to draw Aquaponics technologies if you have the Javorian Pox Sample (same as Hydroponics)
 
 ## Source Code
 
