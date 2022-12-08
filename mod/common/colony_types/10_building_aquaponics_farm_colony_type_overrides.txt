@@ -1,5 +1,5 @@
 # Habitat Farming
-# Modified: Add aquaponics farm build speed, any type of hydroponics  or aquaponics increases weight factor
+# Modified: Add aquaponics farm build speed, any type of hydroponics or aquaponics increases weight factor
 col_habitat_farming = {
 	icon = GFX_colony_type_habitat_farming
 
@@ -94,6 +94,7 @@ col_habitat_farming = {
 	}
 }
 
+# Modified: Add aquaponics farm build speed, any type of hydroponics or aquaponics increases weight factor
 col_habitat_gestalt_farming = {
 	icon = GFX_colony_type_habitat_farming
 
@@ -159,7 +160,20 @@ col_habitat_gestalt_farming = {
 		}
 		modifier = {
 			factor = 3
-			value:num_farming_buildings >= 1
+			OR = {
+				num_buildings = {
+					type = building_hydroponics_farm
+					value > 0
+				}
+				num_buildings = {
+					type = building_aquaponics_farm
+					value > 0
+				}
+				num_buildings = {
+					type = building_aquaponics_farm_2
+					value > 0
+				}
+			}
 		}
 		modifier = {
 			factor = 0
