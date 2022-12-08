@@ -16,12 +16,14 @@ Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 ## Known Issues
 
-Overriding a building, job, or trigger causes the game to log errors noting the overrides.  Expect to see three lines in the error.log file like these:
+Overriding a building, job, or trigger causes the game to log errors noting the overrides.  Expect to see five lines in the error.log file like these:
 
 ```
-[16:03:16][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at  file: common/pop_jobs/13_building_aquaponics_farm_worker_job_overrides.txt line: 7
-[16:03:18][game_singleobjectdatabase.h:165]: Object with key: building_hydroponics_farm already exists, using the one at  file: common/buildings/13_building_aquaponics_farm_resource_building_overrides.txt line: 6
-[16:03:18][game_singleobjectdatabase.h:165]: Object with key: has_any_farming_district_or_buildings already exists, using the one at  file: common/scripted_triggers/10_building_aquaponics_farm_scripted_trigger_overrides.txt line: 3
+[20:27:45][game_singleobjectdatabase.h:165]: Object with key: building_hydroponics_farm already exists, using the one at  file: common/buildings/13_building_aquaponics_farm_resource_building_overrides.txt line: 6
+[20:27:45][game_singleobjectdatabase.h:165]: Object with key: col_habitat_farming already exists, using the one at  file: common/colony_types/10_building_aquaponics_farm_colony_type_overrides.txt line: 3
+[20:27:45][game_singleobjectdatabase.h:165]: Object with key: col_habitat_gestalt_farming already exists, using the one at  file: common/colony_types/10_building_aquaponics_farm_colony_type_overrides.txt line: 98
+[20:27:47][game_singleobjectdatabase.h:165]: Object with key: has_any_farming_district_or_buildings already exists, using the one at  file: common/scripted_triggers/10_building_aquaponics_farm_scripted_trigger_overrides.txt line: 3
+[20:27:49][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at  file: common/pop_jobs/13_building_aquaponics_farm_worker_job_overrides.txt line: 8
 ```
 
 ## Changelog
