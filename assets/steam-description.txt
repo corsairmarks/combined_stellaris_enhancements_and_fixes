@@ -12,7 +12,7 @@ Reintroduces terraform stations and existing (but unused) graphical effects to p
 [h2]Compatibility[/h2]
 This mod reuses existing game entities and 3D assets plus new events to handle the spawning and despawning for terraform stations.  The terraform station ship size is restored to the game and used to create real stations as visual markers.  What this means to you is that this mod should work with practically any other mod, although new shipsets will use their fallback option for terraform stations.
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 [h3]When to Install[/h3]
 This mod should be added before you start a new game so that all empires are assigned a (hidden) ship design for terraform stations.  Without the design, there is no way to spawn the terraform station fleets.  Furthermore, this mod should not be removed from a game in-progress.  Losing access to the ship size or entities may cause issues if there are any terraform stations still active, and attempting to fire an event that doesn't exist will frequently result in a crash.
@@ -43,4 +43,4 @@ See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2622411084
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/terraform_stations_aesthetic]GitHub[/url]
 
-[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]

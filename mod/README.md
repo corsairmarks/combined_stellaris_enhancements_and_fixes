@@ -54,6 +54,9 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 * 2.1.0 Mark as compatible with Stellaris 3.3 "Libra"
     * Improve trigger for determining if a species is "nuked" - this change is a general upgrade, not specific to version 3.3 "Libra"
 * 3.0.0 Upgrade for compatibility with Stellaris version 3.4 "Cepheus"
+* 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Account for new radiotrophic variants (matters only when used alongside ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437))
+    * Toxoid shipset does not have a unique Terraform Station, so it should use the appropriate fallback (Mammalian)
 
 ## Source Code
 
