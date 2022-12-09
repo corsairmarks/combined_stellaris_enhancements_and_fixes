@@ -2,6 +2,8 @@ terraform_station = {
 	entity = aesthetic_megastructure_terraform_station_entity
 	construction_entity = aesthetic_megastructure_terraform_station_construction_entity
 	portrait = GFX_spaceport_background # OR GFX_starbase_background
+	show_galactic_map_icon = no
+	show_in_outliner = no
 	entity_offset = { x = -25 y = 25 }
 	scale_offset = yes
 	rotate_to_center = yes
