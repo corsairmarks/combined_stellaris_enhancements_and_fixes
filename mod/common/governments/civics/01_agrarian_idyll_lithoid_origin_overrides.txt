@@ -1,5 +1,7 @@
+# Modified: add swap for lithoids
+# Modified: Add exclusion for civic_corporate_relentless_industrialists
 civic_agrarian_idyll = {
-	description = "civic_tooltip_agrarian_idyll_effects"
+	description = civic_tooltip_agrarian_idyll_effects
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
@@ -20,10 +22,16 @@ civic_agrarian_idyll = {
 				value = origin_remnants
 			}
 		}
-		civics = { NOT = { value = civic_anglers } }
+		civics = {
+			NOR = {
+				value = civic_relentless_industrialists
+				value = civic_corporate_relentless_industrialists
+			}
+		}
 	}
 	random_weight = { base = 5 }
 	modifier = { }
+	# currently - only one swap_type is allowed
 	swap_type = {
 		name = civic_agrarian_idyll_lithoid
 		description = civic_tooltip_agrarian_idyll_lithoid_effects
@@ -38,8 +46,36 @@ civic_agrarian_idyll = {
 				AND = {
 					is_scope_valid = yes
 					is_lithoid_empire = yes
+					# NOR = {
+					# 	has_civic = civic_anglers
+					# 	has_civic = civic_corporate_anglers
+					# }
 				}
 			}
 		}
 	}
+	# swap_type = {
+	# 	name = civic_agrarian_idyll_anglers
+	# 	description = civic_tooltip_agrarian_anglers_effects
+	# 	trigger = {
+	# 		is_scope_valid = yes
+	# 		is_lithoid_empire = no
+	# 		OR = {
+	# 			has_civic = civic_anglers
+	# 			has_civic = civic_corporate_anglers
+	# 		}
+	# 	}
+	# }
+	# swap_type = {
+	# 	name = civic_agrarian_idyll_lithoid_anglers
+	# 	description = civic_tooltip_agrarian_anglers_lithoid_effects
+	# 	trigger = {
+	# 		is_scope_valid = yes
+	# 		is_lithoid_empire = yes
+	# 		OR = {
+	# 			has_civic = civic_anglers
+	# 			has_civic = civic_corporate_anglers
+	# 		}
+	# 	}
+	# }
 }
