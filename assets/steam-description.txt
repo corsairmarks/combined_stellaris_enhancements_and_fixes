@@ -4,12 +4,12 @@ Want to activate unity-based edicts right at game start?  With this mod, you can
 Inspired by HFY in this [url=https://forum.paradoxplaza.com/forum/threads/3-3-libra-please-start-every-empire-with-some-unity-so-we-can-activate-edicts-on-day-1.1513564/]forum post[/url].
 
 [h1]Changes[/h1]
-Adds one event that fires at game start.  This event calculates the value of each empire's unity fund based on leader skill, leader traits, and civics and then grands that amount of starting unity.
+Adds one event that fires at game start.  This event calculates the value of each empire's unity fund based on leader skill, leader traits, and civics and then grants that amount of starting unity.
 
 [h2]Compatibility[/h2]
 Compatible with practically anything.  Limitations: this mod is hard-coded to understand the amount of edict fund given by built-in game effects only, because the modifier value does not seem eligible for export and use in script.  That means it will [b]not[/b] account for custom traits/civics/etc that also add edict fund or changes to the amount of fund granted by the built-in effects.
 
-Build for Stellaris version 3.4 "Cepheus."  Not compatible with achievements - however, you can start an Ironman game with this mod active, exit and disable the mod, and then resume your game.  That [i]should[/i] allow you to earn achievements, because the game doesn't seem to track whether mods have ever been active for a game, just if the checksum is modified when you earn the achievement.
+Build for Stellaris version 3.6 "Orion."  Not compatible with achievements - however, you can start an Ironman game with this mod active, exit and disable the mod, and then resume your game.  That [i]should[/i] allow you to earn achievements, because the game doesn't seem to track whether mods have ever been active for a game, just if the checksum is modified when you earn the achievement.
 
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/workshop/filedetails/changelog/2775465389]Change Notes[/url]
@@ -17,4 +17,4 @@ See [url=https://steamcommunity.com/workshop/filedetails/changelog/2775465389]Ch
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/start_with_unity_fund]GitHub[/url]
 
-[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]
