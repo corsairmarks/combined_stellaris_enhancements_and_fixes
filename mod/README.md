@@ -57,6 +57,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
     * Account for new radiotrophic variants (matters only when used alongside ["Terraform" to Tomb World](https://steamcommunity.com/sharedfiles/filedetails/?id=2625663437))
     * Toxoid shipset does not have a unique Terraform Station, so it should use the appropriate fallback (Mammalian)
+* 4.0.1 Remove duplicate property from the megastructure variation (code cleanup)
 
 ## Source Code
 
