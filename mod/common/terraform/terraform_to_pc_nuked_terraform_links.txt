@@ -428,7 +428,7 @@ terraform_link = {
 	}
 	duration = @pc_nuked_from_opposite_candidate_duration
 	potential = {
-		from = { has_modifier = terraforming_candidate }
+		from = { has_modifier = frozen_terraforming_candidate }
 		potential_for_pc_nuked_terraform_country = yes
 	}
 	condition = {

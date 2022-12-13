@@ -11,6 +11,10 @@ post_terraform_to_pc_nuked = {
 			limit = { has_modifier = terraforming_candidate }
 			remove_modifier = terraforming_candidate
 		}
+		if = {
+			limit = { has_modifier = frozen_terraforming_candidate }
+			remove_modifier = frozen_terraforming_candidate
+		}
 	}
 	if = {
 		limit = { NOT = { has_country_flag = terraformed_to_pc_nuked } }
