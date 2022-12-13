@@ -671,7 +671,10 @@ angler = {
 			exists = owner
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = no
+				OR = {
+					is_lithoid_empire = no
+					is_anglers_empire = yes
+				}
 			}
 		}
 		planet_amenities_add = 2
@@ -686,14 +689,20 @@ angler = {
 			factor = 1.1
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = no
+				OR = {
+					is_lithoid_empire = no
+					is_anglers_empire = yes
+				}
 			}
 		}
 		modifier = {
 			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
-				is_lithoid_empire = no
+				OR = {
+					is_lithoid_empire = no
+					is_anglers_empire = yes
+				}
 			}
 		}
 		modifier = {
