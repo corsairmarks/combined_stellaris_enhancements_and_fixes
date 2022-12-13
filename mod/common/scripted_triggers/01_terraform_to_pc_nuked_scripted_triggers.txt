@@ -60,6 +60,8 @@ is_nuked_species = {
 		has_trait = trait_survivor
 		has_trait = trait_plantoid_radiotrophic
 		has_trait = trait_harvested_radiotrophic
+		has_trait = trait_lithoid_radiotrophic
+		has_trait = trait_advanced_radiotrophic
 		has_trait = trait_presapient_irradiated
 	}
 }
