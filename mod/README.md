@@ -2,6 +2,8 @@
 
 Does your species prefer the warm glow of an irradiated planet?  Whether you "accidentally" nuked your homeworld or evolved to feed on radiation, this mod will help you ~~bombard~~ "terraform" planets into tomb worlds.  This includes applying orbital bombardment graphics to any planet being "terraformed" to a tomb world.
 
+As of Stellaris version 3.5 "Fornax" and the Toxoids expansion, the game has built-in a variation of terraforming planets to tomb worlds, but only for empires that are Relentless Industrialists and only after having completed a special project. This mod allows all empires to access it with a lower cost, but with higher research prerequisites. Thus you may rarely see two options to change a planet into a tomb world if your empire has the Relentless Industrialists study completed - that is a feature and not a bug.
+
 # Changes
 
 Adds terraforming links to change almost any colonizable, non-artificial planet into a tomb world (`pc_nuked`).  Empires whose founder species has one (or more) of the Tomb World Preference, Survivor, Radiotrophic, or Irradiated traits (nuked empires) do not require any special technologies to "terraform" into tomb worlds.  Non-nuked empires must have at least 1 Pop of a nuked species and the Tomb World Adaptation technology.  Converting unhabitable worlds (barren, cold barren, or frozen) that have the Terraforming Candidate modifier always requires the Climate Restoration technology.
@@ -27,7 +29,7 @@ Planets converted to tomb worlds this way are not eligible for the random events
 
 ## Compatibility
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 
@@ -61,6 +63,9 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Fix bug where Terraforming Candidate modifier was not removed when terraforming to a Tomb World
     * Code refactor to support ["Terraform" to Tomb World: Planetary Diversity Compatibility](https://steamcommunity.com/workshop/filedetails/?id=2766967251) - no functionality changes, but the logic is now much easier for the add-on to reuse
 * 4.0.0 Update for Stellaris version 3.4 "Cepheus" - use memory optimization feature for effects and triggers
+* 5.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Account for new radiotrophic variants
+    * Support changes to terraforming frozen worlds (you can still nuke them if they have the `frozen_terraforming_candidate` modifier)
 
 ## Source Code
 
