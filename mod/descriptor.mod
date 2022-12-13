@@ -1,4 +1,4 @@
-name="Start with Unity Fund"
+name="Game Start: Unity Fund"
 tags={
 	"Balance"
 	"Economy"
