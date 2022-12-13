@@ -15,7 +15,6 @@ terraform_station = {
 			minerals = 100
 		}
 	}
-	show_galactic_map_icon = no
 	construction_blocks_and_blocked_by = self_type
 	prerequisites = { tech_terrestrial_sculpting }
 	potential = { always = no }
