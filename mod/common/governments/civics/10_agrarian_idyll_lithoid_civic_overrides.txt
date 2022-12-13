@@ -47,10 +47,7 @@ civic_agrarian_idyll = {
 				AND = {
 					is_scope_valid = yes
 					is_lithoid_empire = yes
-					# NOR = {
-					# 	has_civic = civic_anglers
-					# 	has_civic = civic_corporate_anglers
-					# }
+					# is_anglers_empire = no
 				}
 			}
 		}
@@ -61,10 +58,7 @@ civic_agrarian_idyll = {
 	# 	trigger = {
 	# 		is_scope_valid = yes
 	# 		is_lithoid_empire = no
-	# 		OR = {
-	# 			has_civic = civic_anglers
-	# 			has_civic = civic_corporate_anglers
-	# 		}
+	# 		is_anglers_empire = yes
 	# 	}
 	# }
 	# swap_type = {
@@ -73,10 +67,7 @@ civic_agrarian_idyll = {
 	# 	trigger = {
 	# 		is_scope_valid = yes
 	# 		is_lithoid_empire = yes
-	# 		OR = {
-	# 			has_civic = civic_anglers
-	# 			has_civic = civic_corporate_anglers
-	# 		}
+	# 		is_anglers_empire = yes
 	# 	}
 	# }
 }
