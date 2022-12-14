@@ -10,7 +10,7 @@ Machine Worlds owned by regular empires now have a planetary modifier (visible o
 
 ## Compatibility
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit `d_resource_consolidation_1` (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
@@ -32,9 +32,9 @@ This mod can be safely added to your savegame after the game has started.  Becau
 Overriding the district, colony designation, and deposit causes the game to log three errors like this:
 
 ```
-[15:22:33][game_singleobjectdatabase.h:147]: Object with key: district_industrial already exists, using the one at  file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
-[15:22:34][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists, using the one at  file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
-[15:22:35][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists, using the one at  file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
+[15:22:33][game_singleobjectdatabase.h:165]: Object with key: district_industrial already exists, using the one at  file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
+[15:22:34][game_singleobjectdatabase.h:165]: Object with key: col_mac_factory already exists, using the one at  file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
+[15:22:35][game_singleobjectdatabase.h:165]: Object with key: d_resource_consolidation_1 already exists, using the one at  file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
 ```
 
 ## Changelog
@@ -57,6 +57,8 @@ Overriding the district, colony designation, and deposit causes the game to log 
     * Use memory optimization feature for effects and triggers
     * Update overridden Machine World Factory to account for sector automation
     * Neutral and Hostile Machine Worlds negate the resettlement bonus chance (which was added to Machine Worlds in 3.4)
+* 5.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Adjust Industrial District job tooltips to appear only when the relevant job swaps are activated, using the triggers provided by PDS (not sure why they did not use these triggers their changes)
 
 ## Source Code
 

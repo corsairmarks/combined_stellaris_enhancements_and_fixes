@@ -7,7 +7,7 @@ However, instead of just adding a Roboticist job and calling it a day, I decided
 Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displays the Machine World's opinion of your empire (Cooperative, Neutral, or Hostile).  All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job to replace it.  Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels out the bonuses and adds additional production and maintenance penalties.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was [b]not[/b] necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit [b]d_resource_consolidation_1[/b] (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
@@ -26,9 +26,9 @@ This mod can be safely added to your savegame after the game has started.  Becau
 [h2]Known Issues[/h2]
 Overriding the district, colony designation, and deposit causes the game to log three errors like this:
 [code]
-[15:22:33][game_singleobjectdatabase.h:147]: Object with key: district_industrial already exists, using the one at  file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
-[15:22:34][game_singleobjectdatabase.h:147]: Object with key: col_mac_factory already exists, using the one at  file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
-[15:22:35][game_singleobjectdatabase.h:147]: Object with key: d_resource_consolidation_1 already exists, using the one at  file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
+[15:22:33][game_singleobjectdatabase.h:165]: Object with key: district_industrial already exists, using the one at  file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
+[15:22:34][game_singleobjectdatabase.h:165]: Object with key: col_mac_factory already exists, using the one at  file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
+[15:22:35][game_singleobjectdatabase.h:165]: Object with key: d_resource_consolidation_1 already exists, using the one at  file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
 [/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2559702143]Change Notes[/url]
@@ -36,4 +36,4 @@ See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2559702143
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/deassimilated_machine_worlds]GitHub[/url]
 
-[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]
