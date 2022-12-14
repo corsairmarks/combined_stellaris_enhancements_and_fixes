@@ -15,16 +15,6 @@ should_swap_extra_high_priests = {
 # this = planet
 should_swap_extra_nobles = {
 	optimize_memory
-	OR = {
-		has_designation = col_bureau
-		has_designation = col_habitat_bureau
-		AND = {
-			is_sector_capital = yes
-			should_swap_extra_high_priests = no
-			should_swap_extra_head_researchers = no
-			should_swap_extra_merchants = no
-		}
-	}
 	exists = owner
 	owner = {
 		is_regular_empire = yes
@@ -33,6 +23,16 @@ should_swap_extra_nobles = {
 			has_authority = auth_imperial
 			has_valid_civic = civic_aristocratic_elite
 			is_galactic_emperor = yes
+		}
+	}
+	OR = {
+		has_designation = col_bureau
+		has_designation = col_habitat_bureau
+		AND = {
+			is_sector_capital = yes
+			should_swap_extra_high_priests = no
+			should_swap_extra_head_researchers = no
+			should_swap_extra_merchants = no
 		}
 	}
 }
