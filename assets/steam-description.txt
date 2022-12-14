@@ -7,7 +7,7 @@ Adds two events that grant bonus levels to Rulers and Governors for empires with
 [h2]Compatibility[/h2]
 Any mod that does not remove Civic: Philosopher King.
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 [h3]When to Install[/h3]
 This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events.  If you remove it, your game will work normally.  Any rulers or governors will keep their bonus levels.
@@ -21,4 +21,4 @@ See [url=https://steamcommunity.com/workshop/filedetails/changelog/2774084358]Ch
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/civic_philosopher_king_enhanced]GitHub[/url]
 
-[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]
