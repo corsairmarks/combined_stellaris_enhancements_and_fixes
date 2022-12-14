@@ -11,7 +11,7 @@ The counter-limited army types (Titanic Beasts, Azizian Armies, and Imperial Leg
 This mod won't affect any other kinds of armies.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 Overwrites the three built-in counter-limited armies in order to improve their counter usage: [b]titanic_assault_army[/b], [b]titanic_azizian_assault_army[/b], and [b]imperial_legion[/b].  The [b]titanic_assault_army[/b] also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
 
@@ -25,9 +25,9 @@ This mod can be safely added to your savegame after the game has started.  If re
 [h2]Known Issues[/h2]
 Because this mod replaces three army types ([b]titanic_assault_army[/b], [b]titanic_azizian_assault_army[/b], and [b]imperial_legion[/b]) and preempts two events ([b]colony_mod.101[/b] and [b]emperor.450[/b]), it is expected to generate five lines in error.log like this:
 [code]
-[15:38:54][game_singleobjectdatabase.h:147]: Object with key: titanic_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 6
-[15:38:54][game_singleobjectdatabase.h:147]: Object with key: titanic_azizian_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 45
-[15:38:54][game_singleobjectdatabase.h:147]: Object with key: imperial_legion already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 82
+[15:38:54][game_singleobjectdatabase.h:165]: Object with key: titanic_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 6
+[15:38:54][game_singleobjectdatabase.h:165]: Object with key: titanic_azizian_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 45
+[15:38:54][game_singleobjectdatabase.h:165]: Object with key: imperial_legion already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 82
 [15:38:59][eventmanager.cpp:361]: an event with id [colony_mod.101] already exists!  file: events/colony_events_3.txt line: 234
 [15:38:59][eventmanager.cpp:361]: an event with id [emperor.450] already exists!  file: events/nemesis_emperor_events.txt line: 2304
 [/code]
@@ -39,4 +39,4 @@ See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2564348666
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/limited_army_counter_fix]GitHub[/url]
 
-[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]

@@ -14,7 +14,7 @@ This mod won't affect any other kinds of armies.
 
 ## Compatibility
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 Overwrites the three built-in counter-limited armies in order to improve their counter usage: `titanic_assault_army`, `titanic_azizian_assault_army`, and `imperial_legion`.  The `titanic_assault_army` also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
 
@@ -31,9 +31,9 @@ This mod can be safely added to your savegame after the game has started.  If re
 Because this mod replaces three army types (`titanic_assault_army`, `titanic_azizian_assault_army`, and `imperial_legion`) and preempts two events (`colony_mod.101` and `emperor.450`), it is expected to generate five lines in error.log like this:
 
 ```
-[15:38:54][game_singleobjectdatabase.h:147]: Object with key: titanic_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 6
-[15:38:54][game_singleobjectdatabase.h:147]: Object with key: titanic_azizian_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 45
-[15:38:54][game_singleobjectdatabase.h:147]: Object with key: imperial_legion already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 82
+[15:38:54][game_singleobjectdatabase.h:165]: Object with key: titanic_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 6
+[15:38:54][game_singleobjectdatabase.h:165]: Object with key: titanic_azizian_assault_army already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 45
+[15:38:54][game_singleobjectdatabase.h:165]: Object with key: imperial_legion already exists, using the one at  file: common/armies/10_limited_army_counter_fix_armies_overrides.txt line: 82
 [15:38:59][eventmanager.cpp:361]: an event with id [colony_mod.101] already exists!  file: events/colony_events_3.txt line: 234
 [15:38:59][eventmanager.cpp:361]: an event with id [emperor.450] already exists!  file: events/nemesis_emperor_events.txt line: 2304
 ```
@@ -44,13 +44,14 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 
 * 1.0.0 Initial version
 * 1.0.1 Fix thumbnail
-* 2.0.0 Mark as compatible with Stellaris 3.1 "Lem" - update to use new arithmetic syntax
-* 2.1.0 Mark as compatible with Stellaris 3.2 "Herbert" - no script changes
-* 2.2.0 Mark as compatible with Stellaris 3.3 "Libra" - no script changes
+* 2.0.0 Mark as compatible with Stellaris version 3.1 "Lem" - update to use new arithmetic syntax
+* 2.1.0 Mark as compatible with Stellaris version 3.2 "Herbert" - no script changes
+* 2.2.0 Mark as compatible with Stellaris version 3.3 "Libra" - no script changes
 * 3.0.0 Update for Stellaris version 3.4 "Cepheus"
     * Use memory optimization feature for effects and triggers
     * Update armies with new army properties
     * Add army weights so the AI will build Titanic Life and Azizians armies if possible
+* 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax") - use new `fromfrom` scope in events tied to `on_planet_transfer`
 
 ## Source Code
 
