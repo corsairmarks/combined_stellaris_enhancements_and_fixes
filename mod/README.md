@@ -20,7 +20,7 @@ Although only loosely-related to this mod's main purpose, it also adds an event 
 
 Compatible with any mod that does not overwrite the same buildings.  For mods that overwrite all the capital buildings, this mod's buildings will likely take precedence.  Might have problems with other mods that remove the expected colony types, but I highly doubt any mods do that.
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 ### Recommended Companion Mods
 
@@ -36,11 +36,11 @@ This mod can be safely added to your savegame after the game has started.  If yo
 This mod overwrites five buildings, so expect to see five errors in your error.log similar to these:
 
 ```
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 10
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 293
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_system_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 587
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_hab_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 898
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_imperial_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 1255
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 10
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 304
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_system_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 623
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_hab_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 958
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_imperial_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 1474
 ```
 
 ## Changelog
@@ -54,6 +54,9 @@ This mod overwrites five buildings, so expect to see five errors in your error.l
     * Update habitat capital building with deficit changes
 * 2.1.0 Update for Stellaris version 3.4.3 "Cepheus" - apply underlying fix for duplicate alloy deficit penalty (remove it from the habitat capital building)
 * 2.2.0 Add a dummy colony designations (from other supported mods) to stop spamming the error log when they are not installed
+* 3.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Integrate the Origin: Knights of the Toxic God changes
+    * Integrate the new tradition-based changes and federation bonus culture workers (including adding the culture workers to the imperial capitol - appears to be an oversight by PDS)
 
 ## Source Code
 

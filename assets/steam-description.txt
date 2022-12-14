@@ -17,7 +17,7 @@ Although only loosely-related to this mod's main purpose, it also adds an event 
 [h2]Compatibility[/h2]
 Compatible with any mod that does not overwrite the same buildings.  For mods that overwrite all the capital buildings, this mod's buildings will likely take precedence.  Might have problems with other mods that remove the expected colony types, but I highly doubt any mods do that.
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 [h3]Recommended Companion Mods[/h3]
 [list]
@@ -30,11 +30,11 @@ This mod can be safely added to your savegame after the game has started.  If yo
 [h2]Known Issues[/h2]
 This mod overwrites five buildings, so expect to see five errors in your error.log similar to these:
 [code]
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 10
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 293
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_system_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 587
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_hab_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 898
-[16:56:43][game_singleobjectdatabase.h:147]: Object with key: building_imperial_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 1255
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 10
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 304
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_system_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 623
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_hab_major_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 958
+[15:08:43][game_singleobjectdatabase.h:165]: Object with key: building_imperial_capital already exists, using the one at  file: common/buildings/10_building_capital_colony_type_job_swaps_capital_building_overrides.txt line: 1474
 [/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2773995755]Change Notes[/url]
@@ -42,4 +42,4 @@ See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2773995755
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/building_capital_colony_type_job_swaps]GitHub[/url]
 
-[url=https://discord.gg/bHVez2C][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/2qjkAF8DY7][img]https://i.imgur.com/4Und3QN.png[/img][/url]
