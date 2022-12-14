@@ -204,7 +204,7 @@ event = {
 # triggered by on_planet_transfer
 # ROOT = planet
 # FROM = country, new owner
-# PREV = country, previous owner (optional)
+# FROMFROM = country, previous owner (optional)
 planet_event = {
 	id = limited_army_counter_fix.4
 	hide_window = yes
@@ -226,10 +226,10 @@ planet_event = {
 		}
 		if = {
 			limit = {
-				exists = PREV
-				PREV = { is_scope_type = country }
+				exists = FROMFROM
+				FROMFROM = { is_scope_type = country }
 			}
-			PREV = {
+			FROMFROM = {
 				if = {
 					limit = { has_country_flag = titanic_life_soldiers }
 					set_variable = {
