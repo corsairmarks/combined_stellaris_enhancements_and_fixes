@@ -2,13 +2,14 @@ building_bureaucratic_3 = {
 	base_buildtime = @b3_time
 	can_build = no
 
-	category = government
+	category = unity
 
 	potential = {
 		exists = owner
 		owner = {
 			is_regular_empire = yes
 			is_spiritualist = no
+			has_make_spiritualist_perk = no
 		}
 		NOT = { has_modifier = slave_colony }
 	}
@@ -18,12 +19,11 @@ building_bureaucratic_3 = {
 	}
 
 	destroy_trigger = {
-		OR = {
-			buildings_no_crystals = yes
-			exists = owner
-			owner = {
+		owner = {
+			OR = {
 				is_regular_empire = no
 				is_spiritualist = yes
+				has_make_spiritualist_perk = yes
 			}
 		}
 	}
@@ -62,6 +62,22 @@ building_bureaucratic_3 = {
 			owner = { is_megacorp = no }
 		}
 		text = job_bureaucrat_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		job_high_priest_add = 1
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner.federation
+			owner.federation = { has_federation_perk = all_the_priests_2 }
+		}
+		text = job_high_priest_effect_desc
 	}
 
 	triggered_planet_modifier = {
@@ -108,5 +124,6 @@ building_bureaucratic_3 = {
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 		is_spiritualist = no
+		has_make_spiritualist_perk = no
 	}
 }
