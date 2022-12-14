@@ -25,6 +25,8 @@ planet_event = {
 		owner = {
 			is_lithoid_empire = yes
 			has_valid_civic = civic_agrarian_idyll
+			is_anglers_empire = no
+			is_catalytic_empire = no
 		}
 	}
 	immediate = {

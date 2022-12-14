@@ -103,6 +103,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Add `manufactorium_scraper` job override, so it can now produce amenities for lithoid Agrarian Idyll empires
     * Update override for Civic: Agrarian Idyll to support Civic: Anglers but deny Civic: Relentless Industrialists
     * Add override for Civic: Anglers (megacorp version only) to correctly allow it alongside Civic: Agrarian Idyll
+    * No longers swap initial farming to mining districts for lithoids that are Anglers or Catalytic Processors
 
 ## Source Code
 
