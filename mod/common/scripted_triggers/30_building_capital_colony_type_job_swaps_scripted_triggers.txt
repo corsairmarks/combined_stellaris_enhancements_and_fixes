@@ -40,12 +40,7 @@ should_swap_extra_nobles = {
 # this = planet
 should_swap_extra_head_researchers = {
 	optimize_memory
-	OR = {
-		has_designation = col_research
-		has_designation = col_habitat_research
-		has_designation = col_ecu_research
-		has_designation = col_ring_research
-	}
+	has_research_designation = yes
 	exists = owner
 	owner = {
 		is_regular_empire = yes
