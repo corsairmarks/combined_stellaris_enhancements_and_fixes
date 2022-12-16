@@ -25,7 +25,7 @@ Built for Stellaris version 3.6 "Orion."  As a UI-only mod, this is achievement 
 * 1.2.0 Add support for 5 rows of building slots - enabling it requires the submod [Basic Planetview: More Districts & Buildings](url=https://steamcommunity.com/sharedfiles/filedetails/?id=2714695762)
 * 2.0.0 Update for Stellaris version 3.3 "Libra" - integrate underlying changes from the base game in overridden file
 * 3.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate underlying changes from the base game in overridden file
-* 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+* 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax") - integrate underlying changes from the base game in overridden file
 
 ## Source Code
 
