@@ -18,10 +18,28 @@ col_srw_trade = {
 	custom_tooltip = col_srw_trade_custom
 	planet_modifier = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
-		planet_building_commercial_megaplex_build_speed_mult = 0.25
-		planet_building_galactic_stock_exchange_build_speed_mult = 0.25
-		planet_district_srw_commercial_build_speed_mult = 0.25
-		trade_value_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_interstellar_economics }
+		}
+		modifier = { planet_building_commercial_megaplex_build_speed_mult = 0.25 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_galactic_markets }
+		}
+		modifier = { planet_building_galactic_stock_exchange_build_speed_mult = 0.25 }
+	}
+	triggered_planet_modifier = {
+		potential = { always = yes }
+		# always-on triggered modifier for ordering purposes
+		modifier = {
+			planet_district_srw_commercial_build_speed_mult = 0.25
+			trade_value_mult = 0.2
+		}
 	}
 	triggered_planet_modifier = {
 		potential = { always = yes }
