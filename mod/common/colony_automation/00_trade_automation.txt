@@ -1,18 +1,15 @@
-# Modified: added the Numistic Shrine, also added affordability checks
+# Modified: added the Numistic Shrine, added affordability checks, account for my added trade districts
 automate_trade_planet = {
 	category = "planet_automation_designation_construction"
 	available = {
-		OR = {
-			has_designation = col_city
-			has_designation = col_habitat_trade
-			has_designation = col_ring_trade
-			has_designation = col_ecu_mix
-		}
+		has_trade_designation = yes
 	}
 	prio_districts = {
 		district_rw_commercial
 		district_hab_commercial
 		district_srw_commercial
+		district_arcology_commercial
+		district_standard_cm_commercial
 	}
 	buildings = {
 		1 = {

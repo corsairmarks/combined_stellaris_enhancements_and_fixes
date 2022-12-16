@@ -1,0 +1,22 @@
+# Modified: account for all my added/modified trade districts when the appropriate mods are installed
+has_trade_designation = {
+	optimize_memory
+	OR = {
+		has_designation = col_city
+		has_designation = col_habitat_trade
+		has_designation = col_ring_trade
+		AND = {
+			NOT = { has_global_flag = ecumenopolis_trade_installed }
+			has_designation = col_ecu_mix
+		}
+		AND = {
+			has_global_flag = ecumenopolis_trade_installed
+			has_designation = col_ecu_trade
+		}
+		AND = {
+			has_global_flag = more_standard_districts_installed
+			has_designation = col_standard_cm_trade
+		}
+		has_designation = col_srw_trade
+	}
+}
