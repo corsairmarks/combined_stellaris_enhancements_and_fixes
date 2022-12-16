@@ -12,3 +12,6 @@
  col_ring_trade_custom: "§Y$district_rw_commercial_plural$§! przesuną dwo miejsce pracy z $job_clerk_plural$ do $job_merchant_plural$, jeśli to możliwe.\n\n"
  col_habitat_trade_custom: "§Y$district_hab_commercial_plural$§! przesuną jedno miejsce pracy z $job_clerk$ do $job_merchant$, jeśli to możliwe.\n\n"
  pc_shattered_ring_habitable_adj: "$pc_ringworld_habitable_adj$"
+ # localisation for dummy districts
+ district_arcology_commercial: "Handlowa Arkologia"
+ district_standard_cm_commercial: "$district_hab_commercial$"
