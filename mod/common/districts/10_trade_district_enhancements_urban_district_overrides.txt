@@ -28,11 +28,13 @@ district_city = {
 			uses_district_set = machine_world
 			uses_district_set = shattered_ring_world
 		}
-		exists = owner
-		owner = {
-			OR = {
-				is_regular_empire = yes
-				is_country_type = primitive
+		OR = {
+			NOT = { exists = owner } # this condition is needed for galaxy generation
+			owner = {
+				OR = {
+					is_regular_empire = yes
+					is_country_type = primitive
+				}
 			}
 		}
 	}
@@ -109,7 +111,7 @@ district_city = {
 			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
 			owner = {
-				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_trickle_up_economics
 			}
 		}
 		modifier = {
@@ -236,7 +238,7 @@ district_srw_commercial = {
 		potential = {
 			exists = owner
 			owner = {
-				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_trickle_up_economics
 				is_fallen_empire_spiritualist = no
 			}
 		}
@@ -248,7 +250,7 @@ district_srw_commercial = {
 		potential = {
 			exists = owner
 			owner = {
-				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_trickle_up_economics
 				is_fallen_empire_spiritualist = yes
 			}
 		}
@@ -278,7 +280,7 @@ district_srw_commercial = {
 					has_valid_civic = civic_corporate_dominion
 					is_megacorp = yes
 				}
-				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_trickle_up_economics
 				has_active_tradition = tr_mercantile_commercial_enterprise
 			}
 		}
@@ -313,7 +315,7 @@ district_srw_commercial = {
 				AND = {
 					exists = owner
 					owner = {
-						has_active_tradition = tr_prosperity_interstellar_franchising
+						has_active_tradition = tr_mercantile_trickle_up_economics
 						NOT = { has_active_tradition = tr_mercantile_commercial_enterprise }
 					}
 				}

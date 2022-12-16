@@ -92,7 +92,7 @@ district_rw_city = {
 			planet_housing_add = 5
 		}
 	}
-	# remove bonus clerks from tr_prosperity_interstellar_franchising (they are now part of district_rw_commercial)
+	# remove bonus clerks from tr_mercantile_trickle_up_economics (they are now part of district_rw_commercial)
 	triggered_desc = {
 		trigger = {
 			planet = {
@@ -178,7 +178,7 @@ district_rw_commercial = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_prosperity_interstellar_franchising }
+			owner = { has_active_tradition = tr_mercantile_trickle_up_economics }
 		}
 		modifier = {
 			job_clerk_add = 3
