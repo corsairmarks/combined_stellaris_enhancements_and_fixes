@@ -100,4 +100,5 @@ tde_uses_regular_district_set = {
 	tde_uses_district_set_ring_world = no
 	tde_uses_planetary_diversity_special_district_set = no
 	tde_uses_gigastructural_engineering_gigastructure_district_set = no
+	NOT = { uses_district_set = gpm_precursor }
 }
