@@ -1,14 +1,14 @@
 # Overview
 
-Do you wish your Trade Stations and Commercial Ring Worlds had a little more "oomph?"  Or maybe you're disappointed with how far ahead Ecumenopolis Commercial Worlds got with my mod [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991).  Then this mod is for you!  The Trade Station and Commercial Ring World colony designations now also boost the build-speed of commercial buildings and the relevant commercial districts by 25% as well as the  overall trade value by 20%.  That is the same boost as the Ecumenopolis Commercial designation.
+Do you wish your Trade Stations and Commercial Ring Worlds had a little more "oomph?"  Or maybe you're disappointed with how far ahead Ecumenopolis Commercial Worlds got with my mod [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991).  Then this mod is for you!  The Trade Station and Commercial Ring World colony designations now also boost the build-speed of commercial buildings and the relevant commercial districts by 25% as well as the overall trade value by 20%.  That is the same boost as the Ecumenopolis Commercial designation.
 
-Additionally, Trade Districts and Commercial Segments now provide more Merchant jobs and fewer Clerk jobs as long as the colony designation is Trade Station or Commercial Ring World respectively.  But wait, there's more!  MegaCorps and empires with the Merchant Guilds civic will find that more Merchants replace Clerks.  But wait, there's _even_ more!  On ringworld Commercial Segments, MegaCorps replace a Clerk with a Manager and a Merchant with an Executive (all those Clerks need bossing around).  And if that wasn't enough, we'll throw in positive interaction with the "Commercial Enterprise" tradition for another/more Merchant(s) and the "Interstellar Franchising" tradition for another/more Clerk(s).
+Additionally, Trade Districts and Commercial Segments now provide more Merchant jobs and fewer Clerk jobs as long as the colony designation is Trade Station or Commercial Ring World respectively.  But wait, there's more!  MegaCorps and empires with the Merchant Guilds civic will find that more Merchants replace Clerks.  But wait, there's _even_ more!  On ringworld Commercial Segments, MegaCorps replace a Clerk with a Manager and a Merchant with an Executive (all those Clerks need bossing around).  And if that wasn't enough, we'll throw in positive interaction with the "Commercial Enterprise" tradition for another/more Merchant(s) and the "Trickle Up Economics" tradition for another/more Clerk(s).
 
 # Changes
 
 Overwrites the Trade Station and Commercial Ring World colony designations and the Trade District (for both habitats and the special district for Origin: Shattered Ring) and Commercial Segment district.  The colony designations enable some job swaps from Clerks to Merchants (extra swaps with the "Commercial Enterprise" tradition).  The designations also provide a small amount of bonus trade if you meet varying hidden, trade-related conditions - see if you can figure them out.  The districts themselves also swap jobs if the owner has Civic: Merchant Guilds, Civic: Corporate Dominion (for people who don't own MegaCorp), and MegaCorps.
 
-Also updates the regular City districts to provide part of a Merchant or Executive job for Merchant Guilds, Corporate Dominions, or MegaCorps as appropriate when combined with the "Commercial Enterprise" tradition.  Ringworld city segments no longer receive bonus clerks from the "Interstellar Franchising" tradition - instead, those clerk jobs are provided by the Commercial Segments.
+Also updates the regular City districts to provide part of a Merchant or Executive job for Merchant Guilds, Corporate Dominions, or MegaCorps as appropriate when combined with the "Commercial Enterprise" tradition.  Ringworld city segments no longer receive bonus clerks from the "Trickle Up Economics" tradition - instead, those clerk jobs are provided by the Commercial Segments.
 
 ## Localisation
 
@@ -23,7 +23,7 @@ This mod will not work well with other mods that make changes to the same colony
 
 Compatible with Planetary Diversity and Gigastructural Engineering (does not modify Gigas districts, but does exclude these districts from spawning on the wrong things).
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 ### Recommended Companion Mods
 
@@ -35,17 +35,18 @@ This mod can be safely added to your savegame after the game has started.  Becau
 
 ### Known Issues
 
-Overwriting a colony type or district produces an error log.  Expect to see eight entries in error.log similar to these:
+Overwriting a colony type or district produces an error log.  Expect to see nine entries in error.log similar to these:
 
 ```
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_city already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 5
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_srw_commercial already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 181
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_hab_commercial already exists, using the one at  file: common/districts/13_trade_district_enhancements_habitat_district_overrides.txt line: 5
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_rw_city already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 8
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: district_rw_commercial already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 117
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: col_city already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 10
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: col_habitat_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 71
-[16:41:32][game_singleobjectdatabase.h:148]: Object with key: col_ring_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 103
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: district_city already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 5
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: district_srw_commercial already exists, using the one at  file: common/districts/10_trade_district_enhancements_urban_district_overrides.txt line: 158
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: district_hab_commercial already exists, using the one at  file: common/districts/13_trade_district_enhancements_habitat_district_overrides.txt line: 5
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: district_rw_city already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 8
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: district_rw_commercial already exists, using the one at  file: common/districts/14_trade_district_enhancements_ringworld_district_overrides.txt line: 117
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: col_city already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 10
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: col_habitat_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 66
+[00:52:16][game_singleobjectdatabase.h:165]: Object with key: col_ring_trade already exists, using the one at  file: common/colony_types/01_trade_district_enhancements_colony_type_overrides.txt line: 98
+[00:52:17][game_singleobjectdatabase.h:165]: Object with key: has_trade_designation already exists, using the one at  file: common/scripted_triggers/10_trade_district_enhancements_scripted_triggers_ai_overrides.txt line: 2
 ```
 
 ## Changelog
@@ -84,6 +85,12 @@ Overwriting a colony type or district produces an error log.  Expect to see eigh
     * Simplify the Merchant/Executive/Manager jobs swaps for commercial districts - things got a little out of hand
     * Add custom descriptions to the commercial districts, describing the job shift(s)
 * 3.2.0 The Urban World colony designation requirements more accurately reflect the base game: it can be used on any planet which is not an ecumenopolis, habitat, or ringworld
+* 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Bonus clerk jobs are now tied to the tradition Trickle Up Economics instead of Interstellar Franchising
+    * Add override of new built-in trigger `has_trade_designation`, consume it for trade colony automation
+    * Trade planet automation cooperates with my other trade-related district mods
+    * Integrate underlying automation plan and colony designation changes
+    * Integrate underlying district changes
 
 ## Source Code
 
