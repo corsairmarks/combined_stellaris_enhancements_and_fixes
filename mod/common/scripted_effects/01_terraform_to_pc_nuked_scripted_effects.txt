@@ -2,22 +2,28 @@
 # from = planet
 post_terraform_to_pc_nuked = {
 	optimize_memory
-	from = {
-		if = {
-			limit = { NOT = { has_planet_flag = nuked_planet_anomalies_disabled } }
-			set_planet_flag = nuked_planet_anomalies_disabled
+	hidden_effect = {	
+		from = {
+			if = {
+				limit = { NOT = { has_planet_flag = nuked_planet_anomalies_disabled } }
+				set_planet_flag = nuked_planet_anomalies_disabled
+			}
+			if = {
+				limit = { has_modifier = terraforming_candidate }
+				remove_modifier = terraforming_candidate
+			}
+			if = {
+				limit = { has_modifier = frozen_terraforming_candidate }
+				remove_modifier = frozen_terraforming_candidate
+			}
+			if = {
+				limit = { has_modifier = toxic_terraforming_candidate }
+				remove_modifier = toxic_terraforming_candidate
+			}
 		}
 		if = {
-			limit = { has_modifier = terraforming_candidate }
-			remove_modifier = terraforming_candidate
+			limit = { NOT = { has_country_flag = terraformed_to_pc_nuked } }
+			set_country_flag = terraformed_to_pc_nuked
 		}
-		if = {
-			limit = { has_modifier = frozen_terraforming_candidate }
-			remove_modifier = frozen_terraforming_candidate
-		}
-	}
-	if = {
-		limit = { NOT = { has_country_flag = terraformed_to_pc_nuked } }
-		set_country_flag = terraformed_to_pc_nuked
 	}
 }
