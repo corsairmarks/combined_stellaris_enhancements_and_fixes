@@ -449,6 +449,38 @@ terraform_link = {
 }
 
 terraform_link = {
+	from = pc_toxic
+	to = pc_nuked
+	resources = {
+		category = terraforming
+		cost = {
+			energy = @pc_nuked_from_similar_candidate_energy_cost
+		}
+	}
+	duration = @pc_nuked_from_similar_candidate_duration
+	potential = {
+		from = { has_modifier = toxic_terraforming_candidate }
+		potential_for_pc_nuked_terraform_country = yes
+	}
+	condition = {
+		has_ascension_perk = ap_detox
+		has_technology = tech_climate_restoration
+		eligible_for_pc_nuked_terraform_country = yes
+	}
+	effect = {
+		post_terraform_to_pc_nuked = yes
+		from = { detox_hangover = yes }
+	}
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 3
+			owner_main_species = { is_nuked_species = yes }
+		}
+	}
+}
+
+terraform_link = {
 	from = pc_gray_goo
 	to = pc_nuked
 	resources = {
