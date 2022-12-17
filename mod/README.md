@@ -20,10 +20,12 @@ These new terraforming links allowing them to "terraform" planets into tomb worl
     * Nuked empires and Memorialists can use tomb world "terraforming" without first researching Terrestrial Sculpting
     * Non-nuked empires must have at least one Pop of a nuked species as well as the Terrestrial Sculpting and Tomb World Adaptation technologies
     * Shows the planetary bombardment graphics while "terraforming"
-* Barren/cold barren/frozen worlds with the "Terraforming Candidate" modifier
-    * Standard cost for barren
+* Barren/cold barren/frozen/toxic worlds with the "Terraforming Candidate" modifier
+    * Standard cost for barren/toxic
     * Standard high cost for cold barren/frozen
     * Requires Climate Restoration technology
+    * From frozen also requires the "Hydrocentric" ascension perk
+    * From toxic also requires the "Detox" ascension perk
 
 Planets converted to tomb worlds this way are not eligible for the random events that can sometimes occur on tomb worlds - there's no mystery about what happened, it was ~~bombed~~ "terraformed" on purpose.  Non-nuked empires that have already "terraformed" a planet into a tomb world waive the requirement to have at lease one nuked Pop.
 
@@ -66,6 +68,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
 * 5.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
     * Account for new radiotrophic variants
     * Support changes to terraforming frozen worlds (you can still nuke them if they have the `frozen_terraforming_candidate` modifier)
+* 5.1.0 Support "terraforming" Toxic worlds to Tomb Worlds with the Detox ascension perk
 
 ## Source Code
 
