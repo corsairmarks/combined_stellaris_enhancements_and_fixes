@@ -421,7 +421,6 @@ country_event = {
 	}
 }
 
-# Modified: remove defunct from check
 # Modified: allow the event to fire if the observed natives are not being enlightened/infiltrated (e.g. passive/active observation or indoctrination)
 # Modified: set the appropriate city graphical culture so as to correctly override primitive cities
 # Modified: explicitly trigger primitive_conquest_enhancements.1, building/district spawning code removed due to primitive_conquest_enhancements.1
@@ -432,25 +431,38 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = early_space_age
-		NOT = { has_country_flag = recently_advanced }
-		years_passed > 25
-		exists = home_planet
-		home_planet = {
-			OR = {
-				has_observation_outpost = no
-				observation_outpost = {
-					NOR = {
-						has_mission = covert_infiltration
-						has_mission = technological_enlightenment_0
-						has_mission = technological_enlightenment_1
-						has_mission = technological_enlightenment_2
-						has_mission = technological_enlightenment_3
-						has_mission = technological_enlightenment_4
-						has_mission = technological_enlightenment_5
-						has_mission = technological_enlightenment_6
-						has_mission = technological_enlightenment_7
-						has_mission = technological_enlightenment_8
-						has_mission = technological_enlightenment_9
+		OR = {
+			AND = {
+				exists = from
+				from = {
+					OR = {
+						is_country_type = default
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			AND = {
+				NOT = { has_country_flag = recently_advanced }
+				years_passed > 25
+				exists = home_planet
+				home_planet = {
+					OR = {
+						has_observation_outpost = no
+						observation_outpost = {
+							NOR = {
+								has_mission = covert_infiltration
+								has_mission = technological_enlightenment_0
+								has_mission = technological_enlightenment_1
+								has_mission = technological_enlightenment_2
+								has_mission = technological_enlightenment_3
+								has_mission = technological_enlightenment_4
+								has_mission = technological_enlightenment_5
+								has_mission = technological_enlightenment_6
+								has_mission = technological_enlightenment_7
+								has_mission = technological_enlightenment_8
+								has_mission = technological_enlightenment_9
+							}
+						}
 					}
 				}
 			}
