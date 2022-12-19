@@ -21,9 +21,9 @@ This mod continues its trend of unification by hooking up the enlightenment fini
 
 # Changes
 
-This mod replaces six events from the base game: `action.14`, `action.140`, `necroids.6`, `observation.3009`, `primitive.16`, and `primitive.17`.  The action events are responsible for the standard military conquest of primitives, the necroids event is responsible for necrophage auto-conquest, the observation event is responsible for primitive infiltration, and the primitive events are related to technological enlightenment.  These events are now altered to invoke the same code for generating buildings and districts.
+This mod replaces six events from the base game: `action.14`, `action.140`, `necroids.6`, `observation.3009`, `primitive.16`, and `primitive.17`.  The action events are responsible for the standard military conquest of primitives, the necroids event is responsible for AI necrophage auto-conquest, the observation event is responsible for primitive infiltration, and the primitive events are related to technological enlightenment.  These events are altered to no longer invoke code for generating buildings and districts.
 
-Most of the new custom logic is implemented outside of these events.  This mod adds two custom on_actions: `on_primitive_planet_transferring` that fires before planet ownership changes and `on_primitive_planet_transferred` that fires after planet ownership changes.  District/building generation is triggered by `on_primitive_planet_transferred`.  The most useful part of all of this is that you can make other mods tie in to these on_actions to create new effects when primitives are conquered/infiltrated.
+Instead custom logic is implemented via the new event `primitive_conquest_enhancements.1` that fires when planet ownership changes from a primitive empire, and a series of custom effects.
 
 ## Localisation
 
@@ -35,12 +35,12 @@ Most of the new custom logic is implemented outside of these events.  This mod a
 Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate six error lines that look similar to this:
 
 ```
-[01:33:07][eventmanager.cpp:355]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 548
-[01:33:07][eventmanager.cpp:355]: an event with id [observation.3009] already exists!  file: events/observation_events.txt line: 4480
-[01:33:07][eventmanager.cpp:355]: an event with id [action.14] already exists!  file: events/on_action_events_1.txt line: 5824
-[01:33:07][eventmanager.cpp:355]: an event with id [action.140] already exists!  file: events/on_action_events_1.txt line: 5890
-[01:33:07][eventmanager.cpp:355]: an event with id [primitive.16] already exists!  file: events/primitive_events.txt line: 304
-[01:33:07][eventmanager.cpp:355]: an event with id [primitive.17] already exists!  file: events/primitive_events.txt line: 629
+[21:52:38][eventmanager.cpp:368]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 548
+[21:52:39][eventmanager.cpp:368]: an event with id [observation.3009] already exists!  file: events/observation_events.txt line: 4483
+[21:52:39][eventmanager.cpp:368]: an event with id [action.14] already exists!  file: events/on_action_events_1.txt line: 5827
+[21:52:39][eventmanager.cpp:368]: an event with id [action.140] already exists!  file: events/on_action_events_1.txt line: 5893
+[21:52:39][eventmanager.cpp:368]: an event with id [primitive.16] already exists!  file: events/primitive_events.txt line: 304
+[21:52:39][eventmanager.cpp:368]: an event with id [primitive.17] already exists!  file: events/primitive_events.txt line: 636
 ```
 
 ## Compatibility
@@ -49,7 +49,7 @@ You do **not** need the Necroids or Lithoids content packs to use this mod.
 
 This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same event IDs.  If another mod is attempting to make changes to primitive planet conquest but uses a different method (for example, adding new events activated by on action events such as `on_planet_transfer`, `on_planet_conquer`, or `on_planet_attackers_win`) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
 
-Built for Stellaris version 3.4 "Cepheus."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 ### When to Install
 
@@ -87,6 +87,10 @@ This mod can be safely added or removed from your savegame after the game has st
     * Finally update the example screenshots
 * 5.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate base game changes
 * 5.1.0 Minor trigger and effect enhancements
+* 6.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
+    * Update overridden events with underlying game changes
+    * Use built-in on-action `on_planet_transfer` now that it provides the previous owner as `fromfrom`
+    * Remove custom on_actions `on_primitive_planet_transferring` and `on_primitive_planet_transferred`
 
 ## Source Code
 
