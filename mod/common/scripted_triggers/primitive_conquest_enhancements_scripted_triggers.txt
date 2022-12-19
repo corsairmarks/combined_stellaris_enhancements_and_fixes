@@ -150,7 +150,6 @@ can_into_space = {
 	has_country_flag = primitives_can_into_space
 }
 
-
 # this = planet
 pce_planet_uses_district_mining_uncapped = {
 	optimize_memory
