@@ -4,16 +4,30 @@ namespace = primitive_conquest_enhancements
 # following the example in observation.3009 (which now points here). It also accounts for conquering lithoid
 # primitives, which logically wouldn't have needed farming, and phototrophic/raditrophic species which need
 # more energy.  The base game has addressed some of these issues, but not the main primitive conquest event.
-# fired by on_primitive_planet_transferred
-# root = planet (after ownership change)
-# from = country, primitive former owner
+# fired by on_planet_transfer and directly by primitive.16
+# root = planet (after new owner set)
+# from = country, new owner
+# fromfrom = country, former owner
 planet_event = {
 	id = primitive_conquest_enhancements.1
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		exists = from
+		exists = fromfrom
+		OR = {
+			fromfrom = { is_primitive = yes }
+			AND = {
+				from = {
+					is_country = fromfrom
+					can_into_space = yes
+				}
+			}
+		}
+	}
 	immediate = {
-		log = "primitive planet transferred: add districts/buildings to [This.GetName] ([From.GetName]), constructing for the [This.Owner.GetRealName]"
-		from = {
+		log = "primitive planet transferred: add districts/buildings to [This.GetName] (previously owned by [FromFrom.GetRealName]), constructing for the [From.GetRealName]"
+		fromfrom = {
 			save_event_target_as = conquered_primitive_civilization
 			owner_species = { save_event_target_as = conquered_primitive_species }
 		}
@@ -30,13 +44,13 @@ planet_event = {
 			add_deposit = d_segment_rubble_3
 			add_deposit = d_segment_rubble_4
 			add_deposit = d_decrepit_tunnels_1
-			add_deposit = d_decrepit_tunnels_2
-			add_deposit = d_decrepit_tunnels_3
+			add_deposit = d_decrepit_tunnels_1
+			add_deposit = d_decrepit_tunnels_1
 		}
 		if = {
 			limit = { uses_district_set = ring_world }
 			if = { 
-				limit = { owner = { has_valid_civic = civic_machine_servitor } }
+				limit = { from = { has_valid_civic = civic_machine_servitor } }
 				pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 			}
 			pce_add_rw_urban_district = yes
@@ -44,7 +58,7 @@ planet_event = {
 				limit = {
 					OR = {
 						num_pops > 5
-						from = { has_bronze_age_or_greater = yes }
+						fromfrom = { has_bronze_age_or_greater = yes }
 					}
 				}
 				if = {
@@ -53,13 +67,13 @@ planet_event = {
 					pce_add_building_if_free = { BUILDING = building_chemical_plant }
 				}
 				else_if = {
-					limit = { owner = { is_gestalt = no } }
+					limit = { from = { is_gestalt = no } }
 					pce_add_rw_urban_district = yes
 					if = {
 						limit = {
 							OR = {
 								num_pops > 11
-								from = { has_renaissance_age_or_greater = yes }
+								fromfrom = { has_renaissance_age_or_greater = yes }
 							}
 						}
 						add_primitive_conquest_unity_building_if_free = yes
@@ -67,7 +81,7 @@ planet_event = {
 							limit = {
 								OR = {
 									num_pops > 15
-									from = { has_steam_age_or_greater = yes }
+									fromfrom = { has_steam_age_or_greater = yes }
 								}
 							}
 							add_primitive_conquest_unity_building_if_free = yes
@@ -78,26 +92,26 @@ planet_event = {
 					limit = {
 						OR = {
 							num_pops > 15
-							from = { has_steam_age_or_greater = yes }
+							fromfrom = { has_steam_age_or_greater = yes }
 						}
 					}
 					if = { 
-						limit = { owner = { has_valid_civic = civic_machine_servitor } }
+						limit = { from = { has_valid_civic = civic_machine_servitor } }
 						pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 					}
 					else_if = {
-						limit = { owner = { is_gestalt = no } }
+						limit = { from = { is_gestalt = no } }
 						pce_add_building_if_free = { BUILDING = building_factory_1 }
 					}
 					if = {
 						limit = {
 							OR = {
 								num_pops > 20
-								from = { has_industrial_age_or_greater = yes }
+								fromfrom = { has_industrial_age_or_greater = yes }
 							}
 						}
 						if = { 
-							limit = { owner = { has_valid_civic = civic_machine_servitor } }
+							limit = { from = { has_valid_civic = civic_machine_servitor } }
 							pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 						}
 						else = {
@@ -108,11 +122,11 @@ planet_event = {
 							limit = {
 								OR = {
 									num_pops > 22
-									from = { has_machine_age_or_greater = yes }
+									fromfrom = { has_machine_age_or_greater = yes }
 								}
 							}
 							if = {
-								limit = { owner = { is_gestalt = no } }
+								limit = { from = { is_gestalt = no } }
 								pce_add_district_if_free = { DISTRICT = district_rw_commercial }
 							}
 							else = {
@@ -126,7 +140,7 @@ planet_event = {
 		}
 		else = {
 			if = { 
-				limit = { owner = { has_valid_civic = civic_machine_servitor } }
+				limit = { from = { has_valid_civic = civic_machine_servitor } }
 				pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 			}
 			pce_add_urban_district = yes
@@ -135,7 +149,7 @@ planet_event = {
 				limit = {
 					OR = {
 						num_pops > 5
-						from = { has_bronze_age_or_greater = yes }
+						fromfrom = { has_bronze_age_or_greater = yes }
 					}
 				}
 				pce_add_primitive_species_appropriate_food_district = yes
@@ -144,7 +158,7 @@ planet_event = {
 					limit = {
 						OR = {
 							num_pops > 9
-							from = { has_iron_age_or_greater = yes }
+							fromfrom = { has_iron_age_or_greater = yes }
 						}
 					}
 					pce_add_planet_appropriate_mining_district = yes
@@ -152,7 +166,7 @@ planet_event = {
 						limit = {
 							OR = {
 								num_pops > 11
-								from = { has_renaissance_age_or_greater = yes }
+								fromfrom = { has_renaissance_age_or_greater = yes }
 							}
 						}
 						pce_add_primitive_species_appropriate_food_district = yes
@@ -160,11 +174,11 @@ planet_event = {
 							limit = {
 								OR = {
 									num_pops > 15
-									from = { has_steam_age_or_greater = yes }
+									fromfrom = { has_steam_age_or_greater = yes }
 								}
 							}
 							if = { 
-								limit = { owner = { has_valid_civic = civic_machine_servitor } }
+								limit = { from = { has_valid_civic = civic_machine_servitor } }
 								pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 							}
 							else = {
@@ -175,7 +189,7 @@ planet_event = {
 								limit = {
 									OR = {
 										num_pops > 20
-										from = { has_industrial_age_or_greater = yes }
+										fromfrom = { has_industrial_age_or_greater = yes }
 									}
 								}
 								pce_add_planet_appropriate_commercial_or_generator_district = yes
@@ -185,11 +199,11 @@ planet_event = {
 									limit = {
 										OR = {
 											num_pops > 22
-											from = { has_machine_age_or_greater = yes }
+											fromfrom = { has_machine_age_or_greater = yes }
 										}
 									}
 									if = { 
-										limit = { owner = { has_valid_civic = civic_machine_servitor } }
+										limit = { from = { has_valid_civic = civic_machine_servitor } }
 										pce_add_building_if_free = { BUILDING = building_organic_sanctuary }
 									}
 									else = {
@@ -199,22 +213,22 @@ planet_event = {
 										limit = {
 											OR = {
 												num_pops > 24
-												from = { has_atomic_age_or_greater = yes }
+												fromfrom = { has_atomic_age_or_greater = yes }
 											}
 										}
 										if = { 
-											limit = { owner = { NOT = { has_valid_civic = civic_machine_servitor } } }
+											limit = { from = { NOT = { has_valid_civic = civic_machine_servitor } } }
 											pce_add_urban_district = yes
 										}
 										if = {
 											limit = {
 												OR = {
 													num_pops > 26
-													from = { has_early_space_age_or_greater = yes }
+													fromfrom = { has_early_space_age_or_greater = yes }
 												}
 											}
 											if = { 
-												limit = { owner = { NOT = { has_valid_civic = civic_machine_servitor } } }
+												limit = { from = { NOT = { has_valid_civic = civic_machine_servitor } } }
 												add_primitive_conquest_unity_building_if_free = yes
 											}
 										}
@@ -231,142 +245,5 @@ planet_event = {
 			clear_pop_category = yes
 		}
 		check_planet_employment = yes
-	}
-}
-
-# triggered by on_destroy_planet_with_PLANET_KILLER_NANOBOT
-# fires on_primitive_planet_transferring before the Nanobot Diffuser activates
-# this = planet that has been fired upon
-# from = fleet that fired
-planet_event = {
-	id = primitive_conquest_enhancements.20
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
-	trigger = {
-		num_pops > 0
-		owner = { is_country_type = primitive }
-	}
-	immediate = {
-		owner = {
-			set_country_flag = colossus_transfer@prev
-			set_country_flag = nanobot_assimilated@prev
-		}
-		fire_on_action = {
-			on_action = on_primitive_planet_transferring
-			scopes = {
-				from = from.owner
-			}
-		}
-	}
-}
-
-# triggered by on_destroy_planet_with_PLANET_KILLER_NANOBOT
-# fires on_primitive_planet_transfered after the Nanobot Diffuser has been activated
-# this = planet that has been fired upon
-# from = fleet that fired
-planet_event = {
-	id = primitive_conquest_enhancements.21
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
-	trigger = {
-		any_country = {
-			is_country_type = primitive
-			has_country_flag = colossus_transfer@prev
-			has_country_flag = nanobot_assimilated@prev
-			capital_scope = { is_planet = prevprev }
-		}
-	}
-	immediate = {
-		random_country = {
-			limit = {
-				is_country_type = primitive
-				has_country_flag = colossus_transfer@prev
-				has_country_flag = nanobot_assimilated@prev
-				capital_scope = { is_planet = prevprev }
-			}
-			save_event_target_as = former_owner
-		}
-		fire_on_action = {
-			on_action = on_primitive_planet_transferred
-			scopes = {
-				from = event_target:former_owner
-			}
-		}
-	}
-}
-
-# triggerd by on_destroy_planet_with_PLANET_KILLER_DELUGE
-# fires on_primitive_planet_transferring before the Deluge Machine activates
-# this = planet that has been fired upon
-# from = fleet that fired
-planet_event = {
-	id = primitive_conquest_enhancements.30
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
-	trigger = {
-		num_pops > 0
-		owner = { is_country_type = primitive }
-		any_owned_species = { has_trait = trait_aquatic }
-	}
-	immediate = {
-		owner = {
-			set_country_flag = colossus_transfer@prev
-			set_country_flag = orbitally_drenched@prev
-		}
-		fire_on_action = {
-			on_action = on_primitive_planet_transferring
-			scopes = {
-				from = from.owner
-			}
-		}
-	}
-}
-
-# triggered by on_destroy_planet_with_PLANET_KILLER_DELUGE
-# fires on_primitive_planet_transfered after the Deluge Machine has been activated
-# this = planet that have been fired upon
-# from = fleet that fired
-planet_event = {
-	id = primitive_conquest_enhancements.31
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
-	trigger = {
-		num_pops > 0
-		any_owned_species = { has_trait = trait_aquatic }
-		any_country = {
-			is_country_type = primitive
-			has_country_flag = colossus_transfer@prev
-			has_country_flag = orbitally_drenched@prev
-			capital_scope = { is_planet = prevprev }
-		}
-	}
-	immediate = {
-		random_country = {
-			limit = {
-				is_country_type = primitive
-				has_country_flag = colossus_transfer@prev
-				has_country_flag = orbitally_drenched@prev
-				capital_scope = { is_planet = prevprev }
-			}
-			save_event_target_as = former_owner
-		}
-		fire_on_action = {
-			on_action = on_primitive_planet_transferred
-			scopes = {
-				from = event_target:former_owner
-			}
-		}
 	}
 }

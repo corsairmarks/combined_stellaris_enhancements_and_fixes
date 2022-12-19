@@ -3,6 +3,7 @@ namespace = necroids
 namespace = observation
 namespace = primitive
 
+# Modified: code simplification
 # triggered by on_planet_attackers_win
 # root = country, leader attacker
 # from = country, planet owner
@@ -30,12 +31,6 @@ country_event = {
 		}
 		fromfrom = {
 			save_event_target_as = conquered_primitive_country
-			fire_on_action = {
-				on_action = on_primitive_planet_transferring
-				scopes = {
-					from = event_target:conquering_country
-				}
-			}
 			if = {
 				limit = { event_target:conquering_country = { is_regular_empire = yes } }
 				add_modifier = {
@@ -44,12 +39,6 @@ country_event = {
 				}
 			}
 			set_owner = event_target:conquering_country
-			fire_on_action = {
-				on_action = on_primitive_planet_transferred
-				scopes = {
-					from = event_target:actually_conquered_primitive_country
-				}
-			}
 		}
 		every_country = {
 			limit = {
@@ -67,6 +56,7 @@ country_event = {
 	}
 }
 
+# Modified: no need for the immediate block due to primitive_conquest_enhancements.1
 # chained from action.14, which is triggered for primitive planets by on_planet_attackers_win
 # root = country that just conquered the planet
 # event_target:conquered_primitive_country = the planet that was conquered (the default files use this name, including localisation - don't change it)
@@ -273,6 +263,7 @@ country_event = {
 	}
 }
 
+# Modified: try not to depopulate the necrophage capital, be sure to trigger some conquest-related events
 # scheduled to fire 4 times, 5 years apart by game_start.33, which itself is triggered by on_game_start_country
 # root = a country with necrophage origin
 country_event = {
@@ -347,12 +338,6 @@ country_event = {
 				observation_outpost = { dismantle = yes }
 			}
 			prev = { set_country_flag = keeping_leaders_infiltration@prev.owner }
-			fire_on_action = {
-				on_action = on_primitive_planet_transferring
-				scopes = {
-					from = event_target:necrophage_country
-				}
-			}
 			set_owner = event_target:necrophage_country
 			add_modifier = {
 				modifier = planet_culture_shock
@@ -385,13 +370,6 @@ country_event = {
 					}
 				}
 			}
-			# replicate some planetary conquest events
-			fire_on_action = { # Add conquest districts
-				on_action = on_primitive_planet_transferred
-				scopes = {
-					from = event_target:conquered_primitive_country
-				}
-			}
 			check_planet_employment = yes
 			planet_event = { # Crisis Menace Objective: Conquer a Colony
 				id = crisis.5010
@@ -404,6 +382,7 @@ country_event = {
 	}
 }
 
+# Modified: building/district spawning code removed due to primitive_conquest_enhancements.1
 # Phase IV - Mission Complete
 country_event = {
 	id = observation.3009
@@ -414,7 +393,7 @@ country_event = {
 	location = from
 	is_triggered_only = yes
 	immediate = {
-		root = { save_event_target_as = infiltrator_civ }
+		save_event_target_as = infiltrator_civ
 		from = {
 			owner = {
 				save_event_target_as = primitive_civ
@@ -426,25 +405,14 @@ country_event = {
 					event_target:infiltrator_civ = { set_country_flag = reverse_v }
 				}
 			}
-			add_modifier = { modifier = infiltration_happiness days = 7300 }
+			add_modifier = {
+				modifier = infiltration_happiness
+				days = 7300
+			}
 			random_owned_pop = { save_event_target_as = prim_species } # used by the localisation, don't change
-			# using from = root ends up passing the planet,
-			# so the event_target is necessary
-			fire_on_action = {
-				on_action = on_primitive_planet_transferring
-				scopes = {
-					from = event_target:infiltrator_civ
-				}
-			}
 			observation_outpost = { dismantle = yes }
-			set_owner = event_target:infiltrator_civ
 			remove_all_armies = yes
-			fire_on_action = {
-				on_action = on_primitive_planet_transferred
-				scopes = {
-					from = event_target:primitive_civ
-				}
-			}
+			set_owner = event_target:infiltrator_civ
 			event_target:primitive_civ = { destroy_country = yes }
 		}
 	}
@@ -453,6 +421,10 @@ country_event = {
 	}
 }
 
+# Modified: remove defunct from check
+# Modified: allow the event to fire if the observed natives are not being enlightened/infiltrated (e.g. passive/active observation or indoctrination)
+# Modified: set the appropriate city graphical culture so as to correctly override primitive cities
+# Modified: explicitly trigger primitive_conquest_enhancements.1, building/district spawning code removed due to primitive_conquest_enhancements.1
 # Entering Space Age (HIDDEN)
 country_event = {
 	id = primitive.16
@@ -460,37 +432,25 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = early_space_age
-		OR = {
-			AND = {
-				exists = from
-				from = {
-					OR = {
-						is_country_type = default
-						is_country_type = awakened_fallen_empire
-					}
-				}
-			}
-			AND = {
-				NOT = { has_country_flag = recently_advanced }
-				years_passed > 25
-				exists = home_planet
-				home_planet = {
-					OR = {
-						has_observation_outpost = no
-						observation_outpost = {
-							NOR = {
-								has_mission = covert_infiltration
-								has_mission = technological_enlightenment_1
-								has_mission = technological_enlightenment_2
-								has_mission = technological_enlightenment_3
-								has_mission = technological_enlightenment_4
-								has_mission = technological_enlightenment_5
-								has_mission = technological_enlightenment_6
-								has_mission = technological_enlightenment_7
-								has_mission = technological_enlightenment_8
-								has_mission = technological_enlightenment_9
-							}
-						}
+		NOT = { has_country_flag = recently_advanced }
+		years_passed > 25
+		exists = home_planet
+		home_planet = {
+			OR = {
+				has_observation_outpost = no
+				observation_outpost = {
+					NOR = {
+						has_mission = covert_infiltration
+						has_mission = technological_enlightenment_0
+						has_mission = technological_enlightenment_1
+						has_mission = technological_enlightenment_2
+						has_mission = technological_enlightenment_3
+						has_mission = technological_enlightenment_4
+						has_mission = technological_enlightenment_5
+						has_mission = technological_enlightenment_6
+						has_mission = technological_enlightenment_7
+						has_mission = technological_enlightenment_8
+						has_mission = technological_enlightenment_9
 					}
 				}
 			}
@@ -506,14 +466,7 @@ country_event = {
 	}
 
 	immediate = {
-		capital_scope = {
-			fire_on_action = {
-				on_action = on_primitive_planet_transferring
-				scopes = {
-					from = prev
-				}
-			}
-		}
+		save_event_target_as = primitives_who_into_space
 		remove_country_flag = early_space_age
 		set_country_flag = primitives_can_into_space
 		set_country_type = default
@@ -564,6 +517,10 @@ country_event = {
 				set_graphical_culture = aquatic_01
 				set_city_graphical_culture = aquatic_01
 			}
+			TOX = {
+				set_graphical_culture = toxoid_01
+				set_city_graphical_culture = toxoid_01
+			}
 			default = {
 				set_graphical_culture = mammalian_01
 				set_city_graphical_culture = mammalian_01
@@ -607,10 +564,12 @@ country_event = {
 			remove_all_primitive_buildings = yes
 			remove_all_armies = yes
 			add_building = building_capital
-			fire_on_action = {
-				on_action = on_primitive_planet_transferred
+			# explicitly trigger the event - setting the owner to itself won't fire on_planet_transfer
+			planet_event = {
+				id = primitive_conquest_enhancements.1
 				scopes = {
-					from = prev
+					from = event_target:primitives_who_into_space
+					fromfrom = event_target:primitives_who_into_space
 				}
 			}
 			if = {
@@ -619,6 +578,10 @@ country_event = {
 					country_event = {
 						id = primitive.17
 					}
+				}
+				if = {
+					limit = { is_planet_class = pc_desert }
+					set_planet_flag = tasty_desert
 				}
 			}
 			solar_system = {
@@ -641,13 +604,14 @@ country_event = {
 				}
 			}
 		}
-		random_controlled_ship = {
+		every_controlled_ship = {
 			limit = { is_ship_size = primitive_space_station }
 			fleet = { destroy_fleet = this }
 		}
 	}
 }
 
+# Modified: use the correct localisation key for the button
 # Entering Space Age
 country_event = {
 	id = primitive.17
