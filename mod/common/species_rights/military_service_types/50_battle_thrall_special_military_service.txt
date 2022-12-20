@@ -1,6 +1,12 @@
+# from = country
+# this = species
+# triggered_pop_modifier = {
+#	potential = { is_pop_category = ruler }
+#	pop_happiness = 0.15
+# }
+
 # a copy of the default Full Military Service rights, with extra logic added so Battle Thralls and Bio-trophies are eligible
 military_service_full = {
-	# token = military_service_full
 	potential = {
 		if = {
 			limit = { from = { is_machine_empire = yes } }
