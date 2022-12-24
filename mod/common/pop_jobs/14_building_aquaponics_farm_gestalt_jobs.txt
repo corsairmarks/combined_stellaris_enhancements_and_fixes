@@ -29,7 +29,10 @@ aquaculture_drone = {
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { is_machine_empire = yes }
+				owner = {
+					is_machine_empire = yes
+					NOT = { has_valid_civic = civic_machine_servitor }
+				}
 			}
 			energy = 2
 		}
