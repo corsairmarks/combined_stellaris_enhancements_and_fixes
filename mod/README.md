@@ -6,6 +6,11 @@ Adds an upgrade for Hydroponics Farms called Aquaponics Farms, which convert one
 
 Adds the new technology Aquaponics which creates an upgrade for the Hydroponics Farms called Aquaponics Farms.  Aquaponics Farms respect existing features of Hydroponics Farms: Void Dwellers gain an extra farmer job, Angler empires gain an extra Angler job on wet worlds, and farmer jobs convert to Acolytes of the Plow for Spiritualist fallen/awakened empires.
 
+## Localisation
+
+* English by corsairmarks (author)
+* German (Deutsch) by [ThePionier](https://steamcommunity.com/id/ThePionier)
+
 ## Compatibility
 
 Requires the Aquatics DLC.
@@ -43,6 +48,7 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
 * 3.1.0 Enable Aquaponics Farms for gestalt empires - they could already research the technology, but got nothing!
     * Add gestalt Aquaculture Drone (food and energy or amenities; machines get energy, hives and rogue servitors get amenities instead)
     * Update `angler` override to account for changes in another one of my mods
+* 3.2.0 Add German localisation by [ThePionier](https://steamcommunity.com/id/ThePionier)
 
 ## Source Code
 

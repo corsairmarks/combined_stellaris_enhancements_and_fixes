@@ -4,6 +4,11 @@ Adds an upgrade for Hydroponics Farms called Aquaponics Farms, which convert one
 [h1]Changes[/h1]
 Adds the new technology Aquaponics which creates an upgrade for Hydroponics Farms called Aquaponics Farms.  Aquaponics Farms respect existing features of Hydroponics Farms: Void Dwellers gain an extra farmer job, Angler empires gain an extra Angler job on wet worlds, and farmer jobs convert to Acolytes of the Plow for Spiritualist fallen/awakened empires.
 
+[h2]Localisation[/h2]
+[list]
+[*]English by corsairmarks (author)
+[*]German (Deutsch) by [url=https://steamcommunity.com/id/ThePionier]ThePionier[/url]
+[/list]
 [h2]Compatibility[/h2]
 Requires the Aquatics DLC.
 
