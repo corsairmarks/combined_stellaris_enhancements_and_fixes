@@ -57,6 +57,7 @@ angler = {
 				OR = {
 					NOT = { has_global_flag = agrarian_idyll_lithoid_installed }
 					is_lithoid_empire = no
+					is_anglers_empire = yes
 				}
 			}
 		}
@@ -75,6 +76,7 @@ angler = {
 				OR = {
 					NOT = { has_global_flag = agrarian_idyll_lithoid_installed }
 					is_lithoid_empire = no
+					is_anglers_empire = yes
 				}
 			}
 		}
@@ -85,6 +87,7 @@ angler = {
 				OR = {
 					NOT = { has_global_flag = agrarian_idyll_lithoid_installed }
 					is_lithoid_empire = no
+					is_anglers_empire = yes
 				}
 			}
 		}
