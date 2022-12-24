@@ -1,6 +1,6 @@
 # Overview
 
-Adds an upgrade for Hydroponics Farm called Aquaponics Farms, which convert one farmer job into an Angler job.  The technology to construct this building is available to all non-gestalt empires.  Aquaponics is a combination of aquaculture (raising aquatic animals for food) where the nutrient-rich waste water is used to feed hydroponically-grown crops that filter it, and then re-used.  The new Angler job already represents aquaculture, so it felt appropriate to upgrade the Hydroponics Farm building to provide one of each job instead of farming only.
+Adds an upgrade for Hydroponics Farms called Aquaponics Farms, which convert one farmer job into an Angler job.  The technology to construct this building is available to all non-gestalt empires.  Aquaponics is a combination of aquaculture (raising aquatic animals for food) where the nutrient-rich waste water is used to feed hydroponically-grown crops that filter it, and then re-used.  The new Angler job already represents aquaculture, so it felt appropriate to upgrade the Hydroponics Farms building to provide one of each job instead of farming only.
 
 # Changes
 
