@@ -40,6 +40,9 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
     * Hydroponics Farms or Aquaponics Farms on flooded habitats produce angler jobs in the same fashion as ocean worlds for angler empires
     * Add Aquaponics Farms build speed to `col_habitat_farming` (and the gestalt version)
     * You are more likely to draw Aquaponics technologies if you have the Javorian Pox Sample (same as Hydroponics)
+* 3.1.0 Enable Aquaponics Farms for gestalt empires - they could already research the technology, but got nothing!
+    * Add gestalt Aquaculture Drone (food and energy or amenities; machines get energy, hives and rogue servitors get amenities instead)
+    * Update `angler` override to account for changes in another one of my mods
 
 ## Source Code
 
