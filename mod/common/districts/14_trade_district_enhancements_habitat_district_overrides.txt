@@ -50,7 +50,7 @@ district_hab_commercial = {
 		potential = {
 			exists = owner
 			owner = {
-				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_trickle_up_economics
 				is_fallen_empire_spiritualist = no
 			}
 		}
@@ -62,7 +62,7 @@ district_hab_commercial = {
 		potential = {
 			exists = owner
 			owner = {
-				has_active_tradition = tr_prosperity_interstellar_franchising
+				has_active_tradition = tr_mercantile_trickle_up_economics
 				is_fallen_empire_spiritualist = yes
 			}
 		}
