@@ -91,6 +91,7 @@ This mod can be safely added or removed from your savegame after the game has st
     * Update overridden events with underlying game changes
     * Use built-in on-action `on_planet_transfer` now that it provides the previous owner as `fromfrom`
     * Remove custom on_actions `on_primitive_planet_transferring` and `on_primitive_planet_transferred`
+* 6.0.1 Ensure that free buildings are added correctly for primitive conquest - due to underlying Stellaris changes, the conquest event now fires _before_ the primitive buildings are removed, so they must be manually cleared
 
 ## Source Code
 
