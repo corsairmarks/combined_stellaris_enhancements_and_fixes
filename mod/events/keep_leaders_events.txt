@@ -32,28 +32,29 @@ country_event = {
 	picture = {
 		picture = GFX_evt_planet_beam
 		trigger = {
-			has_country_flag = keeping_leaders_colossus@from
 			exists = fromfrom
 			fromfrom = { is_scope_type = planet }
 			from = {
-				has_country_flag = colossus_transfer@capital_scope
-				has_country_flag = orbitally_drenched@capital_scope
+				has_country_flag = colossus_transfer@fromfrom
+				OR = {
+					has_country_flag = orbitally_drenched@fromfrom
+					has_country_flag = divinely_enforced@fromfrom
+				}
 			}
 		}
 	}
 	picture = {
 		picture = GFX_evt_death_from_above
 		trigger = {
-			has_country_flag = keeping_leaders_colossus@from
 			exists = fromfrom
 			fromfrom = { is_scope_type = planet }
 			from = {
-				has_country_flag = colossus_transfer@capital_scope
+				has_country_flag = colossus_transfer@fromfrom
 				NOR = {
-					has_country_flag = orbitally_drenched@capital_scope
-					has_country_flag = nanobot_assimilated@capital_scope
-					has_country_flag = orbitally_necrophaged@capital_scope
-					has_country_flag = colossus_transfer_handled@capital_scope
+					has_country_flag = orbitally_drenched@fromfrom
+					has_country_flag = divinely_enforced@fromfrom
+					has_country_flag = nanobot_assimilated@fromfrom
+					has_country_flag = orbitally_necrophaged@fromfrom
 				}
 			}
 		}
@@ -71,12 +72,11 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			has_country_flag = keeping_leaders_colossus@from
 			exists = fromfrom
 			fromfrom = { is_scope_type = planet }
 			from = {
-				has_country_flag = colossus_transfer@capital_scope
-				has_country_flag = orbitally_drenched@capital_scope
+				has_country_flag = colossus_transfer@fromfrom
+				has_country_flag = orbitally_drenched@fromfrom
 			}
 		}
 		show_sound = aqu_wep_colossus_planet_hit
@@ -84,14 +84,27 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			has_country_flag = keeping_leaders_colossus@from
 			exists = fromfrom
 			fromfrom = { is_scope_type = planet }
 			from = {
+				has_country_flag = colossus_transfer@fromfrom
+				has_country_flag = divinely_enforced@fromfrom
+			}
+		}
+		show_sound = event_mystic_reveal
+		text = keep_leaders.1.desc.planet_killer_godray
+	}
+	desc = {
+		trigger = {
+			exists = fromfrom
+			fromfrom = { is_scope_type = planet }
+			from = {
+				has_country_flag = colossus_transfer@fromfrom
 				NOR = {
-					has_country_flag = orbitally_drenched@capital_scope
-					has_country_flag = nanobot_assimilated@capital_scope
-					has_country_flag = orbitally_necrophaged@capital_scope
+					has_country_flag = orbitally_drenched@fromfrom
+					has_country_flag = divinely_enforced@fromfrom
+					has_country_flag = nanobot_assimilated@fromfrom
+					has_country_flag = orbitally_necrophaged@fromfrom
 				}
 			}
 		}
@@ -114,12 +127,10 @@ country_event = {
 		log = "country [This.GetRealName] retaining leaders from [From.GetRealName]"
 		# "argument" for create_leader_storage_and_transfer_leaders
 		save_event_target_as = potential_owner
-		#prepare_for_primitive_planet_transferred = yes
 		from = {
-			set_country_flag = colossus_transfer_handled@prev
 			save_event_target_as = former_owner
 			owner_species = { save_event_target_as = original_species }
-			capital_scope = { save_event_target_as = conquered_planet } # "argument" for localistation
+			fromfrom = { save_event_target_as = conquered_planet } # "argument" for localistation
 		}
 		# acquire leader and variable storage
 		random_country = {
@@ -187,7 +198,10 @@ country_event = {
 				TOTAL = "[variable_storage.leader_accumulator]"
 			}
 		}
-		trigger = { has_valid_civic = civic_fanatic_purifiers }
+		trigger = {
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_fanatic_purifiers
+		}
 		add_resource = {
 			unity = @keep_leaders_civic_reward_base
 			mult = event_target:variable_storage.leader_not_same_species_accumulator
@@ -224,7 +238,10 @@ country_event = {
 				TOTAL = "[variable_storage.leader_accumulator]"
 			}
 		}
-		trigger = { has_valid_civic = civic_hive_devouring_swarm }
+		trigger = {
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_hive_devouring_swarm
+		}
 		add_resource = {
 			society_research = @keep_leaders_civic_reward_base
 			mult = event_target:variable_storage.leader_organic_accumulator
@@ -247,7 +264,10 @@ country_event = {
 				TOTAL = "[variable_storage.leader_accumulator]"
 			}
 		}
-		trigger = { has_valid_civic = civic_machine_terminator }
+		trigger = {
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_terminator
+		}
 		add_resource = {
 			unity = @keep_leaders_civic_reward_base
 			mult = event_target:variable_storage.leader_organic_accumulator
@@ -309,7 +329,10 @@ country_event = {
 				TOTAL = "[variable_storage.leader_accumulator]"
 			}
 		}
-		trigger = { has_valid_civic = civic_machine_servitor }
+		trigger = {
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_servitor
+		}
 		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 		ai_chance = {
 			factor = 1
@@ -381,10 +404,7 @@ country_event = {
 			hidden_trigger = {
 				NOR = {
 					has_valid_civic = civic_fanatic_purifiers
-					AND = {
-						has_ascension_perk = ap_the_flesh_is_weak
-						has_country_flag = flesh_weakened
-					}
+					has_active_tradition = tr_cybernetics_transubstantiation_synthesis
 				}
 				event_target:storage_owner = {
 					any_owned_leader = {
@@ -459,7 +479,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_valid_civic = civic_machine_terminator
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_terminator
 			hidden_trigger = {
 				event_target:storage_owner = {
 					any_owned_leader = {
@@ -581,6 +602,10 @@ country_event = {
 	}
 	option = {
 		name = keep_leaders.1.c.cyb
+		icon = {
+			icon = GFX_tr_cybernetics_transubstantiation_synthesis
+			text = keep_leaders.1.cyb.icon.tooltip
+		}
 		custom_tooltip = keep_leaders.1.c.cyb.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
@@ -590,10 +615,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			OR = {
-				has_ascension_perk = ap_the_flesh_is_weak
-				has_civic = civic_machine_assimilator
-			}
+			has_active_tradition = tr_cybernetics_transubstantiation_synthesis
 			hidden_trigger = {
 				event_target:storage_owner = {
 					any_owned_leader = {
@@ -610,12 +632,30 @@ country_event = {
 			}
 		}
 		allow = {
-			OR = {
-				custom_tooltip = {
-					text = keep_leaders.1.k.cyb2.fail_text
-					has_country_flag = flesh_weakened
+			custom_tooltip = {
+				fail_text = ROBOTS_ARE_OUTLAWED_NO_X
+				OR = {
+					has_policy_flag = robots_allowed
+					is_robot_empire = yes
 				}
-				has_valid_civic = civic_machine_assimilator
+			}
+			custom_tooltip = {
+				fail_text = AI_IS_OUTLAWED_LEADER_NO_X
+				allows_ai_leaders = yes
+			}
+			custom_tooltip = {
+				fail_text = keep_leaders.1.necro.fail_text
+				if = {
+					limit = { is_necrophage_empire = yes }
+					event_target:storage_owner = { all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
+				}
+			}
+			custom_tooltip = {
+				fail_text = keep_leaders.1.phobe.fail_text
+				if = {
+					limit = { is_xenophobe = yes }
+					event_target:storage_owner = { all_stored_robotic_leaders_eligible_transfer_to_main_species_leader_restricted = yes }
+				}
 			}
 		}
 		hidden_effect = {
@@ -626,8 +666,8 @@ country_event = {
 		}
 	}
 	option = {
-		name = keep_leaders.1.c.cyb.exclusive
-		custom_tooltip = keep_leaders.1.c.cyb.exclusive.tooltip
+		name = keep_leaders.1.c.cyb
+		custom_tooltip = keep_leaders.1.c.cyb.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
 			description_parameters = {
@@ -636,15 +676,48 @@ country_event = {
 			}
 		}
 		trigger = {
-			OR = {
-				has_ascension_perk = ap_the_flesh_is_weak
-				has_civic = civic_machine_assimilator
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_assimilator
+			hidden_trigger = {
+				event_target:storage_owner = {
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_organic_species = yes
+						is_cyborg_species = no
+						is_hive_species = no
+					}
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_robotic_species_lenient = yes
+					}
+				}
 			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = keep_leaders.10
+				scopes = { from = event_target:storage_owner }
+			}
+		}
+	}
+	option = {
+		name = keep_leaders.1.c.assim.exclusive
+		custom_tooltip = keep_leaders.1.c.assim.exclusive.tooltip
+		custom_tooltip_with_params = {
+			description = keep_leaders.1.tooltip
+			description_parameters = {
+				VALUE = "[variable_storage.leader_robotic_accumulator]"
+				TOTAL = "[variable_storage.leader_accumulator]"
+			}
+		}
+		trigger = {
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_assimilator
 			hidden_trigger = { event_target:storage_owner = { all_stored_leaders_robotic_lenient = yes } }
 		}
 		allow = {
 			OR = {
-				has_country_flag = flesh_weakened
+				has_country_flag = cyborg_empire
 				has_valid_civic = civic_machine_assimilator
 			}
 		}
@@ -746,7 +819,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_valid_civic = civic_machine_servitor
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_servitor
 			hidden_trigger = {
 				event_target:storage_owner = {
 					any_owned_leader = {
@@ -928,8 +1002,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			# doesn't use a trigger so that this will be translated into an icon
-			has_valid_civic = civic_machine_servitor
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_servitor
 			hidden_trigger = {
 				has_global_flag = battle_thrall_military_leaders_installed
 				event_target:storage_owner = {
@@ -988,8 +1062,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			# doesn't use a trigger so that this will be translated into an icon
-			has_valid_civic = civic_machine_servitor
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_servitor
 			hidden_trigger = {
 				has_global_flag = battle_thrall_military_leaders_installed
 				event_target:storage_owner = {
@@ -1043,7 +1117,7 @@ country_event = {
 	# same species only
 	option = {
 		name = keep_leaders.1.g
-			custom_tooltip = keep_leaders.1.g.tooltip
+		custom_tooltip = keep_leaders.1.g.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
 			description_parameters = {
@@ -1111,7 +1185,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_valid_civic = civic_fanatic_purifiers
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_fanatic_purifiers
 			hidden_trigger = {
 				event_target:storage_owner = {
 					any_owned_leader = {
@@ -1312,7 +1387,8 @@ country_event = {
 			OR = {
 				is_regular_empire = yes
 				AND = {
-					has_valid_civic = civic_machine_servitor
+					# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+					has_civic = civic_machine_servitor
 					hidden_trigger = {
 						has_global_flag = battle_thrall_military_leaders_installed
 						event_target:storage_owner = {
@@ -1424,8 +1500,7 @@ country_event = {
 	option = {
 		name = keep_leaders.1.k.hive
 		icon = {
-			icon = GFX_ap_evolutionary_mastery
-			icon_background = GFX_klfis_event_icon_bg_blank
+			icon = GFX_ap_engineered_evolution
 			text = keep_leaders.1.k.gene.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.hive.tooltip
@@ -1437,20 +1512,21 @@ country_event = {
 			}
 		}
 		trigger = {
+			has_ascension_perk = ap_engineered_evolution
 			hidden_trigger = {
-				has_utopia = yes
-			}
-			event_target:storage_owner = {
-				any_owned_leader = {
-					is_eligible_transfer_leader_from_storage = yes
-					is_eligible_for_hive_assimilation_species = yes
+				is_hive_empire = yes
+				event_target:storage_owner = {
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_potential_for_hive_assimilation_species = yes
+					}
 				}
 			}
 		}
 		allow = {
 			custom_tooltip = {
 				fail_text = keep_leaders.1.k.bio.fail_text
-				has_ascension_perk = ap_evolutionary_mastery
+				has_active_tradition = tr_genetics_creation
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.swarm.fail_text
@@ -1462,7 +1538,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = keep_leaders.16
+				id = keep_leaders.19
 				scopes = { from = event_target:storage_owner }
 			}
 		}
@@ -1471,8 +1547,7 @@ country_event = {
 	option = {
 		name = keep_leaders.1.k.unhive
 		icon = {
-			icon = GFX_ap_evolutionary_mastery
-			icon_background = GFX_klfis_event_icon_bg_blank
+			icon = GFX_ap_engineered_evolution
 			text = keep_leaders.1.k.gene.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.unhive.tooltip
@@ -1484,13 +1559,14 @@ country_event = {
 			}
 		}
 		trigger = {
+			has_ascension_perk = ap_engineered_evolution
 			hidden_trigger = {
-				has_utopia = yes
-				is_hive_empire = no
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				is_regular_empire = yes
 				event_target:storage_owner = {
 					any_owned_leader = {
 						is_eligible_transfer_leader_from_storage = yes
-						is_eligible_for_unhive_assimilation_species = yes
+						is_potential_for_unhive_assimilation_species = yes
 					}
 				}
 			}
@@ -1498,7 +1574,7 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = keep_leaders.1.k.bio.fail_text
-				has_ascension_perk = ap_evolutionary_mastery
+				has_active_tradition = tr_genetics_creation
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
@@ -1520,7 +1596,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = keep_leaders.16
+				id = keep_leaders.19
 				scopes = { from = event_target:storage_owner }
 			}
 		}
@@ -1529,17 +1605,10 @@ country_event = {
 	option = {
 		name = keep_leaders.1.k.psi
 		icon = {
-			icon = GFX_ap_transcendence
-			icon_background = GFX_klfis_event_icon_bg_blank
+			icon = GFX_ap_mind_over_matter
 			text = keep_leaders.1.k.psi.icon.tooltip
 		}
-		if = {
-			limit = { NOT = { has_global_flag = deassimilate_machines_installed } }
-			custom_tooltip = keep_leaders.1.k.psi.tooltip
-		}
-		else = {
-			custom_tooltip = keep_leaders.1.k.psi.allow-cyb.tooltip
-		}
+		custom_tooltip = keep_leaders.1.k.psi.tooltip
 		custom_tooltip_with_params = {
 			description = keep_leaders.1.tooltip
 			description_parameters = {
@@ -1548,12 +1617,16 @@ country_event = {
 			}
 		}
 		trigger = {
+			OR = {
+				has_ascension_perk = ap_mind_over_matter
+				has_origin = origin_shroudwalker_apprentice
+			}
 			hidden_trigger = {
-				has_utopia = yes
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
 				event_target:storage_owner = {
 					any_owned_leader = {
 						is_eligible_transfer_leader_from_storage = yes
-						is_eligible_for_psionic_assimilation_species = yes
+						is_potential_for_psionic_assimilation_species = yes
 					}
 				}
 			}
@@ -1561,7 +1634,7 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = keep_leaders.1.k.psionic.fail_text
-				has_ascension_perk = ap_transcendence
+				has_active_tradition = tr_psionics_psionic_assimilation
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
@@ -1583,17 +1656,16 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = keep_leaders.16
+				id = keep_leaders.18
 				scopes = { from = event_target:storage_owner }
 			}
 		}
 	}
-	# assimilate: cybernetic
+	# assimilate: cybernetic (non-hive)
 	option = {
 		name = keep_leaders.1.k.cyb
 		icon = {
 			icon = GFX_ap_the_flesh_is_weak
-			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.cyb.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.cyb.tooltip
@@ -1605,25 +1677,22 @@ country_event = {
 			}
 		}
 		trigger = {
+			has_ascension_perk = ap_the_flesh_is_weak
 			hidden_trigger = {
-				has_utopia = yes
-				NOT = { has_country_flag = synthetic_empire }
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				has_ascension_perk = ap_the_flesh_is_weak
 				event_target:storage_owner = {
 					any_owned_leader = {
 						is_eligible_transfer_leader_from_storage = yes
-						is_eligible_for_cybernetic_assimilation_species = yes
+						is_potential_for_regular_cybernetic_assimilation_species = yes
 					}
 				}
 			}
 		}
 		allow = {
 			custom_tooltip = {
-				fail_text = keep_leaders.1.k.cyb1.fail_text
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-			custom_tooltip = {
-				fail_text = keep_leaders.1.k.cyb2.fail_text
-				has_country_flag = flesh_weakened
+				fail_text = keep_leaders.1.k.cyb.fail_text
+				has_active_tradition = tr_cybernetics_transubstantiation_synthesis
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
@@ -1645,7 +1714,51 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = keep_leaders.16
+				id = keep_leaders.17
+				scopes = { from = event_target:storage_owner }
+			}
+		}
+	}
+	# assimilate: cybernetic (hive)
+	option = {
+		name = keep_leaders.1.k.cyb.hive
+		icon = {
+			icon = GFX_ap_organo_machine_interfacing
+			text = keep_leaders.1.k.cyb.hive.icon.tooltip
+		}
+		custom_tooltip = keep_leaders.1.k.cyb.hive.tooltip
+		custom_tooltip_with_params = {
+			description = keep_leaders.1.tooltip
+			description_parameters = {
+				VALUE = "[variable_storage.leader_transferable_or_assimilatable_accumulator]"
+				TOTAL = "[variable_storage.leader_accumulator]"
+			}
+		}
+		trigger = {
+			has_ascension_perk = ap_organo_machine_interfacing
+			hidden_trigger = {
+				NOT = { has_valid_civic = civic_hive_devouring_swarm }
+				has_ascension_perk = ap_organo_machine_interfacing
+				event_target:storage_owner = {
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_potential_for_hive_cybernetic_assimilation_species = yes
+					}
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = keep_leaders.1.k.cyb.fail_text
+				has_active_tradition = tr_cybernetics_transubstantiation_synthesis
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = keep_leaders.17
 				scopes = { from = event_target:storage_owner }
 			}
 		}
@@ -1655,7 +1768,6 @@ country_event = {
 		name = keep_leaders.1.k.synth
 		icon = {
 			icon = GFX_ap_synthetic_evolution
-			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.synth.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.synth.tooltip
@@ -1667,13 +1779,13 @@ country_event = {
 			}
 		}
 		trigger = {
+			has_ascension_perk = ap_synthetic_evolution
 			hidden_trigger = {
-				has_utopia = yes
-				has_country_flag = flesh_weakened
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
 				event_target:storage_owner = {
 					any_owned_leader = {
 						is_eligible_transfer_leader_from_storage = yes
-						is_eligible_for_synthetic_assimilation_species = yes
+						is_potential_for_regular_synthetic_assimilation_species = yes
 					}
 				}
 			}
@@ -1681,11 +1793,11 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = keep_leaders.1.k.synth1.fail_text
-				has_ascension_perk = ap_synthetic_evolution
+				has_active_tradition = tr_synthetics_synthetic_age
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.k.synth2.fail_text
-				has_country_flag = synthetic_empire
+				has_country_flag = synth_assimilation
 			}
 		}
 		ai_chance = {
@@ -1694,6 +1806,55 @@ country_event = {
 				factor = 0.5
 				is_xenophile = yes
 			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = keep_leaders.16
+				scopes = { from = event_target:storage_owner }
+			}
+		}
+	}
+	# assimilate: machine synthetic
+	option = {
+		name = keep_leaders.1.k.synth.mach
+		icon = {
+			icon = GFX_ap_synthetic_age
+			text = keep_leaders.1.k.synth.mach.icon.tooltip
+		}
+		custom_tooltip = keep_leaders.1.k.synth.mach.tooltip
+		custom_tooltip_with_params = {
+			description = keep_leaders.1.tooltip
+			description_parameters = {
+				VALUE = "[variable_storage.leader_transferable_or_assimilatable_accumulator]"
+				TOTAL = "[variable_storage.leader_accumulator]"
+			}
+		}
+		trigger = {
+			has_ascension_perk = ap_synthetic_age
+			hidden_trigger = {
+				event_target:storage_owner = {
+					any_owned_leader = {
+						is_eligible_transfer_leader_from_storage = yes
+						is_potential_for_machine_synthetic_assimilation_species = yes
+					}
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = keep_leaders.1.k.synth.mach.fail_text
+				has_active_tradition = tr_synthetics_adopt_machine
+			}
+		}
+		if = {
+			limit = { has_valid_civic = civic_machine_terminator }
+			add_resource = {
+				unity = @keep_leaders_civic_reward_base
+				mult = event_target:variable_storage.leader_organic_accumulator
+			}
+		}
+		ai_chance = {
+			factor = 10
 		}
 		hidden_effect = {
 			country_event = {
@@ -1714,37 +1875,39 @@ country_event = {
 			}
 		}
 		trigger = {
-			OR = {
-				has_valid_civic = civic_machine_assimilator # explicit to get the icon to show
-				hidden_trigger = { is_machine_empire = yes }
-			}
+			# uses has_civic instead of has_valid_civic so that this will be translated into an icon
+			has_civic = civic_machine_assimilator
 			hidden_trigger = {
-				has_synthethic_dawn = yes
 				event_target:storage_owner = {
 					any_owned_leader = {
 						is_eligible_transfer_leader_from_storage = yes
-						is_eligible_for_machine_assimilation_species = yes
+						is_potential_for_machine_cybernetic_assimilation_species = yes
 					}
 				}
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = keep_leaders.1.k.mach.fail_text
-				has_valid_civic = civic_machine_assimilator
 			}
 		}
 		ai_chance = {
 			factor = 20
 		}
-		add_resource = {
-			unity = @keep_leaders_civic_reward_base
-			society_research = @keep_leaders_civic_reward_base
-			mult = event_target:variable_storage.leader_organic_non_cyborg_accumulator
+		if = {
+			limit = { NOT = { has_active_tradition = tr_cybernetics_assimilator_adopt } }
+			add_resource = {
+				unity = @keep_leaders_civic_reward_base
+				society_research = @keep_leaders_civic_reward_base
+				mult = event_target:variable_storage.leader_organic_non_cyborg_accumulator
+			}
+		}
+		else = {
+			add_resource = {
+				unity = @keep_leaders_civic_reward_base
+				society_research = @keep_leaders_civic_reward_base
+				engineering_research = @keep_leaders_civic_reward_base
+				mult = event_target:variable_storage.leader_organic_non_cyborg_accumulator_double
+			}
 		}
 		hidden_effect = {
 			country_event = {
-				id = keep_leaders.16
+				id = keep_leaders.17
 				scopes = { from = event_target:storage_owner }
 			}
 		}
@@ -1754,7 +1917,6 @@ country_event = {
 		name = keep_leaders.1.k.unmach
 		icon = {
 			icon = GFX_icon_tech_sapient_ai_alternate
-			icon_background = GFX_klfis_event_icon_bg_blank
 			text = keep_leaders.1.k.unmach.icon.tooltip
 		}
 		custom_tooltip = keep_leaders.1.k.unmach.tooltip
@@ -1766,24 +1928,22 @@ country_event = {
 			}
 		}
 		trigger = {
+			has_technology = tech_sapient_ai
 			hidden_trigger = {
 				has_synthethic_dawn = yes
-				has_utopia = yes
 				has_global_flag = deassimilate_machines_installed
 				is_regular_empire = yes
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				has_country_flag = synth_assimilation
 				event_target:storage_owner = {
 					any_owned_leader = {
 						is_eligible_transfer_leader_from_storage = yes
-						is_machine_species = yes
+						is_potential_for_unmachine_assimilation_species = yes
 					}
 				}
 			}
 		}
 		allow = {
-			custom_tooltip = {
-				fail_text = disconnected_machine_leaders_collapse_without_ai_assimilation_no_x
-				has_technology = tech_sapient_ai
-			}
 			custom_tooltip = {
 				fail_text = ROBOTS_ARE_OUTLAWED_NO_X
 				OR = {
@@ -1836,7 +1996,6 @@ country_event = {
 		}
 		trigger = {
 			hidden_trigger = { has_necroids = yes }
-			# doesn't use a trigger so that this will be translated into an icon
 			has_origin = origin_necrophage
 			hidden_trigger = { has_trait = trait_necrophage }
 		}
@@ -1882,7 +2041,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = keep_leaders.17
+				id = keep_leaders.20
 				scopes = { from = event_target:storage_owner }
 			}
 		}
@@ -1926,9 +2085,10 @@ country_event = {
 }
 
 # window with options to potentially keep the stored leaders from infiltration
-# triggered by on_primitive_planet_transferred
-# root = planet (after ownership change)
-# from = country, infiltrated primitives
+# triggered by on_planet_transfer
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 planet_event = {
 	id = keep_leaders.3
 	title = keep_leaders.3.title
@@ -1939,13 +2099,20 @@ planet_event = {
 		has_owner = yes
 	}
 	trigger = {
+		has_modifier = infiltration_happiness
 		exists = from
-		owner = { has_country_flag = keeping_leaders_infiltration@from }
-		has_leader_storage_from_country_to_planet_owner = yes
+		exists = fromfrom
+		fromfrom = { is_country_type = primitive }
 	}
 	immediate = {
-		log = "primitive infiltration: [This.GetName] ([From.GetRealName]) infiltrated by [This.Owner.GetRealName]"
-		prepare_for_primitive_planet_transferred = yes
+		log = "primitive infiltration: [This.GetName] ([FromFrom.GetRealName]) infiltrated by [From.GetRealName]"
+		from = { set_country_flag = keeping_leaders_infiltration@fromfrom }
+		fromfrom = {
+			save_event_target_as = former_owner # "argument" for localistation and create_leader_storage_and_transfer_leaders
+			owner_species = { save_event_target_as = original_species } # "argument" for localistation
+		}
+		from = { save_event_target_as = potential_owner } # "argument" for create_leader_storage_and_transfer_leaders
+		create_leader_storage_and_transfer_leaders = yes
 	}
 	option = {
 		name = keep_leaders.3.a
@@ -2023,6 +2190,11 @@ planet_event = {
 							from = event_target:original_species
 						}
 					}
+					# make sure we get the correct species portrait even if the gender was swapped via clone
+					if = {
+						limit = { has_leader_flag = leader_replaced_by_clone@last_created_leader }
+						last_created_leader = { change_leader_portrait = event_target:original_species }
+					}
 					remove_leader_flag = infiltrator_retained_cover
 				}
 				destroy_country = yes
@@ -2082,63 +2254,6 @@ planet_event = {
 				}
 			}
 		}
-	}
-}
-
-# transfer leaders to storage while the primitive country exists
-# triggered by on_primitive_planet_transferring
-# root = planet (before ownership change)
-# from = country, actor
-planet_event = {
-	id = keep_leaders.4
-	is_triggered_only = yes
-	hide_window = yes
-	pre_triggers = {
-		has_owner = yes
-	}
-	trigger = {
-		owner = {
-			is_country_type = primitive
-			OR = {
-				exists = ruler
-				exists = heir
-				any_owned_leader = { is_eligible_transfer_leader_class = yes }
-			}
-		}
-		OR = {
-			owner = { has_country_flag = colossus_transfer@prev } # colossus weapon
-			# infiltration
-			AND = {
-				has_observation_outpost = yes
-				observation_outpost = {
-					has_mission = covert_infiltration
-					mission_progress >= 1
-				}
-			}
-		}
-	}
-	immediate = {
-		# set flag for infiltration (colossus has one)
-		if = {
-			limit = {
-				has_observation_outpost = yes
-				observation_outpost = {
-					has_mission = covert_infiltration
-					mission_progress >= 1
-				}
-			}
-			from = { set_country_flag = keeping_leaders_infiltration@prev.owner }
-		}
-		else_if = {
-			limit = { owner = { has_country_flag = colossus_transfer@prev } }
-			from = { set_country_flag = keeping_leaders_colossus@prev.owner }
-		}
-		owner = {
-			save_event_target_as = former_owner # "argument" for localistation and set_leader_storage_flags
-			owner_species = { save_event_target_as = original_species } # "argument" for localistation
-		}
-		from = { save_event_target_as = potential_owner } # "argument" for accumulate_leader
-		create_leader_storage_and_transfer_leaders = yes
 	}
 }
 
@@ -2464,7 +2579,11 @@ country_event = {
 			every_owned_leader = {
 				limit = {
 					is_eligible_transfer_leader_from_storage = yes
-					is_eligible_transfer_without_assimilation = yes
+					is_potential_transfer_without_assimilation = yes
+					OR = {
+						event_target:potential_owner = { is_regular_empire = no }
+						is_regular_empire_allowable_leader_species = yes
+					}
 				}
 				ensure_species_rights_and_take_ownership_of_leader = yes
 			}
@@ -2480,7 +2599,7 @@ country_event = {
 	}
 }
 
-# assimilate
+# assimilate: synthetic/unmachine before biological assimilations
 # root = country, actor
 # from = country, leader storage
 country_event = {
@@ -2488,349 +2607,200 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		has_utopia = yes
+		OR = {
+			has_synthethic_dawn = yes
+			has_utopia = yes
+		}
 	}
 	immediate = {
-		log = "keep_leaders.16 assimilation"
+		log = "keep_leaders.16 assimilation (synthetic/unmachine priority)"
 		save_event_target_as = potential_owner
 		set_update_modifiers_batch = begin
 		from = {
 			every_owned_leader = {
 				limit = { is_eligible_transfer_leader_from_storage = yes }
 				species = { save_event_target_as = former_species }
+				set_variable = {
+					which = assimilation_type_counter
+					value = 0
+				}
+				species = { save_event_target_as = prepared_species }
+				try_apply_synthetic_assimilation = yes
+				try_apply_unmachine_assimilation = yes
 				if = {
-					limit = { event_target:potential_owner = { is_machine_empire = yes } }
-					if = {
-						limit = { is_eligible_for_machine_assimilation_species = yes }
-						set_citizenship_type = {
-							country = event_target:potential_owner
-							type = citizenship_assimilation
-						}
-						set_living_standard = {
-							country = event_target:potential_owner
-							type = living_standard_ego_assimilation
-						}
-						modify_species = {
-							species = species
-							add_trait = trait_cybernetic
-							add_traits_at_start_of_list = yes
-							change_scoped_species = no
-							effect = {
-								save_event_target_as = cyborg_species
-							}
-						}
-						if = {
-							limit = { event_target:cyborg_species = { has_trait = trait_hive_mind } }
-							modify_species = {
-								base = species
-								species = event_target:cyborg_species
-								remove_trait = trait_hive_mind
-								change_scoped_species = no
-								effect = {
-									save_event_target_as = cyborg_species
-								}
-							}
-						}
-						if = {
-							limit = { event_target:cyborg_species = { has_trait = trait_self_modified } }
-							modify_species = {
-								base = species
-								species = event_target:cyborg_species
-								remove_trait = trait_self_modified
-								change_scoped_species = no
-								effect = {
-									save_event_target_as = cyborg_species
-								}
-							}
-						}
-						change_species = event_target:cyborg_species
-						ensure_species_rights_and_take_ownership_of_leader = yes
-						fire_on_action = {
-							on_action = on_leader_species_changed
-							scopes = {
-								from = event_target:former_species
-							}
+					limit = {
+						NOR = {
+							has_leader_flag = synthetic_assimilation
+							has_leader_flag = unmachine_assimilation
 						}
 					}
-					else_if = {
-						limit = { is_eligible_transfer_without_assimilation = yes }
-						ensure_species_rights_and_take_ownership_of_leader = yes
-					}
+					try_apply_cybernetic_assimilation = yes
+					try_apply_genetic_assimilation = yes
+					try_apply_psionic_assimilation = yes
 				}
-				else_if = {
-					limit = { event_target:potential_owner = { is_hive_empire = yes } }
-					if = {
-						limit = { is_eligible_for_hive_assimilation_species = yes }
-						set_citizenship_type = {
-							country = event_target:potential_owner
-							type = citizenship_assimilation
-						}
-						set_living_standard = {
-							country = event_target:potential_owner
-							type = living_standard_ego_assimilation
-						}
-						modify_species = {
-							species = species
-							add_trait = trait_hive_mind
-							add_traits_at_start_of_list = yes
-							change_scoped_species = no
-							effect = {
-								save_event_target_as = hived_species
-							}
-						}
-						if = {
-							limit = { event_target:hived_species = { has_trait = trait_self_modified } }
-							modify_species = {
-								base = species
-								species = event_target:hived_species
-								remove_trait = trait_self_modified
-								change_scoped_species = no
-								effect = {
-									save_event_target_as = hived_species
-								}
-							}
-						}
-						change_species = event_target:hived_species
-						ensure_species_rights_and_take_ownership_of_leader = yes
-						fire_on_action = {
-							on_action = on_leader_species_changed
-							scopes = {
-								from = event_target:former_species
-							}
-						}
-					}
-					else_if = {
-						limit = { is_eligible_transfer_without_assimilation = yes }
-						ensure_species_rights_and_take_ownership_of_leader = yes
-					}
+				complete_assimilation_and_take_ownership_of_leader = yes
+			}
+			destroy_country = yes
+		}
+		set_update_modifiers_batch = end
+	}
+	after = {
+		# recalculate former ruler country bonuses
+		country_event = {
+			id = keep_leaders_bonus_traits.20
+		}
+	}
+}
+
+# assimilate: cybernetic assimilation before others (synthetic/unmachine won't fire if any biological assimilations took effect)
+# root = country, actor
+# from = country, leader storage
+country_event = {
+	id = keep_leaders.17
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			has_synthethic_dawn = yes
+			has_utopia = yes
+		}
+	}
+	immediate = {
+		log = "keep_leaders.17 assimilation (cybernetic priority)"
+		save_event_target_as = potential_owner
+		set_update_modifiers_batch = begin
+		from = {
+			every_owned_leader = {
+				limit = { is_eligible_transfer_leader_from_storage = yes }
+				species = { save_event_target_as = former_species }
+				set_variable = {
+					which = assimilation_type_counter
+					value = 0
 				}
-				else_if = {
-					limit = { event_target:potential_owner = { is_regular_empire = yes } }
-					if = {
-						limit = {
-							has_global_flag = deassimilate_machines_installed
-							is_eligible_for_unmachine_assimilation_species = yes
-						}
-						species = {
-							save_event_target_as = machine_species
-							set_citizenship_type = {
-								country = event_target:potential_owner
-								type = citizenship_assimilation
-							}
-							set_living_standard = {
-								country = event_target:potential_owner
-								type = living_standard_deassimilation
-							}
-						}
-						random_galaxy_species = {
-							limit = { has_species_flag = mechanical_species_of_machine_species@event_target:machine_species }
-							root = { set_country_flag = found_assim_mech_species@event_target:machine_species }
-							save_event_target_as = mechanical_species
-						}
-						if = {
-							limit = { root = { NOT = { has_country_flag = found_assim_mech_species@event_target:machine_species } } }
-							event_target:machine_species = {
-								create_species = {
-									name = this
-									plural = this
-									adjective = this
-									name_list = this
-									class = ROBOT
-									portrait = this
-									homeworld = this
-									traits = this
-									effect = {
-										save_event_target_as = mechanical_species
-									}
-								}
-							}
-							assimilate_species_traits_machine_to_robot = yes
-							modify_species = {
-								base = event_target:machine_species
-								species = event_target:mechanical_species
-								add_traits_at_start_of_list = yes
-								add_trait = trait_mechanical
-								remove_trait = trait_machine_unit
-								effect = {
-									set_species_flag = mechanical_species_of_machine_species@event_target:machine_species
-									save_event_target_as = mechanical_species
-								}
-							}
-						}
-						else = {
-							# setup for next loop iteration
-							root = { remove_country_flag = found_assim_mech_species@event_target:machine_species }
-						}
-						change_species = event_target:mechanical_species
-						ensure_species_rights_and_take_ownership_of_leader = yes
-						fire_on_action = {
-							on_action = on_leader_species_changed
-							scopes = {
-								from = event_target:former_species
-							}
+				species = { save_event_target_as = prepared_species }
+				try_apply_cybernetic_assimilation = yes
+				try_apply_genetic_assimilation = yes
+				try_apply_psionic_assimilation = yes
+				if = {
+					limit = {
+						NOR = {
+							has_leader_flag = cybernetic_assimilation
+							has_leader_flag = genetic_assimilation
+							has_leader_flag = psionic_assimilation
 						}
 					}
-					else_if = {
-						limit = { is_eligible_for_synthetic_assimilation_species = yes }
-						set_citizenship_type = {
-							country = event_target:potential_owner
-							type = citizenship_assimilation
-						}
-						set_living_standard = {
-							country = event_target:potential_owner
-							type = living_standard_tech_assimilation
-						}
-						# if you convert them to synths, you lose the secret hive magic
-						if = {
-							limit = { has_leader_flag = former_gestalt_ruler }
-							remove_leader_flag = former_gestalt_ruler
-						}
-						change_species = event_target:potential_owner
-						change_leader_portrait = event_target:potential_owner
-						ensure_species_rights_and_take_ownership_of_leader = yes
-						fire_on_action = {
-							on_action = on_leader_species_changed
-							scopes = {
-								from = event_target:former_species
-							}
-						}
-					}
-					else_if = {
-						limit = { is_eligible_for_cybernetic_assimilation_species = yes }
-						set_citizenship_type = {
-							country = event_target:potential_owner
-							type = citizenship_assimilation
-						}
-						set_living_standard = {
-							country = event_target:potential_owner
-							type = living_standard_tech_assimilation
-						}
-						modify_species = {
-							species = species
-							add_trait = trait_cybernetic
-							add_traits_at_start_of_list = yes
-							change_scoped_species = no
-							effect = {
-								save_event_target_as = cyborg_species
-							}
-						}
-						if = {
-							limit = { event_target:cyborg_species = { has_trait = trait_self_modified } }
-							modify_species = {
-								base = species
-								species = event_target:cyborg_species
-								remove_trait = trait_self_modified
-								change_scoped_species = no
-								effect = {
-									save_event_target_as = cyborg_species
-								}
-							}
-						}
-						change_species = event_target:cyborg_species
-						ensure_species_rights_and_take_ownership_of_leader = yes
-						fire_on_action = {
-							on_action = on_leader_species_changed
-							scopes = {
-								from = event_target:former_species
-							}
-						}
-					}
-					else_if = {
-						limit = { is_eligible_for_psionic_assimilation_species = yes }
-						set_citizenship_type = {
-							country = event_target:potential_owner
-							type = citizenship_assimilation
-						}
-						set_living_standard = {
-							country = event_target:potential_owner
-							type = living_standard_psi_assimilation
-						}
-						modify_species = {
-							species = species
-							add_trait = trait_psionic
-							add_traits_at_start_of_list = yes
-							change_scoped_species = no
-							effect = {
-								save_event_target_as = psionic_species
-							}
-						}
-						if = {
-							limit = { event_target:psionic_species = { has_trait = trait_latent_psionic } }
-							modify_species = {
-								base = species
-								species = event_target:psionic_species
-								remove_trait = trait_latent_psionic
-								change_scoped_species = no
-								effect = {
-									save_event_target_as = psionic_species
-								}
-							}
-						}
-						if = {
-							limit = { event_target:psionic_species = { has_trait = trait_self_modified } }
-							modify_species = {
-								base = species
-								species = event_target:psionic_species
-								remove_trait = trait_self_modified
-								change_scoped_species = no
-								effect = {
-									save_event_target_as = psionic_species
-								}
-							}
-						}
-						change_species = event_target:psionic_species
-						ensure_species_rights_and_take_ownership_of_leader = yes
-						fire_on_action = {
-							on_action = on_leader_species_changed
-							scopes = {
-								from = event_target:former_species
-							}
-						}
-					}
-					else_if = {
-						limit = { is_eligible_for_unhive_assimilation_species = yes }
-						set_citizenship_type = {
-							country = event_target:potential_owner
-							type = citizenship_assimilation
-						}
-						set_living_standard = {
-							country = event_target:potential_owner
-							type = living_standard_deassimilation
-						}
-						modify_species = {
-							species = species
-							remove_trait = trait_hive_mind
-							change_scoped_species = no
-							effect = {
-								save_event_target_as = unhived_species
-							}
-						}
-						if = {
-							limit = { event_target:unhived_species = { has_trait = trait_self_modified } }
-							modify_species = {
-								base = species
-								species = event_target:unhived_species
-								remove_trait = trait_self_modified
-								change_scoped_species = no
-								effect = {
-									save_event_target_as = unhived_species
-								}
-							}
-						}
-						change_species = event_target:unhived_species
-						ensure_species_rights_and_take_ownership_of_leader = yes
-						fire_on_action = {
-							on_action = on_leader_species_changed
-							scopes = {
-								from = event_target:former_species
-							}
-						}
-					}
-					else_if = {
-						limit = { is_eligible_transfer_without_assimilation = yes }
-						ensure_species_rights_and_take_ownership_of_leader = yes
-					}
+					try_apply_synthetic_assimilation = yes
+					try_apply_unmachine_assimilation = yes
 				}
+				complete_assimilation_and_take_ownership_of_leader = yes
+			}
+			destroy_country = yes
+		}
+		set_update_modifiers_batch = end
+	}
+	after = {
+		# recalculate former ruler country bonuses
+		country_event = {
+			id = keep_leaders_bonus_traits.20
+		}
+	}
+}
+
+# assimilate: psionic assimilation before others (synthetic/unmachine won't fire if any biological assimilations took effect)
+# root = country, actor
+# from = country, leader storage
+country_event = {
+	id = keep_leaders.18
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			has_synthethic_dawn = yes
+			has_utopia = yes
+		}
+	}
+	immediate = {
+		log = "keep_leaders.18 assimilation (psionic priority)"
+		save_event_target_as = potential_owner
+		set_update_modifiers_batch = begin
+		from = {
+			every_owned_leader = {
+				limit = { is_eligible_transfer_leader_from_storage = yes }
+				species = { save_event_target_as = former_species }
+				set_variable = {
+					which = assimilation_type_counter
+					value = 0
+				}
+				species = { save_event_target_as = prepared_species }
+				try_apply_psionic_assimilation = yes
+				try_apply_cybernetic_assimilation = yes
+				try_apply_genetic_assimilation = yes
+				if = {
+					limit = {
+						NOR = {
+							has_leader_flag = cybernetic_assimilation
+							has_leader_flag = genetic_assimilation
+							has_leader_flag = psionic_assimilation
+						}
+					}
+					try_apply_synthetic_assimilation = yes
+					try_apply_unmachine_assimilation = yes
+				}
+				complete_assimilation_and_take_ownership_of_leader = yes
+			}
+			destroy_country = yes
+		}
+		set_update_modifiers_batch = end
+	}
+	after = {
+		# recalculate former ruler country bonuses
+		country_event = {
+			id = keep_leaders_bonus_traits.20
+		}
+	}
+}
+
+# assimilate: genetic assimilation before others (synthetic/unmachine won't fire if any biological assimilations took effect)
+# root = country, actor
+# from = country, leader storage
+country_event = {
+	id = keep_leaders.19
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			has_synthethic_dawn = yes
+			has_utopia = yes
+		}
+	}
+	immediate = {
+		log = "keep_leaders.19 assimilation (genetic priority)"
+		save_event_target_as = potential_owner
+		set_update_modifiers_batch = begin
+		from = {
+			every_owned_leader = {
+				limit = { is_eligible_transfer_leader_from_storage = yes }
+				species = { save_event_target_as = former_species }
+				set_variable = {
+					which = assimilation_type_counter
+					value = 0
+				}
+				species = { save_event_target_as = prepared_species }
+				try_apply_genetic_assimilation = yes
+				try_apply_cybernetic_assimilation = yes
+				try_apply_psionic_assimilation = yes
+				if = {
+					limit = {
+						NOR = {
+							has_leader_flag = genetic_assimilation
+							has_leader_flag = cybernetic_assimilation
+							has_leader_flag = psionic_assimilation
+						}
+					}
+					try_apply_synthetic_assimilation = yes
+					try_apply_unmachine_assimilation = yes
+				}
+				complete_assimilation_and_take_ownership_of_leader = yes
 			}
 			destroy_country = yes
 		}
@@ -2848,7 +2818,7 @@ country_event = {
 # root = country, actor
 # from = country, leader storage
 country_event = {
-	id = keep_leaders.17
+	id = keep_leaders.20
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
@@ -2856,7 +2826,7 @@ country_event = {
 		is_necrophage_empire = yes
 	}
 	immediate = {
-		log = "keep_leaders.17 necrophage"
+		log = "keep_leaders.20 necrophage"
 		save_event_target_as = potential_owner
 		set_update_modifiers_batch = begin
 		from = {
@@ -2947,9 +2917,10 @@ country_event = {
 }
 
 # gatekeeper to potentially keep aquatic stored leaders after being drenched by the Deluge Machine
-# triggered by on_primitive_planet_transferred
-# root = planet (after ownership change)
-# from = country, colossus'd
+# triggered by on_planet_transfer
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 planet_event = {
 	id = keep_leaders.21
 	hide_window = yes
@@ -2959,14 +2930,15 @@ planet_event = {
 	}
 	trigger = {
 		exists = from
-		from = {
+		exists = fromfrom
+		fromfrom = {
 			has_country_flag = colossus_transfer@prev
 			has_country_flag = orbitally_drenched@prev
 		}
 		has_leader_storage_from_country_to_planet_owner = yes
 	}
 	immediate = {
-		log = "colossus fired: [This.GetName] ([From.GetRealName]) drenched by [This.Owner.GetRealName]"
+		log = "colossus fired: [This.GetName] ([FromFrom.GetRealName]) drenched by [From.GetRealName]"
 		prepare_for_primitive_planet_transferred = yes
 		if = {
 			limit = {
@@ -2977,6 +2949,7 @@ planet_event = {
 					}
 				}
 			}
+			fromfrom = { set_country_flag = colossus_transfer_handled@prev }
 			event_target:storage_owner = {
 				every_owned_leader = {
 					limit = { is_aquatic_species = no }
@@ -2986,26 +2959,24 @@ planet_event = {
 					}
 				}
 			}
-			owner = {
+			from = {
 				country_event = {
 					id = keep_leaders.1
 					scopes = {
-						from = prev.from
+						from = prev.fromfrom
 						fromfrom = prev
 					}
 				}
 			}
-		}
-		else = {
-			event_target:storage_owner = { destroy_country = yes }
 		}
 	}
 }
 
 # window with options to potentially keep the stored leaders after being cyborgized by the Nanobot Diffuser
 # triggered by keep_leaders.31
-# root = planet (after ownership change)
-# from = country, colossus'd
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 planet_event = {
 	id = keep_leaders.30
 	title = keep_leaders.30.title
@@ -3018,9 +2989,10 @@ planet_event = {
 	}
 	trigger = {
 		has_synthethic_dawn = yes
-		owner = { has_valid_civic = civic_machine_assimilator }
 		exists = from
-		from = {
+		exists = fromfrom
+		from = { has_valid_civic = civic_machine_assimilator }
+		fromfrom = {
 			has_country_flag = colossus_transfer@prev
 			has_country_flag = nanobot_assimilated@prev
 		}
@@ -3040,18 +3012,18 @@ planet_event = {
 			}
 		}
 		trigger = {
-			owner = {
+			from = {
 				OR = {
 					has_valid_civic = civic_machine_assimilator # explicit to get the icon to show
 					hidden_trigger = { is_machine_empire = yes }
 				}
 			}
 		}
-		allow = { owner = { has_valid_civic = civic_machine_assimilator } }
+		allow = { from = { has_valid_civic = civic_machine_assimilator } }
 		ai_chance = {
 			factor = 20
 		}
-		owner = {
+		from = {
 			add_resource = {
 				unity = @keep_leaders_civic_reward_base
 				society_research = @keep_leaders_civic_reward_base
@@ -3059,7 +3031,7 @@ planet_event = {
 			}
 			hidden_effect = {
 				country_event = {
-					id = keep_leaders.16
+					id = keep_leaders.17
 					scopes = { from = event_target:storage_owner }
 				}
 			}
@@ -3075,13 +3047,13 @@ planet_event = {
 				TOTAL = "[variable_storage.leader_accumulator]"
 			}
 		}
-		trigger = { owner = { has_authority = auth_machine_intelligence } } # explicit to get the icon to show
+		trigger = { from = { has_authority = auth_machine_intelligence } } # explicit to get the icon to show
 		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 	}
 	after = {
 		hidden_effect = {
 			# recalculate former ruler country bonuses
-			owner = {
+			from = {
 				country_event = {
 					id = keep_leaders_bonus_traits.20
 				}
@@ -3091,9 +3063,10 @@ planet_event = {
 }
 
 # gatekeeper to potentially keep stored leaders after being cyborgized by the Nanobot Diffuser
-# triggered by on_primitive_planet_transferred
-# root = planet (after ownership change)
-# from = country, colossus'd
+# triggered by on_planet_transfer
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 planet_event = {
 	id = keep_leaders.31
 	hide_window = yes
@@ -3103,16 +3076,17 @@ planet_event = {
 	}
 	trigger = {
 		has_synthethic_dawn = yes
-		owner = { has_valid_civic = civic_machine_assimilator }
 		exists = from
-		from = {
+		exists = fromfrom
+		from = { has_valid_civic = civic_machine_assimilator }
+		fromfrom = {
 			has_country_flag = colossus_transfer@prev
 			has_country_flag = nanobot_assimilated@prev
 		}
 		has_leader_storage_from_country_to_planet_owner = yes
 	}
 	immediate = {
-		log = "colossus fired: [This.GetName] ([From.GetRealName]) assimilated via nanobots by [This.Owner.GetRealName]"
+		log = "colossus fired: [This.GetName] ([FromFrom.GetRealName]) assimilated via nanobots by [From.GetRealName]"
 		prepare_for_primitive_planet_transferred = yes
 		if = {
 			limit = {
@@ -3129,23 +3103,23 @@ planet_event = {
 					}
 				}
 			}
+			fromfrom = { set_country_flag = colossus_transfer_handled@prev }
 			planet_event = {
 				id = keep_leaders.30
 				scopes = {
 					from = from
+					fromfrom = fromfrom
 				}
 			}
-		}
-		else = {
-			event_target:storage_owner = { destroy_country = yes }
 		}
 	}
 }
 
 # window with options to potentially keep the stored leaders after being necrophaged by the Necrophagic Spore Diffuser
 # triggered by keep_leaders.41
-# root = planet (after ownership change)
-# from = country, colossus'd
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 planet_event = {
 	id = keep_leaders.40
 	title = keep_leaders.40.title
@@ -3158,9 +3132,10 @@ planet_event = {
 	}
 	trigger = {
 		has_necroids = yes
-		owner = { is_necrophage_empire = yes }
 		exists = from
-		from = {
+		exists = fromfrom
+		from = { is_necrophage_empire = yes }
+		fromfrom = {
 			has_country_flag = colossus_transfer@prev
 			has_country_flag = orbitally_necrophaged@prev
 		}
@@ -3182,7 +3157,7 @@ planet_event = {
 		trigger = {
 			hidden_trigger = { has_necroids = yes }
 			# doesn't use a trigger so that this will be translated into an icon
-			owner = {
+			from = {
 				has_origin = origin_necrophage
 				hidden_trigger = { has_trait = trait_necrophage }
 			}
@@ -3211,10 +3186,10 @@ planet_event = {
 			factor = 10
 			modifier = {
 				factor = 2
-				owner = { has_policy_flag = purge_allowed }
+				from = { has_policy_flag = purge_allowed }
 			}
 		}
-		owner = {
+		from = {
 			# necrophage unity
 			if = {
 				limit = {
@@ -3230,7 +3205,7 @@ planet_event = {
 			}
 			hidden_effect = {
 				country_event = {
-					id = keep_leaders.17
+					id = keep_leaders.20
 					scopes = { from = event_target:storage_owner }
 				}
 			}
@@ -3240,14 +3215,14 @@ planet_event = {
 	option = {
 		name = {
 			text = keep_leaders.40.b
-			trigger = { owner = { is_hive_empire = no } }
+			trigger = { from = { is_hive_empire = no } }
 		}
 		name = {
 			text = keep_leaders.40.b.hive
-			trigger = { owner = { is_hive_empire = yes } }
+			trigger = { from = { is_hive_empire = yes } }
 		}
 		if = {
-			limit = { owner = { is_hive_empire = no } }
+			limit = { from = { is_hive_empire = no } }
 			custom_tooltip = keep_leaders.40.b.tooltip
 		}
 		else = {
@@ -3260,7 +3235,7 @@ planet_event = {
 			}
 		}
 		trigger = {
-			owner = {
+			from = {
 				OR = {
 					is_regular_empire = yes
 					has_authority = auth_hive_mind # explicit to get the icon to show
@@ -3282,15 +3257,15 @@ planet_event = {
 				TOTAL = "[variable_storage.leader_accumulator]"
 			}
 		}
-		trigger = { owner = { is_regular_empire = yes } }
+		trigger = { from = { is_regular_empire = yes } }
 		allow = {
 			custom_tooltip = {
 				fail_text = empire_is_xenophile_no_x
-				owner = { is_xenophile = no }
+				from = { is_xenophile = no }
 			}
 			custom_tooltip = {
 				fail_text = empire_is_pacifist_no_x
-				owner = { is_pacifist = no }
+				from = { is_pacifist = no }
 			}
 		}
 		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
@@ -3301,7 +3276,7 @@ planet_event = {
 	after = {
 		hidden_effect = {
 			# recalculate former ruler country bonuses
-			owner = {
+			from = {
 				country_event = {
 					id = keep_leaders_bonus_traits.20
 				}
@@ -3311,7 +3286,7 @@ planet_event = {
 }
 
 # gatekeeper to potentially keep stored leaders after being necrophaged by the Necrophagic Spore Diffuser
-# triggered by on_primitive_planet_transferred
+# triggered by on_planet_transfer
 # root = planet (after ownership change)
 # from = country, colossus'd
 planet_event = {
@@ -3323,16 +3298,17 @@ planet_event = {
 	}
 	trigger = {
 		has_necroids = yes
-		owner = { is_necrophage_empire = yes }
 		exists = from
-		from = {
+		exists = fromfrom
+		from = { is_necrophage_empire = yes }
+		fromfrom = {
 			has_country_flag = colossus_transfer@prev
 			has_country_flag = orbitally_necrophaged@prev
 		}
 		has_leader_storage_from_country_to_planet_owner = yes
 	}
 	immediate = {
-		log = "colossus fired: [This.GetName] ([From.GetRealName]) necrophaged by [This.Owner.GetRealName]"
+		log = "colossus fired: [This.GetName] ([FromFrom.GetRealName]) necrophaged by [From.GetRealName]"
 		prepare_for_primitive_planet_transferred = yes
 		if = {
 			limit = {
@@ -3343,23 +3319,23 @@ planet_event = {
 					}
 				}
 			}
+			fromfrom = { set_country_flag = colossus_transfer_handled@prev }
 			planet_event = {
 				id = keep_leaders.40
 				scopes = {
 					from = from
+					fromfrom = fromfrom
 				}
 			}
-		}
-		else = {
-			event_target:storage_owner = { destroy_country = yes }
 		}
 	}
 }
 
-# gatekeeper to potentially keep stored leaders after being hit by a generic planet killer weapon that allows for leader (and implied Pop) transfer
-# triggered by on_primitive_planet_transferred
-# root = planet (after ownership change)
-# from = country, colossus'd
+# gatekeeper to potentially keep stored leaders after being made believers by the Divine Enforcer
+# triggered by on_planet_transfer
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 planet_event = {
 	id = keep_leaders.51
 	hide_window = yes
@@ -3369,32 +3345,57 @@ planet_event = {
 	}
 	trigger = {
 		exists = from
-		from = {
+		exists = fromfrom
+		fromfrom = {
 			has_country_flag = colossus_transfer@prev
-			NOT = { has_country_flag = colossus_transfer_handled@prev }
-			# if you are a developer, have your handler set the colossus_transfer_handled@planet
-			# country flag to disable the fallback handling
+			has_country_flag = divinely_enforced@prev
 		}
 		has_leader_storage_from_country_to_planet_owner = yes
 	}
 	immediate = {
-		log = "colossus fired: [This.GetName] ([From.GetRealName]) generic weapon'd by [This.Owner.GetRealName]"
-		owner = {
-			country_event = {
-				id = keep_leaders.1
-				scopes = {
-					from = prev.from
-					fromfrom = prev
+		log = "colossus fired: [This.GetName] ([FromFrom.GetRealName]) had divine belief enforced by [From.GetRealName]"
+		if = {
+			limit = {
+				event_target:variable_storage = {
+					check_variable = {
+						which = leader_organic_non_cyborg_accumulator
+						value > 0
+					}
+				}
+			}
+			fromfrom = { set_country_flag = colossus_transfer_handled@prev }
+			event_target:storage_owner = {
+				every_owned_leader = {
+					limit = {
+						OR = {
+							is_robotic_species = yes
+							is_cyborg_species = yes
+						}
+					}
+					kill_leader = {
+						show_notification = no
+						fire = yes
+					}
+				}
+			}
+			from = {
+				country_event = {
+					id = keep_leaders.1
+					scopes = {
+						from = prev.fromfrom
+						fromfrom = prev
+					}
 				}
 			}
 		}
 	}
 }
 
-# gatekeeper to potentially keep stored leaders after being hit by a generic planet killer weapon that allows for leader (and implied Pop) transfer
-# triggered by on_primitive_planet_transferred
-# root = planet (after ownership change)
-# from = country, colossus'd
+# this event is intended to run after all other on_planet_transfer handlers and deletes the container country if it wasn't flagged as handled
+# triggered by on_planet_transfer
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 planet_event = {
 	id = keep_leaders.99
 	hide_window = yes
@@ -3404,11 +3405,11 @@ planet_event = {
 	}
 	trigger = {
 		exists = from
-		from = {
+		exists = fromfrom
+		fromfrom = {
 			has_country_flag = colossus_transfer@prev
 			NOT = { has_country_flag = colossus_transfer_handled@prev }
-			# this event is intended to run after all other on_primitive_planet_transferred handlers
-			# and deletes the container country if it wasn't flagged as handled
+			# if you are a developer, have your handler set the colossus_transfer_handled@planet to preserve the container country beyond the "on_planet_transfer" on_action
 		}
 		has_leader_storage_from_country_to_planet_owner = yes
 	}
@@ -3416,7 +3417,7 @@ planet_event = {
 		random_country = {
 			limit = {
 				is_country_type = neutral_faction
-				has_country_flag = former_owner@from
+				has_country_flag = former_owner@fromfrom
 			}
 			destroy_country = yes
 		}

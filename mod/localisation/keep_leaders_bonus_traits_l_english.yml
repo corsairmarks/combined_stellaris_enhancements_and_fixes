@@ -53,9 +53,9 @@
  mod_country_base_engineering_research_produces_add: "£engineering£ Research Points"
 
  former_ruler_admin_bonus: "Former Ruler Administration"
- former_ruler_admin_bonus_desc: "The combined effects of notable §Yleaders§!' experience as former heads of state. £mod_country_admin_cap_add£ §G+10§! per former ruler that is a §Y$governor$§!."
+ former_ruler_admin_bonus_desc: "The combined effects of notable §Yleaders§!' experience as former heads of state. £mod_country_edict_fund_add£ $MOD_COUNTRY_EDICT_FUND_ADD$ §G+10§! per former ruler that is a §Y$governor$§!."
  former_heir_admin_bonus: "Former Heir Administration"
- former_heir_admin_bonus_desc: "The combined effects of notable §Yleaders§!' experience as former heirs of an $auth_imperial$ government. £mod_country_admin_cap_add£ §G+5§! per former heir that is a §Y$governor$§!."
+ former_heir_admin_bonus_desc: "The combined effects of notable §Yleaders§!' experience as former heirs of an $auth_imperial$ government. £mod_country_edict_fund_add£ $MOD_COUNTRY_EDICT_FUND_ADD$ §G+5§! per former heir that is a §Y$governor$§!."
  former_ruler_research_bonus: "Former Ruler Research"
  former_ruler_research_bonus_desc: "The combined effects of notable §Yleaders§!' experience as former heads of state. £physics£ £society£ £engineering£ §YResearch Points§! for new technologies §G+10§! per former ruler that is a §Y$scientist$§!."
  former_heir_research_bonus: "Former Heir Research"

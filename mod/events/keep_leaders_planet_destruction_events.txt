@@ -1,0 +1,99 @@
+namespace = keep_leaders_planet_destruction
+
+# defaults:
+# .100 cracker
+# .200 pacifier
+# .300 neutron
+# .400 godray
+# .500 nanobots
+# .700 deluge
+# .800 toxifier
+
+# fired by on_destroy_planet_with_PLANET_KILLER_NANOBOT
+# this = planet that has been fired upon
+# from = fleet that fired
+planet_event = {
+	id = keep_leaders_planet_destruction.400
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		num_pops > 0
+		owner = { is_country_type = primitive }
+	}
+	immediate = {
+		owner = {
+			set_country_flag = colossus_transfer@prev
+			set_country_flag = divinely_enforced@prev
+		}
+	}
+}
+
+# fired by on_destroy_planet_with_PLANET_KILLER_NANOBOT
+# this = planet that has been fired upon
+# from = fleet that fired
+planet_event = {
+	id = keep_leaders_planet_destruction.500
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		num_pops > 0
+		owner = { is_country_type = primitive }
+	}
+	immediate = {
+		owner = {
+			set_country_flag = colossus_transfer@prev
+			set_country_flag = nanobot_assimilated@prev
+		}
+	}
+}
+
+# fired by on_destroy_planet_with_PLANET_KILLER_SPORE_DISPERSAL
+# this = planet that has been fired upon
+# from = fleet that fired
+planet_event = {
+	id = keep_leaders_planet_destruction.501
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		num_pops > 0
+		owner = { is_country_type = primitive }
+	}
+	immediate = {
+		owner = {
+			set_country_flag = colossus_transfer@prev
+			set_country_flag = orbitally_necrophaged@prev
+		}
+	}
+}
+
+# fired by on_destroy_planet_with_PLANET_KILLER_DELUGE
+# this = planet that has been fired upon
+# from = fleet that fired
+planet_event = {
+	id = keep_leaders_planet_destruction.700
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+	}
+	trigger = {
+		num_pops > 0
+		owner = { is_country_type = primitive }
+		any_owned_species = { has_trait = trait_aquatic }
+	}
+	immediate = {
+		owner = {
+			set_country_flag = colossus_transfer@prev
+			set_country_flag = orbitally_drenched@prev
+		}
+	}
+}

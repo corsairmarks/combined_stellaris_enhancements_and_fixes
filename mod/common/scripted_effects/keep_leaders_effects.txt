@@ -197,18 +197,18 @@ create_leader_storage_and_transfer_leaders = {
 }
 
 # sets up necessary event_targets:
-# event_target:potential_owner = this.owner
-# event_target:former_owner = from
-# event_target:original_species = from.owner_species
+# event_target:potential_owner = from
+# event_target:former_owner = fromfrom
+# event_target:original_species = fromfrom.owner_species
 # event_target:storage_owner = country, primitive leader storage
 # event_target:variable_storage = country, primitive leader variable storage
-# this = planet (after ownership change)
-# from = country, former owner
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
 prepare_for_primitive_planet_transferred = {
 	optimize_memory
-	owner = { save_event_target_as = potential_owner }
-	from = {
-		set_country_flag = colossus_transfer_handled@prev
+	from = { save_event_target_as = potential_owner }
+	fromfrom = {
 		save_event_target_as = former_owner
 		owner_species = { save_event_target_as = original_species }
 	}
@@ -216,25 +216,25 @@ prepare_for_primitive_planet_transferred = {
 	random_country = {
 		limit = {
 			is_country_type = neutral_faction
-			has_country_flag = former_owner@from
+			has_country_flag = former_owner@fromfrom
 		}
 		save_event_target_as = storage_owner
 		save_event_target_as = variable_storage
 	}
 }
 
-# THIS = leader
+# this = leader
 # event_target:potential_owner = country for whom the leader is being stored
 # event_target:storage_owner = country in which to store leaders
 transfer_leader_to_storage = {
 	optimize_memory
 	set_leader_flag = former_owner@owner
 	set_leader_flag = potential_owner@event_target:potential_owner
-	unassign_leader = THIS
+	unassign_leader = this
 	set_owner = event_target:storage_owner
 }
 
-# THIS = leader
+# this = leader
 # event_target:former_owner = country that previously owned the leader
 # event_target:potential_owner = country for whom the leader is being stored
 set_leader_storage_flags = {
@@ -243,8 +243,8 @@ set_leader_storage_flags = {
 	set_leader_flag = potential_owner@event_target:potential_owner
 }
 
-# THIS = leader
-# event_target:potential_owner = country to set citizenship
+# this = leader
+# event_target:potential_owner = country to become the new owner and for which to set species rights
 ensure_species_rights_and_take_ownership_of_leader = {
 	optimize_memory
 	if = {
@@ -263,14 +263,14 @@ ensure_species_rights_and_take_ownership_of_leader = {
 		}
 		set_full_military_service_species = yes
 	}
-	set_minimum_standard_of_living_species = yes
-	unassign_leader = THIS
+	set_minimum_living_standard_species = yes
+	unassign_leader = this
 	set_owner = event_target:potential_owner
 	try_assign_retained_leader_to_former_assignment = yes
 	fire_on_action = { on_action = on_leader_owner_changed }
 }
 
-# THIS = something with species
+# this = something with species
 # event_target:potential_owner = country to set citizenship
 set_full_citizenship_species = {
 	optimize_memory
@@ -333,7 +333,7 @@ set_full_citizenship_species = {
 	}
 }
 
-# THIS = something with species
+# this = something with species
 # event_target:potential_owner = country to set military service
 set_full_military_service_species = {
 	optimize_memory
@@ -450,9 +450,9 @@ set_full_military_service_species = {
 	}
 }
 
-# THIS = something with species
+# this = something with species
 # event_target:potential_owner = country to ensure minimum standard of living
-set_minimum_standard_of_living_species = {
+set_minimum_living_standard_species = {
 	optimize_memory
 	species= {
 		if = {
@@ -463,14 +463,14 @@ set_minimum_standard_of_living_species = {
 						is_hive_empire = yes
 					}
 				}
-				NOR = {
-					has_living_standard = {
+				OR = {
+					has_citizenship_type = {
 						country = event_target:potential_owner
-						type = living_standard_hive_mind
+						type = citizenship_full
 					}
-					has_living_standard = {
+					has_citizenship_type = {
 						country = event_target:potential_owner
-						type = living_standard_ego_assimilation
+						type = citizenship_full_machine
 					}
 				}
 			}
@@ -502,7 +502,7 @@ set_minimum_standard_of_living_species = {
 						}
 					}
 					AND = {
-						is_robotic_species = yes
+						is_robotic = yes
 						event_target:potential_owner = { has_full_ai_rights = no }
 					}
 				}
@@ -512,6 +512,14 @@ set_minimum_standard_of_living_species = {
 				set_living_standard = {
 					country = event_target:potential_owner
 					type = living_standard_shared_burden
+					cooldown = no
+				}
+			}
+			else_if = {
+				limit = { event_target:potential_owner = { is_pleasure_seeker = yes } }
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_decadent
 					cooldown = no
 				}
 			}
@@ -555,57 +563,224 @@ set_minimum_standard_of_living_species = {
 	}
 }
 
-# THIS = something with species
+# this = species
 # event_target:potential_owner = country doing the assimilating
-set_assimilation_standard_of_living_species = {
+set_citizenship_assimilation_and_living_standard_synthetic = {
 	optimize_memory
-	species= {
+	if = {
+		limit = {
+			NOT = { has_species_flag = living_standard_set@event_target:potential_owner }
+			event_target:potential_owner = { is_potential_for_synthetic_assimilation_country = yes }
+		}
+		set_citizenship_type = {
+			country = event_target:potential_owner
+			type = citizenship_assimilation
+			cooldown = no
+		}
+		set_living_standard = {
+			country = event_target:potential_owner
+			type = living_standard_tech_assimilation
+			cooldown = no
+		}
+		set_timed_species_flag = {
+			flag = living_standard_set@event_target:potential_owner
+			days = 1
+		}
+	}
+}
+
+# this = species
+# event_target:potential_owner = country doing the assimilating
+set_citizenship_assimilation_and_living_standard_unmachine = {
+	optimize_memory
+	if = {
+		limit = {
+			NOT = { has_species_flag = living_standard_set@event_target:potential_owner }
+			event_target:potential_owner = { is_potential_for_unmachine_assimilation_country = yes }
+		}
+		set_citizenship_type = {
+			country = event_target:potential_owner
+			type = citizenship_assimilation
+			cooldown = no
+		}
+		set_living_standard = {
+			country = event_target:potential_owner
+			type = living_standard_deassimilation_machine
+			cooldown = no
+		}
+		set_timed_species_flag = {
+			flag = living_standard_set@event_target:potential_owner
+			days = 1
+		}
+	}
+}
+
+# this = species
+# event_target:potential_owner = country doing the assimilating
+set_citizenship_assimilation_and_living_standard_cybernetic = {
+	optimize_memory
+	if = {
+		limit = {
+			NOT = { has_species_flag = living_standard_set@event_target:potential_owner }
+			event_target:potential_owner = { is_potential_for_cybernetic_assimilation_country = yes }
+		}
 		if = {
-			limit = {
+			limit = { 
 				event_target:potential_owner = {
 					OR = {
 						has_valid_civic = civic_machine_assimilator
-						AND = {
-							is_regular_hive_empire = yes
-							has_ascension_perk = ap_evolutionary_mastery
-						}
+						is_regular_hive_empire = yes
 					}
 				}
 			}
-			set_living_standard = {
+			set_citizenship_type = {
 				country = event_target:potential_owner
-				type = living_standard_ego_assimilation
+				type = citizenship_assimilation
 				cooldown = no
+			}
+			if = {
+				limit = { has_psionic_species_trait = no }
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_cyborg_ego_assimilation
+					cooldown = no
+				}
+			}
+			else = {
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_cyborg_ego_assimilation_psionic
+					cooldown = no
+				}
+			}
+			set_timed_species_flag = {
+				flag = living_standard_set@event_target:potential_owner
+				days = 1
 			}
 		}
 		else_if = {
-			limit = { event_target:potential_owner = { has_ascension_perk = ap_transcendence } }
+			limit = { event_target:potential_owner = { is_regular_empire = yes } }
+			set_citizenship_type = {
+				country = event_target:potential_owner
+				type = citizenship_assimilation
+				cooldown = no
+			}
+			if = {
+				limit = { has_psionic_species_trait = no }
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_cyborg_assimilation
+					cooldown = no
+				}
+			}
+			else = {
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_cyborg_assimilation_psionic
+					cooldown = no
+				}
+			}
+			set_timed_species_flag = {
+				flag = living_standard_set@event_target:potential_owner
+				days = 1
+			}
+		}
+	}
+}
+
+# this = species
+# event_target:potential_owner = country doing the assimilating
+set_citizenship_assimilation_and_living_standard_psionic = {
+	optimize_memory
+	if = {
+		limit = {
+			NOT = { has_species_flag = living_standard_set@event_target:potential_owner }
+			event_target:potential_owner = { is_potential_for_psionic_assimilation_country = yes }
+		}
+		set_citizenship_type = {
+			country = event_target:potential_owner
+			type = citizenship_assimilation
+			cooldown = no
+		}
+		if = {
+			limit = { NOT = { has_trait = trait_cybernetic } }
 			set_living_standard = {
 				country = event_target:potential_owner
 				type = living_standard_psi_assimilation
 				cooldown = no
 			}
 		}
-		else_if = {
-			limit = { event_target:potential_owner = { has_ascension_perk = ap_the_flesh_is_weak } }
+		else = {
 			set_living_standard = {
 				country = event_target:potential_owner
-				type = living_standard_tech_assimilation
+				type = living_standard_psi_assimilation_cyborg
 				cooldown = no
 			}
 		}
-		else_if = {
-			limit = { event_target:potential_owner = { has_ascension_perk = ap_evolutionary_mastery } }
+		set_timed_species_flag = {
+			flag = living_standard_set@event_target:potential_owner
+			days = 1
+		}
+	}
+}
+
+# this = species
+# event_target:potential_owner = country doing the assimilating
+set_citizenship_assimilation_and_living_standard_genetic = {
+	optimize_memory
+	if = {
+		limit = {
+			NOT = { has_species_flag = living_standard_set@event_target:potential_owner }
+			event_target:potential_owner = { is_potential_for_genetic_assimilation_country = yes }
+		}
+		if = {
+			limit = { event_target:potential_owner = { is_regular_empire = yes } }
+			set_citizenship_type = {
+				country = event_target:potential_owner
+				type = citizenship_assimilation
+				cooldown = no
+			}
 			set_living_standard = {
 				country = event_target:potential_owner
 				type = living_standard_deassimilation
 				cooldown = no
 			}
+			set_timed_species_flag = {
+				flag = living_standard_set@event_target:potential_owner
+				days = 1
+			}
+		}
+		else_if = {
+			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
+			set_citizenship_type = {
+				country = event_target:potential_owner
+				type = citizenship_assimilation
+				cooldown = no
+			}
+			if = {
+				limit = { has_psionic_species_trait = no }
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_ego_assimilation
+					cooldown = no
+				}
+			}
+			else = {
+				set_living_standard = {
+					country = event_target:potential_owner
+					type = living_standard_ego_assimilation_psionic
+					cooldown = no
+				}
+			}
+			set_timed_species_flag = {
+				flag = living_standard_set@event_target:potential_owner
+				days = 1
+			}
 		}
 	}
 }
 
-# THIS = leader
+# this = leader
 set_former_gestalt_ruler_flag = {
 	optimize_memory
 	if = {
@@ -621,7 +796,7 @@ set_former_gestalt_ruler_flag = {
 	}
 }
 
-# THIS = leader
+# this = leader
 remove_gestalt_ruler_traits = {
 	optimize_memory
 	if = {
@@ -642,7 +817,7 @@ remove_gestalt_ruler_traits = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_governor = {
 	optimize_memory
@@ -685,7 +860,7 @@ replace_leader_as_governor = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_scientist = {
 	optimize_memory
@@ -728,7 +903,7 @@ replace_leader_as_scientist = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_admiral = {
 	optimize_memory
@@ -771,7 +946,7 @@ replace_leader_as_admiral = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_general = {
 	optimize_memory
@@ -814,7 +989,7 @@ replace_leader_as_general = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_civilian = {
 	optimize_memory
@@ -834,7 +1009,7 @@ replace_leader_as_civilian = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_military = {
 	optimize_memory
@@ -854,7 +1029,7 @@ replace_leader_as_military = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_non_military_as_admiral = {
 	optimize_memory
@@ -871,7 +1046,7 @@ replace_leader_non_military_as_admiral = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_non_scientist = {
 	optimize_memory
@@ -893,7 +1068,7 @@ replace_leader_as_non_scientist = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_as_random = {
 	optimize_memory
@@ -917,7 +1092,7 @@ replace_leader_as_random = {
 	}
 }
 
-# THIS = country
+# this = country
 # event_target:leader_to_replace = leader that you want replaced - will be set to point to the cloned leader
 replace_leader_based_on_government_type = {
 	optimize_memory
@@ -988,6 +1163,7 @@ replace_leader_based_on_government_type = {
 		# immortal rulers would never need to be replaced - so they have assigned leader
 		# replacement classes based on the "theme" of the government
 		gov_hive_mind = { replace_leader_as_governor = yes }
+		gov_parasitic_overmind = { replace_leader_as_governor = yes }
 		gov_devouring_swarm = { replace_leader_as_admiral = yes }
 		gov_machine_empire = { replace_leader_as_governor = yes }
 		gov_machine_terminator = { replace_leader_as_admiral = yes }
@@ -1033,7 +1209,7 @@ replace_leader_based_on_government_type = {
 	}
 }
 
-# THIS = leader
+# this = leader
 try_add_demoted_ruler_bonus_trait = {
 	optimize_memory
 	switch = {
@@ -1046,7 +1222,7 @@ try_add_demoted_ruler_bonus_trait = {
 }
 
 # add the relevant +admin cap trait - which, if using enhanced randomisation, will get switched to the right kind for the new owner
-# THIS = leader
+# this = leader
 try_add_demoted_ruler_governor_bonus_trait = {
 	optimize_memory
 	if = {
@@ -1166,7 +1342,7 @@ try_add_demoted_ruler_governor_bonus_trait = {
 	}
 }
 
-# THIS = leader
+# this = leader
 try_add_demoted_ruler_scientist_bonus_trait = {
 	optimize_memory
 	if = {
@@ -1262,7 +1438,7 @@ try_add_demoted_ruler_scientist_bonus_trait = {
 	}
 }
 
-# THIS = leader
+# this = leader
 try_add_demoted_ruler_admiral_bonus_trait = {
 	optimize_memory
 	if = {
@@ -1321,7 +1497,7 @@ try_add_demoted_ruler_admiral_bonus_trait = {
 	}
 }
 
-# THIS = leader
+# this = leader
 try_add_demoted_ruler_general_bonus_trait = {
 	optimize_memory
 	if = {
@@ -1391,7 +1567,7 @@ try_add_demoted_ruler_general_bonus_trait = {
 	}
 }
 
-# THIS = leader
+# this = leader
 try_add_demoted_ruler_generic_bonus_trait = {
 	optimize_memory
 	if = {
@@ -1415,7 +1591,7 @@ try_add_demoted_ruler_generic_bonus_trait = {
 	# else they have a lot of traits already
 }
 
-# THIS = leader
+# this = leader
 # event_target:potential_owner = the country scope that will potentially become the owner of the leader
 # event_target:variable_storage = a scope that has these variables:
 # * leader_accumulator
@@ -1428,6 +1604,7 @@ try_add_demoted_ruler_generic_bonus_trait = {
 # * leader_not_same_species_accumulator
 # * leader_transferable_accumulator
 # * leader_transferable_or_assimilatable_accumulator
+# * leader_transferable_or_assimilatable_accumulator_double
 # * leader_aquatic_accumulator
 accumulate_leader = {
 	optimize_memory
@@ -1445,6 +1622,12 @@ accumulate_leader = {
 				change_variable = {
 					which = leader_organic_non_cyborg_accumulator
 					value = 1
+				}
+			}
+			event_target:variable_storage = {
+				change_variable = {
+					which = leader_organic_non_cyborg_accumulator_double
+					value = 2
 				}
 			}
 		}
@@ -1512,7 +1695,7 @@ accumulate_leader = {
 		}
 	}
 	if = {
-		limit = { is_eligible_transfer_without_assimilation = yes }
+		limit = { is_potential_transfer_without_assimilation = yes }
 		event_target:variable_storage = {
 			change_variable = {
 				which = leader_transferable_accumulator
@@ -1526,7 +1709,7 @@ accumulate_leader = {
 	}
 	# else_if helps skip duplicate checks for leaders that don't need assimilation
 	else_if = {
-		limit = { is_eligible_transfer_with_assimilation = yes }
+		limit = { is_potential_transfer_with_assimilation = yes }
 		event_target:variable_storage = {
 			change_variable = {
 				which = leader_transferable_or_assimilatable_accumulator
@@ -1560,6 +1743,7 @@ assimilate_species_traits_machine_to_robot = {
 			species = event_target:machine_species
 			add_trait = trait_robot_domestic_protocols
 			remove_trait = trait_robot_emotion_emulators
+			change_scoped_species = no
 			effect = {
 				save_event_target_as = mechanical_species
 			}
@@ -1570,6 +1754,7 @@ assimilate_species_traits_machine_to_robot = {
 		modify_species = {
 			species = event_target:machine_species
 			remove_trait = trait_robot_uncanny
+			change_scoped_species = no
 			effect = {
 				save_event_target_as = mechanical_species
 			}
@@ -1577,7 +1762,7 @@ assimilate_species_traits_machine_to_robot = {
 	}
 }
 
-# THIS = leader
+# this = leader
 tag_leader_for_reassignment = {
 	optimize_memory
 	switch = {
@@ -1586,15 +1771,15 @@ tag_leader_for_reassignment = {
 		governor = {
 			if = {
 				limit = { exists = sector }
-				set_leader_flag = keep_leader_match_sector_capital_planet@THIS
-				sector.sector_capital = { set_planet_flag = keep_leader_match_sector_capital_planet@PREV }
+				set_leader_flag = keep_leader_match_sector_capital_planet@this
+				sector.sector_capital = { set_planet_flag = keep_leader_match_sector_capital_planet@prev }
 			}
 		}
 		scientist = {
 			if = {
 				limit = { exists = fleet }
-				set_leader_flag = keep_leader_match_fleet@THIS
-				fleet = { set_fleet_flag = keep_leader_match_fleet@PREV }
+				set_leader_flag = keep_leader_match_fleet@this
+				fleet = { set_fleet_flag = keep_leader_match_fleet@prev }
 			}
 			switch = {
 				trigger = is_researching_area
@@ -1606,24 +1791,24 @@ tag_leader_for_reassignment = {
 		admiral = {
 			if = {
 				limit = { exists = fleet }
-				set_leader_flag = keep_leader_match_fleet@THIS
-				fleet = { set_fleet_flag = keep_leader_match_fleet@PREV }
+				set_leader_flag = keep_leader_match_fleet@this
+				fleet = { set_fleet_flag = keep_leader_match_fleet@prev }
 			}
 		}
 		# generals can't be reassigned because armies can't have their owners changed, and it's not possible to clone the transports before integration completes
 		general = {
 			if = {
 				limit = { exists = fleet }
-				set_leader_flag = keep_leader_match_transport_fleet@THIS
-				fleet = { set_fleet_flag = keep_leader_match_transport_fleet@PREV }
+				set_leader_flag = keep_leader_match_transport_fleet@this
+				fleet = { set_fleet_flag = keep_leader_match_transport_fleet@prev }
 			}
 			owner = {
 				random_owned_army = {
 					limit = {
 						exists = leader
-						leader = { is_same_value = PREVPREV }
+						leader = { is_same_value = prevprev }
 					}
-					leader = { set_leader_flag = keep_leader_match_army@THIS }
+					leader = { set_leader_flag = keep_leader_match_army@this }
 					set_army_flag = keep_leader_match_army@leader
 				}
 			}
@@ -1632,7 +1817,7 @@ tag_leader_for_reassignment = {
 	}
 }
 
-# THIS = leader
+# this = leader
 try_assign_retained_leader_to_former_assignment = {
 	optimize_memory
 	switch = {
@@ -1640,12 +1825,12 @@ try_assign_retained_leader_to_former_assignment = {
 		# governors can't be reassigned because sectors are cleared and cannot be recreated by script
 		# governor = {
 		# 	if = {
-		# 		limit = { has_leader_flag = keep_leader_match_sector_capital_planet@THIS }
+		# 		limit = { has_leader_flag = keep_leader_match_sector_capital_planet@this }
 		# 		owner = {
 		# 			random_owned_planet = {
 		# 				limit = {
 		# 					NOT = { exists = sector }
-		# 					has_planet_flag = keep_leader_match_sector_capital_planet@PREVPREV
+		# 					has_planet_flag = keep_leader_match_sector_capital_planet@prevprev
 		# 				}
 		# 				log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] formerly governed a sector from \\[This.GetName]"
 		# 			}
@@ -1654,14 +1839,14 @@ try_assign_retained_leader_to_former_assignment = {
 		# }
 		scientist = {
 			if = {
-				limit = { has_leader_flag = keep_leader_match_fleet@THIS }
+				limit = { has_leader_flag = keep_leader_match_fleet@this }
 				owner = {
 					random_controlled_fleet = {
 						limit = {
-							has_fleet_flag = keep_leader_match_fleet@PREVPREV
+							has_fleet_flag = keep_leader_match_fleet@prevprev
 							NOT = { exists = leader }
 						}
-						assign_leader = PREVPREV
+						assign_leader = prevprev
 						log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of science vessel \\[This.GetName]"
 					}
 				}
@@ -1669,14 +1854,14 @@ try_assign_retained_leader_to_former_assignment = {
 		}
 		admiral = {
 			if = {
-				limit = { has_leader_flag = keep_leader_match_fleet@THIS }
+				limit = { has_leader_flag = keep_leader_match_fleet@this }
 				owner = {
 					random_controlled_fleet = {
 						limit = {
-							has_fleet_flag = keep_leader_match_fleet@PREVPREV
+							has_fleet_flag = keep_leader_match_fleet@prevprev
 							NOT = { exists = leader }
 						}
-						assign_leader = PREVPREV
+						assign_leader = prevprev
 						log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of fleet \\[This.GetName]"
 					}
 				}
@@ -1685,27 +1870,27 @@ try_assign_retained_leader_to_former_assignment = {
 		# armies can't have their owners changed, an it's unclear how I could clone the transports before integration fires, which means there's nothing to which to reassign a general
 		# general = {
 		# 	if = {
-		# 		limit = { has_leader_flag = keep_leader_match_transport_fleet@THIS }
+		# 		limit = { has_leader_flag = keep_leader_match_transport_fleet@this }
 		# 		owner = {
 		# 			random_controlled_fleet = {
 		# 				limit = {
-		# 					has_fleet_flag = keep_leader_match_transport_fleet@PREVPREV
+		# 					has_fleet_flag = keep_leader_match_transport_fleet@prevprev
 		# 					NOT = { exists = leader }
 		# 				}
-		# 				assign_leader = PREVPREV
+		# 				assign_leader = prevprev
 		# 				log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of transport fleet \\[This.GetName]"
 		# 			}
 		# 		}
 		# 	}
 		# 	else_if = {
-		# 		limit = { has_leader_flag = keep_leader_match_army@THIS }
+		# 		limit = { has_leader_flag = keep_leader_match_army@this }
 		# 		owner = {
 		# 			random_owned_army = {
 		# 				limit = {
-		# 					has_army_flag = keep_leader_match_army@PREVPREV
+		# 					has_army_flag = keep_leader_match_army@prevprev
 		# 					NOT = { exists = leader }
 		# 				}
-		# 				assign_leader = PREVPREV
+		# 				assign_leader = prevprev
 		# 				log = "\\[PrevPrev.GetTitle] \\[PrevPrev.GetName] resumed command of the army \\[This.GetName]"
 		# 			}
 		# 		}
@@ -1716,7 +1901,7 @@ try_assign_retained_leader_to_former_assignment = {
 }
 
 # somewhat hacky workaround to spawn an army transport of a specific type with less repeated code, and also using localisation for the name
-# THIS = fleet, to which the transport will be assigned
+# this = fleet, to which the transport will be assigned
 # ARMY_TYPE = army type to create
 # event_target:source_ship = transport being duplicated
 # event_target:source_army = army being duplicated
@@ -1755,6 +1940,192 @@ create_army_transport_parameterized = {
 						variable_string = "source_army.GetName"
 					}
 				}
+			}
+		}
+	}
+}
+
+# set up a machine species for deassimilation into a mechanical species, saved as event_target:prepared_species
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+# event_target:potential_owner = country (assimilator)
+klfis_prepare_machine_to_mechanical_species = {
+	optimize_memory
+	event_target:prepared_species = { save_event_target_as = machine_species }
+	random_galaxy_species = {
+		limit = { has_species_flag = mechanical_species_of_machine_species@event_target:machine_species }
+		event_target:potential_owner = { set_country_flag = found_assim_mech_species@event_target:machine_species }
+		save_event_target_as = prepared_species
+	}
+	if = {
+		limit = { event_target:potential_owner = { NOT = { has_country_flag = found_assim_mech_species@event_target:machine_species } } }
+		event_target:machine_species = {
+			create_species = {
+				name = this
+				plural = this
+				adjective = this
+				name_list = this
+				class = ROBOT
+				portrait = this
+				homeworld = this
+				traits = this
+				effect = {
+					save_event_target_as = mechanical_species
+				}
+			}
+		}
+		assimilate_species_traits_machine_to_robot = yes
+		modify_species = {
+			base = event_target:machine_species
+			species = event_target:mechanical_species
+			add_trait = trait_mechanical
+			add_traits_at_start_of_list = yes
+			remove_trait = trait_machine_unit
+			change_scoped_species = no
+			effect = {
+				set_species_flag = mechanical_species_of_machine_species@event_target:machine_species
+				save_event_target_as = prepared_species
+			}
+		}
+	}
+	else = {
+		# setup for next loop iteration
+		event_target:potential_owner = { remove_country_flag = found_assim_mech_species@event_target:machine_species }
+	}
+}
+
+# set up a species for cybernetic assimilation (non-hive), saved as event_target:prepared_species
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+klfis_prepare_cybernetic_species = {
+	optimize_memory
+	if = {
+		limit = { NOT = { has_global_flag = assimilate_all_the_pops_installed } }
+		modify_species = {
+			species = event_target:prepared_species
+			add_trait = trait_cybernetic
+			add_traits_at_start_of_list = yes
+			remove_trait = trait_self_modified
+			remove_trait = trait_hive_mind
+			remove_trait = trait_latent_psionic
+			remove_trait = trait_psionic
+			change_scoped_species = no
+			effect = {
+				save_event_target_as = prepared_species
+			}
+		}
+	}
+	else = {
+		modify_species = {
+			species = event_target:prepared_species
+			add_trait = trait_cybernetic
+			add_traits_at_start_of_list = yes
+			remove_trait = trait_self_modified
+			remove_trait = trait_hive_mind
+			change_scoped_species = no
+			effect = {
+				save_event_target_as = prepared_species
+			}
+		}
+	}
+}
+
+# set up a species for hive assimilation, saved as event_target:prepared_species
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+klfis_prepare_hive_species = {
+	optimize_memory
+	modify_species = {
+		species = event_target:prepared_species
+		add_trait = trait_hive_mind
+		add_traits_at_start_of_list = yes
+		remove_trait = trait_self_modified
+		remove_trait = trait_latent_psionic
+		remove_trait = trait_psionic
+		change_scoped_species = no
+		effect = {
+			save_event_target_as = prepared_species
+		}
+	}
+}
+
+# set up a species for cybernetic assimilation (hive), saved as event_target:prepared_species
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+klfis_prepare_hive_cybernetic_species = {
+	optimize_memory
+	modify_species = {
+		species = event_target:prepared_species
+		add_trait = trait_cybernetic
+		add_trait = trait_hive_mind
+		add_traits_at_start_of_list = yes
+		remove_trait = trait_self_modified
+		remove_trait = trait_latent_psionic
+		remove_trait = trait_psionic
+		change_scoped_species = no
+		effect = {
+			save_event_target_as = prepared_species
+		}
+	}
+}
+
+# set up a species for hive deassimilation, saved as event_target:prepared_species
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+klfis_prepare_unhive_species = {
+	optimize_memory
+	modify_species = {
+		species = event_target:prepared_species
+		remove_trait = trait_self_modified
+		remove_trait = trait_hive_mind
+		change_scoped_species = no
+		effect = {
+			save_event_target_as = prepared_species
+		}
+	}
+}
+
+# set up a species for psionic assimilation, saved as event_target:prepared_species
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+klfis_prepare_psionic_species = {
+	optimize_memory
+	if = {
+		limit = { NOT = { has_global_flag = assimilate_all_the_pops_installed } }
+		modify_species = {
+			species = event_target:prepared_species
+			add_trait = trait_psionic
+			add_traits_at_start_of_list = yes
+			remove_trait = trait_self_modified
+			remove_trait = trait_latent_psionic
+			remove_trait = trait_cybernetic
+			remove_trait = trait_cyborg_power_drills
+			remove_trait = trait_cyborg_harvesters
+			remove_trait = trait_cyborg_superconductive
+			remove_trait = trait_cyborg_efficient_processors
+			remove_trait = trait_cyborg_logic_engines
+			remove_trait = trait_cyborg_loyalty_circuits
+			remove_trait = trait_cyborg_double_jointed
+			remove_trait = trait_cyborg_bulky
+			remove_trait = trait_cyborg_enhanced_memory
+			remove_trait = trait_cyborg_durable
+			remove_trait = trait_cyborg_high_maintenance
+			remove_trait = trait_cyborg_learning_algorithms
+			remove_trait = trait_cyborg_power_intensive
+			remove_trait = trait_cyborg_neural_limiters
+			remove_trait = trait_cyborg_streamlined_protocols
+			remove_trait = trait_cyborg_high_bandwidth
+			remove_trait = trait_cyborg_trading_algorithms
+			change_scoped_species = no
+			effect = {
+				save_event_target_as = prepared_species
+			}
+		}
+	}
+	else = {
+		modify_species = {
+			species = event_target:prepared_species
+			add_trait = trait_psionic
+			add_traits_at_start_of_list = yes
+			remove_trait = trait_self_modified
+			remove_trait = trait_latent_psionic
+			change_scoped_species = no
+			effect = {
+				save_event_target_as = prepared_species
 			}
 		}
 	}
@@ -1871,4 +2242,164 @@ klfis_clone_leader_with_gender = {
 			}
 		}
 	}
+}
+
+# this = leader
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+# event_target:potential_owner = country
+# assimilation_type_counter (variable) how many (if any) assimilation changes were applied
+try_apply_cybernetic_assimilation = {
+	optimize_memory
+	if = {
+		limit = { event_target:prepared_species = { is_possible_for_cybernetic_assimilation = yes } }
+		species = { set_citizenship_assimilation_and_living_standard_cybernetic = yes }
+		if = {
+			limit = { event_target:potential_owner = { is_hive_empire = no } }
+			klfis_prepare_cybernetic_species = yes
+		}
+		else = {
+			klfis_prepare_hive_cybernetic_species = yes
+		}
+		set_timed_leader_flag = {
+			flag = cybernetic_assimilation
+			days = 1
+		}
+		change_variable = {
+			which = assimilation_type_counter
+			value = 1
+		}
+	}
+}
+
+# this = leader
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+# event_target:potential_owner = country
+# assimilation_type_counter (variable) how many (if any) assimilation changes were applied
+try_apply_synthetic_assimilation = {
+	optimize_memory
+	if = {
+		limit = { event_target:prepared_species = { is_possible_for_synthetic_assimilation = yes } }
+		# if you convert hive to synths, you lose the secret hive magic
+		if = {
+			limit = {
+				has_leader_flag = former_gestalt_ruler
+				is_hive_species = yes # intentionally checks the leader's original species
+			}
+			remove_leader_flag = former_gestalt_ruler
+		}
+		species = { set_citizenship_assimilation_and_living_standard_synthetic = yes }
+		event_target:potential_owner.owner_species = { save_event_target_as = prepared_species }
+		set_timed_leader_flag = {
+			flag = synthetic_assimilation
+			days = 1
+		}
+		change_variable = {
+			which = assimilation_type_counter
+			value = 1
+		}
+	}
+}
+
+# this = leader
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+# event_target:potential_owner = country
+# assimilation_type_counter (variable) how many (if any) assimilation changes were applied
+try_apply_unmachine_assimilation = {
+	optimize_memory
+	if = {
+		limit = { event_target:prepared_species = { is_possible_for_unmachine_assimilation = yes } }
+		species = { set_citizenship_assimilation_and_living_standard_unmachine = yes }
+		klfis_prepare_machine_to_mechanical_species = yes
+		set_timed_leader_flag = {
+			flag = unmachine_assimilation
+			days = 1
+		}
+		change_variable = {
+			which = assimilation_type_counter
+			value = 1
+		}
+	}
+}
+
+# this = leader
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+# event_target:potential_owner = country
+# assimilation_type_counter (variable) how many (if any) assimilation changes were applied
+try_apply_psionic_assimilation = {
+	optimize_memory
+	if = {
+		limit = { event_target:prepared_species = { is_possible_for_psionic_assimilation = yes } }
+		species = { set_citizenship_assimilation_and_living_standard_psionic = yes }
+		klfis_prepare_psionic_species = yes
+		set_timed_leader_flag = {
+			flag = psionic_assimilation
+			days = 1
+		}
+		change_variable = {
+			which = assimilation_type_counter
+			value = 1
+		}
+	}
+}
+
+# this = leader
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+# event_target:potential_owner = country
+# assimilation_type_counter (variable) how many (if any) assimilation changes were applied
+try_apply_genetic_assimilation = {
+	optimize_memory
+	if = {
+		limit = { event_target:prepared_species = { is_possible_for_genetic_assimilation = yes } }
+		species = { set_citizenship_assimilation_and_living_standard_genetic = yes }
+		if = {
+			limit = { is_hive_species = yes }
+			klfis_prepare_unhive_species = yes
+		}
+		else = {
+			klfis_prepare_hive_species = yes
+		}
+		set_timed_leader_flag = {
+			flag = genetic_assimilation
+			days = 1
+		}
+		change_variable = {
+			which = assimilation_type_counter
+			value = 1
+		}
+	}
+}
+
+# this = leader
+# event_target:potential_owner = country to become the new owner
+# event_target:prepared_species = the species being prepared (possibly with one or more changes from previous assimilations)
+# assimilation_type_counter (variable) how many (if any) assimilation changes were applied
+complete_assimilation_and_take_ownership_of_leader = {
+	optimize_memory
+	if = {
+		limit = {
+			check_variable = {
+				which = assimilation_type_counter
+				value > 0
+			}
+		}
+		change_species = event_target:prepared_species
+		ensure_species_rights_and_take_ownership_of_leader = yes
+		fire_on_action = {
+			on_action = on_leader_species_changed
+			scopes = {
+				from = event_target:former_species
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			is_potential_transfer_without_assimilation = yes
+			OR = {
+				event_target:potential_owner = { is_regular_empire = no }
+				is_regular_empire_allowable_leader_species = yes
+			}
+		}
+		ensure_species_rights_and_take_ownership_of_leader = yes
+	}
+	clear_variable = assimilation_type_counter
 }

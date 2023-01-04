@@ -1,0 +1,33 @@
+# intentionally named to fire before the built-in planet-killer on_actions, so that I can set appropriate flags before the planet is transferred
+
+# this = planet that have been fired upon
+# from = fleet that fired
+on_destroy_planet_with_PLANET_KILLER_GODRAY = {
+	events = {
+		keep_leaders_planet_destruction.400
+	}
+}
+
+# this = planet that have been fired upon
+# from = fleet that fired
+on_destroy_planet_with_PLANET_KILLER_NANOBOTS = {
+	events = {
+		keep_leaders_planet_destruction.500
+	}
+}
+
+# this = planet that has been fired upon
+# from = fleet that fired
+on_destroy_planet_with_PLANET_KILLER_SPORE_DISPERSAL = {
+	events = {
+		keep_leaders_planet_destruction.501
+	}
+}
+
+# this = planet that have been fired upon
+# from = fleet that fired
+on_destroy_planet_with_PLANET_KILLER_DELUGE = {
+	events = {
+		keep_leaders_planet_destruction.700
+	}
+}

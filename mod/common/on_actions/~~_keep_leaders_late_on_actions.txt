@@ -1,8 +1,10 @@
-# this file is intentionally designed to fire after other handlers for this on_action
-# fired after a primitive planet has changed ownership
-# this = planet (after ownership change)
-# from = country, primitive former owner
-on_primitive_planet_transferred = {
+# this file is intentionally designed to fire after other handlers for these on_actions
+
+# fired whenever a new owner is set for a planet, be it after a war or through a trade
+# this = planet (after new owner set)
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
+on_planet_transfer = {
 	events = {
 		keep_leaders.99
 	}

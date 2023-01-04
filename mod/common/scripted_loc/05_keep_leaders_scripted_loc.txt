@@ -42,6 +42,13 @@ defined_text = { # country
 	text = {
 		trigger = {
 			has_country_flag = colossus_transfer@capital_scope
+			has_country_flag = divinely_enforced@capital_scope
+		}
+		localization_key = keep_leaders.1.title.planet_killer_godray
+	}
+	text = {
+		trigger = {
+			has_country_flag = colossus_transfer@capital_scope
 			NOR = {
 				has_country_flag = orbitally_drenched@capital_scope
 				has_country_flag = nanobot_assimilated@capital_scope
