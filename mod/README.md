@@ -23,7 +23,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Colony Designations: Capital Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 3.0.0)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/workshop/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 3.0.0)
 * [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 4.1.0)
-* [Deassimilated Machine Worlds](https://steamcommunity.com/workshop/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 4.0.0)
+* [Deassimilated Machine Worlds](https://steamcommunity.com/workshop/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 5.0.0)
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/workshop/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 3.2.0)
 * [Game Start: Unity Fund](https://steamcommunity.com/sharedfiles/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 2.0.0)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 3.0.0)
