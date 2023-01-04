@@ -282,11 +282,11 @@ add_primitive_conquest_unity_building_if_free = {
 	}
 	else_if = {
 		limit = { owner = { is_machine_empire = yes } }
-		pce_add_building_if_free = { BUILDING = building_uplink_node }
+		pce_add_building_if_free = { BUILDING = building_simulation_1 }
 	}
 	else_if = {
 		limit = { owner = { is_hive_empire = yes } }
-		pce_add_building_if_free = { BUILDING = building_hive_node }
+		pce_add_building_if_free = { BUILDING = building_sensorium_1 }
 	}
 	else = {
 		if = {
