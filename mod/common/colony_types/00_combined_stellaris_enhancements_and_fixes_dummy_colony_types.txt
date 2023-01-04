@@ -1,0 +1,8 @@
+# dummy colony_types so I don't spam the error log when More Standard Districts is not installed
+col_standard_cm_trade = {
+	icon = GFX_colony_type_normal_colony
+	potential = { always = no }
+	weight_modifier = {
+		base = 0
+	}
+}
