@@ -6,7 +6,7 @@ Individual mods update first, then changes are merged here.
 
 # Major Update
 
-Versions 6.0.0 and above are fully updated for Stellaris version 3.4 "Cepheus" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [5.2.3](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/5.2.3).
+Versions .0.0 and above are fully updated for Stellaris version 3.6 "Orion" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [6.0.1](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/6.0.1).
 
 You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
 
@@ -28,7 +28,6 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 3.0.0)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 4.0.0)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.0.0)
-* [Leader Traits: Synthetic Leader Traits for Machine Units](https://steamcommunity.com/workshop/filedetails/?id=2642820468) ([Source](https://github.com/corsairmarks/enable_synthetic_leader_traits_for_machine_leaders) 2.0.0)
 * [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 3.0.0)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 3.1.0)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 5.1.0)
@@ -39,7 +38,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/workshop/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 4.1.0)
 * [Start with Unity Fund](https://steamcommunity.com/sharedfiles/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 1.1.0)
 * ["Terraform" to Tomb World](https://steamcommunity.com/workshop/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 4.0.0)
-* [Yet Another Planetary Sky Fix](https://steamcommunity.com/workshop/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 3.0.0)
+* [Yet Another Planetary Sky Fix](https://steamcommunity.com/workshop/filedetails/?id=2527918521) ([Source](https://github.com/corsairmarks/yet_another_planetary_sky_fix) 4.0.0)
 
 ## Source Code
 
@@ -62,7 +61,7 @@ Each of the source repositories above is added as a remote to this repository on
 
 # Compatibility
 
-Requires Stellaris version 3.4 "Cepheus" and disables achievements.
+Requires Stellaris version 3.6 "Orion" and disables achievements.
 
 Check each of the contained mods for an explicit list of incompatibility notes.  As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings.  Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
 
@@ -191,4 +190,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Deassimilate Machines at 3.1.0
     * Retain Leaders from Integrated Subjects at 4.1.0
 * 6.0.0 Update merged mods for Stellaris version 3.4 "Cepheus" (none added or removed)
-* 6.0.1 Update merged mods: Enhanced Trade Districts and Designations at 3.2.0
+* 6.0.1 Update merged mod: Enhanced Trade Districts and Designations at 3.2.0
+* 7.0.0 Update all merged mods for Stellaris version 3.6 "Orion"
+    * Removed: Leader Traits: Synthetic Leader Traits for Machine Units (deprecated)
