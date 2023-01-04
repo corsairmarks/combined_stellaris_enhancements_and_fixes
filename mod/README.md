@@ -20,7 +20,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 2.0.0)
 * [Civic: Philosopher King - Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) at 1.1.0)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 4.1.0)
-* [Colony Designations: Capital Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 2.2.0)
+* [Colony Designations: Capital Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 3.0.0)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/workshop/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 3.0.0)
 * [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 4.1.0)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/workshop/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 4.0.0)
