@@ -76,6 +76,142 @@ event = {
 					value = 50 # civic, defined: common/governments/civics/00_civics.txt at line 381 (civic_inwards_perfection)
 				}
 			}
+			if = {
+				limit = { has_valid_civic = civic_efficient_bureaucracy }
+				# civic grants 2 edicts fund per bureaucrat/priest/death priest/manager, scaled with unity modifiers (see job definitions)
+				# and also see common/script_values/00_script_values.txt at line 499
+				capital_scope = {
+					every_owned_pop = {
+						limit = {
+							OR = {
+								has_job = bureaucrat
+								has_job = priest
+								has_job = death_priest
+								has_job = manager
+							}
+						}
+						set_variable = {
+							which = base_edicts_fund_per_job
+							value = 2
+						}
+						if = {
+							limit = { has_job = bureaucrat }
+							multiply_variable = {
+								which = base_edicts_fund_per_job
+								value = value:job_total_output_modifier|JOB|bureaucrat|RESOURCE|unity|
+							}
+							prevprev = {
+								change_variable = {
+									which = starting_unity_fund
+									value = prev.base_edicts_fund_per_job
+								}
+							}
+						}
+						else_if = {
+							limit = { has_job = priest }
+							multiply_variable = {
+								which = base_edicts_fund_per_job
+								value = value:job_total_output_modifier|JOB|priest|RESOURCE|unity|
+							}
+							set_variable = {
+								which = temp_p
+								value = value:job_total_output_modifier|JOB|priest|RESOURCE|unity|
+							}
+							prevprev = {
+								change_variable = {
+									which = starting_unity_fund
+									value = prev.base_edicts_fund_per_job
+								}
+							}
+						}
+						else_if = {
+							limit = { has_job = death_priest }
+							multiply_variable = {
+								which = base_edicts_fund_per_job
+								value = value:job_total_output_modifier|JOB|death_priest|RESOURCE|unity|
+							}
+							prevprev = {
+								change_variable = {
+									which = starting_unity_fund
+									value = prev.base_edicts_fund_per_job
+								}
+							}
+						}
+						else_if = {
+							limit = { has_job = manager }
+							multiply_variable = {
+								which = base_edicts_fund_per_job
+								value = value:job_total_output_modifier|JOB|manager|RESOURCE|unity|
+							}
+							prevprev = {
+								change_variable = {
+									which = starting_unity_fund
+									value = prev.base_edicts_fund_per_job
+								}
+							}
+						}
+						clear_variable = base_edicts_fund_per_job
+					}
+				}
+			}
+			# authoritarians have culture workers/death chroniclers generate edicts fund, defined: common/inline_scripts/jobs/culture_worker_outputs.txtat line 47
+			# and also see common/script_values/00_script_values.txt at line 1069
+			if = {
+				limit = { is_authoritarian = yes }
+				set_variable = {
+					which = edicts_fund_per_job
+					value = 3 # civic grants 3 edicts fund per culture worker/death chronicler
+				}
+				if = {
+					limit = { has_ethic = ethic_fanatic_authoritarian }
+					multiply_variable = {
+						which = edicts_fund_per_job
+						value = 2
+					}
+				}
+				# culture worker
+				set_variable = {
+					which = temp_num_assigned_jobs
+					value = 0
+				}
+				export_trigger_value_to_variable = {
+					trigger = num_assigned_jobs
+					variable = temp_num_assigned_jobs
+					parameters = {
+						job = culture_worker
+					}
+				}
+				multiply_variable = {
+					which = temp_num_assigned_jobs
+					value = edicts_fund_per_job
+				}
+				change_variable = {
+					which = starting_unity_fund
+					value = temp_num_assigned_jobs
+				}
+				# death chronicler
+				set_variable = {
+					which = temp_num_assigned_jobs
+					value = 0
+				}
+				export_trigger_value_to_variable = {
+					trigger = num_assigned_jobs
+					variable = temp_num_assigned_jobs
+					parameters = {
+						job = death_chronicler
+					}
+				}
+				multiply_variable = {
+					which = temp_num_assigned_jobs
+					value = edicts_fund_per_job
+				}
+				change_variable = {
+					which = starting_unity_fund
+					value = temp_num_assigned_jobs
+				}
+				clear_variable = edicts_fund_per_job
+				clear_variable = temp_num_assigned_jobs
+			}
 			add_resource = {
 				unity = 1
 				mult = starting_unity_fund
