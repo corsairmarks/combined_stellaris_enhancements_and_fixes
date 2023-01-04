@@ -50,7 +50,7 @@ country_event = {
 	}
 }
 
-# demoted rulers should always keep their brainslug/psionic traits if their species has the right trait
+# demoted rulers should always keep their brainslug/latent psionic traits if their species has the right trait
 country_event = {
 	id = leader_species_traits.3
 	hide_window = yes
@@ -64,13 +64,10 @@ country_event = {
 			}
 			if = {
 				limit = { has_ruler_trait = leader_trait_ruler_psionic }
-				add_leader_trait_latent_psionic = yes
-			}
-			if = {
-				limit = { has_ruler_trait = leader_trait_ruler_chosen }
-				add_leader_trait_chosen = yes
+				add_leader_trait_psionic = yes
 			}
 			remove_all_inapplicable_leader_species_traits = yes
+			adjust_psionic_chosen_traits = yes
 		}
 	}
 }
@@ -105,6 +102,7 @@ leader_event = {
 	immediate = {
 		add_all_applicable_leader_species_traits = yes
 		remove_all_inapplicable_leader_species_traits = yes
+		adjust_psionic_chosen_traits = yes
 	}
 }
 
@@ -117,8 +115,16 @@ country_event = {
 	show_sound = event_alien_nature
 
 	trigger = {
+		# intentionally allows leaders to be chosen regardless of whether they previously rolled on having a brainslug
 		any_owned_leader = {
-			species = { has_trait = trait_brainslug }
+			OR = {
+				species = { has_trait = trait_brainslug }
+				# as per the original events, countries with the project complete can have slugs on any leader
+				AND = {
+					owner = { has_country_flag = finished_brainslug_chain }
+					is_robotic_species = no
+				}
+			}
 			NOR = {
 				has_trait = leader_trait_admiral_brainslug
 				has_trait = leader_trait_general_brainslug
@@ -145,7 +151,13 @@ country_event = {
 	immediate = {
 		random_owned_leader = {
 			limit = {
-				species = { has_trait = trait_brainslug }
+				OR = {
+					species = { has_trait = trait_brainslug }
+					AND = {
+						owner = { has_country_flag = finished_brainslug_chain }
+						is_robotic_species = no
+					}
+				}
 				NOR = {
 					has_trait = leader_trait_admiral_brainslug
 					has_trait = leader_trait_general_brainslug
@@ -161,6 +173,13 @@ country_event = {
 							is_pop_faction_type = supremacist
 						}
 					}
+				}
+			}
+			weights = {
+				base = 1
+				modifier = {
+					factor = 2
+					species = { has_trait = trait_brainslug }
 				}
 			}
 			save_event_target_as = brainslugged_leader

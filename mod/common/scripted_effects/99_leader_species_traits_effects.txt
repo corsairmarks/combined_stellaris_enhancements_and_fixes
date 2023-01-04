@@ -1,46 +1,42 @@
 add_leader_trait_brainslug = {
 	optimize_memory
+	# brainslug traits may be added to leaders whose species lacks the corresponding species trait
+	switch = {
+		trigger = leader_class
+		admiral = {
+			if = {
+				limit = { NOT = { has_trait = leader_trait_admiral_brainslug } }
+				add_trait = leader_trait_admiral_brainslug
+			}
+		}
+		general = {
+			if = {
+				limit = { NOT = { has_trait = leader_trait_general_brainslug } }
+				add_trait = leader_trait_general_brainslug
+			}
+		}
+		governor = {
+			if = {
+				limit = { NOT = { has_trait = leader_trait_governor_brainslug } }
+				add_trait = leader_trait_governor_brainslug
+			}
+		}
+		scientist = {
+			if = {
+				limit = { NOT = { has_trait = leader_trait_scientist_brainslug } }
+				add_trait = leader_trait_scientist_brainslug
+			}
+		}
+		ruler = {
+			if = {
+				limit = { NOT = { has_trait = leader_trait_ruler_brainslug } }
+				add_trait = leader_trait_ruler_brainslug
+			}
+		}
+	}
 	if = {
-		limit = { species = { has_trait = trait_brainslug } }
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_brainslug }
-			}
-			add_trait = leader_trait_admiral_brainslug
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_brainslug }
-			}
-			add_trait = leader_trait_general_brainslug
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_brainslug }
-			}
-			add_trait = leader_trait_governor_brainslug
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_brainslug }
-			}
-			add_trait = leader_trait_scientist_brainslug
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_brainslug }
-			}
-			add_trait = leader_trait_ruler_brainslug
-		}
-		if = {
-			limit = { NOT = { has_ruler_trait = leader_trait_ruler_brainslug } }
-			add_ruler_trait = leader_trait_ruler_brainslug
-		}
+		limit = { NOT = { has_ruler_trait = leader_trait_ruler_brainslug } }
+		add_ruler_trait = leader_trait_ruler_brainslug
 	}
 }
 
@@ -48,40 +44,38 @@ add_leader_trait_cyborg = {
 	optimize_memory
 	if = {
 		limit = { species = { has_trait = trait_cybernetic } }
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_cyborg }
+		switch = {
+			trigger = leader_class
+			admiral = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_admiral_cyborg } }
+					add_trait = leader_trait_admiral_cyborg
+				}
 			}
-			add_trait = leader_trait_admiral_cyborg
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_cyborg }
+			general = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_general_cyborg } }
+					add_trait = leader_trait_general_cyborg
+				}
 			}
-			add_trait = leader_trait_general_cyborg
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_cyborg }
+			governor = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_governor_cyborg } }
+					add_trait = leader_trait_governor_cyborg
+				}
 			}
-			add_trait = leader_trait_governor_cyborg
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_cyborg }
+			scientist = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_scientist_cyborg } }
+					add_trait = leader_trait_scientist_cyborg
+				}
 			}
-			add_trait = leader_trait_scientist_cyborg
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_cyborg }
+			ruler = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_ruler_cyborg } }
+					add_trait = leader_trait_ruler_cyborg
+				}
 			}
-			add_trait = leader_trait_ruler_cyborg
 		}
 		if = {
 			limit = { NOT = { has_ruler_trait = leader_trait_ruler_cyborg } }
@@ -94,40 +88,38 @@ add_leader_trait_erudite = {
 	optimize_memory
 	if = {
 		limit = { species = { has_trait = trait_erudite } }
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_erudite }
+		switch = {
+			trigger = leader_class
+			admiral = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_admiral_erudite } }
+					add_trait = leader_trait_admiral_erudite
+				}
 			}
-			add_trait = leader_trait_admiral_erudite
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_erudite }
+			general = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_general_erudite } }
+					add_trait = leader_trait_general_erudite
+				}
 			}
-			add_trait = leader_trait_general_erudite
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_erudite }
+			governor = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_governor_erudite } }
+					add_trait = leader_trait_governor_erudite
+				}
 			}
-			add_trait = leader_trait_governor_erudite
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_erudite }
+			scientist = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_scientist_erudite } }
+					add_trait = leader_trait_scientist_erudite
+				}
 			}
-			add_trait = leader_trait_scientist_erudite
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_erudite }
+			ruler = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_ruler_erudite } }
+					add_trait = leader_trait_ruler_erudite
+				}
 			}
-			add_trait = leader_trait_ruler_erudite
 		}
 		if = {
 			limit = { NOT = { has_ruler_trait = leader_trait_ruler_erudite } }
@@ -136,157 +128,61 @@ add_leader_trait_erudite = {
 	}
 }
 
-add_leader_trait_latent_psionic = {
-	optimize_memory
-	if = {
-		limit = {
-			species = {
-				has_trait = trait_latent_psionic
-				NOT = { has_trait = trait_psionic }
-			}
-		}
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_psionic }
-			}
-			add_trait = leader_trait_admiral_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_psionic }
-			}
-			add_trait = leader_trait_general_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_psionic }
-			}
-			add_trait = leader_trait_governor_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_psionic }
-			}
-			add_trait = leader_trait_scientist_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_psionic }
-			}
-			add_trait = leader_trait_ruler_psionic
-		}
-		if = {
-			limit = { NOT = { has_ruler_trait = leader_trait_ruler_psionic } }
-			add_ruler_trait = leader_trait_ruler_psionic
-		}
-	}
-}
-
+# wrap with a conditional if necessary to distinguish between psionic and latent psionic leaders
 add_leader_trait_psionic = {
 	optimize_memory
 	if = {
 		limit = {
-			species = {
-				NOT = { has_trait = trait_latent_psionic }
-				has_trait = trait_psionic
-			}
+			species = { has_psionic_species_trait = yes }
 			NOR = {
-				has_trait = leader_trait_governor_chosen
-				has_trait = leader_trait_scientist_chosen
 				has_trait = leader_trait_admiral_chosen
 				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen
 				has_trait = leader_trait_ruler_chosen
+				has_trait = leader_trait_ruler_composer_chosen
+				has_trait = leader_trait_ruler_eater_chosen
+				has_trait = leader_trait_ruler_instrument_chosen
+				has_trait = leader_trait_ruler_whisperers_chosen
 			}
+			has_chosen_covenant_trait_non_ruler = no
 		}
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_psionic }
+		switch = {
+			trigger = leader_class
+			admiral = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_admiral_psionic } }
+					add_trait = leader_trait_admiral_psionic
+				}
 			}
-			add_trait = leader_trait_admiral_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_psionic }
+			general = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_general_psionic } }
+					add_trait = leader_trait_general_psionic
+				}
 			}
-			add_trait = leader_trait_general_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_psionic }
+			governor = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_governor_psionic } }
+					add_trait = leader_trait_governor_psionic
+				}
 			}
-			add_trait = leader_trait_governor_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_psionic }
+			scientist = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_scientist_psionic } }
+					add_trait = leader_trait_scientist_psionic
+				}
 			}
-			add_trait = leader_trait_scientist_psionic
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_psionic }
+			ruler = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_ruler_psionic } }
+					add_trait = leader_trait_ruler_psionic
+				}
 			}
-			add_trait = leader_trait_ruler_psionic
 		}
 		if = {
 			limit = { NOT = { has_ruler_trait = leader_trait_ruler_psionic } }
 			add_ruler_trait = leader_trait_ruler_psionic
-		}
-	}
-}
-
-add_leader_trait_chosen = {
-	optimize_memory
-	if = {
-		limit = { species = { has_trait = trait_psionic } }
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_chosen }
-			}
-			add_trait = leader_trait_admiral_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_chosen }
-			}
-			add_trait = leader_trait_general_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_chosen }
-			}
-			add_trait = leader_trait_governor_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_chosen }
-			}
-			add_trait = leader_trait_scientist_chosen
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_chosen }
-			}
-			add_trait = leader_trait_ruler_chosen
-		}
-		if = {
-			limit = { NOT = { has_ruler_trait = leader_trait_ruler_chosen } }
-			add_ruler_trait = leader_trait_ruler_chosen
 		}
 	}
 }
@@ -295,48 +191,48 @@ add_leader_trait_synthetic = {
 	optimize_memory
 	if = {
 		limit = {
-			species = { has_trait = trait_mechanical }
+			is_robotic_species = yes
 			owner = {
 				OR = {
-					is_synthetic_empire = yes
-					has_technology = tech_synthetic_leaders
+					is_fallen_machine_empire = yes
+					has_technology = tech_synthetic_leaders # regular empires via tech
+					has_country_flag = synthetic_empire # non-machine synthetic empires
+					has_active_tradition = tr_synthetics_finish_machine # machine synthetic empires
 				}
 			}
 		}
-		if = {
-			limit = {
-				leader_class = admiral
-				NOT = { has_trait = leader_trait_admiral_synthetic }
+		switch = {
+			trigger = leader_class
+			admiral = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_admiral_synthetic } }
+					add_trait = leader_trait_admiral_synthetic
+				}
 			}
-			add_trait = leader_trait_admiral_synthetic
-		}
-		else_if = {
-			limit = {
-				leader_class = general
-				NOT = { has_trait = leader_trait_general_synthetic }
+			general = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_general_synthetic } }
+					add_trait = leader_trait_general_synthetic
+				}
 			}
-			add_trait = leader_trait_general_synthetic
-		}
-		else_if = {
-			limit = {
-				leader_class = governor
-				NOT = { has_trait = leader_trait_governor_synthetic }
+			governor = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_governor_synthetic } }
+					add_trait = leader_trait_governor_synthetic
+				}
 			}
-			add_trait = leader_trait_governor_synthetic
-		}
-		else_if = {
-			limit = {
-				leader_class = scientist
-				NOT = { has_trait = leader_trait_scientist_synthetic }
+			scientist = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_scientist_synthetic } }
+					add_trait = leader_trait_scientist_synthetic
+				}
 			}
-			add_trait = leader_trait_scientist_synthetic
-		}
-		else_if = {
-			limit = {
-				leader_class = ruler
-				NOT = { has_trait = leader_trait_ruler_synthetic }
+			ruler = {
+				if = {
+					limit = { NOT = { has_trait = leader_trait_ruler_synthetic } }
+					add_trait = leader_trait_ruler_synthetic
+				}
 			}
-			add_trait = leader_trait_ruler_synthetic
 		}
 		if = {
 			limit = { NOT = { has_ruler_trait = leader_trait_ruler_synthetic } }
@@ -528,24 +424,10 @@ remove_leader_trait_erudite = {
 	}
 }
 
-remove_leader_trait_psionic_or_latent_psionic = {
+remove_leader_trait_psionic = {
 	optimize_memory
 	if = {
-		limit = {
-			species = {
-				NOR = {
-					has_trait = trait_latent_psionic
-					has_trait = trait_psionic
-				}
-			}
-			OR = {
-				has_trait = leader_trait_governor_chosen
-				has_trait = leader_trait_scientist_chosen
-				has_trait = leader_trait_admiral_chosen
-				has_trait = leader_trait_general_chosen
-				has_trait = leader_trait_ruler_chosen
-			}
-		}
+		limit = { species = { has_psionic_species_trait = no } }
 		if = {
 			limit = { has_trait = leader_trait_admiral_psionic }
 			remove_trait = leader_trait_admiral_psionic
@@ -573,22 +455,318 @@ remove_leader_trait_psionic_or_latent_psionic = {
 	}
 }
 
+adjust_psionic_chosen_traits = {
+	# ensure chosen traits apply to both the ruler and regular class of a leader
+	if = {
+		limit = {
+			NOT = { has_ruler_trait = leader_trait_ruler_chosen }
+			OR = {
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_scientist_chosen
+			}
+		}
+		add_ruler_trait = leader_trait_ruler_chosen
+	}
+	switch = {
+		trigger = leader_class
+		admiral = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_admiral_eater_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_eater_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_admiral_instrument_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_instrument_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_admiral_whisperers_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_whisperers_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_admiral_chosen }
+				}
+				add_trait = leader_trait_admiral_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_eater_chosen
+					NOT = { has_trait = leader_trait_admiral_eater_chosen }
+				}
+				add_trait = leader_trait_admiral_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_instrument_chosen
+					NOT = { has_trait = leader_trait_admiral_instrument_chosen }
+				}
+				add_trait = leader_trait_admiral_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_whisperers_chosen
+					NOT = { has_trait = leader_trait_admiral_whisperers_chosen }
+				}
+				add_trait = leader_trait_admiral_whisperers_chosen
+			}
+		}
+		general = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_general_composer_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_composer_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_general_eater_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_eater_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_general_whisperers_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_whisperers_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_general_chosen }
+				}
+				add_trait = leader_trait_general_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_composer_chosen
+					NOT = { has_trait = leader_trait_general_composer_chosen }
+				}
+				add_trait = leader_trait_general_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_eater_chosen
+					NOT = { has_trait = leader_trait_general_eater_chosen }
+				}
+				add_trait = leader_trait_general_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_whisperers_chosen
+					NOT = { has_trait = leader_trait_general_whisperers_chosen }
+				}
+				add_trait = leader_trait_general_whisperers_chosen
+			}
+		}
+		governor = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_governor_composer_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_composer_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_governor_eater_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_eater_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_governor_instrument_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_instrument_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_instrument_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_governor_chosen }
+				}
+				add_trait = leader_trait_governor_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_composer_chosen
+					NOT = { has_trait = leader_trait_governor_composer_chosen }
+				}
+				add_trait = leader_trait_governor_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_eater_chosen
+					NOT = { has_trait = leader_trait_governor_eater_chosen }
+				}
+				add_trait = leader_trait_governor_eater_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_instrument_chosen
+					NOT = { has_trait = leader_trait_governor_instrument_chosen }
+				}
+				add_trait = leader_trait_governor_instrument_chosen
+			}
+		}
+		scientist = {
+			# add chosen ruler trait if the leader has the corresponding class-specific chosen trait
+			if = {
+				limit = {
+					has_trait = leader_trait_scientist_composer_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_composer_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_scientist_instrument_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_instrument_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_trait = leader_trait_scientist_whisperers_chosen
+					NOT = { has_ruler_trait = leader_trait_ruler_whisperers_chosen }
+				}
+				add_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+			# add chosen class-specific trait if the leader has the chosen ruler trait
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_chosen
+					NOT = { has_trait = leader_trait_scientist_chosen }
+				}
+				add_trait = leader_trait_scientist_chosen
+			}
+			if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_composer_chosen
+					NOT = { has_trait = leader_trait_scientist_composer_chosen }
+				}
+				add_trait = leader_trait_scientist_composer_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_instrument_chosen
+					NOT = { has_trait = leader_trait_scientist_instrument_chosen }
+				}
+				add_trait = leader_trait_scientist_instrument_chosen
+			}
+			else_if = {
+				limit = {
+					has_ruler_trait = leader_trait_ruler_whisperers_chosen
+					NOT = { has_trait = leader_trait_scientist_whisperers_chosen }
+				}
+				add_trait = leader_trait_scientist_whisperers_chosen
+			}
+		}
+	}
+
+	# remove extra basic psionic traits if the leader has a chosen trait (note that generic chosen and patron-specific chosen can stack)
+	if = {
+		limit = {
+			has_trait = leader_trait_admiral_psionic
+			OR = {
+				has_trait = leader_trait_admiral_chosen
+				has_trait = leader_trait_admiral_eater_chosen
+				has_trait = leader_trait_admiral_instrument_chosen
+				has_trait = leader_trait_admiral_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_admiral_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_general_psionic
+			OR = {
+				has_trait = leader_trait_general_chosen
+				has_trait = leader_trait_general_composer_chosen
+				has_trait = leader_trait_general_eater_chosen
+				has_trait = leader_trait_general_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_general_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_governor_psionic
+			OR = {
+				has_trait = leader_trait_governor_chosen
+				has_trait = leader_trait_governor_composer_chosen
+				has_trait = leader_trait_governor_eater_chosen
+				has_trait = leader_trait_governor_instrument_chosen
+			}
+		}
+		remove_trait = leader_trait_governor_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_scientist_psionic
+			OR = {
+				has_trait = leader_trait_scientist_chosen
+				has_trait = leader_trait_scientist_composer_chosen
+				has_trait = leader_trait_scientist_instrument_chosen
+				has_trait = leader_trait_scientist_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_scientist_psionic
+	}
+	if = {
+		limit = {
+			has_trait = leader_trait_ruler_psionic
+			OR = {
+				has_trait = leader_trait_ruler_chosen
+				has_trait = leader_trait_ruler_composer_chosen
+				has_trait = leader_trait_ruler_eater_chosen
+				has_trait = leader_trait_ruler_instrument_chosen
+				has_trait = leader_trait_ruler_whisperers_chosen
+			}
+		}
+		remove_trait = leader_trait_ruler_psionic
+	}
+	if = {
+		limit = {
+			has_ruler_trait = leader_trait_ruler_psionic
+			OR = {
+				has_ruler_trait = leader_trait_ruler_chosen
+				has_ruler_trait = leader_trait_ruler_composer_chosen
+				has_ruler_trait = leader_trait_ruler_eater_chosen
+				has_ruler_trait = leader_trait_ruler_instrument_chosen
+				has_ruler_trait = leader_trait_ruler_whisperers_chosen
+			}
+		}
+		remove_ruler_trait = leader_trait_ruler_psionic
+	}
+}
+
 remove_leader_trait_synthetic = {
 	optimize_memory
 	if = {
-		limit = {
-			species = {
-				NOR = {
-					has_trait = trait_mechanical
-					# don't remove from machine units if the relevant mod is installed
-					AND = {
-						has_global_flag = machine_leader_synthetic_traits_installed
-						has_trait = trait_machine_unit
-					}
-				}
-			}
-		}
-		# leaders are allowed to keep synthetic even if their owner isn't a synthetic empire or doesn't have synth leaders
+		# leaders are allowed to keep synthetic traits even if their owner isn't a synthetic empire or doesn't have synth leaders
+		limit = { is_robotic_species = no }
 		if = {
 			limit = { has_trait = leader_trait_admiral_synthetic }
 			remove_trait = leader_trait_admiral_synthetic
@@ -640,7 +818,10 @@ add_static_applicable_leader_species_traits = {
 	optimize_memory
 	add_leader_trait_cyborg = yes
 	add_leader_trait_erudite = yes
-	add_leader_trait_psionic = yes
+	if = {
+		limit = { species = { has_trait = trait_psionic } }
+		add_leader_trait_psionic = yes
+	}
 	add_leader_trait_synthetic = yes
 	add_leader_trait_nuumismatic_administration_governor = yes
 	add_leader_trait_clone_army_admiral = yes
@@ -648,32 +829,57 @@ add_static_applicable_leader_species_traits = {
 	add_leader_trait_clone_army_fertile_admiral = yes
 }
 
-# 20% chance for the psionic trait to be added (based on trigger for utopia.2601)
-# 20% chance for the brainslug trait to be added (based on conditions from distar.173/distar.174)
-# Only attempts to roll for each trait if and only if the leader's species has the corresponding trait and
-# the leader has not already rolled (determined by a flag). More fair because existing leaders now get a 1-time
-# chance to gain the appropriate trait if their species has it.
 add_randomized_applicable_leader_species_traits = {
+	optimize_memory
+	roll_for_leader_trait_brainslug = yes
+	roll_for_leader_trait_latent_psionic = yes
+}
+
+# 20% chance for the brainslug trait to be added (based on conditions from distar.173/distar.174)
+# Only attempts to roll for each trait if and only if the leader has not already rolled (determined
+# by a flag). More fair because existing leaders now get a 1-time chance to gain the trait.
+roll_for_leader_trait_brainslug = {
 	optimize_memory
 	if = {
 		limit = {
-			species = { has_trait = trait_brainslug }
 			NOT = { has_leader_flag = leader_trait_brainslug_chance }
+			OR = {
+				species = { has_trait = trait_brainslug }
+				# as per the original events, countries with the project complete get a chance on each non-robotic leader
+				AND = {
+					owner = { has_country_flag = finished_brainslug_chain }
+					is_robotic_species = no
+				}
+			}
 		}
 		random_list = {
 			80 = { }
-			20 = { add_leader_trait_brainslug = yes }
+			20 = {
+				# added effect - brainslug species have a higher chance to produce leaderes with a brainslug (33% vs the basic 20%)
+				modifier = {
+					factor = 2
+					species = { has_trait = trait_brainslug }
+				}
+				add_leader_trait_brainslug = yes
+			}
 		}
 		set_leader_flag = leader_trait_brainslug_chance
 	}
+}
+
+# 20% chance for the psionic trait to be added (based on trigger for utopia.2601)
+# Only attempts to roll for each trait if and only if the leader has not already rolled (determined
+# by a flag). More fair because existing leaders now get a 1-time chance to gain the trait.
+roll_for_leader_trait_latent_psionic = {
+	optimize_memory
 	if = {
 		limit = {
-			species = { has_trait = trait_latent_psionic }
 			NOT = { has_leader_flag = leader_trait_latent_psionic_chance }
+			species = { has_trait = trait_latent_psionic }
 		}
 		random_list = {
 			80 = { }
-			20 = { add_leader_trait_latent_psionic = yes }
+			20 = { add_leader_trait_psionic = yes }
 		}
 		set_leader_flag = leader_trait_latent_psionic_chance
 	}
@@ -681,10 +887,10 @@ add_randomized_applicable_leader_species_traits = {
 
 remove_all_inapplicable_leader_species_traits = {
 	optimize_memory
-	remove_leader_trait_brainslug = yes
+	# remove_leader_trait_brainslug = yes # leaders are allowed to keep this trait regardless of species trait
 	remove_leader_trait_cyborg = yes
 	remove_leader_trait_erudite = yes
-	remove_leader_trait_psionic_or_latent_psionic = yes
+	remove_leader_trait_psionic = yes
 	remove_leader_trait_synthetic = yes
 	remove_leader_trait_nuumismatic_administration_governor = yes
 	remove_leader_trait_clone_army_admiral = yes
