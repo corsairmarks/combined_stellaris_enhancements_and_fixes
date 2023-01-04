@@ -193,3 +193,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 6.0.1 Update merged mod: Enhanced Trade Districts and Designations at 3.2.0
 * 7.0.0 Update all merged mods for Stellaris version 3.6 "Orion"
     * Removed: Leader Traits: Synthetic Leader Traits for Machine Units (deprecated)
+    * Simplify a few known duplicate overrides between the included mods
