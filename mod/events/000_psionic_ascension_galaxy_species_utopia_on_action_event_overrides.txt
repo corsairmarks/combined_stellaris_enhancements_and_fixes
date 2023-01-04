@@ -1,6 +1,9 @@
 namespace = utopia
 
-# Mind Over Matter
+# Modified:
+# * allow Cybernetic Pops to gain Latent Psionic if Assimilate All the Pops is installed
+# * do not set the dominant species if it is robotic
+# Psionics traditions adopt
 country_event = {
 	id = utopia.2600
 	title = utopia.2600.name
@@ -9,19 +12,16 @@ country_event = {
 	show_sound = event_mind_over_matter
 	is_triggered_only = yes
 	trigger = {
-		owner_species = {
-			is_sapient = yes
-			is_organic_species = yes
-			NOR = {
-				has_trait = trait_latent_psionic
-				has_trait = trait_psionic
-			}
-		}
+		has_tradition = tr_psionics_adopt
 	}
 	immediate = {
 		owner_species = { save_event_target_as = root_non_psionic_species }
 		if = {
 			limit = {
+				event_target:root_non_psionic_species = {
+					is_robotic = no
+					has_psionic_species_trait = no
+				}
 				any_galaxy_species = {
 					is_exact_same_species = event_target:root_non_psionic_species
 					count_species_pop = {
@@ -48,6 +48,13 @@ country_event = {
 			random_galaxy_species = {
 				limit = {
 					is_same_species = event_target:root_non_psionic_species
+					is_sapient = yes
+					is_robotic = no
+					has_psionic_species_trait = no
+					OR = {
+						has_global_flag = assimilate_all_the_pops_installed
+						NOT = { has_trait = trait_cybernetic }
+					}
 					count_species_pop = {
 						count > 0
 						limit = { is_owned_by = root }
@@ -61,18 +68,20 @@ country_event = {
 		}
 		every_galaxy_species = {
 			limit = {
-				is_sapient = yes
 				is_same_species = event_target:root_non_psionic_species
-				is_organic_species = yes
-				NOR = {
-					has_trait = trait_latent_psionic
-					has_trait = trait_psionic
+				is_sapient = yes
+				is_robotic = no
+				has_psionic_species_trait = no
+				OR = {
+					has_global_flag = assimilate_all_the_pops_installed
+					NOT = { has_trait = trait_cybernetic }
 				}
 			}
 			save_event_target_as = non_psionic_species
 			modify_species = {
 				species = event_target:non_psionic_species
 				add_trait = trait_latent_psionic
+				change_scoped_species = no
 				effect = {
 					save_event_target_as = latent_psionic_species
 				}
@@ -119,20 +128,28 @@ country_event = {
 				}
 			}
 		}
-		change_dominant_species = { species = event_target:representative_pop.species }
-		observer_event = { id = observer.5 }
+		if = {
+			limit = { owner_species = { is_robotic = no } }
+			change_dominant_species = { species = event_target:representative_pop.species }
+		}
+		observer_event = {
+			id = observer.5
+		}
 		every_country = {
 			limit = {
 				is_ai = no
 				has_communications = root
 				NOT = { is_same_value = root }
 			}
-			country_event = { id = utopia.2602 }
+			country_event = {
+				id = utopia.2602
+			}
 		}
 		remove_country_flag = shroudwalker_enclave_diplomacy_engaged # Resets to fellow psionic greetings
 	}
 	option = {
 		name = utopia.2600.a
+		trigger = { NOT = { has_origin = origin_shroudwalker_apprentice } }
 		custom_tooltip_with_params = {
 			description = MODIFY_GALAXY_SPECIES_ADD
 			description_parameters = {
@@ -140,12 +157,18 @@ country_event = {
 				TRAIT = "[This.GetLatentPsionicTraitName]"
 			}
 		}
-		custom_tooltip = ALLOW_PSI_CORPS
-		custom_tooltip = ALLOW_PSI_ARMIES
+	}
+	option = {
+		name = utopia.2600.a
+		trigger = { has_origin = origin_shroudwalker_apprentice }
 	}
 }
 
-# Transcendence
+# Modified:
+# * allow Cybernetic Pops to gain Psionic if Assimilate All the Pops is installed
+# * Psionic traits now handled by Leader Traits: All Eligible Species Traits
+# * do not set the dominant species if it is robotic
+# Great Awakening tradition
 country_event = {
 	id = utopia.2650
 	title = utopia.2650.name
@@ -154,17 +177,17 @@ country_event = {
 	show_sound = event_the_great_awakening
 	is_triggered_only = yes
 	trigger = {
-		owner_species = {
-			is_sapient = yes
-			is_organic_species = yes
-			has_trait = trait_latent_psionic
-			NOT = { has_trait = trait_psionic }
-		}
+		has_tradition = tr_psionics_psionic_assimilation
 	}
 	immediate = {
 		owner_species = { save_event_target_as = root_latent_psionic_species }
 		if = {
 			limit = {
+				event_target:root_latent_psionic_species = {
+					is_robotic = no
+					has_trait = trait_latent_psionic
+					NOT = { has_trait = trait_psionic }
+				}
 				any_galaxy_species = {
 					is_exact_same_species = event_target:root_latent_psionic_species
 					count_species_pop = {
@@ -191,6 +214,14 @@ country_event = {
 			random_galaxy_species = {
 				limit = {
 					is_same_species = event_target:root_latent_psionic_species
+					is_sapient = yes
+					is_robotic = no
+					has_trait = trait_latent_psionic
+					NOT = { has_trait = trait_psionic }
+					OR = {
+						has_global_flag = assimilate_all_the_pops_installed
+						NOT = { has_trait = trait_cybernetic }
+					}
 					count_species_pop = {
 						count > 0
 						limit = { is_owned_by = root }
@@ -204,17 +235,22 @@ country_event = {
 		}
 		every_galaxy_species = {
 			limit = {
-				is_sapient = yes
 				is_same_species = event_target:root_latent_psionic_species
-				is_organic_species = yes
+				is_sapient = yes
+				is_robotic = no
 				has_trait = trait_latent_psionic
 				NOT = { has_trait = trait_psionic }
+				OR = {
+					has_global_flag = assimilate_all_the_pops_installed
+					NOT = { has_trait = trait_cybernetic }
+				}
 			}
 			save_event_target_as = latent_psionic_species
 			modify_species = {
 				species = event_target:latent_psionic_species
 				remove_trait = trait_latent_psionic
 				add_trait = trait_psionic
+				change_scoped_species = no
 				effect = {
 					save_event_target_as = psionic_species
 				}
@@ -259,22 +295,25 @@ country_event = {
 						}
 					}
 				}
+				# note: psionic leader traits are added by Leader Traits: All Eligible Species Traits
 			}
 		}
-		change_dominant_species = { species = event_target:representative_pop.species }
-		observer_event = { id = observer.6 }
+		if = {
+			limit = { owner_species = { is_robotic = no } }
+			change_dominant_species = { species = event_target:representative_pop.species }
+		}
+		observer_event = {
+			id = observer.6
+		}
 		every_country = {
 			limit = {
 				is_ai = no
 				has_communications = root
 				NOT = { is_same_value = root }
 			}
-			country_event = { id = utopia.2652 }
-		}
-		country_event = {
-			id = utopia.2655
-			days = 30
-			random = 20
+			country_event = {
+				id = utopia.2652
+			}
 		}
 	}
 	option = {
