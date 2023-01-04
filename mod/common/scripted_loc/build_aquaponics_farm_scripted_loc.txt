@@ -1,0 +1,17 @@
+# this = planet
+defined_text = {
+	name = GetAquacultureDroneEffectDesc
+	text = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					is_hive_empire = yes
+					has_valid_civic = civic_machine_servitor
+				}
+			}
+		}
+		localization_key = job_aquaculture_drone_hive_effect_desc
+	}
+    default = job_aquaculture_drone_machine_effect_desc
+}
