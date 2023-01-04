@@ -18,8 +18,10 @@ district_industrial = {
 	}
 
 	allow = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 	}
 
 	conversion_ratio = 1
@@ -40,9 +42,7 @@ district_industrial = {
 		upkeep = {
 			trigger = {
 				exists = owner
-				owner = {
-					has_edict = industrial_maintenance
-				}
+				owner = { has_edict = industrial_maintenance }
 			}
 			energy = 2
 		}
@@ -153,10 +153,7 @@ district_industrial = {
 	# Designation Job Changes
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_foundry
-				has_designation = col_mac_foundry
-			}
+			has_foundry_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -170,10 +167,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_foundry
-				has_designation = col_mac_foundry
-			}
+			has_foundry_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -187,10 +181,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_foundry
-				has_designation = col_mac_foundry
-			}
+			has_foundry_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -204,10 +195,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_foundry
-				has_designation = col_mac_foundry
-			}
+			has_foundry_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -221,10 +209,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_factory
-				has_designation = col_mac_factory
-			}
+			has_factory_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -238,10 +223,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_factory
-				has_designation = col_mac_factory
-			}
+			has_factory_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -255,10 +237,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_factory
-				has_designation = col_mac_factory
-			}
+			has_factory_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -272,10 +251,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_factory
-				has_designation = col_mac_factory
-			}
+			has_factory_designation = yes
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -289,10 +265,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_factory
-				has_designation = col_mac_factory
-			}
+			has_factory_designation = yes
 			exists = owner
 			owner = {
 				is_machine_empire = yes
@@ -308,10 +281,7 @@ district_industrial = {
 
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_designation = col_factory
-				has_designation = col_mac_factory
-			}
+			has_factory_designation = yes
 			exists = owner
 			owner = {
 				is_machine_empire = yes
@@ -327,6 +297,7 @@ district_industrial = {
 
 	triggered_desc = {
 		trigger = {
+			has_foundry_designation = no
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -338,6 +309,7 @@ district_industrial = {
 
 	triggered_desc = {
 		trigger = {
+			has_foundry_designation = no
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -349,6 +321,7 @@ district_industrial = {
 
 	triggered_desc = {
 		trigger = {
+			has_foundry_designation = no
 			exists = owner
 			owner = {
 				is_machine_empire = yes
@@ -360,6 +333,7 @@ district_industrial = {
 
 	triggered_desc = {
 		trigger = {
+			has_factory_designation = no
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -371,6 +345,7 @@ district_industrial = {
 
 	triggered_desc = {
 		trigger = {
+			has_factory_designation = no
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -381,6 +356,7 @@ district_industrial = {
 	}
 	triggered_desc = {
 		trigger = {
+			has_factory_designation = no
 			exists = owner
 			owner = {
 				is_machine_empire = yes
@@ -392,6 +368,7 @@ district_industrial = {
 
 	triggered_desc = {
 		trigger = {
+			has_factory_designation = no
 			exists = owner
 			owner = {
 				is_hive_empire = yes
@@ -403,6 +380,7 @@ district_industrial = {
 
 	triggered_desc = {
 		trigger = {
+			has_factory_designation = no
 			exists = owner
 			owner = {
 				is_gestalt = yes
