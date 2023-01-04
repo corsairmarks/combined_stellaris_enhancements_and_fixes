@@ -7,12 +7,19 @@ col_ecu_mix = {
 	}
 
 	planet_modifier = {
-		# matches col_ring_mix
+		# matches col_ring_mix (less the inherent ringworld bonus +10% growth/assembly, which should probably have been baked into the planet class)
 		planet_immigration_pull_mult = 0.2
 		planet_jobs_produces_mult = 0.05
+		pop_growth_speed = 0.05
+		planet_pop_assembly_mult = 0.05
+		planet_pop_assembly_organic_mult = 0.05
 	}
 
 	weight_modifier = {
 		base = 10
+		modifier = {
+			factor = 500
+			num_pops < 15
+		}
 	}
 }

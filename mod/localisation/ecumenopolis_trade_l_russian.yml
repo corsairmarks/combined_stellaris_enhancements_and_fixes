@@ -10,3 +10,5 @@
  district_arcology_commercial: "Коммерческая аркология"
  district_arcology_commercial_plural: "Коммерческии аркологии"
  district_arcology_commercial_desc: "Бесконечные уровни офисов для поддержания обмена благами, товароварами, управления финансовыми инструментами и других тайных задач, которые движут галактической экономикой.\n\nПривлекает больше £job_merchant£ §Y$job_merchant_plural$§! когда планета специализирована как §Y$col_ecu_trade$§!."
+ # localisation for dummy districts
+ district_standard_cm_commercial: "$district_hab_commercial$"
