@@ -11,8 +11,7 @@ military_service_full = {
 		if = {
 			limit = { from = { is_machine_empire = yes } }
 			OR = {
-				has_trait = trait_machine_unit
-				has_trait = trait_mechanical
+				is_robotic = yes
 				has_trait = trait_cybernetic
 				from = { has_valid_civic = civic_machine_servitor }
 			}
@@ -25,8 +24,7 @@ military_service_full = {
 			if = {
 				limit = { from = { is_machine_empire = yes } }
 				OR = {
-					has_trait = trait_mechanical
-					has_trait = trait_machine_unit
+					is_robotic = yes
 					AND = {
 						has_trait = trait_cybernetic
 						from = { has_civic = civic_machine_assimilator }
@@ -123,7 +121,7 @@ military_service_full = {
 			if = {
 				limit = { has_global_flag = deassimilate_machines_installed }
 				NAND = {
-					has_trait = trait_machine_unit
+					is_robotic = yes
 					has_living_standard = {
 						country = from
 						type = living_standard_deassimilation

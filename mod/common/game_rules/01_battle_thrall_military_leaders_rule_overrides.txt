@@ -18,7 +18,7 @@ can_generate_army_from_species = {
 		}
 		NAND = {
 			prev = { has_valid_civic = civic_machine_servitor }
-			is_robotic_species = no
+			is_robotic = no
 		}
 	}
 }
@@ -62,7 +62,7 @@ can_generate_leader_from_species = {
 	OR = {
 		NAND = {
 			NOT = { root = { has_technology = "tech_synthetic_leaders" } }
-			has_trait = "trait_mechanical"
+			is_robotic = yes
 		}
 		has_citizenship_type = {
 			type = citizenship_full
