@@ -1,0 +1,8 @@
+# dummy living standard so I don't spam the error log when Deassimilate Machines is not installed
+living_standard_deassimilation_machine = {
+	pop_modifier = {}
+	potential = { always = no }
+	ai_will_do = {
+		factor = 0
+	}
+}
