@@ -1,0 +1,6 @@
+# supports features from my mod Deassimilate machines
+# this = any
+has_deassimilate_machines_active = {
+	optimize_memory
+	always = no
+}

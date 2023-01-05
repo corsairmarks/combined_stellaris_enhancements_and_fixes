@@ -1,18 +1,5 @@
 namespace = battle_thrall_military_leaders
 
-# flag mod as active
-event = {
-	id = battle_thrall_military_leaders.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = battle_thrall_military_leaders_installed }
-	}
-	immediate = {
-		set_global_flag = battle_thrall_military_leaders_installed
-	}
-}
-
 # root = country
 # from = leader
 # triggered by on_leader_spawned
