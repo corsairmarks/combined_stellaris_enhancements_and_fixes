@@ -23,15 +23,6 @@ btml_is_species_smart_enough_for_leadership = {
 	can_think = yes
 }
 
-# this = species
-btml_is_mechanical_or_machine = {
-	optimize_memory
-	OR = {
-		has_trait = trait_mechanical
-		has_trait = trait_machine_unit
-	}
-}
-
 # this = country
 btml_is_necrophage_empire = {
 	optimize_memory

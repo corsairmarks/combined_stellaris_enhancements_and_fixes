@@ -24,7 +24,7 @@ country_event = {
 					type = citizenship_organic_trophy
 					country = prev
 				}
-				btml_is_mechanical_or_machine = no
+				is_robotic = no
 				btml_is_species_smart_enough_for_leadership = yes
 			}
 			prev = {
