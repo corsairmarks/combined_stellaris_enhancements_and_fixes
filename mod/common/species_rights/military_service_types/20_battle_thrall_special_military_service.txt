@@ -125,7 +125,6 @@ military_service_full = {
 					has_living_standard = {
 						country = from
 						type = living_standard_deassimilation_machine
-						# TODO: dummy living standard
 					}
 				}
 			}
