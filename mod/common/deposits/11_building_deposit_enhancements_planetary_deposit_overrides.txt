@@ -1,0 +1,38 @@
+# # these values matche those defined in common/deposits/01_planetary_deposits.txt
+@high_rare = 0.5
+@mid_rare = 0.25
+@low_rare = 0.1
+@planet_type_bonus = 1.5
+
+# Modified: more likely on dry worlds
+d_betharian_deposit = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	potential = {
+		can_have_habitable_deposits = yes
+	}
+	planet_modifier = {
+		building_betharian_power_plant_max = 1
+	}
+	drop_weight = {
+		weight = @mid_rare
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_gaia
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+	}
+}
