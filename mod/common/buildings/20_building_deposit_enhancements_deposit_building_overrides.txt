@@ -119,7 +119,7 @@ building_xeno_zoo = {
 		job_entertainer_add = 2
 		job_culture_worker_add = 1
 		job_culture_worker_per_pop = 0.04 # 1 per 25
-		planet_culture_workers_produces_mult = 0.25 # high boost for a rare job
+		planet_culture_workers_produces_mult = 0.15 # high boost for a rare job
 	}
 	triggered_planet_modifier = {
 		potential = {
