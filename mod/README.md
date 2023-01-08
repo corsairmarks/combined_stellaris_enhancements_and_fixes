@@ -195,3 +195,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Removed: Leader Traits: Synthetic Leader Traits for Machine Units (deprecated)
     * Simplify a few known duplicate overrides between the included mods
 * 7.0.1 Update merged mod: Primitive Conquest Enhancements at 6.0.1
+* 7.0.2 Update merged mod: Deassimilate Machines at 5.0.1
