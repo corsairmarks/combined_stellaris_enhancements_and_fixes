@@ -21,6 +21,7 @@ Build for Stellaris version 3.6 "Orion."  Not compatible with achievements - how
 * 2.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
     * Account for edicts fund boosts for Civic: Efficient Bureaucracy from bureaucrats, priests, death priests, and managers (based on unity output)
     * Account for edicts fund boosts for authoritarian empires from culture workers and death chroniclers (based on level of authoritarianism)
+* 2.1.0 Add a compatibility trigger for other mods to check whether this one is active
 
 ## Source Code
 
