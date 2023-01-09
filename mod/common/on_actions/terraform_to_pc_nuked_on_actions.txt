@@ -1,7 +1,6 @@
 # fired when the game starts
 on_game_start = {
 	events = {
-		terraform_to_pc_nuked.13 # flag mod as installed
 		terraform_to_pc_nuked.4
 	}
 }
@@ -16,7 +15,6 @@ on_yearly_pulse = {
 # fired when loading a single-player game
 on_single_player_save_game_load = {
 	events = {
-		terraform_to_pc_nuked.13 # flag mod as installed
 		terraform_to_pc_nuked.4
 	}
 }

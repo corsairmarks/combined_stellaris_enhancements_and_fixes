@@ -1,19 +1,5 @@
 namespace = terraform_to_pc_nuked
 
-# flag mod as active
-# triggered by on_game_start and on_single_player_save_game_load
-event = {
-	id = terraform_to_pc_nuked.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = terraform_to_pc_nuked_installed }
-	}
-	immediate = {
-		set_global_flag = terraform_to_pc_nuked_installed
-	}
-}
-
 # set up "terraform" graphics
 # triggered by on_terraforming_begun
 # this = planet
