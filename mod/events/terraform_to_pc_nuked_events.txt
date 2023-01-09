@@ -17,7 +17,7 @@ planet_event = {
 		space_owner = {
 			eligible_for_pc_nuked_terraform_country = yes
 			NAND = {
-				has_global_flag = terraform_stations_aesthetic_installed
+				has_terraform_stations_aesthetic_active = yes
 				owner_main_species = { is_nuked_species = no }
 			}
 		}
