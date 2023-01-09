@@ -1,23 +1,9 @@
 namespace = terraform_stations_aesthetic
 
-# flag mod as active
-# triggered by on_game_start and on_single_player_save_game_load
-event = {
-	id = terraform_stations_aesthetic.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = terraform_stations_aesthetic_installed }
-	}
-	immediate = {
-		set_global_flag = terraform_stations_aesthetic_installed
-	}
-}
-
 # set up terraform station and graphics
 # triggered by on_terraforming_begun
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 planet_event = {
 	id = terraform_stations_aesthetic.1
 	is_triggered_only = yes
@@ -25,12 +11,12 @@ planet_event = {
 	trigger = {
 		solar_system = {
 			NOR = {
-				any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV }
-				# any_system_megastructure = { has_megastructure_flag = terraform_station@PREVPREV }
+				any_orbital_station = { has_fleet_flag = terraform_station@prevprev }
+				# any_system_megastructure = { has_megastructure_flag = terraform_station@prevprev }
 			}
 		}
 		NAND = {
-			has_global_flag = terraform_to_pc_nuked_installed
+			has_terraform_to_pc_nuked_active = yes
 			uninhabitable_regular_planet = no
 			space_owner.owner_main_species = {
 				OR = {
@@ -50,18 +36,18 @@ planet_event = {
 		save_event_target_as = terraform_planet
 		# solar_system = {
 		# 	spawn_megastructure = {
-		# 		planet = PREV
-		# 		coords_from = PREV
+		# 		planet = prev
+		# 		coords_from = prev
 		# 		type = terraform_station
-		# 		owner = PREV.FROM
-		# 		graphical_culture = PREV.FROM
+		# 		owner = prev.from
+		# 		graphical_culture = prev.from
 		# 		orbit_distance = 18
 		# 		init_effect = {
 		# 			set_name = {
 		#				key = NAME_terraform_station
 		#				variable_string = "[terraform_planet.GetName]"
 		#			}
-		# 			set_megastructure_flag = terraform_station@PREVPREV
+		# 			set_megastructure_flag = terraform_station@prevprev
 		# 		}
 		# 	}
 		# }
@@ -81,7 +67,7 @@ planet_event = {
 					key = NAME_terraform_station
 					variable_string = "[terraform_planet.GetName]"
 				}
-				set_owner = FROM
+				set_owner = from
 				set_fleet_flag = terraform_station@event_target:terraform_planet
 				set_location = {
 					target = event_target:terraform_planet
@@ -89,7 +75,7 @@ planet_event = {
 					angle = random
 				}
 				create_ship = {
-					graphical_culture = FROM
+					graphical_culture = from
 					prefix = no
 					random_existing_design = terraform_station
 					effect = {
@@ -109,7 +95,7 @@ planet_event = {
 			scale = 2.25
 			entity_scale_to_size = yes
 			effect = {
-				set_ambient_object_flag = terraform_station@PREV
+				set_ambient_object_flag = terraform_station@prev
 			}
 		}
 		planet_event = {
@@ -121,8 +107,8 @@ planet_event = {
 
 # clean up terraform station and graphics
 # triggered by on_terraforming_complete and terraform_stations_aesthetic.3
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 planet_event = {
 	id = terraform_stations_aesthetic.2
 	is_triggered_only = yes
@@ -130,25 +116,25 @@ planet_event = {
 	trigger = {
 		solar_system = {
 			OR = {
-				any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV }
-				any_system_ambient_object = { has_ambient_object_flag = terraform_station@PREVPREV }
-				# any_system_megastructure = { has_megastructure_flag = terraform_station@PREVPREV }
+				any_orbital_station = { has_fleet_flag = terraform_station@prevprev }
+				any_system_ambient_object = { has_ambient_object_flag = terraform_station@prevprev }
+				# any_system_megastructure = { has_megastructure_flag = terraform_station@prevprev }
 			}
 		}
 	}
 	immediate = {
 		solar_system = {
 			every_orbital_station = {
-				limit = { has_fleet_flag = terraform_station@PREVPREV }
-				delete_fleet = THIS
+				limit = { has_fleet_flag = terraform_station@prevprev }
+				delete_fleet = this
 			}
 			every_system_ambient_object = {
-				limit = { has_ambient_object_flag = terraform_station@PREVPREV }
-				destroy_ambient_object = THIS
+				limit = { has_ambient_object_flag = terraform_station@prevprev }
+				destroy_ambient_object = this
 			}
 			# every_system_megastructure = {
-			# 	limit = { has_megastructure_flag = terraform_station@PREVPREV }
-			# 	delete_megastructure = THIS
+			# 	limit = { has_megastructure_flag = terraform_station@prevprev }
+			# 	delete_megastructure = this
 			# }
 		}
 	}
@@ -156,8 +142,8 @@ planet_event = {
 
 # check to see if terraforming has stopped - if so, fire the cleanup event, otherwise check again in a month
 # triggered by terraform_stations_aesthetic.1 and terraform_stations_aesthetic.3
-# THIS = planet
-# FROM = country, terraformer
+# this = planet
+# from = country, terraformer
 planet_event = {
 	id = terraform_stations_aesthetic.3
 	is_triggered_only = yes
@@ -165,8 +151,8 @@ planet_event = {
 	trigger = {
 		solar_system = {
 			# OR = {
-				any_orbital_station = { has_fleet_flag = terraform_station@PREVPREV }
-			#	any_system_megastructure = { has_megastructure_flag = terraform_station@PREVPREV }
+				any_orbital_station = { has_fleet_flag = terraform_station@prevprev }
+			#	any_system_megastructure = { has_megastructure_flag = terraform_station@prevprev }
 			# }
 		}
 	}
@@ -177,7 +163,7 @@ planet_event = {
 				id = terraform_stations_aesthetic.3
 				days = 30
 				scopes = {
-					from = FROM
+					from = from
 				}
 			}
 		}
@@ -185,7 +171,7 @@ planet_event = {
 			planet_event = {
 				id = terraform_stations_aesthetic.2
 				scopes = {
-					from = FROM
+					from = from
 				}
 			}
 		}
