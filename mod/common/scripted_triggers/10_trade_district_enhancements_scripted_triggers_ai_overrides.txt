@@ -6,15 +6,15 @@ has_trade_designation = {
 		has_designation = col_habitat_trade
 		has_designation = col_ring_trade
 		AND = {
-			NOT = { has_global_flag = ecumenopolis_trade_installed }
+			has_ecumenopolis_trade_active = no
 			has_designation = col_ecu_mix
 		}
 		AND = {
-			has_global_flag = ecumenopolis_trade_installed
+			has_ecumenopolis_trade_active = yes
 			has_designation = col_ecu_trade
 		}
 		AND = {
-			has_global_flag = more_standard_districts_installed
+			has_more_standard_districts_active = yes
 			has_designation = col_standard_cm_trade
 		}
 		has_designation = col_srw_trade
