@@ -68,6 +68,7 @@ The standard planet view has a very small graphic representing your planet's env
     * Add support for orbital ring alternate skies
     * Add bonus resettlement chance to the appropriate planet classes
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax") - integrate underlying game changes
+* 4.1.0 Add a compatibility trigger for other mods to check whether this one is active
 
 ## Source Code
 
