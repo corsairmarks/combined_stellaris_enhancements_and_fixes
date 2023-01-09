@@ -91,6 +91,10 @@ Overwriting a colony type or district produces an error log.  Expect to see nine
     * Trade planet automation cooperates with my other trade-related district mods
     * Integrate underlying automation plan and colony designation changes
     * Integrate underlying district changes
+* 5.0.0 Compatibility triggers
+    * Add a compatibility trigger for other mods to check whether this one is active
+    * Consume the compatibility trigger from another mod
+    * Remove old compatibility global flag
 
 ## Source Code
 
