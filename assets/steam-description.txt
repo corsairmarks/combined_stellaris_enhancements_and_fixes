@@ -34,7 +34,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] at 6.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2628518102]Ringworld Graphical Enhancements[/url] at 3.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2496357447]Special Leadership Privileges for Battle Thralls and Bio-Trophies[/url] at 5.0.0
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2625663437]"Terraform" to Tomb World[/url] at 5.1.0
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2625663437]"Terraform" to Tomb World[/url] at 6.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2527918521]Yet Another Planetary Sky Fix[/url] at 4.1.0
 [/list]
 [h2]Source Code[/h2]

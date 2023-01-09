@@ -1,0 +1,6 @@
+# supports features from my mod Aesthetic Terraform Stations
+# this = any
+has_terraform_stations_aesthetic_active = {
+	optimize_memory
+	always = no
+}
