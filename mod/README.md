@@ -69,6 +69,10 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Account for new radiotrophic variants
     * Support changes to terraforming frozen worlds (you can still nuke them if they have the `frozen_terraforming_candidate` modifier)
 * 5.1.0 Support "terraforming" Toxic worlds to Tomb Worlds with the Detox ascension perk
+* 6.0.0 Compatibility triggers
+    * Add a compatibility trigger for other mods to check whether this one is active
+    * Consume the compatibility trigger from another mod
+    * Remove old compatibility global flag
 
 ## Source Code
 
