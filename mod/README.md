@@ -92,6 +92,9 @@ This mod can be safely added or removed from your savegame after the game has st
     * Use built-in on-action `on_planet_transfer` now that it provides the previous owner as `fromfrom`
     * Remove custom on_actions `on_primitive_planet_transferring` and `on_primitive_planet_transferred`
 * 6.0.1 Ensure that free buildings are added correctly for primitive conquest - due to underlying Stellaris changes, the conquest event now fires _before_ the primitive buildings are removed, so they must be manually cleared
+* 6.1.0 Bugfix and compatibility trigger
+    * Undo changes to unity buildings spawned after a primitive conquest - Uplink Nodes and Synapse Nodes are correct
+    * Add a compatibility trigger for other mods to check whether this one is active
 
 ## Source Code
 
