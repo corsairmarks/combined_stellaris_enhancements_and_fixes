@@ -1,0 +1,6 @@
+# supports features from my mod "Terraform" to Tomb World
+# this = any
+has_terraform_to_pc_nuked_active = {
+	optimize_memory
+	always = no
+}
