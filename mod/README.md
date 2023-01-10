@@ -59,6 +59,7 @@ Overriding the district, colony designation, and deposit causes the game to log 
     * Neutral and Hostile Machine Worlds negate the resettlement bonus chance (which was added to Machine Worlds in 3.4)
 * 5.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
     * Adjust Industrial District job tooltips to appear only when the relevant job swaps are activated, using the triggers provided by PDS (not sure why they did not use these triggers their changes)
+* 6.0.0 Add a compatibility trigger for other mods to check whether this one is active, remove old compatibility global flag
 
 ## Source Code
 
