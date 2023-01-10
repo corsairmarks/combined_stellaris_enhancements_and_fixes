@@ -8,10 +8,10 @@ btml_has_species_trait_with_leader_trait = {
 		has_trait = trait_latent_psionic
 		has_trait = trait_brainslug
 		has_trait = trait_clone_soldier_fertile
-		# AND = {
-		# 	has_global_flag = leader_species_traits_installed
-		# 	has_trait = trait_nuumismatic_administration
-		# }
+		AND = {
+			has_leader_species_traits_active = yes
+			has_trait = trait_nuumismatic_administration
+		}
 	}
 }
 
