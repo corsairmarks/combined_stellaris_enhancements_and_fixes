@@ -12,6 +12,13 @@ has_civic_organic_zealots_active = {
 	always = no
 }
 
+# supports features from my mod Corsair's Custom Empires: Eldanær Stellar Authority
+# this = any
+has_eldanaer_active = {
+	optimize_memory
+	always = no
+}
+
 # supports features from my mod More Standard Districts
 # this = any
 has_more_standard_districts_active = {
