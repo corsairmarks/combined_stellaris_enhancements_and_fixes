@@ -46,7 +46,7 @@ When cloning a leader and changing them from a species class without gender to a
 
 ### Error Logs
 
-This mod overrides a built-in trigger `can_be_military_leader` and a species rights `military_service_full` and ``.  These overrides each cause the game to log an error, so expect to see three lines in error.log like this:
+This mod overrides a built-in trigger `can_be_military_leader` and a species rights `military_service_full` and `military_service_limited`.  These overrides each cause the game to log an error, so expect to see three lines in error.log like this:
 
 ```
 [00:47:01][game_singleobjectdatabase.h:165]: Object with key: can_be_military_leader already exists, using the one at  file: common/scripted_triggers/01_battle_thrall_military_leaders_scripted_trigger_overrides.txt line: 4
@@ -94,6 +94,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
 * 6.0.1 Add some missing compatibility triggers, fix using a trigger in the wrong scope in `can_generate_leader_from_species`
+* 6.0.2 Fix a scope error in `military_service_full`
 
 ## Source Code
 
