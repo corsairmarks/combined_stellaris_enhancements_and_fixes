@@ -23,8 +23,8 @@ on_monthly_pulse = {
 }
 
 # fired when army construction has been completed
-# THIS = planet
-# FROM = army
+# this = planet
+# from = army
 on_army_recruited = {
 	events = {
 		limited_army_counter_fix.2
@@ -32,10 +32,10 @@ on_army_recruited = {
 }
 
 # fired when an army has been killed in ground combat
-# THIS = owner
-# FROM = army
-# FROMFROM = opponent
-# FROMFROMFROM = planet
+# this = owner
+# from = army
+# fromfrom = opponent
+# fromfromfrom = planet
 on_army_killed_in_combat = {
 	events = {
 		limited_army_counter_fix.1
@@ -43,8 +43,8 @@ on_army_killed_in_combat = {
 }
 
 # fired when an army has ceased to exist for any other reason
-# THIS = country
-# FROM = army
+# this = country
+# from = army
 on_army_killed_no_combat = {
 	events = {
 		limited_army_counter_fix.1
@@ -52,9 +52,9 @@ on_army_killed_no_combat = {
 }
 
 # fired whenever a new owner is set for a planet, be it after a war, through a trade, or colonization
-# THIS = planet
-# FROM = country, new owner
-# PREV = country, previous owner (optional)
+# this = planet
+# from = country, new owner
+# prev = country, previous owner (optional)
 on_planet_transfer = {
 	events = {
 		limited_army_counter_fix.4
@@ -62,7 +62,7 @@ on_planet_transfer = {
 }
 
 # fired when a planet has been colonized
-# THIS = planet
+# this = planet
 on_colonized = {
 	events = {
 		limited_army_counter_fix.5
@@ -70,8 +70,8 @@ on_colonized = {
 }
 
 # fired when a fleet is disbanded (but not individual ships)
-# THIS = owner
-# FROM = fleet
+# this = owner
+# from = fleet
 on_fleet_disbanded = {
 	events = {
 		limited_army_counter_fix.6
