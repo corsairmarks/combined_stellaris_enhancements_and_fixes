@@ -6,7 +6,7 @@ In addition to Battle Thralls being eligible to be rolled as military leaders an
 [h1]Changes[/h1]
 The Battle Thralls slavery type is allowed to be assigned the Full Military Service service type, which then allows them to become military leaders - Admirals and Generals. In order to achieve this, I've attached an event to [b]on_leader_spawned[/b] that can alter the species of the spawned leader to any species which has Full Military Service; this applies anywhere leaders are created. The leader's species is randomly rerolled by selecting a Pop out of all those that have Full Military service and using that Pop's species, and is thus implicitly weighted based on the relative population size of the eligible species. Second, I've updated Full Military Service to be selectable for Battle Thralls. As a bonus for allowing Battle Thralls even greater responsibility, their Pops are 10% happier when given Full Military Service.
 
-In addition to allowing Battle Thralls to have Full Military Service, I slightly updated the conditions for which it is allowed. Necrophages now cannot set any species that is not their main necrophage species to have Full Military Service (as described in the origin) and the allowing Full Military Service for robots now requires Synthetic Personality Matrix rather than Droids. Syncretic Proles (as described by the trait) and non-sentients cannot be military leaders. Hive and Machine empires are unaffected by these changes.
+In addition to allowing Battle Thralls to have Full Military Service, I slightly updated the conditions for which it is allowed. Necrophages now cannot set any species that is not their main necrophage species to have Full Military Service (as described in the origin) and the allowing Full Military Service for robots now requires Synthetic Personality Matrix rather than Droids. Syncretic Proles (as described by the trait) and non-sentients cannot be military leaders.
 
 Because this mod was inspired by my role-play for the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2496360535]Eldanær Stellar Authority[/url] it also allows bypassing the xenophobic and necrophage restrictions for allowing Full Military Service to Battle Thralls. You can bypass the restrictions by using the custom edict "Decree: Honored Protectors" which will let you declare a species of Battle Thralls as "Honored Protectors" for 100 unity. Honored Protectors are automatically set to Full Military Service, but may later be demoted.
 
@@ -18,7 +18,7 @@ Finally, as a minor quality-of-life enhancement, I have also attached an event t
 This mod can be safely added to your savegame after the game has started, but not removed. Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service. If you'd like to find out, make a backup of your savegame before experimenting.
 
 [h2]Recommended Companion Mods[/h2]
-If you like species traits that add leader traits, check out my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url].  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
+If you like species traits that add leader traits, check out my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url]. It is fully compatible with this mod. The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
 
 [h2]Compatibility[/h2]
 Because this mod replaces several built-in objects, it is inherently incompatible with mods that alter the same objects. While I doubt most mods will fiddle with the [b]can_be_military_leader[/b] trigger it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one. The only species rights this mod overrides are [b]military_service_full[/b] and [b]military_service_limited[/b]. To support Bio-Trophies as leaders, this mod also overrides four game rules: [b]can_generate_army_from_species[/b], [b]can_generate_leader_from_species[/b], [b]can_generate_leader_from_pop[/b], and [b]can_generate_military_leader_from_pop[/b].
@@ -30,7 +30,7 @@ Built for Stellaris version 3.6 "Orion." This mod is not compatible with achieve
 [h2]Localisation[/h2]
 This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
 
-However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing.  The English text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
+However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing. The English text is used as a placeholder for other languages. If you want to translate it into your language, please leave a comment or message me.
 
 [h2]Known Issues[/h2]
 [h3]Stellaris Bugs[/h3]
@@ -39,9 +39,9 @@ When cloning a leader and changing them from a species class without gender to a
 [h3]Error Logs[/h3]
 This mod overrides a built-in trigger [b]can_be_military_leader[/b] and a species rights [b]military_service_full[/b] and [b]military_service_limited[/b]. These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
 [code]
-[00:47:01][game_singleobjectdatabase.h:165]: Object with key: can_be_military_leader already exists, using the one at  file: common/scripted_triggers/01_battle_thrall_military_leaders_scripted_trigger_overrides.txt line: 4
-[00:47:01][game_singleobjectdatabase.h:165]: Object with key: military_service_full already exists, using the one at  file: common/species_rights/military_service_types/20_battle_thrall_special_military_service.txt line: 9
-[00:47:01][game_singleobjectdatabase.h:165]: Object with key: military_service_limited already exists, using the one at  file: common/species_rights/military_service_types/20_battle_thrall_special_military_service.txt line: 170
+[00:47:01][game_singleobjectdatabase.h:165]: Object with key: can_be_military_leader already exists, using the one at file: common/scripted_triggers/01_battle_thrall_military_leaders_scripted_trigger_overrides.txt line: 4
+[00:47:01][game_singleobjectdatabase.h:165]: Object with key: military_service_full already exists, using the one at file: common/species_rights/military_service_types/20_battle_thrall_special_military_service.txt line: 9
+[00:47:01][game_singleobjectdatabase.h:165]: Object with key: military_service_limited already exists, using the one at file: common/species_rights/military_service_types/20_battle_thrall_special_military_service.txt line: 170
 [/code]
 [h2]Change Log[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2496357447]Change Notes[/url]
