@@ -86,11 +86,11 @@ dynamic_biotrophy_leader_trait_weight = {
 		multiply = 1.5
 		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_clone_soldier_fertile }
 	}
-	# modifier = {
-	# 	multiply = 1.5
-	# 	has_global_flag = leader_species_traits_installed
-	# 	event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_nuumismatic_administration }
-	# }
+	modifier = {
+		multiply = 1.5
+		has_leader_species_traits_active = yes
+		event_target:potential_advisors$DISCRIMINATOR$ = { has_trait = trait_nuumismatic_administration }
+	}
 	modifier = {
 		multiply = 0.75
 		event_target:potential_advisors$DISCRIMINATOR$ = {

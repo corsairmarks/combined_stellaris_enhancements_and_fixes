@@ -18,7 +18,37 @@ can_generate_army_from_species = {
 		}
 		NAND = {
 			prev = { has_valid_civic = civic_machine_servitor }
-			is_robotic_species = no
+			is_robotic = no
+		}
+	}
+}
+
+# Checks whether this species is eligible to become rulers through elections
+# root = country
+# this = species
+can_generate_leader_from_species = {
+	btml_is_species_smart_enough_for_leadership = yes
+	OR = {
+		NAND = {
+			NOT = { root = { has_technology = tech_synthetic_leaders } }
+			is_robotic = yes
+		}
+		OR = {
+			has_citizenship_type = {
+				type = citizenship_full
+				country = root
+			}
+			has_citizenship_type = {
+				type = citizenship_full_machine
+				country = root
+			}
+		}
+		AND = {
+			has_species_flag = allow_leaders_organic_advisors@root
+			has_citizenship_type = {
+				type = citizenship_organic_trophy
+				country = root
+			}
 		}
 	}
 }
@@ -27,6 +57,7 @@ can_generate_army_from_species = {
 # root = country
 # this = pop
 can_generate_leader_from_pop = {
+	btml_is_species_smart_enough_for_leadership = yes
 	OR = {
 		has_citizenship_rights = yes
 		species = {
@@ -37,14 +68,12 @@ can_generate_leader_from_pop = {
 			}
 		}
 	}
-	btml_is_species_smart_enough_for_leadership = yes
 	OR = {
 		is_robot_pop = no
 		owner = {
 			OR = {
 				has_technology = tech_synthetic_leaders
-				is_machine_empire = yes
-				is_mechanical_empire = yes
+				is_robot_empire = yes
 			}
 		}
 	}
@@ -54,26 +83,22 @@ can_generate_leader_from_pop = {
 	}
 }
 
-# Checks whether this species is eligible to become rulers through elections
 # root = country
-# this = species
-can_generate_leader_from_species = {
-	is_sapient = yes
+# this = pop
+can_generate_military_leader_from_pop = {
+	btml_is_species_smart_enough_for_leadership = yes
+	can_be_military_leader = yes
 	OR = {
-		NAND = {
-			NOT = { root = { has_technology = "tech_synthetic_leaders" } }
-			has_trait = "trait_mechanical"
-		}
-		has_citizenship_type = {
-			type = citizenship_full
-			country = root
-		}
-		AND = {
-			has_species_flag = allow_leaders_organic_advisors@root
-			has_citizenship_type = {
-				type = citizenship_organic_trophy
-				country = root
+		is_robot_pop = no
+		owner = {
+			OR = {
+				has_technology = tech_synthetic_leaders
+				is_robot_empire = yes
 			}
 		}
+	}
+	OR = {
+		is_same_species = owner
+		owner = { btml_is_necrophage_empire = no }
 	}
 }

@@ -1,17 +1,3 @@
-# fired when the game starts
-on_game_start = {
-	events = {
-		battle_thrall_military_leaders.13 # flag mod as installed
-	}
-}
-
-# fired when loading a single-player game
-on_single_player_save_game_load = {
-	events = {
-		battle_thrall_military_leaders.13 # flag mod as installed
-	}
-}
-
 # fired when a new leader is generated for an empire, to be available for recruitment
 # this = country
 # from = leader

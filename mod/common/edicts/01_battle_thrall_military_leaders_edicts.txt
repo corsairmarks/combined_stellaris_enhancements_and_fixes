@@ -101,7 +101,7 @@ designate_organic_advisors = {
 			}
 			custom_tooltip = {
 				fail_text = species_is_not_organic
-				btml_is_mechanical_or_machine = no
+				is_robotic = no
 			}
 			custom_tooltip = {
 				fail_text = nerve_stapled_cannot_lead

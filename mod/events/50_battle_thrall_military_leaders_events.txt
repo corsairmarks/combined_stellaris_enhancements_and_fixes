@@ -1,18 +1,5 @@
 namespace = battle_thrall_military_leaders
 
-# flag mod as active
-event = {
-	id = battle_thrall_military_leaders.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = battle_thrall_military_leaders_installed }
-	}
-	immediate = {
-		set_global_flag = battle_thrall_military_leaders_installed
-	}
-}
-
 # root = country
 # from = leader
 # triggered by on_leader_spawned
@@ -152,7 +139,7 @@ leader_event = {
 	trigger = {
 		OR = {
 			has_leader_flag = force_gender_match_species
-			NOT = { has_global_flag = nonbinary_leaders_installed }
+			has_nonbinary_leaders_active = no
 		}
 		NOT = { has_leader_flag = leader_replaced_by_clone }
 		exists = from
