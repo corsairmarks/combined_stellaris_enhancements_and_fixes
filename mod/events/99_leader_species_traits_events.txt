@@ -1,18 +1,5 @@
 namespace = leader_species_traits
 
-# flag mod as active
-event = {
-	id = leader_species_traits.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = leader_species_traits_installed }
-	}
-	immediate = {
-		set_global_flag = leader_species_traits_installed
-	}
-}
-
 # new leaders get every applicable species-specific leader trait
 # note that the code for brainslugs and latent psionics are a 20% chance each and not guaranteed, as in the default game
 country_event = {
@@ -20,7 +7,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		FROM = {
+		from = {
 			leader_event = {
 				id = leader_species_traits.5
 			}
@@ -35,14 +22,14 @@ country_event = {
 	hide_window = yes
 	immediate = {
 		every_owned_leader = {
-			limit = { species = { is_exact_same_species = FROM } }
+			limit = { species = { is_exact_same_species = from } }
 			leader_event = {
 				id = leader_species_traits.5
 			}
 		}
 
 		every_pool_leader = {
-			limit = { species = { is_exact_same_species = FROM } }
+			limit = { species = { is_exact_same_species = from } }
 			leader_event = {
 				id = leader_species_traits.5
 			}
@@ -56,7 +43,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		FROM = {
+		from = {
 			add_static_applicable_leader_species_traits = yes
 			if = {
 				limit = { has_ruler_trait = leader_trait_ruler_brainslug }
@@ -103,6 +90,24 @@ leader_event = {
 		add_all_applicable_leader_species_traits = yes
 		remove_all_inapplicable_leader_species_traits = yes
 		adjust_psionic_chosen_traits = yes
+	}
+}
+
+# triggered by on_single_player_save_game_load
+event = {
+	id = leader_species_traits.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = leader_species_traits_initial_config }
+	}
+	immediate = {
+		every_country = {
+			country_event = {
+				id = leader_species_traits.8
+			}
+		}
+		set_global_flag = leader_species_traits_initial_config
 	}
 }
 
@@ -202,23 +207,6 @@ country_event = {
 				governor = { add_trait = leader_trait_governor_brainslug }
 				scientist = { add_trait = leader_trait_scientist_brainslug }
 				ruler = { add_trait = leader_trait_ruler_brainslug }
-			}
-		}
-	}
-}
-
-# triggered by on_single_player_save_game_load
-event = {
-	id = leader_species_traits.6
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = leader_species_traits_installed }
-	}
-	immediate = {
-		every_country = {
-			country_event = {
-				id = leader_species_traits.8
 			}
 		}
 	}
