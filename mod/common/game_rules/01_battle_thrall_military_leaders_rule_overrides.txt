@@ -33,7 +33,16 @@ can_generate_leader_from_species = {
 			NOT = { root = { has_technology = tech_synthetic_leaders } }
 			is_robotic = yes
 		}
-		has_citizenship_rights = yes
+		OR = {
+			has_citizenship_type = {
+				type = citizenship_full
+				country = root
+			}
+			has_citizenship_type = {
+				type = citizenship_full_machine
+				country = root
+			}
+		}
 		AND = {
 			has_species_flag = allow_leaders_organic_advisors@root
 			has_citizenship_type = {
