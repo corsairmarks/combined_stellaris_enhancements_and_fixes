@@ -139,7 +139,7 @@ leader_event = {
 	trigger = {
 		OR = {
 			has_leader_flag = force_gender_match_species
-			NOT = { has_global_flag = nonbinary_leaders_installed }
+			has_nonbinary_leaders_active = no
 		}
 		NOT = { has_leader_flag = leader_replaced_by_clone }
 		exists = from
