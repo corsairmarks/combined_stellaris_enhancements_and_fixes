@@ -52,7 +52,7 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
     * Update armies with new army properties
     * Add army weights so the AI will build Titanic Life and Azizians armies if possible
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax") - use new `fromfrom` scope in events tied to `on_planet_transfer`
-* 5.0.0 Add a compatibility trigger for other mods to check whether this one is active
+* 5.0.0 Remove compatibility global flag, add a compatibility trigger for other mods to check whether this one is active
 
 ## Source Code
 
