@@ -1,19 +1,5 @@
 namespace = civic_byzantine_bureaucracy_enhanced
 
-# flag mod as active
-# triggered by on_game_start and on_single_player_save_game_load
-event = {
-	id = civic_byzantine_bureaucracy_enhanced.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = civic_byzantine_bureaucracy_enhanced_installed }
-	}
-	immediate = {
-		set_global_flag = civic_byzantine_bureaucracy_enhanced_installed
-	}
-}
-
 # triggered by empire_init_capital_planet and on_capital_changed
 # root = capital, new
 # from = capital, previous (may be unset)
