@@ -1,14 +1,6 @@
-# fired when the game starts
-on_game_start = {
-	events = {
-		limited_army_counter_fix.13 # flag mod as installed
-	}
-}
-
 # fired when loading a single-player game
 on_single_player_save_game_load = {
 	events = {
-		limited_army_counter_fix.13 # flag mod as installed
 		limited_army_counter_fix.3 # ensure accurate army counters
 	}
 }

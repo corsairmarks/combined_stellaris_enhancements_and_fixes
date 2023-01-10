@@ -1,32 +1,19 @@
 namespace = limited_army_counter_fix
 
-# flag mod as active
-event = {
-	id = limited_army_counter_fix.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = limited_army_counter_fix_installed }
-	}
-	immediate = {
-		set_global_flag = limited_army_counter_fix_installed
-	}
-}
-
 # triggered by on_army_killed_in_combat and on_army_killed_no_combat
 # decrements the appropriate army counters so you can build reinforcements up to the cap
-# ROOT = owner
-# FROM = army
-# FROMFROM = opponent (only on_army_killed_in_combat)
-# FROMFROMFROM = planet (only on_army_killed_in_combat)
+# root = owner
+# from = army
+# fromfrom = opponent (only on_army_killed_in_combat)
+# fromfromfrom = planet (only on_army_killed_in_combat)
 country_event = {
 	id = limited_army_counter_fix.1
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		exists = FROM
-		NOT = { has_country_flag = army_counter_decremented@FROM }
-		FROM = {
+		exists = from
+		NOT = { has_country_flag = army_counter_decremented@from }
+		from = {
 			OR = {
 				army_type = titanic_assault_army
 				army_type = titanic_azizian_assault_army
