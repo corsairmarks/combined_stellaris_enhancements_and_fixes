@@ -1,0 +1,20 @@
+# supports features from my mod Colony Designation: Ecumenopolis Commercial
+# this = any
+has_ecumenopolis_trade_active = {
+	optimize_memory
+	always = no
+}
+
+# supports features from my mod More Standard Districts
+# this = any
+has_more_standard_districts_active = {
+	optimize_memory
+	always = no
+}
+
+# supports features from my mod Planetary Modifier Enhancements
+# this = any
+has_planetary_modifier_enhancements_active = {
+	optimize_memory
+	always = no
+}

@@ -95,7 +95,7 @@ tde_col_city_weight_multiplier = {
 	}
 	modifier = {
 		add = 4
-		has_global_flag = planetary_modifier_enhancements_installed
+		has_planetary_modifier_enhancements_active = yes
 		has_modifier = pm_planetary_mechanocalibrator
 	}
 }
@@ -145,7 +145,7 @@ tde_col_habitat_trade_weight_multiplier = {
 	}
 	modifier = {
 		add = 4
-		has_global_flag = planetary_modifier_enhancements_installed
+		has_planetary_modifier_enhancements_active = yes
 		has_modifier = pm_planetary_mechanocalibrator
 	}
 	modifier = {
@@ -190,7 +190,7 @@ tde_col_ring_trade_weight_multiplier = {
 	}
 	modifier = {
 		add = 150
-		has_global_flag = planetary_modifier_enhancements_installed
+		has_planetary_modifier_enhancements_active = yes
 		has_modifier = pm_planetary_mechanocalibrator
 	}
 }
@@ -229,7 +229,7 @@ tde_col_srw_trade_weight_multiplier = {
 	}
 	modifier = {
 		add = 4
-		has_global_flag = planetary_modifier_enhancements_installed
+		has_planetary_modifier_enhancements_active = yes
 		has_modifier = pm_planetary_mechanocalibrator
 	}
 }
