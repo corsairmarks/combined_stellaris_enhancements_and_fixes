@@ -105,6 +105,10 @@ Normally overriding a single technology can cause problems with the game being c
     * Add override for Civic: Anglers (megacorp version only) to correctly allow it alongside Civic: Agrarian Idyll
     * No longer swap initial farming to mining districts for lithoids that are Anglers or Catalytic Processors
     * Remove extra carrying capacity from rural districts (it was overkill when combined with bonus housing)
+* 7.0.0 Compatibility triggers
+    * Add a compatibility trigger for other mods to check whether this one is active
+    * Consume the compatibility trigger from other mods
+    * Remove old compatibility global flag
 
 ## Source Code
 
