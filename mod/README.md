@@ -86,6 +86,12 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Update overridden game rules with underlying game changes
     * Update `species_rights` to override files based on changed directories in the base game
     * Refactor events to use inline script in order to reduce code duplication (no change to functionality)
+* 6.0.0 Enhance military leadership and service overrides and compatibility triggers
+    * Add override of `military_service_limited` to allow main species that are _not_ smart enough for leadership
+    * Add override of `can_generate_military_leader_from_pop` to ensure only species who are smart enough for leadership
+    * Add a compatibility trigger for other mods to check whether this one is active
+    * Consume the compatibility trigger from another mod
+    * Remove old compatibility global flag
 
 ## Source Code
 
