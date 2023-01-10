@@ -196,4 +196,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Simplify a few known duplicate overrides between the included mods
 * 7.0.1 Update merged mod: Primitive Conquest Enhancements at 6.0.1
 * 7.0.2 Update merged mod: Deassimilate Machines at 5.0.1
-* 7.0.3 Update all merged mods with global flag-to-trigger conversion
+* 7.0.3 Update most merged mods with global flag-to-trigger conversion
