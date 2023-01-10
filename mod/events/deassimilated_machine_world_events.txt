@@ -1,37 +1,24 @@
 namespace = deassimilated_machine_world
 
-# flag mod as active
-event = {
-	id = deassimilated_machine_world.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = deassimilated_machine_world_installed }
-	}
-	immediate = {
-		set_global_flag = deassimilated_machine_world_installed
-	}
-}
-
 # fired by on_planet_transfer
-# FROM = country (new owner)
+# from = country (new owner)
 planet_event = {
 	id = deassimilated_machine_world.20
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		is_planet_class = pc_machine
-		exists = FROM
-		FROM = { is_regular_empire = yes }
+		exists = from
+		from = { is_regular_empire = yes }
 		days_passed > 0
 	}
 	immediate = {
 		if = {
-			limit = { FROM = { should_machine_world_prompt_policy = yes } }
+			limit = { from = { should_machine_world_prompt_policy = yes } }
 			planet_event = {
 				id = deassimilated_machine_world.21
 				scopes = {
-					from = FROM
+					from = from
 				}
 			}
 		}
@@ -57,7 +44,7 @@ planet_event = {
 	desc = {
 		text = deassimilated_machine_world.20.desc.already_has_rights
 		trigger = {
-			FROM = {
+			from = {
 				OR = {
 					AND = {
 						has_policy_flag = robots_allowed
@@ -71,7 +58,7 @@ planet_event = {
 	desc = {
 		text = deassimilated_machine_world.20.desc
 		trigger = {
-			FROM  = {
+			from  = {
 				NAND = {
 					has_policy_flag = robots_allowed
 					has_policy_flag = ai_full_rights
@@ -83,13 +70,13 @@ planet_event = {
 	picture = GFX_evt_contingency_planet
 	show_sound = pc_machine
 	immediate = {
-		FROM = { set_country_flag = deassimilated_machine_world_offered_policy_change }
+		from = { set_country_flag = deassimilated_machine_world_offered_policy_change }
 	}
 	# already allowed
 	option = {
 		name = MARVELOUS
 		trigger = {
-			FROM = {
+			from = {
 				OR = {
 					AND = {
 						has_policy_flag = robots_allowed
@@ -100,7 +87,7 @@ planet_event = {
 			}
 		}
 		tooltip = {
-			FROM = {
+			from = {
 				every_owned_planet = {
 					limit = { is_planet_class = pc_machine }
 					add_modifier = { modifier = deassimilated_machine_world_cooperative }
@@ -112,7 +99,7 @@ planet_event = {
 	option = {
 		name = deassimilated_machine_world.20.full
 		trigger = {
-			FROM = {
+			from = {
 				NAND = {
 					has_policy_flag = robots_allowed
 					has_policy_flag = ai_full_rights
@@ -121,7 +108,7 @@ planet_event = {
 			}
 		}
 		allow = {
-			FROM = {
+			from = {
 				can_set_policy = {
 					policy = robot_pop_policy
 					option = robot_pops_allowed
@@ -132,7 +119,7 @@ planet_event = {
 				}
 			}
 		}
-		FROM  = {
+		from  = {
 			set_country_flag = deassimilated_machine_world_suppress_policy_change
 			if = {
 				limit = { NOT = { has_policy_flag = robots_allowed } }
@@ -152,7 +139,7 @@ planet_event = {
 			}
 		}
 		tooltip = {
-			FROM = {
+			from = {
 				every_owned_planet = {
 					limit = { is_planet_class = pc_machine }
 					add_modifier = { modifier = deassimilated_machine_world_cooperative }
@@ -163,25 +150,25 @@ planet_event = {
 			factor = 1
 			modifier = {
 				factor = 2
-				FROM = { is_materialist = yes }
+				from = { is_materialist = yes }
 			}
 			modifier = {
 				factor = 5
-				FROM = {
+				from = {
 					has_valid_ai_personality = yes
 					has_ai_personality_behaviour = robot_liberator
 				}
 			}
 			modifier = {
 				factor = 0.5
-				FROM = {
+				from = {
 					has_valid_ai_personality = yes
 					has_ai_personality_behaviour = robot_exploiter
 				}
 			}
 			modifier = {
 				factor = 0.5
-				FROM = { is_spiritualist = yes }
+				from = { is_spiritualist = yes }
 			}
 		}
 	}
@@ -189,7 +176,7 @@ planet_event = {
 	option = {
 		name = deassimilated_machine_world.20.servitude
 		trigger = {
-			FROM = {
+			from = {
 				NAND = {
 					has_policy_flag = robots_allowed
 					OR = {
@@ -201,7 +188,7 @@ planet_event = {
 			}
 		}
 		allow = {
-			FROM = {
+			from = {
 				can_set_policy = {
 					policy = robot_pop_policy
 					option = robot_pops_allowed
@@ -212,7 +199,7 @@ planet_event = {
 				}
 			}
 		}
-		FROM  = {
+		from  = {
 			set_country_flag = deassimilated_machine_world_suppress_policy_change
 			if = {
 				limit = { NOT = { has_policy_flag = robots_allowed } }
@@ -232,7 +219,7 @@ planet_event = {
 			}
 		}
 		tooltip = {
-			FROM = {
+			from = {
 				every_owned_planet = {
 					limit = { is_planet_class = pc_machine }
 					add_modifier = { modifier = deassimilated_machine_world_neutral }
@@ -243,18 +230,18 @@ planet_event = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				FROM = { is_materialist = yes }
+				from = { is_materialist = yes }
 			}
 			modifier = {
 				factor = 5
-				FROM = {
+				from = {
 					has_valid_ai_personality = yes
 					has_ai_personality_behaviour = robot_exploiter
 				}
 			}
 			modifier = {
 				factor = 0
-				FROM = {
+				from = {
 					is_spiritualist = yes
 					OR = {
 						is_galactic_community_member = no
@@ -268,7 +255,7 @@ planet_event = {
 			}
 			modifier = {
 				factor = 1.5
-				FROM = {
+				from = {
 					is_galactic_community_member = yes
 					OR = {
 						is_active_resolution = resolution_galacticstudies_advanced_xenostudies # 3
@@ -284,7 +271,7 @@ planet_event = {
 		name = deassimilated_machine_world.20.no_change
 		custom_tooltip = deassimilated_machine_world.20.no_change.tooltip
 		trigger = {
-			FROM = {
+			from = {
 				NAND = {
 					has_policy_flag = robots_allowed
 					has_policy_flag = ai_full_rights
@@ -292,7 +279,7 @@ planet_event = {
 				is_mechanical_empire = no
 			}
 		}
-		FROM = {
+		from = {
 			if = {
 				limit = {
 					OR = {
@@ -320,14 +307,14 @@ planet_event = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				FROM = {
+				from = {
 					has_valid_ai_personality = yes
 					has_ai_personality_behaviour = robot_liberator
 				}
 			}
 			modifier = {
 				factor = 5
-				FROM = {
+				from = {
 					has_policy_flag = robots_allowed
 					has_policy_flag = ai_servitude
 					has_valid_ai_personality = yes
@@ -336,7 +323,7 @@ planet_event = {
 			}
 			modifier = {
 				factor = 2
-				FROM = {
+				from = {
 				is_spiritualist = yes
 					OR = {
 						is_galactic_community_member = no
@@ -350,13 +337,13 @@ planet_event = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { is_materialist = yes }
+				from = { is_materialist = yes }
 			}
 		}
 	}
 	after = {
 		hidden_effect = {
-			FROM = { reassign_deassimilated_machine_world_modifiers_country = yes }
+			from = { reassign_deassimilated_machine_world_modifiers_country = yes }
 		}
 	}
 }
@@ -524,7 +511,7 @@ country_event = {
 			planet_event = {
 				id = deassimilated_machine_world.21
 				scopes = {
-					from = PREV
+					from = prev
 				}
 			}
 		}
@@ -537,15 +524,15 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		exists = FROM
+		exists = from
 		OR = {
 			AND = {
 				is_eligible_for_machine_world_prompt = yes
-				FROM = { has_communications_with_ai_using_country = yes }
+				from = { has_communications_with_ai_using_country = yes }
 			}
-			FROM = {
+			from = {
 				is_eligible_for_machine_world_prompt = yes
-				ROOT = { has_communications_with_ai_using_country = yes }
+				root = { has_communications_with_ai_using_country = yes }
 			}
 		}
 	}
@@ -553,30 +540,30 @@ country_event = {
 		if = {
 			limit = {
 				is_eligible_for_machine_world_prompt = yes
-				FROM = { has_communications_with_ai_using_country = yes }
+				from = { has_communications_with_ai_using_country = yes }
 			}
 			random_owned_planet = {
 				limit = { is_planet_class = pc_machine }
 				planet_event = {
 					id = deassimilated_machine_world.21
 					scopes = {
-						from = PREV
+						from = prev
 					}
 				}
 			}
 		}
-		FROM = {
+		from = {
 			if = {
 				limit = {
 					is_eligible_for_machine_world_prompt = yes
-					ROOT = { has_communications_with_ai_using_country = yes }
+					root = { has_communications_with_ai_using_country = yes }
 				}
 				random_owned_planet = {
 					limit = { is_planet_class = pc_machine }
 					planet_event = {
 						id = deassimilated_machine_world.21
 						scopes = {
-							from = PREV
+							from = prev
 						}
 					}
 				}
