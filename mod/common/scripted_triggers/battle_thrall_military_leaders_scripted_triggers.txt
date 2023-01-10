@@ -16,6 +16,19 @@ btml_has_species_trait_with_leader_trait = {
 }
 
 # this = species
+btml_has_species_trait_with_military_leader_trait = {
+	optimize_memory
+	OR = {
+		has_trait = trait_cybernetic
+		has_trait = trait_erudite
+		has_trait = trait_psionic
+		has_trait = trait_latent_psionic
+		has_trait = trait_brainslug
+		has_trait = trait_clone_soldier_fertile
+	}
+}
+
+# this = species
 btml_is_species_smart_enough_for_leadership = {
 	optimize_memory
 	is_sapient = yes
