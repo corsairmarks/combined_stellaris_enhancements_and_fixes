@@ -49,6 +49,10 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
     * Add gestalt Aquaculture Drone (food and energy or amenities; machines get energy, hives and rogue servitors get amenities instead)
     * Update `angler` override to account for changes in another one of my mods
 * 3.2.0 Add German localisation by [ThePionier](https://steamcommunity.com/id/ThePionier)
+* 4.0.0 Compatibility triggers
+    * Add a compatibility trigger for other mods to check whether this one is active
+    * Consume the compatibility triggers from other mods
+    * Remove old compatibility global flag
 
 ## Source Code
 
