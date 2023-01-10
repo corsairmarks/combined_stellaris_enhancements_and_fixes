@@ -1,0 +1,6 @@
+# supports features from my mod "Agrarian" Idyll for Lithoids
+# this = any
+has_agrarian_idyll_lithoid_active = {
+	optimize_memory
+	always = no
+}
