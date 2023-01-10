@@ -26,7 +26,7 @@ If you like species traits that add leader traits, check out my mod [Leader Trai
 
 ## Compatibility
 
-Because this mod replaces several built-in objects, it is inherently incompatible with mods that alter the same objects.  While I doubt most mods will fiddle with the `can_be_military_leader` trigger it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one.  The only species right that this mod overrides is `military_service_full`.  To support Bio-Trophies as leaders, this mod also overrides four game rules: `can_generate_army_from_species`, `can_generate_leader_from_species`, `can_generate_leader_from_pop`, and `can_generate_military_leader_from_pop`.
+Because this mod replaces several built-in objects, it is inherently incompatible with mods that alter the same objects.  While I doubt most mods will fiddle with the `can_be_military_leader` trigger it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one.  The only species rights this mod overrides are `military_service_full` and `military_service_limited`.  To support Bio-Trophies as leaders, this mod also overrides four game rules: `can_generate_army_from_species`, `can_generate_leader_from_species`, `can_generate_leader_from_pop`, and `can_generate_military_leader_from_pop`.
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
@@ -46,11 +46,12 @@ When cloning a leader and changing them from a species class without gender to a
 
 ### Error Logs
 
-This mod overrides a built-in trigger `can_be_military_leader` and a species right `military_service_full`.  These overrides each cause the game to log an error, so expect to see two lines in error.log like this:
+This mod overrides a built-in trigger `can_be_military_leader` and a species rights `military_service_full` and ``.  These overrides each cause the game to log an error, so expect to see three lines in error.log like this:
 
 ```
-[21:31:38][game_singleobjectdatabase.h:165]: Object with key: can_be_military_leader already exists, using the one at  file: common/scripted_triggers/01_battle_thrall_military_leaders_scripted_trigger_overrides.txt line: 4
-[21:31:38][game_singleobjectdatabase.h:165]: Object with key: military_service_full already exists, using the one at  file: common/species_rights/military_service_types/50_battle_thrall_special_military_service.txt line: 2
+[00:47:01][game_singleobjectdatabase.h:165]: Object with key: can_be_military_leader already exists, using the one at  file: common/scripted_triggers/01_battle_thrall_military_leaders_scripted_trigger_overrides.txt line: 4
+[00:47:01][game_singleobjectdatabase.h:165]: Object with key: military_service_full already exists, using the one at  file: common/species_rights/military_service_types/20_battle_thrall_special_military_service.txt line: 9
+[00:47:01][game_singleobjectdatabase.h:165]: Object with key: military_service_limited already exists, using the one at  file: common/species_rights/military_service_types/20_battle_thrall_special_military_service.txt line: 170
 ```
 
 ## Change Log
@@ -92,6 +93,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Add a compatibility trigger for other mods to check whether this one is active
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
+* 6.0.1 Add some missing compatibility triggers, fix using a trigger in the wrong scope in `can_generate_leader_from_species`
 
 ## Source Code
 
