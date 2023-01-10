@@ -55,7 +55,7 @@ angler = {
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
 				OR = {
-					NOT = { has_global_flag = agrarian_idyll_lithoid_installed }
+					has_agrarian_idyll_lithoid_active = no
 					is_lithoid_empire = no
 					is_anglers_empire = yes
 				}
@@ -74,7 +74,7 @@ angler = {
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
 				OR = {
-					NOT = { has_global_flag = agrarian_idyll_lithoid_installed }
+					has_agrarian_idyll_lithoid_active = no
 					is_lithoid_empire = no
 					is_anglers_empire = yes
 				}
@@ -85,7 +85,7 @@ angler = {
 			owner = {
 				has_valid_civic = civic_agrarian_idyll
 				OR = {
-					NOT = { has_global_flag = agrarian_idyll_lithoid_installed }
+					has_agrarian_idyll_lithoid_active = no
 					is_lithoid_empire = no
 					is_anglers_empire = yes
 				}
