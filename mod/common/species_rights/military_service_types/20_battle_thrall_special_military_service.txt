@@ -132,8 +132,9 @@ military_service_full = {
 	}
 	triggered_pop_modifier = {
 		potential = {
+			exists = owner
 			has_slavery_type = {
-				country = from
+				country = owner
 				type = slavery_military
 			}
 		}
