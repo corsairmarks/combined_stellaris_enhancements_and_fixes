@@ -1,19 +1,5 @@
 namespace = building_capital_colony_type_job_swaps
 
-# flag mod as active
-# triggered by on_game_start and on_single_player_save_game_load
-event = {
-	id = building_capital_colony_type_job_swaps.13
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = building_capital_colony_type_job_swaps_installed }
-	}
-	immediate = {
-		set_global_flag = building_capital_colony_type_job_swaps_installed
-	}
-}
-
 # triggered by empire_init_capital_planet
 # this = planet, capital
 # from = species, founder
