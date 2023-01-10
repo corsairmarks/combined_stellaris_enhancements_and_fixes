@@ -57,6 +57,10 @@ This mod overwrites five buildings, so expect to see five errors in your error.l
 * 3.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
     * Integrate the Origin: Knights of the Toxic God changes
     * Integrate the new tradition-based changes and federation bonus culture workers (including adding the culture workers to the imperial capitol - appears to be an oversight by PDS)
+* 4.0.0 Compatibility triggers
+    * Add a compatibility trigger for other mods to check whether this one is active
+    * Consume the compatibility trigger from another mod
+    * Remove old compatibility global flag
 
 ## Source Code
 
