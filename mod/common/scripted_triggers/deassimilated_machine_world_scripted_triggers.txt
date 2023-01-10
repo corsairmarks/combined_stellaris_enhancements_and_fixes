@@ -1,4 +1,4 @@
-# THIS = country
+# this = country
 is_eligible_for_machine_world_prompt = {
 	optimize_memory
 	is_regular_empire = yes
@@ -6,7 +6,7 @@ is_eligible_for_machine_world_prompt = {
 	any_owned_planet = { is_planet_class = pc_machine }
 }
 
-# THIS = country
+# this = country
 should_machine_world_prompt_policy = {
 	optimize_memory
 	is_eligible_for_machine_world_prompt = yes
@@ -18,7 +18,7 @@ should_machine_world_prompt_policy = {
 	}
 }
 
-# THIS = country
+# this = country
 has_ai_technology = {
 	optimize_memory
 	OR = {
@@ -27,11 +27,11 @@ has_ai_technology = {
 	}
 }
 
-# THIS = country, potential AI user
-# PREV = country, country with comms
+# this = country, potential AI user
+# prev = country, country with comms
 has_communications_with_ai_using_country = {
 	optimize_memory
-	has_communications = PREV
+	has_communications = prev
 	OR = {
 		has_ai_technology = yes
 		is_machine_empire = yes
