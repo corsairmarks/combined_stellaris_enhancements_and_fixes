@@ -1,4 +1,4 @@
-# THIS = leader
+# this = leader
 add_former_ruler_trait = {
 	optimize_memory
 	if = {
@@ -60,7 +60,7 @@ add_former_ruler_trait = {
 	}
 }
 
-# THIS = leader
+# this = leader
 add_former_heir_trait = {
 	optimize_memory
 	if = {

@@ -423,7 +423,7 @@ set_full_military_service_species = {
 							type = citizenship_assimilation
 						}
 						AND = {
-							has_global_flag = battle_thrall_military_leaders_installed
+							has_battle_thrall_military_leaders_active = yes
 							has_citizenship_type = {
 								country = event_target:potential_owner
 								type = citizenship_slavery
@@ -1196,7 +1196,7 @@ replace_leader_based_on_government_type = {
 			# custom governments (defined by mods) - moved into default so it doesn't cause lots of error logs
 			if = {
 				limit = {
-					has_global_flag = eldanaer_stellar_authority_installed
+					has_eldanaer_active = yes
 					has_government = gov_bureaucratic_autocracy # Eldanær Stellar Authority uses this
 				}
 				replace_leader_as_governor = yes
@@ -1236,7 +1236,7 @@ try_add_demoted_ruler_governor_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_robotic_species = yes
 			}
 			add_trait = leader_trait_ai_aided_design
 		}
@@ -1255,7 +1255,7 @@ try_add_demoted_ruler_governor_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_robotic_species = yes
 			}
 			add_trait = leader_trait_warbot_tinkerer
 		}
@@ -1274,7 +1274,7 @@ try_add_demoted_ruler_governor_bonus_trait = {
 		limit = {
 			has_ruler_trait = trait_ruler_fertility_preacher
 			NOT = { has_trait = leader_trait_agrarian_upbringing }
-			is_machine_species = no
+			is_robotic_species = no
 		}
 		add_trait = leader_trait_agrarian_upbringing
 	}
@@ -1289,7 +1289,7 @@ try_add_demoted_ruler_governor_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_robotic_species = yes
 			}
 			add_trait = leader_trait_bulldozer
 		}
@@ -1308,7 +1308,7 @@ try_add_demoted_ruler_governor_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_robotic_species = yes
 			}
 			add_trait = leader_trait_analytical
 		}
@@ -1356,7 +1356,7 @@ try_add_demoted_ruler_scientist_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_robotic_species = yes
 			}
 			add_trait = leader_trait_cataloger
 		}
@@ -1484,7 +1484,7 @@ try_add_demoted_ruler_admiral_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_robotic_species = yes
 			}
 			add_trait = leader_trait_maintenance_loop
 		}
@@ -1536,7 +1536,7 @@ try_add_demoted_ruler_general_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_machine_species = yes # intentionally machine-only
 			}
 			add_trait = leader_trait_demoralizer
 		}
@@ -1554,7 +1554,7 @@ try_add_demoted_ruler_general_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_machine_species = yes # intentionally machine-only
 			}
 			add_trait = leader_trait_parts_cannibalizer
 		}
@@ -1580,7 +1580,7 @@ try_add_demoted_ruler_generic_bonus_trait = {
 		if = {
 			limit = {
 				has_synthethic_dawn = yes
-				is_machine_species = yes
+				is_robotic_species = yes
 			}
 			add_trait = leader_trait_flexible_programming
 		}
@@ -1998,7 +1998,7 @@ klfis_prepare_machine_to_mechanical_species = {
 klfis_prepare_cybernetic_species = {
 	optimize_memory
 	if = {
-		limit = { NOT = { has_global_flag = assimilate_all_the_pops_installed } }
+		limit = { has_assimilate_all_the_pops_active = no }
 		modify_species = {
 			species = event_target:prepared_species
 			add_trait = trait_cybernetic
@@ -2085,7 +2085,7 @@ klfis_prepare_unhive_species = {
 klfis_prepare_psionic_species = {
 	optimize_memory
 	if = {
-		limit = { NOT = { has_global_flag = assimilate_all_the_pops_installed } }
+		limit = { has_assimilate_all_the_pops_active = no }
 		modify_species = {
 			species = event_target:prepared_species
 			add_trait = trait_psionic

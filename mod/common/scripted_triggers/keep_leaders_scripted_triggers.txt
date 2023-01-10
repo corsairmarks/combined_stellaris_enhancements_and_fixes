@@ -326,7 +326,7 @@ is_possible_for_synthetic_assimilation = {
 # event_target:potential_owner = country
 is_possible_for_unmachine_assimilation = {
 	optimize_memory
-	has_global_flag = deassimilate_machines_installed
+	has_deassimilate_machines_active = yes
 	event_target:potential_owner = { is_potential_for_unmachine_assimilation_country = yes }
 	is_potential_for_unmachine_assimilation_species = yes
 }
@@ -566,9 +566,9 @@ is_potential_transfer_without_assimilation = {
 			OR = {
 				is_robotic_species_lenient = yes
 				AND = {
+					has_battle_thrall_military_leaders_active = yes
 					event_target:potential_owner = { has_valid_civic = civic_machine_servitor }
 					is_hive_species = no
-					has_global_flag = battle_thrall_military_leaders_installed
 				}
 			}
 		}
@@ -625,7 +625,7 @@ is_potential_transfer_with_assimilation = {
 			# eligible for necrophage is not assimilation so it is intentionally omitted here
 			OR = {
 				AND = {
-					has_global_flag = deassimilate_machines_installed
+					has_deassimilate_machines_active = yes
 					event_target:potential_owner = {
 						has_technology = tech_sapient_ai
 						allows_ai_leaders = yes

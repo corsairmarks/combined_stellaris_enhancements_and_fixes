@@ -6,8 +6,8 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		exists = FROM
-		FROM = {
+		exists = from
+		from = {
 			NOR = {
 				has_leader_flag = former_ruler
 				has_leader_flag = former_heir
@@ -15,7 +15,7 @@ country_event = {
 		}
 	}
 	immediate = {
-		FROM = { add_former_ruler_trait = yes }
+		from = { add_former_ruler_trait = yes }
 	}
 }
 
@@ -94,7 +94,7 @@ country_event = {
 				}
 				if = {
 					limit = { NOT = { has_trait = leader_trait_former_heir_governor } }
-					PREV = {
+					prev = {
 						change_variable = {
 							which = former_ruler_accumulator_governor
 							value = 1
@@ -102,7 +102,7 @@ country_event = {
 					}
 				}
 				else = {
-					PREV = {
+					prev = {
 						change_variable = {
 							which = former_heir_accumulator_governor
 							value = 1
@@ -121,7 +121,7 @@ country_event = {
 				}
 				if = {
 					limit = { NOT = { has_trait = leader_trait_former_heir_scientist } }
-					PREV = {
+					prev = {
 						change_variable = {
 							which = former_ruler_accumulator_scientist
 							value = 1
@@ -129,7 +129,7 @@ country_event = {
 					}
 				}
 				else = {
-					PREV = {
+					prev = {
 						change_variable = {
 							which = former_heir_accumulator_scientist
 							value = 1
@@ -149,7 +149,7 @@ country_event = {
 				}
 				if = {
 					limit = { NOT = { has_trait = leader_trait_former_heir_admiral } }
-					PREV = {
+					prev = {
 						change_variable = {
 							which = former_ruler_accumulator_admiral
 							value = 1
@@ -157,7 +157,7 @@ country_event = {
 					}
 				}
 				else = {
-					PREV = {
+					prev = {
 						change_variable = {
 							which = former_heir_accumulator_admiral
 							value = 1
