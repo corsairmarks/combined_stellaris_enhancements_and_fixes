@@ -26,7 +26,7 @@ If you like species traits that add leader traits, check out my mod [Leader Trai
 
 ## Compatibility
 
-Because this mod replaces several built-in objects, it is inherently incompatible with mods that alter the same objects.  While I doubt most mods will fiddle with the `can_be_military_leader` trigger it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one.  The only species right that this mod overrides is `military_service_full`.  To support Bio-Trophies as leaders, this mod also overrides three game rules: `can_generate_army_from_species`, `can_generate_leader_from_pop`, and `can_generate_leader_from_species`.
+Because this mod replaces several built-in objects, it is inherently incompatible with mods that alter the same objects.  While I doubt most mods will fiddle with the `can_be_military_leader` trigger it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one.  The only species right that this mod overrides is `military_service_full`.  To support Bio-Trophies as leaders, this mod also overrides four game rules: `can_generate_army_from_species`, `can_generate_leader_from_species`, `can_generate_leader_from_pop`, and `can_generate_military_leader_from_pop`.
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
