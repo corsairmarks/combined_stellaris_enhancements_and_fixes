@@ -46,7 +46,7 @@ country_event = {
 }
 
 # triggered by on_leader_level_up and on_leader_spawned
-# FROM = leader
+# from = leader
 country_event = {
 	id = ai_assistant_upgrader.2
 	is_triggered_only = yes
@@ -54,10 +54,10 @@ country_event = {
 	trigger = {
 		has_technology = tech_sapient_ai
 		NOT = { has_policy_flag = ai_outlawed }
-		FROM = { has_trait = leader_trait_custom_AI_assistant }
+		from = { has_trait = leader_trait_custom_AI_assistant }
 	}
 	immediate = {
-		FROM = { upgrade_custom_AI_assistant_to_sapient_AI_assistant = yes }
+		from = { upgrade_custom_AI_assistant_to_sapient_AI_assistant = yes }
 	}
 }
 
