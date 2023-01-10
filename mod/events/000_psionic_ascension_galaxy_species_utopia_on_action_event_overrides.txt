@@ -52,7 +52,7 @@ country_event = {
 					is_robotic = no
 					has_psionic_species_trait = no
 					OR = {
-						has_global_flag = assimilate_all_the_pops_installed
+						has_assimilate_all_the_pops_active = yes
 						NOT = { has_trait = trait_cybernetic }
 					}
 					count_species_pop = {
@@ -73,7 +73,7 @@ country_event = {
 				is_robotic = no
 				has_psionic_species_trait = no
 				OR = {
-					has_global_flag = assimilate_all_the_pops_installed
+					has_assimilate_all_the_pops_active = yes
 					NOT = { has_trait = trait_cybernetic }
 				}
 			}
@@ -219,7 +219,7 @@ country_event = {
 					has_trait = trait_latent_psionic
 					NOT = { has_trait = trait_psionic }
 					OR = {
-						has_global_flag = assimilate_all_the_pops_installed
+						has_assimilate_all_the_pops_active = yes
 						NOT = { has_trait = trait_cybernetic }
 					}
 					count_species_pop = {
@@ -241,7 +241,7 @@ country_event = {
 				has_trait = trait_latent_psionic
 				NOT = { has_trait = trait_psionic }
 				OR = {
-					has_global_flag = assimilate_all_the_pops_installed
+					has_assimilate_all_the_pops_active = yes
 					NOT = { has_trait = trait_cybernetic }
 				}
 			}

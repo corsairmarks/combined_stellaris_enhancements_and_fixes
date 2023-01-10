@@ -32,7 +32,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 5.0.0)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 5.0.0)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 6.1.0)
-* [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 3.0.0)
+* [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 4.0.0)
 * [Restored Content: Fungoids](https://steamcommunity.com/workshop/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 2.0.0)
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 7.0.0)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 3.1.0)
