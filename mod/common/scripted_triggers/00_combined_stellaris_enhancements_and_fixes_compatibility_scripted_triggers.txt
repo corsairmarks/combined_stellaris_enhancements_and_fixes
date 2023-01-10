@@ -1,0 +1,27 @@
+# supports features from my mod Assimilate All the Pops!
+# this = any
+has_assimilate_all_the_pops_active = {
+	optimize_memory
+	always = no
+}
+
+# supports features from my mod More Standard Districts
+# this = any
+has_more_standard_districts_active = {
+	optimize_memory
+	always = no
+}
+
+# supports features from my mod Gender Nonbinary Leaders
+# this = any
+has_nonbinary_leaders_active = {
+	optimize_memory
+	always = no
+}
+
+# supports Prison, Resort and Thrall Habitats: https://steamcommunity.com/sharedfiles/filedetails/?id=2905474716
+# this = any
+has_vp_prisonresortthrallhabitats = {
+	optimize_memory
+	always = no
+}

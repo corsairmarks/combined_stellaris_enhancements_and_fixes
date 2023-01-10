@@ -1,6 +1,0 @@
-# supports features from my mod Assimilate All the Pops!
-# this = any
-has_assimilate_all_the_pops_active = {
-	optimize_memory
-	always = no
-}
