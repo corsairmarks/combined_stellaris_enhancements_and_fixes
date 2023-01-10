@@ -27,6 +27,7 @@ The text describing the effects for Civic: Philosopher King has been edited to d
 * 1.0.2 Fix localisation for Chinese and Spanish - the files accidentally claimed to be English!
 * 1.1.0 Flagged as compatible with Stellaris version 3.4 "Cepheus" - no actual changes
 * 1.2.0 Flagged as compatible with Stellaris version 3.6 "Orion" - no actual changes
+* 1.3.0 Add a compatibility trigger for other mods to check whether this one is active
 
 ## Source Code
 
