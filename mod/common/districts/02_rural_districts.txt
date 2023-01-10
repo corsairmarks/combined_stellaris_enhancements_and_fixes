@@ -401,7 +401,7 @@ district_farming = {
 				is_fallen_empire_spiritualist = no
 				NAND = {
 					is_anglers_empire = yes
-					PREV = { planet = { is_wet = yes } }
+					prev = { planet = { is_wet = yes } }
 				}
 			}
 		}
@@ -447,7 +447,7 @@ district_farming = {
 				is_fallen_empire_spiritualist = no
 				NAND = {
 					is_anglers_empire = yes
-					PREV = { planet = { is_wet = yes } }
+					prev = { planet = { is_wet = yes } }
 				}
 			}
 		}
@@ -1038,7 +1038,7 @@ district_farming_uncapped = {
 				is_fallen_empire_spiritualist = no
 				NAND = {
 					is_anglers_empire = yes
-					PREV = { planet = { is_wet = yes } }
+					prev = { planet = { is_wet = yes } }
 				}
 			}
 		}
@@ -1084,7 +1084,7 @@ district_farming_uncapped = {
 				is_fallen_empire_spiritualist = no
 				NAND = {
 					is_anglers_empire = yes
-					PREV = { planet = { is_wet = yes } }
+					prev = { planet = { is_wet = yes } }
 				}
 			}
 		}
