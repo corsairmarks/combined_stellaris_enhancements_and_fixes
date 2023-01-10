@@ -27,7 +27,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/workshop/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 4.0.0)
 * [Game Start: Unity Fund](https://steamcommunity.com/sharedfiles/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 2.1.0)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 5.0.0)
-* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 5.0.1)
+* [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 5.1.0)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.2.0)
 * [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 5.0.0)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 5.0.0)
