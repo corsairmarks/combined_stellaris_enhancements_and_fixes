@@ -40,12 +40,6 @@ However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-T
 
 ## Known Issues
 
-### Stellaris Bugs
-
-When cloning a leader and changing them from a species class without gender to a species class with gender (or vice versa) the Leader screen interface breaks. The Leader screen does not hide the replaced leader or correctly show their replacement until the player manually recruits a new leader.
-
-### Error Logs
-
 This mod overrides a built-in trigger `can_be_military_leader` and a species rights `military_service_full` and `military_service_limited`.  These overrides each cause the game to log an error, so expect to see three lines in error.log like this:
 
 ```
