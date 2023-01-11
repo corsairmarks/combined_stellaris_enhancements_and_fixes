@@ -34,7 +34,7 @@ Overriding a district causes the game to log errors noting the overrides.  Expec
 
 ## Source Code
 
-Hosted on [GitHub](https://github.com/corsairmarks/)
+Hosted on [GitHub](https://github.com/corsairmarks/district_leisure_cultural)
 
 ### Development Notes
 
