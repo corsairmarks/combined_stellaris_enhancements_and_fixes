@@ -21,7 +21,7 @@ Overriding a building, deposit, or economic category causes the game to log erro
 [15:16:56][game_singleobjectdatabase.h:165]: Object with key: d_betharian_deposit already exists, using the one at  file: common/deposits/11_building_deposit_enhancements_planetary_deposit_overrides.txt line: 8
 [/code]
 [h2]Changelog[/h2]
-See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/]Change Notes[/url]
+See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2916269980]Change Notes[/url]
 
 [h2]Source Code[/h2]
 Hosted on [url=https://github.com/corsairmarks/building_deposit_enhancements]GitHub[/url]
