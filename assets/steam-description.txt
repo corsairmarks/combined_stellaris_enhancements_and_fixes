@@ -19,14 +19,14 @@ Compatible with any mod that does not overwrite the same buildings.  For mods th
 
 Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
+[h3]When to Install[/h3]
+This mod can be safely added to your savegame after the game has started.  If you remove it, your game should function normally, although you will likely have Ruler Pops become unemployed as capital building jobs shift back to normal Politician jobs.  Always back up your savegame before trying to remove a mod.
+
 [h3]Recommended Companion Mods[/h3]
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] enhances the built-in trade-related districts to provide extra Merchant and Clerk jobs based on civics, traditions, and colony designations
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194]More Standard Districts[/url] adds more district types to planets and habitats based on the types of districts available for other types of planets: Unity-generation, Military, Research, and Commercial
 [/list]
-[h3]When to Install[/h3]
-This mod can be safely added to your savegame after the game has started.  If you remove it, your game should function normally, although you will likely have Ruler Pops become unemployed as capital building jobs shift back to normal Politician jobs.  Always back up your savegame before trying to remove a mod.
-
 [h2]Known Issues[/h2]
 This mod overwrites five buildings, so expect to see five errors in your error.log similar to these:
 [code]
