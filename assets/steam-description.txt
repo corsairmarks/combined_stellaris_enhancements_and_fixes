@@ -14,11 +14,8 @@ Bio-Trophies seemed like another candidate for being leaders under special condi
 
 Finally, as a minor quality-of-life enhancement, I have also attached an event to [b]on_fleet_destroyed_perp[/b] that will fire after [b]leader.1[/b] (captain promoted to admiral) has generated a leader of the owner's main species. This allows the species of that leader to be rerolled if the empire in question allows Full Military Service for any non-main species - including Battle Thralls and Bio-Trophies.
 
-[h2]When to Install[/h2]
-This mod can be safely added to your savegame after the game has started, but not removed. Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service. If you'd like to find out, make a backup of your savegame before experimenting.
-
-[h2]Recommended Companion Mods[/h2]
-If you like species traits that add leader traits, check out my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url]. It is fully compatible with this mod. The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
+[h2]Localisation[/h2]
+This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
 
 [h2]Compatibility[/h2]
 Because this mod replaces several built-in objects, it is inherently incompatible with mods that alter the same objects. While I doubt most mods will fiddle with the [b]can_be_military_leader[/b] trigger it is likely any mods that are altering citizenship, military service, and/or slavery type could overlap with this one. The only species rights this mod overrides are [b]military_service_full[/b] and [b]military_service_limited[/b]. To support Bio-Trophies as leaders, this mod also overrides four game rules: [b]can_generate_army_from_species[/b], [b]can_generate_leader_from_species[/b], [b]can_generate_leader_from_pop[/b], and [b]can_generate_military_leader_from_pop[/b].
@@ -27,10 +24,13 @@ This mod is specifically engineered to be compatible with my other mod that affe
 
 Built for Stellaris version 3.6 "Orion." This mod is not compatible with achievements.
 
-[h2]Localisation[/h2]
-This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
-
 However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing. The English text is used as a placeholder for other languages. If you want to translate it into your language, please leave a comment or message me.
+
+[h3]When to Install[/h3]
+This mod can be safely added to your savegame after the game has started, but not removed. Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service. If you'd like to find out, make a backup of your savegame before experimenting.
+
+[h3]Recommended Companion Mods[/h3]
+If you like species traits that add leader traits, check out my mod [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url]. It is fully compatible with this mod. The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
 
 [h2]Known Issues[/h2]
 This mod overrides a built-in trigger [b]can_be_military_leader[/b] and a species rights [b]military_service_full[/b] and [b]military_service_limited[/b]. These overrides each cause the game to log an error, so expect to see two lines in error.log like this:

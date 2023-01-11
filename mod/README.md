@@ -16,13 +16,11 @@ Bio-Trophies seemed like another candidate for being leaders under special condi
 
 Finally, as a minor quality-of-life enhancement, I have also attached an event to `on_fleet_destroyed_perp` that will fire after `leader.1` (captain promoted to admiral) has generated a leader of the owner's main species.  This allows the species of that leader to be rerolled if the empire in question allows Full Military Service for any non-main species - including Battle Thralls and Bio-Trophies.
 
-## When to Install
+## Localisation
 
-This mod can be safely added to your savegame after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
+This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
 
-## Recommended Companion Mods
-
-If you like species traits that add leader traits, check out my mod [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295).  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
+However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing.  The English text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
 
 ## Compatibility
 
@@ -30,13 +28,15 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
-Built for Stellaris version 3.4 "Cepheus."  This mod is not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  This mod is not compatible with achievements.
 
-## Localisation
+### When to Install
 
-This mod is somewhat localized for every language supported by Stellaris - mainly because it reuses the built-in localisation.
+This mod can be safely added to your savegame after the game has started, but not removed.  Because this mod alters the game rules, removing it could result in problems as the game detects a now-invalid citizenship/military service combination - or it might just force your Battle Thralls out of military full service.  If you'd like to find out, make a backup of your savegame before experimenting.
 
-However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing.  The English text is used as a placeholder for other languages.  If you want to translate it into your language, please leave a comment or message me.
+### Recommended Companion Mods
+
+If you like species traits that add leader traits, check out my mod [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/sharedfiles/filedetails/?id=2499031295).  It is fully compatible with this mod.  The most notable interaction occurs when your Battle Thrall species is chosen for becoming a random admiral after destroying an enemy fleet - with this mod your promoted captains will properly gain their species traits.
 
 ## Known Issues
 
