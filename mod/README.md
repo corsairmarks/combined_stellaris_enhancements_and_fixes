@@ -16,16 +16,16 @@ Because the extra Roboticist job is added via a planetary modifier, that means i
 
 This mod also overwrites the `district_industrial` in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.  What this means to you is that this mod is not compatible with other mods that alter industrial districts or (much more unlikely) the Machine World Factory colony designation.
 
+### When to Install
+
+This mod can be safely added to your savegame after the game has started.  Because it adds static modifiers for planets, it is not advisable to remove during gameplay.  If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested.  Back up your savegame before trying to remove a mod.
+
 ### Recommended Companion Mods
 
 * [Deassimilate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372) allows you to deassimilate machine Pops into Robots, and is the original inspiration for Deassimilated Machine Worlds.
 * [Retain Leaders from Integrated Subjects](https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684) will allow you to keep Machine Unit leaders from integrated machine empire subjects by converting them to robots and setting their species to deassimilation.  Combined with Leader Traits: All Eligible Species Traits, the leaders are converted to have synth leader traits if you have the right technology.
 
 Together with the above two mods, you're more likely to obtain a Machine World as a non-Machine empire.
-
-### When to Install
-
-This mod can be safely added to your savegame after the game has started.  Because it adds static modifiers for planets, it is not advisable to remove during gameplay.  If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested.  Back up your savegame before trying to remove a mod.
 
 ## Known Issues
 

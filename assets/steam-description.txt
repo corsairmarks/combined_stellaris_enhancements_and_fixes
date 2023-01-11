@@ -13,15 +13,15 @@ Because the extra Roboticist job is added via a planetary modifier, that means i
 
 This mod also overwrites the [b]district_industrial/b] in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the [b]col_mac_factory[/b] (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.  What this means to you is that this mod is not compatible with other mods that alter industrial districts or (much more unlikely) the Machine World Factory colony designation.
 
+[h3]When to Install[/h3]
+This mod can be safely added to your savegame after the game has started.  Because it adds static modifiers for planets, it is not advisable to remove during gameplay.  If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested.  Back up your savegame before trying to remove a mod.
+
 [h3]Recommended Companion Mods[/h3]
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimilate Machines[/url] allows you to deassimilate machine Pops into Robots, and is the original inspiration for Deassimilated Machine Worlds.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] will allow you to keep Machine Unit leaders from integrated machine empire subjects by converting them to robots and setting their species to deassimilation.  Combined with Leader Traits: All Eligible Species Traits, the leaders are converted to have synth leader traits if you have the right technology.
 [/list]
 Together with the above two mods, you're more likely to obtain a Machine World as a non-Machine empire.
-
-[h3]When to Install[/h3]
-This mod can be safely added to your savegame after the game has started.  Because it adds static modifiers for planets, it is not advisable to remove during gameplay.  If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested.  Back up your savegame before trying to remove a mod.
 
 [h2]Known Issues[/h2]
 Overriding the district, colony designation, and deposit causes the game to log three errors like this:
