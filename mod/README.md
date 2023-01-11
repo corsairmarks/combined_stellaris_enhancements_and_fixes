@@ -12,7 +12,11 @@ As the title suggests, this mod overwrites the entries for the Betharian Power P
 
 Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
-### Known Issues
+### When to Install
+
+This mod can be safely added or removed after the game has started. It only replaces default game objects, but may cause unemployment or negative generator districts when removed.  Back up your savegame before trying to remove a mod, even this one.
+
+## Known Issues
 
 Overriding a building, deposit, or economic category causes the game to log errors noting the overrides.  Expect to see four lines in the error.log file like these:
 
