@@ -24,8 +24,8 @@ This mod can be safely added or removed after the game has started. It only repl
 Overriding a district causes the game to log errors noting the overrides.  Expect to see two lines in the error.log file like these:
 
 ```
-[15:16:48][game_singleobjectdatabase.h:165]: Object with key: district_arcology_leisure already exists, using the one at  file: common/districts/11_building_deposit_enhancements_arcology_district_overrides.txt line: 1
-[15:16:48][game_singleobjectdatabase.h:165]: Object with key: district_hab_cultural already exists, using the one at  file: common/districts/13_building_deposit_enhancements_habitat_district_overrides.txt line: 5
+[01:13:24][game_singleobjectdatabase.h:165]: Object with key: district_arcology_leisure already exists, using the one at  file: common/districts/11_district_leisure_cultural_arcology_district_overrides.txt line: 1
+[01:13:24][game_singleobjectdatabase.h:165]: Object with key: district_hab_cultural already exists, using the one at  file: common/districts/13_district_leisure_cultural_habitat_district_overrides.txt line: 5
 ```
 
 ## Changelog
