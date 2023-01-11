@@ -12,7 +12,7 @@ This mod can be safely added or removed after the game has started. It only repl
 
 [h3]Recommended Companion Mods[/h3]
 [list]
-[*][url=]Buildings: Betharian Power Plant and Alien Zoo - Enhanced[/url] adds Culture Workers back to the Alien Zoo - for people of culture, like you!
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2916269980]Buildings: Betharian Power Plant and Alien Zoo - Enhanced[/url] adds Culture Workers back to the Alien Zoo - for people of culture, like you!
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2650611194]More Standard Districts[/url] recognizes when this mod is active and also adjusts its planetary Leisure Districts to support 1 Entertainer job and 1 Culture Worker job
 [/list]
 [h2]Known Issues[/h2]
