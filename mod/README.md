@@ -25,15 +25,15 @@ Compatible with Planetary Diversity and Gigastructural Engineering (does not mod
 
 Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
-### Recommended Companion Mods
-
-[Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) to add a trade-focused colony designation and district to ecumenopolis worlds.
-
 ### When to Install
 
 This mod can be safely added to your savegame after the game has started.  Because it adds gameplay objects, it should not be removed during a game.
 
-### Known Issues
+### Recommended Companion Mods
+
+[Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) to add a trade-focused colony designation and district to ecumenopolis worlds.
+
+## Known Issues
 
 Overwriting a colony type or district produces an error log.  Expect to see nine entries in error.log similar to these:
 
