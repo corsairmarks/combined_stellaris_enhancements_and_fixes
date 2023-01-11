@@ -1,6 +1,8 @@
 [h1]Overview[/h1]
 Feeling un-energized by Betharian Power Plants? Or un-entertained by Alien Zoos? Then this mod is for you! Betharian Power Plants provide a hefty boost to Technician base energy output and add extra generator district slots to the planet. Now that Betharian Stone can be put to good use powering your empire's progress! Alien Zoos have once again found space for a Culture Worker job, as well as an additional Culture Worker per 25 Pops. On top of that, the Zoo boosts Culture Worker output by 15%. Celebrate the supremacy of your empire's culture and achievement in gathering specimens from across the galaxy!
 
+Requested by [url=https://steamcommunity.com/profiles/76561198035019113]Peter34[/url].
+
 [h1]Changes[/h1]
 Betharian Power Plants boost Technician output by base energy output by +2 and provide +4 generator district slots to the planet. Alien Zoos provide +2 Entertainer jobs and +1 Culture Worker job, as +1 additional Culture Worker job per 25 Pops, and +15% Culture Worker output.
 
