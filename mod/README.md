@@ -53,6 +53,7 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
     * Add a compatibility trigger for other mods to check whether this one is active
     * Consume the compatibility triggers from other mods
     * Remove old compatibility global flag
+* 4.0.1 Stop Aquaponics Farms buildings for gestalts from auto-destroying themselves and turning back into Hydroponics Farms
 
 ## Source Code
 
