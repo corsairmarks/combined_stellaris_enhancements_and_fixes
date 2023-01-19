@@ -18,18 +18,19 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 7.0.0)
 * [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 4.0.0)
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 4.0.0)
-* [Buildings: Betharian Power Plant and Alien Zoo - Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 1.0.0)
-* [Civic: Philosopher King - Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) at 1.3.0)
+* [Buildings: Betharian Power Plant and Alien Zoo - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 1.0.0)
+* [Civic: Philosopher King - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) at 1.3.0)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 6.0.0)
 * [Colony Designations: Capital Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 4.0.0)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/workshop/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 5.0.0)
 * [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 6.0.0)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/workshop/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 6.0.0)
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/workshop/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 5.0.0)
-* [Game Start: Unity Fund](https://steamcommunity.com/sharedfiles/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 2.1.0)
+* [Game Start: Unity Fund](https://steamcommunity.com/workshop/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 2.1.0)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 5.0.0)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 5.1.0)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.2.0)
+* [Leisure Districts for People of Culture](https://steamcommunity.com/workshop/filedetails/?id=2916289268) ([Source](https://github.com/corsairmarks/district_leisure_cultural) 1.0.0)
 * [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 5.0.0)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 5.0.0)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 6.1.0)
@@ -198,5 +199,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 7.0.1 Update merged mod: Primitive Conquest Enhancements at 6.0.1
 * 7.0.2 Update merged mod: Deassimilate Machines at 5.0.1
 * 7.0.3 Update most merged mods with global flag-to-trigger conversion
-* 7.1.0 Add new mod!
+* 7.1.0 Add new mods!
     * Added: Buildings: Betharian Power Plant and Alien Zoo - Enhanced at 1.0.0
+    * Added: Leisure Districts for People of Culture at 1.0.0
