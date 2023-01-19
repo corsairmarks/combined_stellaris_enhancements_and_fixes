@@ -18,6 +18,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 7.0.0)
 * [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 4.0.0)
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 4.0.0)
+* [Buildings: Betharian Power Plant and Alien Zoo - Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 1.0.0)
 * [Civic: Philosopher King - Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) at 1.3.0)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 6.0.0)
 * [Colony Designations: Capital Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 4.0.0)
@@ -197,3 +198,5 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 7.0.1 Update merged mod: Primitive Conquest Enhancements at 6.0.1
 * 7.0.2 Update merged mod: Deassimilate Machines at 5.0.1
 * 7.0.3 Update most merged mods with global flag-to-trigger conversion
+* 7.1.0 Add new mod!
+    * Added: Buildings: Betharian Power Plant and Alien Zoo - Enhanced at 1.0.0
