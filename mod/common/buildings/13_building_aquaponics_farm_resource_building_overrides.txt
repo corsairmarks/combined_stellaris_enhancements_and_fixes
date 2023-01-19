@@ -23,19 +23,18 @@ building_hydroponics_farm = {
 
 	destroy_trigger = {
 		exists = owner
-		OR = {
-			owner = {
-				is_ai = yes
+		owner = {
+			is_ai = yes
+			OR = {
 				country_uses_food = no
-			}
-			planet = {
-				NOT = { is_planet_class = pc_habitat }
-				free_building_slots = 0
-				owner = {
-					is_ai = yes
+				AND = {
 					has_monthly_income = {
 						resource = food
 						value > 100
+					}
+					prev = {
+						NOT = { is_planet_class = pc_habitat }
+						free_building_slots = 0
 					}
 				}
 			}
