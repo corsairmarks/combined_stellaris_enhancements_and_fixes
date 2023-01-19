@@ -21,24 +21,18 @@ building_aquaponics_farm = {
 
 	destroy_trigger = {
 		exists = owner
-		OR = {
-			owner = {
-				OR = {
-					is_gestalt = yes
-					AND = {
-						is_ai = yes
-						country_uses_food = no
-					}
-				}
-			}
-			planet = {
-				NOT = { is_planet_class = pc_habitat }
-				free_building_slots = 0
-				owner = {
-					is_ai = yes
+		owner = {
+			is_ai = yes
+			OR = {
+				country_uses_food = no
+				AND = {
 					has_monthly_income = {
 						resource = food
 						value > 100
+					}
+					prev = {
+						NOT = { is_planet_class = pc_habitat }
+						free_building_slots = 0
 					}
 				}
 			}
@@ -156,10 +150,6 @@ building_aquaponics_farm = {
 		text = job_aquaculture_drone_effect_desc
 	}
 
-	convert_to = {
-		building_hydroponics_farm
-	}
-
 	upgrades = {
 		"building_aquaponics_farm_2"
 	}
@@ -192,24 +182,18 @@ building_aquaponics_farm_2 = {
 
 	destroy_trigger = {
 		exists = owner
-		OR = {
-			owner = {
-				OR = {
-					is_gestalt = yes
-					AND = {
-						is_ai = yes
-						country_uses_food = no
-					}
-				}
-			}
-			planet = {
-				NOT = { is_planet_class = pc_habitat }
-				free_building_slots = 0
-				owner = {
-					is_ai = yes
+		owner = {
+			is_ai = yes
+			OR = {
+				country_uses_food = no
+				AND = {
 					has_monthly_income = {
 						resource = food
 						value > 100
+					}
+					prev = {
+						NOT = { is_planet_class = pc_habitat }
+						free_building_slots = 0
 					}
 				}
 			}
@@ -325,10 +309,6 @@ building_aquaponics_farm_2 = {
 			owner = { is_gestalt = yes }
 		}
 		text = job_aquaculture_drone_effect_desc
-	}
-
-	convert_to = {
-		building_hydroponics_farm
 	}
 
 	prerequisites = {
