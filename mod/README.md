@@ -1,6 +1,6 @@
 # Overview
 
-Like the idea of enlightened authoritarian rulers with Civic: Philosopher King but feel a bit underwhelmed at its actual affects?  Then this mod is for you!  It lightly enhances Civic: Philosopher King to have effects similar to those added to Civic: Distinguished Admiralty in Stellaris version 3.3 "Libra:" Rulers and Governors begin with +2 levels.
+Like the idea of enlightened authoritarian rulers with Civic: Philosopher King but feel a bit underwhelmed at its actual affects?  Then this mod is for you!  It lightly enhances Civic: Philosopher King to have effects similar to those added to Civic: Distinguished Admiralty in Stellaris version 3.3 "Libra:" Rulers and Governors begin with +2 levels.  Note that this means initial rulers at the start of the game begin at level 4 as opposed to the standard level 2.
 
 # Changes
 
