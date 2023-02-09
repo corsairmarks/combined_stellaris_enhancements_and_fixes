@@ -1,3 +1,7 @@
+# Modified:
+# * no need to kill and then create Pops for synthetic assimilation
+# * explicitly check that a species is undergoing synthetic assimilation if an empire has it available, instead of assuming
+# * any robot Pops can be synthetically assimilated by machine empires, not only those with the built-in traits trait_mechanical or trait_machine_unit
 # this = planet
 assimilation_effect = {
 	optimize_memory
@@ -10,16 +14,12 @@ assimilation_effect = {
 		}
 		if = { # synthetic assimilation
 			limit = {
+				has_living_standard = {
+					type = living_standard_tech_assimilation
+					country = prev
+				}
 				OR = {
-					AND = {
-						owner = { has_country_flag = synth_assimilation }
-						NOT = {
-							has_living_standard = {
-								type = living_standard_deassimilation_machine
-								country = owner
-							}
-						}
-					}
+					owner = { has_country_flag = synth_assimilation }
 					AND = {
 						is_robot_pop = yes
 						owner = {
@@ -29,46 +29,39 @@ assimilation_effect = {
 					}
 				}
 			}
-			kill_pop = yes
-			prev = {
-				create_pop = {
-					species = owner
-					ethos = owner
-				}
-				owner = {
-					if = {
-						limit = { has_ascension_perk = ap_become_the_crisis }
-						complete_crisis_objective = crisobj_purge_pops
-					}
+			change_species = owner_main_species
+			owner = {
+				if = {
+					limit = { has_ascension_perk = ap_become_the_crisis }
+					complete_crisis_objective = crisobj_purge_pops
 				}
 			}
 		}
 		else = { # everything else
-			species = { save_event_target_as = assimilating_species }
+			species = { save_event_target_as = old_species }
 			random_galaxy_species = {
 				limit = {
 					has_species_flag = assimilation_species_of_species@prev.species
 					has_species_flag = assimilation_species_of_empire@prev.owner
 				}
-				save_event_target_as = assimilated_species
+				save_event_target_as = convert_to_species
 			}
 			if = {
-				limit = { exists = event_target:assimilated_species } # should always exist
+				limit = { exists = event_target:convert_to_species } # should always exist
 				prev = {
 					while = { # to avoid doing the random_galaxy_species thing too many times
 						limit = {
-							exists = event_target:assimilating_species
+							exists = event_target:old_species
 							check_variable = {
 								which = assimilation_counter
 								value > 0
 							}
-							any_owned_pop = { is_exact_same_species = event_target:assimilating_species }
+							any_owned_pop = { is_exact_same_species = event_target:old_species }
 						}
 						random_owned_pop = {
-							limit = { is_exact_same_species = event_target:assimilating_species }
-							change_species = event_target:assimilated_species
-							set_post_assimilation_minimum_citizenship_pop = yes
-							set_post_assimilation_minimum_living_standard_pop = yes
+							limit = { is_exact_same_species = event_target:old_species }
+							change_species = event_target:convert_to_species
+							apply_post_assimilation_effects = yes
 						}
 						owner = {
 							if = {
