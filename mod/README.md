@@ -204,3 +204,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Added: Leisure Districts for People of Culture at 1.0.0
     * Updated: Building: Aquaponics Farms at 4.0.1
 * 7.1.1 Update merged mod: Ringworld Graphical Enhancements at 3.2.0
+* 7.1.2 Update merged mods:
+    * Deassimilate Machines at 7.0.0
+    * Retain Leaders from Integrated Subjects at 7.1.0
