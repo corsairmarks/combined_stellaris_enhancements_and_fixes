@@ -4,6 +4,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/technologies/tech_sapient_ai.dds"
 	}
 	spriteType = {
+		name = "GFX_icon_tech_gene_banks_alternate"
+		texturefile = "gfx/interface/icons/technologies/tech_gene_banks.dds"
+	}
+	spriteType = {
 		name = "GFX_klfis_event_icon_bg_blank"
 		texturefile = "gfx/interface/icons/situation_log/situations/approaches/klfis_event_icon_bg_blank.dds"
 	}

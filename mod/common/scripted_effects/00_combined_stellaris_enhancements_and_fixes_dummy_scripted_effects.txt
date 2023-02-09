@@ -1,0 +1,5 @@
+# from Civic: Organic Zealots
+# set up a species for cybernetic deassimilation
+# this = something with a species (country, leader, pop, etc)
+# prev = country (assimilator)
+coz_prepare_uncyborg_species = { }

@@ -17,7 +17,7 @@ defined_text = { # scope with species
 defined_text = { # scope with species
 	name = GetSpeciesPreviouslyUnitDrone
 	text = {
-		trigger = { is_organic_species = yes }
+		trigger = { is_robotic_species = no }
 		localization_key = getunitdrone_unit
 	}
 	text = {

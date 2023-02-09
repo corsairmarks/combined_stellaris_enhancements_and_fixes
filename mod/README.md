@@ -36,7 +36,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 6.1.0)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 4.0.0)
 * [Restored Content: Fungoids](https://steamcommunity.com/workshop/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 2.0.0)
-* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 7.0.0)
+* [Retain Leaders from Integrated Subjects](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 7.1.0)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 3.2.0)
 * [Special Leadership Privileges for Battle Thralls and Bio-Trophies](https://steamcommunity.com/workshop/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 6.0.2)
 * ["Terraform" to Tomb World](https://steamcommunity.com/workshop/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 6.0.0)
