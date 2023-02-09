@@ -1,5 +1,5 @@
 # calculate the total magistrate jobs that would be added to a planet by d_civic_byzantine_bureaucracy_capital
-# result stored in variable num_magistrate_jobs_from_deposit; called must clear the variable after using it
+# result stored in variable num_magistrate_jobs_from_deposit; caller must clear the variable after using it
 # important: math here matches the amound added by the implementation of d_civic_byzantine_bureaucracy_capital
 # scope = planet
 calculate_total_magistrate_jobs_from_deposit = {
