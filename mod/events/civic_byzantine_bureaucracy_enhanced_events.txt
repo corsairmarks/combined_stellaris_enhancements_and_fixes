@@ -10,114 +10,111 @@ planet_event = {
 	trigger = {
 		exists = owner
 		owner = { has_valid_civic = civic_byzantine_bureaucracy }
+		exists = from
+		from.owner = { is_country = prev.owner }
+		from = {
+			is_scope_type = planet
+			has_deposit = d_civic_byzantine_bureaucracy_capital
+		}
+	}
 	}
 	immediate = {
 		add_deposit = d_civic_byzantine_bureaucracy_capital
 		save_event_target_as = new_country_capital
-		if = {
-			limit = {
-				exists = from
-				from.owner = { is_country = prev.owner }
-				from = {
-					is_scope_type = planet
-					has_deposit = d_civic_byzantine_bureaucracy_capital
+		# calculate the jobs created by the deposit on the target planet
+		calculate_total_magistrate_jobs_from_deposit = yes
+		from = {
+			# calculate the jobs created by the deposit on the source planet
+			calculate_total_magistrate_jobs_from_deposit = yes
+			# count actually-worked magistrate jobs on the source planet
+			set_variable = {
+				which = num_magistrate_jobs
+				value = 0
+			}
+			every_owned_pop = {
+				limit = { has_job = magistrate }
+				set_timed_pop_flag = {
+					flag = former_magistrate
+					days = 7
+				}
+				prev = {
+					change_variable = {
+						which = num_magistrate_jobs
+						value = 1
+					}
 				}
 			}
-			# calculate the jobs created by the deposit on the target planet
-			calculate_total_magistrate_jobs_from_deposit = yes
-			from = {
-				# calculate the jobs created by the deposit on the source planet
-				calculate_total_magistrate_jobs_from_deposit = yes
-				# count actually-worked magistrate jobs on the source planet
-				set_variable = {
-					which = num_magistrate_jobs
-					value = 0
+			if = {
+				limit = {
+					exists = sector
+					exists = prev.sector
+					sector = { is_same_value = prevprev.sector }
 				}
-				every_owned_pop = {
-					limit = { has_job = magistrate }
-					set_timed_pop_flag = {
-						flag = former_magistrate
-						days = 7
+				remove_deposit = d_civic_byzantine_bureaucracy_capital
+				# Pops intentionally move to follow the empire capital even when it changes within the same sector;
+				# I want them to feel semi-autonomous as described
+			}
+			set_variable = {
+				which = num_planet_pops
+				value = trigger:num_pops
+			}
+			while = {
+				limit = {
+					# minimum of: Pops - 1, worked source jobs, source jobs from deposit, target jobs from deposit
+					check_variable = {
+						which = num_planet_pops
+						value > 1
+					}
+					check_variable = {
+						which = num_magistrate_jobs
+						value > 0
+					}
+					check_variable = {
+						which = num_magistrate_jobs_from_deposit
+						value > 0
 					}
 					prev = {
-						change_variable = {
-							which = num_magistrate_jobs
-							value = 1
-						}
-					}
-				}
-				if = {
-					limit = {
-						exists = sector
-						exists = prev.sector
-						sector = { is_same_value = prevprev.sector }
-					}
-					remove_deposit = d_civic_byzantine_bureaucracy_capital
-					# Pops intentionally move to follow the empire capital even when it changes within the same sector;
-					# I want them to feel semi-autonomous as described
-				}
-				set_variable = {
-					which = num_planet_pops
-					value = trigger:num_pops
-				}
-				while = {
-					limit = {
-						# minimum of: Pops - 1, worked source jobs, source jobs from deposit, target jobs from deposit
-						check_variable = {
-							which = num_planet_pops
-							value > 1
-						}
-						check_variable = {
-							which = num_magistrate_jobs
-							value > 0
-						}
 						check_variable = {
 							which = num_magistrate_jobs_from_deposit
 							value > 0
 						}
-						prev = {
-							check_variable = {
-								which = num_magistrate_jobs_from_deposit
-								value > 0
-							}
-						}
 					}
-					random_owned_pop = {
-						limit = { has_pop_flag = former_magistrate }
-						unemploy_pop = yes
-						clear_pop_category = yes
-						remove_pop_flag = former_magistrate
-						resettle_pop = {
-							pop = this
-							planet = event_target:new_country_capital
-						}
+				}
+				random_owned_pop = {
+					limit = { has_pop_flag = former_magistrate }
+					unemploy_pop = yes
+					clear_pop_category = yes
+					remove_pop_flag = former_magistrate
+					resettle_pop = {
+						pop = this
+						planet = event_target:new_country_capital
 					}
-					change_variable = {
-						which = num_planet_pops
-						value = -1
-					}
-					change_variable = {
-						which = num_magistrate_jobs
-						value = -1
-					}
+				}
+				change_variable = {
+					which = num_planet_pops
+					value = -1
+				}
+				change_variable = {
+					which = num_magistrate_jobs
+					value = -1
+				}
+				change_variable = {
+					which = num_magistrate_jobs_from_deposit
+					value = -1
+				}
+				prev = {
 					change_variable = {
 						which = num_magistrate_jobs_from_deposit
 						value = -1
 					}
-					prev = {
-						change_variable = {
-							which = num_magistrate_jobs_from_deposit
-							value = -1
-						}
-					}
 				}
-				clear_variable = num_magistrate_jobs_from_deposit
-				clear_variable = num_magistrate_jobs
-				clear_variable = num_planet_pops
 			}
-
 			clear_variable = num_magistrate_jobs_from_deposit
+			clear_variable = num_magistrate_jobs
+			clear_variable = num_planet_pops
 		}
+
+		clear_variable = num_magistrate_jobs_from_deposit
 	}
 }
 
