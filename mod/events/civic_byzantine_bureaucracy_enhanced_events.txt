@@ -17,7 +17,6 @@ planet_event = {
 			has_deposit = d_civic_byzantine_bureaucracy_capital
 		}
 	}
-	}
 	immediate = {
 		add_deposit = d_civic_byzantine_bureaucracy_capital
 		save_event_target_as = new_country_capital
