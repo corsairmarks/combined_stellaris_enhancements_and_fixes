@@ -11,13 +11,13 @@ on_monthly_pulse_country = {
 # from = species, founder
 empire_init_capital_planet = {
 	events = {
-		civic_byzantine_bureaucracy_enhanced.1
+		civic_byzantine_bureaucracy_enhanced.6
 	}
 }
 
 # fired when the location of an country's capital changes and when a country's capital is first set e.g. during galaxy creation (but then from is not set)
-# this = capital, new
-# from = capital, previous (may be unset)
+# root = planet, (new capital)
+# from = planet, (former capital, if any)
 on_capital_changed = {
 	events = {
 		civic_byzantine_bureaucracy_enhanced.1
@@ -27,6 +27,7 @@ on_capital_changed = {
 # fired whenever a new owner is set for a planet, be it after a war or through a trade
 # this = planet
 # from = country (new owner)
+# fromfrom = country (former owner, if any)
 on_planet_transfer = {
 	events = {
 		civic_byzantine_bureaucracy_enhanced.3
