@@ -62,7 +62,7 @@ magistrate = {
 			owner = { has_valid_civic = civic_efficient_bureaucracy }
 		}
 		country_edict_fund_add = 2
-		mult = value:job_total_output_modifier|JOB|bureaucrat|RESOURCE|unity|
+		mult = value:job_total_output_modifier|JOB|magistrate|RESOURCE|unity|
 	}
 	triggered_planet_modifier = {
 		potential = {
