@@ -16,8 +16,8 @@ empire_init_capital_planet = {
 }
 
 # fired when the location of an country's capital changes and when a country's capital is first set e.g. during galaxy creation (but then from is not set)
-# root = planet, (new capital)
-# from = planet, (former capital, if any)
+# root = planet (new capital)
+# from = planet (former capital, if any)
 on_capital_changed = {
 	events = {
 		civic_byzantine_bureaucracy_enhanced.1

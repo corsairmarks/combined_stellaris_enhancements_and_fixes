@@ -1,8 +1,8 @@
 namespace = civic_byzantine_bureaucracy_enhanced
 
 # triggered by on_capital_changed
-# root = planet, (new capital)
-# from = planet, (former capital, if any)
+# root = planet (new capital)
+# from = planet (former capital, if any)
 planet_event = {
 	id = civic_byzantine_bureaucracy_enhanced.1
 	hide_window = yes
