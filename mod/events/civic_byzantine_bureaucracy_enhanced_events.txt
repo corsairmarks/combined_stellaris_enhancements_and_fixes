@@ -52,7 +52,7 @@ planet_event = {
 				}
 				log = "Country capital for [Root.Owner.GetRealName] moved - relocating capital-based magistrates"
 				log = "Previous capital planet [This.GetName] (sector [This.Sector.GetName]): [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
-				log = "New capital planet [new_capital.GetName] (sector [This.Sector.GetName]): [new_capital.num_magistrate_jobs_from_deposit_target] from deposit"
+				log = "New capital planet [new_capital.GetName] (sector [new_capital.Sector.GetName]): [new_capital.num_magistrate_jobs_from_deposit_target] from deposit"
 				# if the capital was moved to planet is a different sector, the source planet may still be a sector capital
 				if = {
 					limit = { is_sector_capital = no }
