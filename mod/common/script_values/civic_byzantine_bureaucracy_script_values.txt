@@ -9,14 +9,10 @@ capital_triggered_job_magistrate = {
 	}
 	modifier = {
 		add = 1
-		exists = sector
-		is_sector_capital = yes
 		has_upgraded_capital = yes
 	}
 	modifier = {
 		add = 1
-		exists = sector
-		is_sector_capital = yes
 		has_fully_upgraded_capital = yes
 	}
 	modifier = {
@@ -25,42 +21,6 @@ capital_triggered_job_magistrate = {
 	}
 	modifier = {
 		add = 1
-		is_capital = yes
 		has_building = building_imperial_capital
-	}
-}
-
-new_country_capital_triggered_job_magistrate = {
-	base = 1
-	modifier = {
-		add = 1
-		has_upgraded_capital = yes
-	}
-	modifier = {
-		add = 1
-		has_fully_upgraded_capital = yes
-	}
-	modifier = {
-		add = 1
-		has_building = building_imperial_capital
-	}
-}
-
-new_sector_capital_triggered_job_magistrate = {
-	base = 0
-	modifier = {
-		add = 1
-		OR = {
-			has_designation = col_bureau
-			has_designation = col_habitat_bureau
-		}
-	}
-	modifier = {
-		add = 1
-		has_upgraded_capital = yes
-	}
-	modifier = {
-		add = 1
-		has_fully_upgraded_capital = yes
 	}
 }

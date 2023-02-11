@@ -22,14 +22,20 @@ planet_event = {
 				}
 			}
 			save_event_target_as = new_capital
+			# jobs created by the deposit on the target planet
 			set_variable = {
 				which = num_magistrate_jobs_from_deposit_target
-				value = value:new_country_capital_triggered_job_magistrate
+				value = value:capital_triggered_job_magistrate
 			}
 			from = {
+				# jobs that were created by the deposit on the source planet (minimum 1 for being the country capital)
 				set_variable = {
 					which = num_magistrate_jobs_from_deposit_source
 					value = value:capital_triggered_job_magistrate
+				}
+				change_variable = {
+					which = num_magistrate_jobs_from_deposit_source
+					value = 1
 				}
 				export_trigger_value_to_variable = {
 					trigger = num_assigned_jobs
@@ -44,7 +50,9 @@ planet_event = {
 					which = num_planet_pops_source
 					value = trigger:num_pops
 				}
-				log = "[Root.Owner.GetRealName], sector [Prev.GetName], planet [This.GetName]: [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
+				log = "Country capital for [Root.Owner.GetRealName] moved - relocating capital-based magistrates"
+				log = "Previous capital planet [This.GetName] (sector [This.Sector.GetName]): [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
+				log = "New capital planet [new_capital.GetName] (sector [This.Sector.GetName]): [new_capital.num_magistrate_jobs_from_deposit_target] from deposit"
 				# if the capital was moved to planet is a different sector, the source planet may still be a sector capital
 				if = {
 					limit = { is_sector_capital = no }
@@ -62,7 +70,7 @@ planet_event = {
 							which = num_magistrate_jobs_source
 							value > 0
 						}
-						prev = {
+						event_target:new_capital = {
 							check_variable = {
 								which = num_magistrate_jobs_from_deposit_target
 								value > 0
@@ -88,7 +96,7 @@ planet_event = {
 						which = num_magistrate_jobs_source
 						value = -1
 					}
-					prev = {
+					event_target:new_capital = {
 						change_variable = {
 							which = num_magistrate_jobs_from_deposit_target
 							value = -1
@@ -130,10 +138,10 @@ country_event = {
 					NOT = { has_deposit = d_civic_byzantine_bureaucracy_capital }
 				}
 				save_event_target_as = new_capital
-				# jobs that will by created by the deposit on the target planet
+				# jobs created by the deposit on the target planet
 				set_variable = {
 					which = num_magistrate_jobs_from_deposit_target
-					value = value:new_sector_capital_triggered_job_magistrate
+					value = value:capital_triggered_job_magistrate
 				}
 				prev = {
 					# note there may not be a previous capital (e.g. new sector)
@@ -142,6 +150,7 @@ country_event = {
 							NOT = { is_planet = event_target:new_capital }
 							has_deposit = d_civic_byzantine_bureaucracy_capital
 						}
+						# jobs that were created by the deposit on the source planet
 						set_variable = {
 							which = num_magistrate_jobs_from_deposit_source
 							value = value:capital_triggered_job_magistrate
@@ -159,7 +168,9 @@ country_event = {
 							which = num_planet_pops_source
 							value = trigger:num_pops
 						}
-						log = "[Root.GetRealName], sector [Prev.GetName], planet [This.GetName]: [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
+						log = "Sector [Prev.GetName] capital for [Root.Owner.GetRealName] moved - relocating capital-based magistrates"
+						log = "Previous capital planet [This.GetName]: [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
+						log = "New capital planet [new_capital.GetName]: [new_capital.num_magistrate_jobs_from_deposit_target] from deposit"
 						remove_deposit = d_civic_byzantine_bureaucracy_capital
 						while = {
 							count = num_magistrate_jobs_from_deposit_source # maximum amount that can be transferred
@@ -173,7 +184,7 @@ country_event = {
 									which = num_magistrate_jobs_source
 									value > 0
 								}
-								prev = {
+								event_target:new_capital = {
 									check_variable = {
 										which = num_magistrate_jobs_from_deposit_target
 										value > 0
@@ -199,7 +210,7 @@ country_event = {
 								which = num_magistrate_jobs_source
 								value = -1
 							}
-							prev = {
+							event_target:new_capital = {
 								change_variable = {
 									which = num_magistrate_jobs_from_deposit_target
 									value = -1
