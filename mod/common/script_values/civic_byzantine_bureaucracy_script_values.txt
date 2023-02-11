@@ -45,3 +45,22 @@ new_country_capital_triggered_job_magistrate = {
 		has_building = building_imperial_capital
 	}
 }
+
+new_sector_capital_triggered_job_magistrate = {
+	base = 0
+	modifier = {
+		add = 1
+		OR = {
+			has_designation = col_bureau
+			has_designation = col_habitat_bureau
+		}
+	}
+	modifier = {
+		add = 1
+		has_upgraded_capital = yes
+	}
+	modifier = {
+		add = 1
+		has_fully_upgraded_capital = yes
+	}
+}
