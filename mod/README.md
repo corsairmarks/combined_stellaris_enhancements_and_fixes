@@ -10,6 +10,22 @@ Notes
 
 Notes
 
+### When to Install
+
+Notes
+
+### Recommended Companion Mods
+
+* List
+
+## Known Issues
+
+Overriding XXX causes the game to log errors noting the overrides.  Expect to see XXX lines in the error.log file like these:
+
+```
+Error Logs
+```
+
 ## Changelog
 
 * 1.0.0 Initial version
