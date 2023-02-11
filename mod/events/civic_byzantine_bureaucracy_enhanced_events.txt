@@ -44,8 +44,12 @@ planet_event = {
 					which = num_planet_pops_source
 					value = trigger:num_pops
 				}
-				log = "[Root.Owner.GetRealName] sector [Prev.GetName] planet [This.GetName]: [This.num_magistrate_jobs] magistrates [This.num_planet_pops] pops"
-				remove_deposit = d_civic_byzantine_bureaucracy_capital
+				log = "[Root.Owner.GetRealName], sector [Prev.GetName], planet [This.GetName]: [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
+				# if the capital was moved to planet is a different sector, the source planet may still be a sector capital
+				if = {
+					limit = { is_sector_capital = no }
+					remove_deposit = d_civic_byzantine_bureaucracy_capital
+				}
 				while = {
 					count = num_magistrate_jobs_from_deposit_source # deposit jobs source, maximum amount that can be transferred
 					limit = {
@@ -155,7 +159,7 @@ country_event = {
 							which = num_planet_pops_source
 							value = trigger:num_pops
 						}
-						log = "[Root.GetRealName] sector [Prev.GetName] planet [This.GetName]: [This.num_magistrate_jobs] magistrates [This.num_planet_pops] pops"
+						log = "[Root.GetRealName], sector [Prev.GetName], planet [This.GetName]: [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
 						remove_deposit = d_civic_byzantine_bureaucracy_capital
 						while = {
 							count = num_magistrate_jobs_from_deposit_source # maximum amount that can be transferred
@@ -213,14 +217,14 @@ country_event = {
 					}
 				}
 
+				clear_variable = num_magistrate_jobs_from_deposit_target
 				add_deposit = d_civic_byzantine_bureaucracy_capital
 				check_planet_employment = yes
-				clear_variable = num_magistrate_jobs_from_deposit_target
 			}
 			# cleanup any leftover deposits - for example, a new sector encompasses the previous capitals of two sectors
 			every_owned_planet = {
 				limit = {
-					NOT = { is_planet = event_target:new_capital }
+					is_sector_capital = no
 					has_deposit = d_civic_byzantine_bureaucracy_capital
 				}
 				remove_deposit = d_civic_byzantine_bureaucracy_capital
