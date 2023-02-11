@@ -19,7 +19,7 @@ magistrate = {
 	resources = {
 		category = planet_administrators
 		produces = {
-			unity = 6
+			unity = 5
 		}
 		produces = {
 			trigger = {
