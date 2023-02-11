@@ -217,7 +217,7 @@ planet_event = {
 		}
 		every_owned_pop = {
 			limit = { has_job = magistrate }
-			set_timed_pop = former_magistrate
+			set_pop_flag = former_magistrate
 		}
 		remove_deposit = d_civic_byzantine_bureaucracy_capital
 		while = {
