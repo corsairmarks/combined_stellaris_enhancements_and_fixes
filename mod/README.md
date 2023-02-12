@@ -2,18 +2,17 @@
 
 Do you wish your empire's maze of incomprehensible bureaucracy provided more benefits?  Do your people feel a sense of national pride when queueing to file their forms in quadruplicate hard-copy?  Is technically correct the best kind of correct?  Then this mod is for you!
 
-Civic: Bureaucracy offers a fairly mild benefit by default: +1 unity and +1 stability per bureaucrat.
-
 # Changes
 
-Notes
+Civic: Bureaucracy offers a fairly mild benefit by default: +1 unity and +1 stability per Bureaucrat.  With this mod, Bureaucrats also provided +2 amenities, which officially "represent planetary infrastructure and jobs dedicated towards fulfilling the day-to-day needs of the population" provided by the massive administrative apparatus present in Byzantine Bureaucracies. And what sort of paperwork hellscape would be complete without another, higher rank of functionary? Enter the Magistrate ruler-stratum job.
+
+Magistrates provide unity, stability, and amenities (although more than rank-and-file Bureaucrats) and additionally reduce crime by -10.  The need for Magistrates is highest at the administrative centers for their empire - they independently form Seats of the Magistracy at the imperial capital and sector capitals.  Should the imperial or a sector capital be relocated, the Magistrates move with the capital.  Fully-upgraded Administrative Complexes and Administrative Arcologies also offer a Magistrate job to oversee the rest of the Bureaucrats.
 
 ## Compatibility
 
-This mod overwrites the `bureaucrat` job in order to add amenities to their output under Civic: Byzantine Bureaucracy. The Administrative Complex building 
- (`building_bureaucratic_3`) is also overridden to add the new magistrate job for empires with Civic: Byzantine Bureaucracy.  All other functionality is implemented through custom events and new game objects (a job and deposit).
+This mod overwrites the `bureaucrat` job in order to add amenities to their output under Civic: Byzantine Bureaucracy. The Administrative Complex building (`building_bureaucratic_3`) and Administrative Arcology district (`district_arcology_administrative`) are also overridden to add the new Magistrate job for empires with Civic: Byzantine Bureaucracy.  All other functionality is implemented through custom events and new game objects (a job and deposit).
 
- Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 ### When to Install
 
@@ -28,10 +27,11 @@ This mod can be safely added after the game has started.  Although this mod does
 
 ## Known Issues
 
-Overriding buildings and jobs causes the game to log errors noting the overrides.  Expect to see two lines in the error.log file like these:
+Overriding buildings and jobs causes the game to log errors noting the overrides.  Expect to see three lines in the error.log file like these:
 
 ```
-[01:50:22][game_singleobjectdatabase.h:165]: Object with key: building_bureaucratic_3 already exists, using the one at  file: common/buildings/18_civic_byzantine_bureaucracy_enhanced_unity_building_overrides.txt line: 1
+[01:50:22][game_singleobjectdatabase.h:165]: Object with key: district_arcology_administrative already exists, using the one at  file: common/districts/11_civic_byzantine_bureaucracy_enhanced_arcology_districts.txt line: 2
+[01:50:22][game_singleobjectdatabase.h:165]: Object with key: building_bureaucratic_3 already exists, using the one at  file: common/buildings/18_civic_byzantine_bureaucracy_enhanced_unity_building_overrides.txt line: 2
 [01:50:24][game_singleobjectdatabase.h:165]: Object with key: bureaucrat already exists, using the one at  file: common/pop_jobs/12_civic_byzantine_bureaucracy_enhanced_specialist_job_overrides.txt line: 2
 ```
 
