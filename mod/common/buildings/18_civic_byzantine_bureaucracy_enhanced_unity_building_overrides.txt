@@ -1,3 +1,4 @@
+# Modified: civic_byzantine_bureaucracy gets -1 bureaucrat, +1 magistrate
 building_bureaucratic_3 = {
 	base_buildtime = @b3_time
 	can_build = no
