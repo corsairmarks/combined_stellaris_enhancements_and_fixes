@@ -19,14 +19,15 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 4.0.0)
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 4.0.1)
 * [Buildings: Betharian Power Plant and Alien Zoo - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 1.0.0)
-* [Civic: Philosopher King - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) at 1.3.0)
+* [Civic: Byzantine Bureaucracy - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2932819177) ([Source](https://github.com/corsairmarks/civic_byzantine_bureaucracy_enhanced) 1.0.0)
+* [Civic: Philosopher King - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) 1.3.0)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 6.0.0)
 * [Colony Designations: Capital Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 4.0.0)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/workshop/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 5.0.0)
 * [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 7.0.0)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/workshop/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 6.0.0)
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/workshop/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 5.0.0)
-* [Game Start: Unity Fund](https://steamcommunity.com/workshop/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) at 2.1.0)
+* [Game Start: Unity Fund](https://steamcommunity.com/workshop/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund)) 2.1.0)
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 5.1.0)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 5.1.0)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.2.0)
@@ -204,7 +205,8 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Added: Leisure Districts for People of Culture at 1.0.0
     * Updated: Building: Aquaponics Farms at 4.0.1
 * 7.1.1 Update merged mod: Ringworld Graphical Enhancements at 3.2.0
-* 7.1.2 Update merged mods:
-    * Deassimilate Machines at 7.0.0
-    * Leader Traits: All Eligible Species Traits at 5.1.0
-    * Retain Leaders from Integrated Subjects at 7.1.1
+* 7.2.0 Add and update merged mods 
+    * Added: Civic: Byzantine Bureaucracy - Enhanced at 1.0.0
+    * Updated: Deassimilate Machines at 7.0.0
+    * Updated: Leader Traits: All Eligible Species Traits at 5.1.0
+    * Updated: Retain Leaders from Integrated Subjects at 7.1.1
