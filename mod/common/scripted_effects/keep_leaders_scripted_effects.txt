@@ -2291,7 +2291,21 @@ klfis_clone_leader_with_gender = {
 try_apply_cyborg_assimilation = {
 	optimize_memory
 	if = {
-		limit = { event_target:prepared_species = { is_potential_for_cyborg_assimilation = yes } }
+		limit = {
+			event_target:prepared_species = { is_potential_for_cyborg_assimilation = yes }
+			OR = {
+				has_civic_organic_zealots_active = no
+				event_target:potential_owner = {
+					NOT = { has_country_flag = lost_robot_policy_war }
+					is_valid_organic_zealots = no
+					NAND = {
+						is_subject = yes
+						exists = overlord
+						overlord = { is_valid_organic_zealots = yes }
+					}
+				}
+			}
+		}
 		species = { set_citizenship_assimilation_and_living_standard_cyborg = yes }
 		klfis_prepare_cyborg_species = yes
 		set_timed_leader_flag = {

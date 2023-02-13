@@ -1689,6 +1689,31 @@ country_event = {
 				is_potential_for_cyborg_assimilation_country = yes
 			}
 			custom_tooltip = {
+				fail_text = lost_robot_policy_war
+				OR = {
+					has_civic_organic_zealots_active = no
+					NOT = { has_country_flag = lost_robot_policy_war }
+				}
+			}
+			custom_tooltip = {
+				fail_text = civic_tooltip_not_organic_zealots
+				OR = {
+					has_civic_organic_zealots_active = no
+					is_valid_organic_zealots = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = civic_tooltip_overlord_not_organic_zealots
+				OR = {
+					has_civic_organic_zealots_active = no
+					NAND = {
+						is_subject = yes
+						exists = overlord
+						overlord = { is_valid_organic_zealots = yes }
+					}
+				}
+			}
+			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
 				if = {
 					limit = { is_necrophage_empire = yes }
@@ -1757,6 +1782,31 @@ country_event = {
 			custom_tooltip = {
 				fail_text = keep_leaders.1.k.cyb.fail_text
 				is_potential_for_cyborg_assimilation_country = yes
+			}
+			custom_tooltip = {
+				fail_text = lost_robot_policy_war
+				OR = {
+					has_civic_organic_zealots_active = no
+					NOT = { has_country_flag = lost_robot_policy_war }
+				}
+			}
+			custom_tooltip = {
+				fail_text = civic_tooltip_not_organic_zealots
+				OR = {
+					has_civic_organic_zealots_active = no
+					is_valid_organic_zealots = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = civic_tooltip_overlord_not_organic_zealots
+				OR = {
+					has_civic_organic_zealots_active = no
+					NAND = {
+						is_subject = yes
+						exists = overlord
+						overlord = { is_valid_organic_zealots = yes }
+					}
+				}
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
@@ -2056,6 +2106,31 @@ country_event = {
 			custom_tooltip = {
 				fail_text = AI_IS_OUTLAWED_LEADER_NO_X
 				allows_ai_leaders = yes
+			}
+			custom_tooltip = {
+				fail_text = lost_robot_policy_war
+				OR = {
+					has_civic_organic_zealots_active = no
+					NOT = { has_country_flag = lost_robot_policy_war }
+				}
+			}
+			custom_tooltip = {
+				fail_text = civic_tooltip_not_organic_zealots
+				OR = {
+					has_civic_organic_zealots_active = no
+					is_valid_organic_zealots = no
+				}
+			}
+			custom_tooltip = {
+				fail_text = civic_tooltip_overlord_not_organic_zealots
+				OR = {
+					has_civic_organic_zealots_active = no
+					NAND = {
+						is_subject = yes
+						exists = overlord
+						overlord = { is_valid_organic_zealots = yes }
+					}
+				}
 			}
 			custom_tooltip = {
 				fail_text = keep_leaders.1.necro.fail_text
