@@ -1,0 +1,52 @@
+# fired monthly for each country
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.2
+	}
+}
+
+# fired during empire initialization when starting a new game
+# this = planet, capital
+# from = species, founder
+empire_init_capital_planet = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.6
+	}
+}
+
+# fired when the location of an country's capital changes and when a country's capital is first set e.g. during galaxy creation (but then from is not set)
+# root = planet (new capital)
+# from = planet (former capital, if any)
+on_capital_changed = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.1
+	}
+}
+
+# fired whenever a new owner is set for a planet, be it after a war or through a trade
+# this = planet
+# from = country (new owner)
+# fromfrom = country (former owner, if any)
+on_planet_transfer = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.3
+	}
+}
+
+# fired when a colony has been destroyed just before owner and controller are cleared
+# this = planet
+on_colony_destroyed = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.4
+	}
+}
+
+# fired just as country is changing its government, after the new one is applied
+# this = country
+on_post_government_changed = {
+	events = {
+		civic_byzantine_bureaucracy_enhanced.2
+		civic_byzantine_bureaucracy_enhanced.5
+	}
+}

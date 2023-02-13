@@ -1,0 +1,2 @@
+﻿l_english:
+ civic_tooltip_byzantine_bureaucracy_effects: "Gain £job_bureaucrat£ §Y$job_magistrate$§! $planet_jobs$ on empire and sector capitals and from £building£ §Y$building_bureaucratic_3$§! buildings\n£stability£ $PLANET_STABILITY_TITLE$ from £job_bureaucrat£ $job_bureaucrat_plural$:§G+1§!\n£mod_planet_amenities_add£ $PLANET_AMENITIES_TITLE$ from £job_bureaucrat£ $job_bureaucrat_plural$:§G+2§!"
