@@ -12,6 +12,12 @@ Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 [h3]When to Install[/h3]
 This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events.  If you remove it, your game will work normally.  Any rulers or governors will keep their bonus levels.
 
+[h3]Recommended Companion Mods[/h3]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2920668465]Civic: Organic Zealots[/url] adds a brand-new civic - play as a homicidal empire determined to eliminate artificial intelligence
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2774084358]Civic: Byzantine Bureaucracy - Enhanced[/url] enhances Civic: Byzantine Bureaucracy to add bonus amenities to Bureaucrats and also add a new ruler-stratum job, the Magistrate
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2682659676]Origin: Jovian League[/url] adds a brand-new origin that allows almost any empire to begin spanning four small colonies on the moons of a gas giant rather than they typical large, single planet
+[/list]
 [h2]Localisation[/h2]
 The text describing the effects for Civic: Philosopher King has been edited to describe its new effect for eight officially-supported Stellaris languages.  I'm reasonably confident in my splicing for most languages, although I may have used the wrong word for "and" in Chinese.  It is not translated for Korean or Japanese.
 
