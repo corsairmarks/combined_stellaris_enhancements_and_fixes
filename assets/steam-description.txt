@@ -1,34 +1,34 @@
 [h1]Overview[/h1]
-Have you ever conquered a Machine World as a regular empire?  Or perhaps you ended up with one after integrating a machine subject?  The build-in Replicator job is not usable by regular empires - so this mod set out to fix that.
+Have you ever conquered a Machine World as a regular empire? Or perhaps you ended up with one after integrating a machine subject? The build-in Replicator job is not usable by regular empires - so this mod set out to fix that.
 
-However, instead of just adding a Roboticist job and calling it a day, I decided to add a little extra flavor.  Machine Worlds themselves are gestalt consciousnesses even when disconnected from a Machine Intelligence.  While content to continue their existence without expanding, they will only grant their production bonuses (and a Roboticist job) to empires that enfranchise AI.  Conversely, empires that ban AI will have their efforts to use the Machine World subtly hampered by the world itself, in the form of additional penalties.  They are watching your policy decisions and will adjust their opinion of you accordingly.
+However, instead of just adding a Roboticist job and calling it a day, I decided to add a little extra flavor. Machine Worlds themselves are gestalt consciousnesses even when disconnected from a Machine Intelligence. While content to continue their existence without expanding, they will only grant their production bonuses (and a Roboticist job) to empires that enfranchise AI. Conversely, empires that ban AI will have their efforts to use the Machine World subtly hampered by the world itself, in the form of additional penalties. They are watching your policy decisions and will adjust their opinion of you accordingly.
 
 [h1]Changes[/h1]
-Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displays the Machine World's opinion of your empire (Cooperative, Neutral, or Hostile).  All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job to replace it.  Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels out the bonuses and adds additional production and maintenance penalties.
+Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displays the Machine World's opinion of your empire (Cooperative, Neutral, or Hostile). All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job to replace it. Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels out the bonuses and adds additional production and maintenance penalties.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion." Not compatible with achievements.
 
-Because the extra Roboticist job is added via a planetary modifier, that means it was [b]not[/b] necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit [b]d_resource_consolidation_1[/b] (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
+Because the extra Roboticist job is added via a planetary modifier, that means it was [b]not[/b] necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes. However, the built-in Machine World starting deposit [b]d_resource_consolidation_1[/b] (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
-This mod also overwrites the [b]district_industrial/b] in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the [b]col_mac_factory[/b] (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.  What this means to you is that this mod is not compatible with other mods that alter industrial districts or (much more unlikely) the Machine World Factory colony designation.
+This mod also overwrites the [b]district_industrial/b] in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the [b]col_mac_factory[/b] (Machine World Factory) colony designation in order to account for the 3rd-tier factory building. What this means to you is that this mod is not compatible with other mods that alter industrial districts or (much more unlikely) the Machine World Factory colony designation. This mod has built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
 
 [h3]When to Install[/h3]
-This mod can be safely added to your savegame after the game has started.  Because it adds static modifiers for planets, it is not advisable to remove during gameplay.  If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested.  Back up your savegame before trying to remove a mod.
+This mod can be safely added to your savegame after the game has started. Because it adds static modifiers for planets, it is not advisable to remove during gameplay. If removed, you will lose access to the special Machine World modifiers and events - Stellaris is usually fairly forgiving and just removes missing modifiers, but it has not been explicitly tested. Back up your savegame before trying to remove a mod.
 
 [h3]Recommended Companion Mods[/h3]
 [list]
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimilate Machines[/url] allows you to deassimilate machine Pops into Robots, and is the original inspiration for Deassimilated Machine Worlds.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] will allow you to keep Machine Unit leaders from integrated machine empire subjects by converting them to robots and setting their species to deassimilation.  Combined with Leader Traits: All Eligible Species Traits, the leaders are converted to have synth leader traits if you have the right technology.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] will allow you to keep Machine Unit leaders from integrated machine empire subjects by converting them to robots and setting their species to deassimilation. Combined with Leader Traits: All Eligible Species Traits, the leaders are converted to have synth leader traits if you have the right technology.
 [/list]
 Together with the above two mods, you're more likely to obtain a Machine World as a non-Machine empire.
 
 [h2]Known Issues[/h2]
 Overriding the district, colony designation, and deposit causes the game to log three errors like this:
 [code]
-[15:22:33][game_singleobjectdatabase.h:165]: Object with key: district_industrial already exists, using the one at  file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
-[15:22:34][game_singleobjectdatabase.h:165]: Object with key: col_mac_factory already exists, using the one at  file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
-[15:22:35][game_singleobjectdatabase.h:165]: Object with key: d_resource_consolidation_1 already exists, using the one at  file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
+[15:22:33][game_singleobjectdatabase.h:165]: Object with key: district_industrial already exists, using the one at file: common/districts/10_deassimilated_machine_worlds_urban_district_overrides.txt line: 4
+[15:22:34][game_singleobjectdatabase.h:165]: Object with key: col_mac_factory already exists, using the one at file: common/colony_types/01_deassimilated_machine_world_override_colony_types.txt line: 6
+[15:22:35][game_singleobjectdatabase.h:165]: Object with key: d_resource_consolidation_1 already exists, using the one at file: common/deposits/08_deassimilated_machine_worlds_federations_deposits_overrides.txt line: 1
 [/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2559702143]Change Notes[/url]

@@ -14,7 +14,7 @@ Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was **not** necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes.  However, the built-in Machine World starting deposit `d_resource_consolidation_1` (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
-This mod also overwrites the `district_industrial` in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.  What this means to you is that this mod is not compatible with other mods that alter industrial districts or (much more unlikely) the Machine World Factory colony designation.
+This mod also overwrites the `district_industrial` in order to properly shift jobs to and from Metallurgists and Artisans based on Machine World colony designations, and overwrites the `col_mac_factory` (Machine World Factory) colony designation in order to account for the 3rd-tier factory building.  What this means to you is that this mod is not compatible with other mods that alter industrial districts or (much more unlikely) the Machine World Factory colony designation.  This mod has built-in compatibility with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 ### When to Install
 
@@ -60,6 +60,7 @@ Overriding the district, colony designation, and deposit causes the game to log 
 * 5.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
     * Adjust Industrial District job tooltips to appear only when the relevant job swaps are activated, using the triggers provided by PDS (not sure why they did not use these triggers their changes)
 * 6.0.0 Add a compatibility trigger for other mods to check whether this one is active, remove old compatibility global flag
+* 6.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
