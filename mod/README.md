@@ -95,6 +95,7 @@ Overwriting a colony type or district produces an error log.  Expect to see nine
     * Add a compatibility trigger for other mods to check whether this one is active
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
+* 5.1.0 Improve built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
