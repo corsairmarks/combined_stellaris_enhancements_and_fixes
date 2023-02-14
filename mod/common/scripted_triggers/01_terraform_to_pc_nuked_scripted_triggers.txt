@@ -116,11 +116,22 @@ eligible_pc_nuked_terraform_hostile = {
 # this = planet
 eligible_pc_nuked_terraform_unhabitable = {
 	optimize_memory
-	has_modifier = terraforming_candidate
 	OR = {
-		is_planet_class = pc_barren
-		is_planet_class = pc_barren_cold
-		is_planet_class = pc_frozen
+		AND = {
+			has_modifier = terraforming_candidate
+			OR = {
+				is_planet_class = pc_barren
+				is_planet_class = pc_barren_cold
+			}
+		}
+		AND = {
+			has_modifier = frozen_terraforming_candidate
+			is_planet_class = pc_frozen
+		}
+		AND = {
+			has_modifier = toxic_terraforming_candidate
+			is_planet_class = pc_toxic
+		}
 	}
 }
 
