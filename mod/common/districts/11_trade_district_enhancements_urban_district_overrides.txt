@@ -12,6 +12,8 @@ district_city = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
 			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
+			uses_district_set = pdscrapyard
 		}
 		exists = from
 		from = {
@@ -27,6 +29,8 @@ district_city = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
 			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
+			uses_district_set = pdscrapyard
 		}
 		OR = {
 			NOT = { exists = owner } # this condition is needed for galaxy generation
