@@ -10,7 +10,7 @@ Magistrates provide unity, stability, and amenities (although more than rank-and
 
 ## Compatibility
 
-This mod overwrites the `bureaucrat` job in order to add amenities to their output under Civic: Byzantine Bureaucracy. The Administrative Complex building (`building_bureaucratic_3`) and Administrative Arcology district (`district_arcology_administrative`) are also overridden to add the new Magistrate job for empires with Civic: Byzantine Bureaucracy.  All other functionality is implemented through custom events and new game objects (a job and deposit).
+This mod overwrites the `bureaucrat` job in order to add amenities to their output under Civic: Byzantine Bureaucracy. The Administrative Complex building (`building_bureaucratic_3`) and Administrative Arcology district (`district_arcology_administrative`) are also overridden to add the new Magistrate job for empires with Civic: Byzantine Bureaucracy.  All other functionality is implemented through custom events and new game objects (a job and deposit).  This mod has built-in compatibility with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
@@ -38,6 +38,7 @@ Overriding buildings and jobs causes the game to log errors noting the overrides
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
