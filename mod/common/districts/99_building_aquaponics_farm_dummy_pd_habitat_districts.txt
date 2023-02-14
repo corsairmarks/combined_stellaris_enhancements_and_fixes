@@ -1,0 +1,41 @@
+@dummy_build_time = 240
+@dummy_cost = 300
+@dummy_upkeep = 1
+
+# dummy district so I don't spam the error log when Planetary Diversity is not installed
+district_pdhab_food_unlimited = {
+	base_buildtime = @dummy_build_time
+	icon = district_city
+	desc = district_city_desc
+	is_capped_by_modifier = no
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @dummy_cost
+		}
+		upkeep = {
+			energy = @dummy_upkeep
+		}
+	}
+}
+
+# dummy district so I don't spam the error log when Planetary Diversity is not installed
+district_pdhab_food = {
+	base_buildtime = @dummy_build_time
+	icon = district_city
+	desc = district_city_desc
+	is_capped_by_modifier = no
+	show_on_uncolonized = { always = no }
+	potential = { always = no }
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @dummy_cost
+		}
+		upkeep = {
+			energy = @dummy_upkeep
+		}
+	}
+}
