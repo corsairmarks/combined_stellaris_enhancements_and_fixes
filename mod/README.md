@@ -73,6 +73,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Add a compatibility trigger for other mods to check whether this one is active
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
+* 6.0.1 Fix `eligible_pc_nuked_terraform_unhabitable` trigger to respect the new terraforming modifiers
 
 ## Source Code
 
