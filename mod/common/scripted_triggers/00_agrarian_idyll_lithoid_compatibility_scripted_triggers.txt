@@ -11,3 +11,24 @@ has_nonbinary_leaders_active = {
 	optimize_memory
 	always = no
 }
+
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_planetary_megaproject = {
+	optimize_memory
+	always = no
+}
+
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_wasteland = {
+	optimize_memory
+	always = no
+}
+
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_planet_for_aqua_trait = {
+	optimize_memory
+	always = no
+}
