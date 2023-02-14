@@ -19,11 +19,11 @@ Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.  Thi
 * `civic_agrarian_idyll` to add the alternative description for lithoids
 * `civic_corporate_anglers` to remove the restriction on combining it with `civic_agrarian_idyll` (likely a Paradox oversight)
 * `district_rw_farming` to excludes Lithorian Idyll from the farming district housing benefits (Agrarian Idyll normally gets +5 housing)
-* Many worker-stratum job to ensure the Agrarian Idyll and Lithorian Idyll bonus apply to farming or mining jobs, respectively: `miner`, `crystal_miner`, `gas_extractor`, `mote_harvester`, `farmer`, `scrap_miner`, `angler`, and `manufactorium_scraper`
+* Many worker-stratum jobs to ensure the Agrarian Idyll and Lithorian Idyll bonus apply to farming or mining jobs, respectively: `miner`, `crystal_miner`, `gas_extractor`, `mote_harvester`, `farmer`, `scrap_miner`, `angler`, and `manufactorium_scraper`
 * Several event-related jobs, for the same reason: `cave_cleaner`, `titan_hunter`, `turtle_miner`
 * `tech_housing_agrarian_idyll` in order to exclude Lithorian Idyll, who now have their own version of this technology
 
-This mod avoids overwriting jobs unrelated to the core game mechanic being modified.  It should therefore not conflict with mods that make changes to other worker and event jobs, or other ringworld districts.  It is now only incompatible with mods that want to edit exactly the same game objects (as listed above).
+This mod avoids overwriting jobs unrelated to the core game mechanic being modified.  It should therefore not conflict with mods that make changes to other worker and event jobs, or other ringworld districts.  It is now only incompatible with mods that want to edit exactly the same game objects (as listed above).  This mod has built-in compatibility with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) but must by placer _after_ it in load order.
 
 ### When to Install
 
@@ -109,6 +109,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Add a compatibility trigger for other mods to check whether this one is active
     * Consume the compatibility trigger from other mods
     * Remove old compatibility global flag
+* 7.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 

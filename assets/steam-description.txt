@@ -1,49 +1,49 @@
 [h1]Overview[/h1]
-Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied to farming districts.  This mod creates a swapped Agrarian Idyll just for lithoids - now your miners will generate amenities instead of farmers!  This mod also features english localisation for these effects.
+Lithoids can pick the Agrarian Idyll civic, but the benefits are still applied to farming districts. This mod creates a swapped Agrarian Idyll just for lithoids - now your miners will generate amenities instead of farmers! This mod also features english localisation for these effects.
 
-A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) add one building slot per four districts (as of 3.2 farming districts do this in base game).  Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
+A new addition for both flavors of Agrarian Idyll should help reduce the need to build cities in 3.0 and above: rural districts (generator, mining, or farming) add one building slot per four districts (as of 3.2 farming districts do this in base game). Additionally, the Agrarian/Lithorian Utopias technology doubles these benefits for either farming districts or mining districts depending on whether your empire is lithoid.
 
 [h1]Changes[/h1]
-Creates a civic swap for Agrarian Idyll for Lithoids (it will automatically change - similar to Devouring Swarm <-> Terravore).  Miners ([i]including[/i] those for mote/gas/crystal deposits) generate the same amount of Amenities that farmers generate for the standard version, and have their job weights adjusted accordingly for traits that affect Amenities output.  A new technology "Lithorian Utopias" replaces the standard "Agrarian Utopias" and adds +1 housing to Mining Districts.  Lithorian Idyll also loses the usual Agrarian Idyll bonus housing on Ringworld Farming Districts.
+Creates a civic swap for Agrarian Idyll for Lithoids (it will automatically change - similar to Devouring Swarm <-> Terravore). Miners ([i]including[/i] those for mote/gas/crystal deposits) generate the same amount of Amenities that farmers generate for the standard version, and have their job weights adjusted accordingly for traits that affect Amenities output. A new technology "Lithorian Utopias" replaces the standard "Agrarian Utopias" and adds +1 housing to Mining Districts. Lithorian Idyll also loses the usual Agrarian Idyll bonus housing on Ringworld Farming Districts.
 
-Rural districts grant 0.25 building slots per district.  The Agrarian/Lithorian Utopias technology doubles these benefits for the appropriate district type (farming or mining).
+Rural districts grant 0.25 building slots per district. The Agrarian/Lithorian Utopias technology doubles these benefits for the appropriate district type (farming or mining).
 
 Because this is a tradition text swap, all the the normal restrictions for Agrarian Idyll apply to it (without further code changes).
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.  This mod overrides one core Stellaris file ([b]common/districts/02_rural_districts.txt[/b] in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
+Built for Stellaris version 3.6 "Orion." Not compatible with achievements. This mod overrides one core Stellaris file ([b]common/districts/02_rural_districts.txt[/b] in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level. In particular, this mod overrides:
 [list]
 [*][b]civic_agrarian_idyll[/b] to add the alternative description for lithoids
 [*][b]civic_corporate_anglers[/b] to remove the restriction on combining it with [b]civic_agrarian_idyll[/b] (likely a Paradox oversight)
 [*][b]district_rw_farming[/b] to excludes Lithorian Idyll from the farming district housing benefits (Agrarian Idyll normally gets +5 housing)
-[*]Many worker-stratum job to ensure the Agrarian Idyll and Lithorian Idyll bonus apply to farming or mining jobs, respectively: [b]miner[/b], [b]crystal_miner[/b], [b]gas_extractor[/b], [b]mote_harvester[/b], [b]farmer[/b], [b]scrap_miner[/b], [b]angler[/b], and [b]manufactorium_scraper[/b]
+[*]Many worker-stratum jobs to ensure the Agrarian Idyll and Lithorian Idyll bonus apply to farming or mining jobs, respectively: [b]miner[/b], [b]crystal_miner[/b], [b]gas_extractor[/b], [b]mote_harvester[/b], [b]farmer[/b], [b]scrap_miner[/b], [b]angler[/b], and [b]manufactorium_scraper[/b]
 [*]Several event-related jobs, for the same reason: [b]cave_cleaner[/b], [b]titan_hunter[/b], [b]turtle_miner[/b]
 [*][b]tech_housing_agrarian_idyll[/b] in order to exclude Lithorian Idyll, who now have their own version of this technology
 [/list]
-This mod avoids overwriting jobs unrelated to the core game mechanic being modified.  It should therefore not conflict with mods that make changes to other worker and event jobs, or other ringworld districts.  It is now only incompatible with mods that want to edit exactly the same game objects (as listed above).
+This mod avoids overwriting jobs unrelated to the core game mechanic being modified. It should therefore not conflict with mods that make changes to other worker and event jobs, or other ringworld districts. It is now only incompatible with mods that want to edit exactly the same game objects (as listed above). This mod has built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] but must by placer _after_ it in load order.
 
 [h3]When to Install[/h3]
-This mod can be safely added after the game has started, but should not be removed from a game in-progress.  Losing access to the new technology "Lithorian Idyll" could cause problems for the game if any countries have researched it.
+This mod can be safely added after the game has started, but should not be removed from a game in-progress. Losing access to the new technology "Lithorian Idyll" could cause problems for the game if any countries have researched it.
 
 [h2]Known Issues[/h2]
 Overriding a job, technology, or civic causes the game to log errors. Expect to see sixteen lines in the error.log file similar to these:
 [code]
 [17:11:02][technology.cpp:1154]: Duplicate technology: tech_housing_agrarian_idyll
-[17:11:02][game_singleobjectdatabase.h:165]: Object with key: district_rw_farming already exists, using the one at  file: common/districts/10_agrarian_idyll_lithoid_ringworld_district_overrides.txt line: 9
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: cave_cleaner already exists, using the one at  file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 4
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: titan_hunter already exists, using the one at  file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 81
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: turtle_miner already exists, using the one at  file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 169
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: manufactorium_scraper already exists, using the one at  file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 241
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: miner already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 2
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: crystal_miner already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 126
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: gas_extractor already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 213
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: mote_harvester already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 295
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: farmer already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 377
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: scrap_miner already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 523
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 625
-[17:11:08][game_singleobjectdatabase.h:165]: Object with key: puddle_technician already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 724
-[17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_agrarian_idyll already exists, using the one at  file: common/governments/civics/10_agrarian_idyll_lithoid_civic_overrides.txt line: 3
-[17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_corporate_anglers already exists, using the one at  file: common/governments/civics/13_agrarian_idyll_lithoid_corporate_civic_overrides.txt line: 2
+[17:11:02][game_singleobjectdatabase.h:165]: Object with key: district_rw_farming already exists, using the one at file: common/districts/10_agrarian_idyll_lithoid_ringworld_district_overrides.txt line: 9
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: cave_cleaner already exists, using the one at file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 4
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: titan_hunter already exists, using the one at file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 81
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: turtle_miner already exists, using the one at file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 169
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: manufactorium_scraper already exists, using the one at file: common/pop_jobs/16_agrarian_idyll_lithoid_event_job_overrides.txt line: 241
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: miner already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 2
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: crystal_miner already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 126
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: gas_extractor already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 213
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: mote_harvester already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 295
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: farmer already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 377
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: scrap_miner already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 523
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 625
+[17:11:08][game_singleobjectdatabase.h:165]: Object with key: puddle_technician already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 724
+[17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_agrarian_idyll already exists, using the one at file: common/governments/civics/10_agrarian_idyll_lithoid_civic_overrides.txt line: 3
+[17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_corporate_anglers already exists, using the one at file: common/governments/civics/13_agrarian_idyll_lithoid_corporate_civic_overrides.txt line: 2
 [/code]
 Normally overriding a single technology can cause problems with the game being confused by duplicates, but only technologies that are considered prerequisites for other technologies are affected. 
 
