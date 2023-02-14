@@ -1,8 +1,8 @@
 [h1]Overview[/h1]
-Adds an upgrade for Hydroponics Farms called Aquaponics Farms, which convert one farmer job into an Angler job.  The technology to construct this building is available to all non-gestalt empires.  Aquaponics is a combination of aquaculture (raising aquatic animals for food) where the nutrient-rich waste water is used to feed hydroponically-grown crops that filter it, and then re-used.  The new Angler job already represents aquaculture, so it felt appropriate to upgrade the Hydroponics Farms building to provide one of each job instead of farming only.
+Adds an upgrade for Hydroponics Farms called Aquaponics Farms, which convert one farmer job into an Angler job. The technology to construct this building is available to all non-gestalt empires. Aquaponics is a combination of aquaculture (raising aquatic animals for food) where the nutrient-rich waste water is used to feed hydroponically-grown crops that filter it, and then re-used. The new Angler job already represents aquaculture, so it felt appropriate to upgrade the Hydroponics Farms building to provide one of each job instead of farming only.
 
 [h1]Changes[/h1]
-Adds the new technology Aquaponics which creates an upgrade for Hydroponics Farms called Aquaponics Farms.  Aquaponics Farms respect existing features of Hydroponics Farms: Void Dwellers gain an extra farmer job, Angler empires gain an extra Angler job on wet worlds, and farmer jobs convert to Acolytes of the Plow for Spiritualist fallen/awakened empires.
+Adds the new technology Aquaponics which creates an upgrade for Hydroponics Farms called Aquaponics Farms. Aquaponics Farms respect existing features of Hydroponics Farms: Void Dwellers gain an extra farmer job, Angler empires gain an extra Angler job on wet worlds, and farmer jobs convert to Acolytes of the Plow for Spiritualist fallen/awakened empires.
 
 [h2]Localisation[/h2]
 [list]
@@ -12,18 +12,18 @@ Adds the new technology Aquaponics which creates an upgrade for Hydroponics Farm
 [h2]Compatibility[/h2]
 Requires the Aquatics DLC.
 
-Overwrites the built-in Hydroponics Farms building ([b]building_hydroponics_farm[/b]) in order for it to be upgradeable to Aquaponics Farms.  Also overwrites the built-in Angler job ([b]angler[/b]) so that any empire can work Angler jobs.
+Overwrites the built-in Hydroponics Farms building ([b]building_hydroponics_farm[/b]) in order for it to be upgradeable to Aquaponics Farms. Also overwrites the built-in Angler job ([b]angler[/b]) so that any empire can work Angler jobs. This mod has built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url].
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.6 "Orion." Not compatible with achievements.
 
 [h2]Known Issues[/h2]
-Overriding a building or job causes the game to log errors noting the overrides.  Expect to see five lines in the error.log file like these:
+Overriding a building or job causes the game to log errors noting the overrides. Expect to see five lines in the error.log file like these:
 [code]
-[20:27:45][game_singleobjectdatabase.h:165]: Object with key: building_hydroponics_farm already exists, using the one at  file: common/buildings/13_building_aquaponics_farm_resource_building_overrides.txt line: 6
-[20:27:45][game_singleobjectdatabase.h:165]: Object with key: col_habitat_farming already exists, using the one at  file: common/colony_types/10_building_aquaponics_farm_colony_type_overrides.txt line: 3
-[20:27:45][game_singleobjectdatabase.h:165]: Object with key: col_habitat_gestalt_farming already exists, using the one at  file: common/colony_types/10_building_aquaponics_farm_colony_type_overrides.txt line: 98
-[20:27:47][game_singleobjectdatabase.h:165]: Object with key: has_any_farming_district_or_buildings already exists, using the one at  file: common/scripted_triggers/10_building_aquaponics_farm_scripted_trigger_overrides.txt line: 3
-[20:27:49][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at  file: common/pop_jobs/13_building_aquaponics_farm_worker_job_overrides.txt line: 8
+[20:27:45][game_singleobjectdatabase.h:165]: Object with key: building_hydroponics_farm already exists, using the one at file: common/buildings/13_building_aquaponics_farm_resource_building_overrides.txt line: 6
+[20:27:45][game_singleobjectdatabase.h:165]: Object with key: col_habitat_farming already exists, using the one at file: common/colony_types/10_building_aquaponics_farm_colony_type_overrides.txt line: 3
+[20:27:45][game_singleobjectdatabase.h:165]: Object with key: col_habitat_gestalt_farming already exists, using the one at file: common/colony_types/10_building_aquaponics_farm_colony_type_overrides.txt line: 98
+[20:27:47][game_singleobjectdatabase.h:165]: Object with key: has_any_farming_district_or_buildings already exists, using the one at file: common/scripted_triggers/10_building_aquaponics_farm_scripted_trigger_overrides.txt line: 3
+[20:27:49][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at file: common/pop_jobs/13_building_aquaponics_farm_worker_job_overrides.txt line: 8
 [/code]
 [h2]Changelog[/h2]
 See [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2768297949]Change Notes[/url]

@@ -15,7 +15,7 @@ Adds the new technology Aquaponics which creates an upgrade for the Hydroponics 
 
 Requires the Aquatics DLC.
 
-Overwrites the built-in Hydroponics Farms building (`building_hydroponics_farm`) in order for it to be upgradeable to Aquaponics Farms.  Also overwrites the built-in Angler job (`angler`) so that any empire can work Angler jobs.
+Overwrites the built-in Hydroponics Farms building (`building_hydroponics_farm`) in order for it to be upgradeable to Aquaponics Farms.  Also overwrites the built-in Angler job (`angler`) so that any empire can work Angler jobs.  This mod has built-in compatibility with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
 
@@ -54,6 +54,7 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
     * Consume the compatibility triggers from other mods
     * Remove old compatibility global flag
 * 4.0.1 Stop Aquaponics Farms buildings for gestalts from auto-destroying themselves and turning back into Hydroponics Farms
+* 4.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
