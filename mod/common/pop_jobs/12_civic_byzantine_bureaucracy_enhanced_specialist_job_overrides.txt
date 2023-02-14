@@ -30,7 +30,7 @@ bureaucrat = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_byzantine_bureaucracy }
+			owner = { is_valid_byzantine_bureaucracy = yes }
 		}
 		modifier = {
 			planet_stability_add = 1
@@ -39,7 +39,7 @@ bureaucrat = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_byzantine_bureaucracy }
+			owner = { is_valid_byzantine_bureaucracy = yes }
 		}
 		planet_amenities_add = 2
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
@@ -59,7 +59,7 @@ bureaucrat = {
 		modifier = {
 			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
 			exists = owner
-			owner = { has_valid_civic = civic_byzantine_bureaucracy }
+			owner = { is_valid_byzantine_bureaucracy = yes }
 		}
 		modifier = {
 			factor = 0.1

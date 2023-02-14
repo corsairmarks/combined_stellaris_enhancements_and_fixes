@@ -9,7 +9,7 @@ planet_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = owner
-		owner = { has_valid_civic = civic_byzantine_bureaucracy }
+		owner = { is_valid_byzantine_bureaucracy = yes }
 	}
 	immediate = {
 		if = {
@@ -128,7 +128,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		has_valid_civic = civic_byzantine_bureaucracy
+		is_valid_byzantine_bureaucracy = yes
 	}
 	immediate = {
 		every_owned_sector = {
@@ -256,7 +256,7 @@ planet_event = {
 		has_deposit = d_civic_byzantine_bureaucracy_capital
 		NAND = {
 			exists = from
-			from = { has_valid_civic = civic_byzantine_bureaucracy }
+			from = { is_valid_byzantine_bureaucracy = yes }
 		}
 	}
 	immediate = {
@@ -330,7 +330,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_valid_civic = civic_byzantine_bureaucracy }
+		is_valid_byzantine_bureaucracy = no
 	}
 	immediate = {
 		every_owned_planet = {
@@ -350,7 +350,7 @@ planet_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = owner
-		owner = { has_valid_civic = civic_byzantine_bureaucracy }
+		owner = { is_valid_byzantine_bureaucracy = yes }
 	}
 	immediate = {
 		add_deposit = d_civic_byzantine_bureaucracy_capital
