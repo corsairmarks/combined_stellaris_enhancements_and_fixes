@@ -2,7 +2,7 @@
 @dummy_cost = 300
 @dummy_upkeep = 1
 
-# dummy districts so I don't spam the error log when Colony Designation: Ecumenopolis Commercial is not installed
+# dummy district so I don't spam the error log when Colony Designation: Ecumenopolis Commercial is not installed
 district_arcology_commercial = {
 	base_buildtime = @dummy_build_time
 	icon = district_city
@@ -21,7 +21,7 @@ district_arcology_commercial = {
 	}
 }
 
-# dummy districts so I don't spam the error log when More Standard Districts is not installed
+# dummy district so I don't spam the error log when More Standard Districts is not installed
 district_standard_cm_commercial = {
 	base_buildtime = @dummy_build_time
 	icon = district_city
