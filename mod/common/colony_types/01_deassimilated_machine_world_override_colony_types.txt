@@ -1,4 +1,4 @@
-#root = planet
+# root = planet
 
 @built_districts_medium_threshold = 4
 
@@ -23,7 +23,10 @@ col_mac_factory = {
 	}
 
 	potential = {
-		uses_district_set = machine_world
+		OR = {
+			uses_district_set = machine_world
+			uses_district_set = pdmachinefactory
+		}
 		exists = owner
 		owner = { country_uses_consumer_goods = yes }
 	}

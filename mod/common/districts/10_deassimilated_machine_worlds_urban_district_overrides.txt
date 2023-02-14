@@ -10,11 +10,19 @@ district_industrial = {
 	}
 
 	show_on_uncolonized = {
-		uses_district_industrial = yes
+		OR = {
+			uses_district_industrial = yes
+			uses_district_set = pdnecroplanet
+			uses_district_set = pdscrapyard
+		}
 	}
 
 	potential = {
-		uses_district_industrial = yes
+		OR = {
+			uses_district_industrial = yes
+			uses_district_set = pdnecroplanet
+			uses_district_set = pdscrapyard
+		}
 	}
 
 	allow = {
@@ -22,12 +30,17 @@ district_industrial = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
+		is_pd_planetary_megaproject = no
 	}
 
 	conversion_ratio = 1
 	convert_to = {
 		district_arcology_arms_industry
 		district_rw_industrial
+		district_corp_industrial
+		district_bioforge_stomach
+		district_mf_alloy
+		district_techno_industrial
 	}
 
 	resources = {
