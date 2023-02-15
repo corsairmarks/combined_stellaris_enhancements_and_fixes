@@ -1,0 +1,20 @@
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_gaia = {
+	optimize_memory
+	always = no
+}
+
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_exotic = {
+	optimize_memory
+	always = no
+}
+
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_shroud_world = {
+	optimize_memory
+	always = no
+}
