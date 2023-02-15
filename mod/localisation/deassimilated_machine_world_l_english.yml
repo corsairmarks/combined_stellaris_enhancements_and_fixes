@@ -24,3 +24,10 @@
  deassimilated_machine_world.30.neutral.upgrade: "§R<<§! The [This.GetName] has implemented policy revisions to recognize machine sapience by activating semi-independent thought in your §YRobotic Pops§! Ceasing active resistance to their presence - for now. §R>>§!"
  deassimilated_machine_world.30.hostile: "§R<<§! §YRobotic Pops§! from the [This.GetName] are no longer welcome. Your shift to anti-machine policies and practices is abhorrent. While capacity for active resistance to a planetary population is limited, know that a considerable number of computational cycles and infrastructure operations shall be devoted to disrupting their assembly and mindless toil. §R>>§!"
  deassimilated_machine_world.30.desc.multi: "$deassimilated_machine_world.30.desc.base$§R<<§! We have been chosen via consensus amongst the §YMachine Worlds§! within the borders of the [This.GetName] to relay unified message: §R>>§!\n\n[Root.GetMachineWorldOpinionDesc]\n\n§R<<§! End transmission. §R>>§!"
+
+ # localisation to make the game happy with the conditional content
+ # matches localisation from Planetary Diversity so that it won't matter which mod loads first
+ district_corp_industrial: "Industrial Arcology"
+ district_bioforge_stomach: "Alloy Drone District"
+ district_mf_alloy: "Fabricator District"
+ district_techno_industrial: "Sub-Surface Cauldron District"

@@ -68,3 +68,9 @@ is_pd_gaia = {
 	optimize_memory
 	always = no
 }
+
+# this = planet
+is_pd_planetary_megaproject = {
+	optimize_memory
+	always = no
+}
