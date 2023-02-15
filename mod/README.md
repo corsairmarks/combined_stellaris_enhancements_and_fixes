@@ -212,3 +212,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Updated: Deassimilate Machines at 7.0.0
     * Updated: Leader Traits: All Eligible Species Traits at 5.1.0
     * Updated: Retain Leaders from Integrated Subjects at 7.1.1
+* 7.2.1 Update merged mods
