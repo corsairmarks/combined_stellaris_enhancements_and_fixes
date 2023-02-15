@@ -18,3 +18,8 @@
  mod_job_aquaculture_drone_add: "$job_aquaculture_drone$ Jobs"
  mod_job_aquaculture_drone_per_pop: "§G+1§! $job_aquaculture_drone$ Job per $VALUE$ Pops"
  mod_job_aquaculture_drone_per_pop_short: "\n§G+1§! £mod_job_angler_add£ per $VALUE$ £pop£"
+
+ # localisation to make the game happy with the conditional content
+ # matches localisation from Planetary Diversity so that it won't matter which mod loads first
+ district_pdhab_food: "Hydroponics District"
+ district_pdhab_food_unlimited: "$district_pdhab_food$"
