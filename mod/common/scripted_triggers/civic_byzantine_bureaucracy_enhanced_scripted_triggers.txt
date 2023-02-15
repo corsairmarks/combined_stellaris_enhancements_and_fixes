@@ -1,0 +1,11 @@
+# this = country
+is_byzantine_bureaucracy = {
+	optimize_memory
+	has_civic = civic_byzantine_bureaucracy
+}
+
+# this = country
+is_valid_byzantine_bureaucracy = {
+	optimize_memory
+	has_valid_civic = civic_byzantine_bureaucracy
+}
