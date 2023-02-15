@@ -10,10 +10,14 @@ district_generator = {
 
 	show_on_uncolonized = {
 		uses_district_set = standard
+		is_pd_wasteland = no
+		is_pd_planetary_megaproject = no
 	}
 
 	potential = {
 		uses_district_set = standard
+		is_pd_wasteland = no
+		is_pd_planetary_megaproject = no
 	}
 
 	allow = {
@@ -140,6 +144,8 @@ district_mining = {
 			exists = from
 			from = { is_subterranean_empire = yes }
 		}
+		is_pd_wasteland = no
+		is_pd_planetary_megaproject = no
 	}
 
 	potential = {
@@ -148,6 +154,8 @@ district_mining = {
 			exists = owner
 			owner = { is_subterranean_empire = yes }
 		}
+		is_pd_wasteland = no
+		is_pd_planetary_megaproject = no
 	}
 
 	allow = {
@@ -289,9 +297,18 @@ district_farming = {
 			from = { is_anglers_empire = no }
 			AND = {
 				NOT = { is_planet_class = pc_ocean }
+				is_pd_planet_for_aqua_trait = no
 				from = { is_anglers_empire = yes }
 			}
 		}
+		NOR = {
+			has_modifier = technoorganic
+			has_modifier = technoorganic2
+			has_deposit = d_technocanal
+			has_deposit = d_technocanal_blocker
+		}
+		is_pd_wasteland = no
+		is_pd_planetary_megaproject = no
 	}
 
 	potential = {
@@ -301,9 +318,18 @@ district_farming = {
 			owner = { is_anglers_empire = no }
 			AND = {
 				NOT = { is_planet_class = pc_ocean }
+				is_pd_planet_for_aqua_trait = no
 				owner = { is_anglers_empire = yes }
 			}
 		}
+		NOR = {
+			has_modifier = technoorganic
+			has_modifier = technoorganic2
+			has_deposit = d_technocanal
+			has_deposit = d_technocanal_blocker
+		}
+		is_pd_wasteland = no
+		is_pd_planetary_megaproject = no
 		NAND = {
 			exists = owner
 			owner = {
@@ -500,6 +526,7 @@ district_generator_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
+			uses_district_set = pdnecroplanet
 			AND = {
 				exists = from
 				from = {
@@ -510,6 +537,8 @@ district_generator_uncapped = {
 				}
 				uses_district_set = shattered_ring_world
 			}
+			is_pd_wasteland = yes
+			is_pd_planetary_megaproject = yes
 		}
 	}
 
@@ -517,6 +546,7 @@ district_generator_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
+			uses_district_set = pdnecroplanet
 			AND = {
 				exists = owner
 				owner = {
@@ -527,6 +557,8 @@ district_generator_uncapped = {
 				}
 				uses_district_set = shattered_ring_world
 			}
+			is_pd_wasteland = yes
+			is_pd_planetary_megaproject = yes
 		}
 	}
 
@@ -664,11 +696,14 @@ district_mining_uncapped = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
 			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
 			AND = {
 				uses_district_set = standard
 				exists = from
 				from = { is_subterranean_empire = yes }
 			}
+			is_pd_wasteland = yes
+			is_pd_planetary_megaproject = yes
 		}
 	}
 
@@ -677,16 +712,20 @@ district_mining_uncapped = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
 			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
 			AND = {
 				uses_district_set = standard
 				exists = owner
 				owner = { is_subterranean_empire = yes }
 			}
+			is_pd_wasteland = yes
+			is_pd_planetary_megaproject = yes
 		}
 	}
 
 	allow = {
 		NOT = { has_modifier = resort_colony }
+		is_pd_planetary_megaproject = no
 	}
 
 	conversion_ratio = 1
@@ -922,11 +961,21 @@ district_farming_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
+			is_pd_wasteland = yes
+			is_pd_planetary_megaproject = yes
 			AND = {
-				is_planet_class = pc_ocean
+				OR = {
+					is_planet_class = pc_ocean
+					is_pd_planet_for_aqua_trait = yes
+				}
 				exists = from
 				from = { is_anglers_empire = yes }
 			}
+			has_modifier = technoorganic
+			has_modifier = technoorganic2
+			has_deposit = d_technocanal
+			has_deposit = d_technocanal_blocker
 		}
 	}
 
@@ -934,11 +983,21 @@ district_farming_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
+			is_pd_wasteland = yes
+			is_pd_planetary_megaproject = yes
 			AND = {
-				is_planet_class = pc_ocean
+				OR = {
+					is_planet_class = pc_ocean
+					is_pd_planet_for_aqua_trait = yes
+				}
 				exists = owner
 				owner = { is_anglers_empire = yes }
 			}
+			has_modifier = technoorganic
+			has_modifier = technoorganic2
+			has_deposit = d_technocanal
+			has_deposit = d_technocanal_blocker
 		}
 		NAND = {
 			exists = owner
@@ -951,6 +1010,8 @@ district_farming_uncapped = {
 
 	allow = {
 		NOT = { has_modifier = resort_colony }
+		is_pd_wasteland = no
+		is_pd_planetary_megaproject = no
 	}
 
 	conversion_ratio = 1
@@ -967,7 +1028,10 @@ district_farming_uncapped = {
 		# Anglers Civic cost effect
 		cost = {
 			trigger = {
-				is_planet_class = pc_ocean
+				OR = {
+					is_planet_class = pc_ocean
+					is_pd_planet_for_aqua_trait = yes
+				}
 				exists = owner
 				owner = { is_anglers_empire = yes }
 			}
