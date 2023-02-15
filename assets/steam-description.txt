@@ -25,7 +25,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2564348666]Counter-Limited Armies Fix[/url] at 5.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553812372]Deassimilate Machines[/url] at 7.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2559702143]Deassimilated Machine Worlds[/url] at 6.0.0
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] at 5.0.0
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] at 5.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2775465389]Game Start: Unity Fund[/url] at 2.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] at 5.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] at 5.1.0
