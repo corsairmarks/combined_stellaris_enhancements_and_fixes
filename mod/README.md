@@ -32,6 +32,7 @@ Overriding a building, deposit, or economic category causes the game to log erro
 ## Changelog
 
 * 1.0.0 Initial version
+* 1.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
