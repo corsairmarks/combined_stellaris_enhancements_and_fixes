@@ -34,7 +34,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 5.1.0)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.2.0)
 * [Leisure Districts for People of Culture](https://steamcommunity.com/workshop/filedetails/?id=2916289268) ([Source](https://github.com/corsairmarks/district_leisure_cultural) 1.0.0)
-* [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 5.0.0)
+* [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 5.1.0)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 5.0.0)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 6.1.0)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 4.0.0)
@@ -213,3 +213,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Updated: Leader Traits: All Eligible Species Traits at 5.1.0
     * Updated: Retain Leaders from Integrated Subjects at 7.1.1
 * 7.2.1 Update merged mods
+    * Penal Colony: Enhanced at 5.1.0
