@@ -4,6 +4,8 @@ This mod is a compilation of most of my other fixes and balance mods.  Please se
 
 Individual mods update first, then changes are merged here.
 
+Special thanks to [Pietas](https://steamcommunity.com/id/piousnoobling) in pinpointing conflicts with Planetary Diversity - all component mods fully support PD.
+
 # Major Update
 
 Versions 7.0.0 and above are fully updated for Stellaris version 3.6 "Orion" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [6.0.1](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/6.0.1).
