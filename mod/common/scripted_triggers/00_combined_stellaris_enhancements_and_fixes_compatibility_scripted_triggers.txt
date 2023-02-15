@@ -70,6 +70,18 @@ is_pd_gaia = {
 }
 
 # this = planet
+is_pd_exotic = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_shroud_world = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
 is_pd_planetary_megaproject = {
 	optimize_memory
 	always = no

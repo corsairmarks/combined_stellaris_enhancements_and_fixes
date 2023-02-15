@@ -22,8 +22,14 @@ d_betharian_deposit = {
 		}
 		modifier = {
 			factor = 2
-			is_planet_class = pc_gaia
+			OR = {
+				is_planet_class = pc_gaia
+				is_pd_gaia = yes
+				is_pd_shroud_world = yes
+				is_pd_exotic = yes
+			}
 		}
+		# does not support any explicit PD types in order to avoid the need for duplicating all the planet classes in this mod
 		modifier = {
 			factor = 0
 			solar_system = {
