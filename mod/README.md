@@ -223,3 +223,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * Penal Colony: Enhanced at 5.1.0
     * Planetary Modifier Enhancements at 5.1.0
     * "Terraform" to Tomb World at 6.0.1
+* 7.2.2 Update merged mod: "Agrarian" Idyll for Lithoids at 7.1.1
