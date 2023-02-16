@@ -110,6 +110,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Consume the compatibility trigger from other mods
     * Remove old compatibility global flag
 * 7.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
+* 7.1.1 Fix Planetary Diversity dummy static modifiers - the file needs to be named so that Planetary Diversity's file loads _before_ the dummy code
 
 ## Source Code
 
