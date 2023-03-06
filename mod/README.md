@@ -226,3 +226,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 7.2.2 Update merged mod: "Agrarian" Idyll for Lithoids at 7.1.1
 * 7.2.3 Update merged mod: Deassimilate Machines at 7.0.1
 * 7.2.4 Update merged mod: Deassimilate Machines at 7.0.2
+* 7.2.5 Update merged mod: Leader Traits: Enhanced Randomisation at 5.2.0
