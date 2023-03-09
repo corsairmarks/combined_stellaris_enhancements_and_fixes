@@ -4,3 +4,12 @@ has_terraform_to_pc_nuked_active = {
 	optimize_memory
 	always = no
 }
+
+### "Terraform" to Tomb World ###
+
+# whether this species is considered "nuked"
+# this = species
+is_nuked_species = {
+	optimize_memory
+	always = no
+}
