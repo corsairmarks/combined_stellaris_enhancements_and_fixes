@@ -16,7 +16,7 @@ Reintroduces terraform stations and existing (but unused) graphical effects to p
 
 This mod reuses existing game entities and 3D assets plus new events to handle the spawning and despawning for terraform stations.  The terraform station ship size is restored to the game and used to create real stations as visual markers.  What this means to you is that this mod should work with practically any other mod, although new shipsets will use their fallback option for terraform stations.
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
 
 ### When to Install
 
@@ -24,21 +24,14 @@ This mod should be added before you start a new game so that all empires are ass
 
 ### Recommended Companion Mods
 
-[Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) or [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture).
-
-[Machine Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491) is a phenomenal, fully-sectioned shipset and includes megastructures.
-
-[Machine Shipset Add-on: Shattered Ring and Habitat Appearance](https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994) ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset.  This mod adds missing graphical definitions to the Machine Shipset and enhances the appearance of its habitable ringworlds segments and mini-ring habitats.
-
-[Machine Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2628972292) combined with the Machine Shipset, this compatibility patch ensures the correct Machine Shipset graphics are used for terraform stations.
-
-[Enigmatic Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457) is a menacing, hexagonal shipset that highlights your primary color.
-
-[Enigmatic Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667) combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations.
-
-[Ascendant Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2130588320) is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well.  It also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits.
-
-[Ascendant Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2649734046) combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations.
+* [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) or [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture)
+* [Machine Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491) is a phenomenal, fully-sectioned shipset and includes megastructures
+* [Machine Shipset Add-on: Shattered Ring and Habitat Appearance](https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994) ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset (adds missing graphical definitions to the Machine Shipset and enhances the appearance of its habitable ringworlds segments and mini-ring habitats)
+* [Machine Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2628972292) combined with the Machine Shipset, this compatibility patch ensures the correct Machine Shipset graphics are used for terraform stations
+* [Enigmatic Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457) is a menacing, hexagonal shipset that highlights your primary color
+* [Enigmatic Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667) combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations
+* [Ascendant Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2130588320) is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well.  It also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits
+* [Ascendant Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2649734046) combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations
 
 ## Known Issues
 
@@ -51,7 +44,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 * 2.0.0 Upgrade for compatibility with Stellaris version 3.2 "Herbert"
     * Account for new radiotrophic variant
     * Verify the fallback is used for Aquatic
-* 2.1.0 Mark as compatible with Stellaris 3.3 "Libra"
+* 2.1.0 Mark as compatible with Stellaris version 3.3 "Libra"
     * Improve trigger for determining if a species is "nuked" - this change is a general upgrade, not specific to version 3.3 "Libra"
 * 3.0.0 Upgrade for compatibility with Stellaris version 3.4 "Cepheus"
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax")
@@ -62,6 +55,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
     * Add a compatibility trigger for other mods to check whether this one is active
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
+* 5.1.0 Mark as compatible with Stellaris version 3.7 "Canis Minor"
 
 ## Source Code
 

@@ -12,28 +12,22 @@ Reintroduces terraform stations and existing (but unused) graphical effects to p
 [h2]Compatibility[/h2]
 This mod reuses existing game entities and 3D assets plus new events to handle the spawning and despawning for terraform stations.  The terraform station ship size is restored to the game and used to create real stations as visual markers.  What this means to you is that this mod should work with practically any other mod, although new shipsets will use their fallback option for terraform stations.
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
 
 [h3]When to Install[/h3]
 This mod should be added before you start a new game so that all empires are assigned a (hidden) ship design for terraform stations.  Without the design, there is no way to spawn the terraform station fleets.  Furthermore, this mod should not be removed from a game in-progress.  Losing access to the ship size or entities may cause issues if there are any terraform stations still active, and attempting to fire an event that doesn't exist will frequently result in a crash.
 
 [h3]Recommended Companion Mods[/h3]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102]Ringworld Graphical Enhancements[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089]Subtle Polish: A Collection of Fixes and Enhancements[/url] to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture).
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491]Machine Shipset[/url] is a phenomenal, fully-sectioned shipset and includes megastructures.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994]Machine Shipset Add-on: Shattered Ring and Habitat Appearance[/url] ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset.  This mod adds missing graphical definitions to the Machine Shipset and enhances the appearance of its habitable ringworlds segments and mini-ring habitats.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628972292]Machine Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Machine Shipset, this compatibility patch ensures the correct Machine Shipset graphics are used for terraform stations.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457]Enigmatic Shipset[/url] is a menacing, hexagonal shipset that highlights your primary color.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667]Enigmatic Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2130588320]Ascendant Shipset[/url] is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well.  It also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits.
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2649734046]Ascendant Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations.
-
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102]Ringworld Graphical Enhancements[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089]Subtle Polish: A Collection of Fixes and Enhancements[/url] to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491]Machine Shipset[/url] is a phenomenal, fully-sectioned shipset and includes megastructures
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994]Machine Shipset Add-on: Shattered Ring and Habitat Appearance[/url] ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset (adds missing graphical definitions to the Machine Shipset and enhances the appearance of its habitable ringworlds segments and mini-ring habitats)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2628972292]Machine Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Machine Shipset, this compatibility patch ensures the correct Machine Shipset graphics are used for terraform stations
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457]Enigmatic Shipset[/url] is a menacing, hexagonal shipset that highlights your primary color
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667]Enigmatic Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2130588320]Ascendant Shipset[/url] is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well.  It also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2649734046]Ascendant Shipset Add-on: Aesthetic Terraform Station Compatibility[/url] combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations
+[/list]
 [h2]Known Issues[/h2]
 The terraform station "beam" is a fixed length and may not reach down to small planet, or might become buried beneath the crust of larger planets.  There is not a good way to dynamically scale the entity inversely to planet size with script, so an arbitrary length was chosen.
 
