@@ -45,14 +45,14 @@ event = {
 				limit = { has_valid_civic = civic_machine_ota_updates }
 				change_variable = {
 					which = starting_unity_fund
-					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 390 (civic_machine_ota_updates)
+					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 576 (civic_machine_ota_updates)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_hive_subsumed_will }
 				change_variable = {
 					which = starting_unity_fund
-					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 83 (civic_hive_subsumed_will)
+					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 121 (civic_hive_subsumed_will)
 				}
 			}
 			if = {
@@ -66,14 +66,14 @@ event = {
 				limit = { has_valid_civic = civic_imperial_cult }
 				change_variable = {
 					which = starting_unity_fund
-					value = 100 # civic, defined: common/governments/civics/00_civics.txt at line 80 (civic_imperial_cult)
+					value = 100 # civic, defined: common/governments/civics/00_civics.txt at line 81 (civic_imperial_cult)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_inwards_perfection }
 				change_variable = {
 					which = starting_unity_fund
-					value = 50 # civic, defined: common/governments/civics/00_civics.txt at line 381 (civic_inwards_perfection)
+					value = 50 # civic, defined: common/governments/civics/00_civics.txt at line 691 (civic_inwards_perfection)
 				}
 			}
 			if = {
