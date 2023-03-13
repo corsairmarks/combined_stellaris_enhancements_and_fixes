@@ -31,7 +31,7 @@ Planets converted to tomb worlds this way are not eligible for the random events
 
 ## Compatibility
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
 
 Only adds new terraforming links, so it should not conflict with other mods that do not also add terraforming links from and to the same planet classes.  Does not support new planet classes added by mods such as Planetary Diversity, but will still work for the base game's planet classes.
 
@@ -74,6 +74,7 @@ Only adds new terraforming links, so it should not conflict with other mods that
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
 * 6.0.1 Fix `eligible_pc_nuked_terraform_unhabitable` trigger to respect the new terraforming modifiers
+* 6.1.0 Mark as compatible with Stellaris version 3.7 "Canis Minor" - no script changes
 
 ## Source Code
 
