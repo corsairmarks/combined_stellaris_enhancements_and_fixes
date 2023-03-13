@@ -23,7 +23,7 @@ This mod will not work well with other mods that make changes to the same colony
 
 Compatible with Planetary Diversity and Gigastructural Engineering (does not modify Gigas districts, but does exclude these districts from spawning on the wrong things).
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
 
 ### When to Install
 
@@ -96,6 +96,7 @@ Overwriting a colony type or district produces an error log.  Expect to see nine
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
 * 5.1.0 Improve built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
+* 6.0.0 Update for Stellaris version 3.6 "Orion" - integrate underlying game changes
 
 ## Source Code
 
