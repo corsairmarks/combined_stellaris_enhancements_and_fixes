@@ -150,6 +150,19 @@ event = {
 								}
 							}
 						}
+						else_if = {
+							limit = { has_job = unifier }
+							multiply_variable = {
+								which = base_edicts_fund_per_job
+								value = value:job_total_output_modifier|JOB|unifier|RESOURCE|unity|
+							}
+							prevprev = {
+								change_variable = {
+									which = starting_unity_fund
+									value = prev.base_edicts_fund_per_job
+								}
+							}
+						}
 						clear_variable = base_edicts_fund_per_job
 					}
 				}
