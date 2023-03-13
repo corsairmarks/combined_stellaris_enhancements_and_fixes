@@ -15,11 +15,15 @@ district_city = {
 			uses_district_set = pdnecroplanet
 			uses_district_set = pdscrapyard
 		}
+		NOT = { has_deposit = d_crashed_slaver_ship }
 		exists = from
 		from = {
 			OR = {
 				is_regular_empire = yes
-				is_country_type = primitive
+				AND = {
+					is_country_type = primitive
+					is_hive_empire = no
+				}
 			}
 		}
 	}
@@ -32,12 +36,16 @@ district_city = {
 			uses_district_set = pdnecroplanet
 			uses_district_set = pdscrapyard
 		}
+		NOT = { has_deposit = d_crashed_slaver_ship }
 		OR = {
 			NOT = { exists = owner } # this condition is needed for galaxy generation
 			owner = {
 				OR = {
 					is_regular_empire = yes
-					is_country_type = primitive
+					AND = {
+						is_country_type = primitive
+						is_hive_empire = no
+					}
 				}
 			}
 		}
@@ -72,9 +80,7 @@ district_city = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-			}
+			owner = { has_valid_civic = civic_agrarian_idyll }
 		}
 		modifier = {
 			planet_housing_add = -1
@@ -114,9 +120,7 @@ district_city = {
 		potential = {
 			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
-			owner = {
-				has_active_tradition = tr_mercantile_trickle_up_economics
-			}
+			owner = { has_active_tradition = tr_mercantile_trickle_up_economics }
 		}
 		modifier = {
 			job_clerk_add = 1
@@ -128,9 +132,8 @@ district_city = {
 			exists = owner
 			owner = {
 				OR = {
-					has_valid_civic = civic_merchant_guilds
-					has_valid_civic = civic_corporate_dominion
-					is_megacorp = yes
+					is_capitalist = yes
+					has_corporate_government = yes
 				}
 				has_active_tradition = tr_mercantile_commercial_enterprise
 			}
@@ -149,9 +152,8 @@ district_city = {
 			exists = owner
 			owner = {
 				OR = {
-					has_valid_civic = civic_corporate_dominion
-					has_valid_civic = civic_merchant_guilds
-					is_megacorp = yes
+					is_capitalist = yes
+					has_corporate_government = yes
 				}
 				has_active_tradition = tr_mercantile_commercial_enterprise
 			}
@@ -280,9 +282,8 @@ district_srw_commercial = {
 			exists = owner
 			owner = {
 				OR = {
-					has_valid_civic = civic_merchant_guilds
-					has_valid_civic = civic_corporate_dominion
-					is_megacorp = yes
+					is_capitalist = yes
+					has_corporate_government = yes
 				}
 				has_active_tradition = tr_mercantile_trickle_up_economics
 				has_active_tradition = tr_mercantile_commercial_enterprise

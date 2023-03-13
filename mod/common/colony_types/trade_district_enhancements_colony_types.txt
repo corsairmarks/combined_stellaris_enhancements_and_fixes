@@ -1,19 +1,14 @@
-# variables duplicated from common/colony_types/00_colony_types.txt
-@free_districts_low_threshold = 5
-@free_districts_medium_threshold = 10
-@free_districts_high_threshold = 15
-@built_districts_low_threshold = 3
-@built_districts_medium_threshold = 4
-@built_districts_high_threshold = 8
+# variable duplicated from common/colony_types/00_colony_types.txt
+@stickiness = 10
 
-# Shattered Ring Trade
+# Based on col_city
 col_srw_trade = {
 	icon = GFX_colony_type_ring_trade
 	potential = {
-		exists = owner
-		owner = { is_regular_empire = yes }
 		uses_district_set = shattered_ring_world
 		is_special_colony_type = no
+		exists = owner
+		owner = { is_regular_empire = yes }
 	}
 	custom_tooltip = col_srw_trade_custom
 	planet_modifier = {
@@ -47,43 +42,28 @@ col_srw_trade = {
 		mult = value:tde_trade_colony_bonus_trade
 	}
 	weight_modifier = {
-		modifier = {
-			add = 1
-			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
-			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
-			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
-			num_free_districts = { type = district_srw_commercial value >= @free_districts_low_threshold }
+		modifier = { 
+			add = @stickiness
+			has_designation = col_srw_trade
 		}
-		modifier = {
-			add = 3
-			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
-			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
-			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
-			num_free_districts = { type = district_srw_commercial value >= @free_districts_medium_threshold }
-		}
-		modifier = {
-			add = value:tde_col_srw_trade_weight_multiplier
-		}
-		modifier = {
-			add = 2
-			num_districts = {
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
 				type = district_srw_commercial
-				value >= @built_districts_low_threshold
 			}
+			mode = add
+			mult = 2 # same as minimg/farming/generator
+		}
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = merchant # merchant jobs act as a pretty decent proxy for "this is a trade planet"
+			}
+			mode = add
+			mult = 2
 		}
 		modifier = {
-			add = 5
-			num_districts = {
-				type = district_srw_commercial
-				value >= @built_districts_medium_threshold
-			}
-		}
-		modifier = {
-			factor = 0.1
-			num_districts = {
-				type = district_city
-				value < @built_districts_low_threshold
-			}
+			add = value:tde_trade_colony_building_weight_multiplier
 		}
 	}
 }

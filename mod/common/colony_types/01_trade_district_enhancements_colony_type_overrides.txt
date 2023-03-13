@@ -1,12 +1,10 @@
-# variables duplicated from common/colony_types/00_colony_types.txt
-@free_districts_low_threshold = 5
-@free_districts_medium_threshold = 10
-@free_districts_high_threshold = 15
-@built_districts_low_threshold = 3
-@built_districts_medium_threshold = 4
-@built_districts_high_threshold = 8
+# variable duplicated from common/colony_types/00_colony_types.txt
+@stickiness = 10
 
-# Urban Planet
+# Modified:
+# * use triggers for potential planets
+# * get the special trade colony bonus trade, as long as has_more_standard_districts_active = no
+# * add weight based on trade buildings
 col_city = {
 	icon = GFX_colony_type_urban
 	potential = {
@@ -22,47 +20,42 @@ col_city = {
 		planet_district_city_build_speed_mult = 0.25
 		trade_value_mult = 0.2
 	}
+	triggered_planet_modifier = {
+		potential = { has_more_standard_districts_active = no }
+		trade_value_add = 1
+		mult = value:tde_trade_colony_bonus_trade
+	}
 	weight_modifier = {
 		modifier = {
-			add = 1
-			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
-			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
-			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
-			num_free_districts = { type = district_city value >= @free_districts_medium_threshold }
+			add = @stickiness
+			has_designation = col_city
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_city
+			}
+			mode = add
+		}
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = merchant # merchant jobs act as a pretty decent proxy for "this is a trade planet"
+			}
+			mode = add
+			mult = 2
 		}
 		modifier = {
-			add = 3
-			num_free_districts = { type = district_farming value < @free_districts_low_threshold }
-			num_free_districts = { type = district_mining value < @free_districts_low_threshold }
-			num_free_districts = { type = district_generator value < @free_districts_low_threshold }
-			num_free_districts = { type = district_city value >= @free_districts_high_threshold }
-		}
-		modifier = {
-			add = 5
-			has_modifier = natural_beauty
-		}
-		modifier = {
-			add = value:tde_col_city_weight_multiplier
+			add = value:tde_trade_colony_building_weight_multiplier
 			NOT = { uses_district_set = shattered_ring_world }
-		}
-		modifier = {
-			add = 5
-			num_districts = {
-				type = district_city
-				value >= @built_districts_high_threshold
-			}
-		}
-		modifier = {
-			factor = 0.1
-			num_districts = {
-				type = district_city
-				value < @built_districts_low_threshold
-			}
 		}
 	}
 }
 
-# Habitat Trade
+# Modified:
+# * use triggers for potential planets
+# * get the special trade colony bonus trade
+# * add weight based on trade buildings
 col_habitat_trade = {
 	icon = GFX_colony_type_habitat_trade
 	potential = {
@@ -76,10 +69,28 @@ col_habitat_trade = {
 	custom_tooltip = col_habitat_trade_custom
 	planet_modifier = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
-		planet_building_commercial_megaplex_build_speed_mult = 0.25
-		planet_building_galactic_stock_exchange_build_speed_mult = 0.25
-		planet_district_hab_commercial_build_speed_mult = 0.25
-		trade_value_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_interstellar_economics }
+		}
+		modifier = { planet_building_commercial_megaplex_build_speed_mult = 0.25 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_galactic_markets }
+		}
+		modifier = { planet_building_galactic_stock_exchange_build_speed_mult = 0.25 }
+	}
+	triggered_planet_modifier = {
+		potential = { always = yes }
+		# always-on triggered modifier for ordering purposes
+		modifier = {
+			planet_district_hab_commercial_build_speed_mult = 0.25
+			trade_value_mult = 0.2
+		}
 	}
 	triggered_planet_modifier = {
 		potential = { always = yes }
@@ -87,14 +98,41 @@ col_habitat_trade = {
 		mult = value:tde_trade_colony_bonus_trade
 	}
 	weight_modifier = {
-		base = 300
 		modifier = {
-			factor = value:tde_col_habitat_trade_weight_multiplier
+			add = @stickiness
+			has_designation = col_habitat_trade
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_hab_commercial
+			}
+			mode = add
+			mult = 3
+		}
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = merchant # merchant jobs act as a pretty decent proxy for "this is a trade planet"
+			}
+			mode = add
+			mult = 2
+		}
+		modifier = {
+			add = value:tde_trade_colony_building_weight_multiplier
+		}
+		modifier = {
+			factor = 0.1
+			has_planet_flag = energy_habitat
 		}
 	}
 }
 
-# Ringworld Trade
+# Modified:
+# * use triggers for potential planets
+# * get the special trade colony bonus trade
+# * factor in merchants, like the other two trade designations
+# * add weight based on trade buildings
 col_ring_trade = {
 	icon = GFX_colony_type_ring_trade
 	potential = {
@@ -105,10 +143,28 @@ col_ring_trade = {
 	custom_tooltip = col_ring_trade_custom
 	planet_modifier = {
 		planet_building_commercial_zone_build_speed_mult = 0.25
-		planet_building_commercial_megaplex_build_speed_mult = 0.25
-		planet_building_galactic_stock_exchange_build_speed_mult = 0.25
-		planet_district_rw_commercial_build_speed_mult = 0.25
-		trade_value_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_interstellar_economics }
+		}
+		modifier = { planet_building_commercial_megaplex_build_speed_mult = 0.25 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_galactic_markets }
+		}
+		modifier = { planet_building_galactic_stock_exchange_build_speed_mult = 0.25 }
+	}
+	triggered_planet_modifier = {
+		potential = { always = yes }
+		# always-on triggered modifier for ordering purposes
+		modifier = {
+			planet_district_rw_commercial_build_speed_mult = 0.25
+			trade_value_mult = 0.2
+		}
 	}
 	triggered_planet_modifier = {
 		potential = { always = yes }
@@ -116,9 +172,28 @@ col_ring_trade = {
 		mult = value:tde_trade_colony_bonus_trade
 	}
 	weight_modifier = {
-		base = 10
 		modifier = {
-			add = value:tde_col_ring_trade_weight_multiplier
+			add = @stickiness
+			has_designation = col_ring_trade
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_rw_commercial
+			}
+			mode = add
+			mult = 10
+		}
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = merchant # merchant jobs act as a pretty decent proxy for "this is a trade planet"
+			}
+			mode = add
+			mult = 2
+		}
+		modifier = {
+			add = value:tde_trade_colony_building_weight_multiplier
 		}
 	}
 }

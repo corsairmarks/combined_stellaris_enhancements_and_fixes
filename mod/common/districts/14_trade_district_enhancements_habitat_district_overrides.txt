@@ -108,9 +108,8 @@ district_hab_commercial = {
 			exists = owner
 			owner = {
 				OR = {
-					has_valid_civic = civic_merchant_guilds
-					has_valid_civic = civic_corporate_dominion
-					is_megacorp = yes
+					is_capitalist = yes
+					has_corporate_government = yes
 				}
 			}
 		}
@@ -136,9 +135,10 @@ district_hab_commercial = {
 					owner = {
 						OR = {
 							has_active_tradition = tr_mercantile_commercial_enterprise
-							has_valid_civic = civic_merchant_guilds
-							has_valid_civic = civic_corporate_dominion
-							is_megacorp = yes
+							OR = {
+								is_capitalist = yes
+								has_corporate_government = yes
+							}
 						}
 					}
 				}
