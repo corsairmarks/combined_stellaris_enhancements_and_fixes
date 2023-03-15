@@ -9,6 +9,7 @@ tde_building_dynamic_weight = {
 		}
 		mode = add
 	}
+	mult = 2
 }
 
 # value:tde_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
