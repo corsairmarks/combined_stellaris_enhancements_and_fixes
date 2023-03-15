@@ -97,6 +97,7 @@ Overwriting a colony type or district produces an error log.  Expect to see nine
     * Remove old compatibility global flag
 * 5.1.0 Improve built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 * 6.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying game changes
+* 6.0.1 Adjust dynamic building weight - custom and overridden colony types now value building the same as built-in colony types
 
 ## Source Code
 
