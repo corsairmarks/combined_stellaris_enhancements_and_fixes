@@ -1,10 +1,10 @@
-name="Buildings: Betharian Power Plant and Alien Zoo - Enhanced"
+name="Building: Betharian Power Plant - Enhanced"
 tags={
 	"Balance"
 	"Buildings"
 	"Economy"
 }
-version="1.1.0"
+version="2.0.0"
 picture="thumbnail.png"
-supported_version="3.6.*"
+supported_version="3.7.*"
 remote_file_id="2916269980"
