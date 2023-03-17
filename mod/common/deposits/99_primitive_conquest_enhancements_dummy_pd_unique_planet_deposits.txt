@@ -1,0 +1,10 @@
+# dummy deposits from Planetary Diversity: Unique Worlds
+d_technocanal = {
+	potential = { always = no }
+	drop_weight = { weight = 0 }
+}
+
+d_technocanal_blocker = {
+	potential = { always = no }
+	drop_weight = { weight = 0 }
+}
