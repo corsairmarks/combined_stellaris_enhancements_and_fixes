@@ -11,7 +11,7 @@ Rural districts grant 0.25 building slots per district. The Agrarian/Lithorian U
 Because this is a tradition text swap, all the the normal restrictions for Agrarian Idyll apply to it (without further code changes).
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.6 "Orion." Not compatible with achievements. This mod overrides one core Stellaris file ([b]common/districts/02_rural_districts.txt[/b] in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level. In particular, this mod overrides:
+Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements. This mod overrides one core Stellaris file ([b]common/districts/02_rural_districts.txt[/b] in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level. In particular, this mod overrides:
 [list]
 [*][b]civic_agrarian_idyll[/b] to add the alternative description for lithoids
 [*][b]civic_corporate_anglers[/b] to remove the restriction on combining it with [b]civic_agrarian_idyll[/b] (likely a Paradox oversight)
@@ -43,7 +43,6 @@ Overriding a job, technology, or civic causes the game to log errors. Expect to 
 [17:11:08][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 625
 [17:11:08][game_singleobjectdatabase.h:165]: Object with key: puddle_technician already exists, using the one at file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 724
 [17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_agrarian_idyll already exists, using the one at file: common/governments/civics/10_agrarian_idyll_lithoid_civic_overrides.txt line: 3
-[17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_corporate_anglers already exists, using the one at file: common/governments/civics/13_agrarian_idyll_lithoid_corporate_civic_overrides.txt line: 2
 [/code]
 Normally overriding a single technology can cause problems with the game being confused by duplicates, but only technologies that are considered prerequisites for other technologies are affected. 
 

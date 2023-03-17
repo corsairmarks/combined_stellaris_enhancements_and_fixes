@@ -14,10 +14,9 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 ## Compatibility
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.  This mod overrides one core Stellaris file (`common/districts/02_rural_districts.txt` in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.  This mod overrides one core Stellaris file (`common/districts/02_rural_districts.txt` in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
 
 * `civic_agrarian_idyll` to add the alternative description for lithoids
-* `civic_corporate_anglers` to remove the restriction on combining it with `civic_agrarian_idyll` (likely a Paradox oversight)
 * `district_rw_farming` to excludes Lithorian Idyll from the farming district housing benefits (Agrarian Idyll normally gets +5 housing)
 * Many worker-stratum jobs to ensure the Agrarian Idyll and Lithorian Idyll bonus apply to farming or mining jobs, respectively: `miner`, `crystal_miner`, `gas_extractor`, `mote_harvester`, `farmer`, `scrap_miner`, `angler`, and `manufactorium_scraper`
 * Several event-related jobs, for the same reason: `cave_cleaner`, `titan_hunter`, `turtle_miner`
@@ -49,7 +48,6 @@ Overriding a job, technology, or civic causes the game to log errors. Expect to 
 [17:11:08][game_singleobjectdatabase.h:165]: Object with key: angler already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 625
 [17:11:08][game_singleobjectdatabase.h:165]: Object with key: puddle_technician already exists, using the one at  file: common/pop_jobs/23_agrarian_idyll_lithoid_worker_job_overrides.txt line: 724
 [17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_agrarian_idyll already exists, using the one at  file: common/governments/civics/10_agrarian_idyll_lithoid_civic_overrides.txt line: 3
-[17:11:14][game_singleobjectdatabase.h:165]: Object with key: civic_corporate_anglers already exists, using the one at  file: common/governments/civics/13_agrarian_idyll_lithoid_corporate_civic_overrides.txt line: 2
 ```
 
 Normally overriding a single technology can cause problems with the game being confused by duplicates, but only technologies that are considered prerequisites for other technologies are affected. 
@@ -111,6 +109,10 @@ Normally overriding a single technology can cause problems with the game being c
     * Remove old compatibility global flag
 * 7.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 * 7.1.1 Fix Planetary Diversity dummy static modifiers - the file needs to be named so that Planetary Diversity's file loads _before_ the dummy code
+* 8.0.0 Update for Stellaris version 3.7 "Canis Minor"
+    * Integrate underlying game changes for Civic: Agrarian Idyll and rural districts
+    * Remove megacorp Civic: Anglers override, no longer necessary
+    * Improve Planetary Diversity support
 
 ## Source Code
 
