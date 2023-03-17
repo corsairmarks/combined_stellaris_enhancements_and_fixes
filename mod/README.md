@@ -28,7 +28,7 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
-Built for Stellaris version 3.6 "Orion."  This mod is not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  This mod is not compatible with achievements.
 
 ### When to Install
 
@@ -89,6 +89,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Remove old compatibility global flag
 * 6.0.1 Add some missing compatibility triggers, fix using a trigger in the wrong scope in `can_generate_leader_from_species`
 * 6.0.2 Fix a scope error in `military_service_full`
+* 6.1.0 Mark as compatible with Stellaris version 3.7 "Canis Minor" - no script changes
 
 ## Source Code
 

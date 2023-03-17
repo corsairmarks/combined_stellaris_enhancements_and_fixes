@@ -22,7 +22,7 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372]Deassimiliate Machines[/url].
 
-Built for Stellaris version 3.6 "Orion." This mod is not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor." This mod is not compatible with achievements.
 
 However, the new edicts to declare Battle Thralls as Honored Protectors or Bio-Trophies as Organic Advisors are not localised - that is because it is my original writing. The English text is used as a placeholder for other languages. If you want to translate it into your language, please leave a comment or message me.
 
