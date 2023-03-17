@@ -1,13 +1,14 @@
 # this = planet
 should_swap_extra_high_priests = {
 	optimize_memory
-	OR = {
-		has_designation = col_bureau_spiritualist
-		has_designation = col_habitat_bureau_spiritualist
-	}
+	has_unity_designation = yes
 	exists = owner
 	owner = {
 		is_regular_empire = yes
+		OR = {
+			is_spiritualist = yes
+			has_make_spiritualist_perk = yes
+		}
 		is_megacorp = no
 	}
 }
@@ -26,8 +27,7 @@ should_swap_extra_nobles = {
 		}
 	}
 	OR = {
-		has_designation = col_bureau
-		has_designation = col_habitat_bureau
+		has_unity_designation = yes
 		AND = {
 			is_sector_capital = yes
 			should_swap_extra_high_priests = no
