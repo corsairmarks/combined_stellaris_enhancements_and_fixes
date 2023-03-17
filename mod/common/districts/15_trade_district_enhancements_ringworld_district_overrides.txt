@@ -196,7 +196,7 @@ district_rw_commercial = {
 			owner = { is_megacorp = yes }
 		}
 		modifier = {
-			# having 2 clerk => 1 manager and 1 executive is more fair on a large district, where it's less of an overall power bump
+			# having 2 clerks => 1 manager and 1 executive is more fair on a large district, where it's less of an overall power bump
 			job_clerk_add = -2
 			job_manager_add = 1
 			job_executive_add = 1
