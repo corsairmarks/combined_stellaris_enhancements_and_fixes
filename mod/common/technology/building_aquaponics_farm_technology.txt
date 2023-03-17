@@ -18,7 +18,12 @@ tech_aquaponics = {
 		modifier = {
 			factor = 1.25
 			exists = home_planet
-			home_planet = { is_planet_class = pc_ocean }
+			home_planet = {
+				OR = {
+					is_planet_class = pc_ocean
+					is_pd_planet_for_aqua_trait = yes
+				}
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -81,7 +86,12 @@ tech_aquaponics_2 = {
 		modifier = {
 			factor = 1.25
 			exists = home_planet
-			home_planet = { is_planet_class = pc_ocean }
+			home_planet = {
+				OR = {
+					is_planet_class = pc_ocean
+					is_pd_planet_for_aqua_trait = yes
+				}
+			}
 		}
 		modifier = {
 			factor = 1.5
