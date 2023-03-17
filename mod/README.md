@@ -10,7 +10,7 @@ Leisure Districts on habitats again provide +2 Entertainer jobs and +1 Culture W
 
 The Leisure District `district_hab_cultural` and the Leisure Arcology `district_arcology_leisure` are overridden in order to reintroduce Culture Workers.  This mod has built-in compatibility with [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
 
 ### When to Install
 
@@ -34,6 +34,7 @@ Overriding a district causes the game to log errors noting the overrides.  Expec
 
 * 1.0.0 Initial version
 * 1.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
+* 1.2.0 Mark as compatible with Stellaris version 3.7 "Canis Minor" - no script changes
 
 ## Source Code
 
