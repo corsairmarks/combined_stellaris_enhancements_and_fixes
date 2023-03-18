@@ -1,6 +1,7 @@
 # root = planet
 
-@built_districts_medium_threshold = 4
+# variable matches the value defined in common/colony_types/00_colony_types.txt
+@stickiness = 10
 
 # Machine World Factory
 col_mac_factory = {
@@ -54,37 +55,51 @@ col_mac_factory = {
 	}
 
 	weight_modifier = {
-		base = 10
 		modifier = {
-			add = 5
-			owner = { has_monthly_income = { resource = consumer_goods value < 100 } }
-		}
-		modifier = {
-			add = 5
+			add = @stickiness
 			has_designation = col_mac_factory
 		}
-		modifier = {
-			add = 2
-			has_building = building_factory_1
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_industrial
+			}
+			mode = add
+			mult = 3
 		}
 		modifier = {
-			add = 4
-			has_building = building_factory_2
+			add = 10
+			OR = {
+				has_building = building_factory_1
+				has_building = building_factory_2
+				has_building = building_factory_3
+			}
 		}
 		modifier = {
-			add = 6
-			has_building = building_factory_3
+			add = -5
+			OR = {
+				has_building = building_foundry_1
+				has_building = building_foundry_2
+				has_building = building_foundry_3
+			}
 		}
 		modifier = {
-			add = 5
-			num_districts = { type = district_industrial value >= @built_districts_medium_threshold }
-		}
-		modifier = {
-			factor = 0
-			NOT = { num_districts = { type = district_industrial value >= @built_districts_medium_threshold } }
-			num_buildings = { type = building_factory_1 value = 0 }
-			num_buildings = { type = building_factory_2 value = 0 }
-			num_buildings = { type = building_factory_3 value = 0 }
+			add = 10
+			num_districts = {
+				type = district_industrial
+				value >= 1
+			}
+			exists = owner
+			owner = {
+				resource_revenue_compare = {
+					resource = alloys
+					value >= trigger:years_passed
+				}
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 0
+				}
+			}
 		}
 		modifier = {
 			factor = 0
