@@ -10,7 +10,7 @@ Adds two events that grant bonus levels to Rulers and Governors for empires with
 
 Any mod that does not remove Civic: Philosopher King.
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
 
 ### When to Install
 
@@ -34,6 +34,7 @@ The text describing the effects for Civic: Philosopher King has been edited to d
 * 1.1.0 Flagged as compatible with Stellaris version 3.4 "Cepheus" - no actual changes
 * 1.2.0 Flagged as compatible with Stellaris version 3.6 "Orion" - no actual changes
 * 1.3.0 Add a compatibility trigger for other mods to check whether this one is active
+* 1.4.0 Flagged as compatible with Stellaris version 3.7 "Canis Minor" - no actual changes
 
 ## Source Code
 

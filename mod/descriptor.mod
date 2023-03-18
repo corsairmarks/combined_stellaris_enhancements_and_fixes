@@ -4,7 +4,7 @@ tags={
 	"Leaders"
 	"Translation"
 }
-version="1.3.0"
+version="1.4.0"
 picture="thumbnail.png"
-supported_version="3.6.*"
+supported_version="3.7.*"
 remote_file_id="2774084358"
