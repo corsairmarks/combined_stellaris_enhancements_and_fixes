@@ -62,6 +62,7 @@ Overriding the district, colony designation, and deposit causes the game to log 
 * 6.0.0 Add a compatibility trigger for other mods to check whether this one is active, remove old compatibility global flag
 * 6.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 * 7.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying game changes
+* 7.1.0 Add support for all flavors of [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835) Machine Worlds
 
 ## Source Code
 
