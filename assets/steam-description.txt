@@ -7,7 +7,7 @@ However, instead of just adding a Roboticist job and calling it a day, I decided
 Machine Worlds owned by regular empires now have a planetary modifier (visible on the planet view) that displays the Machine World's opinion of your empire (Cooperative, Neutral, or Hostile). All levels remove the built-in Replicator job, but the top level (Cooperative) grants a Roboticist job to replace it. Neutral opinion cancels out the inherent Machine World production bonuses, and Hostile cancels out the bonuses and adds additional production and maintenance penalties.
 
 [h2]Compatibility[/h2]
-Built for Stellaris version 3.6 "Orion." Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements.
 
 Because the extra Roboticist job is added via a planetary modifier, that means it was [b]not[/b] necessary to overwrite planet classes - opening up compatibility with many other mods that do make planet class changes. However, the built-in Machine World starting deposit [b]d_resource_consolidation_1[/b] (Malfunctioning Replicator Bay) was overwritten to block the Roboticist job granted by the custom modifier.
 
