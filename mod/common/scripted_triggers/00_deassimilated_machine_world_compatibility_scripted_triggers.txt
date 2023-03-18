@@ -4,3 +4,17 @@ is_pd_planetary_megaproject = {
 	optimize_memory
 	always = no
 }
+
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_machine = {
+	optimize_memory
+	always = no
+}
+
+# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+# this = planet
+is_pd_robot_arcology = {
+	optimize_memory
+	always = no
+}
