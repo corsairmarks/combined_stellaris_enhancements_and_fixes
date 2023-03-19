@@ -47,6 +47,7 @@ pce_add_deposit_for_district = {
 					is_cold = yes
 					is_wet = yes
 					is_planet_class = pc_nuked
+					is_pd_nuked = yes
 				}
 			}
 			add_deposit = d_hot_springs
@@ -56,7 +57,12 @@ pce_add_deposit_for_district = {
 			add_deposit = d_arid_highlands
 		}
 		else_if = {
-			limit = { is_planet_class = pc_gaia }
+			limit = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_pd_gaia = yes
+				}
+			}
 			add_deposit = d_buzzing_plains
 		}
 		else = {
@@ -74,10 +80,16 @@ pce_add_deposit_for_district = {
 			limit = {
 				OR = {
 					is_planet_class = pc_alpine
+					is_pd_alpine = yes
 					is_planet_class = pc_arctic
+					is_pd_arctic = yes
 					is_planet_class = pc_arid
+					is_pd_arid = yes
 					is_planet_class = pc_continental
+					is_pd_continental = yes
 					is_planet_class = pc_nuked
+					is_pd_nuked = yes
+					is_pd_radiotrophic_world = yes
 				}
 			}
 			add_deposit = d_veiny_cliffs
@@ -86,16 +98,26 @@ pce_add_deposit_for_district = {
 			limit = {
 				OR = {
 					is_planet_class = pc_tropical
+					is_pd_tropical = yes
 					is_planet_class = pc_savannah
+					is_pd_savannah = yes
 					is_planet_class = pc_desert
+					is_pd_desert = yes
 					is_planet_class = pc_ocean
+					is_pd_ocean = yes
 					is_planet_class = pc_tundra
+					is_pd_tundra = yes
 				}
 			}
 			add_deposit = d_mineral_fields
 		}
 		else_if = {
-			limit = { is_planet_class = pc_gaia }
+			limit = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_pd_gaia = yes
+				}
+			}
 			add_deposit = d_mineral_striations
 		}
 		else = {
@@ -112,8 +134,10 @@ pce_add_deposit_for_district = {
 		if = {
 			limit = {
 				OR = {
-					is_planet_class = pc_nuked
 					is_planet_class = pc_arctic
+					is_pd_arctic = yes
+					is_planet_class = pc_nuked
+					is_pd_nuked = yes
 				}
 			}
 			add_deposit = d_lichen_fields
@@ -122,20 +146,29 @@ pce_add_deposit_for_district = {
 			limit = {
 				OR = {
 					is_planet_class = pc_arid
+					is_pd_arid = yes
 					is_planet_class = pc_savannah
+					is_pd_savannah = yes
 				}
 			}
 			add_deposit = d_bountiful_plains
 		}
 		else_if = {
-			limit = { is_planet_class = pc_continental }
+			limit = {
+				OR = {
+					is_planet_class = pc_continental
+					is_pd_continental = yes
+				}
+			}
 			add_deposit = d_rugged_woods
 		}
 		else_if = {
 			limit = {
 				OR = {
 					is_planet_class = pc_ocean
+					is_pd_ocean = yes
 					is_planet_class = pc_tropical
+					is_pd_tropical = yes
 				}
 			}
 			add_deposit = d_green_hills
@@ -144,17 +177,29 @@ pce_add_deposit_for_district = {
 			limit = {
 				OR = {
 					is_planet_class = pc_alpine
+					is_pd_alpine = yes
 					is_planet_class = pc_tundra
+					is_pd_tundra = yes
 				}
 			}
 			add_deposit = d_forgiving_tundra
 		}
 		else_if = {
-			limit = { is_planet_class = pc_desert }
+			limit = {
+				OR = {
+					is_planet_class = pc_desert
+					is_pd_desert = yes
+				}
+			}
 			add_deposit = d_nutritious_mudland
 		}
 		else_if = {
-			limit = { is_planet_class = pc_gaia }
+			limit = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_pd_gaia = yes
+				}
+			}
 			add_deposit = d_natural_farmland
 		}
 		else = {

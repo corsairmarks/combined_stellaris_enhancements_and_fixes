@@ -1,20 +1,92 @@
-# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+### Planetary Diversity ###
+# https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
+
 # this = planet
 is_pd_planetary_megaproject = {
 	optimize_memory
 	always = no
 }
 
-# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
 # this = planet
 is_pd_wasteland = {
 	optimize_memory
 	always = no
 }
 
-# supports Planetary Diversity: https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
 # this = planet
 is_pd_planet_for_aqua_trait = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_nuked = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_radiotrophic_world = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_gaia = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_continental = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_tropical = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_ocean = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_arid = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_desert = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_savannah = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_arctic = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_alpine = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
+is_pd_tundra = {
 	optimize_memory
 	always = no
 }
