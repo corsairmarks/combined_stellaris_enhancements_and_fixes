@@ -1,4 +1,4 @@
-# Determines whether this country is at or higher than Stone Age
+# determines whether this country is at or higher than Stone Age
 # this = country
 has_stone_age_or_greater = {
 	optimize_memory
@@ -17,7 +17,7 @@ has_stone_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Bronze Age
+# determines whether this country is at or higher than Bronze Age
 # this = country
 has_bronze_age_or_greater = {
 	optimize_memory
@@ -35,7 +35,7 @@ has_bronze_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Iron Age
+# determines whether this country is at or higher than Iron Age
 # this = country
 has_iron_age_or_greater = {
 	optimize_memory
@@ -52,7 +52,7 @@ has_iron_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Late Medieval Age
+# determines whether this country is at or higher than Late Medieval Age
 # this = country
 has_late_medieval_or_greater = {
 	optimize_memory
@@ -68,7 +68,7 @@ has_late_medieval_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Renaissance Age
+# determines whether this country is at or higher than Renaissance Age
 # this = country
 has_renaissance_age_or_greater = {
 	optimize_memory
@@ -83,7 +83,7 @@ has_renaissance_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Steam Age
+# determines whether this country is at or higher than Steam Age
 # this = country
 has_steam_age_or_greater = {
 	optimize_memory
@@ -97,7 +97,7 @@ has_steam_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Industrial Age
+# determines whether this country is at or higher than Industrial Age
 # this = country
 has_industrial_age_or_greater = {
 	optimize_memory
@@ -110,7 +110,7 @@ has_industrial_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Machine Age
+# determines whether this country is at or higher than Machine Age
 # this = country
 has_machine_age_or_greater = {
 	optimize_memory
@@ -122,7 +122,7 @@ has_machine_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Atomic Age
+# determines whether this country is at or higher than Atomic Age
 # this = country
 has_atomic_age_or_greater = {
 	optimize_memory
@@ -133,7 +133,7 @@ has_atomic_age_or_greater = {
 	}
 }
 
-# Determines whether this country is at or higher than Early Space Age
+# determines whether this country is at or higher than Early Space Age
 # this = country
 has_early_space_age_or_greater = {
 	optimize_memory
@@ -143,7 +143,7 @@ has_early_space_age_or_greater = {
 	}
 }
 
-# Determines whether this country was previously a primitive country that achieved interstellar spaceflight.
+# determines whether this country was previously a primitive country that achieved interstellar spaceflight
 # this = country
 can_into_space = {
 	optimize_memory
