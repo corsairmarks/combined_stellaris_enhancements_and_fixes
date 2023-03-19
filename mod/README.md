@@ -34,6 +34,7 @@ Overriding a building or deposit causes the game to log errors noting the overri
 * 2.0.0 Update for Stellaris version 3.7 "Canis Minor"
     * Remove alterations for Xeno Zoo
     * Remove no-longer-necessary economic category `planet_culture_workers` override
+* 2.1.0 Improve built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
