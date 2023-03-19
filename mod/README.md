@@ -1,6 +1,6 @@
 # Overview
 
-In default (unmodded) Stellaris, when a player conquers a primitive planet (or ringworld segment), he/she is given free districts based on the number of Pops conquered.  The city districts are the wrong type for machine and hive empires, and players receive farming districts on worlds that previously housed a lithoid primitive civilization.  Despite some changes in 3.2 "Herbert" for infiltrated and enlightened primitives, most primitives still do not receive districts based on what food they consume.  The AI does not receive any bonus districts or buildings except for primitive enlightenment.
+In default (unmodded) Stellaris, when a player conquers a pre-FTL planet (or ringworld segment), he/she is given free districts based on the number of Pops conquered.  The city districts are the wrong type for machine and hive empires, and players receive farming districts on worlds that previously housed a lithoid pre-FTL civilization.  Despite many changes in 3.7 "Canis Minor" for infiltrated and enlightened pre-FTLs, most pre-FTLs still do not receive districts based on what food they consume.  The AI does not receive any bonus districts or buildings except for pre-FTL enlightenment.
 
 It's my opinion that these free districts represent repurposing existing infrastructure for the conqueror's use.  To that end, this mod gives the proper type of city, nexus, or hive districts as appropriate for the conquering empire type.  Second, planets (or ringworld segments) inhabited by lithoid civilizations receive mining districts as opposed to farming districts.  Rogue servitors get organic sanctuaries instead of some of the nexus districts, because preserving some developed areas allows bio-trophies to live in their "natural habitat."  Finally, the AI benefits from these free districts in order to even the playing field.
 
@@ -8,52 +8,49 @@ It's my opinion that these free districts represent repurposing existing infrast
 
 This mod started as a response to four very specific, small areas:
 
-1. When conquering primitive planets, human players get free districts to employ about half the population, but the AI does not
-2. Machine Empires and Hive Empires were given city districts instead of the appropriate nexus or hive districts
-3. When conquering a lithoid primitive planet, the player is given farming districts, which lithoids wouldn't need
-4. Necrophage AI players have a special helper event to gain control of primitives, but it is not actually conquest and thus misses out on some things
+1. When conquering pre-FTL planets, human players get free districts to employ about half the population, but the AI does not
+2. Machine Empires and Hive Empires are given city districts instead of the appropriate nexus or hive districts
+3. When conquering a lithoid pre-FTL planet, the player is given farming districts, which lithoids don't need
+4. Necrophage AI players have a special helper event to gain control of pre-FTLs, but it is not actually conquest and thus misses out on some things
 
-To address these issues, this mod implements free districts upon conquering a primitive planet for both players and AIs.  It also generates the appropriate housing/urban districts based on the conquering empire (including some organic sanctuaries for Rogue Servitors).  Mining districts are generated instead of farming districts if the conquered primitive species is lithoid.  Finally, it triggers the aforementioned free district creation in the Necrophage AI helper event, primitive infiltration, and primitive enlightenment (including advancing on their own).  In combination, these changes should help AI players be a bit more successful when acquiring primitive planets.
+To address these issues, this mod re-implements (for both players and AIs) free districts upon acquiring a pre-FTL planet.  The improved "pre-FTL transfer" code generates the appropriate housing/urban districts based on the conquering empire (including some organic sanctuaries for Rogue Servitors).  Mining districts are generated instead of farming districts if the conquered pre-FTL species is lithoid.  The aforementioned pre-FTL transfer is used by the Necrophage AI helper event, pre-FTL infiltration, and any other code that causes a previously-pre-FTL planet to transfer ownership to a space-faring empire.
 
-While maintaining and enhancing this mod, still more places were discovered where the game did something different when converting primitives for use by a regular empire. The For the "Technological Enlightenment" observation station mission, a fixed amount of districts and buildings (including a branch office building, which was probably intended to be Commercial Zones instead) were generated.  Colossus weapons that transferred planet ownership (built-in: the Nanobot Diffuser and Deluge Machine) also failed to generate infrastructure to replace the primitive buildings.
-
-This mod continues its trend of unification by hooking up the enlightenment finisher event and colossus weapon firing events to the same district-generation code as primitive conquest - thus ensuring enlightened or converted primitives receive infrastructure.  The "primitives can into space" event also controls the planet infrastructure self-enlightened primitives receive.  The districts available on shattered ring world "planets" better match the level of development primitives can achieve, so primitive ringworlds are now converted to shattered ringworlds upon conquest/infiltration/etc.  Don't forget that the Sanctuary ringworld is stocked with 4 primitive empires ripe for ~~conquest~~ enlightenment.
+The districts available on shattered ring world "planets" better match the level of development pre-FTLs can achieve, so pre-FTL ringworlds are now converted to shattered ringworlds upon conquest/infiltration/etc.  Don't forget that the Sanctuary ringworld is stocked with four pre-FTL empires ripe for ~~conquest~~ enlightenment.
 
 # Changes
 
-This mod replaces six events from the base game: `action.14`, `action.140`, `necroids.6`, `observation.3009`, `primitive.16`, and `primitive.17`.  The action events are responsible for the standard military conquest of primitives, the necroids event is responsible for AI necrophage auto-conquest, the observation event is responsible for primitive infiltration, and the primitive events are related to technological enlightenment.  These events are altered to no longer invoke code for generating buildings and districts.
+This mod replaces three events from the base game: `action.14`, `action.140`, and `necroids.6`.  The action events are responsible for the standard military conquest of pre-FTLs and the necroids event is responsible for AI necrophage auto-conquest.  It also replaces the effect responsible for infiltration-related annexation `infiltrate_government_annexation_effect`.
 
-Instead custom logic is implemented via the new event `primitive_conquest_enhancements.1` that fires when planet ownership changes from a primitive empire, and a series of custom effects.
+These events and effect are altered to no longer invoke their own code for generating buildings and districts.  Instead custom logic is implemented via the new event `primitive_conquest_enhancements.1` that fires when planet ownership changes from a pre-FTL empire to a space-faring empire, and a series of custom effects.
 
 ## Localisation
 
 * English by corsairmarks (author)
 * [corsairmarks's Leader Traits MOD Chinese patch](https://steamcommunity.com/sharedfiles/filedetails/?id=2558494770) by Hua Zhang - Chinese localisation
 
-## Known Issues
-
-Due to how events are loaded by Stellaris, the file from this mod is named to load before the base game files.  Events with duplicate IDs generate entries in the error.log file (and the first one loaded is used), so this mod is expected to generate six error lines that look similar to this:
-
-```
-[21:52:38][eventmanager.cpp:368]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 548
-[21:52:39][eventmanager.cpp:368]: an event with id [observation.3009] already exists!  file: events/observation_events.txt line: 4483
-[21:52:39][eventmanager.cpp:368]: an event with id [action.14] already exists!  file: events/on_action_events_1.txt line: 5827
-[21:52:39][eventmanager.cpp:368]: an event with id [action.140] already exists!  file: events/on_action_events_1.txt line: 5893
-[21:52:39][eventmanager.cpp:368]: an event with id [primitive.16] already exists!  file: events/primitive_events.txt line: 304
-[21:52:39][eventmanager.cpp:368]: an event with id [primitive.17] already exists!  file: events/primitive_events.txt line: 636
-```
-
 ## Compatibility
 
-You do **not** need the Necroids or Lithoids content packs to use this mod.
+You do **not** need the Necroids, Lithoids, or First Contact content packs to use this mod.
 
-This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same event IDs.  If another mod is attempting to make changes to primitive planet conquest but uses a different method (for example, adding new events activated by on action events such as `on_planet_transfer`, `on_planet_conquer`, or `on_planet_attackers_win`) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
+This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same events or effects.  If another mod is attempting to make changes to pre-FTL planet conquest but uses a different method (for example, adding new events activated by on action events such as `on_planet_transfer`, `on_planet_conquer`, or `on_planet_attackers_win`) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
 
-Built for Stellaris version 3.6 "Orion."  Not compatible with achievements.
+Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.  Has built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 ### When to Install
 
-This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events, on actions, and effects.  If you remove it, your game will work normally.
+This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through events, on actions, and effects.  If you remove it, your game will work normally.
+
+### Known Issues
+
+Overriding an effect or event causes the game to log errors noting the overrides.  Expect to see five lines in the error.log file like these:
+
+```
+[00:32:45][game_singleobjectdatabase.h:165]: Object with key: infiltrate_government_annexation_effect already exists, using the one at  file: common/scripted_effects/zz_primitive_conquest_enhancements_first_contact_dlc_scripted_effect_overrides.txt line: 3
+[00:32:45][game_singleobjectdatabase.h:165]: Object with key: set_species_graphical_culture already exists, using the one at  file: common/scripted_effects/zz_primitive_conquest_enhancements_pre_ftl_scripted_effects.txt line: 2
+[00:32:51][eventmanager.cpp:369]: an event with id [necroids.6] already exists!  file: events/necroids_events_1.txt line: 592
+[00:32:51][eventmanager.cpp:369]: an event with id [action.14] already exists!  file: events/on_action_events_1.txt line: 3720
+[00:32:51][eventmanager.cpp:369]: an event with id [action.140] already exists!  file: events/on_action_events_1.txt line: 3786
+```
 
 ## Changelog
 
@@ -95,6 +92,10 @@ This mod can be safely added or removed from your savegame after the game has st
 * 6.1.0 Bugfix and compatibility trigger
     * Undo changes to unity buildings spawned after a primitive conquest - Uplink Nodes and Synapse Nodes are correct
     * Add a compatibility trigger for other mods to check whether this one is active
+* 7.0.0 Update for Stellaris version 3.7 "Canis Minor"
+    * Remove obsolete event overrides
+    * Add new effect overrides for infiltration annexation and empire match-graphical-culture-to-main-species
+    * Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
