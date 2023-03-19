@@ -35,6 +35,13 @@ planet_event = {
 		if = {
 			limit = { from = { is_hive_empire = yes } }
 			add_building = building_hive_capital
+			if = {
+				limit = { from = { has_origin = origin_progenitor_hive } }
+				add_building = building_offspring_nest
+			}
+			else = {
+				add_building = building_spawning_pool
+			}
 		}
 		else_if = {
 			limit = {
@@ -84,7 +91,7 @@ planet_event = {
 			if = {
 				limit = {
 					OR = {
-						num_pops > 5
+						num_pops >= @bronze_age_pops
 						fromfrom = { has_bronze_age_or_greater = yes }
 					}
 				}
@@ -99,7 +106,7 @@ planet_event = {
 					if = {
 						limit = {
 							OR = {
-								num_pops > 11
+								num_pops >= @renaissance_age_pops
 								fromfrom = { has_renaissance_age_or_greater = yes }
 							}
 						}
@@ -107,7 +114,7 @@ planet_event = {
 						if = {
 							limit = {
 								OR = {
-									num_pops > 15
+									num_pops >= @steam_age_pops
 									fromfrom = { has_steam_age_or_greater = yes }
 								}
 							}
@@ -118,7 +125,7 @@ planet_event = {
 				if = {
 					limit = {
 						OR = {
-							num_pops > 15
+							num_pops >= @steam_age_pops
 							fromfrom = { has_steam_age_or_greater = yes }
 						}
 					}
@@ -133,7 +140,7 @@ planet_event = {
 					if = {
 						limit = {
 							OR = {
-								num_pops > 20
+								num_pops >= @industrial_age_pops
 								fromfrom = { has_industrial_age_or_greater = yes }
 							}
 						}
@@ -148,7 +155,7 @@ planet_event = {
 						if = {
 							limit = {
 								OR = {
-									num_pops > 22
+									num_pops >= @machine_age_pops
 									fromfrom = { has_machine_age_or_greater = yes }
 								}
 							}
@@ -177,7 +184,7 @@ planet_event = {
 			if = {
 				limit = {
 					OR = {
-						num_pops > 5
+						num_pops >= @bronze_age_pops
 						fromfrom = { has_bronze_age_or_greater = yes }
 					}
 				}
@@ -186,7 +193,7 @@ planet_event = {
 				if = {
 					limit = {
 						OR = {
-							num_pops > 9
+							num_pops >= @late_medieval_age_pops
 							fromfrom = { has_late_medieval_or_greater = yes }
 						}
 					}
@@ -194,7 +201,7 @@ planet_event = {
 					if = {
 						limit = {
 							OR = {
-								num_pops > 11
+								num_pops >= @renaissance_age_pops
 								fromfrom = { has_renaissance_age_or_greater = yes }
 							}
 						}
@@ -202,7 +209,7 @@ planet_event = {
 						if = {
 							limit = {
 								OR = {
-									num_pops > 15
+									num_pops >= @steam_age_pops
 									fromfrom = { has_steam_age_or_greater = yes }
 								}
 							}
@@ -217,7 +224,7 @@ planet_event = {
 							if = {
 								limit = {
 									OR = {
-										num_pops > 20
+										num_pops >= @industrial_age_pops
 										fromfrom = { has_industrial_age_or_greater = yes }
 									}
 								}
@@ -235,7 +242,7 @@ planet_event = {
 									limit = {
 										from = { NOT = { has_valid_civic = civic_machine_servitor } } # servitors get sanctuaries instead of the other bonus infrastructure
 										OR = {
-											num_pops > 22
+											num_pops >= @machine_age_pops
 											fromfrom = { has_machine_age_or_greater = yes }
 										}
 									}
@@ -243,7 +250,7 @@ planet_event = {
 									if = {
 										limit = {
 											OR = {
-												num_pops > 24
+												num_pops >= @atomic_age_pops
 												fromfrom = { has_atomic_age_or_greater = yes }
 											}
 										}
@@ -251,7 +258,7 @@ planet_event = {
 										if = {
 											limit = {
 												OR = {
-													num_pops > 26
+													num_pops >= @early_space_age_pops
 													fromfrom = { has_early_space_age_or_greater = yes }
 												}
 											}
