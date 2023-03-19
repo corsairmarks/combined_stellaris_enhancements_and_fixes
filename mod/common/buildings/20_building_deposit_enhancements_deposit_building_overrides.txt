@@ -65,6 +65,12 @@ building_betharian_power_plant = {
 				is_planet_class = pc_hive
 				is_planet_class = pc_city
 			}
+			is_pd_habitat = no
+			is_pd_arcology = no
+			is_pd_hive_world = no
+			is_pd_hive_arcology = no
+			is_pd_machine = no
+			is_pd_robot_arcology = no
 		}
 		district_generator_max = 4
 	}
