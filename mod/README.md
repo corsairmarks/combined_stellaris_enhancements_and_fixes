@@ -57,6 +57,7 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
 * 4.1.0 Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 * 4.2.0 Update for Stellaris version 3.7 "Canis Minor" - re-weight habitat colony designations
 * 4.3.0 Account for ocean-like planet classes from [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
+* 4.4.0 Improve support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 
 ## Source Code
 
