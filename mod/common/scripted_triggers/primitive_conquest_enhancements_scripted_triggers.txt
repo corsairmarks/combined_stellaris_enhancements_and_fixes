@@ -3,17 +3,17 @@
 has_stone_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = stone_age
-		has_country_flag = bronze_age
-		has_country_flag = iron_age
-		has_country_flag = late_medieval_age
-		has_country_flag = renaissance_age
-		has_country_flag = steam_age
-		has_country_flag = industrial_age
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = stone_age
+		has_pre_ftl_age = bronze_age
+		has_pre_ftl_age = iron_age
+		has_pre_ftl_age = late_medieval_age
+		has_pre_ftl_age = renaissance_age
+		has_pre_ftl_age = steam_age
+		has_pre_ftl_age = industrial_age
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -22,16 +22,16 @@ has_stone_age_or_greater = {
 has_bronze_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = bronze_age
-		has_country_flag = iron_age
-		has_country_flag = late_medieval_age
-		has_country_flag = renaissance_age
-		has_country_flag = steam_age
-		has_country_flag = industrial_age
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = bronze_age
+		has_pre_ftl_age = iron_age
+		has_pre_ftl_age = late_medieval_age
+		has_pre_ftl_age = renaissance_age
+		has_pre_ftl_age = steam_age
+		has_pre_ftl_age = industrial_age
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -40,15 +40,15 @@ has_bronze_age_or_greater = {
 has_iron_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = iron_age
-		has_country_flag = late_medieval_age
-		has_country_flag = renaissance_age
-		has_country_flag = steam_age
-		has_country_flag = industrial_age
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = iron_age
+		has_pre_ftl_age = late_medieval_age
+		has_pre_ftl_age = renaissance_age
+		has_pre_ftl_age = steam_age
+		has_pre_ftl_age = industrial_age
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -57,14 +57,14 @@ has_iron_age_or_greater = {
 has_late_medieval_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = late_medieval_age
-		has_country_flag = renaissance_age
-		has_country_flag = steam_age
-		has_country_flag = industrial_age
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = late_medieval_age
+		has_pre_ftl_age = renaissance_age
+		has_pre_ftl_age = steam_age
+		has_pre_ftl_age = industrial_age
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -73,13 +73,13 @@ has_late_medieval_or_greater = {
 has_renaissance_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = renaissance_age
-		has_country_flag = steam_age
-		has_country_flag = industrial_age
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = renaissance_age
+		has_pre_ftl_age = steam_age
+		has_pre_ftl_age = industrial_age
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -88,12 +88,12 @@ has_renaissance_age_or_greater = {
 has_steam_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = steam_age
-		has_country_flag = industrial_age
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = steam_age
+		has_pre_ftl_age = industrial_age
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -102,11 +102,11 @@ has_steam_age_or_greater = {
 has_industrial_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = industrial_age
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = industrial_age
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -115,10 +115,10 @@ has_industrial_age_or_greater = {
 has_machine_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = machine_age
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = machine_age
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -127,9 +127,9 @@ has_machine_age_or_greater = {
 has_atomic_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = atomic_age
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = atomic_age
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
@@ -138,8 +138,8 @@ has_atomic_age_or_greater = {
 has_early_space_age_or_greater = {
 	optimize_memory
 	OR = {
-		has_country_flag = early_space_age
-		has_country_flag = primitives_can_into_space
+		has_pre_ftl_age = early_space_age
+		can_into_space = yes
 	}
 }
 
