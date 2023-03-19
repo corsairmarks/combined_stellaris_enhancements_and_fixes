@@ -1,7 +1,5 @@
 namespace = action
 namespace = necroids
-namespace = observation
-namespace = primitive
 
 # Modified: code simplification
 # triggered by on_planet_attackers_win
@@ -17,7 +15,7 @@ country_event = {
 		is_country_type = default
 	}
 	immediate = {
-		log = "primitive conquest: [FromFrom.GetName] ([From.GetName]) conquered by the [Root.GetName]"
+		log = "pre-FTL conquest: [FromFrom.GetName] ([From.GetName]) conquered by the [Root.GetName]"
 		save_event_target_as = conquering_country
 		from = {
 			save_event_target_as = actually_conquered_primitive_country
@@ -40,10 +38,9 @@ country_event = {
 			}
 			set_owner = event_target:conquering_country
 		}
-		every_country = {
+		every_playable_country = {
 			limit = {
 				has_communications = event_target:conquering_country
-				is_country_type = default
 				NOT = { is_country = event_target:conquering_country }
 			}
 			add_opinion_modifier = {
@@ -51,7 +48,9 @@ country_event = {
 				modifier = opinion_primitive_violation
 			}
 		}
-		country_event = { id = action.140 }
+		country_event = {
+			id = action.140
+		}
 		reset_years_of_peace = yes
 	}
 }
@@ -67,10 +66,13 @@ country_event = {
 	desc = { #Non-Purge Policy Regular Empires
 		text = action.14.desc
 		trigger = {
-			NOR = {
-				has_ethic = ethic_gestalt_consciousness
+			is_gestalt = no
+			NOT = {
 				event_target:conquered_primitive_species = {
-					has_citizenship_type = { country = root type = citizenship_purge }
+					has_citizenship_type = {
+						country = root
+						type = citizenship_purge
+					}
 				}
 			}
 		}
@@ -78,36 +80,36 @@ country_event = {
 	desc = { #Purge Policy Regular Empires
 		text = action.14.desc.purge
 		trigger = {
-			NOT = { has_ethic = ethic_gestalt_consciousness }
+			is_gestalt = no
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = root type = citizenship_purge }
+				has_citizenship_type = {
+					country = root
+					type = citizenship_purge
+				}
 			}
 		}
 	}
 	desc = { #Servitors
 		text = action.14.desc.serv
-		trigger = {
-			has_civic = civic_machine_servitor
-		}
+		trigger = { has_civic = civic_machine_servitor }
 	}
 	desc = { #Assimilators
 		text = action.14.desc.assim
-		trigger = {
-			has_civic = civic_machine_assimilator
-		}
+		trigger = { has_civic = civic_machine_assimilator }
 	}
 	desc = { #Exterminators
 		text = action.14.desc.term
-		trigger = {
-			has_civic = civic_machine_terminator
-		}
+		trigger = { has_civic = civic_machine_terminator }
 	}
 	desc = { #Purge Policy MIs
 		text = action.14.desc.mach.purge
 		trigger = {
 			is_machine_empire = yes
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = root type = citizenship_purge }
+				has_citizenship_type = {
+					country = root
+					type = citizenship_purge
+				}
 			}
 			NOR = {
 				has_civic = civic_machine_servitor
@@ -121,7 +123,10 @@ country_event = {
 		trigger = {
 			is_machine_empire = yes
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = root type = citizenship_slavery }
+				has_citizenship_type = {
+					country = root
+					type = citizenship_slavery
+				}
 			}
 			NOR = {
 				has_civic = civic_machine_servitor
@@ -135,7 +140,10 @@ country_event = {
 		trigger = {
 			is_hive_empire = yes
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = root type = citizenship_purge }
+				has_citizenship_type = {
+					country = root
+					type = citizenship_purge
+				}
 			}
 		}
 	}
@@ -144,7 +152,10 @@ country_event = {
 		trigger = {
 			is_hive_empire = yes
 			event_target:conquered_primitive_species = {
-				has_citizenship_type = { country = root type = citizenship_slavery }
+				has_citizenship_type = {
+					country = root
+					type = citizenship_slavery
+				}
 			}
 		}
 	}
@@ -170,10 +181,7 @@ country_event = {
 				has_ethic = ethic_fanatic_militarist
 				has_ethic = ethic_militarist
 			}
-			NOR = {
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_xenophobe
-			}
+			is_xenophobe = no
 		}
 	}
 	option = {
@@ -184,12 +192,8 @@ country_event = {
 				has_ethic = ethic_fanatic_spiritualist
 				has_ethic = ethic_spiritualist
 			}
-			NOR = {
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_militarist
-			}
+			is_xenophobe = no
+			is_militarist = no
 		}
 	}
 	option = {
@@ -200,55 +204,37 @@ country_event = {
 				has_ethic = ethic_fanatic_materialist
 				has_ethic = ethic_materialist
 			}
-			NOR = {
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_militarist
-			}
+			is_xenophobe = no
+			is_militarist = no
 		}
 	}
 	option = {
 		name = action.14.a
 		custom_tooltip = action.14.a.tooltip
 		trigger = {
-			NOR = {
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_materialist
-				has_ethic = ethic_materialist
-				has_authority = auth_machine_intelligence
-				has_authority = auth_hive_mind
-			}
+			is_xenophobe = no
+			is_militarist = no
+			is_spiritualist = no
+			is_materialist = no
+			is_hive_empire = no
+			is_machine_empire = no
 		}
 	}
 	option = {
 		name = action.14.a
-		trigger = {
-			has_authority = auth_hive_mind
-		}
+		trigger = { has_authority = auth_hive_mind }
 	}
 	option = {
 		name = action.14.a.serv
-		trigger = {
-			has_civic = civic_machine_servitor
-		}
+		trigger = { has_civic = civic_machine_servitor }
 	}
 	option = {
 		name = action.14.a.assim
-		trigger = {
-			has_civic = civic_machine_assimilator
-		}
+		trigger = { has_civic = civic_machine_assimilator }
 	}
 	option = {
 		name = action.14.a.term
-		trigger = {
-			has_civic = civic_machine_terminator
-		}
+		trigger = { has_civic = civic_machine_terminator }
 	}
 	option = {
 		name = action.14.a.mach
@@ -377,275 +363,10 @@ country_event = {
 					from = event_target:necrophage_country
 				}
 			}
-			planet_event = { id = action.84 } # Imperialists are pleased
-		}
-	}
-}
-
-# Modified: building/district spawning code removed due to primitive_conquest_enhancements.1
-# Phase IV - Mission Complete
-country_event = {
-	id = observation.3009
-	title = "observation.3009.name"
-	desc = "observation.3009.desc"
-	picture = GFX_evt_metropolis
-	show_sound = event_cityscape ### Celebration sound?
-	location = from
-	is_triggered_only = yes
-	immediate = {
-		save_event_target_as = infiltrator_civ
-		from = {
-			owner = {
-				save_event_target_as = primitive_civ
-				if = {
-					limit = {
-						is_species_class = REP
-						event_target:infiltrator_civ = { is_species_class = HUM }
-					}
-					event_target:infiltrator_civ = { set_country_flag = reverse_v }
-				}
-			}
-			add_modifier = {
-				modifier = infiltration_happiness
-				days = 7300
-			}
-			random_owned_pop = { save_event_target_as = prim_species } # used by the localisation, don't change
-			observation_outpost = { dismantle = yes }
-			remove_all_armies = yes
-			set_owner = event_target:infiltrator_civ
-			event_target:primitive_civ = { destroy_country = yes }
-		}
-	}
-	option = {
-		name = "observation.3009.a"
-	}
-}
-
-# Modified: allow the event to fire if the observed natives are not being enlightened/infiltrated (e.g. passive/active observation or indoctrination)
-# Modified: set the appropriate city graphical culture so as to correctly override primitive cities
-# Modified: explicitly trigger primitive_conquest_enhancements.1, building/district spawning code removed due to primitive_conquest_enhancements.1
-# Entering Space Age (HIDDEN)
-country_event = {
-	id = primitive.16
-	hide_window = yes
-	trigger = {
-		is_country_type = primitive
-		has_country_flag = early_space_age
-		OR = {
-			AND = {
-				exists = from
-				from = {
-					OR = {
-						is_country_type = default
-						is_country_type = awakened_fallen_empire
-					}
-				}
-			}
-			AND = {
-				NOT = { has_country_flag = recently_advanced }
-				years_passed > 25
-				exists = home_planet
-				home_planet = {
-					OR = {
-						has_observation_outpost = no
-						observation_outpost = {
-							NOR = {
-								has_mission = covert_infiltration
-								has_mission = technological_enlightenment_0
-								has_mission = technological_enlightenment_1
-								has_mission = technological_enlightenment_2
-								has_mission = technological_enlightenment_3
-								has_mission = technological_enlightenment_4
-								has_mission = technological_enlightenment_5
-								has_mission = technological_enlightenment_6
-								has_mission = technological_enlightenment_7
-								has_mission = technological_enlightenment_8
-								has_mission = technological_enlightenment_9
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		years = 100
-		modifier = {
-			factor = 0.6
-			has_country_flag = acquired_tech
-		}
-	}
-
-	immediate = {
-		save_event_target_as = primitives_who_into_space
-		remove_country_flag = early_space_age
-		set_country_flag = primitives_can_into_space
-		set_country_type = default
-		change_country_flag = random
-		switch = {
-			trigger = is_species_class
-			MAM = {
-				set_graphical_culture = mammalian_01
-				set_city_graphical_culture = mammalian_01
-			}
-			REP = {
-				set_graphical_culture = reptilian_01
-				set_city_graphical_culture = reptilian_01
-			}
-			AVI = {
-				set_graphical_culture = avian_01
-				set_city_graphical_culture = avian_01
-			}
-			ART = {
-				set_graphical_culture = arthropoid_01
-				set_city_graphical_culture = arthropoid_01
-			}
-			MOL = {
-				set_graphical_culture = molluscoid_01
-				set_city_graphical_culture = molluscoid_01
-			}
-			FUN = {
-				set_graphical_culture = fungoid_01
-				set_city_graphical_culture = fungoid_01
-			}
-			PLANT = {
-				set_graphical_culture = plantoid_01
-				set_city_graphical_culture = plantoid_01
-			}
-			HUM = {
-				set_graphical_culture = humanoid_01
-				set_city_graphical_culture = humanoid_01
-			}
-			LITHOID = {
-				set_graphical_culture = lithoid_01
-				set_city_graphical_culture = lithoid_01
-			}
-			NECROID = {
-				set_graphical_culture = necroid_01
-				set_city_graphical_culture = necroid_01
-			}
-			AQUATIC = {
-				set_graphical_culture = aquatic_01
-				set_city_graphical_culture = aquatic_01
-			}
-			TOX = {
-				set_graphical_culture = toxoid_01
-				set_city_graphical_culture = toxoid_01
-			}
-			default = {
-				set_graphical_culture = mammalian_01
-				set_city_graphical_culture = mammalian_01
-			}
-		}
-		change_government = {
-			authority = random
-			civics = random
-		}
-		set_name = random
-
-		add_resource = {
-			energy = 500
-			minerals = 1000
-			influence = 300
-		}
-
-		if = {
-			limit = { capital_scope = { is_planet_class = pc_ringworld_habitable } }
-			# Hope you find some mineral deposits out in the void. Here's an extra subsidy to tide you over until the resource shortages cripple you.
-			add_resource = {
-				energy = 1000
-				food = 1000
-				minerals = 1000
-				alloys = 1000
-				volatile_motes = 500
-				exotic_gases = 500
-				rare_crystals = 500
-			}
-		}
-
-		capital_scope = {
-			clear_blockers = yes
-			create_primitive_blockers = yes
-			while = {
-				limit = { num_pops < 8 }
-				create_pop = {
-					species = owner
-				}
-			}
-			remove_all_primitive_buildings = yes
-			remove_all_armies = yes
-			add_building = building_capital
-			# explicitly trigger the event - setting the owner to itself won't fire on_planet_transfer
+			 # Imperialists are pleased
 			planet_event = {
-				id = primitive_conquest_enhancements.1
-				scopes = {
-					from = event_target:primitives_who_into_space
-					fromfrom = event_target:primitives_who_into_space
-				}
-			}
-			if = {
-				limit = { exists = observation_outpost_owner }
-				observation_outpost_owner = {
-					country_event = {
-						id = primitive.17
-					}
-				}
-				if = {
-					limit = { is_planet_class = pc_desert }
-					set_planet_flag = tasty_desert
-				}
-			}
-			solar_system = {
-				if = {
-					limit = { NOT = { exists = starbase } }
-					create_starbase = {
-						size = starbase_outpost
-						owner = root
-					}
-				}
-				else_if = {
-					limit = { starbase = { NOT = { owner = { is_country = root } } } }
-					starbase = {
-						owner = {
-							country_event = {
-								id = primitive.180
-							}
-						}
-					}
-				}
+				id = action.84
 			}
 		}
-		every_controlled_ship = {
-			limit = { is_ship_size = primitive_space_station }
-			fleet = { destroy_fleet = this }
-		}
-	}
-}
-
-# Modified: use the correct localisation key for the button
-# Entering Space Age
-country_event = {
-	id = primitive.17
-	title = "primitive.17.name"
-	desc = "primitive.17.desc"
-	picture = GFX_evt_satellite_in_orbit
-	location = from.capital_scope
-	is_triggered_only = yes
-	immediate = {
-		from = {
-			capital_scope = {
-				observation_outpost = {
-					dismantle = yes
-				}
-			}
-		}
-		add_intel = {
-			who = from
-			amount = 100
-		}
-	}
-	option = {
-		name = "primitive.17.a" # base game had the wrong localisation key primitive.15.a
 	}
 }
