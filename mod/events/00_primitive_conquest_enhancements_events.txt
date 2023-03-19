@@ -2,9 +2,9 @@ namespace = primitive_conquest_enhancements
 
 # NB NOTE: after more investigation, this event adds districts and buildings a bit more intelligently,
 # following the example in observation.3009 (which now points here). It also accounts for conquering lithoid
-# primitives, which logically wouldn't have needed farming, and phototrophic/raditrophic species which need
-# more energy.  The base game has addressed some of these issues, but not the main primitive conquest event.
-# fired by on_planet_transfer and directly by primitive.16
+# pre-FTLs, which logically wouldn't have needed farming, and phototrophic/raditrophic species which need
+# more energy.  The base game has addressed some of these issues, but not the main pre-FTL conquest event.
+# triggered by on_planet_transfer
 # root = planet (after new owner set)
 # from = country, new owner
 # fromfrom = country, former owner
@@ -26,7 +26,7 @@ planet_event = {
 		}
 	}
 	immediate = {
-		log = "primitive planet transferred: add districts/buildings to [This.GetName] (previously owned by [FromFrom.GetRealName]), constructing for the [From.GetRealName]"
+		log = "pre-ftl planet transferred: add districts/buildings to [This.GetName] (previously owned by [FromFrom.GetRealName]), constructing for the [From.GetRealName]"
 		fromfrom = {
 			save_event_target_as = conquered_primitive_civilization
 			owner_species = { save_event_target_as = conquered_primitive_species }
