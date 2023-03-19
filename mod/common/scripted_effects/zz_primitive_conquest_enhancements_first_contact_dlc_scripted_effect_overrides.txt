@@ -1,0 +1,32 @@
+# root = country, instigating empire
+# this = country, primitive (from.target; from = espionage_operation)
+infiltrate_government_annexation_effect = {
+	if = {
+		limit = {
+			is_species_class = REP
+			root = { is_species_class = HUM }
+		}
+		root = { set_country_flag = reverse_v } # "Payback" achievement
+	}
+	capital_scope = {
+		save_event_target_as = annexed_planet
+		if = {
+			limit = { root = { is_hive_empire = no } }
+			add_modifier = {
+				modifier = infiltration_happiness
+				days = 7300
+			}
+		}
+		random_owned_pop = { save_event_target_as = prim_species }
+		observation_outpost = { dismantle = yes }
+		remove_all_armies = yes
+		set_owner = root
+		create_army = {
+			name = random
+			owner = root
+			species = owner_main_species
+			type = "defense_army"
+		}
+		# building/district setup handled in primitive_conquest_enhancements.1
+	}
+}
