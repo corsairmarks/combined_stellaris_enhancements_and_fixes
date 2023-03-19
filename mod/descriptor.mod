@@ -1,4 +1,4 @@
-name="Pre-FTL Conquest Enhancements"
+name="Pre-FTL Conquest & Infiltration: Enhanced"
 tags={
 	"Economy"
 	"Events"
