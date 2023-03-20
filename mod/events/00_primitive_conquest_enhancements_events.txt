@@ -1,6 +1,6 @@
 namespace = primitive_conquest_enhancements
 
-# NB NOTE: after more investigation, this event adds districts and buildings a bit more intelligently,
+# CM NOTE: after more investigation, this event adds districts and buildings a bit more intelligently,
 # following the example in observation.3009 (which now points here). It also accounts for conquering lithoid
 # pre-FTLs, which logically wouldn't have needed farming, and phototrophic/raditrophic species which need
 # more energy.  The base game has addressed some of these issues, but not the main pre-FTL conquest event.
@@ -45,7 +45,7 @@ planet_event = {
 		}
 		else_if = {
 			limit = {
-				num_pops <= 20
+				num_pops < @industrial_age_pops
 				fromfrom = { has_industrial_age_or_greater = no }
 			}
 			if = {
