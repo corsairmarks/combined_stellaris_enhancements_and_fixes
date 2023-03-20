@@ -1,4 +1,4 @@
-name="Colony Designations: Capital Building Job Swaps"
+name="Colony Designations: Capitol Building Job Swaps"
 tags={
 	"Buildings"
 	"Gameplay"
