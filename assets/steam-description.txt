@@ -28,7 +28,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2641081470]Enhanced Trade Districts and Designations[/url] at 5.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2775465389]Game Start: Unity Fund[/url] at 3.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2499031295]Leader Traits: All Eligible Species Traits[/url] at 5.1.0
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] at 5.2.0
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2553806265]Leader Traits: Enhanced Randomisation[/url] at 6.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2498166286]Leader Traits: Scientist AI Assistant Upgrader[/url] at 2.3.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2916289268]Leisure Districts for People of Culture[/url] at 1.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2686810902]Penal Colony: Enhanced[/url] at 5.1.1
