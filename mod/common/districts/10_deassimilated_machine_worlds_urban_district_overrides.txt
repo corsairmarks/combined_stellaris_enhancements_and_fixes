@@ -79,7 +79,10 @@ district_industrial = {
 		potential = {
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_crafter_empire = no
 			}
 		}
@@ -102,7 +105,10 @@ district_industrial = {
 		potential = {
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = no
 			}
 		}
@@ -115,7 +121,10 @@ district_industrial = {
 		potential = {
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = yes
 			}
 		}
@@ -169,7 +178,10 @@ district_industrial = {
 			has_foundry_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_crafter_empire = no
 			}
 		}
@@ -183,7 +195,10 @@ district_industrial = {
 			has_foundry_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_crafter_empire = yes
 			}
 		}
@@ -197,7 +212,10 @@ district_industrial = {
 			has_foundry_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = no
 			}
 		}
@@ -211,7 +229,10 @@ district_industrial = {
 			has_foundry_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = yes
 			}
 		}
@@ -225,7 +246,10 @@ district_industrial = {
 			has_factory_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_crafter_empire = no
 			}
 		}
@@ -239,7 +263,10 @@ district_industrial = {
 			has_factory_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_crafter_empire = yes
 			}
 		}
@@ -253,7 +280,10 @@ district_industrial = {
 			has_factory_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = no
 			}
 		}
@@ -267,7 +297,10 @@ district_industrial = {
 			has_factory_designation = yes
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = yes
 			}
 		}
@@ -313,7 +346,10 @@ district_industrial = {
 			has_foundry_designation = no
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_crafter_empire = no
 			}
 		}
@@ -325,7 +361,10 @@ district_industrial = {
 			has_foundry_designation = no
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_crafter_empire = yes
 			}
 		}
@@ -349,7 +388,10 @@ district_industrial = {
 			has_factory_designation = no
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = no
 			}
 		}
@@ -361,7 +403,10 @@ district_industrial = {
 			has_factory_designation = no
 			exists = owner
 			owner = {
-				is_regular_empire = yes
+				OR = {
+					is_regular_empire = yes
+					has_origin = origin_fear_of_the_dark
+				}
 				is_catalytic_empire = yes
 			}
 		}

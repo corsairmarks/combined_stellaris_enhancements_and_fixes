@@ -36,4 +36,8 @@ d_resource_consolidation_1 = {
 			minerals = 600
 		}
 	}
+
+	ai_weight = {
+		weight = 2
+	}
 }

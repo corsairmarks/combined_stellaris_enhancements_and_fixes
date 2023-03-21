@@ -7,7 +7,11 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		is_planet_class = pc_machine
+		OR = {
+			is_planet_class = pc_machine
+			is_pd_machine = yes
+			is_pd_robot_arcology = yes
+		}
 		exists = from
 		from = { is_regular_empire = yes }
 		days_passed > 0
@@ -89,7 +93,13 @@ planet_event = {
 		tooltip = {
 			from = {
 				every_owned_planet = {
-					limit = { is_planet_class = pc_machine }
+					limit = {
+						OR = {
+							is_planet_class = pc_machine
+							is_pd_machine = yes
+							is_pd_robot_arcology = yes
+						}
+					}
 					add_modifier = { modifier = deassimilated_machine_world_cooperative }
 				}
 			}
@@ -141,7 +151,13 @@ planet_event = {
 		tooltip = {
 			from = {
 				every_owned_planet = {
-					limit = { is_planet_class = pc_machine }
+					limit = {
+						OR = {
+							is_planet_class = pc_machine
+							is_pd_machine = yes
+							is_pd_robot_arcology = yes
+						}
+					}
 					add_modifier = { modifier = deassimilated_machine_world_cooperative }
 				}
 			}
@@ -221,7 +237,13 @@ planet_event = {
 		tooltip = {
 			from = {
 				every_owned_planet = {
-					limit = { is_planet_class = pc_machine }
+					limit = {
+						OR = {
+							is_planet_class = pc_machine
+							is_pd_machine = yes
+							is_pd_robot_arcology = yes
+						}
+					}
 					add_modifier = { modifier = deassimilated_machine_world_neutral }
 				}
 			}
@@ -289,7 +311,13 @@ planet_event = {
 				}
 				tooltip = {
 					every_owned_planet = {
-						limit = { is_planet_class = pc_machine }
+						limit = {
+							OR = {
+								is_planet_class = pc_machine
+								is_pd_machine = yes
+								is_pd_robot_arcology = yes
+							}
+						}
 						add_modifier = { modifier = deassimilated_machine_world_hostile }
 					}
 				}
@@ -297,7 +325,13 @@ planet_event = {
 			else = {
 				tooltip = {
 					every_owned_planet = {
-						limit = { is_planet_class = pc_machine }
+						limit = {
+							OR = {
+								is_planet_class = pc_machine
+								is_pd_machine = yes
+								is_pd_robot_arcology = yes
+							}
+						}
 						add_modifier = { modifier = deassimilated_machine_world_neutral }
 					}
 				}
@@ -356,7 +390,13 @@ country_event = {
 	trigger = {
 		is_regular_empire = yes
 		NOT = { has_country_flag = deassimilated_machine_world_suppress_policy_change }
-		any_owned_planet = { is_planet_class = pc_machine }
+		any_owned_planet = {
+			OR = {
+				is_planet_class = pc_machine
+				is_pd_machine = yes
+				is_pd_robot_arcology = yes
+			}
+		}
 		has_ai_technology = yes
 		OR = {
 			last_changed_policy = robot_pop_policy
@@ -365,7 +405,13 @@ country_event = {
 	}
 	immediate = {
 		random_owned_planet = {
-			limit = { is_planet_class = pc_machine }
+			limit = {
+				OR = {
+					is_planet_class = pc_machine
+					is_pd_machine = yes
+					is_pd_robot_arcology = yes
+				}
+			}
 			save_event_target_as = pc_machine_representative
 		}
 		if = {
@@ -420,7 +466,13 @@ country_event = {
 		trigger = {
 			count_owned_planet = {
 				count = 1
-				limit = { is_planet_class = pc_machine }
+				limit = {
+					OR = {
+						is_planet_class = pc_machine
+						is_pd_machine = yes
+						is_pd_robot_arcology = yes
+					}
+				}
 			}
 		}
 	}
@@ -429,7 +481,13 @@ country_event = {
 		trigger = {
 			count_owned_planet = {
 				count > 1
-				limit = { is_planet_class = pc_machine }
+				limit = {
+					OR = {
+						is_planet_class = pc_machine
+						is_pd_machine = yes
+						is_pd_robot_arcology = yes
+					}
+				}
 			}
 		}
 	}
@@ -444,7 +502,13 @@ country_event = {
 		}
 		tooltip = {
 			every_owned_planet = {
-				limit = { is_planet_class = pc_machine }
+				limit = {
+					OR = {
+						is_planet_class = pc_machine
+						is_pd_machine = yes
+						is_pd_robot_arcology = yes
+					}
+				}
 				add_modifier = { modifier = deassimilated_machine_world_cooperative }
 			}
 		}
@@ -458,7 +522,13 @@ country_event = {
 		}
 		tooltip = {
 			every_owned_planet = {
-				limit = { is_planet_class = pc_machine }
+				limit = {
+					OR = {
+						is_planet_class = pc_machine
+						is_pd_machine = yes
+						is_pd_robot_arcology = yes
+					}
+				}
 				add_modifier = { modifier = deassimilated_machine_world_neutral }
 			}
 		}
@@ -472,7 +542,13 @@ country_event = {
 		}
 		tooltip = {
 			every_owned_planet = {
-				limit = { is_planet_class = pc_machine }
+				limit = {
+					OR = {
+						is_planet_class = pc_machine
+						is_pd_machine = yes
+						is_pd_robot_arcology = yes
+					}
+				}
 				add_modifier = { modifier = deassimilated_machine_world_hostile }
 			}
 		}
@@ -507,7 +583,13 @@ country_event = {
 	}
 	immediate = {
 		random_owned_planet = {
-			limit = { is_planet_class = pc_machine }
+			limit = {
+				OR = {
+					is_planet_class = pc_machine
+					is_pd_machine = yes
+					is_pd_robot_arcology = yes
+				}
+			}
 			planet_event = {
 				id = deassimilated_machine_world.21
 				scopes = {
@@ -543,7 +625,13 @@ country_event = {
 				from = { has_communications_with_ai_using_country = yes }
 			}
 			random_owned_planet = {
-				limit = { is_planet_class = pc_machine }
+				limit = {
+					OR = {
+						is_planet_class = pc_machine
+						is_pd_machine = yes
+						is_pd_robot_arcology = yes
+					}
+				}
 				planet_event = {
 					id = deassimilated_machine_world.21
 					scopes = {
@@ -559,7 +647,13 @@ country_event = {
 					root = { has_communications_with_ai_using_country = yes }
 				}
 				random_owned_planet = {
-					limit = { is_planet_class = pc_machine }
+					limit = {
+						OR = {
+							is_planet_class = pc_machine
+							is_pd_machine = yes
+							is_pd_robot_arcology = yes
+						}
+					}
 					planet_event = {
 						id = deassimilated_machine_world.21
 						scopes = {
@@ -579,7 +673,11 @@ planet_event = {
 	hide_window = yes
 	trigger = {
 		owner = { is_regular_empire = yes }
-		is_planet_class = pc_machine
+		OR = {
+			is_planet_class = pc_machine
+			is_pd_machine = yes
+			is_pd_robot_arcology = yes
+		}
 	}
 	immediate = {
 		if = {

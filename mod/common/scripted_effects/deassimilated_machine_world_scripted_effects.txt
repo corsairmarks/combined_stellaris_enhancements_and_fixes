@@ -59,7 +59,13 @@ add_deassimilated_machine_world_modifier = {
 reassign_deassimilated_machine_world_modifiers_country = {
 	optimize_memory
 	every_owned_planet = {
-		limit = { is_planet_class = pc_machine }
+		limit = {
+			OR = {
+				is_planet_class = pc_machine
+				is_pd_machine = yes
+				is_pd_robot_arcology = yes
+			}
+		}
 		clear_deassimilated_machine_world_modifiers = yes
 		add_deassimilated_machine_world_modifier = yes
 	}

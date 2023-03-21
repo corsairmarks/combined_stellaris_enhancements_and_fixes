@@ -3,7 +3,13 @@ is_eligible_for_machine_world_prompt = {
 	optimize_memory
 	is_regular_empire = yes
 	NOT = { has_country_flag = deassimilated_machine_world_offered_policy_change }
-	any_owned_planet = { is_planet_class = pc_machine }
+	any_owned_planet = {
+		OR = {
+			is_planet_class = pc_machine
+			is_pd_machine = yes
+			is_pd_robot_arcology = yes
+		}
+	}
 }
 
 # this = country
