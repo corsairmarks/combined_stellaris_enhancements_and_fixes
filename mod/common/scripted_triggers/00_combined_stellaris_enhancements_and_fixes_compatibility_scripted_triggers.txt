@@ -178,6 +178,12 @@ is_pd_shroud_world = {
 }
 
 # this = planet
+is_pd_tidally_locked = {
+	optimize_memory
+	always = no
+}
+
+# this = planet
 is_pd_planetary_megaproject = {
 	optimize_memory
 	always = no
