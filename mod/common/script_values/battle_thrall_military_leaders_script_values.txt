@@ -1,4 +1,3 @@
-
 # value:dynamic_military_trait_weight|DISCRIMINATOR|0|
 # this = species
 dynamic_military_trait_weight = {
