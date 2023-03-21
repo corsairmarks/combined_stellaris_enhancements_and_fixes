@@ -66,7 +66,7 @@ Each of the source repositories above is added as a remote to this repository on
 
 # Compatibility
 
-Requires Stellaris version 3.7 "Orion" and disables achievements.
+Requires Stellaris version 3.7 "Canis Minor" and disables achievements.
 
 Check each of the contained mods for an explicit list of incompatibility notes.  As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings.  Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
 
