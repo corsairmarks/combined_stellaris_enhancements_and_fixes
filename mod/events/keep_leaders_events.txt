@@ -2335,7 +2335,7 @@ country_event = {
 			OR = {
 				exists = ruler
 				exists = heir
-				any_owned_leader = { is_eligible_transfer_leader_class = yes }
+				any_owned_leader = { is_eligible_transfer_leader = yes }
 			}
 		}
 	}
@@ -2484,13 +2484,19 @@ planet_event = {
 	}
 	option = {
 		name = keep_leaders.3.c
+		hidden_effect = {
+			event_target:storage_owner = { destroy_country = yes }
+			if = {
+				limit = { has_modifier = kl_peerless_infiltration_agents }
+				remove_modifier = kl_peerless_infiltration_agents
+			}
+		}
 		owner = {
 			add_modifier = {
 				modifier = kl_peerless_infiltration_agents
 				years = 20
 			}
 		}
-		hidden_effect = { event_target:storage_owner = { destroy_country = yes } }
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -2538,7 +2544,7 @@ country_event = {
 			OR = {
 				exists = ruler
 				exists = heir
-				any_owned_leader = { is_eligible_transfer_leader_class = yes }
+				any_owned_leader = { is_eligible_transfer_leader = yes }
 			}
 		}
 	}
@@ -2596,7 +2602,7 @@ country_event = {
 							save_event_target_as = target_fleet
 							set_name = {
 								key = keep_leaders.source_fleet_name
-								variable_string = "source_fleet.GetName"
+								variable_string = "[source_fleet.GetName]"
 							}
 							set_owner = event_target:integrating_country
 							set_location = event_target:source_fleet

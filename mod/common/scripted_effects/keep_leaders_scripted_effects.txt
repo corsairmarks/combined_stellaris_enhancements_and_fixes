@@ -91,7 +91,7 @@ create_leader_storage_and_transfer_leaders = {
 	# like unity or society research for empires that qualify
 	event_target:former_owner = {
 		every_owned_leader = {
-			limit = { is_eligible_transfer_leader_class = yes }
+			limit = { is_eligible_transfer_leader = yes }
 			accumulate_leader = yes
 			tag_leader_for_reassignment = yes
 			transfer_leader_to_storage = yes
@@ -111,10 +111,10 @@ create_leader_storage_and_transfer_leaders = {
 			ruler = {
 				set_name = {
 					key = keep_leaders.former_ruler_name
-					variable_string = "This.GetRegnalName"
-					variable_string = "This.GetRulerTitle"
-					# variable_string = "This.GetTitle"
-					variable_string = "former_owner.GetName"
+					variable_string = "\\[This.GetRegnalName\\]"
+					variable_string = "\\[This.GetRulerTitle\\]"
+					# variable_string = "\\[This.GetTitle\\]"
+					variable_string = "\\[former_owner.GetName\\]"
 				}
 				set_leader_flag = former_ruler
 				save_event_target_as = integrated_ruler
@@ -163,9 +163,9 @@ create_leader_storage_and_transfer_leaders = {
 			heir = {
 				set_name = {
 					key = keep_leaders.former_heir_name
-					variable_string = "This.GetName"
-					# variable_string = "This.GetTitle"
-					variable_string = "former_owner.GetName"
+					variable_string = "\\[This.GetName\\]"
+					# variable_string = "\\[This.GetTitle\\]"
+					variable_string = "\\[former_owner.GetName\\]"
 				}
 				set_leader_flag = former_heir
 				save_event_target_as = integrated_heir
@@ -649,7 +649,7 @@ set_citizenship_assimilation_and_living_standard_cyborg = {
 			event_target:potential_owner = { is_potential_for_cyborg_assimilation_country = yes }
 		}
 		if = {
-			limit = { 
+			limit = {
 				event_target:potential_owner = {
 					OR = {
 						has_valid_civic = civic_machine_assimilator
@@ -1760,13 +1760,11 @@ accumulate_leader = {
 	# individual counts needed due to support for multi-assimilation
 	if = {
 		limit = {
-			event_target:potential_owner = {
-				OR = {
-					is_regular_empire = no
-					AND = {
-						is_smart_enough_for_leadership_species = yes
-						is_regular_empire_ethics_allowable_leader_species = yes
-					}
+			OR = {
+				event_target:potential_owner = { is_regular_empire = no }
+				AND = {
+					is_smart_enough_for_leadership_species = yes
+					is_regular_empire_ethics_allowable_leader_species = yes
 				}
 			}
 		}
@@ -2002,12 +2000,12 @@ create_army_transport_parameterized = {
 			effect = {
 				set_name = {
 					key = keep_leaders.source_ship_name
-					variable_string = "source_ship.GetName"
+					variable_string = "\\[source_ship.GetName\\]"
 				}
 				last_created_army = {
 					set_name = {
 						key = keep_leaders.source_army_name
-						variable_string = "source_army.GetName"
+						variable_string = "\\[source_army.GetName\\]"
 					}
 				}
 			}
@@ -2019,12 +2017,12 @@ create_army_transport_parameterized = {
 			effect = {
 				set_name = {
 					key = keep_leaders.source_ship_name
-					variable_string = "source_ship.GetName"
+					variable_string = "\\[source_ship.GetName\\]"
 				}
 				last_created_army = {
 					set_name = {
 						key = keep_leaders.source_army_name
-						variable_string = "source_army.GetName"
+						variable_string = "\\[source_army.GetName\\]"
 					}
 				}
 			}
@@ -2084,7 +2082,7 @@ klfis_prepare_cyborg_species = {
 			}
 		}
 	}
-	
+
 }
 
 # set up a species for hive assimilation, saved as event_target:prepared_species

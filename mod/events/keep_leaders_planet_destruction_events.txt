@@ -8,8 +8,9 @@ namespace = keep_leaders_planet_destruction
 # .500 nanobots
 # .700 deluge
 # .800 toxifier
+# .900 devolution
 
-# fired by on_destroy_planet_with_PLANET_KILLER_NANOBOT
+# fired by on_destroy_planet_with_PLANET_KILLER_GODRAY
 # this = planet that has been fired upon
 # from = fleet that fired
 planet_event = {

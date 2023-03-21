@@ -36,7 +36,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2488154830]Pre-FTL Conquest & Infiltration: Enhanced[/url] at 7.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2601239912]Psionic Ascension: Even in Other Empires[/url] at 5.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2548834941]Restored Content: Fungoids[/url] at 2.1.0
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] at 7.1.1
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects & Pre-FTL Civilizations[/url] at 8.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2628518102]Ringworld Graphical Enhancements[/url] at 3.3.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2496357447]Special Leadership Privileges for Battle Thralls and Bio-Trophies[/url] at 6.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2625663437]"Terraform" to Tomb World[/url] at 6.1.0
