@@ -15,7 +15,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [list]
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2622411084]Aesthetic Terraform Stations[/url] at 5.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] at 7.1.1
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2654043078]Basic Planetview: More Districts[/url] at 4.0.0
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2654043078]Basic Planetview: More Districts[/url] at 5.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2768297949]Building: Aquaponics Farms[/url] at 4.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2916269980]Buildings: Betharian Power Plant and Alien Zoo - Enhanced[/url] at 1.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2932819177]Civic: Byzantine Bureaucracy - Enhanced[/url] at 1.1.0
