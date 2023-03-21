@@ -4,12 +4,15 @@ has_any_farming_district_or_buildings = {
 	optimize_memory
 	OR = {
 		has_district = district_farming
-		has_district = district_rw_farming
 		has_district = district_farming_uncapped
-		has_district = district_pdhab_food_unlimited
+		has_district = district_rw_farming
 		has_district = district_pdhab_food
+		has_district = district_pdhab_food_unlimited
 		has_building = building_hydroponics_farm
 		has_building = building_aquaponics_farm
 		has_building = building_aquaponics_farm_2
+		has_building = building_food_processing_facility
+		has_building = building_food_processing_center
+		has_building = building_baol_organic_plant
 	}
 }

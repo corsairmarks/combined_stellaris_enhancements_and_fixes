@@ -14,6 +14,8 @@ building_aquaponics_farm = {
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
 		}
+		is_pd_machine = no
+		is_pd_robot_arcology = no
 	}
 
 	allow = {
@@ -175,6 +177,8 @@ building_aquaponics_farm_2 = {
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
 		}
+		is_pd_machine = no
+		is_pd_robot_arcology = no
 	}
 
 	allow = {

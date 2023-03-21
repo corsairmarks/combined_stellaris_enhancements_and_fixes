@@ -1,20 +1,19 @@
+# variable copied from common/colony_types/00_colony_types.txt
+@stickiness = 10
+
 # Habitat Farming
 # Modified: Add aquaponics farm build speed, any type of hydroponics or aquaponics increases weight factor
 col_habitat_farming = {
 	icon = GFX_colony_type_habitat_farming
-
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		owner = {
-			is_gestalt = no
-		}
+		owner = { is_gestalt = no }
 	}
 	custom_tooltip = col_habitat_farming_custom
 	planet_modifier = {
 		planet_building_hydroponics_farm_build_speed_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -24,7 +23,6 @@ col_habitat_farming = {
 			planet_building_aquaponics_farm_build_speed_mult = 0.25
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -34,13 +32,10 @@ col_habitat_farming = {
 			planet_building_aquaponics_farm_2_build_speed_mult = 0.25
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_galactic_community_member = yes
-			}
+			owner = { is_galactic_community_member = yes }
 			OR = {
 				is_active_resolution = "resolution_greatergood_five_year_plans"
 				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
@@ -52,42 +47,43 @@ col_habitat_farming = {
 			planet_jobs_worker_produces_mult = 0.1
 		}
 	}
-
 	weight_modifier = {
-		base = 300
 		modifier = {
-			factor = 2
-			owner = { has_monthly_income = { resource = food value < 0 } }
-		}
-		modifier = {
-			factor = 3
+			add = @stickiness
 			has_designation = col_habitat_farming
 		}
-		modifier = {
-			factor = 3
-			OR = {
-				num_buildings = {
-					type = building_hydroponics_farm
-					value > 0
-				}
-				num_buildings = {
-					type = building_aquaponics_farm
-					value > 0
-				}
-				num_buildings = {
-					type = building_aquaponics_farm_2
-					value > 0
-				}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = building_hydroponics_farm
 			}
+			mode = add
+			mult = 4
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = building_aquaponics_farm
+			}
+			mode = add
+			mult = 6
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = building_aquaponics_farm_2
+			}
+			mode = add
+			mult = 8
 		}
 		modifier = {
 			factor = 0
 			exists = sector
 			sector = {
 				has_any_sector_focus = yes
-				nor = {
-					has_sector_focus = "production"
+				NOR = {
 					has_sector_focus = "balanced"
+					has_sector_focus = "production"
 				}
 			}
 		}
@@ -97,19 +93,15 @@ col_habitat_farming = {
 # Modified: Add aquaponics farm build speed, any type of hydroponics or aquaponics increases weight factor
 col_habitat_gestalt_farming = {
 	icon = GFX_colony_type_habitat_farming
-
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		owner = {
-			is_gestalt = yes
-		}
+		owner = { is_gestalt = yes }
 	}
 	custom_tooltip = col_habitat_farming_gestalt_custom
 	planet_modifier = {
 		planet_building_hydroponics_farm_build_speed_mult = 0.25
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -119,7 +111,6 @@ col_habitat_gestalt_farming = {
 			planet_building_aquaponics_farm_build_speed_mult = 0.25
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -129,13 +120,10 @@ col_habitat_gestalt_farming = {
 			planet_building_aquaponics_farm_2_build_speed_mult = 0.25
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_galactic_community_member = yes
-			}
+			owner = { is_galactic_community_member = yes }
 			OR = {
 				is_active_resolution = "resolution_greatergood_five_year_plans"
 				is_active_resolution = "resolution_greatergood_greater_than_ourselves"
@@ -147,42 +135,43 @@ col_habitat_gestalt_farming = {
 			planet_jobs_simple_drone_produces_mult = 0.1
 		}
 	}
-
 	weight_modifier = {
-		base = 300
 		modifier = {
-			factor = 2
-			owner = { has_monthly_income = { resource = food value < 0 } }
-		}
-		modifier = {
-			factor = 3
+			add = @stickiness
 			has_designation = col_habitat_gestalt_farming
 		}
-		modifier = {
-			factor = 3
-			OR = {
-				num_buildings = {
-					type = building_hydroponics_farm
-					value > 0
-				}
-				num_buildings = {
-					type = building_aquaponics_farm
-					value > 0
-				}
-				num_buildings = {
-					type = building_aquaponics_farm_2
-					value > 0
-				}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = building_hydroponics_farm
 			}
+			mode = add
+			mult = 4
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = building_aquaponics_farm
+			}
+			mode = add
+			mult = 6
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = building_aquaponics_farm_2
+			}
+			mode = add
+			mult = 8
 		}
 		modifier = {
 			factor = 0
 			exists = sector
 			sector = {
 				has_any_sector_focus = yes
-				nor = {
-					has_sector_focus = "production"
+				NOR = {
 					has_sector_focus = "balanced"
+					has_sector_focus = "production"
 				}
 			}
 		}

@@ -14,8 +14,12 @@ building_hydroponics_farm = {
 				is_ai = no
 			}
 		}
-		NOT = { is_planet_class = pc_machine }
-		NOT = { has_modifier = resort_colony }
+		NOR = {
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+		}
+		is_pd_machine = no
+		is_pd_robot_arcology = no
 	}
 
 	allow = {
