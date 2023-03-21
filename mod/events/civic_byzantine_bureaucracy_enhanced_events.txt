@@ -46,9 +46,9 @@ planet_event = {
 					limit = { has_job = magistrate }
 					set_pop_flag = former_magistrate
 				}
-				set_variable = {
-					which = num_planet_pops_source
-					value = trigger:num_pops
+				export_trigger_value_to_variable = {
+					trigger = num_pops
+					variable = num_planet_pops_source
 				}
 				log = "Country capital for [Root.Owner.GetRealName] moved - relocating capital-based magistrates"
 				log = "Previous capital planet [This.GetName] (sector [This.Sector.GetName]): [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"
@@ -164,9 +164,9 @@ country_event = {
 							limit = { has_job = magistrate }
 							set_pop_flag = former_magistrate
 						}
-						set_variable = {
-							which = num_planet_pops_source
-							value = trigger:num_pops
+						export_trigger_value_to_variable = {
+							trigger = num_pops
+							variable = num_planet_pops_source
 						}
 						log = "Sector [Prev.GetName] capital for [Root.Owner.GetRealName] moved - relocating capital-based magistrates"
 						log = "Previous capital planet [This.GetName]: [This.num_magistrate_jobs_source] magistrates ([This.num_magistrate_jobs_from_deposit_source] from deposit), [This.num_planet_pops_source] total Pops"

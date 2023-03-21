@@ -38,6 +38,14 @@ bureaucrat = {
 	}
 	triggered_planet_modifier = {
 		potential = {
+			exists = planet
+			planet = { has_active_building = building_league_offices }
+		}
+		planet_amenities_add = 1
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = { is_valid_byzantine_bureaucracy = yes }
 		}
@@ -57,9 +65,17 @@ bureaucrat = {
 		weight = @specialist_job_weight
 		mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
 		modifier = {
-			factor = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
-			exists = owner
-			owner = { is_valid_byzantine_bureaucracy = yes }
+			mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+			OR = {
+				AND = {
+					exists = planet
+					planet = { has_active_building = building_league_offices }
+				}
+				AND = {
+					exists = owner
+					owner = { is_valid_byzantine_bureaucracy = yes }
+				}
+			}
 		}
 		modifier = {
 			factor = 0.1

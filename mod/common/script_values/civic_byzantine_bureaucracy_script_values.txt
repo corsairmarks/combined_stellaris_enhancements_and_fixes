@@ -2,10 +2,7 @@ capital_triggered_job_magistrate = {
 	base = 0
 	modifier = {
 		add = 1
-		OR = {
-			has_designation = col_bureau
-			has_designation = col_habitat_bureau
-		}
+		has_unity_designation = yes
 	}
 	modifier = {
 		add = 1
