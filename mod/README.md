@@ -23,7 +23,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Buildings: Betharian Power Plant and Alien Zoo - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 1.1.0)
 * [Civic: Byzantine Bureaucracy - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2932819177) ([Source](https://github.com/corsairmarks/civic_byzantine_bureaucracy_enhanced) 1.1.0)
 * [Civic: Philosopher King - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) 1.3.0)
-* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 6.0.0)
+* [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 7.0.0)
 * [Colony Designations: Capital Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 4.0.0)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/workshop/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 5.1.0)
 * [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 7.0.2)

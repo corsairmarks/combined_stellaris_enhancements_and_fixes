@@ -1,15 +1,3 @@
-# value:et_district_dynamic_weight|DISTRICT|district_arcology_commercial|
-# this = planet
-et_district_dynamic_weight = {
-	complex_trigger_modifier = {
-		trigger = num_districts
-		parameters = {
-			type = $DISTRICT$
-		}
-		mode = add
-	}
-}
-
 # value:et_building_dynamic_weight|BUILDING|building_commercial_zone|
 # this = planet
 et_building_dynamic_weight = {
@@ -21,13 +9,14 @@ et_building_dynamic_weight = {
 		}
 		mode = add
 	}
+	mult = 2
 }
 
 # value:et_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
 # this = planet
 et_building_dynamic_weight_tier_2 = {
 	add = value:et_building_dynamic_weight|BUILDING|$BUILDING$|
-	mult = 1.25
+	mult = 2
 }
 
 # this = planet
@@ -62,68 +51,30 @@ et_trade_colony_bonus_trade = {
 }
 
 # this = planet
-et_col_ecu_trade_weight_multiplier = {
-	modifier = { 
-		add = 5
-		has_designation = col_ecu_trade
-	}
+et_trade_colony_building_weight_multiplier = {
+	add = value:et_building_dynamic_weight|BUILDING|building_commercial_zone|
+	add = value:et_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
 	modifier = {
-		add = value:et_district_dynamic_weight|DISTRICT|district_arcology_commercial|
-	}
-	modifier = {
-		add = value:et_building_dynamic_weight|BUILDING|building_commercial_zone|
-	}
-	modifier = {
-		add = value:et_building_dynamic_weight_tier_2|BUILDING|building_commercial_megaplex|
-	}
-	modifier = {
-		add = 2
+		add = 3
 		exists = owner
 		owner = {
 			OR = {
-				has_valid_civic = civic_merchant_guilds
-				has_valid_civic = civic_corporate_dominion
-				is_megacorp = yes
+				is_capitalist = yes
+				has_corporate_government = yes
 			}
 		}
 	}
 	modifier = {
-		add = 4
+		add = 5
 		has_building = building_galactic_stock_exchange
 	}
 	modifier = {
-		add = 4
+		add = 5
 		has_building = building_nuumismatic_shrine
 	}
 	modifier = {
-		add = 4
+		add = 5
 		has_planetary_modifier_enhancements_active = yes
 		has_modifier = pm_planetary_mechanocalibrator
-	}
-	modifier = {
-		set = 0
-		num_buildings = {
-			type = building_commercial_zone
-			value = 0
-		}
-		num_buildings = {
-			type = building_commercial_megaplex
-			value = 0
-		}
-		num_buildings = {
-			type = building_galactic_stock_exchange
-			value = 0
-		}
-		OR = {
-			owner = { NOT = { has_country_flag = nuumismatic_shrine } }
-			num_buildings = {
-				type = building_nuumismatic_shrine
-				value = 0
-			}
-		}
-		num_districts = {
-			type = district_arcology_commercial
-			value = 0
-		}
 	}
 }

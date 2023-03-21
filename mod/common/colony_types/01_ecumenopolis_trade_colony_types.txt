@@ -1,3 +1,6 @@
+# variable copied from common/colony_types/00_colony_types.txt
+@stickiness = 10
+
 # Ecumenpolis Commercial
 col_ecu_trade = {
 	icon = GFX_colony_type_ecu_trade
@@ -41,9 +44,28 @@ col_ecu_trade = {
 		mult = value:et_trade_colony_bonus_trade
 	}
 	weight_modifier = {
-		base = 10
 		modifier = { 
-			add = value:et_col_ecu_trade_weight_multiplier
+			add = @stickiness
+			has_designation = col_ecu_trade
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_arcology_commercial
+			}
+			mode = add
+			mult = 6
+		}
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = merchant # merchant jobs act as a pretty decent proxy for "this is a trade planet"
+			}
+			mode = add
+			mult = 2
+		}
+		modifier = { 
+			add = value:et_trade_colony_building_weight_multiplier
 		}
 	}
 }

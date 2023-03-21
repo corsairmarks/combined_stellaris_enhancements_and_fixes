@@ -1,3 +1,6 @@
+# variable copied from common/colony_types/00_colony_types.txt
+@stickiness = 10
+
 # Ecumenpolis
 col_ecu_mix = {
 	icon = GFX_colony_type_workers
@@ -16,10 +19,21 @@ col_ecu_mix = {
 	}
 
 	weight_modifier = {
-		base = 10
 		modifier = {
-			factor = 500
-			num_pops < 15
+			add = @stickiness
+			has_designation = col_ecu_mix
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_arcology_housing
+			}
+			mode = add
+			mult = 6
+		}
+		modifier = {
+			add = 10
+			num_sapient_pops < 15
 		}
 	}
 }
