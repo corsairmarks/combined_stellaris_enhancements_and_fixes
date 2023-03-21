@@ -10,7 +10,7 @@ planet_event = {
 	hide_window = yes
 	trigger = {
 		solar_system = {
-			NOR = {
+			NOT = { # NOR
 				any_orbital_station = { has_fleet_flag = terraform_station@prevprev }
 				# any_system_megastructure = { has_megastructure_flag = terraform_station@prevprev }
 			}
@@ -18,18 +18,7 @@ planet_event = {
 		NAND = {
 			has_terraform_to_pc_nuked_active = yes
 			uninhabitable_regular_planet = no
-			space_owner.owner_main_species = {
-				OR = {
-					ideal_planet_class = pc_nuked
-					has_trait = trait_pc_nuked_preference
-					has_trait = trait_survivor
-					has_trait = trait_plantoid_radiotrophic
-					has_trait = trait_harvested_radiotrophic
-					has_trait = trait_lithoid_radiotrophic
-					has_trait = trait_advanced_radiotrophic
-					has_trait = trait_presapient_irradiated
-				}
-			}
+			space_owner.owner_main_species = { is_nuked_species = yes }
 		}
 	}
 	immediate = {
