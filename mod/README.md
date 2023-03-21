@@ -33,7 +33,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leader Traits: All Eligible Species Traits](https://steamcommunity.com/workshop/filedetails/?id=2499031295) ([Source](https://github.com/corsairmarks/enable_all_species_traits_for_leaders) 6.0.0)
 * [Leader Traits: Enhanced Randomisation](https://steamcommunity.com/workshop/filedetails/?id=2553806265) ([Source](https://github.com/corsairmarks/leader_trait_randomisation_enhancement) 6.0.0)
 * [Leader Traits: Scientist AI Assistant Upgrader](https://steamcommunity.com/workshop/filedetails/?id=2498166286) ([Source](https://github.com/corsairmarks/scientist_ai_assistant_upgrader) 2.3.0)
-* [Leisure Districts for People of Culture](https://steamcommunity.com/workshop/filedetails/?id=2916289268) ([Source](https://github.com/corsairmarks/district_leisure_cultural) 1.1.0)
+* [Leisure Districts for People of Culture](https://steamcommunity.com/workshop/filedetails/?id=2916289268) ([Source](https://github.com/corsairmarks/district_leisure_cultural) 1.2.0)
 * [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 5.1.1)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 5.1.0)
 * [Primitive Conquest Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 6.1.0)
