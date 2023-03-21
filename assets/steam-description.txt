@@ -33,7 +33,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2916289268]Leisure Districts for People of Culture[/url] at 1.2.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2686810902]Penal Colony: Enhanced[/url] at 5.1.1
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2496357128]Planetary Modifier Enhancements[/url] at 5.1.0
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2488154830]Primitive Conquest Enhancements[/url] at 6.1.0
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2488154830]Pre-FTL Conquest & Infiltration: Enhanced[/url] at 7.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2601239912]Psionic Ascension: Even in Other Empires[/url] at 5.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2548834941]Restored Content: Fungoids[/url] at 2.1.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2553818684]Retain Leaders from Integrated Subjects[/url] at 7.1.1
