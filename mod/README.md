@@ -44,6 +44,7 @@ Overriding buildings and jobs causes the game to log errors noting the overrides
     * Add an override of a new archaeotech building related to bureaucrats to also give +1 magistrates
     * Update magistrates to be affected by the same archaeotech building
     * Integrate underlying game changes
+* 2.0.1 Fix spacing in description for Civic: Byzantine Bureaucracy
 
 ## Source Code
 
