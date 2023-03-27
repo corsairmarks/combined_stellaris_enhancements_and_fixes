@@ -96,6 +96,7 @@ Overriding an effect or event causes the game to log errors noting the overrides
     * Remove obsolete event overrides
     * Add new effect overrides for infiltration annexation and empire match-graphical-culture-to-main-species
     * Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
+* 7.0.1 Improve support for Planetary Diversity - notably for starts on Techno-Organic planets
 
 ## Source Code
 
