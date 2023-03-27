@@ -113,6 +113,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Integrate underlying game changes for Civic: Agrarian Idyll and rural districts
     * Remove megacorp Civic: Anglers override, no longer necessary
     * Improve Planetary Diversity support
+* 8.0.1 Improve support for Planetary Diversity - notably beginning as Civic: Agrarian Idyll on Techno-Organic planets
 
 ## Source Code
 
