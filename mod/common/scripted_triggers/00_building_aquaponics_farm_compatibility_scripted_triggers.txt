@@ -1,3 +1,5 @@
+# Irony this is a placeholder file please ignore it
+
 # supports features from my mod "Agrarian" Idyll for Lithoids
 # this = any
 has_agrarian_idyll_lithoid_active = {
@@ -5,8 +7,7 @@ has_agrarian_idyll_lithoid_active = {
 	always = no
 }
 
-
-## Planetary Diversity ##
+### Planetary Diversity ###
 # https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
 
 # this = planet
