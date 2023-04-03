@@ -9,3 +9,8 @@
  mod_job_magistrate_per_pop_short: "\n§G+1§! £mod_job_magistrate_add£ per $VALUE$ £pop£"
  d_civic_byzantine_bureaucracy_capital: "Seat of the Magistracy"
  d_civic_byzantine_bureaucracy_capital_desc: "As a sector capital, this planet's administrative needs surpass those provided by $job_politician_plural$ and $job_bureaucrat_plural$ alone. $job_magistrate_plural$ inevitably congregate along the lines of governmental authority, where their services are most necessary.\n\nShould the sector capital be moved from this planet, the Magistrates will inexorably follow after concluding present business."
+
+ # localisation to make the game happy with the conditional content
+ # matches localisation from Planetary Diversity so that it won't matter which mod loads first
+ d_pd_shroud_arc: "Shroud Temple Zone"
+ d_pd_shroud_arc_desc: "This temple is dedicated to keeping our connection to the Shroud powerful and strong."

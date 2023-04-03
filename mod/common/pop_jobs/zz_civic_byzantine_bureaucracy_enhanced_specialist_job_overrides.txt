@@ -22,6 +22,17 @@ bureaucrat = {
 		produces = {
 			unity = 4
 		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_country_flag = whisperers_covenant_confirmed }
+				exists = planet
+				planet = { has_deposit = d_pd_shroud_arc }
+			}
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+		}
 		upkeep = {
 			consumer_goods = 2
 		}
@@ -32,9 +43,7 @@ bureaucrat = {
 			exists = owner
 			owner = { is_valid_byzantine_bureaucracy = yes }
 		}
-		modifier = {
-			planet_stability_add = 1
-		}
+		planet_stability_add = 1
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -61,6 +70,8 @@ bureaucrat = {
 		mult = value:job_total_output_modifier|JOB|bureaucrat|RESOURCE|unity|
 	}
 
+	inline_script = "jobs/pd_priest_outputs"
+
 	weight = {
 		weight = @specialist_job_weight
 		mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
@@ -76,6 +87,11 @@ bureaucrat = {
 					owner = { is_valid_byzantine_bureaucracy = yes }
 				}
 			}
+		}
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			is_robot_pop = no
 		}
 		modifier = {
 			factor = 0.1

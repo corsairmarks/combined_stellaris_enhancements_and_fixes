@@ -1,0 +1,7 @@
+# Irony this is a placeholder file please ignore it
+
+# dummy deposit from Planetary Diversity
+d_pd_shroud_arc = {
+	potential = { always = no }
+	drop_weight = { weight = 0 }
+}
