@@ -27,6 +27,7 @@ Built for Stellaris version 3.7 "Canis Minor."  As a UI-only mod, this is achiev
 * 3.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate underlying changes from the base game in overridden file
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax") - integrate underlying changes from the base game in overridden file
 * 5.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying changes from the base game in overridden file
+* 5.1.0 Update for Stellaris version 3.7.4 "Canis Minor" - integrate underlying changes from the base game in overridden file
 
 ## Source Code
 
