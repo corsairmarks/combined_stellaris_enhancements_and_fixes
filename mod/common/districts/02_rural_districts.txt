@@ -967,6 +967,10 @@ district_farming_uncapped = {
 			uses_district_set = pdnecroplanet
 			is_pd_wasteland = yes
 			is_pd_planetary_megaproject = yes
+			has_deposit = d_technocanal
+			has_deposit = d_technocanal_blocker
+			has_modifier = technoorganic
+			has_modifier = technoorganic2
 			AND = {
 				OR = {
 					is_planet_class = pc_ocean
@@ -975,10 +979,6 @@ district_farming_uncapped = {
 				exists = from
 				from = { is_anglers_empire = yes }
 			}
-			has_modifier = technoorganic
-			has_modifier = technoorganic2
-			has_deposit = d_technocanal
-			has_deposit = d_technocanal_blocker
 		}
 	}
 
