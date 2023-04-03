@@ -1,3 +1,5 @@
+# Irony this is a placeholder file please ignore it
+
 # dummy deposits from Planetary Diversity: Unique Worlds
 d_technocanal = {
 	potential = { always = no }
