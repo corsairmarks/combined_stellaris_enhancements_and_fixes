@@ -1,3 +1,5 @@
+# Irony this is a placeholder file please ignore it
+
 @dummy_build_time = 240
 @dummy_cost = 300
 @dummy_upkeep = 1

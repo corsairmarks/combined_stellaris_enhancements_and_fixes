@@ -1,3 +1,5 @@
+# Irony this is a placeholder file please ignore it
+
 # supports features from my mod Colony Designation: Ecumenopolis Commercial
 # this = any
 has_ecumenopolis_trade_active = {
