@@ -1,0 +1,10 @@
+# dummy modifiers from Planetary Diversity: Unique Worlds
+technoorganic = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_natural_beauty.dds"
+	icon_frame = 1
+}
+
+technoorganic2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_natural_beauty.dds"
+	icon_frame = 1
+}

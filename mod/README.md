@@ -36,7 +36,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Leisure Districts for People of Culture](https://steamcommunity.com/workshop/filedetails/?id=2916289268) ([Source](https://github.com/corsairmarks/district_leisure_cultural) 1.2.0)
 * [Penal Colony: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2686810902) ([Source](https://github.com/corsairmarks/penal_colony_enhanced) 5.4.0)
 * [Planetary Modifier Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2496357128) ([Source](https://github.com/corsairmarks/planetary_modifier_enhancements) 6.1.0)
-* [Pre-FTL Conquest & Infiltration: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 7.0.0)
+* [Pre-FTL Conquest & Infiltration: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 7.0.1)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 5.0.0)
 * [Restored Content: Fungoids](https://steamcommunity.com/workshop/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 2.1.0)
 * [Retain Leaders from Integrated Subjects & Pre-FTL Civilizations](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 8.0.0)
@@ -233,3 +233,4 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 8.0.1 Update merged mods:
     * "Agrarian" Idyll for Lithoids at 8.0.1
     * Civic: Byzantine Bureaucracy - Enhanced at 2.0.2
+    * Pre-FTL Conquest & Infiltration: Enhanced at 7.0.1
