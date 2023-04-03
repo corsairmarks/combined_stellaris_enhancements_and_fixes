@@ -18,7 +18,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 
 * [Aesthetic Terraform Stations](https://steamcommunity.com/workshop/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 5.1.0)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 8.0.1)
-* [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 5.0.0)
+* [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 5.1.0)
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 4.4.0)
 * [Building: Betharian Power Plant - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 2.1.0)
 * [Civic: Byzantine Bureaucracy - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2932819177) ([Source](https://github.com/corsairmarks/civic_byzantine_bureaucracy_enhanced) 2.0.2)
@@ -232,5 +232,6 @@ This mod should not be removed from your save game.  Some added modifiers and te
 * 8.0.0 Update all merged mods for Stellaris version 3.7 "Canis Minor"
 * 8.0.1 Update merged mods:
     * "Agrarian" Idyll for Lithoids at 8.0.1
+    * Basic Planetview: More Districts at 5.1.0
     * Civic: Byzantine Bureaucracy - Enhanced at 2.0.2
     * Pre-FTL Conquest & Infiltration: Enhanced at 7.0.1
