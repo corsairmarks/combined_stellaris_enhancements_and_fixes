@@ -1,20 +1,20 @@
 # Overview
 
-This mod is a compilation of most of my other fixes and balance mods.  Please see the description of each individual mod for what the effects are.
+This mod is a compilation of most of my other fixes and balance mods. Please see the description of each individual mod for what the effects are.
 
 Individual mods update first, then changes are merged here.
 
-Special thanks to [Pietas](https://steamcommunity.com/id/piousnoobling) in pinpointing conflicts with Planetary Diversity - all component mods fully support PD.
+Special thanks to [Pietas](https://steamcommunity.com/id/piousnoobling) in pinpointing conflicts with Planetary Diversity - all component mods fully support PD. Be sure to load Planetary Diversity _after_ this mod.
 
 # Major Update
 
-Versions 8.0.0 and above are fully updated for Stellaris version 3.7 "Canis Minor" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris.  You can manually download the most recent version of this mod without breaking change here: [7.2.5](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/7.2.5).
+Versions 8.0.0 and above are fully updated for Stellaris version 3.7 "Canis Minor" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris. You can manually download the most recent version of this mod without breaking change here: [7.2.5](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/7.2.5).
 
-You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder.  More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
+You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder. More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
 
 # Bundled Mods
 
-This is a bundle of mods to resolve compatibility issues if you want to use them all together.  Please check each individual mod for the effects and any known issues.  The numbers indicate which version of a particular mod is contained in this mod (which also corresponds to the version tag in its `git` repository).
+This is a bundle of mods to resolve compatibility issues if you want to use them all together. Please check each individual mod for the effects and any known issues. The numbers indicate which version of a particular mod is contained in this mod (which also corresponds to the version tag in its `git` repository).
 
 * [Aesthetic Terraform Stations](https://steamcommunity.com/workshop/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 5.1.0)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 8.0.1)
@@ -51,11 +51,11 @@ Hosted on [Github](https://github.com/corsairmarks/combined_stellaris_enhancemen
 
 ### Development Notes
 
-It is best to clone this repository into `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder via a `*.mod` file's `path` property.  That will ensure the game can see the files, and also that CWTools will parse them.  Also note that the README.md file exists in the `mod` directory but is symbolically linked in the root directory.
+It is best to clone this repository into `<Stellaris User's Directory>/Paradox Interactive/Stellaris/mod`, and then make a connection to the `mod` folder via a `*.mod` file's `path` property. That will ensure the game can see the files, and also that CWTools will parse them. Also note that the README.md file exists in the `mod` directory but is symbolically linked in the root directory.
 
 ## Methodology
 
-Each of the source repositories above is added as a remote to this repository on my local machine.  I fetch all the repositories, then merge them into the `master` branch of this repository.
+Each of the source repositories above is added as a remote to this repository on my local machine. I fetch all the repositories, then merge them into the `master` branch of this repository.
 
 1. `git remote add <friendly-remote-name> <repo-url>`
 2. `git fetch --all -n` to get all the commits, but not the tags
@@ -68,172 +68,172 @@ Each of the source repositories above is added as a remote to this repository on
 
 Requires Stellaris version 3.7 "Canis Minor" and disables achievements.
 
-Check each of the contained mods for an explicit list of incompatibility notes.  As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings.  Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
+Check each of the contained mods for an explicit list of incompatibility notes. As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings. Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
 
 ## Recommended Companion Mods
 
-The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds.  This is particularly true for the temperate planets: tropical, continental, and ocean.  To solve that, I _**highly**_ recommend you use [Bigger Planet View](https://steamcommunity.com/workshop/filedetails/?id=1587178040) to expand the viewport.  As a graphics-only mod, it can be added or removed at any time.  It is stand-alone and does not require the use of [UI Overhaul Dynamic](https://steamcommunity.com/workshop/filedetails/?id=1623423360).  The full version of UIOD also provides an expanded viewport if you prefer it over that built-in Stellaris UI.
+The standard planet view has a very small graphic representing your planet's environment and its sky, and so sometimes it is hard to see the alternate sky backgrounds. This is particularly true for the temperate planets: tropical, continental, and ocean. To solve that, I _**highly**_ recommend you use [Bigger Planet View](https://steamcommunity.com/workshop/filedetails/?id=1587178040) to expand the viewport. As a graphics-only mod, it can be added or removed at any time. It is stand-alone and does not require the use of [UI Overhaul Dynamic](https://steamcommunity.com/workshop/filedetails/?id=1623423360). The full version of UIOD also provides an expanded viewport if you prefer it over that built-in Stellaris UI.
 
 Should you choose to use Bigger Planet View or the full UIOD mod, it should be loaded _after_ Subtle Polish so that it properly overwrites the planetview from Basic Planetview: More Districts.
 
 ## When to Install
 
-This mod should not be removed from your save game.  Some added modifiers and technologies will not work without the changes in this mod.  You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
+This mod should not be removed from your save game. Some added modifiers and technologies will not work without the changes in this mod. You can add it safely to already-started games but you will miss out on some of the game-start-time changes (such as the updated version of the Extensive Moon System modifier applying to all moons around a gas giant with the modifier).
 
 ## Changelog
 
 * 1.0.0 Initial version
 * 1.0.1 Fix effect file location (breaking bug), enhance documentation and thumbnail image
 * 1.1.0 Upstream updates
-    * Added: "Yet Another Planetary Sky Fix" at version 1.0.2
-    * Updated "Full Military Service for Battle Thralls"
+	* Added: "Yet Another Planetary Sky Fix" at version 1.0.2
+	* Updated "Full Military Service for Battle Thralls"
 * 1.2.0 Apply fix from "Yet Another Planetary Sky Fix" version 1.1.0
 * 1.3.0 Update merged mods:
-    * Updated: "Agrarian" Idyll for Lithoids at 1.4.0
-    * Updated: Ringworld Origin Rebalance for 3.0.* at 1.0.3
-    * Updated: Leader Traits: All Eligible Species Traits at 1.3.0 (formerly Enable All Eligible Species Traits for Leaders)
-    * Updated: Leader Traits: Scientist AI Assistant Upgrader at 1.0.4 (formerly Scientist AI Assistant Upgrader)
-    * Updated: Prosperity Tradition Rebalance for 3.0.3 at 1.2.0
-    * Updated: Full Military Service for Battle Thralls at 1.4.0
-    * Updated: Planetary Modifier Enhancements at 2.3.0
-    * Updated: Primitive Conquest Enhancements at 1.3.0
-    * Added: Restored Content: Fungoids at 1.0.1
-    * Added: Leader Traits: Enhanced Randomisation at 1.0.0
-    * Added: Retain Leaders from Integrated Subjects at 1.0.1
+	* Updated: "Agrarian" Idyll for Lithoids at 1.4.0
+	* Updated: Ringworld Origin Rebalance for 3.0.* at 1.0.3
+	* Updated: Leader Traits: All Eligible Species Traits at 1.3.0 (formerly Enable All Eligible Species Traits for Leaders)
+	* Updated: Leader Traits: Scientist AI Assistant Upgrader at 1.0.4 (formerly Scientist AI Assistant Upgrader)
+	* Updated: Prosperity Tradition Rebalance for 3.0.3 at 1.2.0
+	* Updated: Full Military Service for Battle Thralls at 1.4.0
+	* Updated: Planetary Modifier Enhancements at 2.3.0
+	* Updated: Primitive Conquest Enhancements at 1.3.0
+	* Added: Restored Content: Fungoids at 1.0.1
+	* Added: Leader Traits: Enhanced Randomisation at 1.0.0
+	* Added: Retain Leaders from Integrated Subjects at 1.0.1
 * 1.3.1 Update merged mods:
-    * Full Military Service for Battle Thralls at 1.5.0
-    * Retain Leaders from Integrated Subjects at 1.0.2
-    * Leader Traits: Enhanced Randomisation at 1.0.1
+	* Full Military Service for Battle Thralls at 1.5.0
+	* Retain Leaders from Integrated Subjects at 1.0.2
+	* Leader Traits: Enhanced Randomisation at 1.0.1
 * 1.3.2 Update merged mod "Agrarian" Idyll for Lithoids at 1.5.1
 * 1.3.3 Update merged mods:
-    * Leader Traits: All Eligible Species Traits at 1.4.0
-    * Leader Traits: Enhanced Randomisation at 1.1.0
+	* Leader Traits: All Eligible Species Traits at 1.4.0
+	* Leader Traits: Enhanced Randomisation at 1.1.0
 * 1.3.4 Update merged mods:
-    * Full Military Service for Battle Thralls at 1.5.1
-    * Retain Leaders from Integrated Subjects at 1.1.0
+	* Full Military Service for Battle Thralls at 1.5.1
+	* Retain Leaders from Integrated Subjects at 1.1.0
 * 2.0.0 Add merged mods:
-    * Deassimilate Machines at 1.0.1
-    * Deassimilated Machine Worlds at 1.0.0
+	* Deassimilate Machines at 1.0.1
+	* Deassimilated Machine Worlds at 1.0.0
 * 2.1.0 Add merged mod: Counter-Limited Armies Fix
 * 2.1.1 Update merged mods:
-    * Deassimilate Machines at 1.0.2
-    * Deassimilated Machine Worlds at 1.0.1
-    * Shattered Ring Rebalance for 3.0.* at 1.1.0
+	* Deassimilate Machines at 1.0.2
+	* Deassimilated Machine Worlds at 1.0.1
+	* Shattered Ring Rebalance for 3.0.* at 1.1.0
 * 2.1.2 Update merged mods:
-    * Retain Leaders from Integrated Subjects at 1.2.1
-    * Deassimilated Machines at 1.0.3
+	* Retain Leaders from Integrated Subjects at 1.2.1
+	* Deassimilated Machines at 1.0.3
 * 2.2.0 Add and update merged mods
-    * Updated: Leader Traits: All Eligible Species Traits at 1.4.1
-    * Added: Colony Designation: Ecumenopolis Commercial at 1.0.0
-    * Added: Psionic Ascension: Even in Other Empires at 1.0.0
+	* Updated: Leader Traits: All Eligible Species Traits at 1.4.1
+	* Added: Colony Designation: Ecumenopolis Commercial at 1.0.0
+	* Added: Psionic Ascension: Even in Other Empires at 1.0.0
 * 3.0.0 Update all merged mods for Stellaris version 3.1 "Lem"
-    * Removed: Shattered Ring Rebalance for 3.0.* (deprecated)
-    * Removed: Prosperity Tradition Rebalance for 3.0.3 (deprecated)
-    * Removed: Space Fauna Multiple Resolutions Fix (deprecated)
-    * Updated: all the rest
+	* Removed: Shattered Ring Rebalance for 3.0.* (deprecated)
+	* Removed: Prosperity Tradition Rebalance for 3.0.3 (deprecated)
+	* Removed: Space Fauna Multiple Resolutions Fix (deprecated)
+	* Updated: all the rest
 * 3.0.1 Mark compatibility for Stellaris 3.1.2
-    * Updated: Retain Leaders from Integrated Subjects at 2.0.1
-    * Updated: "Agrarian" Idyll for Lithoids at 2.0.1
+	* Updated: Retain Leaders from Integrated Subjects at 2.0.1
+	* Updated: "Agrarian" Idyll for Lithoids at 2.0.1
 * 3.0.2 Update merged mod: Primitive Conquest Enhancements at 2.1.0
 * 3.1.0 Add merged mods:
-    * Aesthetic Terraform Stations at 1.0.0
-    * "Terraform" to Tomb World at 1.0.0
+	* Aesthetic Terraform Stations at 1.0.0
+	* "Terraform" to Tomb World at 1.0.0
 * 3.1.1 Update merged mod: "Agrarian" Idyll for Lithoids at 2.0.2
 * 3.1.2 Update merged mod: "Terraform" to Tomb World at 1.1.0
 * 3.2.0 Add and update merged mods
-    * Added: Ringworld Graphical Enhancements at 1.0.0
-    * Updated: "Terraform" to Tomb World at 1.2.0
+	* Added: Ringworld Graphical Enhancements at 1.0.0
+	* Updated: "Terraform" to Tomb World at 1.2.0
 * 3.2.1 Update merged mod: Ringworld Graphical Enhancements at 1.1.0
 * 3.3.0 Add and update merged mods
-    * Added: Enhanced Trade Districts and Designations at 1.0.0
-    * Updated: Colony Designation: Ecumenopolis Commercial at 2.4.0
-    * Updated: Planetary Modifier Enhancements at 2.5.0
+	* Added: Enhanced Trade Districts and Designations at 1.0.0
+	* Updated: Colony Designation: Ecumenopolis Commercial at 2.4.0
+	* Updated: Planetary Modifier Enhancements at 2.5.0
 * 3.3.1 Update merged mod: Leader Traits: All Eligible Species Traits at 2.1.0
 * 3.3.2 Update merged mods
-    * Aesthetic Terraform Stations at 1.0.1
-    * "Terraform" to Tomb World at 1.2.1
+	* Aesthetic Terraform Stations at 1.0.1
+	* "Terraform" to Tomb World at 1.2.1
 * 3.3.3 Update merged mods
-    * Colony Designation: Ecumenopolis Commercial at 2.4.1
-    * Enhanced Trade Districts and Designations at 1.0.1
+	* Colony Designation: Ecumenopolis Commercial at 2.4.1
+	* Enhanced Trade Districts and Designations at 1.0.1
 * 3.3.4 Update merged mods
-    * "Terraform" to Tomb World at 1.2.2
-    * Colony Designation: Ecumenopolis Commercial at 2.4.2
-    * Enhanced Trade Districts and Designations at 1.0.2
+	* "Terraform" to Tomb World at 1.2.2
+	* Colony Designation: Ecumenopolis Commercial at 2.4.2
+	* Enhanced Trade Districts and Designations at 1.0.2
 * 3.3.5 Update merged mod: "Terraform" to Tomb World at 1.2.3
 * 4.0.0 Update all merged mods for Stellaris version 3.2.2 "Herbert"
 * 4.0.1 Update merged mod: Special Leadership Privileges for Battle Thralls and Bio-Trophies at 2.1.1 (previously named Full Military Service for Battle Thralls)
 * 4.0.2 Update merged mods:
-    * "Agrarian" Idyll for Lithoids at 3.1.0
-    * Retain Leaders from Integrated Subjects at 3.1.0
+	* "Agrarian" Idyll for Lithoids at 3.1.0
+	* Retain Leaders from Integrated Subjects at 3.1.0
 * 4.1.0 Add and update merged mods
-    * Added: Penal Colony: Enhanced at 1.0.0
-    * Updated: Leader Traits: Enhanced Randomisation at 2.2.0
+	* Added: Penal Colony: Enhanced at 1.0.0
+	* Updated: Leader Traits: Enhanced Randomisation at 2.2.0
 * 4.1.1 Update merged mod: Penal Colony: Enhanced at 1.1.0
 * 4.1.2 Update merged mods:
-    * Leader Traits: All Eligible Species Traits at 2.2.1
-    * Leader Traits: Enhanced Randomisation at 2.2.1
+	* Leader Traits: All Eligible Species Traits at 2.2.1
+	* Leader Traits: Enhanced Randomisation at 2.2.1
 * 5.0.0 Update merged mods for Stellaris version 3.3 "Libra"
-    * Removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix (deprecated)
-    * Added: Basic Planetview: More Districts at 2.0.0
-    * Added: Building: Aquaponics Farms at 1.0.1
-    * Added: Leader Traits: Synthetic Leader Traits for Machine Units at 1.3.0
-    * Updated: all the rest
+	* Removed: Manifesti 'Personal Autonomy for Munitions' Demand Fix (deprecated)
+	* Added: Basic Planetview: More Districts at 2.0.0
+	* Added: Building: Aquaponics Farms at 1.0.1
+	* Added: Leader Traits: Synthetic Leader Traits for Machine Units at 1.3.0
+	* Updated: all the rest
 * 5.1.0 Add and update merged mods
-    * Added: Civic: Philosopher King - Enhanced at 1.0.1
-    * Added: Colony Designations: Capital Building Job Swaps at 1.1.0
-    * Updated: Colony Designation: Ecumenopolis Commercial at 3.0.1
-    * Updated: Enhanced Trade Districts and Designations at 2.0.1
+	* Added: Civic: Philosopher King - Enhanced at 1.0.1
+	* Added: Colony Designations: Capital Building Job Swaps at 1.1.0
+	* Updated: Colony Designation: Ecumenopolis Commercial at 3.0.1
+	* Updated: Enhanced Trade Districts and Designations at 2.0.1
 * 5.1.1 Update merged mod: Primitive Conquest Enhancements at 4.1.0
 * 5.2.0 Add merged mod: Start with Unity Fund at 1.0.0
 * 5.2.1 Update merged mod: Civic: Philosopher King - Enhanced at 1.0.2
 * 5.2.2 Update merged mods:
-    * Colony Designations: Capital Building Job Swaps at 1.1.1
-    * Leader Traits: All Eligible Species Traits at 2.4.0
+	* Colony Designations: Capital Building Job Swaps at 1.1.1
+	* Leader Traits: All Eligible Species Traits at 2.4.0
 * 5.2.3 Update merged mods:
-    * "Agrarian" Idyll for Lithoids at 4.0.1
-    * Building: Aquaponics Farms at 1.0.2
-    * Deassimilate Machines at 3.1.0
-    * Retain Leaders from Integrated Subjects at 4.1.0
+	* "Agrarian" Idyll for Lithoids at 4.0.1
+	* Building: Aquaponics Farms at 1.0.2
+	* Deassimilate Machines at 3.1.0
+	* Retain Leaders from Integrated Subjects at 4.1.0
 * 6.0.0 Update merged mods for Stellaris version 3.4 "Cepheus" (none added or removed)
 * 6.0.1 Update merged mod: Enhanced Trade Districts and Designations at 3.2.0
 * 7.0.0 Update all merged mods for Stellaris version 3.6 "Orion"
-    * Removed: Leader Traits: Synthetic Leader Traits for Machine Units (deprecated)
-    * Simplify a few known duplicate overrides between the included mods
+	* Removed: Leader Traits: Synthetic Leader Traits for Machine Units (deprecated)
+	* Simplify a few known duplicate overrides between the included mods
 * 7.0.1 Update merged mod: Primitive Conquest Enhancements at 6.0.1
 * 7.0.2 Update merged mod: Deassimilate Machines at 5.0.1
 * 7.0.3 Update most merged mods with global flag-to-trigger conversion
 * 7.1.0 Add new mods!
-    * Added: Buildings: Betharian Power Plant and Alien Zoo - Enhanced at 1.0.0
-    * Added: Leisure Districts for People of Culture at 1.0.0
-    * Updated: Building: Aquaponics Farms at 4.0.1
+	* Added: Buildings: Betharian Power Plant and Alien Zoo - Enhanced at 1.0.0
+	* Added: Leisure Districts for People of Culture at 1.0.0
+	* Updated: Building: Aquaponics Farms at 4.0.1
 * 7.1.1 Update merged mod: Ringworld Graphical Enhancements at 3.2.0
 * 7.2.0 Add and update merged mods 
-    * Added: Civic: Byzantine Bureaucracy - Enhanced at 1.0.0
-    * Updated: Deassimilate Machines at 7.0.0
-    * Updated: Leader Traits: All Eligible Species Traits at 5.1.0
-    * Updated: Retain Leaders from Integrated Subjects at 7.1.1
+	* Added: Civic: Byzantine Bureaucracy - Enhanced at 1.0.0
+	* Updated: Deassimilate Machines at 7.0.0
+	* Updated: Leader Traits: All Eligible Species Traits at 5.1.0
+	* Updated: Retain Leaders from Integrated Subjects at 7.1.1
 * 7.2.1 Update merged mods
-    * "Agrarian" Idyll for Lithoids at 7.1.0
-    * Building: Aquaponics Farms at 4.1.0
-    * Buildings: Betharian Power Plant and Alien Zoo - Enhanced at 1.1.0
-    * Civic: Byzantine Bureaucracy - Enhanced at 1.1.0
-    * Deassimilated Machine Worlds at 6.1.0
-    * Enhanced Trade Districts and Designations at 5.1.0
-    * Leisure Districts for People of Culture at 1.1.0
-    * Penal Colony: Enhanced at 5.1.0
-    * Planetary Modifier Enhancements at 5.1.0
-    * "Terraform" to Tomb World at 6.0.1
+	* "Agrarian" Idyll for Lithoids at 7.1.0
+	* Building: Aquaponics Farms at 4.1.0
+	* Buildings: Betharian Power Plant and Alien Zoo - Enhanced at 1.1.0
+	* Civic: Byzantine Bureaucracy - Enhanced at 1.1.0
+	* Deassimilated Machine Worlds at 6.1.0
+	* Enhanced Trade Districts and Designations at 5.1.0
+	* Leisure Districts for People of Culture at 1.1.0
+	* Penal Colony: Enhanced at 5.1.0
+	* Planetary Modifier Enhancements at 5.1.0
+	* "Terraform" to Tomb World at 6.0.1
 * 7.2.2 Update merged mod: "Agrarian" Idyll for Lithoids at 7.1.1
 * 7.2.3 Update merged mod: Deassimilate Machines at 7.0.1
 * 7.2.4 Update merged mod: Deassimilate Machines at 7.0.2
 * 7.2.5 Update merged mods:
-    * Leader Traits: Enhanced Randomisation at 5.2.0
-    * Penal Colony: Enhanced at 5.1.1
+	* Leader Traits: Enhanced Randomisation at 5.2.0
+	* Penal Colony: Enhanced at 5.1.1
 * 8.0.0 Update all merged mods for Stellaris version 3.7 "Canis Minor"
 * 8.0.1 Update merged mods:
-    * "Agrarian" Idyll for Lithoids at 8.0.1
-    * Basic Planetview: More Districts at 5.1.0
-    * Civic: Byzantine Bureaucracy - Enhanced at 2.0.2
-    * Deassimilate Machines at 8.1.0
-    * Planetary Modifier Enhancements at 6.1.1
-    * Pre-FTL Conquest & Infiltration: Enhanced at 7.0.1
+	* "Agrarian" Idyll for Lithoids at 8.0.1
+	* Basic Planetview: More Districts at 5.1.0
+	* Civic: Byzantine Bureaucracy - Enhanced at 2.0.2
+	* Deassimilate Machines at 8.1.0
+	* Planetary Modifier Enhancements at 6.1.1
+	* Pre-FTL Conquest & Infiltration: Enhanced at 7.0.1
