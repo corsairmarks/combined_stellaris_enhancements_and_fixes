@@ -26,7 +26,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 7.0.0)
 * [Colony Designations: Capitol Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 5.0.0)
 * [Counter-Limited Armies Fix](https://steamcommunity.com/workshop/filedetails/?id=2564348666) ([Source](https://github.com/corsairmarks/limited_army_counter_fix) 5.1.0)
-* [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 8.0.0)
+* [Deassimilate Machines](https://steamcommunity.com/workshop/filedetails/?id=2553812372) ([Source](https://github.com/corsairmarks/deassimilate_machines) 8.1.0)
 * [Deassimilated Machine Worlds](https://steamcommunity.com/workshop/filedetails/?id=2559702143) ([Source](https://github.com/corsairmarks/deassimilated_machine_worlds) 7.1.0)
 * [Enhanced Trade Districts and Designations](https://steamcommunity.com/workshop/filedetails/?id=2641081470) ([Source](https://github.com/corsairmarks/trade_district_enhancements) 6.0.1)
 * [Game Start: Unity Fund](https://steamcommunity.com/workshop/filedetails/?id=2775465389) ([Source](https://github.com/corsairmarks/start_with_unity_fund) 3.0.0)
@@ -234,4 +234,5 @@ This mod should not be removed from your save game.  Some added modifiers and te
     * "Agrarian" Idyll for Lithoids at 8.0.1
     * Basic Planetview: More Districts at 5.1.0
     * Civic: Byzantine Bureaucracy - Enhanced at 2.0.2
+    * Deassimilate Machines at 8.1.0
     * Pre-FTL Conquest & Infiltration: Enhanced at 7.0.1
