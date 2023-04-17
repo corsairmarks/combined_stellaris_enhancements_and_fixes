@@ -56,6 +56,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
     * Consume the compatibility trigger from another mod
     * Remove old compatibility global flag
 * 5.1.0 Mark as compatible with Stellaris version 3.7 "Canis Minor"
+* 5.2.0 Use the built-in `scripted_variable` for terraform station hit points
 
 ## Source Code
 
