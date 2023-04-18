@@ -1,6 +1,7 @@
 name="Aesthetic Terraform Stations"
 tags={
 	"Graphics"
+	"Spaceships"
 }
 version="5.2.0"
 picture="thumbnail.png"
