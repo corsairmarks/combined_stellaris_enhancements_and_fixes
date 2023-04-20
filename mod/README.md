@@ -1,6 +1,6 @@
 # Overview
 
-Do you have trouble finding your "in-progress" terraforming planets?  Or maybe you miss terraform stations?  This mod is for you!  The new terraforming gameplay is a bit less clunky to use, but does suffer from a lack of visual pizzazz.  This mod reintroduces terraform stations, and the best past is that you don't have to do anything special, use resources, or pay maintenance!
+Do you have trouble finding your "in-progress" terraforming planets?  Or maybe you miss terraform stations?  This mod is for you!  The new terraforming gameplay is a bit less clunky to use, but does suffer from a lack of visual pizzazz.  This mod reintroduces terraform stations, and the best part is that you don't have to do anything special, use resources, or pay maintenance!
 
 When a planet begins terraforming, this mod will automatically spawn a terraform station above it complete with sound effects, an animated terraform beam, and a healthy green glow around the planet.  These stations are real gameplay objects, but losing (or disbanding) them does not affect the terraforming process - it is purely a visual embellishment.  Once terraforming completes, your geo-engineers will automatically dismantle the terraform station.  If you cancel terraforming, expect a delay of up to one month (30 days) before the station will be automatically decommissioned.
 
@@ -24,27 +24,10 @@ This mod should be added before you start a new game so that all empires are ass
 
 ### Recommended Companion Mods
 
+* [Aesthetic Terraform Stations (collection)](https://steamcommunity.com/sharedfiles/filedetails/?id=2667853075) is a list of all supported shipsets and their corresponding Aesthetic Terraform Station compatibility sub-mods
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2628518102) or [Subtle Polish: A Collection of Fixes and Enhancements](https://steamcommunity.com/sharedfiles/filedetails/?id=2522974089) to set your Origin: Shattered Ring empires to have ringworlds matching their shipset (graphical culture)
 * [Machine Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2077186491) is a phenomenal, fully-sectioned shipset and includes megastructures
 * [Machine Shipset Add-on: Shattered Ring and Habitat Appearance](https://steamcommunity.com/sharedfiles/filedetails/?id=2628980994) ensures that the permanently-destroyed sections for Origin: Shattered Ring using the Machine Shipset properly display as that shipset (adds missing graphical definitions to the Machine Shipset and enhances the appearance of its habitable ringworlds segments and mini-ring habitats)
-* [Machine Shipset Add-on: Aesthetic Terraform Station Compatibility](https://steamcommunity.com/sharedfiles/filedetails/?id=2628972292) combined with the Machine Shipset, this compatibility patch ensures the correct Machine Shipset graphics are used for terraform stations
-* [Enigmatic Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2545512457) is a menacing, hexagonal shipset that highlights your primary color
-* [Enigmatic Shipset Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2631808667) combined with the Enigmatic Shipset, this compatibility patch ensures the correct Enigmatic Shipset graphics are used for terraform stations
-* [Ascendant Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2130588320) is an expansion of the Fallen Empire ships to an entire shipset, with some megastructures as well; also includes a cityset and recolored reptilian 17 (the faerie dragon) portraits
-* [Ascendant Shipset Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2649734046) combined with the Ascendant Shipset, this compatibility patch ensures the correct Ascendant Shipset graphics are used for terraform stations
-* [Kugelraumer Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2810379776) is another fully-sections shipset of (mostly) spherical ships based on the Perry Rhodan franchise
-* [Kugelraumer Shipset Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2964350923) combined with the Kugelraumer Shipset, this compatibility patch ensures the correct Kugelraumer Shipset graphics are used for terraform stations
-* [United Citizen Federation Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2838470527) is a fully-sectioned, original shipset based on a variety of sources with a definite Starship Troopers vibe
-* [United Citizen Federation Shipset Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2964726197) combined with the United Citizen Federation Shipset, this compatibility patch ensures the correct United Citizen Federation Shipset graphics are used for terraform stations
-* [Narn Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2815618989) is a fully-section shipset based on the Narn Regime ships from Babylon 5
-* [Narn Shipset Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2964723073) combined with the Narn Shipset, this compatibility patch ensures the correct Narn Shipset graphics are used for terraform stations
-* [US Astro Fleet Shipset](https://steamcommunity.com/sharedfiles/filedetails/?id=2827860713) is a fully-sectioned, original shipset based on a near-future aesthetic; as per the author, it is especially suited to "low-tech" empires (such as the new Eager Explorer civics and Payback/Broken Shackles origins added in the First Contact Story Pack)
-* [US Astro Fleet Shipset Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2964724700) combined with the US Astro Fleet Shipset, this compatibility patch ensures the correct US Astro Fleet Shipset graphics are used for terraform stations
-* [We are the Imperial Navy](https://steamcommunity.com/sharedfiles/filedetails/?id=864541681)  brings the Imperial Navy from Warhammer 40,000 to Stellaris
-* [We are the Imperial Navy Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2964586088) combined with the We are the Imperial Navy Shipset, this compatibility patch ensures the correct We are the Imperial Navy Shipset graphics are used for terraform stations
-* [We are the Imperial Navy NSC2](https://steamcommunity.com/sharedfiles/filedetails/?id=2079926133) brings the Imperial Navy from Warhammer 40,000 to Stellaris, including entities for most ship sizes added by NSC2
-* [We are the Imperial Navy NSC2 Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2079926133) combined with the We are the Imperial Navy NSC2 Shipset, this compatibility patch ensures the correct We are the Imperial Navy NSC2 Shipset graphics are used for terraform stations
-* [Crisis Shipsets Add-on](https://steamcommunity.com/sharedfiles/filedetails/?id=2964354705) this compatibility patch ensures the correct crisis shipset graphics are used for terraform stations - and also enables them for a variety of shipsets built using the built-in Contingency/Unbidden/Prethoryn assets
 
 ## Known Issues
 
