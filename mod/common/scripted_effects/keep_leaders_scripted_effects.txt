@@ -1247,7 +1247,7 @@ replace_leader_based_on_government_type = {
 			if = {
 				limit = {
 					has_eldanaer_active = yes
-					has_government = gov_bureaucratic_autocracy # Eldanær Stellar Authority uses this
+					has_government_bureaucratic_autocracy = yes
 				}
 				replace_leader_as_governor = yes
 			}
@@ -2298,7 +2298,6 @@ try_apply_cyborg_assimilation = {
 					is_valid_organic_zealots = no
 					NAND = {
 						is_subject = yes
-						exists = overlord
 						overlord = { is_valid_organic_zealots = yes }
 					}
 				}

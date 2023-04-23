@@ -56,6 +56,21 @@ is_valid_organic_zealots = {
 	always = no
 }
 
+# does not include TRIGGER_FAIL
+# this = country
+is_not_restricted_by_organic_zealots = {
+	optimize_memory
+	always = no
+}
+
+### Corsair's Custom Empires: Eldanær Stellar Authority ###
+
+# this = country
+has_government_bureaucratic_autocracy = {
+	optimize_memory
+	always = no
+}
+
 ### Planetary Diversity ###
 # https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
 

@@ -1,3 +1,5 @@
+# Irony this is a placeholder file please ignore it
+
 # dummy civic to avoid error log spam
 civic_organic_zealots = {
 	icon = gfx/interface/icons/governments/civics/unknown.dds
