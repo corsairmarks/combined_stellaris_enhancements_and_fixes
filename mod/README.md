@@ -237,3 +237,5 @@ This mod should not be removed from your save game. Some added modifiers and tec
 	* Deassimilate Machines at 8.1.0
 	* Planetary Modifier Enhancements at 6.1.1
 	* Pre-FTL Conquest & Infiltration: Enhanced at 7.0.1
+* 8.0.2 Update merged mods:
+	* Aesthetic Terraform Stations at 5.2.0
