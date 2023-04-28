@@ -10,6 +10,7 @@ tde_uses_planetary_diversity_special_district_set = {
 		uses_district_set = pdmachinefactory
 		uses_district_set = pdmachinefort
 		uses_district_set = pdfloraforge
+		uses_district_set = pdwarform
 	}
 }
 
