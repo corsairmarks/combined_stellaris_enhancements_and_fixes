@@ -241,3 +241,4 @@ This mod should not be removed from your save game. Some added modifiers and tec
 	* Aesthetic Terraform Stations at 5.2.0
 	* Deassimilate Machines at 8.2.0
 	* Retain Leaders from Integrated Subjects & Pre-FTL Civilizations at 8.1.0
+* 8.0.3 Update merged mods:
