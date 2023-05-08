@@ -24,7 +24,7 @@ district_rw_farming = {
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_rw_farming
 		cost = {
 			minerals = @rw_cost
 			volatile_motes = @rw_cost_sr
