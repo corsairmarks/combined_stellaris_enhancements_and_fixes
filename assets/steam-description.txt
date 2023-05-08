@@ -9,7 +9,7 @@ Magistrates provide unity, stability, and amenities (although more than rank-and
 [h2]Compatibility[/h2]
 This mod overwrites the [b]bureaucrat[/b] job in order to add amenities to their output under Civic: Byzantine Bureaucracy. The Administrative Complex building ([b]building_bureaucratic_3[/b]) and Administrative Arcology district ([b]district_arcology_administrative[/b]) are also overridden to add the new Magistrate job for empires with Civic: Byzantine Bureaucracy. All other functionality is implemented through custom events and new game objects (a job and deposit). This mod has built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] - this mod must load [b]before[/b] Planetary Diversity.
 
-Built for Stellaris version 3.7 "Canis Minor." Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini." Not compatible with achievements.
 
 [h3]When to Install[/h3]
 This mod can be safely added after the game has started. Although this mod does add two game objects, Stellaris is fairly forgiving in ignoring unknown jobs and deposits if it is removed from an ongoing game. Back up your savegame before trying to remove a mod, even this one.
