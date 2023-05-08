@@ -20,7 +20,7 @@ Although only loosely-related to this mod's main purpose, it also adds an event 
 
 Compatible with any mod that does not overwrite the same buildings.  For mods that overwrite all the capital buildings, this mod's buildings will likely take precedence.  Might have problems with other mods that remove the expected colony types, but I highly doubt any mods do that.
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 ### When to Install
 
@@ -65,6 +65,7 @@ This mod overwrites five buildings, so expect to see five errors in your error.l
     * Use the `has_trade_designation` built-in trigger when determining whether to swap for Merchants (removes the need for compatibility checks with my trade district mods)
     * Use `has_unity_designation` when determining whether to swap for Nobles or High Priests
     * Non-spiritualist, non-gestalt empires that are part of a Holy Covenant federation with the "A Union of Faith" perk swap a Politician for a High Priest on their unity-designated colonies
+* 6.0.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying game changes
 
 ## Source Code
 

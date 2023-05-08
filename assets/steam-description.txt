@@ -17,7 +17,7 @@ Although only loosely-related to this mod's main purpose, it also adds an event 
 [h2]Compatibility[/h2]
 Compatible with any mod that does not overwrite the same buildings.  For mods that overwrite all the capital buildings, this mod's buildings will likely take precedence.  Might have problems with other mods that remove the expected colony types, but I highly doubt any mods do that.
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 [h3]When to Install[/h3]
 This mod can be safely added to your savegame after the game has started.  If you remove it, your game should function normally, although you will likely have Ruler Pops become unemployed as capital building jobs shift back to normal Politician jobs.  Always back up your savegame before trying to remove a mod.
