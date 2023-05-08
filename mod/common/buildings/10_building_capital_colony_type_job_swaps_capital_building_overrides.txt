@@ -6,6 +6,10 @@
 @buildings_t3 = 3
 @buildings_t4 = 4
 
+@tier_2_capital_defense_armies = 4
+@tier_3_capital_defense_armies = 8
+@tier_4_capital_defense_armies = 16
+
 # Planetary Administration
 building_capital = {
 	base_buildtime = @b2_time
@@ -63,6 +67,11 @@ building_capital = {
 		planet_amenities_add = 5
 		planet_max_buildings_add = @buildings_t2
 		planet_max_branch_office_buildings_add = 1
+		defense_armies_add = @tier_2_capital_defense_armies
+	}
+
+	inline_script = {
+		script = buildings/on_all_capital_buildings
 	}
 
 	triggered_planet_modifier = {
@@ -201,6 +210,16 @@ building_capital = {
 			growing_species = { has_trait = trait_cybernetic }
 		}
 		pop_growth_speed = 0.10
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			is_capital = yes
+			exists = ownet
+			owner = { has_councilor = { COUNCILOR = "councilor_feudal_realm" } }
+		}
+		country_naval_cap_add = 1
+		mult = value:naval_cap_vassals_councilor_feudal_realm
 	}
 
 	resources = {
@@ -354,6 +373,11 @@ building_major_capital = {
 		planet_amenities_add = 8
 		planet_max_buildings_add = @buildings_t3
 		planet_max_branch_office_buildings_add = 2
+		defense_armies_add = @tier_3_capital_defense_armies
+	}
+
+	inline_script = {
+		script = buildings/on_all_capital_buildings
 	}
 
 	triggered_planet_modifier = {
@@ -511,6 +535,16 @@ building_major_capital = {
 			growing_species = { has_trait = trait_cybernetic }
 		}
 		pop_growth_speed = 0.10
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			is_capital = yes
+			exists = owner
+			owner = { has_councilor = { COUNCILOR = "councilor_feudal_realm" } }
+		}
+		country_naval_cap_add = 1
+		mult = value:naval_cap_vassals_councilor_feudal_realm
 	}
 
 	resources = {
@@ -676,6 +710,11 @@ building_system_capital = {
 		planet_amenities_add = 12
 		planet_max_buildings_add = @buildings_t4
 		planet_max_branch_office_buildings_add = 4
+		defense_armies_add = @tier_4_capital_defense_armies
+	}
+
+	inline_script = {
+		script = buildings/on_all_capital_buildings
 	}
 
 	triggered_planet_modifier = {
@@ -750,7 +789,7 @@ building_system_capital = {
 			job_merchant_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1008,6 +1047,11 @@ building_hab_major_capital = {
 		planet_amenities_add = 5
 		planet_max_buildings_add = @buildings_t2
 		planet_max_branch_office_buildings_add = 1
+		defense_armies_add = @tier_2_capital_defense_armies
+	}
+
+	inline_script = {
+		script = buildings/on_all_capital_buildings
 	}
 
 	triggered_planet_modifier = {
@@ -1518,6 +1562,11 @@ building_imperial_capital = {
 		planet_amenities_add = 18
 		planet_max_buildings_add = 11
 		planet_max_branch_office_buildings_add = 4
+		defense_armies_add = @tier_4_capital_defense_armies
+	}
+
+	inline_script = {
+		script = buildings/on_all_capital_buildings
 	}
 
 	triggered_planet_modifier = {
@@ -1689,6 +1738,16 @@ building_imperial_capital = {
 			growing_species = { has_trait = trait_cybernetic }
 		}
 		pop_growth_speed = 0.10
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			is_capital = yes
+			exists = owner
+			owner = { has_councilor = { COUNCILOR = "councilor_feudal_realm" } }
+		}
+		country_naval_cap_add = 1
+		mult = value:naval_cap_vassals_councilor_feudal_realm
 	}
 
 	resources = {
