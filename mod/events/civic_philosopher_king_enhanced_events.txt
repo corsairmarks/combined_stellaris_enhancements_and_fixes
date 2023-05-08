@@ -1,5 +1,21 @@
 namespace = civic_philosopher_king_enhanced
 
+# triggered by on_game_start_country
+# this = country
+country_event = {
+	id = civic_philosopher_king_enhanced.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_valid_civic = civic_philosopher_king
+		exists = ruler
+		ruler = { has_skill = 1 }
+	}
+	immediate = {
+		ruler = { add_skill = 2 }
+	}
+}
+
 # triggered by on_leader_spawned
 # this = country
 # from = leader
@@ -10,17 +26,10 @@ country_event = {
 	trigger = {
 		has_valid_civic = civic_philosopher_king
 		exists = from
-		from = {
-			OR = {
-				leader_class = ruler
-				leader_class = governor
-			}
-		}
+		from = { leader_class = governor }
 	}
 	immediate = {
-		from = {
-			add_skill = 2
-		}
+		from = { add_skill = 2 }
 	}
 }
 
@@ -30,17 +39,23 @@ country_event = {
 	id = civic_philosopher_king_enhanced.410
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		has_valid_civic = civic_philosopher_king
-	}
+	trigger = { has_valid_civic = civic_philosopher_king }
 	immediate = {
-		every_owned_leader = {
-			limit = {
-				OR = {
-					leader_class = ruler
-					leader_class = governor
+		if = {
+			limit = { exists = ruler }
+			ruler = {
+				if = {
+					limit = { has_skill = 1 }
+					add_skill = 2
+				}
+				else_if = {
+					limit = { has_skill = 2 }
+					add_skill = 1
 				}
 			}
+		}
+		every_owned_leader = {
+			limit = { leader_class = governor }
 			if = {
 				limit = { has_skill = 1 }
 				add_skill = 2
@@ -51,12 +66,7 @@ country_event = {
 			}
 		}
 		every_pool_leader = {
-			limit = {
-				OR = {
-					leader_class = ruler
-					leader_class = governor
-				}
-			}
+			limit = { leader_class = governor }
 			if = {
 				limit = { has_skill = 1 }
 				add_skill = 2
