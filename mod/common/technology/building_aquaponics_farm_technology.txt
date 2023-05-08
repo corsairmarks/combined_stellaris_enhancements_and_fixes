@@ -45,26 +45,11 @@ tech_aquaponics = {
 			}
 		}
 		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
-		modifier = {
 			factor = 2
 			has_relic = r_pox_sample
 		}
 	}
-	ai_weight = {
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
-	}
+	ai_weight = { }
 }
 
 tech_aquaponics_2 = {
@@ -113,24 +98,9 @@ tech_aquaponics_2 = {
 			}
 		}
 		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
-		modifier = {
 			factor = 2
 			has_relic = r_pox_sample
 		}
 	}
-	ai_weight = {
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
-	}
+	ai_weight = { }
 }

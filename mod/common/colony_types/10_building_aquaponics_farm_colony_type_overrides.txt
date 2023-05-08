@@ -9,6 +9,7 @@ col_habitat_farming = {
 		uses_district_set = habitat
 		exists = owner
 		owner = { is_gestalt = no }
+		is_capital = no
 	}
 	custom_tooltip = col_habitat_farming_custom
 	planet_modifier = {
@@ -97,6 +98,7 @@ col_habitat_gestalt_farming = {
 		uses_district_set = habitat
 		exists = owner
 		owner = { is_gestalt = yes }
+		is_capital = no
 	}
 	custom_tooltip = col_habitat_farming_gestalt_custom
 	planet_modifier = {

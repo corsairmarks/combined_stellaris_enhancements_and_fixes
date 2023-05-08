@@ -15,7 +15,7 @@ aquaculture_drone = {
 	possible_precalc = can_fill_drone_job
 
 	resources = {
-		category = planet_farmers
+		category = planet_anglers
 		produces = {
 			food = 8
 		}
@@ -35,6 +35,11 @@ aquaculture_drone = {
 				}
 			}
 			energy = 2
+		}
+		produces = {
+			trigger = { has_councilor = { COUNCILOR = "councilor_anglers" } }
+			food = @councilor_anglers_angler_food_bonus
+			mult = value:councilor_level|TYPE|councilor_anglers|
 		}
 		produces = {
 			trigger = { planet = { has_planet_flag = has_produce_requisitorium } }
