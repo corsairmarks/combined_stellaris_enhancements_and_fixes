@@ -1,20 +1,20 @@
 # Overview
 
-Like the idea of enlightened authoritarian rulers with Civic: Philosopher King but feel a bit underwhelmed at its actual affects?  Then this mod is for you!  It lightly enhances Civic: Philosopher King to have effects similar to those added to Civic: Distinguished Admiralty in Stellaris version 3.3 "Libra:" Rulers and Governors begin with +2 levels.  Note that this means initial rulers at the start of the game begin at level 4 as opposed to the standard level 2.
+Like the idea of enlightened authoritarian rulers with Civic: Philosopher King but feel a bit underwhelmed at its actual affects?  Then this mod is for you!  It lightly enhances Civic: Philosopher King to have effects similar to those added to Civic: Distinguished Admiralty in Stellaris version 3.3 "Libra:" Governors begin with +2 levels.  Your initial ruler also begins at +2 levels, regardless of their leader class.
 
 # Changes
 
-Adds two events that grant bonus levels to Rulers and Governors for empires with Civic: Philosopher King.  Overwrites the built-in localisation for Civic: Philosopher King to describe this added effect.
+Adds three events that grant bonus levels to Governors for empires with Civic: Philosopher King.  Overwrites the built-in Civic: Philosopher King to add localisation describing this effect.
 
 ## Compatibility
 
 Any mod that does not remove Civic: Philosopher King.
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 ### When to Install
 
-This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events.  If you remove it, your game will work normally.  Any rulers or governors will keep their bonus levels.
+This mod can be safely added or removed from your savegame after the game has started.  It is implemented entirely through custom events.  If you remove it, your game will work normally.  Any governors will keep their bonus levels.
 
 ### Recommended Companion Mods
 
@@ -26,6 +26,14 @@ This mod can be safely added or removed from your savegame after the game has st
 
 The text describing the effects for Civic: Philosopher King has been edited to describe its new effect for eight officially-supported Stellaris languages.  I'm reasonably confident in my splicing for most languages, although I may have used the wrong word for "and" in Chinese.  It is not translated for Korean or Japanese.
 
+## Known Issues
+
+Overriding many types of game objects causes the game to log errors noting each override. Expect to see one line in the error.log file like this:
+
+```
+[05:45:57][game_singleobjectdatabase.h:153]: Object with key: civic_philosopher_king already exists, using the one at  file: common/governments/civics/10_civic_philosopher_king_enhanced_civic_overrides.txt line: 2
+```
+
 ## Changelog
 
 * 1.0.0 Initial version
@@ -35,6 +43,10 @@ The text describing the effects for Civic: Philosopher King has been edited to d
 * 1.2.0 Flagged as compatible with Stellaris version 3.6 "Orion" - no actual changes
 * 1.3.0 Add a compatibility trigger for other mods to check whether this one is active
 * 1.4.0 Flagged as compatible with Stellaris version 3.7 "Canis Minor" - no actual changes
+* 2.0.0 Update for Stellaris version 3.8 "Gemini"
+    * Add override of Civic: Philosopher King to ensure the effect tooltip is displayed
+    * Remove references to the "ruler" leader class in the description - it no longer exists
+    * Empires which begin the game with Civic: Philosopher King receive +2 levels to their initial ruler, regardless of leader class
 
 ## Source Code
 
