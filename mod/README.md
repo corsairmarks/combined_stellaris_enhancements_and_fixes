@@ -12,7 +12,7 @@ Betharian Power Plants boost Technician output by base energy output by +2 and p
 
 As the title suggests, this mod overwrites the entry for the Betharian Power Plant (`building_betharian_power_plant`). Also overridden is the Betharian Fields deposit `d_betharian_deposit` - it is now slightly more likely to occur on dry planets.
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 ### When to Install
 
@@ -35,6 +35,7 @@ Overriding a building or deposit causes the game to log errors noting the overri
     * Remove alterations for Xeno Zoo
     * Remove no-longer-necessary economic category `planet_culture_workers` override
 * 2.1.0 Improve built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
+* 2.2.0 Mark as compatible with Stellaris version 3.8 "Gemini" - no script changes
 
 ## Source Code
 

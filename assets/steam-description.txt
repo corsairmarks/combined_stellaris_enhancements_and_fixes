@@ -9,7 +9,7 @@ Betharian Power Plants boost Technician output by base energy output by +2 and p
 [h2]Compatibility[/h2]
 As the title suggests, this mod overwrites the entry for the Betharian Power Plant ([b]building_betharian_power_plant[/b]). Also overridden is the Betharian Fields deposit [b]d_betharian_deposit[/b] - it is now slightly more likely to occur on dry planets.
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 [h3]When to Install[/h3]
 This mod can be safely added or removed after the game has started. It only replaces default game objects, but may cause unemployment or negative generator districts when removed.  Back up your savegame before trying to remove a mod, even this one.
