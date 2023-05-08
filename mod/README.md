@@ -10,7 +10,7 @@ Alters the built-in planetview to have districts and buildings stacked verticall
 
 ## Compatibility
 
-Built for Stellaris version 3.7 "Canis Minor."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
+Built for Stellaris version 3.8 "Gemini."  As a UI-only mod, this is achievement compatible.  Not compatible with other mods that alter the planetview (`interface/planet_view.gui`); does not alter the gamepad-based planetview.  In particular, this mod is incompatible with many UI overhaul mods and any mod that adds more building slots because they will all be in contention to modify the same file.
 
 ### Recommended Companion Mods
 
@@ -28,6 +28,7 @@ Built for Stellaris version 3.7 "Canis Minor."  As a UI-only mod, this is achiev
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax") - integrate underlying changes from the base game in overridden file
 * 5.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying changes from the base game in overridden file
 * 5.1.0 Update for Stellaris version 3.7.4 "Canis Minor" - integrate underlying changes from the base game in overridden file
+* 6.0.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying changes from the base game in overridden file
 
 ## Source Code
 
