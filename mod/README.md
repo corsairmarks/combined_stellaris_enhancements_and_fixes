@@ -14,7 +14,7 @@ Because this is a tradition text swap, all the the normal restrictions for Agrar
 
 ## Compatibility
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.  This mod overrides one core Stellaris file (`common/districts/02_rural_districts.txt` in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.  This mod overrides one core Stellaris file (`common/districts/02_rural_districts.txt` in order to add +building slot bonuses to all of them), and also overrides a number of built-in game objects at the individual level.  In particular, this mod overrides:
 
 * `civic_agrarian_idyll` to add the alternative description for lithoids
 * `district_rw_farming` to excludes Lithorian Idyll from the farming district housing benefits (Agrarian Idyll normally gets +5 housing)
@@ -114,6 +114,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Remove megacorp Civic: Anglers override, no longer necessary
     * Improve Planetary Diversity support
 * 8.0.1 Improve support for Planetary Diversity - notably beginning as Civic: Agrarian Idyll on Techno-Organic planets
+* 9.0.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying game changes
 
 ## Source Code
 
