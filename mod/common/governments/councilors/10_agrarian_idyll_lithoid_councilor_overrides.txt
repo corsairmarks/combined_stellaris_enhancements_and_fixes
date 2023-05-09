@@ -4,7 +4,10 @@ councilor_agrarian_idyll = {
 		OR = {
 			AND = {
 				is_scope_valid = yes
-				is_lithoid_empire = no
+				OR = {
+					NOT = { exists = owner_species }
+					is_lithoid_empire = no
+				}
 			}
 			AND = {
 				is_scope_valid = no
