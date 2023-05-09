@@ -103,9 +103,9 @@ col_capital_trade = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			tde_uses_district_set_city_world = no
-			tde_uses_district_set_habitat = no
-			tde_uses_district_set_ring_world = no
+			has_more_standard_districts_active = no
+			tde_uses_regular_district_set = yes
+			NOT = { uses_district_set = shattered_ring_world }
 		}
 		modifier = { planet_district_city_build_speed_mult = 0.25 }
 	}
