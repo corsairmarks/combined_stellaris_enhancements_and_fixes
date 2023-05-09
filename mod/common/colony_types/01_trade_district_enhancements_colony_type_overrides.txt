@@ -160,9 +160,12 @@ col_capital_trade = {
 		}
 		modifier = {
 			add = 5
-			OR = {
-				has_corporate_government = yes
-				is_capitalist = yes
+			exists = owner
+			owner = {
+				OR = {
+					has_corporate_government = yes
+					is_capitalist = yes
+				}
 			}
 		}
 		complex_trigger_modifier = {
