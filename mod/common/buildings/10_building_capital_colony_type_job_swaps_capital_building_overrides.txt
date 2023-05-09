@@ -215,7 +215,7 @@ building_capital = {
 	triggered_country_modifier = {
 		potential = {
 			is_capital = yes
-			exists = ownet
+			exists = owner
 			owner = { has_councilor = { COUNCILOR = "councilor_feudal_realm" } }
 		}
 		country_naval_cap_add = 1
