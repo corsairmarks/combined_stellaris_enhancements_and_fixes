@@ -55,6 +55,7 @@ The terraform station "beam" is a fixed length and may not reach down to small p
 * 5.2.0 Minor enhancements to support more shipsets
     * Use the built-in `scripted_variable` for terraform station hit points
     * Use an empty named section entity (so sub-mods can choose to use two-part stations, such as the built-in `ai_01` stations that rotate) rather than directly pointing to the empty section entity
+* 5.3.0 Mark as compatible with Stellaris version 3.8 "Gemini" - no script changes
 
 ## Source Code
 
