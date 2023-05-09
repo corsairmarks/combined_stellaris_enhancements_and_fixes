@@ -10,7 +10,7 @@ district_hab_cultural = {
 		trigger = {
 			NAND = {
 				exists = owner
-				owner = { has_valid_civic = civic_dystopian_society } }
+				owner = { has_valid_civic = civic_dystopian_society }
 			}
 	 	}
 	 	text = district_hab_cultural_desc
