@@ -1,6 +1,17 @@
 # matches councilor_agrarian_idyll, but for miners
 councilor_agrarian_idyll_lithoid = {
-	possible = { is_lithoid_empire = yes }
+	possible = {
+		OR = {
+			AND = {
+				is_scope_valid = yes
+				is_lithoid_empire = yes
+			}
+			AND = {
+				is_scope_valid = no
+				local_human_species_class = LITHOID
+			}
+		}
+	}
 	leader_class = { general governor }
 	is_leader_possible = {
 		OR = {
