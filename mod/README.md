@@ -1,12 +1,12 @@
 # Overview
 
-Do you wish your Trade Stations and Commercial Ring Worlds had a little more "oomph?"  Or maybe you're disappointed with how far ahead Ecumenopolis Commercial Worlds got with my mod [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991).  Then this mod is for you!  The Trade Station and Commercial Ring World colony designations now also boost the build-speed of commercial buildings and the relevant commercial districts by 25% as well as the overall trade value by 20%.  That is the same boost as the Ecumenopolis Commercial designation.
+Do you wish your Trade Capital, Trade Stations, and Commercial Ring Worlds had a little more "oomph?"  Or maybe you're disappointed with how far ahead Ecumenopolis Commercial Worlds got with my mod [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991).  Then this mod is for you!  The Trade Capital, Trade Station, and Commercial Ring World colony designations now also boost the build-speed of commercial buildings and the relevant commercial districts by 25% as well as the overall trade value by 20%.  That is the same boost as the Ecumenopolis Commercial designation.
 
 Additionally, Trade Districts and Commercial Segments now provide more Merchant jobs and fewer Clerk jobs as long as the colony designation is Trade Station or Commercial Ring World respectively.  But wait, there's more!  MegaCorps and empires with the Merchant Guilds civic will find that more Merchants replace Clerks.  But wait, there's _even_ more!  On ringworld Commercial Segments, MegaCorps replace a Clerk with a Manager and another Clerk with an Executive (all those Clerks need bossing around).  And if that wasn't enough, we'll throw in positive interaction with the "Commercial Enterprise" tradition for another/more Merchant(s) and the "Trickle Up Economics" tradition for another/more Clerk(s).
 
 # Changes
 
-Overwrites the Trade Station and Commercial Ring World colony designations and the Trade District (for both habitats and the special district for Origin: Shattered Ring) and Commercial Segment district.  The colony designations enable some job swaps from Clerks to Merchants (extra swaps with the "Commercial Enterprise" tradition).  The designations also provide a small amount of bonus trade if you meet varying hidden, trade-related conditions - see if you can figure them out.  The districts themselves also swap jobs if the owner has Civic: Merchant Guilds, Civic: Corporate Dominion (for people who don't own MegaCorp), and MegaCorps.
+Overwrites the Trade Capital, Trade Station, and Commercial Ring World colony designations and the Trade District (for both habitats and the special district for Origin: Shattered Ring) and Commercial Segment district.  The colony designations enable some job swaps from Clerks to Merchants (extra swaps with the "Commercial Enterprise" tradition).  The designations also provide a small amount of bonus trade if you meet varying hidden, trade-related conditions - see if you can figure them out.  The districts themselves also swap jobs if the owner has Civic: Merchant Guilds, Civic: Corporate Dominion (for people who don't own MegaCorp), and MegaCorps.
 
 Also updates the regular City districts to provide part of a Merchant or Executive job for Merchant Guilds, Corporate Dominions, or MegaCorps as appropriate when combined with the "Commercial Enterprise" tradition.  Ringworld city segments no longer receive bonus clerks from the "Trickle Up Economics" tradition - instead, those clerk jobs are provided by the Commercial Segments.
 
@@ -17,13 +17,13 @@ Also updates the regular City districts to provide part of a Merchant or Executi
 
 ## Compatibility
 
-Overwrites the `col_city`, `col_habitat_trade`, and `col_ring_trade` colony types and existing trade-related districts: `district_city`, `district_srw_commercial`, `district_hab_commercial`, `district_rw_city`, and `district_rw_commercial`.  This mod is separate from [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) because viewing Commercial Arcologies requires a UI mod, and this mod does not.
+Overwrites the `col_city`, `col_capital_trade`, `col_habitat_trade`, and `col_ring_trade` colony types and existing trade-related districts: `district_city`, `district_srw_commercial`, `district_hab_commercial`, `district_rw_city`, and `district_rw_commercial`.  This mod is separate from [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) because viewing Commercial Arcologies requires a UI mod, and this mod does not.
 
 This mod will not work well with other mods that make changes to the same colony designations or districts.  Overhaul mods commonly make changes to districts, but are more likely to overwrite the entire file.  Due to how Stellaris file-loading works, change from this mod will overwrite code from full-file district overwrites and apply the version of commercial districts from this mod.  That's good for this mod, but could interfere with other modifications made by other mods.
 
 Compatible with Planetary Diversity and Gigastructural Engineering (does not modify Gigas districts, but does exclude these districts from spawning on the wrong things).
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 ### When to Install
 
@@ -99,6 +99,9 @@ Overwriting a colony type or district produces an error log.  Expect to see nine
 * 6.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying game changes
 * 6.0.1 Adjust dynamic building weight - custom and overridden colony types now value building the same as built-in colony types
 * 6.0.2 Improve built-in support for Planetary Diversity (support warform planets)
+* 7.0.0 Update for Stellaris version 3.8 "Gemini"
+    * Integrate underlying game changes
+    * Add an override of the new "Trade Capital" colony designation - add all the related bonuses from the enhanced trade designations
 
 ## Source Code
 
