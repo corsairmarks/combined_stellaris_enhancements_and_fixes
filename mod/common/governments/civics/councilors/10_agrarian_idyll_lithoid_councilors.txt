@@ -1,0 +1,15 @@
+# matches councilor_agrarian_idyll, but for miners
+councilor_agrarian_idyll_lithoid = {
+	possible = { is_lithoid_empire = yes }
+	leader_class = { general governor }
+	is_leader_possible = {
+		OR = {
+			leader_class = general
+			leader_class = governor
+		}
+	}
+	civic = civic_agrarian_idyll
+	modifier = {
+		planet_miners_produces_mult = 0.05
+	}
+}
