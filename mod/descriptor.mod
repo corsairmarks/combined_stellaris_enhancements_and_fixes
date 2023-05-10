@@ -4,7 +4,7 @@ tags={
 	"Fixes"
 	"Military"
 }
-version="5.1.0"
+version="5.2.0"
 picture="thumbnail.png"
-supported_version="3.7.*"
+supported_version="3.8.*"
 remote_file_id="2564348666"

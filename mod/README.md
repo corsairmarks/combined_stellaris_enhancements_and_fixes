@@ -14,7 +14,7 @@ This mod won't affect any other kinds of armies.
 
 ## Compatibility
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.
 
 Overwrites the three built-in counter-limited armies in order to improve their counter usage: `titanic_assault_army`, `titanic_azizian_assault_army`, and `imperial_legion`.  The `titanic_assault_army` also has its maximum counter scaled by the number of owned planets where the Titanic Life study was successfully completed.
 
@@ -54,6 +54,7 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 * 4.0.0 Update for Stellaris version 3.6 "Orion" (and changes from version 3.5 "Fornax") - use new `fromfrom` scope in events tied to `on_planet_transfer`
 * 5.0.0 Remove compatibility global flag, add a compatibility trigger for other mods to check whether this one is active
 * 5.1.0 Mark as compatible with Stellaris version 3.7 "Canis Minor" - no script changes
+* 5.2.0 Mark as compatible with Stellaris version 3.8 "Gemini" - no script changes
 
 ## Source Code
 
