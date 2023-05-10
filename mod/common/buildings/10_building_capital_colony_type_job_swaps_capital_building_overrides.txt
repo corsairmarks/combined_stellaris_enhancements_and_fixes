@@ -885,6 +885,16 @@ building_system_capital = {
 		pop_growth_speed = 0.10
 	}
 
+	triggered_country_modifier = {
+		potential = {
+			is_capital = yes
+			exists = owner
+			owner = { has_councilor = { COUNCILOR = "councilor_feudal_realm" } }
+		}
+		country_naval_cap_add = 1
+		mult = value:naval_cap_vassals_councilor_feudal_realm
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1052,6 +1062,16 @@ building_hab_major_capital = {
 
 	inline_script = {
 		script = buildings/on_all_capital_buildings
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			is_capital = yes
+			exists = owner
+			owner = { has_councilor = { COUNCILOR = "councilor_feudal_realm" } }
+		}
+		country_naval_cap_add = 1
+		mult = value:naval_cap_vassals_councilor_feudal_realm
 	}
 
 	triggered_planet_modifier = {
