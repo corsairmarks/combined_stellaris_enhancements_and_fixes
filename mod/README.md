@@ -46,7 +46,7 @@ Overriding buildings and jobs causes the game to log errors noting the overrides
     * Integrate underlying game changes
 * 2.0.1 Fix spacing in description for Civic: Byzantine Bureaucracy
 * 2.0.2 Improve support with Planetary Diversity `bureaucrat` job override
-* 2.1.0 Mark as compatible with Stellaris version 3.8 "Gemini" - no script changes
+* 2.1.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying game changes
 
 ## Source Code
 
