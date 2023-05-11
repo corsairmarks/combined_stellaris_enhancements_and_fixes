@@ -26,8 +26,10 @@ Built for Stellaris version 3.8 "Gemini." Not compatible with achievements.
 This mod can be safely added to your savegame after the game has started. Because it adds gameplay objects, it should not be removed during a game.
 
 [h3]Recommended Companion Mods[/h3]
-[url=https://steamcommunity.com/workshop/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] to add a trade-focused colony designation and district to ecumenopolis worlds.
-
+[list]
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] to add a trade-focused colony designation and district to ecumenopolis worlds
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2962066593]Specialist Subject: Mercatorum[/url] add a trade-focused specialist subject that will benefit from more sources of trade
+[/list]
 [h2]Known Issues[/h2]
 Overwriting a colony type or district produces an error log. Expect to see nine entries in error.log similar to these:
 [code]
