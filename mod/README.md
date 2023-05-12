@@ -34,7 +34,7 @@ You do **not** need the Necroids, Lithoids, or First Contact content packs to us
 
 This mod should be widely compatible with other mods.  Incompatibilities would only occur if other mods also overwrite the same events or effects.  If another mod is attempting to make changes to pre-FTL planet conquest but uses a different method (for example, adding new events activated by on action events such as `on_planet_transfer`, `on_planet_conquer`, or `on_planet_attackers_win`) the end result could be extra districts or other nonsensical behavior after both mods apply their effects.
 
-Built for Stellaris version 3.7 "Canis Minor."  Not compatible with achievements.  Has built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
+Built for Stellaris version 3.8 "Gemini."  Not compatible with achievements.  Has built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835).
 
 ### When to Install
 
@@ -57,19 +57,19 @@ Overriding an effect or event causes the game to log errors noting the overrides
 * 1.0.0 Initial version
 * 1.1.0 Add machine/hive empire support
 * 1.2.0 Ringworld support (e.g. Sanctuary), add images and explanations
-* 1.2.1 Flagged as compatible with Stellaris 3.0 "Dick" (no script changes)
+* 1.2.1 Mark as compatible with Stellaris version 3.0 "Dick" - no script changes
 * 1.2.2 Remove extra images files to keep distribution lightweight (no script changes)
 * 1.3.0 Add handling for primitive infiltration
     * Free buildings and districts processing is more intelligent
     * Changed "generate districts/buildings" to a pair of custom on_actions
-* 2.0.0 Update for compatibility with Stellaris 3.1 "Lem"
+* 2.0.0 Update for compatibility with Stellaris version 3.1 "Lem"
     * Update to use new arithmetic syntax
     * Update minor underlying game changes (mainly to support new features in the base game)
 * 2.1.0 Improve mod reliability and safety
     * Ensure AI Necrophage homeworlds cannot be fully depopulated by their special primitive conquest event (unlikely to occur but better to be safe)
     * Do not attempt to auto-resettle Necrophage Pops to a world they can't live on (modified for regular land appropriation in 3.1 but not the AI Necrophage helper event)
     * Add trigger to account for a primitive planet's primitive age OR its Pop count when adding free buildings/districts - whichever value is "higher" is used to determine how much to build
-* 3.0.0 Update for compatibility with Stellaris 3.2 "Lem"
+* 3.0.0 Update for compatibility with Stellaris version 3.2 "Lem"
     * More intelligent districts based on a planet's district set
     * Angler on oceans get uncapped farming districts
     * Add handling for primitive enlightenment
@@ -97,6 +97,7 @@ Overriding an effect or event causes the game to log errors noting the overrides
     * Add new effect overrides for infiltration annexation and empire match-graphical-culture-to-main-species
     * Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 * 7.0.1 Improve support for Planetary Diversity - notably for starts on Techno-Organic planets
+* 7.1.0 Mark as compatible with Stellaris 3.8 version "Gemini" - no script changes
 
 ## Source Code
 
