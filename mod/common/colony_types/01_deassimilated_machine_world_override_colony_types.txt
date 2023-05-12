@@ -11,16 +11,20 @@ col_mac_factory = {
 	ai_resource_conversion = {
 		consumer_goods = 2
 		alloys = 0
-		
-		trigger = { owner = { country_uses_consumer_goods = yes } }
+		trigger = {
+			exists = owner
+			owner = { country_uses_consumer_goods = yes }
+		}
 	}
 
 	# Used by AI to estimate the current effects of this designation
 	ai_resource_current_conversion = {
 		consumer_goods = 0.5
 		alloys = -0.5
-
-		trigger = { owner = { country_uses_consumer_goods = yes } }
+		trigger = {
+			exists = owner
+			owner = { country_uses_consumer_goods = yes }
+		}
 	}
 
 	potential = {
@@ -30,6 +34,7 @@ col_mac_factory = {
 		}
 		exists = owner
 		owner = { country_uses_consumer_goods = yes }
+		is_capital = no
 	}
 
 	custom_tooltip = col_factory_custom
