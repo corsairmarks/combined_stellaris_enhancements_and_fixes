@@ -13,73 +13,138 @@ event = {
 			}
 			if = {
 				limit = { exists = ruler }
-				set_variable = {
+				export_modifier_to_variable = {
+					modifier = councilor_skill_add # oligarchy and some civics add to this
+					variable = starting_ruler_level
+				}
+				change_variable = {
 					which = starting_ruler_level
 					value = ruler.trigger:has_skill
 				}
+				if = {
+					limit = { has_authority = auth_dictatorial }
+					set_variable = {
+						which = starting_ruler_council_position_per_level
+						value = 10 # councilor, defined: common/governments/councilors/00_councilors.txt at line 40 (councilor_ruler_dictatorial)
+					}
+				}
+				else = {
+					set_variable = {
+						which = starting_ruler_council_position_per_level
+						value = 5 # councilor, defined common/governments/councilors/00_councilors.txt from line 18 through line 84 
+					}
+				}
 				multiply_variable = {
-					which = starting_ruler_level
-					value = 5 # per ruler level, defined: common/static_modifiers/00_static_modifiers.txt at line 1122 (skill_ruler)
+					which = starting_ruler_council_position_per_level
+					value = starting_ruler_level
 				}
 				change_variable = {
 					which = starting_unity_fund
-					value = starting_ruler_level
+					value = starting_ruler_council_position_per_level
 				}
 				clear_variable = starting_ruler_level
+				clear_variable = starting_ruler_council_position_per_level
+				if = {
+					limit = { ruler = { has_trait = leader_trait_master_bureaucrat } }
+					change_variable = {
+						which = starting_unity_fund
+						value = 75 # trait, defined: common/traits/00_generic_leader_traits.txt at line 834 (leader_trait_master_bureaucrat)
+					}
+				}
+				if = {
+					limit = { ruler = { has_trait = trait_ruler_charismatic } }
+					change_variable = {
+						which = starting_unity_fund
+						value = 15 # trait, defined: common/traits/00_starting_ruler_traits.txt at line 275 (trait_ruler_charismatic)
+					}
+				}
+				else_if = {
+					limit = { ruler = { has_trait = trait_ruler_charismatic_2 } }
+					change_variable = {
+						which = starting_unity_fund
+						value = 35 # trait, defined: common/traits/00_starting_ruler_traits.txt at line 297 (trait_ruler_charismatic_2)
+					}
+				}
 				if = {
 					limit = {
 						ruler = {
-							OR = {
-								has_ruler_trait = trait_ruler_charismatic
-								has_trait = trait_ruler_charismatic
-							}
+							has_trait = leader_trait_legendary_leader
+							has_leader_flag = sleep_inhibitors
 						}
 					}
 					change_variable = {
 						which = starting_unity_fund
-						value = 20 # civic, defined: common/traits/00_ruler_traits.txt at line 277 (trait_ruler_charismatic)
+						value = 75 # trait, defined: common/traits/10_paragon_traits.txt at line 224 (leader_trait_legendary_leader)
 					}
+				}
+			}
+			if = {
+				limit = { has_technology = tech_adaptive_bureaucracy }
+				change_variable = {
+					which = starting_unity_fund
+					value = 20 # technology, defined: common/technology/00_soc_tech.txt at line 4310 (tech_adaptive_bureaucracy)
+				}
+			}
+			if = {
+				limit = { has_technology = tech_effective_bureaucracy }
+				change_variable = {
+					which = starting_unity_fund
+					value = 20 # technology, defined: common/technology/00_soc_tech.txt at line 4351 (tech_effective_bureaucracy)
+				}
+			}
+			if = {
+				limit = { has_technology = tech_colonial_bureaucracy }
+				change_variable = {
+					which = starting_unity_fund
+					value = 20 # technology, defined: common/technology/00_soc_tech.txt at line 4390 (tech_colonial_bureaucracy)
+				}
+			}
+			if = {
+				limit = { has_technology = tech_galactic_bureaucracy }
+				change_variable = {
+					which = starting_unity_fund
+					value = 20 # technology, defined: common/technology/00_soc_tech.txt at line 4419 (tech_galactic_bureaucracy)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_machine_ota_updates }
 				change_variable = {
 					which = starting_unity_fund
-					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 576 (civic_machine_ota_updates)
+					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 624 (civic_machine_ota_updates)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_hive_subsumed_will }
 				change_variable = {
 					which = starting_unity_fund
-					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 121 (civic_hive_subsumed_will)
+					value = 25 # civic, defined: common/governments/civics/02_gestalt_civics.txt at line 138 (civic_hive_subsumed_will)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_brand_loyalty }
 				change_variable = {
 					which = starting_unity_fund
-					value = 25 # civic, defined: common/governments/civics/03_corporate_civics.txt at line 245 (civic_brand_loyalty)
+					value = 25 # civic, defined: common/governments/civics/03_corporate_civics.txt at line 559 (civic_brand_loyalty)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_imperial_cult }
 				change_variable = {
 					which = starting_unity_fund
-					value = 100 # civic, defined: common/governments/civics/00_civics.txt at line 81 (civic_imperial_cult)
+					value = 100 # civic, defined: common/governments/civics/00_civics.txt at line 126 (civic_imperial_cult)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_inwards_perfection }
 				change_variable = {
 					which = starting_unity_fund
-					value = 50 # civic, defined: common/governments/civics/00_civics.txt at line 691 (civic_inwards_perfection)
+					value = 50 # civic, defined: common/governments/civics/00_civics.txt at line 774 (civic_inwards_perfection)
 				}
 			}
 			if = {
 				limit = { has_valid_civic = civic_efficient_bureaucracy }
-				# civic grants 2 edicts fund per bureaucrat/priest/death priest/manager, scaled with unity modifiers (see job definitions)
-				# and also see common/script_values/00_script_values.txt at line 499
+				# civic grants 2 edicts fund per bureaucrat/priest/death priest/manager/unifier, scaled with unity modifiers (see job definitions)
+				# and also see common/script_values/00_script_values.txt at line 513
 				capital_scope = {
 					every_owned_pop = {
 						limit = {
