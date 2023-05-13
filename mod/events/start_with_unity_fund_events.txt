@@ -153,6 +153,7 @@ event = {
 								has_job = priest
 								has_job = death_priest
 								has_job = manager
+								has_job = unifier
 							}
 						}
 						set_variable = {
