@@ -77,6 +77,10 @@ can_generate_leader_from_pop = {
 	OR = {
 		is_same_species = owner
 		owner = { btml_is_necrophage_empire = no }
+		AND = {
+			has_trait = trait_necrophage
+			owner = { btml_is_necrophage_empire = yes }
+		}
 	}
 }
 
@@ -97,5 +101,9 @@ can_generate_military_leader_from_pop = {
 	OR = {
 		is_same_species = owner
 		owner = { btml_is_necrophage_empire = no }
+		AND = {
+			has_trait = trait_necrophage
+			owner = { btml_is_necrophage_empire = yes }
+		}
 	}
 }
