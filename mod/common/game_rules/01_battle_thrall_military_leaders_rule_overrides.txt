@@ -11,10 +11,7 @@ can_generate_army_from_species = {
 				type = military_service_limited
 				country = prev
 			}
-			AND = {
-				exists = prev
-				prev = { is_primitive = yes }
-			}
+			prev = { is_primitive = yes }
 		}
 		NAND = {
 			prev = { has_valid_civic = civic_machine_servitor }
