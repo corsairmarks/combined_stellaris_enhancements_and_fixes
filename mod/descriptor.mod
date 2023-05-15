@@ -1,10 +1,10 @@
-name="Special Leadership Privileges for Battle Thralls and Bio-Trophies"
+name="Special Leadership Privileges for Battle Thralls & Bio-Trophies"
 tags={
 	"Gameplay"
 	"Leaders"
 	"Military"
 }
-version="6.1.0"
+version="7.0.0"
 picture="thumbnail.png"
-supported_version="3.7.*"
+supported_version="3.8.*"
 remote_file_id="2496357447"

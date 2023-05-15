@@ -28,7 +28,7 @@ Because this mod replaces several built-in objects, it is inherently incompatibl
 
 This mod is specifically engineered to be compatible with my other mod that affects military service: [Deassimiliate Machines](https://steamcommunity.com/sharedfiles/filedetails/?id=2553812372).
 
-Built for Stellaris version 3.7 "Canis Minor."  This mod is not compatible with achievements.
+Built for Stellaris version 3.8 "Gemini."  This mod is not compatible with achievements.
 
 ### When to Install
 
@@ -65,7 +65,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Leader reselected to be a Battle Thrall species which were originally from gendered (binary, male-exclusive, or female-exclusive) species must be cloned to have their gender set to `indeterminable` and vice versa - this is disabled when combined with "Gender Nonbinary Leaders" because that mod does its own cloning shenanigans
     * Integrates with Retain Leaders from Integrated Subjects to avoid duplicate cloning
 * 2.1.0 Enable special leadership decree for Rogue Servitors to have Organic Advisors
-    * Rename mod to "Special Leadership Privileges for Battle Thralls and Bio-Trophies"
+    * Rename mod to "Special Leadership Privileges for Battle Thralls & Bio-Trophies"
     * Add edict "Decree: Organic Advisors" so players can choose Bio-Trophies as civilian leaders (optionally also military leaders), despite being Rogue Servitors
     * Edit game rules to allow Bio-Trophies to be civilian leaders (with decree) and eligible to be military leaders (but not armies) if optionally granted Full Military Service
     * Fix a bug where you couldn't re-open the Honored Protectors edict
@@ -90,6 +90,9 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
 * 6.0.1 Add some missing compatibility triggers, fix using a trigger in the wrong scope in `can_generate_leader_from_species`
 * 6.0.2 Fix a scope error in `military_service_full`
 * 6.1.0 Mark as compatible with Stellaris version 3.7 "Canis Minor" - no script changes
+* 7.0.0 Update for Stellaris version 3.8 "Gemini"
+    * Any necrophage species may become leaders in a necrophage empire
+    * Simplify gender-matching for leaders whose species has changed
 
 ## Source Code
 
