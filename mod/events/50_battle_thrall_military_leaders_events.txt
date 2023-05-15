@@ -8,10 +8,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_country_flag = disable_gender_clones_on_leader_spawned
-			has_active_event = { leader.1 }
-		}
+		NOT = { has_active_event = { leader.1 } }
 		exists = from
 		from = {
 			OR = {
@@ -81,7 +78,6 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_country_flag = disable_gender_clones_on_leader_spawned }
 		has_active_event = { leader.1 }
 		exists = last_created_leader
 		last_created_leader = { leader_class = admiral }
@@ -137,19 +133,12 @@ leader_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_leader_flag = force_gender_match_species
-			has_nonbinary_leaders_active = no
-		}
-		NOT = { has_leader_flag = leader_replaced_by_clone }
+		has_leader_flag = force_gender_match_species
 		exists = from
 		from = { is_scope_type = species }
 		btml_leader_new_species_allows_current_gender = no
-		owner = { NOT = { has_country_flag = disable_gender_clones_on_leader_spawned } }
-
 	}
 	immediate = {
-		log = "battle_thrall_military_leaders.7 [This.GetName]"
 		btml_leader_spawned_match_gender_to_species = yes
 	}
 }
