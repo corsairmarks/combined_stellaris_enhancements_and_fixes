@@ -4,6 +4,7 @@
 on_leader_spawned = {
 	events = {
 		battle_thrall_military_leaders.1
+		battle_thrall_military_leaders.3
 	}
 }
 
