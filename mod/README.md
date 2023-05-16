@@ -98,6 +98,7 @@ Overriding an effect or event causes the game to log errors noting the overrides
     * Add built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 * 7.0.1 Improve support for Planetary Diversity - notably for starts on Techno-Organic planets
 * 7.1.0 Mark as compatible with Stellaris 3.8 version "Gemini" - no script changes
+* 7.1.1 Use triggers instead of ethics/authorities directly
 
 ## Source Code
 
