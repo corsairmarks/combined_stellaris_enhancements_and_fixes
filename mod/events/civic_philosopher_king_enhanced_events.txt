@@ -12,7 +12,7 @@ country_event = {
 		ruler = { has_skill = 1 }
 	}
 	immediate = {
-		ruler = { add_skill = 2 }
+		ruler = { add_skill_without_trait_selection = 2 }
 	}
 }
 
@@ -24,12 +24,21 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		NOT = { has_country_flag = spawning_renowned_leader }
 		has_valid_civic = civic_philosopher_king
 		exists = from
 		from = { leader_class = governor }
 	}
 	immediate = {
-		from = { add_skill = 2 }
+		from = {
+			if = {
+				limit = { is_pool_leader = yes }
+				add_skill = 2
+			}
+			else = {
+				add_skill_without_trait_selection = 2
+			}
+		}
 	}
 }
 
@@ -46,11 +55,11 @@ country_event = {
 			ruler = {
 				if = {
 					limit = { has_skill = 1 }
-					add_skill = 2
+					add_skill_without_trait_selection = 2
 				}
 				else_if = {
 					limit = { has_skill = 2 }
-					add_skill = 1
+					add_skill_without_trait_selection = 1
 				}
 			}
 		}
@@ -58,11 +67,11 @@ country_event = {
 			limit = { leader_class = governor }
 			if = {
 				limit = { has_skill = 1 }
-				add_skill = 2
+				add_skill_without_trait_selection = 2
 			}
 			else_if = {
 				limit = { has_skill = 2 }
-				add_skill = 1
+				add_skill_without_trait_selection = 1
 			}
 		}
 		every_pool_leader = {
