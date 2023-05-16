@@ -115,6 +115,7 @@ Normally overriding a single technology can cause problems with the game being c
     * Improve Planetary Diversity support
 * 8.0.1 Improve support for Planetary Diversity - notably beginning as Civic: Agrarian Idyll on Techno-Organic planets
 * 9.0.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying game changes
+* 9.1.0 Update for Stellaris version 3.8.2 "Gemini" - integrate underlying game changes
 
 ## Source Code
 
