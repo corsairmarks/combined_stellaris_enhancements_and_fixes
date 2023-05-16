@@ -166,21 +166,13 @@ country_event = {
 	option = {
 		name = action.14.a.phobe
 		custom_tooltip = action.14.a.tooltip
-		trigger = {
-			OR = {
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_xenophobe
-			}
-		}
+		trigger = { is_xenophobe = yes }
 	}
 	option = {
 		name = action.14.a.military
 		custom_tooltip = action.14.a.tooltip
 		trigger = {
-			OR = {
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_militarist
-			}
+			is_militarist = yes
 			is_xenophobe = no
 		}
 	}
@@ -188,10 +180,7 @@ country_event = {
 		name = action.14.a.spirit
 		custom_tooltip = action.14.a.tooltip
 		trigger = {
-			OR = {
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_spiritualist
-			}
+			is_spiritualist = yes
 			is_xenophobe = no
 			is_militarist = no
 		}
@@ -200,10 +189,7 @@ country_event = {
 		name = action.14.a.material
 		custom_tooltip = action.14.a.tooltip
 		trigger = {
-			OR = {
-				has_ethic = ethic_fanatic_materialist
-				has_ethic = ethic_materialist
-			}
+			is_militarist = yes
 			is_xenophobe = no
 			is_militarist = no
 		}
@@ -222,7 +208,7 @@ country_event = {
 	}
 	option = {
 		name = action.14.a
-		trigger = { has_authority = auth_hive_mind }
+		trigger = { is_hive_empire = yes }
 	}
 	option = {
 		name = action.14.a.serv
@@ -239,7 +225,7 @@ country_event = {
 	option = {
 		name = action.14.a.mach
 		trigger = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 			NOR = {
 				has_civic = civic_machine_servitor
 				has_civic = civic_machine_assimilator
