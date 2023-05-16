@@ -47,6 +47,7 @@ Overriding many types of game objects causes the game to log errors noting each 
     * Add override of Civic: Philosopher King to ensure the effect tooltip is displayed
     * Remove references to the "ruler" leader class in the description - it no longer exists
     * Empires which begin the game with Civic: Philosopher King receive +2 levels to their initial ruler, regardless of leader class
+* 2.1.0 Adjust how leader levels are added for Civic: Philosopher King - leaders that are already owned allow for the selection of their traits (similar to Civic: Distinguished Admiralty)
 
 ## Source Code
 
