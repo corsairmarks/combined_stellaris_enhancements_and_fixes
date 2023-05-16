@@ -28,6 +28,7 @@ civic_agrarian_idyll = {
 				value = civic_relentless_industrialists
 				value = civic_corporate_relentless_industrialists
 			}
+			NOT = { value = civic_dystopian_society }
 		}
 	}
 	leader_background_job_weight = {
