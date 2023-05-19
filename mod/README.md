@@ -19,7 +19,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Aesthetic Terraform Stations](https://steamcommunity.com/workshop/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 5.3.0)
 * ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 9.0.0)
 * [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 6.0.0)
-* [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 4.4.0)
+* [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 5.1.1)
 * [Building: Betharian Power Plant - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 2.2.0)
 * [Civic: Byzantine Bureaucracy - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2932819177) ([Source](https://github.com/corsairmarks/civic_byzantine_bureaucracy_enhanced) 2.1.0)
 * [Civic: Philosopher King - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) 1.4.0)
