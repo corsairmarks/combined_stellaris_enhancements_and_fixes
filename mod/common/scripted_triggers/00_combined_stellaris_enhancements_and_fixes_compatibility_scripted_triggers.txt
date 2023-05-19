@@ -21,6 +21,13 @@ has_eldanaer_active = {
 	always = no
 }
 
+# supports features from my mod Leader Traits: Clone Army - All Leader Classes
+# this = any
+has_more_clone_soldier_traits_active = {
+	optimize_memory
+	always = no
+}
+
 # supports features from my mod More Standard Districts
 # this = any
 has_more_standard_districts_active = {

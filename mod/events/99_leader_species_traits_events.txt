@@ -37,28 +37,6 @@ country_event = {
 	}
 }
 
-# demoted rulers should always keep their brainslug/latent psionic traits if their species has the right trait
-country_event = {
-	id = leader_species_traits.3
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		from = {
-			add_static_applicable_leader_species_traits = yes
-			if = {
-				limit = { has_ruler_trait = leader_trait_ruler_brainslug }
-				add_leader_trait_brainslug = yes
-			}
-			if = {
-				limit = { has_ruler_trait = leader_trait_ruler_psionic }
-				add_leader_trait_psionic = yes
-			}
-			remove_all_inapplicable_leader_species_traits = yes
-			adjust_psionic_chosen_traits = yes
-		}
-	}
-}
-
 # follows the random event for a new random admiral (leader.1); triggered by on_fleet_destroyed_perp
 # should be harmless if executed against another admiral - assuming they had species-appropriate traits in the first place, no changes will be made
 country_event = {
@@ -86,6 +64,12 @@ leader_event = {
 	id = leader_species_traits.5
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_leader_flag = renowned_leader
+			has_leader_flag = legendary_leader
+		}
+	}
 	immediate = {
 		add_all_applicable_leader_species_traits = yes
 		remove_all_inapplicable_leader_species_traits = yes
@@ -118,9 +102,8 @@ country_event = {
 	desc = leader_species_traits.7.desc
 	picture = GFX_evt_hive_mind
 	show_sound = event_alien_nature
-
 	trigger = {
-		# intentionally allows leaders to be chosen regardless of whether they previously rolled on having a brainslug
+		# intentionally allows leaders to be selected regardless of whether they previously rolled on having a brainslug
 		any_owned_leader = {
 			OR = {
 				species = { has_trait = trait_brainslug }
@@ -131,11 +114,9 @@ country_event = {
 				}
 			}
 			NOR = {
-				has_trait = leader_trait_admiral_brainslug
-				has_trait = leader_trait_general_brainslug
-				has_trait = leader_trait_governor_brainslug
-				has_trait = leader_trait_scientist_brainslug
-				has_trait = leader_trait_ruler_brainslug
+				has_trait = leader_trait_brainslug
+				has_leader_flag = renowned_leader
+				has_leader_flag = legendary_leader
 			}
 			OR = {
 				NOT = { exists = pop_faction }
@@ -148,11 +129,9 @@ country_event = {
 			}
 		}
 	}
-
 	mean_time_to_happen = {
 		months = 120
 	}
-
 	immediate = {
 		random_owned_leader = {
 			limit = {
@@ -164,11 +143,9 @@ country_event = {
 					}
 				}
 				NOR = {
-					has_trait = leader_trait_admiral_brainslug
-					has_trait = leader_trait_general_brainslug
-					has_trait = leader_trait_governor_brainslug
-					has_trait = leader_trait_scientist_brainslug
-					has_trait = leader_trait_ruler_brainslug
+					has_trait = leader_trait_brainslug
+					has_leader_flag = renowned_leader
+					has_leader_flag = legendary_leader
 				}
 				OR = {
 					NOT = { exists = pop_faction }
@@ -190,25 +167,9 @@ country_event = {
 			save_event_target_as = brainslugged_leader
 		}
 	}
-
 	option = {
 		name = leader_species_traits.7.a
-		event_target:brainslugged_leader = {
-			hidden_effect = {
-				if = {
-					limit = { NOT = { has_ruler_trait = leader_trait_ruler_brainslug } }
-					add_ruler_trait = leader_trait_ruler_brainslug
-				}
-			}
-			switch = {
-				trigger = leader_class
-				admiral = { add_trait = leader_trait_admiral_brainslug }
-				general = { add_trait = leader_trait_general_brainslug }
-				governor = { add_trait = leader_trait_governor_brainslug }
-				scientist = { add_trait = leader_trait_scientist_brainslug }
-				ruler = { add_trait = leader_trait_ruler_brainslug }
-			}
-		}
+		event_target:brainslugged_leader = { add_trait = leader_trait_brainslug }
 	}
 }
 
