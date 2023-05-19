@@ -66,17 +66,11 @@ remove_species_organic_advisors = {
 		event_target:advised_country = {
 			every_owned_leader = {
 				limit = { is_exact_same_species = prevprev }
-				kill_leader = {
-					show_notification = no
-					fire = yes
-				}
+				kill_leader = { show_notification = no }
 			}
 			every_pool_leader = {
 				limit = { is_exact_same_species = prevprev }
-				kill_leader = {
-					show_notification = no
-					fire = yes
-				}
+				kill_leader = { show_notification = no }
 			}
 		}
 	}

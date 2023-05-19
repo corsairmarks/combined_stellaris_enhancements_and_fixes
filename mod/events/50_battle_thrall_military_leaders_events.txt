@@ -8,10 +8,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_country_flag = disable_gender_clones_on_leader_spawned
-			has_active_event = { leader.1 }
-		}
+		NOT = { has_active_event = { leader.1 } }
 		exists = from
 		from = {
 			OR = {
@@ -81,7 +78,6 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = { has_country_flag = disable_gender_clones_on_leader_spawned }
 		has_active_event = { leader.1 }
 		exists = last_created_leader
 		last_created_leader = { leader_class = admiral }
@@ -129,6 +125,35 @@ country_event = {
 	}
 }
 
+# root = country
+# from = leader
+# triggered by on_leader_spawned
+country_event = {
+	id = battle_thrall_military_leaders.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = from
+		from = { is_robotic_species = no }
+		any_pool_leader = { is_same_value = from }
+	}
+	immediate = {
+		from = {
+			random_list = {
+				1 = { change_background_ethic = ethic_militarist }
+				1 = { change_background_ethic = ethic_xenophobe }
+				1 = { change_background_ethic = ethic_egalitarian }
+				1 = { change_background_ethic = ethic_materialist }
+				1 = { change_background_ethic = ethic_pacifist }
+				1 = { change_background_ethic = ethic_xenophile }
+				1 = { change_background_ethic = ethic_authoritarian }
+				1 = { change_background_ethic = ethic_spiritualist }
+			}
+			change_background_job = bio_trophy
+		}
+	}
+}
+
 # triggered by on_leader_species_changed
 # root = leader, post-modification
 # from = species, pre-modification (if known)
@@ -137,19 +162,12 @@ leader_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_leader_flag = force_gender_match_species
-			has_nonbinary_leaders_active = no
-		}
-		NOT = { has_leader_flag = leader_replaced_by_clone }
+		has_leader_flag = force_gender_match_species
 		exists = from
 		from = { is_scope_type = species }
 		btml_leader_new_species_allows_current_gender = no
-		owner = { NOT = { has_country_flag = disable_gender_clones_on_leader_spawned } }
-
 	}
 	immediate = {
-		log = "battle_thrall_military_leaders.7 [This.GetName]"
 		btml_leader_spawned_match_gender_to_species = yes
 	}
 }

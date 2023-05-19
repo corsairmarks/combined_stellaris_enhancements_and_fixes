@@ -3,5 +3,8 @@
 # this = pop
 can_be_military_leader = {
 	optimize_memory
-	has_military_service_type = { type = military_service_full }
+	has_military_service_type = {
+		type = military_service_full
+		country = owner
+	}
 }
