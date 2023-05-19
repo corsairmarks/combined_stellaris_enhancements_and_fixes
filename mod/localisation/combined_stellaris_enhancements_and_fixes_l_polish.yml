@@ -1,0 +1,4 @@
+﻿l_polish:
+ # localisation for dummy districts
+ district_standard_cm_commercial: "$district_hab_commercial$"
+ mod_planet_district_standard_cm_commercial_build_speed_mult: "$district_standard_cm_commercial$ $mod_planet_built_speed_mult_suffix$"

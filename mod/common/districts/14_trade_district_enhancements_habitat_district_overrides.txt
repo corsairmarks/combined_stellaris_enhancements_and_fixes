@@ -81,7 +81,7 @@ district_hab_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			colony_type = col_habitat_trade
+			has_trade_designation = yes
 			owner = { is_fallen_empire_spiritualist = no }
 		}
 		modifier = {
@@ -90,7 +90,7 @@ district_hab_commercial = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			colony_type = col_habitat_trade
+			has_trade_designation = yes
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
@@ -98,7 +98,7 @@ district_hab_commercial = {
 		}
 	}
 	triggered_planet_modifier = {
-		potential = { colony_type = col_habitat_trade }
+		potential = { has_trade_designation = yes }
 		modifier = {
 			job_merchant_add = 1
 		}
@@ -129,7 +129,7 @@ district_hab_commercial = {
 		text = job_merchant_effect_desc
 		trigger = {
 			OR = {
-				colony_type = col_habitat_trade
+				has_trade_designation = yes
 				AND = {
 					exists = owner
 					owner = {
