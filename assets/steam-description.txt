@@ -17,7 +17,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2510669821]"Agrarian" Idyll for Lithoids[/url] at 8.0.1
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2654043078]Basic Planetview: More Districts[/url] at 6.0.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2768297949]Building: Aquaponics Farms[/url] at 4.4.0
-[*][url=https://steamcommunity.com/workshop/filedetails/?id=2916269980]Building: Betharian Power Plant - Enhanced[/url] at 2.1.0
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2916269980]Building: Betharian Power Plant - Enhanced[/url] at 2.2.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2932819177]Civic: Byzantine Bureaucracy - Enhanced[/url] at 2.0.2
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2774084358]Civic: Philosopher King - Enhanced[/url] at 1.4.0
 [*][url=https://steamcommunity.com/workshop/filedetails/?id=2597129991]Colony Designation: Ecumenopolis Commercial[/url] at 7.0.0
