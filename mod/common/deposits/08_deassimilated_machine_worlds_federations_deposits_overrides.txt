@@ -13,7 +13,7 @@ d_resource_consolidation_1 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_regular_empire = no }
+			owner = { is_machine_empire = yes }
 		}
 		modifier = {
 			job_replicator_add = -1
@@ -23,7 +23,10 @@ d_resource_consolidation_1 = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_regular_empire = yes }
+			owner = {
+				is_hive_empire = no
+				is_machine_empire = no
+			}
 		}
 		modifier = {
 			job_roboticist_add = -1

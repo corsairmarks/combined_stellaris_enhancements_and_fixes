@@ -1,18 +1,9 @@
 # this = planet
 clear_deassimilated_machine_world_modifiers = {
 	optimize_memory
-	if = {
-		limit = { has_modifier = deassimilated_machine_world_cooperative }
-		remove_modifier = deassimilated_machine_world_cooperative
-	}
-	if = {
-		limit = { has_modifier = deassimilated_machine_world_neutral }
-		remove_modifier = deassimilated_machine_world_neutral
-	}
-	if = {
-		limit = { has_modifier = deassimilated_machine_world_hostile }
-		remove_modifier = deassimilated_machine_world_hostile
-	}
+	erase_modifier = { MOD = deassimilated_machine_world_cooperative }
+	erase_modifier = { MOD = deassimilated_machine_world_neutral }
+	erase_modifier = { MOD = deassimilated_machine_world_hostile }
 }
 
 # this = planet
