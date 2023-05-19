@@ -6,13 +6,13 @@ col_ecu_trade = {
 	icon = GFX_colony_type_ecu_trade
 	potential = {
 		et_uses_district_set_city_world = yes
-		can_generate_trade_value = yes
-		exists = owner
-		owner = {
-			is_gestalt = no
-			is_fallen_empire = no
-		}
 		is_special_colony_type = no
+		can_generate_trade_value = yes
+		NAND = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		is_capital = no
 	}
 	custom_tooltip = col_ecu_trade_custom
 	planet_modifier = {

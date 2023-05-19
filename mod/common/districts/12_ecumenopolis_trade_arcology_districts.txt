@@ -41,7 +41,7 @@ district_arcology_commercial = {
 		job_merchant_add = 2
 	}
 	triggered_planet_modifier = {
-		potential = { colony_type = col_ecu_trade }
+		potential = { has_trade_designation = yes }
 		modifier = {
 			job_clerk_add = -2
 			job_merchant_add = 2
