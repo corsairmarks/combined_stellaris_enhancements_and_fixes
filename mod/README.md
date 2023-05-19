@@ -60,6 +60,7 @@ Overriding a building, job, or trigger causes the game to log errors noting the 
 * 4.4.0 Improve built-in support for [Planetary Diversity](https://steamcommunity.com/sharedfiles/filedetails/?id=819148835)
 * 5.0.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying game changes
 * 5.1.0 Update for Stellaris version 3.8.2 "Gemini" - integrate underlying game changes
+* 5.1.1 The gestalt aquaculture drone also needed to be switched back to the `planet_farmers` economic category
 
 ## Source Code
 
