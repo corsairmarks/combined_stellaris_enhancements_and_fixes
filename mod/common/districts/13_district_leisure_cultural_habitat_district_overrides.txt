@@ -6,6 +6,22 @@ district_hab_cultural = {
 	base_buildtime = 240
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
+	desc = {
+		trigger = {
+			NAND = {
+				exists = owner
+				owner = { has_valid_civic = civic_dystopian_society }
+			}
+	 	}
+	 	text = district_hab_cultural_desc
+	}
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { has_valid_civic = civic_dystopian_society }
+	 	}
+	 	text = district_hab_cultural_dystopian_desc
+	}
 	show_on_uncolonized = {
 		uses_district_set = habitat
 		exists = from
@@ -63,7 +79,10 @@ district_hab_cultural = {
 			exists = owner
 			owner = {
 				is_regular_empire = yes
-				NOT = { has_valid_civic = civic_warrior_culture }
+				NOR = {
+					has_valid_civic = civic_dystopian_society
+					has_valid_civic = civic_warrior_culture
+				}
 			}
 		}
 		modifier = {
@@ -75,6 +94,20 @@ district_hab_cultural = {
 			exists = owner
 			owner = {
 				is_regular_empire = yes
+				has_valid_civic = civic_dystopian_society
+			}
+		}
+		modifier = {
+			planet_amenities_add = 1
+			job_enforcer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				NOT = { has_civic = civic_dystopian_society }
 				has_valid_civic = civic_warrior_culture
 			}
 		}
@@ -109,7 +142,10 @@ district_hab_cultural = {
 			exists = owner
 			owner = {
 				is_regular_empire = yes
-				NOT = { has_valid_civic = civic_warrior_culture }
+				NOR = {
+					has_valid_civic = civic_dystopian_society
+					has_valid_civic = civic_warrior_culture
+				}
 			}
 		}
 		text = job_entertainer_effect_desc
@@ -119,6 +155,17 @@ district_hab_cultural = {
 			exists = owner
 			owner = {
 				is_regular_empire = yes
+				has_valid_civic = civic_dystopian_society
+			}
+		}
+		text = job_enforcer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				NOT = { has_valid_civic = civic_dystopian_society }
 				has_valid_civic = civic_warrior_culture
 			}
 		}
