@@ -8,7 +8,7 @@ Special thanks to [Pietas](https://steamcommunity.com/id/piousnoobling) in pinpo
 
 # Major Update
 
-Versions 8.0.0 and above are fully updated for Stellaris version 3.7 "Canis Minor" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris. You can manually download the most recent version of this mod without breaking change here: [7.2.5](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/7.2.5).
+Versions 9.0.0 and above are fully updated for Stellaris version 3.8 "Gemini" which introduced breaking script syntax changes and thus this mod is not backwards compatible with earlier versions of Stellaris. You can manually download the most recent version of this mod without breaking change here: [8.0.3](https://github.com/corsairmarks/combined_stellaris_enhancements_and_fixes/releases/tag/8.0.3).
 
 You only need the contents of the `mod` folder for a local install, disregard the other directories and files. You should rename the folder and then copy the entire (renamed) folder into the local `mod` folder. More instructions on where to install local mods can be found on the [wiki](https://stellaris.paradoxwikis.com/Mods).
 
@@ -66,7 +66,7 @@ Each of the source repositories above is added as a remote to this repository on
 
 # Compatibility
 
-Requires Stellaris version 3.7 "Canis Minor" and disables achievements.
+Requires Stellaris version 3.8 "Gemini" and disables achievements.
 
 Check each of the contained mods for an explicit list of incompatibility notes. As a result of script improvements in Stellaris version 3.3 "Libra," the component mods (and thus this modpack) have a much higher degree of compatibility with other mods that alter jobs and/or buildings. Still be wary of mods that alter that assimilation process or any species rights (such as slavery types or living standards).
 
@@ -244,3 +244,4 @@ This mod should not be removed from your save game. Some added modifiers and tec
 * 8.0.3 Update merged mods:
 	* Deassimilate Machines at 8.2.1
 	* Enhanced Trade Districts and Designations at 6.0.2
+* 9.0.0 Update all merged mods for Stellaris version 3.8 "Gemini"
