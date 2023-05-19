@@ -21,7 +21,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 6.0.0)
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 4.4.0)
 * [Building: Betharian Power Plant - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 2.2.0)
-* [Civic: Byzantine Bureaucracy - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2932819177) ([Source](https://github.com/corsairmarks/civic_byzantine_bureaucracy_enhanced) 2.0.2)
+* [Civic: Byzantine Bureaucracy - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2932819177) ([Source](https://github.com/corsairmarks/civic_byzantine_bureaucracy_enhanced) 2.1.0)
 * [Civic: Philosopher King - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2774084358) ([Source](https://github.com/corsairmarks/civic_philosopher_king_enhanced) 1.4.0)
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/workshop/filedetails/?id=2597129991) ([Source](url=https://github.com/corsairmarks/ecumenopolis_trade) 7.0.0)
 * [Colony Designations: Capitol Building Job Swaps](https://steamcommunity.com/workshop/filedetails/?id=2773995755) ([Source](https://github.com/corsairmarks/building_capital_colony_type_job_swaps) 5.0.0)
