@@ -15,7 +15,7 @@ aquaculture_drone = {
 	possible_precalc = can_fill_drone_job
 
 	resources = {
-		category = planet_anglers
+		category = planet_farmers
 		produces = {
 			food = 8
 		}
