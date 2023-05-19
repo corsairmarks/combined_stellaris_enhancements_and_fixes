@@ -300,6 +300,15 @@ country_event = {
 							from = event_target:latent_psionic_species
 						}
 					}
+					owner = {
+						if = {
+							limit = { NOT = { has_country_flag = psionic_leader_toast } }
+							set_timed_country_flag = { 
+								flag = psionic_leader_toast
+								days = 30
+							}
+						}
+					}
 				}
 				every_pool_leader = {
 					limit = { is_exact_same_species = event_target:latent_psionic_species }
@@ -310,6 +319,15 @@ country_event = {
 							from = event_target:latent_psionic_species
 						}
 					}
+					owner = {
+						if = {
+							limit = { NOT = { has_country_flag = psionic_leader_toast } }
+							set_timed_country_flag = { 
+								flag = psionic_leader_toast
+								days = 30
+							}
+						}
+					}
 				}
 				# note: psionic leader traits are added by Leader Traits: All Eligible Species Traits
 			}
@@ -317,6 +335,28 @@ country_event = {
 		if = {
 			limit = { owner_species = { is_robotic = no } }
 			change_dominant_species = { species = event_target:representative_pop.species }
+		}
+		every_country = {
+			limit = { has_country_flag = psionic_leader_toast }
+			create_message = {
+				type = MESSAGE_ALL_GAINED_TRAIT
+				localization = MESSAGE_ALL_GAINED_TRAIT_DESC
+				days = @toast_message_days
+				variable = {
+					type = key
+					value = leader_trait_psionic
+					localization = TRAIT
+				}
+				variable = {
+					key = TRAIT_KEY
+					value = leader_trait_psionic
+				}
+				variable = {
+					key = "border"
+					value = "GFX_invisible"
+				}
+			}
+			remove_country_flag = psionic_leader_toast
 		}
 		observer_event = {
 			id = observer.6
