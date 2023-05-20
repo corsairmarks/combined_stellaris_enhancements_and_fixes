@@ -403,12 +403,6 @@ is_cyborg_species = {
 }
 
 # this = something with a species (country, leader, pop, etc)
-is_hive_species = {
-	optimize_memory
-	species = { has_trait = trait_hive_mind }
-}
-
-# this = something with a species (country, leader, pop, etc)
 is_machine_species = {
 	optimize_memory
 	species = {
@@ -476,60 +470,12 @@ is_psionic_leader = {
 	optimize_memory
 	OR = {
 		has_psionic_species_trait = yes
-		if = {
-			limit = { leader_class = ruler }
-			OR = {
-				has_trait = leader_trait_ruler_psionic
-				has_trait = leader_trait_ruler_chosen
-				has_trait = leader_trait_ruler_eater_chosen
-				has_trait = leader_trait_ruler_composer_chosen
-				has_trait = leader_trait_ruler_instrument_chosen
-				has_trait = leader_trait_ruler_whisperers_chosen
-			}
-		}
-		else_if = {
-			limit = { leader_class = governor }
-			OR = {
-				has_trait = leader_trait_governor_psionic
-				has_trait = leader_trait_governor_chosen
-				has_trait = leader_trait_governor_composer_chosen
-				has_trait = leader_trait_governor_eater_chosen
-				has_trait = leader_trait_governor_instrument_chosen
-			}
-		}
-		else_if = {
-			limit = { leader_class = scientist }
-			OR = {
-				has_trait = leader_trait_scientist_psionic
-				has_trait = leader_trait_scientist_chosen
-				has_trait = leader_trait_scientist_composer_chosen
-				has_trait = leader_trait_scientist_instrument_chosen
-				has_trait = leader_trait_scientist_whisperers_chosen
-			}
-		}
-		else_if = {
-			limit = { leader_class = admiral }
-			OR = {
-				has_trait = leader_trait_admiral_psionic
-				has_trait = leader_trait_admiral_chosen
-				has_trait = leader_trait_admiral_eater_chosen
-				has_trait = leader_trait_admiral_instrument_chosen
-				has_trait = leader_trait_admiral_whisperers_chosen
-			}
-		}
-		else_if = {
-			limit = { leader_class = general }
-			OR = {
-				has_trait = leader_trait_general_psionic
-				has_trait = leader_trait_general_chosen
-				has_trait = leader_trait_general_composer_chosen
-				has_trait = leader_trait_general_eater_chosen
-				has_trait = leader_trait_general_whisperers_chosen
-			}
-		}
-		else = {
-			always = no
-		}
+		has_trait = leader_trait_psionic
+		has_trait = leader_trait_chosen
+		has_trait = leader_trait_eater_chosen
+		has_trait = leader_trait_composer_chosen
+		has_trait = leader_trait_instrument_chosen
+		has_trait = leader_trait_whisperers_chosen
 	}
 }
 
@@ -538,26 +484,7 @@ is_cyborg_leader = {
 	optimize_memory
 	OR = {
 		is_cyborg_species = yes
-		AND = {
-			leader_class = ruler
-			has_trait = leader_trait_ruler_cyborg
-		}
-		AND = {
-			leader_class = governor
-			has_trait = leader_trait_governor_cyborg
-		}
-		AND = {
-			leader_class = scientist
-			has_trait = leader_trait_scientist_cyborg
-		}
-		AND = {
-			leader_class = admiral
-			has_trait = leader_trait_admiral_cyborg
-		}
-		AND = {
-			leader_class = general
-			has_trait = leader_trait_general_cyborg
-		}
+		has_trait = leader_trait_cyborg
 	}
 }
 
@@ -565,28 +492,7 @@ is_cyborg_leader = {
 is_synthetic_leader = {
 	optimize_memory
 	is_robotic_species = yes
-	OR = {
-		AND = {
-			leader_class = ruler
-			has_trait = leader_trait_ruler_synthetic
-		}
-		AND = {
-			leader_class = governor
-			has_trait = leader_trait_governor_synthetic
-		}
-		AND = {
-			leader_class = scientist
-			has_trait = leader_trait_scientist_synthetic
-		}
-		AND = {
-			leader_class = admiral
-			has_trait = leader_trait_admiral_synthetic
-		}
-		AND = {
-			leader_class = general
-			has_trait = leader_trait_general_synthetic
-		}
-	}
+	has_trait = leader_trait_synthetic
 }
 
 # whether this leader is allowed transfer without being assimilated
@@ -632,6 +538,10 @@ is_allow_transfer_without_assimilation = {
 # event_target:potential_owner = country to which the leader would transfer
 is_allow_transfer_with_assimilation = {
 	optimize_memory
+	NOR = {
+		has_leader_flag = renowned_leader
+		has_leader_flag = legendary_leader
+	}
 	if = {
 		limit = { event_target:potential_owner = { is_machine_empire = yes } }
 		OR = {
@@ -708,10 +618,8 @@ is_eligible_transfer_leader_from_storage = {
 # this = leader
 is_eligible_transfer_leader = {
 	optimize_memory
-	NOR = {
-		leader_class = ruler
-		leader_class = envoy
-	}
+	is_gestalt_node = no
+	NOT = { leader_class = envoy }
 	species = { is_sapient = yes }
 }
 
@@ -830,7 +738,7 @@ has_leader_storage_from_country_to_planet_owner = {
 
 # this follows the game's default rules - does not account for Gender Nonbinary Leaders
 # this = leader, after species change
-klfis_leader_new_species_allows_current_gender = {
+klfis_leader_species_allows_current_gender = {
 	optimize_memory
 	switch = {
 		trigger = gender
@@ -871,18 +779,6 @@ klfis_leader_new_species_allows_current_gender = {
 }
 
 # this = species
-klfis_species_can_set_is_female = {
-	optimize_memory
-	NOR = {
-		species_gender = indeterminable
-		AND = {
-			species_gender = not_set
-			klfis_species_class_uses_gender = no
-		}
-	}
-}
-
-# this = species
 klfis_species_class_uses_gender = {
 	optimize_memory
 	# NOTE: this assumes custom species classes use gender (the default)
@@ -894,22 +790,7 @@ klfis_species_class_uses_gender = {
 		is_species_class = EXD # extradimensionals: unbidden/aberrant/vehement
 		is_species_class = SALVAGER # salvager enclave species
 		is_species_class = SHROUDWALKER # shroudwalker enclave species
-	}
-}
-
-# this = leader, with new species
-# from = species, previous
-klfis_leader_species_gender_change_requires_clone = {
-	optimize_memory
-	OR = {
-		AND = {
-			species = { klfis_species_can_set_is_female = no }
-			from = { klfis_species_can_set_is_female = yes }
-		}
-		AND = {
-			species = { klfis_species_can_set_is_female = yes }
-			from = { klfis_species_can_set_is_female = no }
-		}
+		is_species_class = PARAGON # legendary galactic paragons
 	}
 }
 

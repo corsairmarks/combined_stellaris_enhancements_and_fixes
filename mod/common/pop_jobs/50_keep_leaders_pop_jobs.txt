@@ -1,0 +1,9 @@
+hive_mind = {
+	icon = synapse_drone
+	possible = { always = no }
+}
+
+machine_intelligence = {
+	icon = evaluator
+	possible = { always = no }
+}

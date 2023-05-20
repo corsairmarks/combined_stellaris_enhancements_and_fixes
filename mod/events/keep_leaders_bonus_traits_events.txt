@@ -1,27 +1,22 @@
 namespace = keep_leaders_bonus_traits
 
-# fired by on_ruler_back_to_pre_ruler_class
+# fired by on_ruler_removed
 country_event = {
 	id = keep_leaders_bonus_traits.19
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
 		exists = from
-		from = {
-			NOR = {
-				has_leader_flag = former_ruler
-				has_leader_flag = former_heir
-			}
-		}
+		from = { has_former_ruler_trait = no }
 	}
 	immediate = {
-		from = { add_former_ruler_trait = yes }
+		from = { try_add_former_ruler_trait = yes }
 	}
 }
 
-# fired when this mod adds one of these traits to a leader, and by on_ruler_set and on_ruler_back_to_pre_ruler_class
-# fired by keep_leaders_bonus_traits.21 which manually delays a day from leader firing/death in order to update
-# after the game removes them from the leader pool
+# fired when this mod adds one of these traits to a leader and by on_ruler_set
+# fired by keep_leaders_bonus_traits.21 which manually delays a day from leader firing/death
+# in order to update after the game removes them from the leader pool
 country_event = {
 	id = keep_leaders_bonus_traits.20
 	is_triggered_only = yes
@@ -31,30 +26,10 @@ country_event = {
 	}
 	immediate = {
 		set_update_modifiers_batch = begin
-		if = {
-			limit = { has_modifier = former_ruler_admin_bonus }
-			remove_modifier = former_ruler_admin_bonus
-		}
-		if = {
-			limit = { has_modifier = former_heir_admin_bonus }
-			remove_modifier = former_heir_admin_bonus
-		}
-		if = {
-			limit = { has_modifier = former_ruler_research_bonus }
-			remove_modifier = former_ruler_research_bonus
-		}
-		if = {
-			limit = { has_modifier = former_heir_research_bonus }
-			remove_modifier = former_heir_research_bonus
-		}
-		if = {
-			limit = { has_modifier = former_ruler_naval_bonus }
-			remove_modifier = former_ruler_naval_bonus
-		}
-		if = {
-			limit = { has_modifier = former_heir_naval_bonus }
-			remove_modifier = former_heir_naval_bonus
-		}
+		erase_modifier = { MOD = former_ruler_admin_bonus }
+		erase_modifier = { MOD = former_heir_admin_bonus }
+		erase_modifier = { MOD = former_ruler_naval_bonus }
+		erase_modifier = { MOD = former_heir_naval_bonus }
 
 		set_variable = {
 			which = former_ruler_accumulator_governor
@@ -62,14 +37,6 @@ country_event = {
 		}
 		set_variable = {
 			which = former_heir_accumulator_governor
-			value = 0
-		}
-		set_variable = {
-			which = former_ruler_accumulator_scientist
-			value = 0
-		}
-		set_variable = {
-			which = former_heir_accumulator_scientist
 			value = 0
 		}
 		set_variable = {
@@ -83,84 +50,43 @@ country_event = {
 
 		every_owned_leader = {
 			if = {
-				limit = {
-					leader_class = governor
-					OR = {
-						has_trait = leader_trait_former_ruler_machine_intelligence_governor
-						has_trait = leader_trait_former_ruler_hive_governor
-						has_trait = leader_trait_former_ruler_governor
-						has_trait = leader_trait_former_heir_governor
-					}
-				}
+				limit = { leader_class = governor }
 				if = {
-					limit = { NOT = { has_trait = leader_trait_former_heir_governor } }
+					limit = { has_former_ruler_trait = yes }
 					prev = {
 						change_variable = {
 							which = former_ruler_accumulator_governor
-							value = 1
+							value = prev.trigger:has_skill
 						}
 					}
 				}
-				else = {
+				else_if = {
+					limit = { has_former_heir_trait = yes }
 					prev = {
 						change_variable = {
 							which = former_heir_accumulator_governor
-							value = 1
+							value = prev.trigger:has_skill
 						}
 					}
 				}
 			}
 			else_if = {
-				limit = {
-					leader_class = scientist
-					OR = {
-						has_trait = leader_trait_former_ruler_machine_intelligence_scientist
-						has_trait = leader_trait_former_ruler_scientist
-						has_trait = leader_trait_former_heir_scientist
-					}
-				}
+				limit = { leader_class = admiral }
 				if = {
-					limit = { NOT = { has_trait = leader_trait_former_heir_scientist } }
-					prev = {
-						change_variable = {
-							which = former_ruler_accumulator_scientist
-							value = 1
-						}
-					}
-				}
-				else = {
-					prev = {
-						change_variable = {
-							which = former_heir_accumulator_scientist
-							value = 1
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					leader_class = admiral
-					OR = {
-						has_trait = leader_trait_former_ruler_machine_intelligence_admiral
-						has_trait = leader_trait_former_ruler_hive_admiral
-						has_trait = leader_trait_former_ruler_admiral
-						has_trait = leader_trait_former_heir_admiral
-					}
-				}
-				if = {
-					limit = { NOT = { has_trait = leader_trait_former_heir_admiral } }
+					limit = { has_former_ruler_trait = yes }
 					prev = {
 						change_variable = {
 							which = former_ruler_accumulator_admiral
-							value = 1
+							value = prev.trigger:has_skill
 						}
 					}
 				}
-				else = {
+				else_if = {
+					limit = { has_former_heir_trait = yes }
 					prev = {
 						change_variable = {
 							which = former_heir_accumulator_admiral
-							value = 1
+							value = prev.trigger:has_skill
 						}
 					}
 				}
@@ -196,32 +122,6 @@ country_event = {
 		if = {
 			limit = {
 				check_variable = {
-					which = former_ruler_accumulator_scientist
-					value > 0
-				}
-			}
-			add_modifier = {
-				modifier = former_ruler_research_bonus
-				multiplier = former_ruler_accumulator_scientist
-			}
-		}
-
-		if = {
-			limit = {
-				check_variable = {
-					which = former_heir_accumulator_scientist
-					value > 0
-				}
-			}
-			add_modifier = {
-				modifier = former_heir_research_bonus
-				multiplier = former_heir_accumulator_scientist
-			}
-		}
-
-		if = {
-			limit = {
-				check_variable = {
 					which = former_ruler_accumulator_admiral
 					value > 0
 				}
@@ -247,8 +147,6 @@ country_event = {
 
 		clear_variable = former_ruler_accumulator_governor
 		clear_variable = former_heir_accumulator_governor
-		clear_variable = former_ruler_accumulator_scientist
-		clear_variable = former_heir_accumulator_scientist
 		clear_variable = former_ruler_accumulator_admiral
 		clear_variable = former_heir_accumulator_admiral
 
@@ -262,9 +160,7 @@ country_event = {
 	id = keep_leaders_bonus_traits.21
 	is_triggered_only = yes
 	hide_window = yes
-	trigger = {
-		should_recalculate_former_ruler_country_modifiers = yes
-	}
+	trigger = { should_recalculate_former_ruler_country_modifiers = yes }
 	immediate = {
 		country_event = {
 			id = keep_leaders_bonus_traits.20

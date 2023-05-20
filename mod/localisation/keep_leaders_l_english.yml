@@ -194,7 +194,7 @@
  AI_IS_OUTLAWED_LEADER_NO_X: "Artificial Intelligence is §Routlawed§!. §Y$ROBOT$§! and §Y$MACHINE$§! leaders are too sophisticated to convert into mindless robots."
 
  # former ruler name formatting
- keep_leaders.former_ruler_name: "[This.GetRegnalName], §LFormer [This.GetRulerTitle] of the [former_owner.GetName]§!"
+ keep_leaders.former_ruler_name: "[This.GetRegnalName], §LFormer [former_owner.GetRulerTitle] of the [former_owner.GetName]§!"
  keep_leaders.former_heir_name: "[This.GetName], §LFormer Heir to the [former_owner.GetName]§!"
  keep_leaders.source_fleet_name: "[source_fleet.GetName]"
  keep_leaders.source_ship_name: "[source_ship.GetName]"
@@ -209,25 +209,32 @@
  keep_leaders.3.c: "Retain them as agents - we have need of their subterfuge."
  kl_peerless_infiltration_agents: "Peerless Infiltration"
 
-# colossus transfer title and descriptions
-keep_leaders.30.title: "$PLANET_CAP$ [This.GetName] Cyborgized"
-keep_leaders.30.desc: "Any §Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the §H[storage_owner.GetRealName]§! were cyborgized when we fired our §Y$PLANET_KILLER_NANOBOTS$§! on their homeworld §H[This.GetName]§! and were immediately integrated into the collective.\n\nTheir unique abilities could be a boon to the collective a semi-autonomous leaders."
-keep_leaders.30.a: "Their uniqueness shall serve the collective."
-keep_leaders.30.b: "$keep_leaders.1.b.gest.exclusive$"
-keep_leaders.30.b.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"
-keep_leaders.40.title: "$PLANET_CAP$ [This.GetName] Necrophaged"
-keep_leaders.40.desc: "§Y$BIOLOGICAL$§! leaders from the §H[storage_owner.GetRealName]§! were necrophaged into [This.Owner.GetSpeciesName] when we fired our §Y$PLANET_KILLER_SPORE_DISPERSAL$§! on their homeworld §H[This.GetName]§!.\n\nAs members of our species and given their prior experience, they may yet be valuable assets."
-keep_leaders.40.a: "They are now us; send them for assignment."
-keep_leaders.40.b: "$keep_leaders.1.b$"
-keep_leaders.40.b.tooltip: "$keep_leaders.1.b.tooltip$"
-keep_leaders.40.b.hive: "$keep_leaders.1.b.gest.exclusive$"
-keep_leaders.40.b.hive.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"
-keep_leaders.40.c: "Execute them anyway."
-keep_leaders.40.c.tooltip: "$keep_leaders.1.a.tooltip$"
+ # colossus transfer title and descriptions
+ keep_leaders.30.title: "$PLANET_CAP$ [This.GetName] Cyborgized"
+ keep_leaders.30.desc: "Any §Y$BIOLOGICAL$§!, non-§Y$trait_hive_mind$§! leaders from the §H[storage_owner.GetRealName]§! were cyborgized when we fired our §Y$PLANET_KILLER_NANOBOTS$§! on their homeworld §H[This.GetName]§! and were immediately integrated into the collective.\n\nTheir unique abilities could be a boon to the collective a semi-autonomous leaders."
+ keep_leaders.30.a: "Their uniqueness shall serve the collective."
+ keep_leaders.30.b: "$keep_leaders.1.b.gest.exclusive$"
+ keep_leaders.30.b.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"
+ keep_leaders.40.title: "$PLANET_CAP$ [This.GetName] Necrophaged"
+ keep_leaders.40.desc: "§Y$BIOLOGICAL$§! leaders from the §H[storage_owner.GetRealName]§! were necrophaged into [This.Owner.GetSpeciesName] when we fired our §Y$PLANET_KILLER_SPORE_DISPERSAL$§! on their homeworld §H[This.GetName]§!.\n\nAs members of our species and given their prior experience, they may yet be valuable assets."
+ keep_leaders.40.a: "They are now us; send them for assignment."
+ keep_leaders.40.b: "$keep_leaders.1.b$"
+ keep_leaders.40.b.tooltip: "$keep_leaders.1.b.tooltip$"
+ keep_leaders.40.b.hive: "$keep_leaders.1.b.gest.exclusive$"
+ keep_leaders.40.b.hive.tooltip: "$keep_leaders.1.b.gest.exclusive.tooltip$"
+ keep_leaders.40.c: "Execute them anyway."
+ keep_leaders.40.c.tooltip: "$keep_leaders.1.a.tooltip$"
+
+ job_hive_mind: "$auth_hive_mind$"
+ job_hive_mind_plural: ""
+ job_hive_mind_desc: ""
+ job_machine_intelligence: "$auth_machine_intelligence$"
+ job_machine_intelligence_plural: ""
+ job_machine_intelligence_desc: ""
 
  # modifiers unlocalised in the base game
  mod_op_cat_infiltration_speed_mult: "$MOD_ESPIONAGE_OPERATION_SPEED_MULT$ ($op_cat_infiltration$)"
 
- # localisation to make the game happy with the conditional content - matches localisation from  Civic: Organic Zealots so that it won't matter which mod loads first
+ # localisation to make the game happy with the conditional content - matches localisation from Civic: Organic Zealots so that it won't matter which mod loads first
  civic_organic_zealots: "Organic Zealots"
  civic_organic_zealots_desc: "'Thou shalt not make a machine in the likeness of an organic mind.' This society created, was enslaved by, overthrew, and finally purged Thinking Machines. They seek to prevent the redevelopment of artificial intelligence, or, failing that, oversee its eradication."

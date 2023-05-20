@@ -30,7 +30,7 @@ defined_text = { # scope with species
 
 # this = country
 # from = country
-defined_text = { # country
+defined_text = {
 	name = GetKeepLeadersEventTitle
 	text = {
 		trigger = {
@@ -58,4 +58,158 @@ defined_text = { # country
 		localization_key = keep_leaders.1.title.planet_killer_generic
 	}
 	default = keep_leaders.1.title
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerMachineIntelligenceType
+	text = {
+		trigger = { has_leader_flag = gov_machine_industrial }
+		localization_key = leader_trait_former_ruler_machine_intelligence_industrial
+	}
+	text = {
+		trigger = { has_leader_flag = gov_machine_research }
+		localization_key = leader_trait_former_ruler_machine_intelligence_science
+	}
+	text = {
+		trigger = { has_leader_flag = gov_machine_servitor }
+		localization_key = leader_trait_former_ruler_machine_intelligence_caretaker
+	}
+	default = leader_trait_former_ruler_machine_intelligence_default
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerMachineIntelligenceLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_general_desc
+	}
+	default = leader_trait_former_ruler_machine_intelligence_ruler_desc
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerHiveMindLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_general_desc
+	}
+	default = leader_trait_former_ruler_hive_mind_ruler_desc
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerRulerLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_ruler_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_ruler_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_ruler_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_ruler_general_desc
+	}
+	default = leader_trait_former_ruler_ruler_desc
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerHeirLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_heir_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_heir_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_heir_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_heir_general_desc
+	}
+	default = leader_trait_former_heir_ruler_desc
 }

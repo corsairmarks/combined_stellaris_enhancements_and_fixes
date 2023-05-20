@@ -1,21 +1,18 @@
 # this = leader
-add_former_ruler_trait = {
+try_add_former_ruler_trait = {
 	optimize_memory
+	try_remove_former_heir_trait = yes
 	if = {
-		limit = {
-			has_former_ruler_trait = no
-			has_former_heir_trait = no
-		}
-		try_add_demoted_ruler_bonus_trait = yes
+		limit = { has_former_ruler_trait = no }
 		if = {
-			limit = { is_machine_species = yes }
+			limit = { owner = { is_machine_empire = yes } }
 			if = {
 				limit = { owner = { has_government = gov_machine_research } }
-				add_ruler_trait = leader_trait_former_ruler_machine_intelligence_ruler_science
+				set_leader_flag = gov_machine_research
 			}
 			else_if = {
 				limit = { owner = { has_government = gov_machine_industrial } }
-				add_ruler_trait = leader_trait_former_ruler_machine_intelligence_ruler_industrial
+				set_leader_flag = gov_machine_industrial
 			}
 			else_if = {
 				limit = {
@@ -26,56 +23,41 @@ add_former_ruler_trait = {
 						}
 					}
 				}
-				add_ruler_trait = leader_trait_former_ruler_machine_intelligence_ruler_caretaker
+				set_leader_flag = gov_machine_servitor
 			}
-			else = {
-				add_ruler_trait = leader_trait_former_ruler_machine_intelligence_ruler
-			}
-			switch = {
-				trigger = leader_class
-				governor = { add_trait = leader_trait_former_ruler_machine_intelligence_governor }
-				scientist = { add_trait = leader_trait_former_ruler_machine_intelligence_scientist }
-				admiral = { add_trait = leader_trait_former_ruler_machine_intelligence_admiral }
-			}
+			add_trait = leader_trait_former_ruler_machine_intelligence
 		}
 		else_if = {
-			limit = { is_hive_species = yes }
-			add_ruler_trait = leader_trait_former_ruler_hive_ruler
-			switch = {
-				trigger = leader_class
-				governor = { add_trait = leader_trait_former_ruler_hive_governor }
-				admiral = { add_trait = leader_trait_former_ruler_hive_admiral }
-			}
+			limit = { owner = { is_hive_empire = yes } }
+			add_trait = leader_trait_former_ruler_hive_mind
 		}
 		else = {
-			add_ruler_trait = leader_trait_former_ruler_ruler
-			switch = {
-				trigger = leader_class
-				governor = { add_trait = leader_trait_former_ruler_governor }
-				scientist = { add_trait = leader_trait_former_ruler_scientist }
-				admiral = { add_trait = leader_trait_former_ruler_admiral }
-				general = { add_trait = leader_trait_former_ruler_general }
-			}
+			add_trait = leader_trait_former_ruler
 		}
 	}
 }
 
 # this = leader
-add_former_heir_trait = {
+try_add_former_heir_trait = {
 	optimize_memory
+	if = {
+		limit = { has_trait = trait_imperial_heir }
+		remove_trait = trait_imperial_heir
+	}
 	if = {
 		limit = {
 			has_former_ruler_trait = no
-			has_former_heir_trait = no
+			has_trait = leader_trait_former_heir
 		}
-		try_add_demoted_ruler_bonus_trait = yes
-		add_ruler_trait = leader_trait_former_heir_ruler
-		switch = {
-			trigger = leader_class
-			governor = { add_trait = leader_trait_former_heir_governor }
-			scientist = { add_trait = leader_trait_former_heir_scientist }
-			admiral = { add_trait = leader_trait_former_heir_admiral }
-			general = { add_trait = leader_trait_former_heir_general }
-		}
+		add_trait = leader_trait_former_heir
+	}
+}
+
+# this = leader
+try_remove_former_heir_trait = {
+	optimize_memory
+	if = {
+		limit = { has_trait = leader_trait_former_heir }
+		remove_trait = leader_trait_former_heir
 	}
 }

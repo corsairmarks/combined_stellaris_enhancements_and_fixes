@@ -17,12 +17,20 @@ on_planet_attackers_win = {
 	}
 }
 
+# fired just before on_leader_death if show_notification = yes (default)
+# this = country
+# from = leader
+on_leader_death_notify = {
+	events = {
+		keep_leaders.100
+	}
+}
+
 # fired when a leader has died
 # this = country
 # from = leader
 on_leader_death = {
 	events = {
-		keep_leaders.100
 		keep_leaders_bonus_traits.21
 	}
 }
@@ -51,13 +59,12 @@ on_ruler_set = {
 	}
 }
 
-# fired when a ruler is ousted and goes back to their pre-ruler class
+# fired when a ruler has been removed
 # this = country
-# from = Previous ruler, already has the new class
-on_ruler_back_to_pre_ruler_class = {
+# from = leader, previous ruler
+on_ruler_removed = {
 	events = {
 		keep_leaders_bonus_traits.19
-		keep_leaders_bonus_traits.20
 	}
 }
 
