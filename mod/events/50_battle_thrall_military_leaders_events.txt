@@ -165,9 +165,9 @@ leader_event = {
 		has_leader_flag = force_gender_match_species
 		exists = from
 		from = { is_scope_type = species }
-		btml_leader_new_species_allows_current_gender = no
+		btml_leader_species_allows_current_gender = no
 	}
 	immediate = {
-		btml_leader_spawned_match_gender_to_species = yes
+		btml_leader_match_gender_to_species = yes
 	}
 }

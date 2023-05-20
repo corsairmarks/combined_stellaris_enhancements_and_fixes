@@ -1,12 +1,11 @@
 # changes a gender's leader to match the norms for their species (possibly cloning and replacing them)
 # this = leader, with new species
 # from = species, previous
-btml_leader_spawned_match_gender_to_species = {
+btml_leader_match_gender_to_species = {
 	optimize_memory
 	species = {
 		switch = {
 			trigger = species_gender
-			# if indeterminable, then nothing should change
 			female = {
 				prev = {
 					if = {
