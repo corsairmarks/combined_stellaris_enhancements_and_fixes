@@ -26,6 +26,7 @@ infiltrate_government_annexation_effect = {
 			owner = root
 			species = owner_main_species
 			type = "defense_army"
+			land_army = yes
 		}
 		# building/district setup handled in primitive_conquest_enhancements.1
 	}
