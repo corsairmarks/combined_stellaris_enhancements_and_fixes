@@ -29,6 +29,7 @@ Built for Stellaris version 3.8 "Gemini."  As a UI-only mod, this is achievement
 * 5.0.0 Update for Stellaris version 3.7 "Canis Minor" - integrate underlying changes from the base game in overridden file
 * 5.1.0 Update for Stellaris version 3.7.4 "Canis Minor" - integrate underlying changes from the base game in overridden file
 * 6.0.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying changes from the base game in overridden file
+* 6.1.0 Update for Stellaris version 3.8.3 "Gemini" - integrate underlying changes from the base game in overridden file
 
 ## Source Code
 
