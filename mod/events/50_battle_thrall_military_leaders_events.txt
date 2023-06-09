@@ -134,7 +134,13 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = from
-		from = { is_robotic_species = no }
+		from.species = {
+			is_robotic = no
+			has_citizenship_type = {
+				type = citizenship_organic_trophy
+				country = root
+			}
+		}
 		any_pool_leader = { is_same_value = from }
 	}
 	immediate = {
