@@ -94,6 +94,7 @@ This mod overrides a built-in trigger `can_be_military_leader` and a species rig
     * Any necrophage species may become leaders in a necrophage empire
     * Simplify gender-matching for leaders whose species has changed
 * 7.0.1 Ensure that only leaders whose species have Bio-Trophy citizenship in the country where they spawned are set to have formerly been a Bio-Trophy (was firing for all non-robotic leaders, regardless of empire)
+* 7.0.2 Fix a localisation key reference for Scientists
 
 ## Source Code
 
