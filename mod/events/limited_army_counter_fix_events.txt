@@ -269,6 +269,21 @@ country_event = {
 	}
 }
 
+# triggered by on_colony_destroyed
+# root = planet
+planet_event = {
+	id = limited_army_counter_fix.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_planet_flag = titanic_life_can_build
+		owner = { has_country_flag = titanic_life_soldiers }
+	}
+	immediate = {
+		owner = { decrement_titanic_life_soldier_maximum = yes }
+	}
+}
+
 # remove and refund an army that was over cap
 # root = country, owner
 # from = army, to be removed
