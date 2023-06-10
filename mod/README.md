@@ -55,6 +55,7 @@ When an empire loses a Titanic Life planet (thus lowering their cap) while recru
 * 5.0.0 Remove compatibility global flag, add a compatibility trigger for other mods to check whether this one is active
 * 5.1.0 Mark as compatible with Stellaris version 3.7 "Canis Minor" - no script changes
 * 5.2.0 Mark as compatible with Stellaris version 3.8 "Gemini" - no script changes
+* 5.3.0 Ensure Titanic Assault Army maximum is decremented when a colony is destroyed
 
 ## Source Code
 
