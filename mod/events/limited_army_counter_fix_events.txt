@@ -177,12 +177,7 @@ event = {
 			}
 			every_owned_planet = {
 				limit = { has_planet_flag = titanic_life_can_build }
-				prev = {
-					change_variable = {
-						which = titanic_life_soldier_maximum
-						value = @titanic_life_soldier_per_planet_maximum
-					}
-				}
+				prev = { increment_titanic_life_soldier_maximum = yes }
 			}
 		}
 	}
@@ -196,56 +191,27 @@ planet_event = {
 	id = limited_army_counter_fix.4
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		has_planet_flag = titanic_life_can_build
-		exists = from
-		from = { has_country_flag = titanic_life_soldiers }
-	}
+	trigger = { has_planet_flag = titanic_life_can_build }
 	immediate = {
-		from = {
-			if = {
-				limit = { has_country_flag = titanic_life_soldiers }
-				change_variable = {
-					which = titanic_life_soldier_maximum
-					value = @titanic_life_soldier_per_planet_maximum
+		if = {
+			limit = {
+				exists = from
+				from = {
+					is_scope_type = country
+					has_country_flag = titanic_life_soldiers
 				}
 			}
+			from = { increment_titanic_life_soldier_maximum = yes }
 		}
 		if = {
 			limit = {
 				exists = fromfrom
-				fromfrom = { is_scope_type = country }
-			}
-			fromfrom = {
-				if = {
-					limit = { has_country_flag = titanic_life_soldiers }
-					set_variable = {
-						which = soldier_maximum_index
-						value = @titanic_life_soldier_per_planet_maximum
-					}
-					while = {
-						limit = {
-							check_variable = {
-								which = soldier_maximum_index
-								value > 0
-							}
-							check_variable = {
-								which = titanic_life_soldier_maximum
-								value > 0
-							}
-						}
-						subtract_variable = {
-							which = titanic_life_soldier_maximum
-							value = 1
-						}
-						subtract_variable = {
-							which = soldier_maximum_index
-							value = 1
-						}
-					}
-					clear_variable = soldier_maximum_index
+				fromfrom = {
+					is_scope_type = country
+					has_country_flag = titanic_life_soldiers
 				}
 			}
+			fromfrom = { decrement_titanic_life_soldier_maximum = yes }
 		}
 	}
 }
@@ -261,12 +227,7 @@ planet_event = {
 		owner = { has_country_flag = titanic_life_soldiers }
 	}
 	immediate = {
-		owner = {
-			change_variable = {
-				which = titanic_life_soldier_maximum
-				value = @titanic_life_soldier_per_planet_maximum
-			}
-		}
+		owner = { increment_titanic_life_soldier_maximum = yes }
 	}
 }
 

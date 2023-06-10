@@ -26,12 +26,7 @@ planet_event = {
 			}
 		}
 		set_planet_flag = titanic_life_can_build
-		owner = {
-			change_variable = {
-				which = titanic_life_soldier_maximum
-				value = @titanic_life_soldier_per_planet_maximum
-			}
-		}
+		owner = { increment_titanic_life_soldier_maximum = yes }
 	}
 	option = {
 		name = EXCELLENT
