@@ -1,8 +1,15 @@
 # Irony this is a placeholder file please ignore it
 
-# supports features from my mod Deassimilate machines
+# supports features from my mod Deassimilate Machines
 # this = any
 has_deassimilate_machines_active = {
+	optimize_memory
+	always = no
+}
+
+# supports features from my mod Retain Leaders from Integrated Subjects & Pre-FTL Civilizations
+# this = any
+has_keep_leaders_active = {
 	optimize_memory
 	always = no
 }

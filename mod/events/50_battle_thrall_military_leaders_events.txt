@@ -79,6 +79,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_active_event = { leader.1 }
+		has_keep_leaders_active = no
 		exists = last_created_leader
 		last_created_leader = { leader_class = admiral }
 		is_country = last_created_leader.owner
