@@ -104,6 +104,7 @@ Overwriting a colony type or district produces an error log.  Expect to see nine
     * Integrate underlying game changes
     * Add an override of the new "Trade Capital" colony designation - add all the related bonuses from the enhanced trade designations
     * Account for the new "Trade Capital" colony designation in enhanced trade districts
+* 7.0.1 Make code more flexible, where possible, with primitive country types
 
 ## Source Code
 
