@@ -17,15 +17,7 @@ district_city = {
 		}
 		NOT = { has_deposit = d_crashed_slaver_ship }
 		exists = from
-		from = {
-			OR = {
-				is_regular_empire = yes
-				AND = {
-					is_country_type = primitive
-					is_hive_empire = no
-				}
-			}
-		}
+		from = { is_regular_empire_or_primitive = yes }
 	}
 	potential = {
 		OR = {
@@ -39,15 +31,7 @@ district_city = {
 		NOT = { has_deposit = d_crashed_slaver_ship }
 		OR = {
 			NOT = { exists = owner } # this condition is needed for galaxy generation
-			owner = {
-				OR = {
-					is_regular_empire = yes
-					AND = {
-						is_country_type = primitive
-						is_hive_empire = no
-					}
-				}
-			}
+			owner = { is_regular_empire_or_primitive = yes }
 		}
 	}
 	allow = {
