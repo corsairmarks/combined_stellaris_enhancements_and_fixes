@@ -100,6 +100,7 @@ Overriding an effect or event causes the game to log errors noting the overrides
 * 7.1.0 Mark as compatible with Stellaris 3.8 version "Gemini" - no script changes
 * 7.1.1 Use triggers instead of ethics/authorities directly
 * 7.1.2 Update for Stellaris version 3.8.3 "Gemini" - ensure bonus defensive army post-annexation spawns on the surface of the planet
+* 7.1.3 Make code more flexible, where possible, with primitive country types
 
 ## Source Code
 
