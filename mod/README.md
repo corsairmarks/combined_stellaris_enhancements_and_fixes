@@ -32,7 +32,7 @@ This mod can be safely added to your savegame after the game has started.  Becau
 ### Recommended Companion Mods
 
 * [Colony Designation: Ecumenopolis Commercial](https://steamcommunity.com/sharedfiles/filedetails/?id=2597129991) to add a trade-focused colony designation and district to ecumenopolis worlds
-* [Specialist Subject: Mercatorum](https://steamcommunity.com/sharedfiles/filedetails/?id=2962066593) add a trade-focused specialist subject that will benefit from more sources of trade
+* [Specialist Subject: Mercatorum](https://steamcommunity.com/sharedfiles/filedetails/?id=2962066593) adds a trade-focused specialist subject that will benefit from more sources of trade
 
 ## Known Issues
 
