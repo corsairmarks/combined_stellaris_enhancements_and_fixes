@@ -11,7 +11,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		from = { is_country_type = primitive }
+		from = { is_primitive = yes }
 		is_country_type = default
 	}
 	immediate = {
@@ -295,7 +295,7 @@ country_event = {
 		every_planet_within_border = {
 			limit = {
 				is_colony = yes
-				owner = { is_country_type = primitive }
+				owner = { is_primitive = yes }
 			}
 			owner = { save_event_target_as = conquered_primitive_country }
 			owner_species = {
