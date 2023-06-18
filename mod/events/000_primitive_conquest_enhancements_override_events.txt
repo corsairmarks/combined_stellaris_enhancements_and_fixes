@@ -56,7 +56,7 @@ country_event = {
 }
 
 # Modified: no need for the immediate block due to primitive_conquest_enhancements.1
-# chained from action.14, which is triggered for primitive planets by on_planet_attackers_win
+# chained from action.14, which is triggered for pre-FTL planets by on_planet_attackers_win
 # root = country that just conquered the planet
 # event_target:conquered_primitive_country = the planet that was conquered (the default files use this name, including localisation - don't change it)
 # event_target:conquered_primitive_species = the species that was conquered (the default files use this name, including localisation - don't change it)
@@ -246,7 +246,7 @@ country_event = {
 		is_ai = yes
 	}
 	immediate = {
-		log = "necroids primitive 'conquest': helping the [Root.GetName] 'conquer' all primitives within its borders"
+		log = "necroids pre-FTL 'conquest': helping the [Root.GetName] 'conquer' all pre-FTLs within its borders"
 		save_event_target_as = necrophage_country
 		# try to have 3 necrophage pops on every planet with planet_culture_shock
 		every_owned_planet = {
@@ -291,7 +291,7 @@ country_event = {
 			}
 			check_planet_employment = yes
 		}
-		# automatically take control of any primitives within borders
+		# automatically take control of any pre-FTLs within borders
 		every_planet_within_border = {
 			limit = {
 				is_colony = yes

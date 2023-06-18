@@ -1,5 +1,5 @@
 # root = country, instigating empire
-# this = country, primitive (from.target; from = espionage_operation)
+# this = country, pre-FTL (from.target; from = espionage_operation)
 infiltrate_government_annexation_effect = {
 	if = {
 		limit = {

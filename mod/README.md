@@ -59,27 +59,27 @@ Overriding an effect or event causes the game to log errors noting the overrides
 * 1.2.0 Ringworld support (e.g. Sanctuary), add images and explanations
 * 1.2.1 Mark as compatible with Stellaris version 3.0 "Dick" - no script changes
 * 1.2.2 Remove extra images files to keep distribution lightweight (no script changes)
-* 1.3.0 Add handling for primitive infiltration
+* 1.3.0 Add handling for pre-FTL infiltration
     * Free buildings and districts processing is more intelligent
     * Changed "generate districts/buildings" to a pair of custom on_actions
 * 2.0.0 Update for compatibility with Stellaris version 3.1 "Lem"
     * Update to use new arithmetic syntax
     * Update minor underlying game changes (mainly to support new features in the base game)
 * 2.1.0 Improve mod reliability and safety
-    * Ensure AI Necrophage homeworlds cannot be fully depopulated by their special primitive conquest event (unlikely to occur but better to be safe)
+    * Ensure AI Necrophage homeworlds cannot be fully depopulated by their special pre-FTL conquest event (unlikely to occur but better to be safe)
     * Do not attempt to auto-resettle Necrophage Pops to a world they can't live on (modified for regular land appropriation in 3.1 but not the AI Necrophage helper event)
-    * Add trigger to account for a primitive planet's primitive age OR its Pop count when adding free buildings/districts - whichever value is "higher" is used to determine how much to build
+    * Add trigger to account for a pre-FTL planet's pre-FTL age OR its Pop count when adding free buildings/districts - whichever value is "higher" is used to determine how much to build
 * 3.0.0 Update for compatibility with Stellaris version 3.2 "Lem"
     * More intelligent districts based on a planet's district set
     * Angler on oceans get uncapped farming districts
-    * Add handling for primitive enlightenment
+    * Add handling for pre-FTL enlightenment
     * Ringworld setup is even more intelligent
-    * Built-in colossus weapons that allow the "conquest" of primitive worlds (Deluge Machine, Nanobot Diffuser) now also get infrastructure
+    * Built-in colossus weapons that allow the "conquest" of pre-FTL worlds (Deluge Machine, Nanobot Diffuser) now also get infrastructure
     * My custom colossus weapon (Necrophagic Spore Diffuser) now also gets infrastructure
 * 4.0.0 Update for Stellaris version 3.3 "Libra" - integrate new triggers from the base game
-* 4.1.0 More updates for 3.3 "Libra" and ringworld primitives have their homeworld transformed into a shattered ringworld segment
+* 4.1.0 More updates for 3.3 "Libra" and ringworld pre-FTLs have their homeworld transformed into a shattered ringworld segment
     * Reanimators get a Dread Encampment instead of a Research Lab
-    * Fix primitive unity building (wrongly spawned an Autochthon Monument) - usually only Early Space Age primitives would have a unity building
+    * Fix pre-FTL unity building (wrongly spawned an Autochthon Monument) - usually only Early Space Age pre-FTLs would have a unity building
     * Previous ringworld conquest conversion still exists for non-standard-sized ringworlds (not size 10)
     * Finally update the example screenshots
 * 5.0.0 Update for Stellaris version 3.4 "Cepheus" - integrate base game changes
@@ -88,9 +88,9 @@ Overriding an effect or event causes the game to log errors noting the overrides
     * Update overridden events with underlying game changes
     * Use built-in on-action `on_planet_transfer` now that it provides the previous owner as `fromfrom`
     * Remove custom on_actions `on_primitive_planet_transferring` and `on_primitive_planet_transferred`
-* 6.0.1 Ensure that free buildings are added correctly for primitive conquest - due to underlying Stellaris changes, the conquest event now fires _before_ the primitive buildings are removed, so they must be manually cleared
+* 6.0.1 Ensure that free buildings are added correctly for pre-FTL conquest - due to underlying Stellaris changes, the conquest event now fires _before_ the pre-FTL buildings are removed, so they must be manually cleared
 * 6.1.0 Bugfix and compatibility trigger
-    * Undo changes to unity buildings spawned after a primitive conquest - Uplink Nodes and Synapse Nodes are correct
+    * Undo changes to unity buildings spawned after a pre-FTL conquest - Uplink Nodes and Synapse Nodes are correct
     * Add a compatibility trigger for other mods to check whether this one is active
 * 7.0.0 Update for Stellaris version 3.7 "Canis Minor"
     * Remove obsolete event overrides
