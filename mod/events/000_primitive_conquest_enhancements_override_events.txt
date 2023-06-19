@@ -189,7 +189,7 @@ country_event = {
 		name = action.14.a.material
 		custom_tooltip = action.14.a.tooltip
 		trigger = {
-			is_militarist = yes
+			is_materialist = yes
 			is_xenophobe = no
 			is_militarist = no
 		}
