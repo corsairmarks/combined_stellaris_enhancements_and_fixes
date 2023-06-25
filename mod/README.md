@@ -245,3 +245,5 @@ This mod should not be removed from your save game. Some added modifiers and tec
 	* Enhanced Trade Districts and Designations at 6.0.2
 * 9.0.0 Update all merged mods for Stellaris version 3.8 "Gemini"
 	* Removed: Leader Traits: Enhanced Randomisation (deprecated)
+* 9.0.1 Update merged mods:
+	* 
