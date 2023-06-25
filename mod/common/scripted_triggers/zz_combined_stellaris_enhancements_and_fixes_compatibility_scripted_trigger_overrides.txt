@@ -1,0 +1,10 @@
+# compatibility trigger - any mods that wish to check for features from this mod should implement a scripted_trigger
+# with exactly the same name and "always = no" in a file named to load _before_ this one (i.e. 00_my_mod_triggers.txt)
+#
+# it is _strongly_ recommended you use the individual triggers for each of the mods merged to form this one, rather than the modpack trigger - that way byour mod can support it installed as a standalone and as this package
+# see zz_<mod_internal_name>_compatibility_scripted_trigger_overrides.txt; general form is: has_<mod_internal_name>_active = { }
+# this = any
+has_combined_stellaris_enhancements_and_fixes_active = {
+	optimize_memory
+	always = yes
+}
