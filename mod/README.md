@@ -38,7 +38,7 @@ This is a bundle of mods to resolve compatibility issues if you want to use them
 * [Pre-FTL Conquest & Infiltration: Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2488154830) ([Source](https://github.com/corsairmarks/primitive_conquest_enhancements) 7.1.4)
 * [Psionic Ascension: Even in Other Empires](https://steamcommunity.com/workshop/filedetails/?id=2601239912) ([Source](https://github.com/corsairmarks/psionic_assimilation_galaxy_species) 6.0.0)
 * [Restored Content: Fungoids](https://steamcommunity.com/workshop/filedetails/?id=2548834941) ([Source](https://github.com/corsairmarks/portrait_unlock_fungoid) 2.1.0)
-* [Retain Leaders from Integrated Subjects & Pre-FTL Civilizations](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 9.1.0)
+* [Retain Leaders from Integrated Subjects & Pre-FTL Civilizations](https://steamcommunity.com/workshop/filedetails/?id=2553818684) ([Source](https://github.com/corsairmarks/keep_leaders_from_integrated_subjects) 9.2.0)
 * [Ringworld Graphical Enhancements](https://steamcommunity.com/workshop/filedetails/?id=2628518102) ([Source](https://github.com/corsairmarks/ringworld_graphical_enhancements) 4.0.0)
 * [Special Leadership Privileges for Battle Thralls & Bio-Trophies](https://steamcommunity.com/workshop/filedetails/?id=2496357447) ([Source](https://github.com/corsairmarks/battle_thrall_military_leaders) 7.0.3)
 * ["Terraform" to Tomb World](https://steamcommunity.com/workshop/filedetails/?id=2625663437) ([Source](https://github.com/corsairmarks/terraform_to_pc_nuked) 6.2.0)
@@ -251,4 +251,5 @@ This mod should not be removed from your save game. Some added modifiers and tec
 	* Enhanced Trade Districts and Designations at 7.0.1
 	* Leader Traits: All Eligible Species Traits at 7.1.2
 	* Pre-FTL Conquest & Infiltration: Enhanced at 7.1.4
+	* Retain Leaders from Integrated Subjects & Pre-FTL Civilizations at 9.2.0
 	* Special Leadership Privileges for Battle Thralls & Bio-Trophies at 7.0.3

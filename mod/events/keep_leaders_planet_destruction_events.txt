@@ -11,18 +11,16 @@ namespace = keep_leaders_planet_destruction
 # .900 devolution
 
 # fired by on_destroy_planet_with_PLANET_KILLER_GODRAY
-# this = planet that has been fired upon
+# root = planet that has been fired upon
 # from = fleet that fired
 planet_event = {
 	id = keep_leaders_planet_destruction.400
 	hide_window = yes
 	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
+	pre_triggers = { has_owner = yes }
 	trigger = {
 		num_pops > 0
-		owner = { is_country_type = primitive }
+		owner = { is_primitive = yes }
 	}
 	immediate = {
 		owner = {
@@ -33,18 +31,16 @@ planet_event = {
 }
 
 # fired by on_destroy_planet_with_PLANET_KILLER_NANOBOT
-# this = planet that has been fired upon
+# root = planet that has been fired upon
 # from = fleet that fired
 planet_event = {
 	id = keep_leaders_planet_destruction.500
 	hide_window = yes
 	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
+	pre_triggers = { has_owner = yes }
 	trigger = {
 		num_pops > 0
-		owner = { is_country_type = primitive }
+		owner = { is_primitive = yes }
 	}
 	immediate = {
 		owner = {
@@ -55,18 +51,16 @@ planet_event = {
 }
 
 # fired by on_destroy_planet_with_PLANET_KILLER_SPORE_DISPERSAL
-# this = planet that has been fired upon
+# root = planet that has been fired upon
 # from = fleet that fired
 planet_event = {
 	id = keep_leaders_planet_destruction.501
 	hide_window = yes
 	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
+	pre_triggers = { has_owner = yes }
 	trigger = {
 		num_pops > 0
-		owner = { is_country_type = primitive }
+		owner = { is_primitive = yes }
 	}
 	immediate = {
 		owner = {
@@ -77,18 +71,16 @@ planet_event = {
 }
 
 # fired by on_destroy_planet_with_PLANET_KILLER_DELUGE
-# this = planet that has been fired upon
+# root = planet that has been fired upon
 # from = fleet that fired
 planet_event = {
 	id = keep_leaders_planet_destruction.700
 	hide_window = yes
 	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
+	pre_triggers = { has_owner = yes }
 	trigger = {
 		num_pops > 0
-		owner = { is_country_type = primitive }
+		owner = { is_primitive = yes }
 		any_owned_species = { has_trait = trait_aquatic }
 	}
 	immediate = {

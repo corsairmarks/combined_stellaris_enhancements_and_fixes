@@ -24,10 +24,7 @@ leader_trait_former_ruler_machine_intelligence = {
 		planet_building_build_speed_mult = 0.05
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = governor
-		}
+		trigger = { leader_class = governor }
 		text = leader_trait_former_ruler_admin_bonus_desc
 	}
 	triggered_modifier = {
@@ -50,6 +47,14 @@ leader_trait_former_ruler_machine_intelligence = {
 	}
 	triggered_modifier = {
 		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		category_computing_research_speed_mult = 0.05
+		category_computing_draw_chance_mult = 0.05
+	}
+	triggered_modifier = {
+		potential = {
 			is_ruler = no
 			leader_class = admiral
 		}
@@ -57,10 +62,7 @@ leader_trait_former_ruler_machine_intelligence = {
 		ship_speed_mult = 0.05
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = admiral
-		}
+		trigger = { leader_class = admiral }
 		text = leader_trait_former_ruler_naval_bonus_desc
 	}
 	triggered_modifier = {
@@ -69,8 +71,11 @@ leader_trait_former_ruler_machine_intelligence = {
 			leader_class = general
 		}
 		army_damage_mult = 0.05
-		army_morale_damage_mult = 0.1
 		army_collateral_damage_mult = 0.25
+	}
+	triggered_modifier = {
+		potential = { leader_class = general }
+		army_morale_damage_mult = 0.1
 	}
 	triggered_modifier = {
 		potential = { is_ruler = yes }
@@ -144,10 +149,7 @@ leader_trait_former_ruler_hive_mind = {
 		planet_jobs_worker_produces_mult = 0.05
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = governor
-		}
+		trigger = { leader_class = governor }
 		text = leader_trait_former_ruler_admin_bonus_desc
 	}
 	triggered_modifier = {
@@ -170,6 +172,14 @@ leader_trait_former_ruler_hive_mind = {
 	}
 	triggered_modifier = {
 		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		category_biology_research_speed_mult = 0.05
+		category_biology_draw_chance_mult = 0.05
+	}
+	triggered_modifier = {
+		potential = {
 			is_ruler = no
 			leader_class = admiral
 		}
@@ -177,10 +187,7 @@ leader_trait_former_ruler_hive_mind = {
 		ship_speed_mult = 0.05
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = admiral
-		}
+		trigger = { leader_class = admiral }
 		text = leader_trait_former_ruler_naval_bonus_desc
 	}
 	triggered_modifier = {
@@ -192,11 +199,18 @@ leader_trait_former_ruler_hive_mind = {
 		army_disengage_chance_mult = 0.1
 	}
 	triggered_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = general
+		}
+		army_experience_gain_mult = 0.1
+	}
+	triggered_modifier = {
 		potential = { is_ruler = yes }
 		country_ruler_influence_produces_add = 1
 		planet_buildings_cost_mult = -0.05
 		planet_districts_cost_mult = -0.05
-		planet_building_build_speed_mult = 0.5
+		planet_building_build_speed_mult = 0.05
 	}
 	triggered_self_modifier = {
 		potential = { has_paragon_dlc = yes }
@@ -238,10 +252,7 @@ leader_trait_former_ruler = {
 		planet_building_build_speed_mult = 0.05
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = governor
-		}
+		trigger = { leader_class = governor }
 		text = leader_trait_former_ruler_admin_bonus_desc
 	}
 	triggered_modifier = {
@@ -263,6 +274,14 @@ leader_trait_former_ruler = {
 	}
 	triggered_modifier = {
 		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		category_statecraft_research_speed_mult = 0.05
+		category_statecraft_draw_chance_mult = 0.05
+	}
+	triggered_modifier = {
+		potential = {
 			is_ruler = no
 			leader_class = admiral
 		}
@@ -270,10 +289,7 @@ leader_trait_former_ruler = {
 		ship_speed_mult = 0.05
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = admiral
-		}
+		trigger = { leader_class = admiral }
 		text = leader_trait_former_ruler_naval_bonus_desc
 	}
 	triggered_modifier = {
@@ -282,9 +298,12 @@ leader_trait_former_ruler = {
 			leader_class = general
 		}
 		army_experience_gain_mult = 0.1
-		army_morale = 0.05
 		armies_upkeep_mult = -0.1
 		army_disengage_chance_mult = 0.1
+	}
+	triggered_modifier = {
+		potential = { leader_class = general }
+		army_morale = 0.05
 	}
 	triggered_modifier = {
 		potential = { is_ruler = yes }
@@ -355,10 +374,7 @@ leader_trait_former_heir = {
 		planet_building_build_speed_mult = 0.025
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = governor
-		}
+		trigger = { leader_class = governor }
 		text = leader_trait_former_heir_admin_bonus_desc
 	}
 	triggered_modifier = {
@@ -380,6 +396,14 @@ leader_trait_former_heir = {
 	}
 	triggered_modifier = {
 		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		category_statecraft_research_speed_mult = 0.025
+		category_statecraft_draw_chance_mult = 0.025
+	}
+	triggered_modifier = {
+		potential = {
 			is_ruler = no
 			leader_class = admiral
 		}
@@ -387,10 +411,7 @@ leader_trait_former_heir = {
 		ship_speed_mult = 0.025
 	}
 	triggered_desc = {
-		trigger = {
-			is_ruler = no
-			leader_class = admiral
-		}
+		trigger = { leader_class = admiral }
 		text = leader_trait_former_heir_naval_bonus_desc
 	}
 	triggered_modifier = {
@@ -399,9 +420,12 @@ leader_trait_former_heir = {
 			leader_class = general
 		}
 		army_experience_gain_mult = 0.05
-		army_morale = 0.025
 		armies_upkeep_mult = -0.05
 		army_disengage_chance_mult = 0.05
+	}
+	triggered_modifier = {
+		potential = { leader_class = general }
+		army_morale = 0.025
 	}
 	triggered_modifier = {
 		potential = { is_ruler = yes }

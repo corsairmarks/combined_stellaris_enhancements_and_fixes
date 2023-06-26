@@ -1,0 +1,148 @@
+# Modified:
+# * handle all species classes rather than assuming non-robotic
+# * leader_country has the leader's species as its species
+# * use effect = { } blocks to reduce event_target:-scoping
+# this = country
+ethic_leader_creator = {
+	create_species = {
+		name = UNKNOWN
+		class = $SPECIES_CLASS$
+		portrait = $LEADER_PORTRAIT$
+		gender = $GENDER$
+		allow_negative_traits = no
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						is_archetype = BIOLOGICAL
+						is_archetype = LITHOID
+					}
+				}
+				change_species_characteristics = {
+					add_trait = trait_enduring
+					add_trait = trait_quick_learners
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_archetype = ROBOT
+						is_archetype = MACHINE
+					}
+				}
+				change_species_characteristics = {
+					add_trait = trait_robot_learning_algorithms
+				}
+			}
+			save_event_target_as = leader_species
+		}
+	}
+	create_country = {
+		name = UNKNOWN
+		type = faction
+		species = event_target:leader_species
+		auto_delete = yes
+		flag = {
+			icon = {
+				category = "special"
+				file = "unknown.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors = {
+				"red"
+				"red"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			create_leader = {
+				class = $CLASS$
+				species = owner_species
+				name = $NAME$
+				skill = $LEVEL$
+				gender = $GENDER$
+				event_leader = no # Leader is allowed to lead factions and win elections
+				background_ethic = ethic_$ETHIC$
+				skip_background_generation = yes
+				custom_description = $DESC$
+				custom_catch_phrase = $CATCH_PHRASE$
+				immortal = $IMMORTAL$
+				hide_age = $IMMORTAL$ # Right now it will always match immortal
+				randomize_traits = no
+				effect = {
+					set_skill = $LEVEL$
+					save_event_target_as = ethic_leader
+					set_leader_flag = renowned_leader
+					set_leader_flag = is_in_recruit_window
+					set_variable = {
+						which = leader_pending_negative_traits_unmodified
+						value = 1
+					}
+					# Using a temporary country is a hack to make the leader not be added to player country
+					# We must call ethic_leader_hire on the hire event
+					# We must call ethic_leader_kill on the dismiss event
+					exile_leader_as = ethic_leader_exile
+				}
+			}
+		}
+	}
+}
+
+# Modified:
+# * cloning unneeded, just unexile the leader
+# * use my shared effect to create the notification message
+# this = country
+# event_target:ethic_leader = leader, to be hired
+# $GLOBAL_EVENT_TARGET$ = string, the name of the global event target to which to save the leader
+ethic_leader_hire_effect = {
+	if = {
+		limit = { is_memory_vault_empire = yes }
+		random_owned_planet = {
+			limit = { is_variable_set = paragon_memory_vault }
+			change_variable = {
+				which = paragon_memory_vault
+				value = 1
+			}
+		}
+	}
+	lower_leader_chance = yes
+	event_target:ethic_leader = {
+		if = {
+			limit = { has_leader_flag = is_in_recruit_window }
+			remove_leader_flag = is_in_recruit_window
+		}
+		klfis_unexile_leader = yes
+		save_global_event_target_as = $GLOBAL_EVENT_TARGET$
+		set_leader_flag = $GLOBAL_EVENT_TARGET$
+		create_message_leader_recruited_with_appropriate_catch_phrase = yes
+	}
+}
+
+# Modified:
+# * cloning unneeded, just unexile the leader
+# * use my shared effect to create the notification message
+# this = country
+# $LEADER$ = string, the name of the event target at which the leader is saved
+hire_event_leader_effect = {
+	event_target:$LEADER$ = {
+		if = {
+			limit = { has_leader_flag = is_in_recruit_window }
+			remove_leader_flag = is_in_recruit_window
+		}
+		klfis_unexile_leader = yes
+		create_message_leader_recruited_with_appropriate_catch_phrase = yes
+	}
+}
+
+# Modified: use my shared effect to create the notification message
+# this = country
+# $LEADER$ = string, the name of the event target at which the leader is saved
+hire_event_leader_message = {
+	event_target:$LEADER$ = {
+		create_message_leader_recruited_with_appropriate_catch_phrase = yes
+	}
+}

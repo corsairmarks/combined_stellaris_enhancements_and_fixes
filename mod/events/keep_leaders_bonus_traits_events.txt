@@ -1,6 +1,6 @@
 namespace = keep_leaders_bonus_traits
 
-# fired by on_ruler_removed
+# triggered by on_ruler_removed
 country_event = {
 	id = keep_leaders_bonus_traits.19
 	is_triggered_only = yes
@@ -14,8 +14,8 @@ country_event = {
 	}
 }
 
-# fired when this mod adds one of these traits to a leader and by on_ruler_set
-# fired by keep_leaders_bonus_traits.21 which manually delays a day from leader firing/death
+# triggered when this mod adds one of these traits to a leader and by on_ruler_set
+# triggered by keep_leaders_bonus_traits.21 which manually delays a day from leader firing/death
 # in order to update after the game removes them from the leader pool
 country_event = {
 	id = keep_leaders_bonus_traits.20
@@ -154,13 +154,20 @@ country_event = {
 	}
 }
 
-# shim event in order to update country-level leader bonuses after the game removes them from the leader pool
-# fired by on_leader_fired and on_leader_death 
+# shim event in order to update country-level leader bonuses after a leader is fired or dies
+# triggered by on_leader_fired and on_leader_death
+# root = country
+# from = leader
 country_event = {
 	id = keep_leaders_bonus_traits.21
 	is_triggered_only = yes
 	hide_window = yes
-	trigger = { should_recalculate_former_ruler_country_modifiers = yes }
+	trigger = {
+		exists = from
+		from = { has_former_ruler_trait_with_country_modifier = yes }
+		any_playable_country = { is_country = root }
+		should_recalculate_former_ruler_country_modifiers = yes
+	}
 	immediate = {
 		country_event = {
 			id = keep_leaders_bonus_traits.20
@@ -168,3 +175,62 @@ country_event = {
 		}
 	}
 }
+
+# shim event in order to update country-level leader bonuses when a leader is hired
+# triggered by on_leader_hired
+# root = leader
+leader_event = {
+	id = keep_leaders_bonus_traits.22
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_former_ruler_trait_with_country_modifier = yes
+		exists = owner
+		owner = {
+			any_playable_country = { is_country = prev }
+			should_recalculate_former_ruler_country_modifiers = yes
+		}
+	}
+	immediate = {
+		owner = {
+			country_event = {
+				id = keep_leaders_bonus_traits.20
+				days = 1
+			}
+		}
+	}
+}
+
+# # test event
+# country_event = {
+# 	id = keep_leaders_bonus_traits.1000
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		random_owned_leader = {
+# 			limit = { has_leader_flag = former_ruler }
+# 			leader_event = {
+# 				id = keep_leaders_bonus_traits.1001
+# 			}
+# 		}
+# 	}
+# }
+
+# # test event
+# leader_event = {
+# 	id = keep_leaders_bonus_traits.1001
+# 	title = foo
+# 	desc = bar
+# 	show_sound = event_vote
+# 	picture = GFX_evt_acquire_asset
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		event_target:former_owner_shell@this = {
+# 			prev = { set_leader_flag = shell@prev }
+# 			log = "name [This.GetName] title [This.GetRulerTitle]"
+# 		}
+# 	}
+# 	option = {
+# 		name = LEADER_CLASS_TEXT
+# 	}
+# }

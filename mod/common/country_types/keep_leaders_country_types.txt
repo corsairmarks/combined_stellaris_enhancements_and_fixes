@@ -1,0 +1,25 @@
+# not in use because my dynamic, gobal event_target scheme to dynamically retrieve titles does not work
+# also it is not possible to copy custom ruler/heir titles from another country
+# keep_leaders_container = {
+# 	share_communications = no
+# 	default_ships = no
+# 	randomize_ethos = yes # seems required in order to have ethos
+# 	uses_origins = yes
+# 	observable = no
+# 	show_in_contacts_list = no
+# 	ai = {
+# 		enabled = no
+# 	}
+# 	faction = {
+# 		hostile = no
+# 		needs_border_access = no
+# 		generate_borders = no
+# 		needs_colony = no
+# 		auto_delete = no
+# 	}
+# 	modules = {
+# 		exclusive_diplomacy_module = {
+# 			contact_rule = on_action_only
+# 		}
+# 	}
+# }

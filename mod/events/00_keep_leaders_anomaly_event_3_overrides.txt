@@ -1,0 +1,571 @@
+namespace = anomaly
+
+# Modified:
+# * use new leader_recruit window
+# * leader starts with Eager II
+ship_event = {
+	id = anomaly.4031
+	title = PROJECT_COMPLETE
+	desc = "anomaly.4031.desc"
+	# auto_opens = no
+	event_window_type = leader_recruit
+	notification_event_icon = GFX_message_keep_leaders
+	picture = GFX_leader_recruitment_bg_federation_fleet # GFX_evt_glitchy_matrix
+	picture_event_data = {
+		portrait = event_target:event_leader
+		room = ethic_spaceship_room
+	}
+	show_sound = event_sensor_ping
+	location = fromfromfrom
+	is_triggered_only = yes
+	immediate = {
+		create_species = {
+			name = NAME_AI
+			class = ROBOT
+			namelist = MACHINE3
+			portrait = random
+			homeworld = fromfromfrom
+			traits = { trait = trait_robot_learning_algorithms }
+			effect = { save_event_target_as = leader_species }
+		}
+		create_country = {
+			name = UNKNOWN
+			type = faction
+			species = event_target:leader_species
+			auto_delete = yes
+			flag = {
+				icon = {
+					category = "special"
+					file = "unknown.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors = {
+					"red"
+					"red"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_custom_capital_location = fromfromfrom
+				create_leader = {
+					class = admiral
+					species = owner_species
+					name = NAME_0101010111
+					skill = 3
+					set_age = 1
+					event_leader = yes
+					background_ethic = ethic_gestalt_consciousness
+					randomize_traits = no
+					traits = {
+						trait = leader_trait_eager_2
+						trait = leader_trait_aggressive_2
+						trait = leader_trait_fleet_logistician
+					}
+					effect = {
+						set_leader_flag = is_in_recruit_window
+						set_leader_flag = event_leader
+						save_event_target_as = event_leader
+						exile_leader_as = event_leader_exile
+					}
+				}
+			}
+		}
+	}
+	option = {
+		tag = dismiss_leader
+		name = DECLINE
+		custom_tooltip = DECLINE.tt
+		hidden_effect = { event_target:event_leader = { kill_leader = { show_notification = no } } }
+	}
+	option = {
+		tag = hire_leader
+		name = EXCELLENT
+		hidden_effect = { hire_event_leader_effect = { LEADER = event_leader } }
+	}
+}
+
+# Modified:
+# * use new leader_recruit window
+# * scientist can be any species with full citizenship
+ship_event = {
+	id = anomaly.4055
+	title = "anomaly.4055.name"
+	desc = "anomaly.4055.desc"
+	# auto_opens = no
+	event_window_type = leader_recruit
+	notification_event_icon = GFX_message_keep_leaders
+	picture = GFX_leader_recruitment_bg_council_default # GFX_evt_physics_research
+	picture_event_data = {
+		portrait = event_target:event_leader
+		room = ethic_spaceship_room
+	}
+	show_sound = event_laboratory_sound
+	location = from
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			if = {
+				limit = { has_deposit_for = shipclass_research_station }
+				clear_deposits = yes
+			}
+			add_deposit = d_minerals_6
+		}
+		owner = {
+			random_owned_pop = {
+				limit = { has_citizenship_rights = yes }
+				species = { save_event_target_as = leader_species }
+			}
+			create_leader = {
+				class = scientist
+				species = event_target:leader_species
+				name = random
+				skill = 1
+				traits = {
+					trait = leader_trait_eager_2
+					trait = leader_trait_spark_of_genius
+				}
+				effect = {
+					add_experience = 200
+					set_leader_flag = is_in_recruit_window
+					set_leader_flag = event_leader
+					save_event_target_as = event_leader
+					exile_leader_as = event_leader_exile
+				}
+			}
+		}
+	}
+	option = {
+		tag = dismiss_leader
+		name = "anomaly.4055.b.short"
+		custom_tooltip = "anomaly.4055.b"
+		# removed custom tooltip because all it did was repeat info about the deposit
+		add_modifier = {
+			modifier = protege_onboard
+			days = 7200
+		}
+		hidden_effect = { event_target:event_leader = { kill_leader = { show_notification = no } } }
+	}
+	option = {
+		tag = hire_leader
+		name = HIRE
+		custom_tooltip = "anomaly.4055.a"
+		custom_tooltip = "anomaly.4055.a.tooltip"
+		hidden_effect = { hire_event_leader_effect = { LEADER = event_leader } }
+	}
+	after = { tooltip = { from = { add_deposit = d_minerals_6 } } }
+}
+
+# Modified:
+# * use new leader_story window
+# * use ethic triggers where possible
+# * Majula is ok with both flavors of pacifism
+# * Majula created here instead of at the end
+# * Majula + species are psionic (follows event text)
+country_event = {
+	id = anomaly.4157
+	title = "anomaly.4157.name"
+	desc = "anomaly.4157.desc"
+	event_window_type = leader_story
+	event_picture_background = GFX_leader_recruitment_bg_integration
+	picture = GFX_evt_diplomatic_visit
+	picture_event_data = {
+		portrait = event_target:AlienWarrior
+		room = ethic_spaceship_room
+	}
+	location = from
+	is_triggered_only = yes
+	immediate = {
+		country_event = {
+			id = story.5
+			days = 30
+		}
+		from = {
+			save_event_target_as = HomePlanet
+			owner = { save_event_target_as = HomeCountry }
+		}
+		random_galaxy_planet = {
+			limit = { has_planet_flag = cryo_pod_planet }
+			save_event_target_as = WarriorHomePlanet
+			remove_planet_flag = cryo_pod_planet
+		}
+		create_species = {
+			name = random
+			class = ART
+			portrait = random
+			homeworld = event_target:WarriorHomePlanet
+			traits = {
+				trait = trait_psionic
+				trait = trait_enduring
+				trait = trait_quick_learners
+			}
+			effect = { save_event_target_as = AlienWarriorSpecies }
+		}
+		create_country = {
+			name = UNKNOWN
+			type = faction
+			species = event_target:AlienWarriorSpecies
+			auto_delete = yes
+			flag = {
+				icon = {
+					category = "special"
+					file = "unknown.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors = {
+					"red"
+					"red"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_custom_capital_location = event_target:WarriorHomePlanet
+				create_leader = {
+					class = general
+					species = owner_species
+					name = NAME_Majula_the_Bearer
+					gender = female
+					skill = 5
+					event_leader = yes
+					background_ethic = ethic_spiritualist
+					randomize_traits = no
+					traits = {
+						trait = leader_trait_psionic
+						trait = leader_trait_glory_seeker_2
+						trait = leader_trait_inspiring_2
+						trait = subclass_general_protector
+						trait = leader_trait_warden
+					}
+					effect = {
+						change_background_job = commanding_officer
+						set_leader_flag = is_in_recruit_window
+						set_leader_flag = event_leader
+						save_event_target_as = AlienWarrior
+						exile_leader_as = event_leader_exile
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "anomaly.4157.a"
+		hidden_effect = { set_country_flag = suspected_angels }
+		trigger = {
+			OR = {
+				is_xenophile = yes
+				is_spiritualist = yes
+				is_pacifist = yes
+			}
+			is_militarist = no
+			NOT = { has_ethic = ethic_fanatic_materialist }
+		}
+	}
+	option = {
+		name = "anomaly.4157.b"
+	}
+	option = {
+		name = "anomaly.4157.c"
+		hidden_effect = { set_country_flag = suspected_assholes }
+		trigger = {
+			OR = {
+				is_xenophobe = yes
+				is_militarist = yes
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_fanatic_materialist
+			}
+			is_spiritualist = no
+			is_pacifist = no
+		}
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = anomaly.4158
+			}
+		}
+	}
+}
+
+# Modified:
+# * use new leader_recruit window
+# * use ethic triggers where possible
+# * combine with anomaly.4159 (which was only different based on the description)
+# * condense option d into a single option (the outcome differs, not the text!)
+# * ensure option d will always have an outcome
+country_event = {
+	id = anomaly.4158
+	title = "anomaly.4157.name"
+	desc = {
+		trigger = { NOT = { has_country_flag = suspected_assholes } }
+		text = "anomaly.4158.desc"
+	}
+	desc = {
+		trigger = { has_country_flag = suspected_assholes }
+		text = "anomaly.4159.desc"
+	}
+	event_window_type = leader_recruit
+	picture = GFX_leader_recruitment_bg_integration
+	picture_event_data = {
+		portrait = event_target:AlienWarrior
+		room = ethic_spaceship_room
+	}
+	show_sound = event_default
+	location = event_target:HomePlanet
+	is_triggered_only = yes
+	option = {
+		name = "anomaly.4158.a"
+		response_text = "anomaly.4158.a.response"
+		is_dialog_only = yes
+	}
+	option = {
+		name = "anomaly.4158.b"
+		response_text = "anomaly.4158.b.response"
+		is_dialog_only = yes
+		trigger = {
+			is_spiritualist = no
+			is_militarist = no
+			is_xenophobe = no
+		}
+	}
+	option = {
+		name = "anomaly.4158.militant.b"
+		response_text = "anomaly.4158.b.response"
+		is_dialog_only = yes
+		trigger = {
+			is_spiritualist = no
+			is_militarist = yes
+			is_xenophobe = no
+		}
+	}
+	option = {
+		name = "anomaly.4158.spiritual.b"
+		response_text = "anomaly.4158.b.response"
+		is_dialog_only = yes
+		trigger = {
+			is_spiritualist = yes
+			is_militarist = no
+			is_xenophobe = no
+		}
+	}
+	option = {
+		name = "anomaly.4158.c"
+		response_text = "anomaly.4158.c.response"
+		is_dialog_only = yes
+		trigger = { is_xenophobe = no }
+	}
+	option = {
+		tag = hire_leader
+		name = "anomaly.4158.d"
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = suspected_assholes }
+					OR = {
+						is_spiritualist = yes
+						is_pacifist = yes
+					}
+					NOR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_materialist
+					}
+					is_xenophobe = no
+				}
+				country_event = { # Joins you
+					id = anomaly.4160
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_country_flag = suspected_angels }
+					OR = {
+						has_ethic = ethic_fanatic_militarist
+						has_ethic = ethic_fanatic_materialist
+					}
+					is_spiritualist = no
+					is_pacifist = no
+				}
+				country_event = { # Kills researcher
+					id = anomaly.4162
+				}
+			}
+			else = {
+				country_event = { # No thanks
+					id = anomaly.4161
+				}
+			}
+		}
+	}
+	option = {
+		tag = dismiss_leader
+		name = {
+			trigger = { is_xenophobe = no }
+			text = "anomaly.4163.a" # "anomaly.4158.f"
+		}
+		name = {
+			trigger = { is_xenophobe = yes }
+			text = "anomaly.4163.b" # "anomaly.4158.xenophobe.f"
+		}
+		trigger = {
+			OR = {
+				hidden_trigger = { always = yes }
+				is_xenophobe = yes
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = anomaly.4163
+			}
+		}
+	}
+}
+
+# Note: anomaly.4159 skipped because its description difference was combined with 4158 as a triggered description
+
+# Modified:
+# * use new leader_recruit window
+# * use new hired effect
+# * leader created at the beginning and not here
+country_event = {
+	id = anomaly.4160
+	title = "anomaly.4157.name"
+	desc = "anomaly.4160.desc"
+	event_window_type = leader_recruit
+	picture = GFX_leader_recruitment_bg_integration
+	picture_event_data = {
+		portrait = event_target:AlienWarrior
+		room = ethic_spaceship_room
+	}
+	show_sound = event_mystic_reveal
+	location = event_target:HomePlanet
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = suspected_assholes
+		remove_country_flag = suspected_angels
+	}
+	option = {
+		tag = dismiss_leader
+		name = DECLINE
+		custom_tooltip = DECLINE.tt
+		hidden_effect = { event_target:AlienWarrior = { kill_leader = { show_notification = no } } }
+	}
+	option = {
+		tag = hire_leader
+		name = HIRE
+		custom_tooltip = HIRE.tt
+		hidden_effect = { hire_event_leader_effect = { LEADER = AlienWarrior } }
+	}
+}
+
+# Modified:
+# * use new leader_story window
+# * use ethic triggers where possible
+# * get the worst end if you seize her
+country_event = {
+	id = anomaly.4161
+	title = "anomaly.4157.name"
+	desc = "anomaly.4161.desc"
+	event_window_type = leader_story
+	event_picture_background = GFX_leader_recruitment_bg_integration
+	picture = GFX_evt_diplomatic_visit
+	picture_event_data = {
+		portrait = event_target:AlienWarrior
+		room = ethic_spaceship_room
+	}
+	location = event_target:HomePlanet
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = suspected_assholes
+		remove_country_flag = suspected_angels
+	}
+	option = {
+		name = "anomaly.4161.a"
+		hidden_effect = { event_target:AlienWarrior = { kill_leader = { show_notification = no } } }
+	}
+	option = {
+		name = "anomaly.4161.b"
+		trigger = {
+			is_pacifist = no
+			is_xenophile = no
+		}
+		hidden_effect = {
+			country_event = {
+				id = anomaly.4162
+			}
+		}
+	}
+}
+
+# Modified:
+# * use new leader_story window
+# * update code for selecting which scientist to kill
+country_event = {
+	id = anomaly.4162
+	title = "anomaly.4157.name"
+	desc = "anomaly.4162.desc"
+	event_window_type = leader_story
+	event_picture_background = GFX_leader_recruitment_bg_integration
+	picture = GFX_evt_interior_battle
+	picture_event_data = {
+		portrait = event_target:AlienWarrior
+		room = ethic_spaceship_room
+	}
+	location = event_target:HomePlanet
+	is_triggered_only = yes
+	immediate = {
+		random_owned_leader = {
+			limit = {
+				OR = {
+					is_councilor_type = councilor_research
+					AND = {
+						leader_class = scientist
+						is_idle = yes
+					}
+				}
+				is_gestalt_node = no
+			}
+			kill_leader = { show_notification = yes }
+		}
+		remove_country_flag = suspected_assholes
+		remove_country_flag = suspected_angels
+	}
+	option = { name = CURSES }
+	after = { hidden_effect = { event_target:AlienWarrior = { kill_leader = { show_notification = no } } } }
+}
+
+# Modified:
+# * use new leader_story window
+# * use ethic triggers where possible
+country_event = {
+	id = anomaly.4163
+	title = "anomaly.4157.name"
+	desc = "anomaly.4163.desc"
+	event_window_type = leader_story
+	event_picture_background = GFX_leader_recruitment_bg_integration
+	picture = GFX_evt_diplomatic_visit
+	picture_event_data = {
+		portrait = event_target:AlienWarrior
+		room = ethic_spaceship_room
+	}
+	location = event_target:HomePlanet
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = suspected_assholes
+		remove_country_flag = suspected_angels
+	}
+	option = {
+		name = "anomaly.4158.f" # "anomaly.4163.a"
+		trigger = { is_xenophobe = no }
+	}
+	option = {
+		name = "anomaly.4158.xenophobe.f" # "anomaly.4163.b"
+		trigger = { is_xenophobe = yes }
+	}
+	after = { hidden_effect = { event_target:AlienWarrior = { kill_leader = { show_notification = no } } } }
+}

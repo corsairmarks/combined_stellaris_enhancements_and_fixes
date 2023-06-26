@@ -1,0 +1,10 @@
+message_type = {
+	key = "MESSAGE_RETAINED_LEADER"
+	message_setting_key = "MESSAGE_RETAINED_LEADER_TITLE"
+	icon = "GFX_toast_leader_acquired"
+	name = "MESSAGE_RECRUITED_LEADER_TITLE"
+	sound = "notification"
+	ping = "ping_notification_red"
+	default_toast = yes
+	category = leaders
+}

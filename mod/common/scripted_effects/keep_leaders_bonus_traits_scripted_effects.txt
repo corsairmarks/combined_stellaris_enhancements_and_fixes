@@ -1,6 +1,7 @@
 # this = leader
 try_add_former_ruler_trait = {
 	optimize_memory
+	try_remove_imperial_heir_trait = yes
 	try_remove_former_heir_trait = yes
 	if = {
 		limit = { has_former_ruler_trait = no }
@@ -40,14 +41,11 @@ try_add_former_ruler_trait = {
 # this = leader
 try_add_former_heir_trait = {
 	optimize_memory
-	if = {
-		limit = { has_trait = trait_imperial_heir }
-		remove_trait = trait_imperial_heir
-	}
+	try_remove_imperial_heir_trait = yes
 	if = {
 		limit = {
 			has_former_ruler_trait = no
-			has_trait = leader_trait_former_heir
+			NOT = { has_trait = leader_trait_former_heir }
 		}
 		add_trait = leader_trait_former_heir
 	}
@@ -59,5 +57,14 @@ try_remove_former_heir_trait = {
 	if = {
 		limit = { has_trait = leader_trait_former_heir }
 		remove_trait = leader_trait_former_heir
+	}
+}
+
+# this = leader
+try_remove_imperial_heir_trait = {
+	optimize_memory
+	if = {
+		limit = { has_trait = trait_imperial_heir }
+		remove_trait = trait_imperial_heir
 	}
 }

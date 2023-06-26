@@ -1,0 +1,479 @@
+namespace = fircon
+namespace = first_contact
+
+# Modified: create The Guest here, instead of further events
+country_event = {
+	id = fircon.1200
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		has_first_contact_dlc = yes
+		NOT = { has_country_flag = jaunting_traveler_chain }
+	}
+	immediate = {
+		set_country_flag = jaunting_traveler_chain
+		create_species = {
+			name = UNKNOWN
+			class = MOL
+			portrait = mol7
+			namelist = PRT1
+			traits = {
+				trait = trait_psionic
+				trait = trait_enduring
+				trait = trait_quick_learners
+			}
+			effect = { save_event_target_as = traveler_species }
+		}
+		create_country = { # Create a dummy country that will not be deleted. It is used for "first contact" with the Guest.
+			name = UNKNOWN
+			type = jaunting_traveler_dummy
+			species = event_target:traveler_species
+			effect = {
+				set_country_flag = jaunting_traveler_of@root
+				save_event_target_as = jaunting_traveler_country
+				create_leader = {
+					class = scientist
+					species = owner_species
+					name = NAME_Guest
+					gender = female
+					skill = 5
+					event_leader = yes
+					background_ethic = ethic_spiritualist
+					traits = { trait = leader_trait_psionic }
+					effect = {
+						set_leader_flag = is_in_recruit_window
+						set_leader_flag = guest_scientist
+						save_event_target_as = guest_scientist
+						# no need to exile, leader held by the jaunting_traveler_dummy
+					}
+				}
+				# automatically fires first_contact.3000
+				establish_contact = {
+					who = prev
+					location = prev.capital_scope.solar_system
+				}
+			}
+		}
+	}
+}
+
+# Note: fircon.1210 and fircon.1211 skipped because no changes needed for middle first-contact events
+
+# Modified:
+# * convert to a shim event that opens a leader_recruit window on completion
+# * add a generic dismiss_leader option
+first_contact_event = {
+	id = fircon.1212
+	title = "fircon.1212.name"
+	desc = "fircon.1212.desc"
+	first_contact = yes
+	picture = GFX_evt_shroudwalker_enclave
+	location = owner.capital_scope
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	immediate = {
+		set_site_progress_locked = yes
+		contact_country = {
+			random_owned_leader = {
+				limit = { has_leader_flag = guest_scientist }
+				save_event_target_as = guest_scientist
+			}
+		}
+	}
+	option = {
+		name = "ancrel.4035.a"
+		hidden_effect = {
+			contact_country = { save_event_target_as = jaunting_traveler_country }
+			first_contact_event = {
+				id = fircon.1213
+			}
+		}
+	}
+	after = {
+		set_site_progress_locked = no
+		hidden_effect = {
+			finish_first_contact = yes
+			owner = { set_country_flag = knows_jaunting_traveler_story }
+		}
+	}
+}
+
+# Modified:
+# * convert the original fircon.1212 to the new leader_recruit window instead of first_contact
+# * add a generic dismiss_leader option
+first_contact_event = {
+	id = fircon.1213
+	title = "fircon.1212.name"
+	desc = "fircon.1213.desc"
+	event_window_type = leader_recruit
+	picture = GFX_leader_recruitment_bg_renowned
+	picture_event_data = {
+		portrait = event_target:guest_scientist
+		room = ethic_spaceship_room
+	}
+	location = owner.capital_scope
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	immediate = {
+		set_site_progress_locked = yes
+		contact_country = {
+			random_owned_leader = {
+				limit = { has_leader_flag = guest_scientist }
+				save_event_target_as = guest_scientist
+			}
+		}
+	}
+	option = { # pacific ending
+		tag = hire_leader
+		name = {
+			trigger = { owner = { is_xenophobe = no } }
+			text = "fircon.1212.a"
+		}
+		name = {
+			trigger = { owner = { is_xenophobe = yes } }
+			text = "fircon.1212.ab"
+		}
+		custom_tooltip = "fircon.1212.a.tooltip"
+		hidden_effect = {
+			owner = {
+				hire_event_leader_effect = { LEADER = guest_scientist }
+				country_event = { # homesickness (5 years)
+					id = fircon.1231
+					days = 1800
+					random = 360
+				}
+				country_event = { # special project
+					id = fircon.1230
+					days = 60
+					random = 30
+				}
+			}
+		}
+	}
+	option = { # default decline
+		tag = dismiss_leader
+		name = DECLINE
+		custom_tooltip = DECLINE.tt
+		hidden_effect = { event_target:guest_scientist = { kill_leader = { show_notification = no } } }
+	}
+	option = { # lab ending
+		name = "fircon.1212.b"
+		trigger = {
+			owner = {
+				OR = {
+					is_materialist = yes
+					is_xenophile = no
+					# has_valid_civic = civic_technocracy # requires materialist, so the above trigger covers it and doesn't cause icon clutter
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		hidden_effect = { event_target:guest_scientist = { kill_leader = { show_notification = no } } }
+	}
+	option = { # sacrifice ending
+		name = "fircon.1212.c"
+		trigger = {
+			owner = {
+				OR = {
+					is_xenophobe = yes
+					is_militarist = yes
+					is_death_cult_empire = yes
+				}
+			}
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+		}
+		hidden_effect = { event_target:guest_scientist = { kill_leader = { show_notification = no } } }
+	}
+	after = { hidden_effect = { event_target:jaunting_traveler_country = { destroy_country = yes } } }
+}
+
+# Modified: convert to the new leader_story window
+country_event = {
+	id = fircon.1230
+	title = "fircon.1230.name"
+	desc = "fircon.1230.desc"
+	event_window_type = leader_story
+	picture = GFX_evt_psionics
+	picture_event_data = {
+		portrait = event_target:guest_scientist
+		room = ethic_spaceship_room
+	}
+	show_sound = event_default
+	location = event_target:guest_scientist
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:guest_scientist
+		is_xenophobe = no
+		owner_main_species = { has_psionic_species_trait = yes }
+	}
+	option = { name = "fircon.1230.a" }
+	option = {
+		name = "fircon.1230.b"
+		enable_special_project = {
+			name = THE_JAUNT_PROJECT
+			location = capital_scope
+			owner = root
+		}
+	}
+}
+
+# Modified: convert to the new leader_story window
+country_event = {
+	id = fircon.1231
+	title = "fircon.1231.name"
+	desc = "fircon.1231.desc"
+	event_window_type = leader_story
+	picture = GFX_evt_binary_stars
+	picture_event_data = {
+		portrait = event_target:guest_scientist
+		room = ethic_spaceship_room
+	}
+	show_sound = event_whispering
+	location = event_target:guest_scientist
+	is_triggered_only = yes
+	trigger = { exists = event_target:guest_scientist }
+	option = { # if we show concern for her, she'll stay 10 years
+		name = "fircon.1231.a"
+		add_resource = { energy = -1000 }
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = fircon.1232
+					days = 3600
+					random = 360
+				}
+			}
+		}
+	}
+	option = { # if not, she'll disappear after 5 years
+		name = "fircon.1231.b"
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = fircon.1232
+					days = 1800
+					random = 360
+				}
+			}
+		}
+	}
+}
+
+# Modified:
+# * convert to the new leader_story window
+# * use random instead of random_list
+# * clean up the leader after the event
+country_event = {
+	id = fircon.1232
+	title = "fircon.1232.name"
+	desc = "fircon.1232.desc"
+	event_window_type = leader_story
+	picture = GFX_evt_vortex
+	picture_event_data = {
+		portrait = event_target:guest_scientist
+		room = ethic_spaceship_room
+	}
+	show_sound = event_whispering
+	location = capital_scope
+	is_triggered_only = yes
+	trigger = { exists = event_target:guest_scientist }
+	immediate = { event_target:guest_scientist = { exile_leader_as = guest_scientist } }
+	option = {
+		name = GOODBYE
+		custom_tooltip = "first_contact.1232.tooltip"
+	}
+	after = {
+		hidden_effect = {
+			random = { # small chance of receiving a gift after 20 years
+				chance = 20
+				country_event = {
+					id = fircon.1233
+					days = 7200
+				}
+			}
+			event_target:guest_scientist = { kill_leader = { show_notification = no } }
+		}
+	}
+}
+
+# Note: fircon.1240 through fircon.1243 skipped because they are not directly from The Guest
+
+# Modified:
+# * convert to the new leader_story window instead of first_contact
+# * manually set first contact stage in option a
+# * non-pacifists don't automatically get the mean option a text
+# * only allow purging for empires which can have option b text (instead of all empires!)
+# * DA option cyborgizes the stored leader's species and the leader, rather than creating a new one
+# * ensure players can't double-dip with the event popup and first contact stage showing the same options
+first_contact_event = {
+	id = first_contact.3000
+	title = "first_contact.3000.name"
+	desc = {
+		trigger = { owner = { is_gestalt = yes } }
+		text = "first_contact.3000.desc.gestalt"
+	}
+	desc = {
+		trigger = { owner = { is_gestalt = no } }
+		text = "first_contact.3000.desc"
+	}
+	first_contact = yes
+	diplomatic_title = "first_contact.3000.name" # overrides the leader name when specified
+	event_window_type = leader_story
+	picture = GFX_evt_news_room
+	picture_event_data = {
+		portrait = event_target:guest_scientist
+		room = ethic_spaceship_room
+	}
+	show_sound = event_alien_nature
+	location = owner.capital_scope
+	is_triggered_only = yes
+	immediate = {
+		# set_site_progress_locked = yes # deliberately commented out to stop the notification from showing; site is locked anyway by dint of having no envoy
+		set_name = "first_contact.3000.name"
+		contact_country = {
+			random_owned_leader = {
+				limit = { has_leader_flag = guest_scientist }
+				save_event_target_as = guest_scientist
+			}
+		}
+	}
+	option = { # Attempt to communicate (only non-genocidal empires)
+		name = {
+			text = "first_contact.3000.a.friendly"
+			trigger = {
+				owner = {
+					is_unfriendly = no
+					is_xenophobe = no
+				}
+			}
+		}
+		name = {
+			text = "first_contact.3000.a.unfriendly"
+			trigger = {
+				owner = {
+					OR = {
+						is_unfriendly = yes
+						is_xenophobe = yes
+					}
+				}
+			}
+		}
+		trigger = {
+			owner = {
+				is_homicidal = no
+				NOT = { has_valid_civic = civic_machine_assimilator }
+			}
+		}
+		allow = { NOT = { has_first_contact_flag = first_contact_3000_option_selected } }
+		custom_tooltip = start_jaunting_traveler_communications_study
+		hidden_effect = {
+			 set_first_contact_stage = jaunting_traveler_stage_1
+			 set_first_contact_flag = jaunting_traveler_first_contact
+		}
+	}
+	option = { # Kill/sacrifice (xenophobes, purifiers, and death cults)
+		name = {
+			text = "first_contact.3000.b.execution"
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_machine_terminator
+						has_valid_civic = civic_fanatic_purifiers
+						is_xenophobe = yes
+					}
+				}
+			}
+		}
+		name = {
+			text = "first_contact.3000.b.sacrifice"
+			trigger = { owner = { is_death_cult_empire = yes } }
+		}
+		trigger = {
+			owner = {
+				OR = {
+					has_valid_civic = civic_machine_terminator
+					has_valid_civic = civic_fanatic_purifiers
+					is_xenophobe = yes
+					is_death_cult_empire = yes
+				}
+			}
+		}
+		allow = { NOT = { has_first_contact_flag = first_contact_3000_option_selected } }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+		}
+		hidden_effect = { contact_country = { destroy_country = yes } }
+	}
+	option = { # Eat (hiveminds and necrophages)
+		name = "first_contact.3000.c.hive"
+		trigger = {
+			owner = {
+				OR = {
+					is_hive_empire = yes
+					klfis_is_necrophage_empire = yes
+				}
+			}
+		}
+		allow = { NOT = { has_first_contact_flag = first_contact_3000_option_selected } }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = food
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmin
+			}
+		}
+		hidden_effect = { contact_country = { destroy_country = yes } }
+	}
+	option = { # Assimilate (Driven Assimilators only)
+		name = "first_contact.3000.d.assimilator"
+		custom_tooltip = "first_contact.3000.d.assimilator.tooltip"
+		trigger = { owner = { has_valid_civic = civic_machine_assimilator } }
+		allow = { NOT = { has_first_contact_flag = first_contact_3000_option_selected } }
+		hidden_effect = {
+			owner = {
+				event_target:guest_scientist = {
+					if = {
+						limit = { has_leader_species_traits_active = no }
+						remove_trait = leader_trait_psionic
+					}
+					species = { change_species_characteristics = { add_trait = trait_cybernetic } }
+					add_trait = leader_trait_cyborg
+					change_background_ethic = ethic_gestalt_consciousness
+				}
+				hire_event_leader_effect = { LEADER = guest_scientist }
+			}
+			contact_country = { destroy_country = yes }
+		}
+	}
+	abort_trigger = { has_first_contact_flag = first_contact_3000_option_selected }
+	after = {
+		# set_site_progress_locked = no
+		hidden_effect = {
+			set_first_contact_flag = first_contact_3000_option_selected
+			fire_on_action = {
+				on_action = on_first_contact_started
+			}
+		}
+	}
+}

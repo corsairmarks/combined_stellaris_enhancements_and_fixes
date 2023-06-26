@@ -1,4 +1,5 @@
 spriteTypes = {
+	# technology sprites for event icons
 	spriteType = {
 		name = "GFX_icon_tech_sapient_ai_alternate"
 		texturefile = "gfx/interface/icons/technologies/tech_sapient_ai.dds"
@@ -7,8 +8,52 @@ spriteTypes = {
 		name = "GFX_icon_tech_gene_banks_alternate"
 		texturefile = "gfx/interface/icons/technologies/tech_gene_banks.dds"
 	}
+	# blank event icon background
 	spriteType = {
 		name = "GFX_klfis_event_icon_bg_blank"
 		texturefile = "gfx/interface/icons/situation_log/situations/approaches/klfis_event_icon_bg_blank.dds"
+	}
+	# messages
+	spriteType = {
+		name = "GFX_message_keep_leaders"
+		texturefile = "gfx/interface/icons/message/message_keep_leaders.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	# leader recruitment backgrounds
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_council_default"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_council_default.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_deluge"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_deluge.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_federation_fleet"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_federation_fleet.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_hangar_bay"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_hangar_bay.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_infiltration"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_infiltration.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_integration"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_integration.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_invasion"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_invasion.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_necrophage"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_necrophage.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_planet_destruction"
+		texturefile = "gfx/interface/leaders/recruitment_bgs/leader_recruitment_bg_planet_destruction.dds"
 	}
 }

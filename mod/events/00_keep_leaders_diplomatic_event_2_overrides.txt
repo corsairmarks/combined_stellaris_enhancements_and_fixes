@@ -1,0 +1,105 @@
+namespace = diplomatic
+
+# Modified: effectively the same as the override for leader.1
+country_event = {
+	id = diplomatic.1013
+	title = "diplomatic.1013.name"
+	desc = "diplomatic.1013.desc"
+	auto_opens = no
+	event_window_type = leader_recruit
+	notification_event_icon = GFX_message_keep_leaders
+	picture = GFX_leader_recruitment_bg_federation_fleet # GFX_evt_unknown_ships
+	picture_event_data = {
+		portrait = event_target:officer
+		room = ethic_spaceship_room
+	}
+	show_sound = event_sensor_ping
+	location = event_target:officer_fleet
+	is_triggered_only = yes
+	immediate = {
+		random_controlled_fleet = {
+			limit = {
+				exists = orbit
+				orbit = { is_same_value = event_target:exercise_location }
+			}
+			save_event_target_as = officer_fleet
+			random_controlled_ship = { save_event_target_as = officer_ship }
+		}
+		random_owned_pop = {
+			limit = { can_be_military_leader = yes }
+			species = { save_event_target_as = officer_species }
+		}
+		create_leader = {
+			class = admiral
+			species = event_target:officer_species
+			name = random
+			skill = 2
+			randomize_traits = no
+			traits = {
+				trait = leader_trait_eager_2
+			}
+			effect = {
+				set_leader_flag = is_in_recruit_window
+				random_list = {
+					20 = {
+						modifier = {
+							factor = 0
+							owner = { is_gestalt = yes }
+						}
+						add_trait_no_notify = leader_trait_skirmisher # note: councilor trait
+						add_trait_no_notify = leader_trait_aggressive
+					}
+					20 = {
+						add_trait_no_notify = leader_trait_unyielding
+						add_trait_no_notify = leader_trait_aggressive
+					}
+					20 = {
+						add_trait_no_notify = leader_trait_engineer
+						add_trait_no_notify = leader_trait_aggressive
+					}
+					20 = {
+						add_trait_no_notify = leader_trait_fleet_logistician # note: this trait is normally not available when Galactic Paragons is active
+						add_trait_no_notify = leader_trait_cautious
+					}
+					20 = {
+						add_trait_no_notify = leader_trait_scout
+						add_trait_no_notify = leader_trait_trickster
+					}
+				}
+				save_event_target_as = exercise_officer
+				exile_leader_as = diplomatic_1013_promoted_officer
+			}
+		}
+	}
+	option = {
+		tag = dismiss_leader
+		name = DECLINE
+		event_target:ship = {
+			hidden_effect = { erase_modifier = { MOD = kl_exemplary_captain } }
+			add_modifier = {
+				modifier = kl_exemplary_captain
+				days = 7200
+			}
+		}
+		hidden_effect = { event_target:exercise_officer = { kill_leader = { show_notification = no } } }
+	}
+	option = {
+		name = leader.1.a
+		response_text = leader.1.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		tag = hire_leader
+		name = HIRE
+		custom_tooltip = "diplomatic.1013.a"
+		hidden_effect = {
+			hire_event_leader_effect = { LEADER = exercise_officer }
+			event_target:officer_fleet = {
+				if = {
+					limit = { NOT = { exists = leader } }
+					set_leader = event_target:exercise_officer
+				}
+			}
+		}
+	}
+}

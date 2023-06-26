@@ -1,0 +1,99 @@
+# Modified:
+# * envoys use their background
+# * envoys building spy networks use the spy background
+# * scientists can get a different background depending on expertise
+# note: intentionally not localized, so it can be used as a hack to get the sprite name
+defined_text = {
+	name = GetScriptedLeaderPortraitBackground
+	random = no
+	text = {
+		localization_key = GFX_leader_legendary_bg_azaryn
+		trigger = { has_leader_flag = azaryn }
+	}
+	text = {
+		localization_key = GFX_leader_legendary_bg_beholder
+		trigger = { has_leader_flag = beholder }
+	}
+	text = {
+		localization_key = GFX_leader_legendary_bg_skrand
+		trigger = { has_leader_flag = skrand }
+	}
+	text = {
+		localization_key = GFX_leader_legendary_bg_keides
+		trigger = { has_leader_flag = exakeides }
+	}
+	text = {
+		localization_key = GFX_leader_bg_ruler
+		trigger = { is_ruler = yes }
+	}
+	text = {
+		localization_key = GFX_leader_bg_admiral
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_general
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_physics
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+			is_specialist_researcher_physics = yes
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_society
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+			is_specialist_researcher_society = yes
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_engineering
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+			is_specialist_researcher_engineering = yes
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_scientist
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+			is_specialist_researcher = no
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_governor
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_envoy
+		trigger = {
+			is_ruler = no
+			leader_class = envoy
+			NOT = { has_envoy_task = { task = spy_network } }
+		}
+	}
+	text = {
+		localization_key = GFX_leader_bg_envoy_spy
+		trigger = {
+			is_ruler = no
+			leader_class = envoy
+			has_envoy_task = { task = spy_network }
+		}
+	}
+	default = GFX_leader_bg_governor
+}

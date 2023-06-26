@@ -29,30 +29,34 @@ defined_text = { # scope with species
 }
 
 # this = country
-# from = country
+# fromfrom = planet
 defined_text = {
 	name = GetKeepLeadersEventTitle
 	text = {
 		trigger = {
-			has_country_flag = colossus_transfer@capital_scope
-			has_country_flag = orbitally_drenched@capital_scope
+			exists = fromfrom
+			has_country_flag = colossus_transfer@fromfrom
+			has_country_flag = orbitally_drenched@fromfrom
 		}
 		localization_key = keep_leaders.1.title.planet_killer_deluge
 	}
 	text = {
 		trigger = {
-			has_country_flag = colossus_transfer@capital_scope
-			has_country_flag = divinely_enforced@capital_scope
+			exists = fromfrom
+			has_country_flag = colossus_transfer@fromfrom
+			has_country_flag = divinely_enforced@fromfrom
 		}
 		localization_key = keep_leaders.1.title.planet_killer_godray
 	}
 	text = {
 		trigger = {
-			has_country_flag = colossus_transfer@capital_scope
+			exists = fromfrom
+			has_country_flag = colossus_transfer@fromfrom
 			NOR = {
-				has_country_flag = orbitally_drenched@capital_scope
-				has_country_flag = nanobot_assimilated@capital_scope
-				has_country_flag = orbitally_necrophaged@capital_scope
+				has_country_flag = orbitally_drenched@fromfrom
+				has_country_flag = divinely_enforced@fromfrom
+				has_country_flag = nanobot_assimilated@fromfrom
+				has_country_flag = orbitally_necrophaged@fromfrom
 			}
 		}
 		localization_key = keep_leaders.1.title.planet_killer_generic
@@ -60,156 +64,177 @@ defined_text = {
 	default = keep_leaders.1.title
 }
 
-# this = leader
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
 defined_text = {
-	name = GetFormerMachineIntelligenceType
+	name = GetStoredLeaderText
 	text = {
-		trigger = { has_leader_flag = gov_machine_industrial }
-		localization_key = leader_trait_former_ruler_machine_intelligence_industrial
+		trigger = {
+			count_owned_leader = {
+				count > 1
+				limit = { is_eligible_transfer_leader_from_storage = yes }
+			}
+		}
+		localization_key = keep_leaders.1.l.response.multiple
 	}
-	text = {
-		trigger = { has_leader_flag = gov_machine_research }
-		localization_key = leader_trait_former_ruler_machine_intelligence_science
-	}
-	text = {
-		trigger = { has_leader_flag = gov_machine_servitor }
-		localization_key = leader_trait_former_ruler_machine_intelligence_caretaker
-	}
-	default = leader_trait_former_ruler_machine_intelligence_default
+	default = keep_leaders.1.l.response.singular
 }
 
-# this = leader
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
 defined_text = {
-	name = GetFormerMachineIntelligenceLeaderClassDesc
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = governor
-		}
-		localization_key = leader_trait_former_ruler_machine_intelligence_governor_desc
-	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = scientist
-		}
-		localization_key = leader_trait_former_ruler_machine_intelligence_scientist_desc
-	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = admiral
-		}
-		localization_key = leader_trait_former_ruler_machine_intelligence_admiral_desc
-	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = general
-		}
-		localization_key = leader_trait_former_ruler_machine_intelligence_general_desc
-	}
-	default = leader_trait_former_ruler_machine_intelligence_ruler_desc
+	name = GetStoredLeaderCount
+	value = value:klfis_count_owned_leader
 }
 
-# this = leader
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
 defined_text = {
-	name = GetFormerHiveMindLeaderClassDesc
+	name = GetStoredGovernorText
 	text = {
 		trigger = {
-			is_ruler = no
-			leader_class = governor
+			count_owned_leader = {
+				count = 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = governor
+				}
+			}
 		}
-		localization_key = leader_trait_former_ruler_hive_mind_governor_desc
+		localization_key = keep_leaders.1.l.governor
 	}
 	text = {
 		trigger = {
-			is_ruler = no
-			leader_class = scientist
+			count_owned_leader = {
+				count > 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = governor
+				}
+			}
 		}
-		localization_key = leader_trait_former_ruler_hive_mind_scientist_desc
+		localization_key = keep_leaders.1.l.governor_plural
 	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = admiral
-		}
-		localization_key = leader_trait_former_ruler_hive_mind_admiral_desc
-	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = general
-		}
-		localization_key = leader_trait_former_ruler_hive_mind_general_desc
-	}
-	default = leader_trait_former_ruler_hive_mind_ruler_desc
+	default = BLANK_STRING
 }
 
-# this = leader
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
 defined_text = {
-	name = GetFormerRulerLeaderClassDesc
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = governor
-		}
-		localization_key = leader_trait_former_ruler_governor_desc
-	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = scientist
-		}
-		localization_key = leader_trait_former_ruler_scientist_desc
-	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = admiral
-		}
-		localization_key = leader_trait_former_ruler_admiral_desc
-	}
-	text = {
-		trigger = {
-			is_ruler = no
-			leader_class = general
-		}
-		localization_key = leader_trait_former_ruler_general_desc
-	}
-	default = leader_trait_former_ruler_ruler_desc
+	name = GetStoredGovernorCount
+	value = value:klfis_count_owned_leader|LEADER_CLASS|governor|
 }
 
-# this = leader
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
 defined_text = {
-	name = GetFormerHeirLeaderClassDesc
+	name = GetStoredScientistText
 	text = {
 		trigger = {
-			is_ruler = no
-			leader_class = governor
+			count_owned_leader = {
+				count = 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = scientist
+				}
+			}
 		}
-		localization_key = leader_trait_former_heir_governor_desc
+		localization_key = keep_leaders.1.l.scientist
 	}
 	text = {
 		trigger = {
-			is_ruler = no
-			leader_class = scientist
+			count_owned_leader = {
+				count > 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = scientist
+				}
+			}
 		}
-		localization_key = leader_trait_former_heir_scientist_desc
+		localization_key = keep_leaders.1.l.scientist_plural
+	}
+	default = BLANK_STRING
+}
+
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
+defined_text = {
+	name = GetStoredScientistCount
+	value = value:klfis_count_owned_leader|LEADER_CLASS|scientist|
+}
+
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
+defined_text = {
+	name = GetStoredAdmiralText
+	text = {
+		trigger = {
+			count_owned_leader = {
+				count = 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = admiral
+				}
+			}
+		}
+		localization_key = keep_leaders.1.l.admiral
 	}
 	text = {
 		trigger = {
-			is_ruler = no
-			leader_class = admiral
+			count_owned_leader = {
+				count > 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = admiral
+				}
+			}
 		}
-		localization_key = leader_trait_former_heir_admiral_desc
+		localization_key = keep_leaders.1.l.admiral_plural
+	}
+	default = BLANK_STRING
+}
+
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
+defined_text = {
+	name = GetStoredAdmiralCount
+	value = value:klfis_count_owned_leader|LEADER_CLASS|admiral|
+}
+
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
+defined_text = {
+	name = GetStoredGeneralText
+	text = {
+		trigger = {
+			count_owned_leader = {
+				count = 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = general
+				}
+			}
+		}
+		localization_key = keep_leaders.1.l.general
 	}
 	text = {
 		trigger = {
-			is_ruler = no
-			leader_class = general
+			count_owned_leader = {
+				count > 1
+				limit = {
+					is_eligible_transfer_leader_from_storage = yes
+					leader_class = general
+				}
+			}
 		}
-		localization_key = leader_trait_former_heir_general_desc
+		localization_key = keep_leaders.1.l.general_plural
 	}
-	default = leader_trait_former_heir_ruler_desc
+	default = BLANK_STRING
+}
+
+# this = country, leader storage
+# event_target:potential_owner = country, the country to which leaders would transfer
+defined_text = {
+	name = GetStoredGeneralCount
+	value = value:klfis_count_owned_leader|LEADER_CLASS|general|
 }

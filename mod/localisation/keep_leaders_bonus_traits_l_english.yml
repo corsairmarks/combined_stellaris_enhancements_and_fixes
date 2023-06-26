@@ -48,3 +48,15 @@
  former_heir_naval_bonus: "Former Heir Naval Coordination"
  former_heir_naval_bonus_desc: "The combined effects of notable §Yleaders§!' experience as former heirs of an $auth_imperial$ government. $leader_trait_former_heir_naval_bonus_desc$ of each former heir that is an §Y$admiral$§!."
  leader_trait_former_heir_naval_bonus_desc: "£mod_country_naval_cap_add£ §G+1§! per level"
+
+ # note: the below localisation is for use scripted_loc that does not work correctly as of 3.8.3
+ # consider it preview for how such a feature might work
+ # event_target:former_owner_shell@this.GetX works if the event_target is a primitive country, but not other types
+ keep_leaders_bonus_traits.former_ruler_title: "[This.GetFormerRulerLeaderTitle]"
+ keep_leaders_bonus_traits.former_ruler_title.suffix: ", §L[This.GetFormerRulerLeaderTitle]§!"
+ keep_leaders_bonus_traits.former_ruler_title.specific: "Former [event_target:former_owner_shell@@this.GetRulerTitle] of the [event_target:former_owner_shell@@this.GetName]"
+ keep_leaders_bonus_traits.former_ruler_title.generic: "Former Ruler"
+ keep_leaders_bonus_traits.former_heir_title: "[This.GetFormerHeirLeaderTitle]"
+ keep_leaders_bonus_traits.former_heir_title.suffix: ", §L[This.GetFormerHeirLeaderTitle]§!"
+ keep_leaders_bonus_traits.former_heir_title.specific: "Former [event_target:former_owner_shell@@this.GetHeirTitle] of the [event_target:former_owner_shell@@this.GetName]"
+ keep_leaders_bonus_traits.former_heir_title.generic: "Former Heir"

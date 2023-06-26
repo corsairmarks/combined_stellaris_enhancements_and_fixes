@@ -1,0 +1,195 @@
+# this = leader
+defined_text = {
+	name = GetFormerMachineIntelligenceType
+	text = {
+		trigger = { has_leader_flag = gov_machine_industrial }
+		localization_key = leader_trait_former_ruler_machine_intelligence_industrial
+	}
+	text = {
+		trigger = { has_leader_flag = gov_machine_research }
+		localization_key = leader_trait_former_ruler_machine_intelligence_science
+	}
+	text = {
+		trigger = { has_leader_flag = gov_machine_servitor }
+		localization_key = leader_trait_former_ruler_machine_intelligence_caretaker
+	}
+	default = leader_trait_former_ruler_machine_intelligence_default
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerMachineIntelligenceLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_ruler_machine_intelligence_general_desc
+	}
+	default = leader_trait_former_ruler_machine_intelligence_ruler_desc
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerHiveMindLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_ruler_hive_mind_general_desc
+	}
+	default = leader_trait_former_ruler_hive_mind_ruler_desc
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerRulerLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_ruler_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_ruler_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_ruler_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_ruler_general_desc
+	}
+	default = leader_trait_former_ruler_ruler_desc
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerHeirLeaderClassDesc
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = governor
+		}
+		localization_key = leader_trait_former_heir_governor_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		localization_key = leader_trait_former_heir_scientist_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		localization_key = leader_trait_former_heir_admiral_desc
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			leader_class = general
+		}
+		localization_key = leader_trait_former_heir_general_desc
+	}
+	default = leader_trait_former_heir_ruler_desc
+}
+
+# note: the below scripted_loc relies on being able to consistently detect global dynamic event targets, and localisation being able to ready from them
+# it does not work correctly as of 3.8.3
+
+# this = leader
+defined_text = {
+	name = GetClassSuffixFormerOwner
+	random = no
+	text = {
+		trigger = { has_leader_flag = former_ruler }
+		localization_key = keep_leaders_bonus_traits.former_ruler_title.suffix
+	}
+	text = {
+		trigger = { has_leader_flag = former_heir }
+		localization_key = keep_leaders_bonus_traits.former_heir_title.suffix
+	}
+	default = BLANK_STRING
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerRulerLeaderTitle
+	# someday, when exists works on global event targets...
+	# exists seems to work in the event_target is_primitive = yes, but not others
+	text = {
+		trigger = { exists = event_target:former_owner_shell@this }
+		localization_key = keep_leaders_bonus_traits.former_ruler_title.specific
+	}
+	default = keep_leaders_bonus_traits.former_ruler_title.specific
+}
+
+# this = leader
+defined_text = {
+	name = GetFormerHeirLeaderTitle
+	# someday, when exists works on global event targets...
+	# exists seems to work in the event_target is_primitive = yes, but not others
+	text = {
+		trigger = { exists = event_target:former_owner_shell@this }
+		localization_key = keep_leaders_bonus_traits.former_heir_title.specific
+	}
+	default = keep_leaders_bonus_traits.former_heir_title.generic
+}

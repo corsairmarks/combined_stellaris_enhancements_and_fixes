@@ -1,6 +1,6 @@
 # creates a country to store leaders and variables counting them, then transfers and counts them
 # event_target:potential_owner = country, overlord/infiltrator/planet-killer
-# event_target:former_owner = country, integrated subject/primitives/victims
+# event_target:former_owner = country, integrated subject/pre-FTLs/victims
 create_leader_storage_and_transfer_leaders = {
 	optimize_memory
 	# "arguments" for transfer_leader_to_storage
@@ -10,10 +10,58 @@ create_leader_storage_and_transfer_leaders = {
 		type = neutral_faction
 		species = event_target:former_owner
 		flag = event_target:former_owner
-		auto_delete = no
-		ignore_initial_colony_error = yes
+		auto_delete = no # required only if country_type has auto_delete = yes (the default)
+		# ignore_initial_colony_error = yes # required only if country_type has needs_colony = yes (the default)
+		authority = event_target:former_owner
+		ethos = event_target:former_owner
+		# civics = event_target:former_owner # breaks because pre-FTL civics are restricted to the primitive country_type
+		ship_prefix = event_target:former_owner
 		effect = {
+			copy_flags_and_variables_from = event_target:former_owner
+			if = {
+				limit = { event_target:former_owner = { is_regular_empire_or_primitive = yes } }
+				set_country_flag = regular_empire_or_primitive_storage_owner
+			}
+			if = {
+				limit = { event_target:former_owner = { is_primitive = yes } }
+				set_country_flag = primitive_storage_owner
+			}
+			if = {
+				limit = { event_target:former_owner = { is_gestalt = yes } }
+				set_country_flag = gestalt_storage_owner
+			}
+			if = {
+				limit = { event_target:former_owner = { is_hive_empire = yes } }
+				set_country_flag = hive_empire_storage_owner
+			}
+			if = {
+				limit = { event_target:former_owner = { is_machine_empire = yes } }
+				set_country_flag = machine_empire_storage_owner
+			}
+			# TODO - if I get persistent shells to work, clean up any former shells here (i.e. a ruler/heir transferred before)
+			# if = {
+			# 	limit = { exists = event_target:former_owner.ruler }
+			# 	clone_leader = {
+			# 		target = event_target:former_owner.ruler
+			# 		immortal = yes
+			# 		effect = { set_leader_flag = klfis_exclude_leader_from_transfer }
+			# 	}
+			# 	set_leader = last_created_leader
+			# 	save_global_event_target_as = former_owner_shell@event_target:former_owner.ruler
+			# }
+			# if = {
+			# 	limit = { exists = event_target:former_owner.heir }
+			# 	clone_leader = {
+			# 		target = event_target:former_owner.heir
+			# 		immortal = yes
+			# 		effect = { set_leader_flag = klfis_exclude_leader_from_transfer }
+			# 	}
+			# 	set_heir = last_created_leader
+			# 	save_global_event_target_as = former_owner_shell@event_target:former_owner.heir
+			# }
+			set_country_flag = former_owner_shell
 			set_country_flag = former_owner@event_target:former_owner
+			set_country_flag = potential_owner@event_target:potential_owner
 			save_event_target_as = storage_owner
 			save_event_target_as = variable_storage
 			# variables for the counts from accumulate_leader
@@ -97,7 +145,6 @@ create_leader_storage_and_transfer_leaders = {
 				is_heir = no
 			}
 			accumulate_leader = yes
-			tag_leader_for_reassignment = yes
 			transfer_leader_to_storage = yes
 		}
 		if = {
@@ -111,6 +158,7 @@ create_leader_storage_and_transfer_leaders = {
 					variable_string = "\\[former_owner.GetName\\]"
 				}
 				set_leader_flag = former_ruler
+				# set_leader_flag = former_owner_shell@event_target:storage_owner
 				save_event_target_as = integrated_ruler
 			}
 			event_target:integrated_ruler = {
@@ -130,6 +178,7 @@ create_leader_storage_and_transfer_leaders = {
 					variable_string = "\\[former_owner.GetName\\]"
 				}
 				set_leader_flag = former_heir
+				# set_leader_flag = former_owner_shell@event_target:storage_owner
 				save_event_target_as = integrated_heir
 			}
 			event_target:integrated_heir = {
@@ -141,12 +190,30 @@ create_leader_storage_and_transfer_leaders = {
 	}
 }
 
+# this = country, leader storage
+# event_target:potential_owner = country, new owner of leaders from this leader storage country
+try_clean_up_leader_storage = {
+	if = {
+		limit = { event_target:potential_owner = { NOT = { any_owned_leader = { has_leader_flag = former_owner_shell@prevprev } } } }
+		destroy_country = yes
+	}
+	else = {
+		every_owned_leader = {
+			limit = {
+				is_ruler = no
+				is_heir = no
+			}
+			kill_leader = { show_notification = no }
+		}
+	}
+}
+
 # sets up necessary event_targets:
 # event_target:potential_owner = from
 # event_target:former_owner = fromfrom
 # event_target:original_species = fromfrom.owner_species
-# event_target:storage_owner = country, primitive leader storage
-# event_target:variable_storage = country, primitive leader variable storage
+# event_target:storage_owner = country, pre-FTL leader storage
+# event_target:variable_storage = country, pre-FTL leader variable storage
 # this = planet (after new owner set)
 # from = country (new owner)
 # fromfrom = country (former owner, if any)
@@ -160,8 +227,8 @@ prepare_for_primitive_planet_transferred = {
 	# acquire leader and variable storage
 	random_country = {
 		limit = {
-			is_country_type = neutral_faction
 			has_country_flag = former_owner@fromfrom
+			has_country_flag = potential_owner@from
 		}
 		save_event_target_as = storage_owner
 		save_event_target_as = variable_storage
@@ -181,11 +248,28 @@ transfer_leader_to_storage = {
 		limit = { owner = { is_machine_empire = yes } }
 		set_leader_flag = former_owner_machine
 	}
+	set_leader_flag = stored_leader
 	set_leader_flag = former_owner@owner
 	set_leader_flag = potential_owner@event_target:potential_owner
 	unassign_leader = this
 	set_owner = event_target:storage_owner
 	# intentionally does not fire on_leader_owner_changed
+}
+
+# this = leader
+# event_target:potential_owner = country to become the new owner and for which to set species rights
+take_ownership_of_leader = {
+	optimize_memory
+	if = {
+		limit = { has_leader_flag = is_in_recruit_window }
+		remove_leader_flag = is_in_recruit_window
+	}
+	if = {
+		limit = { has_leader_flag = stored_leader }
+		remove_leader_flag = stored_leader
+	}
+	set_owner = event_target:potential_owner
+	fire_on_action = { on_action = on_leader_owner_changed }
 }
 
 # this = leader
@@ -210,10 +294,9 @@ ensure_species_rights_and_take_ownership_of_leader = {
 	}
 	set_minimum_living_standard_species = yes
 	unassign_leader = this
-	set_owner = event_target:potential_owner
-	try_assign_retained_leader_to_former_assignment = yes
-	fire_on_action = { on_action = on_leader_owner_changed }
 	try_adjust_background = yes
+	take_ownership_of_leader = yes
+	try_assign_retained_leader_to_former_assignment = yes
 }
 
 # this = something with species
@@ -796,8 +879,17 @@ try_process_gestalt_ruler = {
 # * leader_aquatic_accumulator
 accumulate_leader = {
 	optimize_memory
+	tag_leader_for_reassignment = yes
 	if = {
-		limit = { is_robotic_species = no }
+		limit = { is_robotic_species_lenient = yes }
+		event_target:variable_storage = {
+			change_variable = {
+				which = leader_robotic_accumulator
+				value = 1
+			}
+		}
+	}
+	else = {
 		event_target:variable_storage = {
 			change_variable = {
 				which = leader_organic_accumulator
@@ -815,17 +907,9 @@ accumulate_leader = {
 		}
 	}
 	if = {
-		limit = { is_robotic_species_lenient = yes }
-		event_target:variable_storage = {
-			change_variable = {
-				which = leader_robotic_accumulator
-				value = 1
-			}
-		}
-	}
-	else_if= {
 		limit = {
 			species = {
+				is_robotic = no
 				is_sapient = yes
 				NOR = {
 					is_same_species = event_target:potential_owner.owner_species
@@ -992,6 +1076,16 @@ tag_leader_for_reassignment = {
 				set_leader_flag = keep_leader_match_planet@this
 				planet = { set_planet_flag = keep_leader_match_planet@prev }
 			}
+			else_if = {
+				limit = { is_heir = yes }
+				set_leader_flag = keep_leader_heir_match_planet@this
+				owner.capital_scope = { set_planet_flag = keep_leader_heir_match_planet@prev }
+			}
+			else_if = {
+				limit = { is_ruler = yes }
+				set_leader_flag = keep_leader_ruler_match_planet@this
+				owner.capital_scope = { set_planet_flag = keep_leader_ruler_match_planet@prev }
+			}
 		}
 		scientist = {
 			if = {
@@ -999,12 +1093,13 @@ tag_leader_for_reassignment = {
 				set_leader_flag = keep_leader_match_fleet@this
 				fleet = { set_fleet_flag = keep_leader_match_fleet@prev }
 			}
-			switch = {
-				trigger = is_researching_area
-				physics = { set_leader_flag = keep_leader_research_physics }
-				society = { set_leader_flag = keep_leader_research_society }
-				engineering = { set_leader_flag = keep_leader_research_engineering }
-			}
+			# leaders no longer research specific areas
+			# switch = {
+			# 	trigger = is_researching_area
+			# 	physics = { set_leader_flag = keep_leader_research_physics }
+			# 	society = { set_leader_flag = keep_leader_research_society }
+			# 	engineering = { set_leader_flag = keep_leader_research_engineering }
+			# }
 		}
 		admiral = {
 			if = {
@@ -1021,6 +1116,21 @@ tag_leader_for_reassignment = {
 				set_leader_flag = keep_leader_match_transport_fleet@this
 				fleet = { set_fleet_flag = keep_leader_match_transport_fleet@prev }
 			}
+			else_if = {
+				limit = { exists = planet }
+				set_leader_flag = keep_leader_match_planet@this
+				planet = { set_planet_flag = keep_leader_match_planet@prev }
+			}
+			else_if = {
+				limit = { is_heir = yes }
+				set_leader_flag = keep_leader_heir_match_planet@this
+				owner.capital_scope = { set_planet_flag = keep_leader_heir_match_planet@prev }
+			}
+			else_if = {
+				limit = { is_ruler = yes }
+				set_leader_flag = keep_leader_ruler_match_planet@this
+				owner.capital_scope = { set_planet_flag = keep_leader_ruler_match_planet@prev }
+			}
 			owner = {
 				random_owned_army = {
 					limit = {
@@ -1030,11 +1140,6 @@ tag_leader_for_reassignment = {
 					leader = { set_leader_flag = keep_leader_match_army@this }
 					set_army_flag = keep_leader_match_army@leader
 				}
-			}
-			if = {
-				limit = { exists = planet }
-				set_leader_flag = keep_leader_match_planet@this
-				planet = { set_planet_flag = keep_leader_match_planet@prev }
 			}
 		}
 	}
@@ -1315,7 +1420,6 @@ klfis_prepare_psionic_species = {
 
 # changes a gender's leader to match the norms for their species (possibly cloning and replacing them)
 # this = leader, with new species
-# from = species, previous
 klfis_leader_match_gender_to_species = {
 	optimize_memory
 	species = {
@@ -1541,9 +1645,7 @@ complete_assimilation_and_take_ownership_of_leader = {
 		change_species = event_target:prepared_species
 		fire_on_action = {
 			on_action = on_leader_species_changed
-			scopes = {
-				from = event_target:former_species
-			}
+			scopes = { from = event_target:former_species }
 		}
 		ensure_species_rights_and_take_ownership_of_leader = yes
 	}
@@ -1554,153 +1656,156 @@ complete_assimilation_and_take_ownership_of_leader = {
 	clear_variable = assimilation_type_counter
 }
 
-# change a leader's background ethic (randomize if formerly gestalt or conver to gestalt, if appropriate)
+# change a leader's background ethic (randomize if formerly gestalt or convert to gestalt, if appropriate)
 # this = leader
+# event_target:potential_owner = country to become the new owner and for which to set species rights
 try_adjust_background = {
 	optimize_memory
 	if = {
 		limit = {
-			is_gestalt = yes
-			owner = { is_gestalt = no }
+			NOR = {
+				has_leader_flag = renowned_leader
+				has_leader_flag = legendary_leader
+			}
 		}
-		randomize_background_ethic = yes
-		reroll_random = yes
-	}
-	else_if = {
-		limit = {
-			is_gestalt = no
-			owner = {
+		if = {
+			limit = {
 				is_gestalt = yes
-				NAND = {
-					has_valid_civic = civic_machine_servitor
-					prev = { is_robotic_species = no }
+				event_target:potential_owner = { is_gestalt = no }
+			}
+			randomize_background_ethic = yes
+			reroll_random = yes
+		}
+		else_if = {
+			limit = {
+				is_gestalt = no
+				event_target:potential_owner = {
+					is_gestalt = yes
+					NAND = {
+						has_valid_civic = civic_machine_servitor
+						prev = { is_robotic_species = no }
+					}
 				}
 			}
+			change_background_ethic = ethic_gestalt_consciousness
 		}
-		change_background_ethic = ethic_gestalt_consciousness
-	}
-	if = {
-		limit = {
-			is_gestalt = no
-			NOT = { has_background_job = yes } # this can't be set to no or unemployed...
-		}
-		# intentionally does not have the same code as paragon_2.2125
 		if = {
-			limit = { has_leader_flag = former_ruler }
-			if = {
-				limit = { has_leader_flag = former_owner_hive }
-				change_background_job = hive_mind
+			limit = {
+				is_gestalt = no
+				NOT = { has_background_job = yes } # this can't be set to no or unemployed...
 			}
-			else_if = {
-				limit = { has_leader_flag = former_owner_machine }
-				change_background_job = machine_intelligence
+			# intentionally does not have the same code as paragon_2.2125 or reuse the set_random_CLASS_background_effect effects
+			if = {
+				limit = { has_leader_flag = former_ruler }
+				if = {
+					limit = { has_leader_flag = former_owner_hive }
+					change_background_job = hive_mind
+				}
+				else_if = {
+					limit = { has_leader_flag = former_owner_machine }
+					change_background_job = machine_intelligence
+				}
+				else = {
+					change_background_job = government_employee
+				}
 			}
 			else = {
-				change_background_job = government_employee
-			}
-		}
-		else = {
-			switch = {
-				trigger = leader_class
-				governor = {
-					if = {
-						limit = { has_leader_flag = former_owner_hive }
-						change_background_job = synapse_drone
-					}
-					else_if = {
-						limit = { has_leader_flag = former_owner_machine }
-						random_list = {
-							2 = { change_background_job = coordinator }
-							1 = { change_background_job = evaluator }
+				switch = {
+					trigger = leader_class
+					governor = {
+						if = {
+							limit = { has_leader_flag = former_owner_hive }
+							change_background_job = synapse_drone
 						}
-					}
-					else = {
-						random_list = {
-							1 = { change_background_job = politician }
-							2 = { change_background_job = bureaucrat }
-						}
-					}
-				}
-				scientist = {
-					if = {
-						limit = { has_leader_flag = former_owner_hive }
-						random_list = {
-							2 = { change_background_job = brain_drone }
-							1 = { change_background_job = archaeo_drone }
-						}
-					}
-					else_if = {
-						limit = { has_leader_flag = former_owner_machine }
-						random_list = {
-							2 = { change_background_job = calculator }
-							1 = { change_background_job = archaeo_unit }
-						}
-					}
-					else = {
-						random_list = {
-							3 = { change_background_job = head_researcher }
-							1 = { change_background_job = researcher }
-							1 = { change_background_job = archaeoengineers }
-						}
-					}
-				}
-				admiral = {
-					if = {
-						limit = {
-							OR = {
-								has_leader_flag = former_owner_hive
-								has_leader_flag = former_owner_machine
+						else_if = {
+							limit = { has_leader_flag = former_owner_machine }
+							random_list = {
+								2 = { change_background_job = coordinator }
+								1 = { change_background_job = evaluator }
 							}
 						}
-						random_list = {
-							1 = { change_background_job = warrior_drone }
-							1 = { change_background_job = patrol_drone }
-						}
-					}
-					else = {
-						random_list = {
-							1 = { change_background_job = captain }
-							1 = { change_background_job = chief_navigator }
-							1 = { change_background_job = principal_pilot }
-							1 = { change_background_job = ship_weapons_officer }
-							1 = { change_background_job = ship_logistics_officer }
-						}
-					}
-				}
-				general = {
-					if = {
-						limit = {
-							OR = {
-								has_leader_flag = former_owner_hive
-								has_leader_flag = former_owner_machine
+						else = {
+							random_list = {
+								2 = { change_background_job = politician }
+								1 = { change_background_job = bureaucrat }
 							}
 						}
-						random_list = {
-							1 = { change_background_job = warrior_drone }
-							1 = { change_background_job = patrol_drone }
+					}
+					scientist = {
+						if = {
+							limit = { has_leader_flag = former_owner_hive }
+							random_list = {
+								2 = { change_background_job = brain_drone }
+								1 = { change_background_job = archaeo_drone }
+							}
+						}
+						else_if = {
+							limit = { has_leader_flag = former_owner_machine }
+							random_list = {
+								2 = { change_background_job = calculator }
+								1 = { change_background_job = archaeo_unit }
+							}
+						}
+						else = {
+							random_list = {
+								3 = { change_background_job = head_researcher }
+								1 = { change_background_job = researcher }
+								1 = { change_background_job = archaeoengineers }
+							}
 						}
 					}
-					else = {
-						random_list = {
-							1 = { change_background_job = special_operations_commander }
-							1 = { change_background_job = commanding_officer }
-							1 = { change_background_job = chief_supply_officer }
-							1 = { change_background_job = intelligence_officer }
-							1 = { change_background_job = chief_security_officer }
-							1 = { change_background_job = enforcer }
-							1 = { change_background_job = soldier }
+					admiral = {
+						if = {
+							limit = {
+								OR = {
+									has_leader_flag = former_owner_hive
+									has_leader_flag = former_owner_machine
+								}
+							}
+							random_list = {
+								1 = { change_background_job = warrior_drone }
+								1 = { change_background_job = patrol_drone }
+							}
+						}
+						else = {
+							set_random_admiral_background_effect = yes
+						}
+					}
+					general = {
+						if = {
+							limit = {
+								OR = {
+									has_leader_flag = former_owner_hive
+									has_leader_flag = former_owner_machine
+								}
+							}
+							random_list = {
+								1 = { change_background_job = warrior_drone }
+								1 = { change_background_job = patrol_drone }
+							}
+						}
+						else = {
+							random_list = {
+								1 = { change_background_job = special_operations_commander }
+								1 = { change_background_job = commanding_officer }
+								1 = { change_background_job = chief_supply_officer }
+								1 = { change_background_job = intelligence_officer }
+								1 = { change_background_job = chief_security_officer }
+								1 = { change_background_job = enforcer }
+								1 = { change_background_job = soldier }
+							}
 						}
 					}
 				}
+				reroll_random = yes
 			}
-			reroll_random = yes
 		}
 	}
 	if = {
 		limit = { has_leader_flag = former_owner_hive }
 		remove_leader_flag = former_owner_hive
 	}
-	else_if = {
+	if = {
 		limit = { has_leader_flag = former_owner_machine }
 		remove_leader_flag = former_owner_machine
 	}
@@ -1708,160 +1813,617 @@ try_adjust_background = {
 
 # randomize the leader's background ethic, weighted based on the ethos of their owner
 # this = leader
+# event_target:potential_owner = country to become the new owner
 randomize_background_ethic = {
 	optimize_memory
 	random_list = {
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_militarist }
+				event_target:potential_owner = { has_ethic = ethic_militarist }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_militarist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_militarist }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_pacifist }
+				event_target:potential_owner = { has_ethic = ethic_pacifist }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_pacifist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_pacifist }
 			}
 			change_background_ethic = ethic_militarist
 		}
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_xenophobe }
+				event_target:potential_owner = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_xenophobe }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_xenophobe }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_xenophile }
+				event_target:potential_owner = { has_ethic = ethic_xenophile }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_xenophile }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_xenophile }
 			}
 			change_background_ethic = ethic_xenophobe
 		}
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_egalitarian }
+				event_target:potential_owner = { has_ethic = ethic_egalitarian }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_egalitarian }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_egalitarian }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_authoritarian }
+				event_target:potential_owner = { has_ethic = ethic_authoritarian }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_authoritarian }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_authoritarian }
 			}
 			change_background_ethic = ethic_egalitarian
 		}
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_materialist }
+				event_target:potential_owner = { has_ethic = ethic_materialist }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_materialist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_materialist }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_spiritualist }
+				event_target:potential_owner = { has_ethic = ethic_spiritualist }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_spiritualist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_spiritualist }
 			}
 			change_background_ethic = ethic_materialist
 		}
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_pacifist }
+				event_target:potential_owner = { has_ethic = ethic_pacifist }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_pacifist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_pacifist }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_militarist }
+				event_target:potential_owner = { has_ethic = ethic_militarist }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_militarist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_militarist }
 			}
 			change_background_ethic = ethic_pacifist
 		}
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_xenophile }
+				event_target:potential_owner = { has_ethic = ethic_xenophile }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_xenophile }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_xenophile }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_xenophobe }
+				event_target:potential_owner = { has_ethic = ethic_xenophobe }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_xenophobe }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_xenophobe }
 			}
 			change_background_ethic = ethic_xenophile
 		}
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_authoritarian }
+				event_target:potential_owner = { has_ethic = ethic_authoritarian }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_authoritarian }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_authoritarian }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_egalitarian }
+				event_target:potential_owner = { has_ethic = ethic_egalitarian }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_egalitarian }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_egalitarian }
 			}
 			change_background_ethic = ethic_authoritarian
 		}
 		4 = {
 			modifier = {
 				factor = 2
-				owner = { has_ethic = ethic_spiritualist }
+				event_target:potential_owner = { has_ethic = ethic_spiritualist }
 			}
 			modifier = {
 				factor = 4
-				owner = { has_ethic = ethic_fanatic_spiritualist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_spiritualist }
 			}
 			modifier = {
 				factor = 0.5
-				owner = { has_ethic = ethic_materialist }
+				event_target:potential_owner = { has_ethic = ethic_materialist }
 			}
 			modifier = {
 				factor = 0.25
-				owner = { has_ethic = ethic_fanatic_materialist }
+				event_target:potential_owner = { has_ethic = ethic_fanatic_materialist }
 			}
 			change_background_ethic = ethic_spiritualist
+		}
+	}
+}
+
+# this = any
+# event_target:storage_owner = country in which leaders are stored
+# event_target:potential_owner = country to which the leaders would transfer
+choose_transfer_representative_leader = {
+	optimize_memory
+	event_target:storage_owner = {
+		ordered_owned_leader = {
+			limit = { is_eligible_transfer_leader_from_storage = yes }
+			position = 0
+			order_by = value:transfer_representative_leader_weight
+			set_leader_flag = is_in_recruit_window
+			save_event_target_as = transfer_representative
+		}
+	}
+}
+
+# this = leader
+# $RETAIN_COVER$ = bool, whether the leader's portrait should be swapped to match the pre-FTL species (default = no)
+# event_target:original_species = fromfrom.owner_species
+# event_target:potential_owner = country to become the new owner and for which to set species rights
+prepare_to_retain_infiltration_leader = {
+	optimize_memory
+	set_timed_leader_flag = {
+		flag = force_gender_match_species
+		days = 1
+	}
+	change_species = event_target:potential_owner
+	fire_on_action = {
+		on_action = on_leader_species_changed
+		scopes = { from = event_target:original_species }
+	}
+	[[RETAIN_COVER] change_leader_portrait = event_target:original_species ]
+	try_adjust_background = yes
+}
+
+# unexiling implicitly sets the owner to prev, since it is the owner of the fake fleet
+# this = leader
+# prev = country
+klfis_unexile_leader = {
+	optimize_memory
+	create_fleet = {
+		name = "unexile leader"
+		effect = {
+			set_owner = prevprev
+			set_leader = prev
+			save_event_target_as = unexile_fleet
+		}
+	}
+	delete_fleet = {
+		target = event_target:unexile_fleet
+		kill_leader = no
+		destroy_template = yes
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+retain_leaders_same_species_effect = {
+	optimize_memory
+	custom_tooltip_with_params = {
+		description = keep_leaders.1.tooltip
+		description_parameters = {
+			VALUE = "\\[variable_storage.leader_same_species_accumulator]"
+			TOTAL = "\\[variable_storage.leader_accumulator]"
+		}
+	}
+	klfis_try_generate_rewards_fanatic_purifiers = yes
+	klfis_try_generate_rewards_hive_devouring_swarm = yes
+	hidden_effect = {
+		country_event = {
+			id = keep_leaders.12
+			scopes = { from = event_target:storage_owner }
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+retain_leaders_organic_only_effect = {
+	optimize_memory
+	custom_tooltip_with_params = {
+		description = keep_leaders.1.tooltip
+		description_parameters = {
+			VALUE = "\\[variable_storage.leader_organic_accumulator]"
+			TOTAL = "\\[variable_storage.leader_accumulator]"
+		}
+	}
+	klfis_try_generate_rewards_organic_zealots = yes
+	hidden_effect = {
+		country_event = {
+			id = keep_leaders.11
+			scopes = { from = event_target:storage_owner }
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+retain_leaders_robotic_only_effect = {
+	optimize_memory
+	custom_tooltip_with_params = {
+		description = keep_leaders.1.tooltip
+		description_parameters = {
+			VALUE = "\\[variable_storage.leader_robotic_accumulator]"
+			TOTAL = "\\[variable_storage.leader_accumulator]"
+		}
+	}
+	klfis_try_generate_rewards_machine_terminator = yes
+	hidden_effect = {
+		country_event = {
+			id = keep_leaders.10
+			scopes = { from = event_target:storage_owner }
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+retain_leaders_hive_only_effect = {
+	optimize_memory
+	custom_tooltip_with_params = {
+		description = keep_leaders.1.tooltip
+		description_parameters = {
+			VALUE = "\\[variable_storage.leader_hive_accumulator]"
+			TOTAL = "\\[variable_storage.leader_accumulator]"
+		}
+	}
+	hidden_effect = {
+		country_event = {
+			id = keep_leaders.14
+			scopes = { from = event_target:storage_owner }
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+retain_leaders_all_non_assimilation_effect = {
+	optimize_memory
+	custom_tooltip_with_params = {
+		description = keep_leaders.1.tooltip
+		description_parameters = {
+			VALUE = "\\[variable_storage.leader_transferable_accumulator]"
+			TOTAL = "\\[variable_storage.leader_accumulator]"
+		}
+	}
+	hidden_effect = {
+		country_event = {
+			id = keep_leaders.15
+			scopes = { from = event_target:storage_owner }
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+klfis_try_generate_rewards_fanatic_purifiers = {
+	optimize_memory
+	if = {
+		limit = { has_valid_civic = civic_fanatic_purifiers }
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_not_same_species_accumulator
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+klfis_try_generate_rewards_hive_devouring_swarm = {
+	optimize_memory
+	if = {
+		limit = { has_valid_civic = civic_hive_devouring_swarm }
+		add_resource = {
+			society_research = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_organic_accumulator
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+klfis_try_generate_rewards_organic_zealots = {
+	optimize_memory
+	if = {
+		limit = { is_valid_organic_zealots = yes }
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_robotic_accumulator
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+klfis_try_generate_rewards_machine_assimilator = {
+	optimize_memory
+	if = {
+		limit = { has_valid_civic = civic_machine_assimilator }
+		if = {
+			limit = { NOT = { has_active_tradition = tr_cybernetics_assimilator_adopt } }
+			add_resource = {
+				unity = @keep_leaders_civic_reward_base
+				society_research = @keep_leaders_civic_reward_base
+				mult = event_target:variable_storage.leader_assimilation_cyborg_allowable_accumulator
+			}
+		}
+		else = {
+			add_resource = {
+				unity = @keep_leaders_civic_reward_base
+				society_research = @keep_leaders_civic_reward_base
+				engineering_research = @keep_leaders_civic_reward_base
+				mult = event_target:variable_storage.leader_assimilation_cyborg_allowable_accumulator_double
+			}
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+klfis_try_generate_rewards_machine_terminator = {
+	optimize_memory
+	if = {
+		limit = { has_valid_civic = civic_machine_terminator }
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_organic_accumulator
+		}
+	}
+}
+
+# this = country, which will become the owner the leaders
+# event_target:variable_storage = a scope with the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+klfis_try_generate_rewards_origin_necrophage = {
+	optimize_memory
+	if = {
+		limit = {
+			klfis_is_necrophage_empire = yes
+			OR = {
+				has_active_tradition = tr_harmony_unity_of_self
+				has_active_tradition = tr_synchronicity_unity_of_mind
+			}
+		}
+		add_resource = {
+			unity = @keep_leaders_civic_reward_base
+			mult = event_target:variable_storage.leader_necrophagable_accumulator
+		}
+	}
+}
+
+# this = leader
+create_message_leader_recruited_with_appropriate_catch_phrase = {
+	optimize_memory
+	if = {
+		limit = {
+			NOR = {
+				has_leader_flag = legendary_leader
+				has_leader_flag = renowned_leader
+				has_leader_flag = klfis_suppress_ethic_class_catch_phrase # tag your leader(s) with this if you set your own custom catch-phrases
+			}
+		}
+		switch = {
+			trigger = has_ethic
+			ethic_authoritarian = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = authoritarian } }
+			ethic_egalitarian = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = egalitarian } }
+			ethic_militarist = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = militarist } }
+			ethic_pacifist = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = pacifist } }
+			ethic_spiritualist = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = spiritualist } }
+			ethic_materialist = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = materialist } }
+			ethic_xenophile = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = xenophile } }
+			ethic_xenophobe = { create_message_leader_recruited_with_ethic_appropriate_catch_phrase = { ETHIC = xenophobe } }
+			default = { create_message_leader_recruited_with_default_catch_phrase = yes }
+		}
+	}
+	else = {
+		create_message_leader_recruited_with_default_catch_phrase = yes
+	}
+}
+
+# this = leader, to be cloned
+# $ETHIC$ = string, the leader's non-gestalt ethic
+create_message_leader_recruited_with_ethic_appropriate_catch_phrase = {
+	optimize_memory
+	switch = {
+		trigger = leader_class
+		governor = {
+			create_message_leader_recruited_with_ethic_and_class_appropriate_catch_phrase = {
+				ETHIC = $ETHIC$
+				CLASS = governor
+			}
+		}
+		scientist = {
+			create_message_leader_recruited_with_ethic_and_class_appropriate_catch_phrase = {
+				ETHIC = $ETHIC$
+				CLASS = scientist
+			}
+		}
+		admiral = {
+			create_message_leader_recruited_with_ethic_and_class_appropriate_catch_phrase = {
+				ETHIC = $ETHIC$
+				CLASS = admiral
+			}
+		}
+		general = {
+			create_message_leader_recruited_with_ethic_and_class_appropriate_catch_phrase = {
+				ETHIC = $ETHIC$
+				CLASS = general
+			}
+		}
+		default = { create_message_leader_recruited_with_default_catch_phrase = yes }
+	}
+}
+
+# this = leader
+# $ETHIC$ = string, the leader's non-gestalt ethic
+# $CLASS$ = string, the leader's class
+create_message_leader_recruited_with_ethic_and_class_appropriate_catch_phrase = {
+	optimize_memory
+	create_message_leader_recruited_with_parameterized_catch_phrase = { CATCH_PHRASE = $ETHIC$_$CLASS$ }
+}
+
+# this = leader
+create_message_leader_recruited_with_default_catch_phrase = {
+	optimize_memory
+	if = {
+		limit = {
+			OR = {
+				has_leader_flag = event_leader
+				has_leader_flag = renowned_leader
+			}
+		}
+		create_message = {
+			type = MESSAGE_RECRUITED_LEADER
+			localization =  MESSAGE_RECRUITED_LEADER_DESC
+			days = @toast_message_days
+			target = this
+			variable = {
+				type = name
+				localization = LEADER
+				scope = this
+			}
+			variable = {
+				key = border
+				value = GFX_border_veteran
+			}
+		}
+	}
+	else_if = {
+		limit = { has_leader_flag = legendary_leader }
+		create_message = {
+			type = MESSAGE_RECRUITED_LEADER
+			localization =  MESSAGE_RECRUITED_LEADER_DESC
+			days = @toast_message_days
+			target = this
+			variable = {
+				type = name
+				localization = LEADER
+				scope = this
+			}
+			variable = {
+				key = border
+				value = GFX_border_legendary
+			}
+		}
+	}
+	else = {
+		create_message = {
+			type = MESSAGE_RECRUITED_LEADER
+			localization =  MESSAGE_RECRUITED_LEADER_DESC
+			days = @toast_message_days
+			target = this
+			variable = {
+				type = name
+				localization = LEADER
+				scope = this
+			}
+			variable = {
+				key = border
+				value = GFX_invisible
+			}
+		}
+	}
+}
+
+# this = leader
+# CATCH_PHRASE = localisation, the catch phrase
+create_message_leader_recruited_with_parameterized_catch_phrase = {
+	optimize_memory
+	# custome message_type MESSAGE_RETAINED_LEADER instead of MESSAGE_RECRUITED_LEADER
+	# in order to not get the custome leader window - looks identitcal due to using custom_toast_content_
+	if = {
+		limit = {
+			OR = {
+				has_leader_flag = event_leader
+				has_leader_flag = renowned_leader
+			}
+		}
+		create_message = {
+			type = MESSAGE_RETAINED_LEADER
+			localization =  MESSAGE_RECRUITED_LEADER_DESC
+			days = @toast_message_days
+			target = this
+			custom_toast_content_icon = GFX_icon_leader
+			custom_toast_content_text = $CATCH_PHRASE$
+			variable = {
+				type = name
+				localization = LEADER
+				scope = this
+			}
+			variable = {
+				key = border
+				value = GFX_border_veteran
+			}
+		}
+	}
+	else_if = {
+		limit = { has_leader_flag = legendary_leader }
+		create_message = {
+			type = MESSAGE_RETAINED_LEADER
+			localization =  MESSAGE_RECRUITED_LEADER_DESC
+			days = @toast_message_days
+			target = this
+			custom_toast_content_icon = GFX_icon_leader
+			custom_toast_content_text = $CATCH_PHRASE$
+			variable = {
+				type = name
+				localization = LEADER
+				scope = this
+			}
+			variable = {
+				key = border
+				value = GFX_border_legendary
+			}
+		}
+	}
+	else = {
+		create_message = {
+			type = MESSAGE_RETAINED_LEADER
+			localization =  MESSAGE_RECRUITED_LEADER_DESC
+			days = @toast_message_days
+			target = this
+			custom_toast_content_icon = GFX_icon_leader
+			custom_toast_content_text = $CATCH_PHRASE$
+			variable = {
+				type = name
+				localization = LEADER
+				scope = this
+			}
+			variable = {
+				key = border
+				value = GFX_invisible
+			}
 		}
 	}
 }

@@ -32,6 +32,15 @@ on_leader_death_notify = {
 on_leader_death = {
 	events = {
 		keep_leaders_bonus_traits.21
+		# keep_leaders.110
+	}
+}
+
+# fired when a leader is hired 
+# this = leader
+on_leader_hired = {
+	events = {
+		keep_leaders_bonus_traits.22
 	}
 }
 
@@ -41,6 +50,7 @@ on_leader_death = {
 on_leader_fired = {
 	events = {
 		keep_leaders_bonus_traits.21
+		# keep_leaders.110
 	}
 }
 
@@ -48,6 +58,12 @@ on_leader_fired = {
 # this = leader (post-owner change)
 on_leader_owner_changed = {
 	events = {
+		paragon.450
+		keep_leaders.164
+		keep_leaders.246
+		keep_leaders.499
+		keep_leaders.2044
+		keep_leaders.2045
 	}
 }
 
@@ -75,6 +91,7 @@ on_ruler_removed = {
 on_planet_transfer = {
 	events = {
 		keep_leaders.3
+		keep_leaders.4
 		keep_leaders.21
 		keep_leaders.31
 		keep_leaders.41

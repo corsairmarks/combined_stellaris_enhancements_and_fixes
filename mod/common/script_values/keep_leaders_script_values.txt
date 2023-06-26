@@ -1,0 +1,72 @@
+# used to provide leader counts for use by scripted_loc
+# this = country
+# event_target:potential_owner = country, the country to which leaders would transfer
+# value:klfis_count_owned_leader|LEADER_CLASS|scientist|
+klfis_count_owned_leader = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		parameters = {
+			limit = {
+				is_eligible_transfer_leader_from_storage = yes
+				[[LEADER_CLASS] leader_class = $LEADER_CLASS$ ]
+			}
+		}
+		mode = add
+	}
+}
+
+# this = leader
+# event_target:potential_owner = country to which the leader would transfer
+transfer_representative_leader_weight = {
+	base = 0
+	add = trigger:has_skill
+	modifier = {
+		add = 25
+		has_leader_flag = former_ruler
+	}
+	modifier = {
+		add = 10
+		has_leader_flag = former_heir
+	}
+	modifier = {
+		add = 10
+		event_target:potential_owner = { owner_species = { has_psionic_species_trait = yes } }
+		has_psionic_species_trait = yes
+	}
+	modifier = {
+		add = 10
+		event_target:potential_owner = { is_cyborg_empire = yes }
+		is_cyborg_species = yes
+	}
+	modifier = {
+		add = 10
+		event_target:potential_owner = { is_robot_empire = yes }
+		is_robotic_species = yes
+	}
+	modifier = {
+		add = 10
+		event_target:potential_owner = { is_hive_empire = yes }
+		is_hive_species = yes
+	}
+	modifier = {
+		multiply = 0.01
+		event_target:potential_owner = {
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+			}
+		}
+		species = { NOT = { is_same_species = event_target:potential_owner.owner_species } }
+	}
+	modifier = {
+		multiply = 0.01
+		event_target:potential_owner = { allows_ai_leaders = no }
+		is_robotic_species = yes
+	}
+	modifier = {
+		multiply = 0.01
+		event_target:potential_owner = { has_valid_civic = civic_machine_terminator }
+		is_robotic_species = no
+	}
+}

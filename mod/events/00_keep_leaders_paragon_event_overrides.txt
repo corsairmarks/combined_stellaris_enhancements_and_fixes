@@ -1,0 +1,14 @@
+namespace = paragon
+
+# Modified:
+# * create clone of the hired leader
+# * clone uses the ethic-specific catch-phrase as its toast message
+# * purge the clone
+leader_event = {
+	id = paragon.450
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		create_message_leader_recruited_with_appropriate_catch_phrase = yes
+	}
+}

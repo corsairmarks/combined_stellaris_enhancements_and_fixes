@@ -6,16 +6,20 @@ should_recalculate_former_ruler_country_modifiers = {
 		has_modifier = former_heir_admin_bonus
 		has_modifier = former_ruler_naval_bonus
 		has_modifier = former_heir_naval_bonus
-		any_owned_leader = {
-			OR = {
-				leader_class = governor
-				leader_class = admiral
-			}
-			OR = {
-				has_former_ruler_trait = yes
-				has_former_heir_trait = yes
-			}
-		}
+		any_owned_leader = { has_former_ruler_trait_with_country_modifier = yes }
+	}
+}
+
+# this = leader
+has_former_ruler_trait_with_country_modifier = {
+	optimize_memory
+	OR = {
+		leader_class = governor
+		leader_class = admiral
+	}
+	OR = {
+		has_former_ruler_trait = yes
+		has_former_heir_trait = yes
 	}
 }
 

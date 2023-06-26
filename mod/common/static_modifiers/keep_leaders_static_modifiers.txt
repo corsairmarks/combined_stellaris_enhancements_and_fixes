@@ -5,3 +5,9 @@ kl_peerless_infiltration_agents = {
 	spy_network_daily_value_mult = 0.25
 	op_cat_infiltration_speed_mult = 0.25
 }
+
+# ship modifier
+kl_exemplary_captain = {
+	ship_experience_gain_mult = 2 # yes really
+	ship_fire_rate_mult = 0.05 # matches leader_trait_aggressive
+}

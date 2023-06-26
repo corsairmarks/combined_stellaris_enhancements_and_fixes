@@ -13,7 +13,7 @@ is_regular_hive_empire = {
 }
 
 # this = country
-is_necrophage_empire = {
+klfis_is_necrophage_empire = {
 	optimize_memory
 	has_origin = origin_necrophage
 	has_trait = trait_necrophage
@@ -22,13 +22,7 @@ is_necrophage_empire = {
 # this = country
 empire_considers_cyborgs_robotic = {
 	optimize_memory
-	OR = {
-		has_valid_civic = civic_machine_assimilator
-		has_ascension_perk = ap_the_flesh_is_weak
-		has_country_flag = cyborg_empire
-		has_ascension_perk = ap_synthetic_evolution
-		has_country_flag = synthetic_empire
-	}
+	has_valid_civic = civic_machine_assimilator
 }
 
 # this = country
@@ -97,7 +91,7 @@ is_eligible_for_policy_full_citizenship_species = {
 			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
 			OR = {
 				is_hive_species = yes
-				event_target:potential_owner = { has_active_tradition = tr_genetics_creation }
+				event_target:potential_owner = { has_tradition = tr_genetics_creation }
 			}
 		}
 		else_if = {
@@ -105,7 +99,7 @@ is_eligible_for_policy_full_citizenship_species = {
 			event_target:potential_owner = {
 				NOT = { has_valid_civic = civic_fanatic_purifiers }
 				is_xenophobe = no
-				is_necrophage_empire = no
+				klfis_is_necrophage_empire = no
 			}
 			is_smart_enough_for_leadership_species = yes
 			is_hive_species = no
@@ -137,7 +131,7 @@ is_eligible_for_policy_full_military_service_species = {
 			limit = { event_target:potential_owner = { is_regular_hive_empire = yes } }
 			OR = {
 				is_hive_species = yes
-				event_target:potential_owner = { has_active_tradition = tr_genetics_creation }
+				event_target:potential_owner = { has_tradition = tr_genetics_creation }
 			}
 		}
 		else_if = {
@@ -147,7 +141,7 @@ is_eligible_for_policy_full_military_service_species = {
 				OR = {
 					AND = {
 						is_xenophobe = no
-						is_necrophage_empire = no
+						klfis_is_necrophage_empire = no
 					}
 					species = { has_species_flag = allow_military_leaders_honored_protectors@event_target:potential_owner }
 				}
@@ -207,7 +201,7 @@ is_potential_for_machine_cyborg_assimilation_species = {
 			is_hive_species = no
 		}
 		AND = {
-			event_target:potential_owner = { has_active_tradition = tr_cybernetics_assimilator_inevitable_assimilation }
+			event_target:potential_owner = { has_tradition = tr_cybernetics_assimilator_inevitable_assimilation }
 			is_hive_species = yes
 		}
 	}
@@ -224,7 +218,7 @@ is_potential_for_hive_assimilation_species = {
 # this = country
 is_potential_for_genetic_assimilation_country = {
 	optimize_memory
-	has_active_tradition = tr_genetics_creation
+	has_tradition = tr_genetics_creation
 }
 
 # could this species potentially be converted from a machine to a robot? (machine)
@@ -269,7 +263,7 @@ is_potential_for_cyborg_assimilation_country = {
 	optimize_memory
 	OR = {
 		has_civic = civic_machine_assimilator
-		has_active_tradition = tr_cybernetics_transubstantiation_synthesis
+		has_tradition = tr_cybernetics_transubstantiation_synthesis
 	}
 }
 
@@ -466,20 +460,6 @@ is_military_leader = {
 }
 
 # this = leader
-is_psionic_leader = {
-	optimize_memory
-	OR = {
-		has_psionic_species_trait = yes
-		has_trait = leader_trait_psionic
-		has_trait = leader_trait_chosen
-		has_trait = leader_trait_eater_chosen
-		has_trait = leader_trait_composer_chosen
-		has_trait = leader_trait_instrument_chosen
-		has_trait = leader_trait_whisperers_chosen
-	}
-}
-
-# this = leader
 is_cyborg_leader = {
 	optimize_memory
 	OR = {
@@ -501,6 +481,28 @@ is_synthetic_leader = {
 is_allow_transfer_without_assimilation = {
 	optimize_memory
 	OR = {
+		AND = { # gestalt renowned/legendary leaders will work for anyone (Oracle, Warform, Caretaker, Gray)
+			# The Beholder should _probably_ be xenophilic or spiritualist, but it has no ethic when initially created, then it picks one of the hirer's ethics when cloned
+			is_gestalt = yes
+			OR = {
+				AND = {
+					has_leader_flag = renowned_leader
+					event_target:potential_owner = { # FP/DS don't want outsiders
+						NOR = {
+							has_civic = civic_fanatic_purifiers
+							has_civic = civic_hive_devouring_swarm
+						}
+					}
+				}
+				has_leader_flag = legendary_leader # Gray is fully free-agent
+			}
+			event_target:potential_owner = { # existing gestalt leaders are all "mechanical," so OZ want nothing to do with them
+				OR = {
+					has_civic_organic_zealots_active = no
+					is_valid_organic_zealots = no
+				}
+			}
+		}
 		species = { is_same_species = event_target:potential_owner.owner_species }
 		if = {
 			limit = { event_target:potential_owner = { is_machine_empire = yes } }
@@ -560,7 +562,7 @@ is_allow_transfer_with_assimilation = {
 				is_potential_for_hive_assimilation_species = yes
 			}
 			AND = {
-				event_target:potential_owner = { has_active_tradition = tr_cybernetics_transubstantiation_synthesis }
+				event_target:potential_owner = { has_tradition = tr_cybernetics_transubstantiation_synthesis }
 				is_potential_for_hive_cyborg_assimilation_species = yes
 			}
 		}
@@ -574,19 +576,19 @@ is_allow_transfer_with_assimilation = {
 				is_potential_for_regular_synthetic_assimilation_species = yes
 			}
 			AND = {
-				event_target:potential_owner = { has_active_tradition = tr_cybernetics_transubstantiation_synthesis }
+				event_target:potential_owner = { has_tradition = tr_cybernetics_transubstantiation_synthesis }
 				is_potential_for_regular_cyborg_assimilation_species = yes
 				is_smart_enough_for_leadership_species = yes
 				is_regular_empire_ethics_allowable_leader_species = yes
 			}
 			AND = {
-				event_target:potential_owner = { has_active_tradition = tr_psionics_psionic_assimilation }
+				event_target:potential_owner = { has_tradition = tr_psionics_psionic_assimilation }
 				is_potential_for_psionic_assimilation_species = yes
 				is_smart_enough_for_leadership_species = yes
 				is_regular_empire_ethics_allowable_leader_species = yes
 			}
 			AND = {
-				event_target:potential_owner = { has_active_tradition = tr_genetics_creation }
+				event_target:potential_owner = { has_tradition = tr_genetics_creation }
 				is_potential_for_unhive_assimilation_species = yes
 				is_smart_enough_for_leadership_species = yes
 				is_regular_empire_ethics_allowable_leader_species = yes
@@ -609,18 +611,22 @@ is_allow_transfer_with_assimilation = {
 
 # this = leader
 # event_target:potential_owner = country to which the leader would transfer
-is_eligible_transfer_leader_from_storage = {
-	optimize_memory
-	has_leader_flag = potential_owner@event_target:potential_owner
-	is_eligible_transfer_leader = yes
-}
-
-# this = leader
 is_eligible_transfer_leader = {
 	optimize_memory
 	is_gestalt_node = no
-	NOT = { leader_class = envoy }
-	species = { is_sapient = yes }
+	NOR = {
+		leader_class = envoy
+		has_leader_flag = klfis_exclude_leader_from_transfer
+	}
+	is_smart_enough_for_leadership_species = yes
+}
+
+# this = leader
+# event_target:potential_owner = country to which the leader would transfer
+is_eligible_transfer_leader_from_storage = {
+	optimize_memory
+	has_leader_flag = stored_leader
+	is_eligible_transfer_leader = yes
 }
 
 # allows cyborgs to be considered robotic if the potential owner considers them to be robotic
@@ -643,7 +649,7 @@ is_regular_empire_ethics_allowable_leader_species = {
 	optimize_memory
 	OR = {
 		event_target:potential_owner = {
-			is_necrophage_empire = no
+			klfis_is_necrophage_empire = no
 			is_xenophobe = no
 		}
 		is_bypass_leader_restriction_honored_protectors = yes
@@ -665,7 +671,7 @@ any_stored_leaders_eligible_to_transfer_main_species_leader_restricted = {
 	optimize_memory
 	any_owned_leader = {
 		is_eligible_transfer_leader_from_storage = yes
-		[[TRIGGER] $TRIGGER$ = yes]
+		[[TRIGGER] $TRIGGER$ = yes ]
 		OR = {
 			is_same_species = event_target:potential_owner
 			is_bypass_leader_restriction_honored_protectors = yes
@@ -673,51 +679,119 @@ any_stored_leaders_eligible_to_transfer_main_species_leader_restricted = {
 	}
 }
 
-# this = country
-# event_target:potential_owner = country to which the leader would transfer
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
 all_stored_leaders_same_species = {
 	optimize_memory
-	NOT = {
-		any_owned_leader = {
-			is_eligible_transfer_leader_from_storage = yes
-			NOT = { is_same_species = event_target:potential_owner }
-		}
+	check_variable = {
+		which = leader_accumulator
+		value = leader_same_species_accumulator
 	}
 }
 
-# this = country
-# event_target:potential_owner = country to which the leader would transfer
-all_stored_leaders_robotic_strict = {
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+all_stored_leaders_organic = {
 	optimize_memory
-	NOT = {
-		any_owned_leader = {
-			is_eligible_transfer_leader_from_storage = yes
-			is_robotic_species = no
-		}
+	check_variable = {
+		which = leader_accumulator
+		value = leader_organic_accumulator
 	}
 }
 
-# this = country
-# event_target:potential_owner = country to which the leader would transfer
-all_stored_leaders_robotic_lenient = {
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+all_stored_leaders_organic_non_hive = {
 	optimize_memory
-	NOT = {
-		any_owned_leader = {
-			is_eligible_transfer_leader_from_storage = yes
-			is_robotic_species_lenient = no
-		}
+	check_variable_arithmetic = {
+		which = leader_accumulator
+		subtract = leader_hive_accumulator
+		subtract = leader_robotic_accumulator
+		value = leader_organic_accumulator
 	}
 }
 
-# this = country
-# event_target:potential_owner = country to which the leader would transfer
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+all_stored_leaders_robotic = {
+	optimize_memory
+	check_variable = {
+		which = leader_accumulator
+		value = leader_robotic_accumulator
+	}
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
 all_stored_leaders_hive = {
 	optimize_memory
-	NOT = {
-		any_owned_leader = {
-			is_eligible_transfer_leader_from_storage = yes
-			is_hive_species = no
-		}
+	check_variable = {
+		which = leader_accumulator
+		value = leader_hive_accumulator
+	}
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_any_stored_leaders_same_species = {
+	optimize_memory
+	check_variable = {
+		which = leader_same_species_accumulator
+		value > 0
+	}
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_any_stored_leaders_organic = {
+	optimize_memory
+	check_variable = {
+		which = leader_organic_accumulator
+		value > 0
+	}
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_any_stored_leaders_organic_non_hive = {
+	optimize_memory
+	check_variable_arithmetic = {
+		which = leader_organic_accumulator
+		subtract = leader_hive_accumulator
+		value > 0
+	}
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_any_stored_leaders_robotic = {
+	optimize_memory
+	check_variable = {
+		which = leader_robotic_accumulator
+		value > 0
+	}
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_stored_leaders_both_robotic_and_organic = {
+	optimize_memory
+	has_any_stored_leaders_robotic = yes
+	has_any_stored_leaders_organic = yes
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_stored_leaders_both_robotic_and_organic_non_hive = {
+	optimize_memory
+	has_any_stored_leaders_robotic = yes
+	has_any_stored_leaders_organic_non_hive = yes
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_any_stored_leaders_hive = {
+	optimize_memory
+	check_variable = {
+		which = leader_hive_accumulator
+		value > 0
+	}
+}
+
+# this = any, the scope must have the leader-count-related variables (see effects create_leader_storage_and_transfer_leaders and accumulate_leader)
+has_any_stored_leaders_non_hive = {
+	optimize_memory
+	check_variable = {
+		which = leader_hive_accumulator
+		value < leader_accumulator
 	}
 }
 
@@ -727,12 +801,8 @@ all_stored_leaders_hive = {
 has_leader_storage_from_country_to_planet_owner = {
 	optimize_memory
 	any_country = {
-		is_country_type = neutral_faction
 		has_country_flag = former_owner@fromfrom
-		any_owned_leader = {
-			has_leader_flag = former_owner@fromfrom
-			has_leader_flag = potential_owner@from
-		}
+		has_country_flag = potential_owner@from
 	}
 }
 

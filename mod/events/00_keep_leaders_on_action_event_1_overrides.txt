@@ -1,0 +1,201 @@
+namespace = action
+
+# Modified:
+# * use the primitive country's ruler as the portrait (otherwise it's weird when the former ruler is retained wiht a different portrait)
+# * use triggers for ethics
+# * new exclusive option for invasions; the regular options are (mostly) friendly
+country_event = {
+	id = action.2
+	title = action.1.name
+	message_desc = action.1.message
+	### Custom First Contact system flavour
+	desc = {
+		text = action.2.desc_01
+		trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = none
+				has_special_pre_ftl_diplo = no
+			}
+		}
+	}
+	desc = {
+		text = action.2.desc_02
+		trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = low
+				has_special_pre_ftl_diplo = no
+			}
+		}
+	}
+	desc = {
+		text = action.2.desc_03
+		trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = medium
+				has_special_pre_ftl_diplo = no
+			}
+		}
+	}
+	desc = {
+		text = action.2.desc_04
+		trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = high
+				has_special_pre_ftl_diplo = no
+			}
+		}
+	}
+	desc = {
+		text = action.2.desc_05
+		trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = full
+				NOT = { has_country_flag = pre_ftl_initiating_contact }
+				has_special_pre_ftl_diplo = no
+			}
+		}
+	}
+	desc = {
+		text = action.2.desc_06
+		trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = full
+				has_country_flag = pre_ftl_initiating_contact
+				has_special_pre_ftl_diplo = no
+			}
+		}
+	}
+	desc = {
+		text = action.2.desc_solarpunk
+		trigger = {
+			event_target:contact_empire = {
+				has_special_pre_ftl_diplo = yes
+				has_country_flag = solarpunk_country
+			}
+		}
+	}
+	desc = {
+		text = action.2.desc_07
+		exclusive_trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = full
+				has_country_flag = pre_ftl_being_invaded
+			}
+		}
+	}
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:contact_empire.ruler
+		planet_background = event_target:contact_empire
+		graphical_culture = event_target:contact_empire
+		city_level = event_target:contact_empire
+		room = event_target:contact_empire.ruler
+	}
+	location = event_target:contact_empire.capital_scope
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		event_target:contact_empire = { is_primitive = yes }
+	}
+	immediate = {
+		country_event = {
+			id = tutorial.2150 # "First Contact Established" (pre-FTL version)
+		}
+		event_target:contact_empire = { save_event_target_as = contact_speaker }
+	}
+	# For the event options:
+	#	- Note 1: If multiple of the triggered descriptions return true, it'll pick a random one among those that are available.
+	#	- Note 2: If none of them return true, it will pick the first one in the list. So it should be something suitably generic.
+	option = { # xenophile
+		name = action.2.a
+		trigger = { is_xenophile = yes }
+	}
+	option = { # xenophobe
+		name = action.2.b
+		trigger = { is_xenophobe = yes }
+	}
+	option = { # spiritualist
+		name = action.2.c
+		trigger = { is_spiritualist = yes }
+	}
+	option = { # materialist
+		name = action.2.d
+		trigger = { is_materialist = yes }
+	}
+	option = { # militarist
+		name = action.2.e
+		trigger = { is_militarist = yes }
+	}
+	option = { # pacifist
+		name = action.2.f
+		trigger = { is_pacifist = yes }
+	}
+	option = { # egalitarian
+		name = action.2.g
+		trigger = { is_egalitarian = yes }
+	}
+	option = { # authoritarian
+		name = action.2.h
+		trigger = { is_authoritarian = yes }
+	}
+	option = { # gestalt
+		name = action.2.i
+		trigger = {
+			is_gestalt = yes
+			event_target:contact_empire = { is_gestalt = no }
+		}
+	}
+	option = { # gestalt meeting other gestalt
+		name = action.2.j
+		trigger = {
+			is_gestalt = yes
+			event_target:contact_empire = { is_gestalt = yes }
+		}
+	}
+	option = { # megacorp
+		name = action.2.k
+		trigger = { is_megacorp = yes }
+	}
+	option = {
+		name = action.2.l
+		exclusive_trigger = {
+			event_target:contact_empire = {
+				current_awareness_level = full
+				has_country_flag = pre_ftl_being_invaded
+			}
+		}
+	}
+	after = {
+		add_intel = {
+			who = event_target:contact_empire
+			amount = 100
+		}
+		event_target:contact_empire = { set_awareness = 100 }
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						event_target:contact_empire = {
+							has_relation_flag = {
+								flag = no_coms
+								who = root
+							}
+						}
+					}
+				}
+				country_event = {
+					id = progress.4
+				}
+				country_event = {
+					id = progress.5
+				}
+				country_event = {
+					id = progress.6
+				}
+				country_event = {
+					id = progress.9 # special event for Payback origin
+				}
+			}
+		}
+	}
+}
