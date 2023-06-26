@@ -168,3 +168,23 @@ decrement_imperial_legion_soldier_queued_count = {
 		}
 	}
 }
+
+# invoke this effect when a country gains a planet with Titanic Life
+# this = country
+increment_titanic_life_soldier_maximum = {
+	optimize_memory
+	change_variable = {
+		which = titanic_life_soldier_maximum
+		value = @titanic_life_soldier_per_planet_maximum
+	}
+}
+
+# invoke this effect when a country loses a planet with Titanic Life
+# this = country
+decrement_titanic_life_soldier_maximum = {
+	optimize_memory
+	subtract_variable = {
+		which = titanic_life_soldier_maximum
+		value = @titanic_life_soldier_per_planet_maximum
+	}
+}

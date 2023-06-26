@@ -61,6 +61,14 @@ on_colonized = {
 	}
 }
 
+# fired when a colony has been destroyed, just before the owner and controller are cleared
+# this = planet
+on_colony_destroyed = {
+	events = {
+		limited_army_counter_fix.7
+	}
+}
+
 # fired when a fleet is disbanded (but not individual ships)
 # this = owner
 # from = fleet
