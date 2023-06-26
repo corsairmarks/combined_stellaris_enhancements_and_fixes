@@ -1,5 +1,5 @@
 # root = country, instigating empire
-# this = country, primitive (from.target; from = espionage_operation)
+# this = country, pre-FTL (from.target; from = espionage_operation)
 infiltrate_government_annexation_effect = {
 	if = {
 		limit = {
@@ -26,6 +26,7 @@ infiltrate_government_annexation_effect = {
 			owner = root
 			species = owner_main_species
 			type = "defense_army"
+			land_army = yes
 		}
 		# building/district setup handled in primitive_conquest_enhancements.1
 	}
