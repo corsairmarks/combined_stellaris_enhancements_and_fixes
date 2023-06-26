@@ -60,7 +60,7 @@ is_eligible_to_designate_honored_protectors = {
 
 # this follows the game's default rules - does not account for Gender Nonbinary Leaders
 # this = leader, after species change
-btml_leader_new_species_allows_current_gender = {
+btml_leader_species_allows_current_gender = {
 	optimize_memory
 	switch = {
 		trigger = gender

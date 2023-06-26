@@ -79,10 +79,9 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_active_event = { leader.1 }
+		has_keep_leaders_active = no
 		exists = last_created_leader
 		last_created_leader = { leader_class = admiral }
-		is_country = last_created_leader.owner
-		any_owned_leader = { is_same_value = last_created_leader }
 		any_owned_pop_species = {
 			NOT = { is_same_species = prev.owner_species }
 			has_military_service_type = {
@@ -134,7 +133,13 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = from
-		from = { is_robotic_species = no }
+		from.species = {
+			is_robotic = no
+			has_citizenship_type = {
+				type = citizenship_organic_trophy
+				country = root
+			}
+		}
 		any_pool_leader = { is_same_value = from }
 	}
 	immediate = {
@@ -165,9 +170,9 @@ leader_event = {
 		has_leader_flag = force_gender_match_species
 		exists = from
 		from = { is_scope_type = species }
-		btml_leader_new_species_allows_current_gender = no
+		btml_leader_species_allows_current_gender = no
 	}
 	immediate = {
-		btml_leader_spawned_match_gender_to_species = yes
+		btml_leader_match_gender_to_species = yes
 	}
 }
