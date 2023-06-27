@@ -20,7 +20,7 @@ Built for Stellaris version 3.8 "Gemini." Not compatible with achievements. This
 [*]Several event-related jobs, for the same reason: [b]cave_cleaner[/b], [b]titan_hunter[/b], [b]turtle_miner[/b]
 [*][b]tech_housing_agrarian_idyll[/b] in order to exclude Lithorian Idyll, who now have their own version of this technology
 [/list]
-This mod avoids overwriting jobs unrelated to the core game mechanic being modified. It should therefore not conflict with mods that make changes to other worker and event jobs, or other ringworld districts. It is now only incompatible with mods that want to edit exactly the same game objects (as listed above). This mod has built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] but must by placer _after_ it in load order.
+This mod avoids overwriting jobs unrelated to the core game mechanic being modified. It should therefore not conflict with mods that make changes to other worker and event jobs, or other ringworld districts. It is now only incompatible with mods that want to edit exactly the same game objects (as listed above). This mod has built-in compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=819148835]Planetary Diversity[/url] but must by placer [i]after[/i] it in load order.
 
 [h3]When to Install[/h3]
 This mod can be safely added after the game has started, but should not be removed from a game in-progress. Losing access to the new technology "Lithorian Idyll" could cause problems for the game if any countries have researched it.
