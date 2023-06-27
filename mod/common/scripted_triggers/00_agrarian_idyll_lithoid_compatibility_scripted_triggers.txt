@@ -1,19 +1,5 @@
 # Irony this is a placeholder file please ignore it
 
-# supports features from my mod Leader Traits: All Eligible Species Traits
-# this = any
-has_leader_species_traits_active = {
-	optimize_memory
-	always = no
-}
-
-# supports features from my mod Gender Nonbinary Leaders
-# this = any
-has_nonbinary_leaders_active = {
-	optimize_memory
-	always = no
-}
-
 ### Planetary Diversity ###
 # https://steamcommunity.com/sharedfiles/filedetails/?id=819148835
 
