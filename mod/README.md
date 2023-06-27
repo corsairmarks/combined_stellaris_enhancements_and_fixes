@@ -117,6 +117,7 @@ Normally overriding a single technology can cause problems with the game being c
 * 9.0.0 Update for Stellaris version 3.8 "Gemini" - integrate underlying game changes
 * 9.1.0 Update for Stellaris version 3.8.2 "Gemini" - integrate underlying game changes
 * 9.1.1 Remove references to Planetary Capacity - mod no longer provides that modifier
+* 9.1.2 Update the thumbnail
 
 ## Source Code
 
