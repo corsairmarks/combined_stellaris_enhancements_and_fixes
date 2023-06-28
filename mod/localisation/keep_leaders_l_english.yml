@@ -278,5 +278,11 @@
  leader.1.a: "What are the details of your command?"
  leader.1.a.response: "I command the §Y[ship.GetName]§!, a [ship.GetDesignName]-class §Y[ship.GetShipSizeName]§! currently attached to the §Y[ship.GetFleetName]§!."
 
+ # additional pre-FTL governments in order to have more appropriate leader titles
+ gov_fragmented_nation_states_imperial: "$gov_fragmented_nation_states$"
+ gov_fragmented_nation_states_imperial_desc: "$gov_fragmented_nation_states_desc$"
+ gov_fragmented_nation_states_corporate: "$gov_fragmented_nation_states$"
+ gov_fragmented_nation_states_corporate_desc: "$gov_fragmented_nation_states_desc$"
+
  # modifiers unlocalised in the base game
  mod_op_cat_infiltration_speed_mult: "$MOD_ESPIONAGE_OPERATION_SPEED_MULT$ ($op_cat_infiltration$)"

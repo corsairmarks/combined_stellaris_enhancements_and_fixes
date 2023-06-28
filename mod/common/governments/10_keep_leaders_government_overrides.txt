@@ -1,0 +1,69 @@
+# Modified: add heir titles
+gov_tribal_society = {
+	ruler_title = RT_KING
+	ruler_title_female = RT_QUEEN
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+	should_force_rename = yes
+	possible = {
+		has_valid_civic = civic_secret_of_fire
+		has_valid_civic = civic_the_wheel
+	}
+	weight = { base = 100000 }
+}
+
+# Modified: add heir titles
+gov_feudal_realms = {
+	ruler_title = RT_KING
+	ruler_title_female = RT_QUEEN
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+	should_force_rename = yes
+	possible = {
+		has_valid_civic = civic_landed_nobility
+		has_valid_civic = civic_flat_world_theory
+	}
+	weight = { base = 100000 }
+}
+
+# Modified: disallowed for corporate and imperial
+gov_fragmented_nation_states = {
+	ruler_title = RT_SECRETARY
+	ruler_title_female = RT_SECRETARY_FEMALE
+	should_force_rename = yes
+	possible = {
+		has_valid_civic = civic_increasing_urbanization
+		has_valid_civic = civic_atmospheric_pollution
+		NOT = { has_authority = auth_imperial }
+		is_megacorp = no
+	}
+	weight = { base = 100000 }
+}
+
+# New: use imperial titles
+gov_fragmented_nation_states_imperial = {
+	ruler_title = RT_EMPEROR
+	ruler_title_female = RT_EMPRESS
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+	should_force_rename = yes
+	possible = {
+		has_valid_civic = civic_increasing_urbanization
+		has_valid_civic = civic_atmospheric_pollution
+		has_authority = auth_imperial
+	}
+	weight = { base = 100000 }
+}
+
+# New: use corporate titles
+gov_fragmented_nation_states_corporate = {
+	ruler_title = RT_CEO
+	ruler_title_female = RT_CEO_FEMALE
+	should_force_rename = yes
+	possible = {
+		has_valid_civic = civic_increasing_urbanization
+		has_valid_civic = civic_atmospheric_pollution
+		is_megacorp = yes
+	}
+	weight = { base = 100000 }
+}

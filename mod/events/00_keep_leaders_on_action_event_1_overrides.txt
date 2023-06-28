@@ -1,7 +1,7 @@
 namespace = action
 
 # Modified:
-# * use the primitive country's ruler as the portrait (otherwise it's weird when the former ruler is retained wiht a different portrait)
+# * use the primitive country's ruler as the portrait (otherwise it's weird when the former ruler is retained with a different portrait)
 # * use triggers for ethics
 # * new exclusive option for invasions; the regular options are (mostly) friendly
 country_event = {
@@ -194,6 +194,52 @@ country_event = {
 				}
 				country_event = {
 					id = progress.9 # special event for Payback origin
+				}
+			}
+		}
+	}
+}
+
+# Modified:
+# * remove dead code
+# * shim for retaining leaders from primitive empires whose last planet was absorbed by the starbase owner
+planet_event = {
+	id = action.86
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		owner = { save_event_target_as = former_planet_owner }
+		starbase.owner = { save_event_target_as = new_planet_owner }
+		set_owner = event_target:new_planet_owner # flip planet
+		event_target:former_planet_owner = {
+			country_event = {
+				id = action.87 # notification to former owner
+			}
+		}
+		event_target:new_planet_owner = {
+			country_event = {
+				id = action.88 # notification to new owner
+			}
+		}
+		if = {
+			limit = {
+				event_target:former_planet_owner = {
+					has_country_flag = primitives_can_into_space
+					NOT = { any_owned_planet = { NOT = { is_planet = root } } }
+				}
+			}
+			event_target:new_planet_owner = {
+				log = "pre-FTL starbase not ceded: [Root.GetName] ([former_planet_owner.GetRealName]) force-integrated by [This.GetRealName]"
+				save_event_target_as = potential_owner # "argument" for create_leader_storage_and_transfer_leaders
+				event_target:former_planet_owner = { save_event_target_as = former_owner } # "argument" for create_leader_storage_and_transfer_leaders
+				create_leader_storage_and_transfer_leaders = yes
+				set_country_flag = keeping_leaders_integration@event_target:storage_owner
+				country_event = {
+					id = keep_leaders.1 # hooray for reuse!
+					scopes = {
+						from = event_target:former_planet_owner
+						fromfrom = root
+					}
 				}
 			}
 		}

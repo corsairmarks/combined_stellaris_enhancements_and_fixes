@@ -1,6 +1,6 @@
 namespace = keep_leaders
 
-# triggered by keep_leaders.2, keep_leaders.5, keep_leaders.21, keep_leaders.51
+# triggered by keep_leaders.2, keep_leaders.5, keep_leaders.21, keep_leaders.51, action.86 (override)
 # window with options to potentially keep the stored leaders from integration/pre-FTL conquest/colossus weapon
 # root = country, overlord
 # from = country, integrated subject or conquered/colossus'd pre-FTLs
@@ -147,37 +147,31 @@ country_event = {
 	# planet_killer
 	desc = {
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
-				has_country_flag = orbitally_drenched@fromfrom
+				has_country_flag = colossus_transfer@event_target:conquered_planet
+				has_country_flag = orbitally_drenched@event_target:conquered_planet
 			}
 		}
 		text = keep_leaders.1.desc.planet_killer_deluge
 	}
 	desc = {
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
-				has_country_flag = divinely_enforced@fromfrom
+				has_country_flag = colossus_transfer@event_target:conquered_planet
+				has_country_flag = divinely_enforced@event_target:conquered_planet
 			}
 		}
 		text = keep_leaders.1.desc.planet_killer_godray
 	}
 	desc = {
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
+				has_country_flag = colossus_transfer@event_target:conquered_planet
 				NOR = {
-					has_country_flag = orbitally_drenched@fromfrom
-					has_country_flag = divinely_enforced@fromfrom
-					has_country_flag = nanobot_assimilated@fromfrom
-					has_country_flag = orbitally_necrophaged@fromfrom
+					has_country_flag = orbitally_drenched@event_target:conquered_planet
+					has_country_flag = divinely_enforced@event_target:conquered_planet
+					has_country_flag = nanobot_assimilated@event_target:conquered_planet
+					has_country_flag = orbitally_necrophaged@event_target:conquered_planet
 				}
 			}
 		}
@@ -197,22 +191,18 @@ country_event = {
 	picture = {
 		picture = GFX_leader_recruitment_bg_deluge # GFX_evt_planet_beam
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
-				has_country_flag = orbitally_drenched@fromfrom
+				has_country_flag = colossus_transfer@event_target:conquered_planet
+				has_country_flag = orbitally_drenched@event_target:conquered_planet
 			}
 		}
 	}
 	picture = {
 		picture = GFX_leader_recruitment_bg_planet_destruction # GFX_evt_death_from_above
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
-				NOT = { has_country_flag = orbitally_drenched@fromfrom }
+				has_country_flag = colossus_transfer@event_target:conquered_planet
+				NOT = { has_country_flag = orbitally_drenched@event_target:conquered_planet }
 			}
 		}
 	}
@@ -220,7 +210,7 @@ country_event = {
 		portrait = event_target:transfer_representative
 		room = ethic_spaceship_room
 	}
-	# despite show_sound being a valid part of a triggered desc, the game didn't seem to like it (as a guess, no fallback?)
+	# despite show_sound being a valid part of a triggered desc, the game didn't seem to like it for leader_recruit (as a guess, no fallback?)
 	show_sound = {
 		trigger = {
 			OR = {
@@ -232,43 +222,37 @@ country_event = {
 	}
 	show_sound = {
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
-				has_country_flag = orbitally_drenched@fromfrom
+				has_country_flag = colossus_transfer@event_target:conquered_planet
+				has_country_flag = orbitally_drenched@event_target:conquered_planet
 			}
 		}
 		sound = aqu_wep_colossus_planet_hit
 	}
 	show_sound = {
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
-				has_country_flag = divinely_enforced@fromfrom
+				has_country_flag = colossus_transfer@event_target:conquered_planet
+				has_country_flag = divinely_enforced@event_target:conquered_planet
 			}
 		}
 		sound = event_mystic_reveal
 	}
 	show_sound = {
 		trigger = {
-			exists = fromfrom
-			fromfrom = { is_scope_type = planet }
 			event_target:storage_owner = {
-				has_country_flag = colossus_transfer@fromfrom
+				has_country_flag = colossus_transfer@event_target:conquered_planet
 				NOR = {
-					has_country_flag = orbitally_drenched@fromfrom
-					has_country_flag = divinely_enforced@fromfrom
-					has_country_flag = nanobot_assimilated@fromfrom
-					has_country_flag = orbitally_necrophaged@fromfrom
+					has_country_flag = orbitally_drenched@event_target:conquered_planet
+					has_country_flag = divinely_enforced@event_target:conquered_planet
+					has_country_flag = nanobot_assimilated@event_target:conquered_planet
+					has_country_flag = orbitally_necrophaged@event_target:conquered_planet
 				}
 			}
 		}
 		sound = event_red_alert
 	}
-	# location = fromfrom # optional way to do this?
+	location = event_target:conquered_planet
 	is_triggered_only = yes
 	trigger = {
 		exists = from
@@ -284,7 +268,25 @@ country_event = {
 		from = {
 			save_event_target_as = former_owner
 			owner_species = { save_event_target_as = original_species }
-			fromfrom = { save_event_target_as = conquered_planet } # "argument" for localisation
+		}
+		if = { # planet "argument" for location, localisation, etc.
+			limit = {
+				exists = fromfrom
+				fromfrom = { is_scope_type = planet }
+			}
+			fromfrom = { save_event_target_as = conquered_planet } 
+		}
+		else_if = {
+			limit = { from = { exists = capital_scope } }
+			from.capital_scope = { save_event_target_as = conquered_planet }
+		}
+		else = {
+			from = {
+				random_owned_planet = {
+					weights = { base = trigger:num_pops }
+					save_event_target_as = conquered_planet
+				}
+			}
 		}
 		# acquire leader and variable storage
 		random_country = {
@@ -2145,11 +2147,7 @@ country_event = {
 		exists = from
 		from = {
 			is_primitive = yes
-			OR = {
-				exists = ruler
-				exists = heir
-				any_owned_leader = { is_eligible_transfer_leader = yes }
-			}
+			any_owned_leader = { is_eligible_transfer_leader = yes }
 		}
 	}
 	immediate = {
@@ -2408,13 +2406,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = from
-		from = {
-			OR = {
-				exists = ruler
-				exists = heir
-				any_owned_leader = { is_eligible_transfer_leader = yes }
-			}
-		}
+		from = { any_owned_leader = { is_eligible_transfer_leader = yes } }
 	}
 	immediate = {
 		log = "subject integration: [From.GetRealName] integrated by [This.GetRealName]"
@@ -2535,6 +2527,36 @@ leader_event = {
 	}
 	immediate = {
 		klfis_leader_match_gender_to_species = yes
+	}
+}
+
+# transfer leaders to storage while the destroyed country exists
+# triggered by on_country_destroyed
+# root = country, destroyed
+# from = country, destroyer (optional)
+country_event = {
+	id = keep_leaders.8
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		exists = from # check from first, no point if the destroyer can't keep leaders
+		from = { any_playable_country = { is_country = prev } }
+		NOT = { has_country_flag = leader_storage_created } # exclude anything that has been handled
+		any_playable_country = { is_country = prev }
+		any_owned_leader = { is_eligible_transfer_leader = yes }
+	}
+	immediate = {
+		log = "country destruction: [From.GetRealName] destroyed by [This.GetRealName]"
+		save_event_target_as = former_owner # "argument" for create_leader_storage_and_transfer_leaders
+		from = { 
+			save_event_target_as = potential_owner # "argument" for create_leader_storage_and_transfer_leaders
+			create_leader_storage_and_transfer_leaders = yes
+			set_country_flag = keeping_leaders_conquest@event_target:storage_owner
+			country_event = {
+				id = keep_leaders.1 # hooray for reuse!
+				scopes = { from = event_target:former_owner }
+			}
+		}
 	}
 }
 

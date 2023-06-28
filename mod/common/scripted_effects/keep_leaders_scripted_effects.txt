@@ -1,142 +1,155 @@
 # creates a country to store leaders and variables counting them, then transfers and counts them
+# this = any (uses event_targets for all logic)
 # event_target:potential_owner = country, overlord/infiltrator/planet-killer
 # event_target:former_owner = country, integrated subject/pre-FTLs/victims
 create_leader_storage_and_transfer_leaders = {
 	optimize_memory
-	# "arguments" for transfer_leader_to_storage
-	create_country = {
-		name = event_target:former_owner
-		adjective = event_target:former_owner
-		type = neutral_faction
-		species = event_target:former_owner
-		flag = event_target:former_owner
-		auto_delete = no # required only if country_type has auto_delete = yes (the default)
-		# ignore_initial_colony_error = yes # required only if country_type has needs_colony = yes (the default)
-		authority = event_target:former_owner
-		ethos = event_target:former_owner
-		# civics = event_target:former_owner # breaks because pre-FTL civics are restricted to the primitive country_type
-		ship_prefix = event_target:former_owner
-		effect = {
-			copy_flags_and_variables_from = event_target:former_owner
-			if = {
-				limit = { event_target:former_owner = { is_regular_empire_or_primitive = yes } }
-				set_country_flag = regular_empire_or_primitive_storage_owner
-			}
-			if = {
-				limit = { event_target:former_owner = { is_primitive = yes } }
-				set_country_flag = primitive_storage_owner
-			}
-			if = {
-				limit = { event_target:former_owner = { is_gestalt = yes } }
-				set_country_flag = gestalt_storage_owner
-			}
-			if = {
-				limit = { event_target:former_owner = { is_hive_empire = yes } }
-				set_country_flag = hive_empire_storage_owner
-			}
-			if = {
-				limit = { event_target:former_owner = { is_machine_empire = yes } }
-				set_country_flag = machine_empire_storage_owner
-			}
-			# TODO - if I get persistent shells to work, clean up any former shells here (i.e. a ruler/heir transferred before)
-			# if = {
-			# 	limit = { exists = event_target:former_owner.ruler }
-			# 	clone_leader = {
-			# 		target = event_target:former_owner.ruler
-			# 		immortal = yes
-			# 		effect = { set_leader_flag = klfis_exclude_leader_from_transfer }
-			# 	}
-			# 	set_leader = last_created_leader
-			# 	save_global_event_target_as = former_owner_shell@event_target:former_owner.ruler
-			# }
-			# if = {
-			# 	limit = { exists = event_target:former_owner.heir }
-			# 	clone_leader = {
-			# 		target = event_target:former_owner.heir
-			# 		immortal = yes
-			# 		effect = { set_leader_flag = klfis_exclude_leader_from_transfer }
-			# 	}
-			# 	set_heir = last_created_leader
-			# 	save_global_event_target_as = former_owner_shell@event_target:former_owner.heir
-			# }
-			set_country_flag = former_owner_shell
-			set_country_flag = former_owner@event_target:former_owner
-			set_country_flag = potential_owner@event_target:potential_owner
-			save_event_target_as = storage_owner
-			save_event_target_as = variable_storage
-			# variables for the counts from accumulate_leader
-			set_variable = {
-				which = leader_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_organic_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_hive_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_robotic_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_necrophagable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_same_species_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_not_same_species_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_transferable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_assimilation_cyborg_allowable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_assimilation_cyborg_allowable_accumulator_double
-				value = 0
-			}
-			set_variable = {
-				which = leader_assimilation_uncyborg_allowable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_assimilation_synthetic_allowable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_assimilation_unmachine_allowable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_assimilation_psionic_allowable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_assimilation_genetic_allowable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_transferable_or_assimilatable_accumulator
-				value = 0
-			}
-			set_variable = {
-				which = leader_aquatic_accumulator
-				value = 0
+	# auto_delete = no # required only if country_type has auto_delete = yes (the default)
+	# ignore_initial_colony_error = yes # required only if country_type has needs_colony = yes (the default)
+	if = {
+		limit = {
+			event_target:former_owner = {
+				NOR = {
+					is_country_type = primitive
+					is_country_type = enclave
+					is_country_type = enclave_mercenary
+					is_country_type = fallen_empire
+					is_country_type = sentinels
+					is_country_type = ai_empire
+					is_country_type = dormant_marauders
+					is_country_type = awakened_marauders
+					is_country_type = caravaneer_home
+					is_country_type = caravaneer_fleet
+				}
 			}
 		}
+		create_country = {
+			name = event_target:former_owner
+			adjective = event_target:former_owner
+			type = keep_leaders_container
+			species = event_target:former_owner
+			flag = event_target:former_owner
+			authority = event_target:former_owner
+			ethos = event_target:former_owner
+			civics = event_target:former_owner
+			ship_prefix = event_target:former_owner
+			effect = { save_event_target_as = storage_owner }
+		}
 	}
-	# count the leaders so we know the multiplier for adding resources
-	# like unity or society research for empires that qualify
+	else = { # country_type-specific civics cannot be copied because they are explicitly restricted to the primitive country_type
+		create_country = {
+			name = event_target:former_owner
+			adjective = event_target:former_owner
+			type = keep_leaders_container
+			species = event_target:former_owner
+			flag = event_target:former_owner
+			authority = event_target:former_owner
+			ethos = event_target:former_owner
+			ship_prefix = event_target:former_owner
+			effect = { save_event_target_as = storage_owner }
+		}
+	}
+	event_target:storage_owner = { # set up additional "arguments" for accumulate_leader and transfer_leader_to_storage
+		if = {
+			limit = { event_target:former_owner = { exists = capital_scope } }
+			set_custom_capital_location = event_target:former_owner.capital_scope
+		}
+		copy_flags_and_variables_from = event_target:former_owner
+		if = {
+			limit = { event_target:former_owner = { is_regular_empire_or_primitive = yes } }
+			set_country_flag = regular_empire_or_primitive_storage_owner
+		}
+		if = {
+			limit = { event_target:former_owner = { is_primitive = yes } }
+			set_country_flag = primitive_storage_owner
+		}
+		if = {
+			limit = { event_target:former_owner = { is_gestalt = yes } }
+			set_country_flag = gestalt_storage_owner
+		}
+		if = {
+			limit = { event_target:former_owner = { is_hive_empire = yes } }
+			set_country_flag = hive_empire_storage_owner
+		}
+		if = {
+			limit = { event_target:former_owner = { is_machine_empire = yes } }
+			set_country_flag = machine_empire_storage_owner
+		}
+		set_country_flag = former_owner_shell
+		set_country_flag = former_owner@event_target:former_owner
+		set_country_flag = potential_owner@event_target:potential_owner
+		save_event_target_as = variable_storage
+		# variables for the counts from accumulate_leader
+		set_variable = {
+			which = leader_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_organic_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_hive_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_robotic_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_necrophagable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_same_species_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_not_same_species_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_transferable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_assimilation_cyborg_allowable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_assimilation_cyborg_allowable_accumulator_double
+			value = 0
+		}
+		set_variable = {
+			which = leader_assimilation_uncyborg_allowable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_assimilation_synthetic_allowable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_assimilation_unmachine_allowable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_assimilation_psionic_allowable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_assimilation_genetic_allowable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_transferable_or_assimilatable_accumulator
+			value = 0
+		}
+		set_variable = {
+			which = leader_aquatic_accumulator
+			value = 0
+		}
+	}
+	# transfer leaders to storage and count them (see accumulate_leader)
 	event_target:former_owner = {
 		every_owned_leader = {
 			limit = {
@@ -147,6 +160,7 @@ create_leader_storage_and_transfer_leaders = {
 			accumulate_leader = yes
 			transfer_leader_to_storage = yes
 		}
+		# TODO - if I get persistent shells to work, clean up any former shells here (i.e. a ruler/heir transferred before)
 		if = {
 			limit = { exists = ruler }
 			ruler = {
@@ -166,6 +180,11 @@ create_leader_storage_and_transfer_leaders = {
 				try_process_gestalt_ruler = yes
 				try_add_former_ruler_trait = yes
 				transfer_leader_to_storage = yes
+				event_target:storage_owner = { # assign the ruler as the ruler of the storage country - should help them appear with ruler clothing and allows use of related triggers
+					ruler = { save_event_target_as = storage_ruler }
+					assign_leader = prev
+				}
+				event_target:storage_ruler = { kill_leader = { show_notification = no } }
 			}
 		}
 		if = {
@@ -185,8 +204,10 @@ create_leader_storage_and_transfer_leaders = {
 				accumulate_leader = yes
 				try_add_former_heir_trait = yes
 				transfer_leader_to_storage = yes
+				event_target:storage_owner = { set_heir = prev } # assign the heir as the heir of the storage country - allows use of related triggers
 			}
 		}
+		set_country_flag = leader_storage_created
 	}
 }
 
