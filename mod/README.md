@@ -17,7 +17,7 @@ You only need the contents of the `mod` folder for a local install, disregard th
 This is a bundle of mods to resolve compatibility issues if you want to use them all together. Please check each individual mod for the effects and any known issues. The numbers indicate which version of a particular mod is contained in this mod (which also corresponds to the version tag in its `git` repository).
 
 * [Aesthetic Terraform Stations](https://steamcommunity.com/workshop/filedetails/?id=2622411084) ([Source](https://github.com/corsairmarks/terraform_stations_aesthetic) 5.3.0)
-* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 9.0.0)
+* ["Agrarian" Idyll for Lithoids](https://steamcommunity.com/workshop/filedetails/?id=2510669821) ([Source](https://github.com/corsairmarks/agrarian_idyll_lithoid) 9.1.2)
 * [Basic Planetview: More Districts](https://steamcommunity.com/workshop/filedetails/?id=2654043078) ([Source](https://github.com/corsairmarks/basic-more-districts-planetview) 6.1.0)
 * [Building: Aquaponics Farms](https://steamcommunity.com/workshop/filedetails/?id=2768297949) ([Source](https://github.com/corsairmarks/building_aquaponics_farm) 5.1.1)
 * [Building: Betharian Power Plant - Enhanced](https://steamcommunity.com/workshop/filedetails/?id=2916269980) ([Source](https://github.com/corsairmarks/building_deposit_enhancements) 2.2.0)
@@ -206,7 +206,7 @@ This mod should not be removed from your save game. Some added modifiers and tec
 	* Added: Leisure Districts for People of Culture at 1.0.0
 	* Updated: Building: Aquaponics Farms at 4.0.1
 * 7.1.1 Update merged mod: Ringworld Graphical Enhancements at 3.2.0
-* 7.2.0 Add and update merged mods 
+* 7.2.0 Add and update merged mods
 	* Added: Civic: Byzantine Bureaucracy - Enhanced at 1.0.0
 	* Updated: Deassimilate Machines at 7.0.0
 	* Updated: Leader Traits: All Eligible Species Traits at 5.1.0
@@ -253,3 +253,5 @@ This mod should not be removed from your save game. Some added modifiers and tec
 	* Pre-FTL Conquest & Infiltration: Enhanced at 7.1.4
 	* Retain Leaders from Integrated Subjects & Pre-FTL Civilizations at 9.2.0
 	* Special Leadership Privileges for Battle Thralls & Bio-Trophies at 7.0.3
+* 9.0.2 Update merged mods:
+	* "Agrarian" Idyll for Lithoids at 9.1.2
